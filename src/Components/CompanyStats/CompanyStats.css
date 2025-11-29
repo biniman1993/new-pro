@@ -1,0 +1,218 @@
+/* Company Stats Section */
+.company-stats {
+  padding: 60px 20px;
+  background: #f0f0f0;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.company-stats.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header */
+.stats-header {
+  margin-bottom: 60px;
+}
+
+.stats-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e67817, #2596be);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.stats-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Grid Layout */
+.stats-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* Stat Card */
+.stat-card {
+  padding: 50px 30px;
+  background: #ffffff;
+  border: 2px solid #f0f0f0;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card.card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover Effect */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e67817, #2596be);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--card-color);
+}
+
+/* Icon */
+.stat-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(0.3);
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.15) rotate(-5deg);
+  filter: grayscale(0);
+}
+
+/* Number */
+.stat-number {
+  font-size: 3.8rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.number {
+  color: var(--card-color);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .number {
+  transform: scale(1.05);
+}
+
+.suffix {
+  color: var(--card-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+/* Title */
+.stat-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.stat-card:hover .stat-title {
+  color: var(--card-color);
+}
+
+/* Description */
+.stat-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .stats-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-stats {
+    padding: 80px 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .stats-title {
+    font-size: 2.5rem;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+  }
+  
+  .stat-icon {
+    font-size: 3rem;
+  }
+  
+  .stat-card {
+    padding: 40px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-title {
+    font-size: 2rem;
+  }
+  
+  .stats-subtitle {
+    font-size: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .suffix {
+    font-size: 2rem;
+  }
+}
+
+/* Performance Optimization */
+.stat-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
