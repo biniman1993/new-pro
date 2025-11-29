@@ -44,7 +44,7 @@
 /* Caption container */
 .caption {
   position: absolute;
-  bottom: 120px;
+  bottom: 100px;
   left: 70px;
   transform: translateY(100px);
   opacity: 0;

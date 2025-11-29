@@ -207,68 +207,15 @@ export const catalogData: Record<string, Category> = {
       {
         id: 'net-5',
         name: 'Fiber Optic Cable Kit',
-        description: 'Professional fiber optic cables for high-speed data transfer',
-        count: 8,
-        price: 149,
+        description: 'High-speed fiber optic cable kit for networking',
+        count: 50,
+        price: 89,
         image: 'https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Singlemode', '1km Range', 'SC Connectors', 'Tested']
-      }
-    ]
-  },
-  Monitors: {
-    name: 'Monitors',
-    products: [
-      {
-        id: 'mon-1',
-        name: '4K UHD Monitor 27"',
-        description: 'Crystal clear 4K display for professional work',
-        count: 11,
-        price: 599,
-        image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['4K UHD', '27"', '60Hz', 'USB-C']
-      },
-      {
-        id: 'mon-2',
-        name: 'Gaming Monitor 165Hz',
-        description: 'High refresh rate monitor for competitive gaming',
-        count: 19,
-        price: 449,
-        image: 'https://images.pexels.com/photos/7014329/pexels-photo-7014329.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['1440p', '27"', '165Hz', 'G-Sync']
-      },
-      {
-        id: 'mon-3',
-        name: 'IPS Color Accurate Monitor',
-        description: 'Accurate color reproduction for designers and photographers',
-        count: 13,
-        price: 699,
-        image: 'https://images.pexels.com/photos/3926883/pexels-photo-3926883.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['2560x1440', '32"', 'IPS Panel', '99% Adobe RGB']
-      },
-      {
-        id: 'mon-4',
-        name: 'Office Monitor 24"',
-        description: 'Reliable full HD monitor for office productivity',
-        count: 31,
-        price: 199,
-        image: 'https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['1920x1080', '24"', '60Hz', 'VESA Mount']
-      },
-      {
-        id: 'mon-5',
-        name: 'Portable USB-C Monitor',
-        description: 'Lightweight portable monitor for mobile professionals',
-        count: 10,
-        price: 349,
-        image: 'https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['1920x1200', '15.6"', 'USB-C', 'Portable']
+        specs: ['100m Length', 'Single Mode', 'LC-LC Connectors', 'High Durability']
       }
     ]
   }
 };
 
 export const getAllCategories = () => Object.keys(catalogData);
-
-export const getCategoryProducts = (categoryName: string) => {
-  return catalogData[categoryName]?.products || [];
-};
+export const getCategoryProducts = (category: string) => catalogData[category]?.products || [];

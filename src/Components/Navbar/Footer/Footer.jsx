@@ -187,14 +187,15 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Copyright */}
+         {/* Copyright */}
       <div className="footer-copyright">
         <div className="footer-container">
           <p>© 2024 Unique Business Systems. All rights reserved.</p>
         </div>
       </div>
+      </div>
+
+     
     </footer>
   );
 };

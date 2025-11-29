@@ -1,4 +1,10 @@
-import { Monitor, Laptop, Printer, Wifi, Grid3x3 } from 'lucide-react';
+import { motion } from "framer-motion";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 interface CategoryTabsProps {
   categories: string[];
@@ -6,43 +12,33 @@ interface CategoryTabsProps {
   onCategoryChange: (category: string) => void;
 }
 
-const getCategoryIcon = (category: string) => {
-  const iconProps = { size: 20 };
-  switch (category) {
-    case 'Desktops':
-      return <Monitor {...iconProps} />;
-    case 'Laptops':
-      return <Laptop {...iconProps} />;
-    case 'Printers':
-      return <Printer {...iconProps} />;
-    case 'Networking':
-      return <Wifi {...iconProps} />;
-    default:
-      return <Grid3x3 {...iconProps} />;
-  }
-};
-
 const CategoryTabs = ({ categories, activeCategory, onCategoryChange }: CategoryTabsProps) => {
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex overflow-x-auto scrollbar-hide">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => onCategoryChange(category)}
-              className={`flex items-center gap-2 px-6 py-4 whitespace-nowrap font-medium text-sm transition-all duration-300 border-b-2 ${
-                activeCategory === category
-                  ? 'border-blue-600 text-blue-600 bg-blue-50'
-                  : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-              }`}
-            >
-              {getCategoryIcon(category)}
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
+    <div className="flex flex-wrap gap-2 justify-center mb-8">
+      {categories.map((category) => {
+        const isActive = activeCategory === category;
+        return (
+          <button
+            key={category}
+            onClick={() => onCategoryChange(category)}
+            className={cn(
+              "relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ease-out",
+              isActive 
+                ? "text-white shadow-lg shadow-blue-900/25" 
+                : "bg-white text-gray-600 hover:bg-gray-50 hover:text-[#1c4c97] border border-gray-100"
+            )}
+          >
+            {isActive && (
+              <motion.div
+                layoutId="activeTab"
+                className="absolute inset-0 bg-[#1c4c97] rounded-full"
+                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+              />
+            )}
+            <span className="relative z-10">{category}</span>
+          </button>
+        );
+      })}
     </div>
   );
 };

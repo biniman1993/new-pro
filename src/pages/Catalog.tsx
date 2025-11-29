@@ -1,10 +1,10 @@
 import { useState, useMemo } from 'react';
-import { catalogData, getAllCategories, getCategoryProducts, type Product } from '../data/catalogData';
+import { catalogData, getAllCategories, getCategoryProducts } from '../data/catalogData';
 import CategoryTabs from '../Components/CategoryTabs';
 import SearchBar from '../Components/SearchBar';
 import Filters, { FilterOptions } from '../Components/Filters';
 import ItemCard from '../Components/ItemCard';
-import { Package } from 'lucide-react';
+import { Package, SearchX } from 'lucide-react';
 
 const Catalog = () => {
   const [activeCategory, setActiveCategory] = useState('Desktops');
@@ -41,82 +41,112 @@ const Catalog = () => {
   }, [categoryProducts, searchQuery, filters]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      
+    <div className="min-h-screen bg-gray-50 font-sans">
+      {/* Header with Gradient */}
+      <header className="relative overflow-hidden mb-8">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] z-0" />
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1c4c97]/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
 
-      <CategoryTabs
-        categories={categories}
-        activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
-      />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-24 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+            Tech<span className="text-[#ff7b16]">Catalog</span>
+          </h1>
+          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto font-light">
+            Discover the latest high-performance technology curated for professionals and enthusiasts.
+          </p>
+        </div>
+      </header>
 
-      <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
+      {/* Main Content Area */}
+      <main className="max-w-7xl mx-auto px-4 pb-24 -mt-12 relative z-20">
+        
+        <div className="bg-white/50 backdrop-blur-xl border border-white/50 rounded-3xl p-6 md:p-8 shadow-xl shadow-indigo-900/5 mb-12">
+          <CategoryTabs
+            categories={categories}
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+          />
 
-      <Filters
-        filters={filters}
-        onFiltersChange={setFilters}
-        maxPrice={maxPrice}
-      />
+          <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        {filteredProducts.length > 0 ? (
-          <>
-            <div className="mb-6 flex items-center gap-2">
-              <Package size={20} className="text-blue-600" />
-              <p className="text-gray-700 font-medium">
-                Showing {filteredProducts.length} of {categoryProducts.length} products
-              </p>
-            </div>
+          <Filters
+            filters={filters}
+            onFiltersChange={setFilters}
+            maxPrice={maxPrice}
+          />
+        </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredProducts.map(product => (
-                <div
-                  key={product.id}
-                  className="animate-in fade-in zoom-in duration-300"
-                >
-                  <ItemCard product={product} />
+        <div className="space-y-6">
+          {filteredProducts.length > 0 ? (
+            <>
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm">
+                  <Package size={18} className="text-[#1c4c97]" />
+                  <p className="text-gray-700 font-medium text-sm">
+                    Showing <span className="text-[#1c4c97] font-bold">{filteredProducts.length}</span> results
+                  </p>
                 </div>
-              ))}
-            </div>
-          </>
-        ) : (
-          <div className="flex flex-col items-center justify-center py-16 text-gray-500">
-            <Package size={48} className="mb-4 opacity-50" />
-            <h3 className="text-xl font-semibold mb-2">No products found</h3>
-            <p className="text-gray-400">
-              Try adjusting your search or filters
-            </p>
-            <button
-              onClick={() => {
-                setSearchQuery('');
-                setFilters({ priceRange: [0, maxPrice], inStock: false });
-              }}
-              className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
-            >
-              Clear Filters
-            </button>
-          </div>
-        )}
-      </div>
+              </div>
 
-      <div className="bg-white border-t border-gray-200 py-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {filteredProducts.map(product => (
+                  <div
+                    key={product.id}
+                    className="animate-in fade-in zoom-in-95 duration-500 fill-mode-forwards"
+                  >
+                    <ItemCard product={product} />
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-24 bg-white rounded-3xl border border-dashed border-gray-200 text-center">
+              <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4">
+                <SearchX size={32} className="text-gray-400" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">No products found</h3>
+              <p className="text-gray-500 max-w-md mx-auto mb-6">
+                We couldn't find any matches for "{searchQuery}" in this category. Try adjusting your filters or search terms.
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setFilters({ priceRange: [0, maxPrice], inStock: false });
+                }}
+                className="px-6 py-2.5 bg-[#1c4c97] hover:bg-[#153975] text-white rounded-full font-medium transition-all shadow-lg shadow-blue-900/20 hover:shadow-blue-900/30"
+              >
+                Clear All Filters
+              </button>
+            </div>
+          )}
+        </div>
+      </main>
+
+      <footer className="bg-white border-t border-gray-100 py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-              <p className="text-gray-600">Products in Stock</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div className="text-center px-4 pt-8 md:pt-0">
+              <div className="text-4xl font-bold text-[#1c4c97] mb-2">500+</div>
+              <p className="text-gray-500 font-medium">Premium Products</p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
-              <p className="text-gray-600">Customer Support</p>
+            <div className="text-center px-4 pt-8 md:pt-0">
+              <div className="text-4xl font-bold text-[#ff7b16] mb-2">24/7</div>
+              <p className="text-gray-500 font-medium">Expert Support</p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">2000+</div>
-              <p className="text-gray-600">Trusted Customers</p>
+            <div className="text-center px-4 pt-8 md:pt-0">
+              <div className="text-4xl font-bold text-[#1c4c97] mb-2">2k+</div>
+              <p className="text-gray-500 font-medium">Trusted Customers</p>
             </div>
+          </div>
+          
+          <div className="mt-16 text-center text-gray-400 text-sm">
+            &copy; 2025 TechCatalog. All rights reserved.
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   );
 };

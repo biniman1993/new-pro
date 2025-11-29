@@ -13,7 +13,7 @@ import img7 from "../../assets/cisco.jpg";
 const slides = [
   {
     image: img2,
-    title: "Printing Solutions",
+    title: "Proactive Trading",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae neque ac lorem ultrices faucibus. Integer tincidunt, odio in dignissim aliquet, lacus odio ullamcorper nibh, a feugiat lorem sapien eget turpis."
   },
   {
@@ -43,7 +43,7 @@ const slides = [
   },
   {
     image: img7,
-    title: "Premium Electronics",
+    title: "Proactive Trading",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae neque ac lorem ultrices faucibus. Integer tincidunt, odio in dignissim aliquet, lacus odio ullamcorper nibh, a feugiat lorem sapien eget turpis."
   }
 ];

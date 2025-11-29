@@ -189,24 +189,31 @@ const About = () => {
 
   return (
     <div className="about-container">
-      <div className="floating-shapes">
-        <div className="floating-shape shape-1"></div>
-        <div className="floating-shape shape-2"></div>
-        <div className="floating-shape shape-3"></div>
-      </div>
+      
 
-      <section className="hero-section">
-        <h1 className="hero-title">
-          Driving Innovation, Building Trust
-        </h1>
-        <p className="hero-subtitle">
-          Leading Ethiopia's Technology Revolution Since <span className="hero-accent">2022</span>
-        </p>
-        <div className="scroll-indicator">
-          <ChevronDown size={32} color="#1c4c97" />
-        </div>
-      </section>
+<section className="relative overflow-hidden mb-8 mt-32">
+  <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] z-0" />
+  
+  {/* Decorative Elements */}
+  <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+  <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1c4c97]/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
 
+  <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-24 text-center">
+    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+       <span className="text-[#ff7b16]">Proactive</span>  Trading
+    </h1>
+     <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+      Driving <span className="text-[#ff7b16]">Innovation</span>, Building Trust
+    </h1>
+    <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto font-light mb-8">
+      Leading Ethiopia's Technology Revolution Since <span className="text-[#ff7b16] font-semibold">2022</span>
+    </p>
+    
+    <div className="scroll-indicator">
+      <ChevronDown size={32} color="#1c4c97" />
+    </div>
+  </div>
+</section>
       <nav className="tab-navigation">
         <button
           className={`tab-button ${activeTab === 'profile' ? 'active' : ''}`}
