@@ -10,11 +10,11 @@ import TopProducts from './Components/TopProducts/TopProducts';
 import Products from './Components/Products/Products';
 import Logo from './Components/logo/Logo';
 import Login from "./Components/Login/Login.jsx";
-import Discount from "./Components/Discount/Discount.jsx";
 import Brand from "./Components/Brand/Brand.jsx";
 import ContactPage from "./Components/style/ContactPage.jsx";
 import About from "./Components/About/About.jsx";
-
+import FridayPromo from "./Components/FridayPromo.js";
+import Aboutwhy from "./Components/About/Why/Aboutwhy.jsx";
 import { 
   laptopsData, 
   gamingProductsData,
@@ -23,6 +23,7 @@ import {
   printersProductsData,
   CiscoProductsData
 } from "./Components/Products/productsData.jsx";
+
 import Catalog from './pages/Catalog';
 
 const App = () => {
@@ -74,7 +75,8 @@ const App = () => {
       {/* Add margin to main content to account for fixed navbar + TopMenu */}
       <div style={{ marginTop: '110px' }}>
         <Carousel />
-        <Discount />
+         <FridayPromo />
+        
         <TopProducts onViewMore={scrollToSection} />
 
         {/* Products sections with refs */}
@@ -107,7 +109,9 @@ const App = () => {
         <CompanyStats />
         <Partners />
         <Logo />
+        <Aboutwhy />
       <Catalog />
+     
        
       </div>
     </div>

@@ -16,9 +16,9 @@ const ItemCard = ({ product }: ItemCardProps) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-          {product.count} in stock
-        </div>
+        <div className="absolute top-3 right-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white px-3 py-1 rounded-full text-sm font-semibold">
+  {product.count} in stock
+</div>
       </div>
 
       <div className="p-4">
@@ -53,11 +53,11 @@ const ItemCard = ({ product }: ItemCardProps) => {
               <span className="text-xs text-gray-500">Ask for bulk pricing</span>
             </div>
           )}
-          <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200 group/btn">
-            <ShoppingCart size={16} />
-            <span className="hidden sm:inline">Add</span>
-            <ArrowRight size={14} className="opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-          </button>
+         <button className="flex items-center gap-2 bg-gradient-to-r from-[#1c4c97] via-[#1c4c97] to-[#1c4c97] hover:from-[#ff7b16] hover:via-[#1c4c97] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-200 group/btn">
+  <ShoppingCart size={16} />
+  <span className="hidden sm:inline">Add</span>
+  <ArrowRight size={14} className="opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+</button>
         </div>
       </div>
     </div>

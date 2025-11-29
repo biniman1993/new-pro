@@ -26,9 +26,9 @@ const Products = React.forwardRef(({
   return (
     <div className={`prod-section-wrapper`} ref={ref}>
       <div className={`prod-container ${className}`} ref={containerRef}>
-        <h1 className={`prod-title ${isVisible ? 'prod-title-animate' : ''}`}>
-          {title}
-        </h1>
+       <h1 className={`prod-title ${isVisible ? 'prod-title-animate' : ''}`}>
+  {title}
+</h1>
  <div
   className="title-line2"
   style={{

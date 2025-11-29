@@ -24,7 +24,7 @@ const CompanyStats = () => {
       title: 'Awards & Recognition',
       description: 'Awarded by Leading Companies Worldwide',
       icon: '🏆',
-      color: '#2596be'
+      color: '#154085ff'
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const CompanyStats = () => {
       title: 'Years of Excellence',
       description: 'Years of Industry Leadership',
       icon: '📅',
-      color: '#2596be'
+      color: '#154085ff'
     }
   ];
 
@@ -93,33 +93,33 @@ const CompanyStats = () => {
   };
 
   return (
-    <section className={`company-stats ${visible ? 'section-visible' : ''}`} ref={sectionRef}>
-      <div className="stats-header">
-        <h2 className="stats-title">Our Achievements</h2>
-        <p className="stats-subtitle">Trusted by organizations worldwide</p>
+    <section className={`acme-company-stats ${visible ? 'acme-section-visible' : ''}`} ref={sectionRef}>
+      <div className="acme-stats-header">
+        <h2 className="acme-stats-title">Our Achievements</h2>
+        <p className="acme-stats-subtitle">Trusted by organizations worldwide</p>
       </div>
 
-      <div className="stats-grid">
+      <div className="acme-stats-grid">
         {stats.map((stat, index) => (
           <div
             key={stat.id}
-            className={`stat-card ${visible ? 'card-visible' : ''}`}
+            className={`acme-stat-card ${visible ? 'acme-card-visible' : ''}`}
             style={{
               '--card-color': stat.color,
               animationDelay: `${index * 0.15}s`
             }}
           >
-            <div className="stat-icon">
+            <div className="acme-stat-icon">
               <span>{stat.icon}</span>
             </div>
             
-            <div className="stat-number">
-              <span className="number">{counts[index]}</span>
-              <span className="suffix">{stat.suffix}</span>
+            <div className="acme-stat-number">
+              <span className="acme-number">{counts[index]}</span>
+              <span className="acme-suffix">{stat.suffix}</span>
             </div>
 
-            <h3 className="stat-title">{stat.title}</h3>
-            <p className="stat-description">{stat.description}</p>
+            <h3 className="acme-stat-title">{stat.title}</h3>
+            <p className="acme-stat-description">{stat.description}</p>
           </div>
         ))}
       </div>
