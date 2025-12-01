@@ -157,10 +157,7 @@ const Footer = () => {
               </form>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Payment Methods and Social Links */}
+           {/* Payment Methods and Social Links */}
       <div className="footer-bottom-section">
         <div className="footer-container">
           <div className="footer-bottom">
@@ -187,13 +184,19 @@ const Footer = () => {
             </div>
           </div>
         </div>
-         {/* Copyright */}
-      <div className="footer-copyright">
-        <div className="footer-container">
-          <p>© 2024 Unique Business Systems. All rights reserved.</p>
+        
+        
+       </div>
         </div>
+         {/* Copyright */}
+              <div className="footer-copyright">
+            <div className="footer-container">
+              <p>© 2024 Unique Business Systems. All rights reserved.</p>
+             </div>
+            </div>
       </div>
-      </div>
+
+     
 
      
     </footer>

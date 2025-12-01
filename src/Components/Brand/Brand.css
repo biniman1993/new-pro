@@ -49,79 +49,15 @@
   animation: float-shape 20s ease-in-out infinite;
 }
 
-.shape-1 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  top: -10%;
-  left: 10%;
-  animation-delay: 0s;
-}
 
-.shape-2 {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  top: 30%;
-  right: 5%;
-  animation-delay: -5s;
-}
 
-.shape-3 {
-  width: 280px;
-  height: 280px;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  bottom: -10%;
-  left: 30%;
-  animation-delay: -10s;
-}
 
-@keyframes float-shape {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  33% {
-    transform: translate(50px, -50px) rotate(120deg);
-  }
-  66% {
-    transform: translate(-30px, 50px) rotate(240deg);
-  }
-}
 
-.gradient-orb {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.15;
-  filter: blur(40px);
-  animation: float-orb 15s ease-in-out infinite;
-}
 
-.orb-1 {
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, #667eea 0%, transparent 70%);
-  top: 20%;
-  right: 20%;
-  animation-delay: 0s;
-}
 
-.orb-2 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, #f5576c 0%, transparent 70%);
-  bottom: 15%;
-  left: 15%;
-  animation-delay: -7s;
-}
 
-@keyframes float-orb {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(40px, -40px) scale(1.1);
-  }
-}
+
+
 
 .hero-content {
   position: relative;
@@ -133,7 +69,7 @@
 .hero-title {
   font-size: 4.5rem;
   font-weight: 900;
-  color: #000;
+  color: #1c4c97;
   margin-bottom: 30px;
   line-height: 1.2;
   letter-spacing: -1px;
@@ -312,7 +248,8 @@
 
 .cta-section {
   position: relative;
-  padding: 100px 20px;
+  padding-top: 50px;
+  padding-bottom: 110px;
   background: #ffffff;
   overflow: hidden;
 }
@@ -333,44 +270,8 @@
   animation: blob-float 25s ease-in-out infinite;
 }
 
-.blob-1 {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  top: -20%;
-  left: -10%;
-  animation-delay: 0s;
-}
 
-.blob-2 {
-  width: 350px;
-  height: 350px;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  bottom: -15%;
-  right: -5%;
-  animation-delay: -8s;
-}
 
-.blob-3 {
-  width: 380px;
-  height: 380px;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  top: 50%;
-  right: 10%;
-  animation-delay: -15s;
-}
-
-@keyframes blob-float {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
-  }
-  33% {
-    transform: translate(60px, -60px) rotate(120deg) scale(1.05);
-  }
-  66% {
-    transform: translate(-40px, 60px) rotate(240deg) scale(0.95);
-  }
-}
 
 .cta-content {
   position: relative;
@@ -411,7 +312,7 @@
   font-size: 1.15rem;
   font-weight: 700;
   color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #050a20 0%, #764ba2 100%);
   border: none;
   border-radius: 50px;
   cursor: pointer;

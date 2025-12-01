@@ -5,7 +5,8 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: #020320;
+    background: linear-gradient(to right, #1c4c97, #0a0e27);
+
   padding: 10px 0;
   display: flex;
   justify-content: center;
@@ -20,7 +21,6 @@
 .topmenu-visible {
   transform: translateY(0);
   opacity: 1;
-  background: #020320;
 }
 
 .topmenu-hidden {

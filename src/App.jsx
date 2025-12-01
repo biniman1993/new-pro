@@ -73,7 +73,7 @@ const App = () => {
     <div>
      
       {/* Add margin to main content to account for fixed navbar + TopMenu */}
-      <div style={{ marginTop: '110px' }}>
+      <div >
         <Carousel />
          <FridayPromo />
         

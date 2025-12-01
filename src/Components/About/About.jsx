@@ -191,7 +191,8 @@ const About = () => {
     <div className="about-container">
       
 
-<section className="relative overflow-hidden mb-8 mt-32">
+<section className="relative overflow-hidden h-[80vh] pt-[120px] bg-gradient-to-r from-[#1c4c97] to-[#0a0e27]">
+
   <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] z-0" />
   
   {/* Decorative Elements */}
@@ -210,7 +211,7 @@ const About = () => {
     </p>
     
     <div className="scroll-indicator">
-      <ChevronDown size={32} color="#1c4c97" />
+      <ChevronDown size={32} color="#ffffffff" />
     </div>
   </div>
 </section>
@@ -256,7 +257,7 @@ const About = () => {
       <main className="content-wrapper vertical-layout">
         {/* Profile Section */}
         <section ref={profileRef} className="content-section">
-          <h2 className="section-title">Proactive Trading</h2>
+          <h2 className="about-section-title">Proactive Trading</h2>
           <div className="section-content">
             <p>
               Founded in <span className="gradient-text" style={{ fontWeight: 700 }}>2022</span>,

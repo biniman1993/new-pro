@@ -199,8 +199,8 @@
 
 /* Footer Bottom Section */
 .footer-bottom-section {
-  padding: 30px 0;
-  background: linear-gradient(to right, #0a0e27, #123670);
+  padding-top: 50px;
+  padding-bottom: 20px;
 
 }
 
@@ -257,7 +257,7 @@
 
 /* Copyright */
 .footer-copyright {
-  padding: 20px 0;
+  padding: 5px 0;
 
      
 }

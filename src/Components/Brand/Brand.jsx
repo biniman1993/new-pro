@@ -82,11 +82,7 @@ const Brand = () => {
       </section>
 
       <section className="cta-section">
-        <div className="cta-background">
-          <div className="cta-gradient-blob blob-1"></div>
-          <div className="cta-gradient-blob blob-2"></div>
-          <div className="cta-gradient-blob blob-3"></div>
-        </div>
+       
 
         <div className="cta-content">
           <h2 className="cta-title">Let's Work Together & Boost Your Technology Success!</h2>

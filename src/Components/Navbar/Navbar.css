@@ -5,8 +5,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  
-  background: #020620;
+  /* Left:  // background: #020620; Logo */
+    background: linear-gradient(to right, #1c4c97, #0a0e27);
+
   color: #ffffff;
   position: fixed;
   top: 0;
@@ -15,7 +16,6 @@ nav {
   z-index: 99;
   gap: 15px;
   box-sizing: border-box;
-  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
     height: 110px;
 }
