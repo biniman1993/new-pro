@@ -26,17 +26,18 @@ const Products = React.forwardRef(({
   return (
     <div className={`prod-section-wrapper`} ref={ref}>
       <div className={`prod-container ${className}`} ref={containerRef}>
-       <h1 className={`prod-title ${isVisible ? 'prod-title-animate' : ''}`}>
-  {title}
-</h1>
- <div
-  className="title-line2"
-  style={{
-    opacity: isVisible ? 1 : 0,
-    transform: isVisible ? "scaleX(1)" : "scaleX(0)",
-    transition: "opacity 600ms ease 200ms, transform 600ms ease 200ms",
-  }}
-></div>
+        <h1 className={`prod-title ${isVisible ? 'prod-title-animate' : ''}`}>
+          {title}
+        </h1>
+        <div
+          className="title-line2"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "scaleX(1)" : "scaleX(0)",
+            transition: "opacity 600ms ease 200ms, transform 600ms ease 200ms",
+          }}
+        ></div>
+        
         <div className="prod-grid-wrapper">
           <div className="prod-grid">
             {productsData.map((product, index) => (
@@ -64,11 +65,18 @@ const Products = React.forwardRef(({
               </div>
             ))}
           </div>
+        </div>
 
-         
+       {/* Explore More Button - NEW ROW BELOW CARDS */}
+<div className="mt-10 pt-8 text-center">
+  <button className="px-10 py-3 bg-white border-2 border-[0a0e27] text-[0a0e27] font-bold rounded-lg hover:bg-gradient-to-br hover:from-[#1c4c97] hover:to-[#0a0e27] hover:text-white transition-all duration-300">
+    Explore More
+  </button>
+</div>
+          
         </div>
       </div>
-    </div>
+    
   );
 });
 

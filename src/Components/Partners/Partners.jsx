@@ -219,7 +219,14 @@ const Partners = () => {
             </div>
           </div>
         </div>
+        
       )}
+            {/* Explore More Button - NEW ROW BELOW CARDS */}
+<div className="mt-18 mb-6 text-center">
+  <button className="px-10 py-3 bg-white border-2 border-[0a0e27] text-[0a0e27] font-bold rounded-lg hover:bg-gradient-to-br hover:from-[#e67817] hover:to-[#2596be] hover:text-white transition-all duration-300">
+    Explore More
+  </button>
+</div>
     </section>
   );
 };

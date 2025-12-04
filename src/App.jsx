@@ -24,7 +24,6 @@ import {
   CiscoProductsData
 } from "./Components/Products/productsData.jsx";
 
-import Catalog from './pages/Catalog';
 
 const App = () => {
   // Refs for smooth scrolling
@@ -110,7 +109,6 @@ const App = () => {
         <Partners />
         <Logo />
         <Aboutwhy />
-      <Catalog />
      
        
       </div>

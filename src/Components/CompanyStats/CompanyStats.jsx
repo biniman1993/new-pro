@@ -15,7 +15,7 @@ const CompanyStats = () => {
       title: 'Suppliers & Clients',
       description: 'Trusted Supplier to Government & Non-Government Organizations',
       icon: '🏢',
-      color: '#e67817'
+      color: '#ff7b16'
     },
     {
       id: 2,

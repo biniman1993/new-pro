@@ -201,13 +201,13 @@ const About = () => {
 
   <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-24 text-center">
     <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-       <span className="text-[#ff7b16]">Proactive</span>  Trading
+       <span className="text-[#e47325]">Proactive</span>  Trading
     </h1>
      <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-      Driving <span className="text-[#ff7b16]">Innovation</span>, Building Trust
+      Driving <span className="text-[#e47325]">Innovation</span>, Building Trust
     </h1>
     <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto font-light mb-8">
-      Leading Ethiopia's Technology Revolution Since <span className="text-[#ff7b16] font-semibold">2022</span>
+      Leading Ethiopia's Technology Revolution Since <span className="text-[#e47325] font-semibold">2022</span>
     </p>
     
     <div className="scroll-indicator">
@@ -257,7 +257,13 @@ const About = () => {
       <main className="content-wrapper vertical-layout">
         {/* Profile Section */}
         <section ref={profileRef} className="content-section">
-          <h2 className="about-section-title">Proactive Trading</h2>
+<h2 className="about-section-title 
+  bg-gradient-to-r from-[#1c4c97] to-[#1d1f30]
+  bg-clip-text text-transparent 
+  font-bold">
+  Proactive Trading
+</h2>
+
           <div className="section-content">
             <p>
               Founded in <span className="gradient-text" style={{ fontWeight: 700 }}>2022</span>,
@@ -339,7 +345,13 @@ const About = () => {
 
         {/* Values Section */}
         <section ref={valuesRef} className="content-section">
-          <h2 className="section-title">Core Values</h2>
+        <h2 className="about-section-title 
+  bg-gradient-to-r from-[#1c4c97] to-[#1d1f30]
+  bg-clip-text text-transparent 
+  font-bold"> 
+  Core Values
+</h2>
+
           <div className="section-content">
             <p>
               Our values define who we are and guide every decision we make. They are the
@@ -359,7 +371,10 @@ const About = () => {
 
         {/* Clients Section */}
         <section ref={clientsRef} className="content-section">
-          <h2 className="section-title">Our Distinguished Clients</h2>
+          <h2 className="about-section-title 
+  bg-gradient-to-r from-[#1c4c97] to-[#1d1f30]
+  bg-clip-text text-transparent 
+  font-bold">Our Distinguished Clients</h2>
           <div className="section-content">
             <p>
               We are honored to serve Ethiopia's most prestigious organizations across government,
@@ -385,7 +400,12 @@ const About = () => {
 
         {/* Why Choose Us Section */}
         <section ref={whyRef} className="content-section">
-          <h2 className="section-title">Why Choose Proactive Trading?</h2>
+         <h2 className="about-section-title 
+  bg-gradient-to-r from-[#1c4c97] to-[#1d1f30]
+  bg-clip-text text-transparent 
+  font-bold">
+  Proactive Trading
+</h2>
           <div className="section-content">
             <p>
               When you partner with Proactive Trading, you're choosing more than a supplier—you're
