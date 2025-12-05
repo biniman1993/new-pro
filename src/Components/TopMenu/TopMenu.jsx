@@ -64,13 +64,28 @@ const TopMenu = () => {
       "USB Hubs",
       "Laptop Stands"
     ],
-    Printer: [
-      "Inkjet Printer",
-      "Laser Printer",
-      "All-in-One Printer",
-      "Scanners",
-      "Printer Accessories"
-    ],
+  Printer: [
+  "Inkjet Printer",
+  "Laser Printer",
+  "All-in-One Printer",
+  "Scanners",
+  "Printer Accessories",
+  "Document Printer",
+  "Large Format Printer",
+  "ID Card Printer",
+  "POS Printer",
+  "Label Printer",
+  "Photocopier",
+  "Toner",
+  "Ink Tank Printer",
+  "Ink Bottle",
+  "Barcode Scanner",
+  "Ribbon",
+  "Cartridge",
+  "Printer Drum",
+  "Printer Paper"
+]
+,
     Projector: [
       "Business Projector",
       "Home Cinema Projector",
@@ -78,27 +93,41 @@ const TopMenu = () => {
       "Short-Throw Projector",
       "Projector Accessories"
     ],
-    "Interactive Panel": [
-      "Smart Interactive Panels",
-      "Touch Display Boards",
-      "Classroom Panels",
-      "Corporate Interactive Boards",
-      "Wireless Presentation Tools"
-    ],
-    "Digital Display": [
-      "LED Digital Display",
-      "Video Wall Panels",
-      "Advertising Displays",
-      "Indoor Display",
-      "Outdoor Display"
-    ],
-    "Sound System": [
-      "Speakers",
-      "Amplifiers",
-      "Microphones",
-      "Mixers",
-      "Conference Audio Systems"
-    ],
+    "Components": [
+    "Processor",
+    "CPU Cooler",
+    "Water / Liquid Cooling",
+    "Motherboard",
+    "Graphics Card",
+    "Power Supply",
+    "Casing",
+    "Casing Cooler",
+    "Optical Disk Drive",
+    "Vertical Graphics Card Holder",
+    "RAM"],
+     // ... other categories ...
+  "Digital Display": [
+    "LED Digital Display",
+    "Video Wall Panels",
+    "Advertising Displays",
+    "Indoor Display",
+    "Outdoor Display",
+    "Interactive Flat Panel",
+    "Interactive White Board",
+    "Video Wall",
+    "Signage",
+    "Kiosk"
+  ],
+    "Server": [
+    "Application Servers",
+    "GPU Servers",
+    "Storage Servers",
+    "Blade Servers",
+    "Network Attached Storage (NAS)",
+    "IP SAN Storage",
+    "Direct Attached Storage (DAS)",
+    "Server Accessories"
+  ],
   };
 
   const menuItems = Object.keys(menuData);
