@@ -3,7 +3,7 @@ import "./Carousel.css";
 
 // import your 7 images
 import img1 from "../../assets/Hero.jpg";
-import img2 from "../../assets/cisco.jpg";
+import img2 from "../../assets/binq.jpg";
 import img3 from "../../assets/cisco.jpg";
 import img4 from "../../assets/cisco.jpg";
 import img5 from "../../assets/cisco.jpg";

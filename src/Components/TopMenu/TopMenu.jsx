@@ -1,8 +1,12 @@
 
 import React, { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom";
 import "./TopMenu.css";
 
+
+
 const TopMenu = () => {
+  const navigate = useNavigate();
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -111,11 +115,11 @@ const menuItems = Object.keys(menuData);
     >
       <ul>
         {menuItems.map((item, index) => (
-          <li
-            key={index}
-            onMouseEnter={() => setHoveredItem(item)}
-            className={hoveredItem === item ? "active" : ""}
-          >
+         <li
+  key={index}
+  onMouseEnter={() => setHoveredItem(item)}
+  onClick={() => navigate(`/Catalog/${item}`)}
+  className={hoveredItem === item ? "active" : ""}>
             {item}
             {hoveredItem === item && (
               <div 
