@@ -1,9 +1,6 @@
-
 import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import "./TopMenu.css";
-
-
 
 const TopMenu = () => {
   const navigate = useNavigate();
@@ -16,10 +13,8 @@ const TopMenu = () => {
       const currentScrollY = window.scrollY;
       
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down & past 100px - hide menu
         setIsVisible(false);
       } else if (currentScrollY < lastScrollY) {
-        // Scrolling up - show menu
         setIsVisible(true);
       }
       
@@ -36,7 +31,7 @@ const TopMenu = () => {
   const menuData = {
     Desktop: [
       "Business Desktop",
-      "Gaming Desktop",
+      "Gaming Desktop", 
       "All-in-One PC",
       "Mini Desktop",
       "Workstation"
@@ -104,9 +99,31 @@ const TopMenu = () => {
       "Mixers",
       "Conference Audio Systems"
     ],
-    
   };
-const menuItems = Object.keys(menuData);
+
+  const menuItems = Object.keys(menuData);
+
+  // Function to convert subcategory name to URL-friendly format
+  const formatSubcategoryName = (name) => {
+    return name
+      .replace(/[&/\\#,+()$~%.'":*?<>{}]/g, '') // Remove special characters
+      .replace(/\s+/g, '') // Remove spaces
+      .replace(/\//g, '') // Remove slashes
+      .replace(/&/g, 'and'); // Replace & with 'and'
+  };
+
+  const handleMainCategoryClick = (category) => {
+    // When clicking main category, navigate to its first subcategory
+    const firstSubcategory = menuData[category][0];
+    const formattedSubcategory = formatSubcategoryName(firstSubcategory);
+    navigate(`/Catalog/${formattedSubcategory}`);
+  };
+
+  const handleSubcategoryClick = (mainCategory, subcategory) => {
+    // When clicking subcategory, navigate to that specific subcategory
+    const formattedSubcategory = formatSubcategoryName(subcategory);
+    navigate(`/Catalog/${formattedSubcategory}`);
+  };
 
   return (
     <div 
@@ -115,11 +132,12 @@ const menuItems = Object.keys(menuData);
     >
       <ul>
         {menuItems.map((item, index) => (
-         <li
-  key={index}
-  onMouseEnter={() => setHoveredItem(item)}
-  onClick={() => navigate(`/Catalog/${item}`)}
-  className={hoveredItem === item ? "active" : ""}>
+          <li
+            key={index}
+            onMouseEnter={() => setHoveredItem(item)}
+            onClick={() => handleMainCategoryClick(item)}
+            className={hoveredItem === item ? "active" : ""}
+          >
             {item}
             {hoveredItem === item && (
               <div 
@@ -133,8 +151,9 @@ const menuItems = Object.keys(menuData);
                       key={idx}
                       className="dropdown-card"
                       style={{ animationDelay: `${idx * 0.03}s` }}
-                      onClick={() => {
-                        console.log(`Clicked: ${subcategory} under ${item}`);
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent parent click
+                        handleSubcategoryClick(item, subcategory);
                       }}
                     >
                       <div className="dropdown-card-icon">

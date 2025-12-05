@@ -1,6 +1,6 @@
 /* Partners Section */
 .partners-section {
-  padding: 40px 40px;
+  padding: 30px 40px;
   background: #ffffff;
   position: relative;
   overflow: hidden;
@@ -22,8 +22,8 @@
   font-size: 3.5rem;
   font-weight: 800;
   color: #1a1a1a;
-  margin-bottom: 20px;
-  margin-top: 1px;
+  margin-bottom: 4px;
+ 
   position: relative;
   display: inline-block;
 }
@@ -40,7 +40,7 @@ background: linear-gradient(135deg, #1c4c97 0%, #0a0e27 100%);
   width: 100px;
   height: 4px;
   background: linear-gradient(90deg, #e67817, #2596be);
-  margin: 20px auto;
+  margin: 0px auto;
   border-radius: 2px;
   position: relative;
 }
@@ -48,7 +48,7 @@ background: linear-gradient(135deg, #1c4c97 0%, #0a0e27 100%);
 .partners-subtitle {
   font-size: 1.2rem;
   color: #666;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
   font-weight: 400;
   letter-spacing: 0.3px;
 }

@@ -9,6 +9,7 @@ import Footer from './Components/Navbar/Footer/Footer';
 import TopProducts from './Components/TopProducts/TopProducts';
 import Products from './Components/Products/Products';
 import Logo from './Components/logo/Logo';
+import Logobrand from "./Components/Logo/Logobrand.jsx";
 import Login from "./Components/Login/Login.jsx";
 import Brand from "./Components/Brand/Brand.jsx";
 import ContactPage from "./Components/style/ContactPage.jsx";
@@ -20,10 +21,9 @@ import {
   gamingProductsData,
   officeProductsData,
   displayProductsData,
-  printersProductsData,
-  CiscoProductsData
+  printersProductsData
 } from "./Components/Products/productsData.jsx";
-
+import Catalog from "./pages/Catalog.js";
 
 const App = () => {
   // Refs for smooth scrolling
@@ -60,64 +60,72 @@ const App = () => {
 
   return (
     <Router>
-     <Navbar />
-    <TopMenu />
-    
-      <Routes>
- <Route path="/brand" element={<Brand />} />
- <Route path="/about" element={<About />} />
-         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={
-    <div>
-     
-      {/* Add margin to main content to account for fixed navbar + TopMenu */}
-      <div >
-        <Carousel />
-         <FridayPromo />
+      <div className="App">
+        <Navbar />
+        <TopMenu />
         
-        <TopProducts onViewMore={scrollToSection} />
+        <Routes>
+          {/* Catalog Routes */}
+          <Route path="/Catalog">
+            <Route index element={<Catalog />} />
+            <Route path=":category" element={<Catalog />} />
+          </Route>
+          
+          {/* Other Routes */}
+          <Route path="/brand" element={<Brand />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/login" element={<Login />} />
+          
+          {/* Home Route */}
+          <Route path="/" element={
+            <div>
+              <div>
+                <Carousel />
+                <FridayPromo />
+                
+                <TopProducts onViewMore={scrollToSection} />
 
-        {/* Products sections with refs */}
-        <Products 
-          title="Top-Rated Performance Laptops" 
-          productsData={laptopsData}
-          ref={laptopsRef}
-        />
-        <Products 
-          title="Desktop Products" 
-          productsData={gamingProductsData}
-          ref={gamingRef}
-        />
-        <Products 
-          title="Monitor Equipment" 
-          productsData={officeProductsData}
-          ref={officeRef}
-        />
-        <Products 
-          title="Printer Equipment" 
-          productsData={printersProductsData}
-          ref={printersRef}
-        />
-        <Products 
-          title="Display Equipment" 
-          productsData={displayProductsData}
-          ref={displayRef}
-        />
+                {/* Products sections with refs */}
+                <Products 
+                  title="Top-Rated Performance Laptops" 
+                  productsData={laptopsData}
+                  ref={laptopsRef}
+                />
+                <Products 
+                  title="Desktop Products" 
+                  productsData={gamingProductsData}
+                  ref={gamingRef}
+                />
+                <Products 
+                  title="Monitor Equipment" 
+                  productsData={officeProductsData}
+                  ref={officeRef}
+                />
+                <Products 
+                  title="Printer Equipment" 
+                  productsData={printersProductsData}
+                  ref={printersRef}
+                />
+                <Products 
+                  title="Display Equipment" 
+                  productsData={displayProductsData}
+                  ref={displayRef}
+                />
+                
+                <CompanyStats />
+                <Partners />
+                <Logo />
+                <Aboutwhy />
+                <Logobrand />
+              </div>
+            </div>
+          } />
+        </Routes>
         
-        <CompanyStats />
-        <Partners />
-        <Logo />
-        <Aboutwhy />
-     
-       
-      </div>
-    </div>
-      } />
-      </Routes>
         <Footer />
+      </div>
     </Router>
-    
   );
 }
 

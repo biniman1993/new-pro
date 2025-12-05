@@ -565,11 +565,11 @@ const FridayPromo = () => {
 
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
 
-                          <div className="absolute top-3 right-3 bg-gradient-to-r from-[#ff7b16] to-[#1c4c97] text-white font-bold px-3 py-1 rounded-full text-sm md:text-base shadow-lg transform -translate-y-1 group-hover/card:translate-y-0 transition-transform duration-300">
+                          <div className="absolute top-6 right-3 bg-gradient-to-r from-[#ff7b16] to-[#ff7b13] text-white  font-bold px-2 py-1 rounded-1xl text-sm md:text-base shadow-lg transform -translate-y-1 group-hover/card:translate-y-0 transition-transform duration-300">
                             -{product.discount}%
                           </div>
 
-                          <div className="absolute bottom-3 left-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white font-semibold px-2.5 py-1 rounded-lg text-xs md:text-sm opacity-0 group-hover/card:opacity-100 transform translate-y-2 group-hover/card:translate-y-0 transition-all duration-300">
+                          <div className="absolute bottom-3 left-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white font-100W px-1 py-1 rounded-lg text-xs md:text-sm opacity-0 group-hover/card:opacity-100 transform translate-y-2 group-hover/card:translate-y-0 transition-all duration-300">
                             New Arrival
                           </div>
                         </div>
