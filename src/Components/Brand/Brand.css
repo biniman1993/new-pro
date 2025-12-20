@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.disbrad{
+  margin-top: -70px;
+}
 .brand-page {
     padding-top: 100px;
   width: 100%;

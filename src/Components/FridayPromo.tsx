@@ -232,7 +232,7 @@ const FridayPromo = () => {
   };
 
   return (
-    <div className="relative bg-gradient-to-br from-[#f8f9fa] via-white to-[#e9ecef] overflow-hidden">
+    <div className="relative bg-gradient-to-br from-[#2a5da5] via-white to-[#e9ecef] overflow-hidden">
       <style>{`
         @keyframes slideInDown {
           from {
@@ -384,7 +384,7 @@ const FridayPromo = () => {
                   alt={selectedProduct.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-[#ff7b16] to-[#1c4c97] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
                   -{selectedProduct.discount}%
                 </div>
               </div>
@@ -455,11 +455,11 @@ const FridayPromo = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4">
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-[#1c4c97]/30 flex items-center justify-center gap-2">
+                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-[#1c4c97]/30 flex items-center justify-center gap-2">
                       <ShoppingCart size={20} />
                       Add to Cart
                     </button>
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#ff7b16] to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-[#ff7b16]/30">
+                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-[#ff7b16]/30">
                       Buy Now
                     </button>
                   </div>

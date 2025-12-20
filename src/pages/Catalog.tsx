@@ -505,12 +505,11 @@ const getCategoryFilterOptions = (): Record<string, string[]> => {
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Header with Gradient */}
       <header className="relative overflow-hidden mt-20 ">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] z-0" />
         
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1c4c97]/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
-
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2a5da5]/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
             {getCategoryDisplayName(activeCategory)}
@@ -568,16 +567,16 @@ const getCategoryFilterOptions = (): Record<string, string[]> => {
                 <>
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm">
-                      <Package size={18} className="text-[#1c4c97]" />
+                      <Package size={18} className="text-[#2a5da5]" />
                       <p className="text-gray-700 font-medium text-sm">
-                        Showing <span className="text-[#1c4c97] font-bold">{filteredProducts.length}</span> products
+                        Showing <span className="text-[#2a5da5] font-bold">{filteredProducts.length}</span> products
                         {Object.keys(filters).length > 0 && ' with filters applied'}
                       </p>
                     </div>
                     {Object.keys(filters).some(key => filters[key].length > 0) && (
                       <button
                         onClick={clearAllFilters}
-                        className="text-sm text-[#1c4c97] hover:text-[#153975] font-medium"
+                        className="text-sm text-[#2a5da5] hover:text-[#153975] font-medium"
                       >
                         Clear Filters
                       </button>

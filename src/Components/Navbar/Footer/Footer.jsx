@@ -21,29 +21,7 @@ const Footer = () => {
     setFormData({ name: '', email: '', message: '' });
   };
 
-  const infoCards = [
-    {
-      icon: '🚚',
-      title: 'Free Shipping',
-      description: 'Free Shipping for orders over $120'
-    },
-    {
-      icon: '💳',
-      title: 'Online Payment',
-      description: 'We Support Online Payment'
-    },
-    {
-      icon: '💰',
-      title: 'Money Return',
-      description: '30 Days money return'
-    },
-    {
-      icon: '🎧',
-      title: '24/7 Support',
-      description: 'Friendly 24/7 customer support'
-    }
-  ];
-
+ 
   const aboutLinks = [
     'About Us',
     'Store Location',
@@ -67,23 +45,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      {/* Info Cards Section */}
-      <div className="footer-info-section">
-        <div className="footer-container">
-          <div className="info-cards">
-            {infoCards.map((card, index) => (
-              <div key={index} className="info-card">
-                <div className="info-icon">{card.icon}</div>
-                <div>
-                  <h3 className="info-title">{card.title}</h3>
-                  <p className="info-description">{card.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
+    
       {/* Main Footer Content */}
       <div className="footer-main">
         <div className="footer-container">

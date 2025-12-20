@@ -27,7 +27,7 @@
   font-size: 3rem;
   padding-top: 30px;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #1c4174 0%, #1a437c 50%, #ff7b16 100%);
+  background: linear-gradient(135deg, #2a5da5 0%, #2a5da5 50%, #ff7b16 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,7 +49,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    #1c4c97 20%,
+    #2a5da5 20%,
     #ff7b16 80%,
     transparent 100%
   );
@@ -129,7 +129,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(135deg, #1c4c97 0%, #ff7b16 100%);
+  background: linear-gradient(135deg, #2a5da5 0%, #ff7b16 100%);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -183,7 +183,7 @@
 
 /* Add to Cart Button */
 .prod-container .prod-cart-btn {
-  background: linear-gradient(135deg, #1c4c97 0%, #0a0e27 100%);
+  background: linear-gradient(135deg, #2a5da5 0%, #0a0e27 100%);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -198,7 +198,7 @@
 }
 
 .prod-container .prod-cart-btn:hover {
-  background: linear-gradient(135deg, #ff7b16 0%, #1c4c97 100%);
+  background: linear-gradient(135deg, #ff7b16 0%, #2a5da5 100%);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(28, 76, 151, 0.3);
 }
@@ -213,7 +213,7 @@
   height: 50px;
   border-radius: 50%;
   border: none;
-  background: linear-gradient(135deg, #1c4c97, #ff7b16);
+  background: linear-gradient(135deg, #2a5da5, #ff7b16);
   color: #fff;
   font-size: 1.8rem;
   cursor: pointer;
@@ -227,7 +227,7 @@
 .prod-forward-btn:hover {
   transform: translateY(-50%) scale(1.15);
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  background: linear-gradient(135deg, #ff7b16, #1c4c97);
+  background: linear-gradient(135deg, #ff7b16, #2a5da5);
 }
 
 /* Responsive Design */

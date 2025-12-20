@@ -40,23 +40,33 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0e27] pt-24">
+    <div className="min-h-screen bg-[#ffffff] pt-24">
       {/* Hero Section */}
-      <section className="relative h-[70vh] pt-32 overflow-hidden bg-gradient-to-r from-[#1c4c97] to-[#0a0e27]">
-        <div className="text-center mt-10">
+      <section className="relative h-[40vh] pt-20 pb-60 overflow-hidden bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] ">
+        <div className="text-center mt-1">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
             <span className="text-[#e47325]">Get</span> In Touch
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
             We're here to help with all your technology needs
           </p>
-          <button className="relative px-8 py-4 bg-gradient-to-r from-[#e47325] to-[#e47325] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden group">
-            Contact Us Now
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></span>
-          </button>
+        
         </div>
       </section>
+
 {/* contactsection */ }
+<section className="pt-18 bg-white/5 ">
+<div className="-mt-[50px] bg-white backdrop-blur-sm  rounded-2xl p-6 md:p-8 max-w-5xl mx-auto "> 
+<div>
+      <p className="text-gray-800 text-base md:text-lg leading-relaxed">
+        MBUZZ has developed long-lasting partnerships with leading technology vendors, 
+        allowing us to provide best-in-class products and services to our clients. 
+        leveraging our specialized pre-sales solution teams, as well as access to 
+        
+      </p>
+    </div>
+  </div>
+</section>
 {/* Contact Details Section */}
 <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-white to-gray-50">
   <div className="max-w-6xl mx-auto">
