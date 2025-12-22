@@ -16,6 +16,7 @@ import ContactPage from "./Components/style/ContactPage.jsx";
 import About from "./Components/About/About.jsx";
 import FridayPromo from "./Components/FridayPromo.js";
 import Aboutwhy from "./Components/About/Why/Aboutwhy.jsx";
+import HeroSection from "./Components/HeroSection.tsx";
 import { 
   laptopsData, 
   gamingProductsData,
@@ -81,7 +82,8 @@ const App = () => {
           <Route path="/" element={
             <div>
               <div>
-                <Carousel />
+              <HeroSection />
+               
                 <FridayPromo />
                 
                 <TopProducts onViewMore={scrollToSection} />
