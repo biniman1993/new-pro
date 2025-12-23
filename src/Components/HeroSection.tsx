@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Monitor, Server, Wifi, Tv, Cpu, Settings, ChevronRight, Play, Smartphone, Headphones, Camera, HardDrive } from 'lucide-react';
-
-interface StatItem {
-  value: number;
-  suffix: string;
-  label: string;
-}
+import { Monitor, Server, Wifi, Tv, Cpu, Settings, ChevronRight, Play, Smartphone, Headphones, Camera } from 'lucide-react';
 
 interface SlideContent {
   title: string;
@@ -16,12 +10,8 @@ interface SlideContent {
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [counts, setCounts] = useState<number[]>([0, 0, 0, 0]);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
 
   const slides: SlideContent[] = [
@@ -57,19 +47,14 @@ const HeroSection = () => {
     }
   ];
 
-  const stats: StatItem[] = [
-    { value: 2500, suffix: '+', label: 'Products Delivered' },
-    { value: 500, suffix: '+', label: 'Happy Clients' },
-    { value: 15, suffix: '+', label: 'Years Experience' },
-    { value: 50, suffix: '+', label: 'Partner Brands' }
-  ];
-
-  const products = [
-    { name: 'Dell Laptop', image: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&h=300&fit=crop', rotation: 0 },
-    { name: 'HP Server', image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop', rotation: 72 },
-    { name: 'Cisco Router', image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=300&fit=crop', rotation: 144 },
-    { name: 'Smart Display', image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=300&fit=crop', rotation: 216 },
-    { name: 'Printer Pro', image: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&h=300&fit=crop', rotation: 288 }
+  // Product images corresponding to each slide
+  const productImages = [
+    "/pro.png", // Proactive Trading
+    'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&h=600&fit=crop&auto=format', // Modern Laptops
+    'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w-800&h=600&fit=crop&auto=format', // Cisco Products
+    'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&h=600&fit=crop&auto=format', // Digital Display
+    'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&h=600&fit=crop&auto=format', // TV & Boards
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&auto=format'  // Tech Solutions
   ];
 
   const featureCards = [
@@ -130,48 +115,6 @@ const HeroSection = () => {
   }, [slides.length, isPaused]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            animateStats();
-            setHasAnimated(true);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
-
-  const animateStats = () => {
-    stats.forEach((stat, index) => {
-      let start = 0;
-      const end = stat.value;
-      const duration = 2000;
-      const increment = end / (duration / 16);
-
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          start = end;
-          clearInterval(timer);
-        }
-        setCounts(prev => {
-          const newCounts = [...prev];
-          newCounts[index] = Math.floor(start);
-          return newCounts;
-        });
-      }, 16);
-    });
-  };
-
-  useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (heroRef.current) {
         const rect = heroRef.current.getBoundingClientRect();
@@ -186,100 +129,61 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const handleProductHover = (index: number) => {
-    setHoveredProduct(index);
-    setIsPaused(true);
-    setCurrentSlide(index);
-  };
-
-  const handleProductLeave = () => {
-    setHoveredProduct(null);
-    setIsPaused(false);
-  };
-
   return (
     <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-orange-50">
       <style>{`
-      @keyframes text-glide {
+      @keyframes slide-in-right-to-left {
   0% { 
     opacity: 0; 
-    transform: translateX(-20px) translateY(0);
-    letter-spacing: -0.5px;
+    transform: translateX(100px) scale(0.95);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-10px) scale(1.02);
   }
   100% { 
     opacity: 1; 
-    transform: translateX(0) translateY(0);
-    letter-spacing: normal;
+    transform: translateX(0) scale(1);
   }
 }
 
-@keyframes slide-in-left-smooth {
-  0% { 
-    opacity: 0; 
-    transform: translateX(-30px); 
-    filter: blur(5px);
-  }
-  100% { 
-    opacity: 1; 
-    transform: translateX(0); 
-    filter: blur(0);
-  }
-}
-
-@keyframes slide-out-left {
+@keyframes fade-out {
   0% { 
     opacity: 1; 
-    transform: translateX(0); 
+    transform: scale(1);
   }
   100% { 
     opacity: 0; 
-    transform: translateX(-30px); 
+    transform: scale(0.95);
   }
 }
 
-@keyframes slide-out-right {
-  0% { 
-    opacity: 1; 
-    transform: translateX(0); 
-  }
-  100% { 
-    opacity: 0; 
-    transform: translateX(30px); 
-  }
+.animate-slide-in-right { 
+  animation: slide-in-right-to-left 0.8s ease-out forwards; 
 }
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-
-        @keyframes orbit {
-          from { transform: rotate(0deg) translateX(240px) rotate(0deg); }
-          to { transform: rotate(360deg) translateX(240px) rotate(-360deg); }
-        }
-
-        @keyframes pulse-ring {
-          0%, 100% { transform: scale(0.95); opacity: 0.5; }
-          50% { transform: scale(1.05); opacity: 0.3; }
-        }
-
-        @keyframes slide-in-left {
-          from { 
+.animate-fade-out { 
+  animation: fade-out 0.5s ease-out forwards; 
+}
+        @keyframes text-glide {
+          0% { 
             opacity: 0; 
-            transform: translateX(-40px) translateY(0); 
+            transform: translateX(-20px) translateY(0);
+            letter-spacing: -0.5px;
           }
-          to { 
+          100% { 
             opacity: 1; 
-            transform: translateX(0) translateY(0); 
+            transform: translateX(0) translateY(0);
+            letter-spacing: normal;
           }
         }
 
         @keyframes slide-in-left-smooth {
-          from { 
+          0% { 
             opacity: 0; 
             transform: translateX(-30px); 
             filter: blur(5px);
           }
-          to { 
+          100% { 
             opacity: 1; 
             transform: translateX(0); 
             filter: blur(0);
@@ -287,16 +191,55 @@ const HeroSection = () => {
         }
 
         @keyframes slide-in-right-smooth {
-          from { 
+          0% { 
             opacity: 0; 
             transform: translateX(30px); 
             filter: blur(5px);
           }
-          to { 
+          100% { 
             opacity: 1; 
             transform: translateX(0); 
             filter: blur(0);
           }
+        }
+
+        @keyframes slide-image-right-to-left {
+          0% { 
+            opacity: 0; 
+            transform: translateX(80px) translateY(20px) scale(0.9);
+            filter: blur(10px);
+          }
+          50% { 
+            opacity: 0.7; 
+            transform: translateX(20px) translateY(5px) scale(1.05);
+            filter: blur(2px);
+          }
+          100% { 
+            opacity: 1; 
+            transform: translateX(0) translateY(0) scale(1);
+            filter: blur(0);
+          }
+        }
+
+        @keyframes image-zoom-in {
+          0% { 
+            opacity: 0; 
+            transform: scale(0.85) translateX(40px);
+          }
+          100% { 
+            opacity: 1; 
+            transform: scale(1) translateX(0);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse-ring {
+          0%, 100% { transform: scale(0.95); opacity: 0.5; }
+          50% { transform: scale(1.05); opacity: 0.3; }
         }
 
         @keyframes fade-in {
@@ -325,28 +268,9 @@ const HeroSection = () => {
           100% { transform: translateX(-50%); }
         }
 
-        @keyframes orbit-smooth {
-          from { transform: rotate(0deg) translateX(240px) rotate(0deg) scale(1); }
-          50% { transform: rotate(180deg) translateX(240px) rotate(-180deg) scale(1.1); }
-          to { transform: rotate(360deg) translateX(240px) rotate(-360deg) scale(1); }
-        }
-
         @keyframes gradient-shift {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
-        }
-
-        @keyframes text-glide {
-          0% { 
-            opacity: 0; 
-            transform: translateX(-20px) translateY(0);
-            letter-spacing: -0.5px;
-          }
-          100% { 
-            opacity: 1; 
-            transform: translateX(0) translateY(0);
-            letter-spacing: normal;
-          }
         }
 
         @keyframes button-slide {
@@ -374,19 +298,24 @@ const HeroSection = () => {
           }
         }
 
+        @keyframes slide-in-from-right {
+          0% { 
+            opacity: 0; 
+            transform: translateX(100px) scale(0.8);
+          }
+          100% { 
+            opacity: 1; 
+            transform: translateX(0) scale(1);
+          }
+        }
+
         .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-glow { animation: glow 4s ease-in-out infinite; }
-        .animate-orbit { animation: orbit-smooth 20s linear infinite; }
         .animate-pulse-ring { animation: pulse-ring 3s ease-in-out infinite; }
-        .animate-slide-in-left { animation: slide-in-left 0.8s ease-out forwards; }
         .animate-fade-in { animation: fade-in 1s ease-out forwards; }
         .animate-morph { animation: morph 8s ease-in-out infinite; }
         .animate-zoom-in { animation: zoom-in 0.8s ease-out forwards; }
         .animate-fade-zoom { animation: fade-zoom 0.8s ease-out forwards; }
-
-        .animate-orbit.paused {
-          animation-play-state: paused;
-        }
+        .animate-slide-from-right { animation: slide-in-from-right 0.8s ease-out forwards; }
 
         .scroll-container {
           animation: scroll-left 40s linear infinite;
@@ -402,7 +331,6 @@ const HeroSection = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          animation: gradient-shift 4s ease infinite;
         }
 
         .glass-card {
@@ -429,55 +357,50 @@ const HeroSection = () => {
                       linear-gradient(135deg, #3b82f6, #f97316) border-box;
           border: 2px solid transparent;
         }
-
-        /* Add for better performance */
-        .orbit-item {
-          transform-style: preserve-3d;
-          backface-visibility: hidden;
-        }
       `}</style>
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs - Removed mouse movement but keep glow animation */}
+        {/* Gradient Orbs */}
         <div
-          className="absolute w-[800px] h-[800px] rounded-full "
+          className="absolute w-[800px] h-[800px] rounded-full"
           style={{
             background: 'radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)',
-            left: '10%',  // Fixed position
-            top: '5%',    // Fixed position
+            left: '5%',
+            top: '5%',
           }}
-        />
-        <div
-          className="absolute w-[600px] h-[600px] rounded-full "
+         />
+
+      <div 
+      className="absolute w-[600px] h-[600px] rounded-full"
           style={{
             background: 'radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%)',
-            right: '5%',    // Fixed position
-            bottom: '10%',  // Fixed position
+            right: '5%',
+            bottom: '10%',
+            animationDelay: '2s',
+          }}
+        />
+         <div 
+      className="absolute w-[600px] h-[600px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)',
+            right: '5%',
+            top: '20%',
             animationDelay: '2s',
           }}
         />
 
-        {/* Subtle Grid Pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 9px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 6px)
-            `,
-            backgroundSize: '60px 60px'
-          }}
-        />
+       
+        
       </div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
 
-          {/* Left Content - Updated with smooth left-to-right animations */}
+          {/* Left Content */}
           <div className={`space-y-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
-            {/* Badge - Smooth left-to-right with bounce */}
+            {/* Badge */}
             <div
               className="inline-flex items-center gap-2 px-5 py-2.5 glass-card rounded-full"
               style={{ 
@@ -490,49 +413,49 @@ const HeroSection = () => {
               <span className="text-sm text-gray-700 font-semibold">Official Authorized Distributor</span>
             </div>
 
-            {/* Dynamic Title - Animated for ALL slides */}
-<div className="space-y-5">
-  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-    <span 
-      className="text-gray-800 block"
-      style={{
-        animation: 'text-glide 0.8s ease-out forwards',
-        animationDelay: '0.2s',
-        opacity: 0,
-        animationFillMode: 'forwards'
-      }}
-    >
-      Welcome to
-    </span>
-    <span 
-      className="text-gradient block mt-2"
-      key={`title-${currentSlide}`} // Add key to trigger animation on slide change
-      style={{
-        animation: 'text-glide 0.8s ease-out forwards',
-        animationDelay: '0.4s',
-        opacity: 0,
-        animationFillMode: 'forwards'
-      }}
-    >
-      {slides[currentSlide].title}
-    </span>
-  </h1>
+            {/* Dynamic Title */}
+            <div className="space-y-5">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+                <span 
+                  className="text-gray-800 block"
+                  style={{
+                    animation: 'text-glide 0.8s ease-out forwards',
+                    animationDelay: '0.2s',
+                    opacity: 0,
+                    animationFillMode: 'forwards'
+                  }}
+                >
+                  Welcome to
+                </span>
+                <span 
+                  className="text-gradient block mt-2"
+                  key={`title-${currentSlide}`}
+                  style={{
+                    animation: 'text-glide 0.8s ease-out forwards',
+                    animationDelay: '0.4s',
+                    opacity: 0,
+                    animationFillMode: 'forwards'
+                  }}
+                >
+                  {slides[currentSlide].title}
+                </span>
+              </h1>
 
-  <p 
-    className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed"
-    key={`desc-${currentSlide}`} // Add key to trigger animation on slide change
-    style={{
-      animation: 'slide-in-left-smooth 0.8s ease-out forwards',
-      animationDelay: '0.6s',
-      opacity: 0,
-      animationFillMode: 'forwards'
-    }}
-  >
-    {slides[currentSlide].description}
-  </p>
-</div>
+              <p 
+                className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed"
+                key={`desc-${currentSlide}`}
+                style={{
+                  animation: 'slide-in-left-smooth 0.8s ease-out forwards',
+                  animationDelay: '0.6s',
+                  opacity: 0,
+                  animationFillMode: 'forwards'
+                }}
+              >
+                {slides[currentSlide].description}
+              </p>
+            </div>
 
-            {/* CTA Buttons - Smooth right-to-left slide */}
+            {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <button 
                 className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-orange-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/40 hover:scale-105"
@@ -566,7 +489,7 @@ const HeroSection = () => {
               </button>
             </div>
 
-            {/* Slide Indicators - Fade in from left */}
+            {/* Slide Indicators */}
             <div 
               className="flex gap-2 pt-4"
               style={{
@@ -590,143 +513,64 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content - 3D Product Showcase */}
-          <div className={`relative h-[500px] lg:h-[700px] ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-            {/* Central Glow */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-96 h-96 rounded-full bg-gradient-to-br from-blue-400/20 to-orange-400/20 blur-3xl animate-pulse" />
-            </div>
-
-            {/* Orbiting Products */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-[480px] h-[480px] md:w-[600px] md:h-[600px]">
-                {/* Enhanced Orbit Rings */}
-                <div className="absolute inset-0 rounded-full border-2 border-blue-200/20 animate-pulse-ring" />
-                <div className="absolute inset-8 rounded-full border border-orange-200/15 animate-pulse-ring" style={{ animationDelay: '1s' }} />
-                <div className="absolute inset-16 rounded-full border border-blue-100/10" />
-
-                {/* Enhanced Center Product */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="relative w-60 h-60 md:w-72 md:h-72 glass-card rounded-3xl p-6 transition-all duration-500 cursor-pointer hover:scale-105 shadow-2xl overflow-hidden group"
-                    key={currentSlide}
-                    style={{
-                      animation: 'fade-zoom 0.8s ease-out forwards'
-                    }}
-                  >
-                    <img
-                      src={products[currentSlide % products.length].image}
-                      alt="Featured Product"
-                      className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-6 py-2 glass-card rounded-full shadow-lg backdrop-blur-lg border border-white/20">
-                      <span className="text-sm font-bold bg-gradient-to-r from-blue-600 to-orange-600 bg-clip-text text-transparent">
-                        {products[currentSlide % products.length].name}
-                      </span>
+          {/* Right Content - Single Animated Image */}
+          <div className={`relative h-[500px] lg:h-[700px] flex items-center justify-end ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+            <div className="relative w-full max-w-2xl">
+              {/* Main Product Image Container */}
+              <div 
+                key={currentSlide}
+                className="relative glass-card rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 group cursor-pointer animate-slide-in-right"
+                style={{
+                  width: '100%',
+                  height: '500px',
+                  maxHeight: '600px'
+                }}
+              >
+                {/* Product Image */}
+                <img
+                  src={productImages[currentSlide]}
+                  alt={slides[currentSlide].title}
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Image Title Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-orange-500 flex items-center justify-center text-white shadow-lg">
+                      {slides[currentSlide].icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-1">{slides[currentSlide].title}</h3>
+                      <p className="text-gray-200 text-sm max-w-md">{slides[currentSlide].description.substring(0, 100)}...</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Enhanced Orbiting Items */}
-                {products.map((product, idx) => {
-                  const angle = (idx * 72) * (Math.PI / 180);
-                  const radius = 240;
-                  const x = Math.cos(angle) * radius;
-                  const y = Math.sin(angle) * radius;
-                  
-                  return (
-                    <div
-                      key={idx}
-                      className={`absolute w-24 h-24 md:w-28 md:h-28 glass-card rounded-2xl p-3 cursor-pointer transition-all duration-700 ${
-                        !isPaused ? 'animate-orbit' : ''
-                      } hover:!scale-150 hover:!shadow-2xl hover:!z-50 hover:!border-orange-400/50`}
-                      style={{
-                        top: 'calc(50% - 48px)',
-                        left: 'calc(50% - 48px)',
-                        transform: `translate(${x}px, ${y}px)`,
-                        animationDelay: `${idx * -4}s`,
-                        animationDuration: '20s',
-                        transformOrigin: 'center',
-                        willChange: 'transform, z-index',
-                        border: '1px solid rgba(255, 255, 255, 0.3)',
-                        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
-                      }}
-                      onMouseEnter={() => handleProductHover(idx)}
-                      onMouseLeave={handleProductLeave}
-                    >
-                      <div className="relative w-full h-full overflow-hidden rounded-xl group">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center p-3">
-                          <span className="text-xs text-white font-bold text-center drop-shadow-lg">{product.name}</span>
-                        </div>
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-7 h-7 bg-gradient-to-br from-blue-500 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg border-2 border-white">
-                        {idx + 1}
-                      </div>
-                      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/20 to-orange-500/20 blur-md" />
-                      </div>
-                    </div>
-                  );
-                })}
+                {/* Floating Badge */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-orange-500 flex items-center justify-center text-white text-lg font-bold shadow-2xl animate-float border-4 border-white">
+                  <span className="text-center px-2">Featured</span>
+                </div>
 
-                {/* Connection Lines */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                  <defs>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
-                      <stop offset="50%" stopColor="#f97316" stopOpacity="0.3" />
-                      <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
-                    </linearGradient>
-                  </defs>
-                  <circle 
-                    cx="50%" 
-                    cy="50%" 
-                    r="240" 
-                    fill="none" 
-                    stroke="url(#lineGradient)" 
-                    strokeWidth="0.5" 
-                    strokeDasharray="4,4"
-                  />
-                </svg>
+                {/* Glow Effect */}
+                <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 to-orange-500/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
               </div>
+
+              {/* Background Decorative Elements */}
+              <div className="absolute -z-10 -left-8 -bottom-8 w-[120%] h-[120%] bg-gradient-to-br from-blue-100/20 to-orange-100/20 rounded-3xl blur-xl" />
+              
+              {/* Subtle Floating Elements */}
+              <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-gradient-to-br from-blue-300/20 to-orange-300/20 animate-pulse" />
+              <div className="absolute -bottom-8 -left-6 w-40 h-40 rounded-full bg-gradient-to-br from-orange-300/20 to-blue-300/20 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div
-          ref={statsRef}
-          className={`grid grid-cols-2 lg:grid-cols-4 gap-6 mt-20 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}
-          style={{ animationDelay: '0.5s' }}
-        >
-          {stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="glass-card glass-card-hover rounded-2xl p-8 text-center group cursor-pointer"
-              style={{
-                animation: 'slide-in-left-smooth 0.8s ease-out forwards',
-                animationDelay: `${0.6 + (idx * 0.1)}s`,
-                opacity: 0,
-                animationFillMode: 'forwards'
-              }}
-            >
-              <div className="text-4xl lg:text-5xl font-bold text-gradient mb-3">
-                {counts[idx].toLocaleString()}{stat.suffix}
-              </div>
-              <p className="text-gray-600 text-sm font-semibold">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
         {/* Scrolling Feature Cards */}
         <div className="mt-24 overflow-hidden">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
             <span 
               className="text-gradient"
               style={{
@@ -736,18 +580,18 @@ const HeroSection = () => {
                 animationFillMode: 'forwards'
               }}
             >
-              Our Product Range
+              Proactive Trading
             </span>
           </h2>
 
           <div className="relative">
-            <div className="flex gap-6 scroll-container">
+            <div className="flex gap-6 scroll-container mb-10" >
               {[...featureCards, ...featureCards].map((card, idx) => (
                 <div
                   key={idx}
                   className="flex-shrink-0 w-[320px] md:w-[380px] glass-card glass-card-hover rounded-3xl p-8 cursor-pointer group"
                 >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform`}>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mb-8 text-white shadow-lg group-hover:scale-110 transition-transform`}>
                     {card.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-gradient transition-all">{card.title}</h3>

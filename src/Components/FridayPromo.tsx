@@ -1,6 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
-import { MessageCircle, Zap, Sparkles, ChevronLeft, ChevronRight, X, ShoppingCart, Star } from 'lucide-react';
+import p1Image from '../assets/printer/gamming.png';
+import p2Image from '../assets/printer/gam.png';
+import p3Image from '../assets/printer/hp.png';
+import p4Image from '../assets/printer/spectra.png';
+import p5Image from '../assets/printer/epson.png';
 
+import { 
+  MessageCircle, 
+  Zap, 
+  Sparkles, 
+  ChevronLeft, 
+  ChevronRight, 
+  X, 
+  ShoppingCart, 
+  Star, 
+  Phone, 
+  Send, 
+  Mail 
+} from 'lucide-react';
 interface Product {
   id: string;
   title: string;
@@ -32,8 +49,8 @@ const FridayPromo = () => {
       discount: 40,
       originalPrice: 89,
       salePrice: 53,
-      specs: ['16K DPI', 'Wireless', 'RGB'],
-      image: 'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=500',
+      specs: ['16K DPI', 'Wireless', 'RGB','16K DPI', 'Wireless', 'RGB'],
+      image: p1Image,
       description: 'Professional gaming mouse with advanced optical sensor and customizable RGB lighting. Perfect for competitive gaming and professional use.',
       features: [
         '16,000 DPI optical sensor',
@@ -52,8 +69,8 @@ const FridayPromo = () => {
       discount: 35,
       originalPrice: 79,
       salePrice: 51,
-      specs: ['7-in-1', '4K HDMI', 'Fast Charge'],
-      image: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=500',
+      specs: ['7-in-1', '4K HDMI', 'Fast Charge','7-in-1', '4K HDMI', 'Fast Charge'],
+      image: p2Image,
       description: 'Versatile 7-in-1 USB-C hub with 4K HDMI output and fast charging capabilities. Expand your connectivity options instantly.',
       features: [
         '4K HDMI @ 60Hz',
@@ -72,8 +89,8 @@ const FridayPromo = () => {
       discount: 45,
       originalPrice: 199,
       salePrice: 110,
-      specs: ['Noise Cancel', '48hrs Battery', 'Premium Sound'],
-      image: 'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=500',
+      specs: ['Noise Cancel', '48hrs Battery', 'Premium Sound','Noise Cancel', '48hrs Battery', 'Premium Sound'],
+      image: p3Image,
       description: 'Premium wireless earbuds with active noise cancellation and exceptional battery life. Immerse yourself in crystal-clear audio.',
       features: [
         'Active Noise Cancellation',
@@ -92,8 +109,8 @@ const FridayPromo = () => {
       discount: 38,
       originalPrice: 169,
       salePrice: 105,
-      specs: ['RGB Backlighting', 'Gateron Switches', 'Aluminum'],
-      image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=500',
+      specs: ['RGB Backlighting', 'Gateron Switches', 'Aluminum','RGB Backlighting', 'Gateron Switches', 'Aluminum'],
+      image: p4Image,
       description: 'Mechanical keyboard with Gateron switches and full RGB backlighting. Built with aluminum frame for durability and style.',
       features: [
         'Gateron mechanical switches',
@@ -112,8 +129,8 @@ const FridayPromo = () => {
       discount: 42,
       originalPrice: 59,
       salePrice: 34,
-      specs: ['65W Power', 'Multi-Device', 'GaN Tech'],
-      image: 'https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=500',
+      specs: ['65W Power', 'Multi-Device', 'GaN Tech','65W Power', 'Multi-Device', 'GaN Tech'],
+      image: p5Image,
       description: 'Compact 65W GaN fast charger with multiple ports. Charge your devices quickly and efficiently with advanced technology.',
       features: [
         '65W total power output',
@@ -133,7 +150,7 @@ const FridayPromo = () => {
       originalPrice: 149,
       salePrice: 100,
       specs: ['4K Resolution', 'Auto Focus', 'Wide Angle'],
-      image: 'https://images.pexels.com/photos/3394651/pexels-photo-3394651.jpeg?auto=compress&cs=tinysrgb&w=500',
+      image: p3Image,
       description: 'Professional 4K webcam with auto focus and wide-angle lens. Perfect for streaming, meetings, and content creation.',
       features: [
         '4K Ultra HD resolution',
@@ -232,7 +249,7 @@ const FridayPromo = () => {
   };
 
   return (
-    <div className="relative bg-gradient-to-br from-[#2a5da5] via-white to-[#e9ecef] overflow-hidden">
+    <div className="relative  overflow-hidden">
       <style>{`
         @keyframes slideInDown {
           from {
@@ -377,17 +394,17 @@ const FridayPromo = () => {
             </button>
 
             <div className="grid md:grid-cols-2 gap-0 h-full">
-              {/* Product Image */}
-              <div className="relative h-80 md:h-full bg-gradient-to-br from-gray-100 to-gray-200">
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
-                  -{selectedProduct.discount}%
-                </div>
-              </div>
+             {/* Product Image - Fixed size */}
+<div className="relative w-full h-70 md:h-96  bg-gradient-to-br from-gray-100 to-gray-200">
+  <img
+    src={selectedProduct.image}
+    alt={selectedProduct.title}
+    className="w-full h-full object-cover"
+  />
+  <div className="absolute top-4 left-4 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
+    -{selectedProduct.discount}%
+  </div>
+</div>
 
               {/* Product Details */}
               <div className="p-6 md:p-8 overflow-y-auto">
@@ -556,11 +573,11 @@ const FridayPromo = () => {
                         onClick={() => openProductModal(product)}
                         className="bg-gradient-to-br from-white to-gray-100 backdrop-blur-sm border border-gray-300/50 rounded-2xl overflow-hidden card-hover group/card cursor-pointer h-full flex flex-col transition-all duration-300"
                       >
-                        <div className="relative h-48 md:h-56 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
+                        <div className="relative h-56 md:h-64 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
                           <img
                             src={product.image}
                             alt={product.title}
-                            className="w-full h-full object-cover transform group-hover/card:scale-110 transition-transform duration-500"
+                            className="w-full h-full object-cover transform group-hover/card:scale-100 transition-transform duration-500"
                           />
 
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
@@ -576,41 +593,105 @@ const FridayPromo = () => {
 
                         <div className="flex-1 p-4 flex flex-col justify-between">
                           <div>
-                            <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#1c4c97] group-hover/card:to-[#ff7b16] group-hover/card:bg-clip-text transition-all duration-300">
-                              {product.title}
-                            </h3>
-
-                            <div className="space-y-1 mb-4">
-                              {product.specs.map((spec, idx) => (
-                                <div
-                                  key={idx}
-                                  className="flex items-center gap-2 text-gray-600 text-xs md:text-sm"
-                                >
-                                  <div className="w-1 h-1 rounded-full bg-[#1c4c97]"></div>
-                                  <span>{spec}</span>
-                                </div>
-                              ))}
-                            </div>
+                            <h3 className="text-lg text-ac font-bold text-gray-900 mb-2 line-clamp-2 text-center group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#1c4c97] group-hover/card:to-[#ff7b16] group-hover/card:bg-clip-text transition-all duration-300">
+  {product.title}
+</h3>
+                             <div className="flex mb-4">
+  {/* Left side specs */}
+  <div className="flex-1 space-y-1">
+    {product.specs.slice(0, Math.ceil(product.specs.length / 2)).map((spec, idx) => (
+      <div
+        key={idx}
+        className="flex items-center gap-2 text-gray-600 text-xs md:text-sm"
+      >
+        <div className="w-1 h-1 rounded-full bg-[#1c4c97]"></div>
+        <span>{spec}</span>
+      </div>
+    ))}
+  </div>
+  
+  {/* Right side specs - aligned to right */}
+  <div className="flex-1 space-y-1 text-right">
+    {product.specs.slice(Math.ceil(product.specs.length / 2)).map((spec, idx) => (
+      <div
+        key={idx}
+        className="flex items-center justify-end gap-2 text-gray-600 text-xs md:text-sm"
+      >
+        <span>{spec}</span>
+        <div className="w-1 h-1 rounded-full bg-[#ff7b16]"></div>
+      </div>
+    ))}
+  </div>
+</div>
                           </div>
 
                           <div className="border-t border-gray-300/50 pt-3 pb-3 mb-3">
-                            <div className="flex items-center gap-2 justify-between">
-                              <div className="flex gap-2">
-                                <span className="text-xl font-bold text-gray-900">
-                                  ${product.salePrice}
-                                </span>
-                                <span className="text-sm text-gray-500 line-through">
-                                  ${product.originalPrice}
-                                </span>
-                              </div>
-                              <div className="text-xs font-bold text-green-600 bg-green-100 px-2 py-1 rounded-md">
-                                Save ${product.originalPrice - product.salePrice}
-                              </div>
-                            </div>
-                          </div>
+  <div className="flex items-center gap-2 justify-between">
+    <div className="flex gap-2">
+      <span className="text-xl font-bold text-gray-900">
+        ${product.salePrice}
+      </span>
+      <span className="text-sm text-gray-500 line-through">
+        ${product.originalPrice}
+      </span>
+    </div>
+    
+   {/* Call-to-Action Icons */}
+<div 
+  className="flex items-center gap-2 justify-between"
+  onClick={(e) => e.stopPropagation()}
+>
+  {/* Call */}
+  <a
+    href="tel:+251911234567"
+    className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 
+               transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
+    title="Call Now"
+  >
+    <Phone className="w-4 h-4" />
+  </a>
+
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/251911234567"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 
+               transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
+    title="WhatsApp"
+  >
+    <MessageCircle className="w-4 h-4" />
+  </a>
+
+  {/* Telegram */}
+  <a
+    href="https://t.me/yourusername"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-2 rounded-lg border border-gray-300 hover:border-blue-500 hover:text-blue-600 
+               transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
+    title="Telegram"
+  >
+    <Send className="w-4 h-4" />
+  </a>
+
+  {/* Email */}
+  <a
+    href="mailto:sales@example.com"
+    className="p-2 rounded-lg border border-gray-300 hover:border-red-500 hover:text-red-600 
+               transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
+    title="Email"
+  >
+    <Mail className="w-4 h-4" />
+  </a>
+
+</div>
+
+  </div>
+</div>
 
                           <button className="w-full py-2.5 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-[#1c4c97]/30 text-sm md:text-base">
-                            Add to Cart
+                            Full Spesifications
                           </button>
                         </div>
                       </div>

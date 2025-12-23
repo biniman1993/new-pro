@@ -236,7 +236,7 @@ const About = () => {
 
 <section className="relative overflow-hidden h-[80vh] pt-[120px] bg-gradient-to-r from-[#1c4c97] to-[#0a0e27]">
 
-  <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] z-0" />
+  <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] z-0" />
   
   {/* Decorative Elements */}
   <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />

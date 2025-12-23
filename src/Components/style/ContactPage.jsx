@@ -42,8 +42,8 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-[#ffffff] pt-24">
       {/* Hero Section */}
-      <section className="relative h-[40vh] pt-20 pb-60 overflow-hidden bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] ">
-        <div className="text-center mt-1">
+      <section className="relative h-[55vh] pt-20 pb-60 overflow-hidden bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] ">
+        <div className="text-center mt-20">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
             <span className="text-[#e47325]">Get</span> In Touch
           </h1>

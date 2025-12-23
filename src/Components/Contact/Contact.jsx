@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Building2, Send, Clock, Users, MessageCircle, Globe, Award, CheckCircle } from 'lucide-react';
-import './Contact.css';
 
 const Contact = () => {
   const [activeSection, setActiveSection] = useState('office');

@@ -87,7 +87,7 @@ export default function TopProducts({ onViewMore }) {
   <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
   <button
     onClick={() => onViewMore && onViewMore(item.name)}
-    className="px-4 py-2 bg-white text-[#ffffff] font-semibold rounded-lg border-2 border-[#ffffff] backdrop-blur-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:scale-105"
+    className="px-4 py-2 bg-white text-[#ffffff] font-semibold rounded-lg border-2  backdrop-blur-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:scale-105"
   >
     View More
   </button>
@@ -110,7 +110,7 @@ export default function TopProducts({ onViewMore }) {
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <button 
-            className="px-8 py-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            className="px-8 py-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold  text-white font-semibold  shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             onClick={() => onViewMore && onViewMore("All")}
           >
             View All Categories

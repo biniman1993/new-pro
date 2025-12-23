@@ -1,23 +1,22 @@
 /* TopMenu Container */
 .topmenu {
   position: fixed;  
-  top: 100px; /* Adjust based on navbar height */
+  top: 100px;
   left: 0;
   width: 100%;
   z-index: 100;
-    background: linear-gradient(to right, #2a5da5, #0a0e27);
-
+  background: linear-gradient(to right, #2a5da5, #0a0e27);
   padding: 10px 0;
   display: flex;
   justify-content: center;
   transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
-
   font-family: 'Inter', sans-serif;
-  font-weight: 500; /* Medium weight for nav items */
+  font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
+
 .topmenu-visible {
   transform: translateY(0);
   opacity: 1;
@@ -29,17 +28,17 @@
   pointer-events: none;
   background: transparent;
 }
+
 /* Horizontal list */
 .topmenu ul {
   display: flex;
-  gap: 15px; /* equal spacing between items */
+  gap: 15px;
   list-style: none;
   margin: 0;
   padding: 0 25px;
   white-space: nowrap;
   position: relative;
-    text-transform: capitalize;
-
+  text-transform: capitalize;
 }
 
 /* Top menu items */
@@ -78,39 +77,95 @@
   transform: translateX(-50%) scaleX(1);
 }
 
-/* Dropdown Menu - appears below the menu item */
-.dropdown-menu {
-  position: absolute;
-  top: 100%; /* start just below the menu item */
-  left: 50%;
-  transform: translateX(-50%) translateY(10px); /* slight offset below */
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1000;
-  min-width: 280px;
-  max-width: 320px;
-  width: max-content;
+/* === ANIMATIONS === */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
-/* Show dropdown */
+@keyframes dropdownFadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  min-width: 280px;
+  max-width: 800px; /* Increased for wider content */
+  width: max-content;
+  animation: dropdownFadeIn 0.3s ease-out forwards;
+}
+
 .dropdown-menu.show {
   opacity: 1;
   pointer-events: all;
   transform: translateX(-50%) translateY(0);
+  animation: dropdownFadeIn 0.3s ease-out forwards;
 }
 
-/* Dropdown Content */
+/* Dropdown Content - SINGLE COLUMN (default) */
 .dropdown-content {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
   backdrop-filter: blur(20px);
-  border-radius: 16px;
   padding: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
               0 4px 20px rgba(255, 152, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* space between cards */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  width: 280px; /* Default width */
+  min-width: 280px;
+}
+
+/* Dropdown Content - TWO COLUMNS (for >5 items) */
+.dropdown-content.multi-column {
+  grid-template-columns: 1fr 1fr; /* Force 2 columns */
+  gap: 12px 20px;
+  width: 550px; /* Wider for 2 columns */
+  min-width: 550px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Staggered animations for 2 columns */
+.dropdown-content.multi-column .dropdown-card:nth-child(odd) { 
+  animation-delay: 0.05s; 
+}
+
+.dropdown-content.multi-column .dropdown-card:nth-child(even) { 
+  animation-delay: 0.15s; 
 }
 
 /* Dropdown cards */
@@ -126,15 +181,8 @@
   position: relative;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(-10px);
-  animation: cardSlideIn 0.4s forwards;
-}
-
-@keyframes cardSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: translateY(-8px);
+  animation: cardSlideIn 0.4s ease-out forwards;
 }
 
 /* Hover effect for each card */
@@ -175,45 +223,61 @@
 }
 
 .dropdown-card:hover .dropdown-card-text {
-  /* Gradient text */
   background: linear-gradient(135deg, #ff9800 0%, #ff6b35 100%);
-  
-  /* Chrome, Safari, Edge */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  /* Firefox */
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-
-  /* Standard property for modern browsers */
   background-clip: text;
-
-  /* Optional: smooth transition */
   transition: all 0.3s ease;
 }
 
-/* Responsive adjustments */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .topmenu ul {
     gap: 20px;
+    overflow-x: auto;
+    padding: 0 15px;
   }
-
+  
+  .topmenu ul li {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  
   .dropdown-menu {
-    min-width: 240px;
-    max-width: 280px;
+    max-width: 320px;
+    min-width: 280px;
   }
-
+  
+  .dropdown-content {
+    width: 280px !important;
+    min-width: 280px !important;
+  }
+  
+  .dropdown-content.multi-column {
+    grid-template-columns: 1fr;
+    width: 280px !important;
+    min-width: 280px !important;
+  }
+  
   .dropdown-card {
     padding: 8px 10px;
   }
-
+  
   .dropdown-card-icon {
     width: 28px;
     height: 28px;
   }
-
+  
   .dropdown-card-text {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topmenu {
+    top: 80px;
+    padding: 8px 0;
   }
 }
