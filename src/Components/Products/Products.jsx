@@ -1,17 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Products.css';
+import { useNavigate } from "react-router-dom";
 
 const Products = React.forwardRef(({ 
   title = "Latest Products", 
   productsData,
-  className = "" 
+  className = "", 
+  onViewMore
 }, ref) => {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
-  
-  // Discount percentages for each card - you can customize these
-  const discountPercentages = ["20%", "15%", "10%", "25%", "5%", "30%", "12%", "18%"];
+  const navigate = useNavigate();
 
+  // Handle Explore More button
+  const handleClick = () => {
+    onViewMore && onViewMore("All"); // optional callback
+    navigate("/Catalog"); // navigate to category page
+  };
+
+  // Intersection Observer for animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -25,6 +32,8 @@ const Products = React.forwardRef(({
     if (containerRef.current) observer.observe(containerRef.current);
     return () => { if (containerRef.current) observer.unobserve(containerRef.current); };
   }, []);
+
+  const discountPercentages = ["20%", "15%", "10%", "25%", "5%", "30%", "12%", "18%"];
 
   return (
     <div className={`prod-section-wrapper`} ref={ref}>
@@ -49,10 +58,9 @@ const Products = React.forwardRef(({
                 className={`prod-card ${isVisible ? 'prod-card-animate' : ''}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Discount Badge - Top Right Corner */}
+                {/* Discount Badge */}
                 <div className="discount-badge">
                   <span className="discount-text">{discountPercentages[index] || "10%"}</span>
-                  
                 </div>
                 
                 {product.image && (
@@ -70,21 +78,25 @@ const Products = React.forwardRef(({
                   </div>
                   <p className="prod-price">{product.price}</p>
                 </div>
+                
                 <button className="prod-cart-btn">Add To Cart</button>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Explore More Button - NEW ROW BELOW CARDS */}
+        {/* Explore More Button */}
         <div className="mt-10 pt-8 text-center">
-          <button className="px-10 py-3 bg-white border-2 border-[#0a0e27] text-[#0a0e27] font-bold  hover:bg-gradient-to-br hover:from-[#1c4c97] hover:to-[#0a0e27] hover:text-white transition-all duration-300 hover:border-transparent">
+          <button
+            className="px-10 py-3 bg-white border-2 border-[#0a0e27] text-[#0a0e27] font-bold hover:bg-gradient-to-br hover:from-[#1c4c97] hover:to-[#0a0e27] hover:text-white transition-all duration-300 hover:border-transparent"
+            onClick={handleClick}
+          >
             Explore More
           </button>
         </div>
       </div>
-      
-      {/* Add CSS styles for discount badge */}
+
+      {/* Discount Badge CSS */}
       <style jsx>{`
         .discount-badge {
           position: absolute;
@@ -110,43 +122,11 @@ const Products = React.forwardRef(({
           font-weight: 900;
           line-height: 1;
         }
-        
-        .discount-label {
-          font-size: 0.7rem;
-          font-weight: 700;
-          letter-spacing: 0.5px;
-          opacity: 0.9;
-        }
-        
+
         @keyframes pulse {
           0% { transform: scale(1); }
           50% { transform: scale(1.05); }
           100% { transform: scale(1); }
-        }
-        
-        .prod-card {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        /* Alternative style for discount badge */
-        .discount-badge.alternative {
-          background: linear-gradient(45deg, #dc2626, #ef4444, #f87171);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
-          padding-top: 8px;
-          padding-bottom: 12px;
-        }
-        
-        /* Another style option */
-        .discount-badge.circle {
-          border-radius: 50%;
-          width: 60px;
-          height: 60px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          background: radial-gradient(circle, #ff0000, #cc0000);
         }
       `}</style>
     </div>

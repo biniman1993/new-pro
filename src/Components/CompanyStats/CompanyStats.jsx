@@ -24,7 +24,7 @@ const CompanyStats = () => {
       title: 'Awards & Recognition',
       description: 'Awarded by Leading Companies Worldwide',
       icon: '🏆',
-      color: '#154085ff'
+      color: '#2a5da5'
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const CompanyStats = () => {
       title: 'Years of Excellence',
       description: 'Years of Industry Leadership',
       icon: '📅',
-      color: '#154085ff'
+      color: '#2a5da5'
     }
   ];
 

@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="footer-grid">
             {/* Company Info */}
             <div className="footer-column">
-              <h2 className="footer-logo">Unique Business Systems</h2>
+              <h2 className="footer-logo">Proactive Trading</h2>
               <p className="footer-description">
                 Your trusted partner for technology solutions and services in Bangladesh. 
                 We provide comprehensive IT support and innovative business solutions.
@@ -153,7 +153,7 @@ const Footer = () => {
          {/* Copyright */}
               <div className="footer-copyright">
             <div className="footer-container">
-              <p>© 2024 Unique Business Systems. All rights reserved.</p>
+              <p>© 2024 Proactive Trading. All rights reserved.</p>
              </div>
             </div>
       </div>

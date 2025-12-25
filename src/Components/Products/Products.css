@@ -139,6 +139,7 @@
 /* Product Info */
 .prod-container .prod-info {
   flex: 1;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 6px;

@@ -20,69 +20,70 @@ const Partners = () => {
     { 
       id: 1, 
       name: "Ethiopian Airlines", 
-      description: "Aviation Excellence Partner", 
+      description: "Aviation Electronics & IT Partner", 
       logo: ethiopianLogo, 
-      modalTitle: "Delivering Quality Electronics with Trusted Service",
-      modalBody: "We are proud to have partnered with Ethiopian Airlines, providing a wide range of high-quality electronic products—including printers, computers, laptops, displays, and more. Our dedication to excellence and reliability has earned us lasting trust, and we continue to deliver solutions that meet the highest standards."
+      modalTitle: "Reliable Electronics & IT Solutions for Aviation",
+      modalBody: "We deliver a wide range of electronic devices and IT solutions to Ethiopian Airlines, including computers, laptops, printers, network tools, servers, switches, monitors, and cables. Our products ensure smooth operations and reliable performance for aviation technology needs."
     },
     { 
       id: 2, 
-      name: "HP", 
-      description: "Computing Solutions Provider", 
+      name: "Ethiopian Commerce Bank", 
+      description: "Banking Technology Solutions", 
       logo: cbe,
-      modalTitle: "Empowering Business with HP Technology",
-      modalBody: "Our partnership with HP has enabled us to deliver cutting-edge computing solutions. From enterprise servers to personal workstations, we provide comprehensive HP products that drive productivity and innovation across industries."
+      modalTitle: "Comprehensive Computing & Networking Solutions",
+      modalBody: "Supporting Ethiopian Commerce Bank with advanced computing tools and IT infrastructure, including servers, desktops, laptops, printers, switches, routers, and networking kits. Our solutions enhance banking operations and drive secure, high-performance systems."
     },
     { 
       id: 3, 
-      name: "Dell", 
-      description: "Enterprise Technology Partner", 
+      name: "Minister of Health", 
+      description: "Healthcare IT & Devices Partner", 
       logo: baw,
-      modalTitle: "Dell Enterprise Solutions Excellence",
-      modalBody: "As a trusted Dell partner, we supply premium enterprise technology solutions including servers, storage systems, and professional workstations. Our commitment ensures reliable, high-performance systems for demanding business environments."
+      modalTitle: "Enterprise Technology for Health Services",
+      modalBody: "Providing the Ministry of Health with reliable IT solutions and electronic devices such as computers, laptops, servers, printers, monitors, and networking equipment. Our solutions ensure healthcare operations run efficiently and securely."
     },
     { 
       id: 4, 
-      name: "Lenovo", 
-      description: "Innovation & Performance", 
+      name: "Addis Ababa University", 
+      description: "Academic Technology & Innovation Partner", 
       logo: aaw,
-      modalTitle: "Lenovo Innovation for Modern Workplaces",
-      modalBody: "Through our partnership with Lenovo, we deliver innovative laptops, desktops, and data center solutions. Our expertise ensures organizations receive reliable technology that enhances productivity and drives digital transformation."
+      modalTitle: "Innovative Technology Solutions for Education",
+      modalBody: "Delivering laptops, desktops, servers, printers, monitors, networking kits, and digital displays to Addis Ababa University. Our technology supports research, learning, and administrative excellence in higher education."
     },
     { 
       id: 5, 
-      name: "Microsoft", 
-      description: "Software & Cloud Solutions", 
+      name: "Office of the Prime Minister", 
+      description: "Software, Cloud & IT Services", 
       logo: caw,
-      modalTitle: "Microsoft Solutions for Digital Success",
-      modalBody: "We provide comprehensive Microsoft solutions including software licenses, cloud services, and enterprise applications. Our partnership ensures businesses have access to cutting-edge tools that empower teams and transform operations."
+      modalTitle: "Digital Transformation Solutions",
+      modalBody: "Providing the Office of the Prime Minister with software, cloud services, laptops, computers, printers, and networking equipment. Our solutions enable efficient digital operations, secure communication, and seamless workflow management."
     },
     { 
       id: 6, 
-      name: "Canon", 
+      name: "Minister of Trade", 
       description: "Imaging & Printing Solutions", 
       logo: daw,
-      modalTitle: "Canon Quality Imaging Solutions",
-      modalBody: "As a Canon partner, we deliver professional-grade printers, scanners, and imaging solutions. Our commitment to quality ensures organizations receive reliable equipment that meets the highest standards of performance and durability."
+      modalTitle: "Professional Imaging & Printing Devices",
+      modalBody: "Delivering high-quality printers, scanners, computers, laptops, network switches, and related IT tools to the Ministry of Trade. Our products ensure reliable imaging and office productivity for trade operations."
     },
     { 
       id: 7, 
-      name: "Apple", 
-      description: "Premium Technology Partner", 
+      name: "Defence Minister", 
+      description: "Advanced Technology & Devices Partner", 
       logo: eaw,
-      modalTitle: "Apple Innovation & Design Excellence",
-      modalBody: "We supply premium Apple products including MacBooks, iMacs, and iPads for creative professionals and enterprises. Our expertise ensures clients receive authentic products with comprehensive support and service excellence."
+      modalTitle: "Premium IT & Electronics for Defense",
+      modalBody: "Supplying the Defence Ministry with premium devices and IT solutions including Apple products, laptops, computers, printers, networking tools, servers, and monitors. Our commitment ensures high performance and operational readiness."
     },
     { 
       id: 8, 
-      name: "Intel", 
-      description: "Processor Technology Leader", 
+      name: "INSA", 
+      description: "Processor & Computing Solutions Leader", 
       logo: faw,
-      modalTitle: "Intel-Powered Performance Solutions",
-      modalBody: "Our partnership with Intel enables us to provide cutting-edge processor technology and computing solutions. We deliver systems powered by the latest Intel innovations, ensuring maximum performance and reliability for our clients."
+      modalTitle: "High-Performance Computing Solutions",
+      modalBody: "Providing INSA with Intel-powered processors, laptops, desktops, servers, networking equipment, printers, monitors, and IT toolkits. Our solutions ensure optimal computing performance and reliable technology infrastructure."
     },
-    
   ];
+
+
   
 
   useEffect(() => {

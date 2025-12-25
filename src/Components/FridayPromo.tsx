@@ -494,9 +494,8 @@ const FridayPromo = () => {
       </div>
 
       <div className="relative z-10">
-        <div className="h-1 bg-gradient-to-r from-[#ff7b16] via-[#1c4c97] to-[#0a0e27] animate-pulse"></div>
 
-        <div className="bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] backdrop-blur-md border-b border-[#1c4c97]/30 py-2 px-4 sm:px-6 lg:px-8 animate-slide-in-down">
+        <div className="bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] backdrop-blur-md border-b border-[#1c4c97]/30 py-6 px-4 sm:px-6 lg:px-8 animate-slide-in-down">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-2">
               <Zap className="w-5 h-5 text-[#ff7b16] animate-bounce" />
@@ -522,32 +521,34 @@ const FridayPromo = () => {
             <div className="hidden sm:block text-white text-xs md:text-sm font-semibold">
               Limited Stock • Free Shipping
             </div>
+            
           </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-white/40 to-gray-100/40 backdrop-blur-sm border-b border-gray-300/50 py-6 px-4 sm:px-6 lg:px-8 animate-slide-in-up">
+            <div className="backdrop-blur-sm border-b border-gray-300/50 py-6 px-4 sm:px-6 lg:px-8 animate-slide-in-up">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-2">
               <div className="w-1 h-6 bg-gradient-to-b from-[#ff7b16] to-transparent rounded-full"></div>
-              <h2 className="text-center text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#1c4c97] via-[#0a0e27] to-[#ff7b16] bg-clip-text text-transparent">
+              <h2 className="text-center text-2xl md:text-3xl font-bold text-white bg-clip-text text-transparent">
                 Friday Special Deals
               </h2>
               <div className="w-1 h-6 bg-gradient-to-b from-[#1c4c97] to-transparent rounded-full"></div>
             </div>
-            <p className="text-center text-gray-600 text-sm">Save up to 45% on premium tech products</p>
+            <p className="text-center text-white text-sm">Save up to 45% on premium tech products</p>
 
             <div className="flex justify-center gap-2 mt-3">
               {[...Array(3)].map((_, i) => (
                 <Sparkles
                   key={i}
                   size={16}
-                  className="text-[#ff7b16] animate-shimmer"
+                  className="text-white animate-shimmer"
                   style={{ animationDelay: `${i * 0.3}s` }}
                 />
               ))}
             </div>
           </div>
         </div>
+        </div>
+
+      
 
         <div className="py-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -636,7 +637,7 @@ const FridayPromo = () => {
       </span>
     </div>
     
-   {/* Call-to-Action Icons */}
+               {/* Call-to-Action Icons */}
 <div 
   className="flex items-center gap-2 justify-between"
   onClick={(e) => e.stopPropagation()}

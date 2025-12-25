@@ -14,8 +14,7 @@ const Catalog = () => {
   // Set initial category from URL or default to first subcategory of Desktop
   const [activeCategory, setActiveCategory] = useState(category || 'BusinessDesktop');
   const [searchQuery, setSearchQuery] = useState('');
-  const [showFilters, setShowFilters] = useState(true);
-  
+const [showFilters, setShowFilters] = useState(false);  
   // Get main category from active subcategory
   const mainCategory = getMainCategory(activeCategory);
   
@@ -537,28 +536,26 @@ const getCategoryFilterOptions = (): Record<string, string[]> => {
             <div className="flex-grow">
               <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
             </div>
-            <button
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center justify-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-700 font-medium hover:bg-gray-50 transition-colors"
-            >
-              <Filter size={18} />
-              {showFilters ? 'Hide Filters' : 'Show Filters'}
-            </button>
+           <button
+  onClick={() => setShowFilters(!showFilters)}
+  className="flex lg:hidden items-center justify-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+>
+  <Filter size={18} />
+  {showFilters ? 'Hide Filters' : 'Show Filters'}
+</button>
           </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left Sidebar - Filters */}
-          {showFilters && (
-            <div className="lg:w-1/4">
-              <CategoryFilters
-                filterOptions={categoryFilterOptions}
-                activeFilters={filters}
-                onFilterChange={handleFilterChange}
-                onClearFilters={clearAllFilters}
-              />
-            </div>
-          )}
+       {/* Left Sidebar - Filters */}
+<div className={`${showFilters ? 'block' : 'hidden'} lg:block lg:w-1/4`}>
+  <CategoryFilters
+    filterOptions={categoryFilterOptions}
+    activeFilters={filters}
+    onFilterChange={handleFilterChange}
+    onClearFilters={clearAllFilters}
+  />
+</div>
 
           {/* Right Content - Products */}
           <div className={`${showFilters ? 'lg:w-3/4' : 'w-full'}`}>

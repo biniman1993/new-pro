@@ -550,9 +550,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Floating Badge */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-orange-500 flex items-center justify-center text-white text-lg font-bold shadow-2xl animate-float border-4 border-white">
-                  <span className="text-center px-2">Featured</span>
-                </div>
+               
 
                 {/* Glow Effect */}
                 <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 to-orange-500/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
@@ -568,47 +566,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Scrolling Feature Cards */}
-        <div className="mt-24 overflow-hidden">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-            <span 
-              className="text-gradient"
-              style={{
-                animation: 'text-glide 0.8s ease-out forwards',
-                animationDelay: '0.2s',
-                opacity: 0,
-                animationFillMode: 'forwards'
-              }}
-            >
-              Proactive Trading
-            </span>
-          </h2>
-
-          <div className="relative">
-            <div className="flex gap-6 scroll-container mb-10" >
-              {[...featureCards, ...featureCards].map((card, idx) => (
-                <div
-                  key={idx}
-                  className="flex-shrink-0 w-[320px] md:w-[380px] glass-card glass-card-hover rounded-3xl p-8 cursor-pointer group"
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mb-8 text-white shadow-lg group-hover:scale-110 transition-transform`}>
-                    {card.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-gradient transition-all">{card.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">{card.description}</p>
-                  <div className="flex items-center gap-2 text-orange-600 text-sm font-semibold group-hover:gap-3 transition-all">
-                    Learn More
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Gradient Fade Edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-50 to-transparent pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-blue-50 to-transparent pointer-events-none" />
-          </div>
-        </div>
+       
       </div>
 
       {/* Bottom Gradient Fade */}

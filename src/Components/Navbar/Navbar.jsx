@@ -21,8 +21,8 @@ const Navbar = () => {
       {/* Center: Navigation Menu */}
       <ul className="menu">
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About Us</Link></li>
-        <li>TopProduct</li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/catalog">Shop</Link></li>
         <li> <Link to="/brand">Brand</Link></li>
         <li><Link to="/contact">Contact Us</Link></li>
       </ul>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { 
   Mail, 
   Phone, 
@@ -14,6 +15,7 @@ import {
   Building2, 
   ShoppingBag, 
   Navigation, 
+  ChevronDown,
   ArrowRight 
 } from 'lucide-react';
 
@@ -50,7 +52,9 @@ const ContactPage = () => {
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
             We're here to help with all your technology needs
           </p>
-        
+         <div className="absolute bottom-[80px] left-1/2 -translate-x-1/2 animate-bounce">
+      <ChevronDown size={32} color="#ffffffff" />
+    </div>
         </div>
       </section>
 
@@ -59,7 +63,8 @@ const ContactPage = () => {
 <div className="-mt-[50px] bg-white backdrop-blur-sm  rounded-2xl p-6 md:p-8 max-w-5xl mx-auto "> 
 <div>
       <p className="text-gray-800 text-base md:text-lg leading-relaxed">
-        MBUZZ has developed long-lasting partnerships with leading technology vendors, 
+        MBUZZ has developed long-lasting partnerships 
+        with leading technology vendors, 
         allowing us to provide best-in-class products and services to our clients. 
         leveraging our specialized pre-sales solution teams, as well as access to 
         

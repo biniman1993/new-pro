@@ -29,9 +29,8 @@
 }
 
 .title-accent {
-background: linear-gradient(135deg, #1c4c97 0%, #0a0e27 100%);
+background: linear-gradient(105deg, #2a5da5 0%, #d47e0e 100%);
   background-clip: text;  
-  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -293,14 +292,15 @@ background: linear-gradient(135deg, #1c4c97 0%, #0a0e27 100%);
 }
 
 .modal-logo {
-  max-width: 150px;
-  max-height: 80px;
+  max-width: 180px;
+  max-height: 110px;
   object-fit: contain;
-  margin-bottom: 20px;
+  margin: 0 auto 20px; /* centers horizontally */
+  display: block;      /* required for margin auto to work */
 }
 
 .modal-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #1a1a1a;
   margin: 0;
