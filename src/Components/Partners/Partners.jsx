@@ -9,12 +9,18 @@ import daw from '../../assets/awardlogo/trad.png';
 import eaw from '../../assets/awardlogo/def.png';
 import faw from '../../assets/awardlogo/insa.png';
 import gaw from '../../assets/awardlogo/trad.png';
-
-
+import { useNavigate } from 'react-router-dom';
 
 const Partners = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedPartner, setSelectedPartner] = useState(null);
+  const navigate = useNavigate(); // Moved inside component
+
+  // Handle click to navigate to About page and scroll to clients section
+  const handleClick = () => {
+    // Navigate to About page with hash to identify clients section
+    navigate("/about#clients");
+  };
 
   const partners = [
     { 
@@ -83,9 +89,6 @@ const Partners = () => {
     },
   ];
 
-
-  
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -114,11 +117,11 @@ const Partners = () => {
 
   return (
     <section className="partners-section">
-    <div className="partners-grid partners-grid-4"></div>
+      <div className="partners-grid partners-grid-4"></div>
       <div className="partners-container">
         <div className="partners-header">
           <h2 className="partners-title">
-             <span className="title-accent">Clients We Served</span>
+            <span className="title-accent">Clients We Served</span>
           </h2>
           <p className="partners-subtitle">
             Collaborating with industry leaders to deliver excellence and innovation
@@ -220,14 +223,17 @@ const Partners = () => {
             </div>
           </div>
         </div>
-        
       )}
-            {/* Explore More Button - NEW ROW BELOW CARDS */}
-<div className="mt-18 mb-6 text-center">
-  <button className="px-10 py-3 bg-white border-2 border-[0a0e27] text-[0a0e27] font-bold rounded-lg hover:bg-gradient-to-br hover:from-[#e67817] hover:to-[#2596be] hover:text-white transition-all duration-300">
-    Explore More
-  </button>
-</div>
+      
+      {/* Explore More Button */}
+      <div className="mt-18 mb-6 text-center">
+        <button 
+          className="px-10 py-3 bg-white border-2 border-[0a0e27] text-[0a0e27] font-bold rounded-lg hover:bg-gradient-to-br hover:from-[#e67817] hover:to-[#2596be] hover:text-white transition-all duration-300"  
+          onClick={handleClick}
+        >
+          Explore More
+        </button>
+      </div>
     </section>
   );
 };

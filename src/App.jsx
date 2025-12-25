@@ -17,6 +17,7 @@ import About from "./Components/About/About.jsx";
 import FridayPromo from "./Components/FridayPromo.js";
 import Aboutwhy from "./Components/About/Why/Aboutwhy.jsx";
 import HeroSection from "./Components/HeroSection.tsx";
+import Contact from "./Components/Contact/Contact.jsx";
 import { 
   laptopsData, 
   gamingProductsData,
@@ -74,6 +75,7 @@ const App = () => {
           
           {/* Other Routes */}
           <Route path="/brand" element={<Brand />} />
+          <Route path="/shop" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<Login />} />
@@ -90,7 +92,7 @@ const App = () => {
 
                 {/* Products sections with refs */}
                 <Products 
-                  title="Top-Rated Performance Laptops" 
+                  title="Top-Rated Laptops" 
                   productsData={laptopsData}
                   ref={laptopsRef}
                 />
