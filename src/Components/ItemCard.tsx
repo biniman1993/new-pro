@@ -1,5 +1,5 @@
-import { ShoppingCart, Package, ArrowRight } from 'lucide-react';
-import type { Product } from '../data/catalogData';
+import { ShoppingCart, Package, ArrowRight } from "lucide-react";
+import type { Product } from "../data/catalogData";
 
 interface ItemCardProps {
   product: Product;
@@ -17,8 +17,8 @@ const ItemCard = ({ product }: ItemCardProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         <div className="absolute top-3 right-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white px-3 py-1 rounded-full text-sm font-semibold">
-  {product.count} in stock
-</div>
+          {product.count} in stock
+        </div>
       </div>
 
       <div className="p-4">
@@ -33,13 +33,18 @@ const ItemCard = ({ product }: ItemCardProps) => {
         {product.specs && product.specs.length > 0 && (
           <div className="mb-3 space-y-1">
             {product.specs.slice(0, 2).map((spec, idx) => (
-              <div key={idx} className="flex items-center gap-2 text-xs text-gray-600">
+              <div
+                key={idx}
+                className="flex items-center gap-2 text-xs text-gray-600"
+              >
                 <Package size={14} className="text-blue-600" />
                 <span>{spec}</span>
               </div>
             ))}
             {product.specs.length > 2 && (
-              <p className="text-xs text-gray-500 mt-2">+ {product.specs.length - 2} more specs</p>
+              <p className="text-xs text-gray-500 mt-2">
+                + {product.specs.length - 2} more specs
+              </p>
             )}
           </div>
         )}
@@ -50,14 +55,19 @@ const ItemCard = ({ product }: ItemCardProps) => {
               <span className="text-lg font-bold text-gray-900">
                 ${product.price.toLocaleString()}
               </span>
-              <span className="text-xs text-gray-500">Ask for bulk pricing</span>
+              <span className="text-xs text-gray-500">
+                Ask for bulk pricing
+              </span>
             </div>
           )}
-         <button className="flex items-center gap-2 bg-gradient-to-r from-[#1c4c97] via-[#1c4c97] to-[#1c4c97] hover:from-[#ff7b16] hover:via-[#1c4c97] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-200 group/btn">
-  <ShoppingCart size={16} />
-  <span className="hidden sm:inline">Add</span>
-  <ArrowRight size={14} className="opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-</button>
+          <button className="flex items-center gap-2 bg-gradient-to-r from-[#1c4c97] via-[#1c4c97] to-[#1c4c97] hover:from-[#ff7b16] hover:via-[#1c4c97] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-200 group/btn">
+            <ShoppingCart size={16} />
+            <span className="hidden sm:inline">Add</span>
+            <ArrowRight
+              size={14}
+              className="opacity-0 group-hover/btn:opacity-100 transition-opacity"
+            />
+          </button>
         </div>
       </div>
     </div>

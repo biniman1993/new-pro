@@ -1,30 +1,89 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
-import { useNavigate } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import { useNavigate, NavLink } from 'react-router-dom';
+
+// Move CustomNavLink OUTSIDE the Navbar component
+const CustomNavLink = ({ to, children, ...props }) => {
+  const handleClick = () => {
+    // Only scroll to top if we're staying on the same page
+    if (window.location.pathname === to) {
+      scrollToTop();
+    }
+  };
+
+  return (
+    <NavLink 
+      to={to} 
+      onClick={handleClick}
+      className={({ isActive }) => 
+        `nav-link ${isActive ? 'active' : ''}`
+      }
+      {...props}
+    >
+      {children}
+    </NavLink>
+  );
+};
+
+// Also move scrollToTop function outside if it's only used by CustomNavLink
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   const handleSignIn = () => {
     navigate('/login');
+    scrollToTop();
+  };
+
+  // If you need a local scrollToTop for other elements, keep this one
+  const localScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
     <nav className="navbar">
       {/* Left: Logo */}
-      <div className="logo">
+      <div className="logo" onClick={localScrollToTop} style={{ cursor: 'pointer' }}>
         <img src={logo} alt="Logo" />
       </div>
 
       {/* Center: Navigation Menu */}
       <ul className="menu">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/shop">Shop</Link></li>
-        <li> <Link to="/brand">Brand</Link></li>
-        <li><Link to="/contact">Contact Us</Link></li>
+        <li>
+          <CustomNavLink to="/" end>
+            Home
+          </CustomNavLink>
+        </li>
+        <li>
+          <CustomNavLink to="/about">
+            About
+          </CustomNavLink>
+        </li>
+        <li>
+          <CustomNavLink to="/shop">
+            Shop
+          </CustomNavLink>
+        </li>
+        <li>
+          <CustomNavLink to="/brand">
+            Brand
+          </CustomNavLink>
+        </li>
+        <li>
+          <CustomNavLink to="/contact">
+            Contact Us
+          </CustomNavLink>
+        </li>
       </ul>
 
       {/* Search Container */}
@@ -53,7 +112,11 @@ const Navbar = () => {
 
       {/* Right: Phone and Email */}
       <div className="navbar-right">
-        <a href="tel:+1234567890" className="contact-info phone-link">
+        <a 
+          href="tel:+1234567890" 
+          className="contact-info phone-link"
+          onClick={localScrollToTop}
+        >
           <div className="icon-wrapper">
             <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -62,7 +125,11 @@ const Navbar = () => {
           <span className="contact-text">+ (251) 911 517 628</span>
         </a>
 
-        <a href="mailto:info@example.com" className="contact-info email-link">
+        <a 
+          href="mailto:info@example.com" 
+          className="contact-info email-link"
+          onClick={localScrollToTop}
+        >
           <div className="icon-wrapper">
             <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>

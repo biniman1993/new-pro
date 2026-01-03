@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import './Aboutwhy.css';
 
-const About = () => {
+const Aboutwhy = () => {  // Changed component name to avoid confusion
   const whyRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [animatedCards, setAnimatedCards] = useState([]);
@@ -71,7 +71,7 @@ const About = () => {
           whyChooseUs.forEach((_, index) => {
             setTimeout(() => {
               setAnimatedCards(prev => [...prev, index]);
-            }, index * 100); // 100ms delay between each card
+            }, index * 100);
           });
         }
       },
@@ -86,50 +86,50 @@ const About = () => {
   }, []);
 
   return (
-    <div className="about-container">
-      <div className="tech-background">
-        <div className="circuit-line line-1"></div>
-        <div className="circuit-line line-2"></div>
-        <div className="circuit-line line-3"></div>
-        <div className="floating-dot dot-1"></div>
-        <div className="floating-dot dot-2"></div>
-        <div className="floating-dot dot-3"></div>
-        <div className="floating-dot dot-4"></div>
+    <div className="aboutwhy-container">  {/* Unique class */}
+      <div className="aboutwhy-tech-background">  {/* Unique class */}
+        <div className="aboutwhy-circuit-line aboutwhy-line-1"></div>
+        <div className="aboutwhy-circuit-line aboutwhy-line-2"></div>
+        <div className="aboutwhy-circuit-line aboutwhy-line-3"></div>
+        <div className="aboutwhy-floating-dot aboutwhy-dot-1"></div>
+        <div className="aboutwhy-floating-dot aboutwhy-dot-2"></div>
+        <div className="aboutwhy-floating-dot aboutwhy-dot-3"></div>
+        <div className="aboutwhy-floating-dot aboutwhy-dot-4"></div>
       </div>
 
-      <main className="content-wrapper">
-        <section ref={whyRef} className="content-section">
-          <h2 className={`section-title ${isVisible ? 'visible' : ''}`}>
+      <main className="aboutwhy-content-wrapper">  {/* Unique class */}
+        <section ref={whyRef} className="aboutwhy-content-section">  {/* Unique class */}
+          <h2 className={`aboutwhy-section-title ${isVisible ? 'aboutwhy-visible' : ''}`}>  {/* Unique class */}
             Why Choose Proactive Trading?
           </h2>
-          <div className="section-content">
-            <p className={isVisible ? 'visible' : ''}>
+          <div className="aboutwhy-section-content">  {/* Unique class */}
+            <p className={`aboutwhy-intro-text ${isVisible ? 'aboutwhy-visible' : ''}`}>  {/* Unique class with text-specific styling */}
               When you partner with Proactive Trading, you're choosing more than a supplier—you're
               choosing a committed technology partner dedicated to your success. Here's what sets us apart:
             </p>
           </div>
-          <div className="why-choose-list">
+          <div className="aboutwhy-choose-list">  {/* Unique class */}
             {whyChooseUs.map((item, index) => (
               <div 
                 key={index} 
-                className={`why-choose-item ${animatedCards.includes(index) ? 'animate' : ''}`}
+                className={`aboutwhy-choose-item ${animatedCards.includes(index) ? 'aboutwhy-animate' : ''}`}  
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="why-icon-wrapper">
-                  <div className="why-icon">{item.icon}</div>
-                  <div className="icon-glow"></div>
+                <div className="aboutwhy-icon-wrapper">  {/* Unique class */}
+                  <div className="aboutwhy-icon">{item.icon}</div>
+                  <div className="aboutwhy-icon-glow"></div>  {/* Unique class */}
                 </div>
-                <div className="why-text">
-                  <h3 className="why-title">{item.title}</h3>
-                  <p className="why-description">{item.description}</p>
+                <div className="aboutwhy-text">  {/* Unique class */}
+                  <h3 className="aboutwhy-title">{item.title}</h3>
+                  <p className="aboutwhy-description">{item.description}</p>
                 </div>
-                <div className="card-hover-effect"></div>
+                <div className="aboutwhy-card-hover-effect"></div>  {/* Unique class */}
               </div>
             ))}
           </div>
-          <div className={`highlight-box ${isVisible ? 'animate' : ''}`}>
-            <div className="highlight-icon-wrapper">
-              <CheckCircle size={24} className="highlight-icon" />
+          <div className={`aboutwhy-highlight-box ${isVisible ? 'aboutwhy-animate' : ''}`}>  {/* Unique class */}
+            <div className="aboutwhy-highlight-icon-wrapper">  {/* Unique class */}
+              <CheckCircle size={24} className="aboutwhy-highlight-icon" />  {/* Unique class */}
             </div>
             <span>
               <strong>Join 2000+ Organizations</strong> who trust Proactive Trading as their
@@ -143,4 +143,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Aboutwhy;

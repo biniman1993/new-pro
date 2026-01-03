@@ -20,7 +20,6 @@ const Filters = ({ filters, onFiltersChange, maxPrice }: FiltersProps) => {
   return (
     <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm mb-10 max-w-4xl mx-auto">
       <div className="flex flex-col md:flex-row items-center gap-8 justify-between">
-        
         {/* Custom Range Slider */}
         <div className="w-full md:w-2/3 space-y-4">
           <div className="flex justify-between text-sm font-medium text-gray-600">
@@ -29,16 +28,18 @@ const Filters = ({ filters, onFiltersChange, maxPrice }: FiltersProps) => {
               ${filters.priceRange[0]} - ${filters.priceRange[1]}
             </span>
           </div>
-          <input 
+          <input
             type="range"
             min={0}
             max={maxPrice}
             step={50}
             value={filters.priceRange[1]}
-            onChange={(e) => onFiltersChange({ 
-              ...filters, 
-              priceRange: [0, parseInt(e.target.value)] 
-            })}
+            onChange={(e) =>
+              onFiltersChange({
+                ...filters,
+                priceRange: [0, parseInt(e.target.value)],
+              })
+            }
             className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#1c4c97] focus:outline-none focus:ring-2 focus:ring-[#1c4c97]/20"
           />
         </div>
@@ -48,7 +49,9 @@ const Filters = ({ filters, onFiltersChange, maxPrice }: FiltersProps) => {
           <button
             role="switch"
             aria-checked={filters.inStock}
-            onClick={() => onFiltersChange({ ...filters, inStock: !filters.inStock })}
+            onClick={() =>
+              onFiltersChange({ ...filters, inStock: !filters.inStock })
+            }
             className={cn(
               "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50",
               filters.inStock ? "bg-[#1c4c97]" : "bg-gray-200"
@@ -61,11 +64,15 @@ const Filters = ({ filters, onFiltersChange, maxPrice }: FiltersProps) => {
               )}
             />
           </button>
-          <label className="cursor-pointer font-medium text-gray-700" onClick={() => onFiltersChange({ ...filters, inStock: !filters.inStock })}>
+          <label
+            className="cursor-pointer font-medium text-gray-700"
+            onClick={() =>
+              onFiltersChange({ ...filters, inStock: !filters.inStock })
+            }
+          >
             In Stock Only
           </label>
         </div>
-
       </div>
     </div>
   );

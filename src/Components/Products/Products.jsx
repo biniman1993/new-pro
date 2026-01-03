@@ -6,16 +6,50 @@ const Products = React.forwardRef(({
   title = "Latest Products", 
   productsData,
   className = "", 
-  onViewMore
+  onViewMore,
+  category = "all"  // Add category prop with default value
 }, ref) => {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
   const navigate = useNavigate();
 
-  // Handle Explore More button
+ 
+
+  // Map Products section titles to TopMenu subcategories
+  const getTopMenuSubcategory = (title) => {
+    const titleToSubcategoryMap = {
+      // Map "Printer Equipment" to specific printer subcategories
+      "Printer Equipment": "InkjetPrinter", // First printer subcategory
+      
+      // Map "Top-Rated Laptops" to specific laptop subcategories  
+      "Top-Rated Laptops": "BusinessLaptop", // First laptop subcategory
+      
+      // Map "Desktop Products" to specific desktop subcategories
+      "Desktop Products": "BusinessDesktop", // First desktop subcategory
+      
+      // Map "Monitor Equipment" to specific monitor subcategories
+      "Monitor Equipment": "FullHDMonitor", // First monitor subcategory
+      
+      // Map "Display Equipment" to specific display subcategories
+      "Display Equipment": "LEDDigitalDisplay", // First display subcategory
+      
+      // Default fallback
+      "Latest Products": "BusinessDesktop"
+    };
+    
+    return titleToSubcategoryMap[title] || "BusinessDesktop";
+  };
+
+  // Handle Explore More button - UPDATED
   const handleClick = () => {
-    onViewMore && onViewMore("All"); // optional callback
-    navigate("/Catalog"); // navigate to category page
+    // Call the onViewMore callback with the category
+    onViewMore && onViewMore(category);
+    
+    // Get the TopMenu subcategory for this Products section title
+    const subcategory = getTopMenuSubcategory(title);
+    
+    // Navigate to the SAME URL as TopMenu uses
+    navigate(`/Catalog/${subcategory}`);
   };
 
   // Intersection Observer for animation

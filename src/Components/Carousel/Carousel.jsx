@@ -12,7 +12,7 @@ import img7 from "../../assets/cisco.jpg";
 
 const slides = [
   {
-    image: img2,
+    image: img1,
     title: "Proactive Trading",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae neque ac lorem ultrices faucibus. Integer tincidunt, odio in dignissim aliquet, lacus odio ullamcorper nibh, a feugiat lorem sapien eget turpis."
   },

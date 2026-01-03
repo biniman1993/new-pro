@@ -50,24 +50,20 @@ const About = () => {
   }, []);
 
   // ADD this useEffect for hash navigation:
-  useEffect(() => {
-    // Check if URL has #clients hash (when coming from Partners page)
-    if (location.hash === '#clients') {
-      // Set active tab to clients
-      setActiveTab('clients');
-      
-      // Scroll to clients section after a short delay
-      setTimeout(() => {
-        if (clientsRef.current) {
-          clientsRef.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }, 100);
-    }
-  }, [location]); // This runs when location changes
-
+useEffect(() => {
+  if (location.hash === "#clients") {
+    
+    // Use requestAnimationFrame for better performance
+    requestAnimationFrame(() => {
+      if (clientsRef.current) {
+        clientsRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  }
+}, [location]);
   // Scroll to section when tab is clicked
   const scrollToSection = (sectionId) => {
     const refs = {

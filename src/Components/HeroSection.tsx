@@ -1,5 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
-import { Monitor, Server, Wifi, Tv, Cpu, Settings, ChevronRight, Play, Smartphone, Headphones, Camera } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import {
+  Monitor,
+  Server,
+  Wifi,
+  Tv,
+  Cpu,
+  Settings,
+  ChevronRight,
+  Play,
+  Smartphone,
+  Headphones,
+  Camera,
+} from "lucide-react";
 
 interface SlideContent {
   title: string;
@@ -17,89 +29,102 @@ const HeroSection = () => {
   const slides: SlideContent[] = [
     {
       title: "Proactive Trading",
-      description: "Your trusted partner for premium electronics and technology solutions across Ethiopia. Official distributors of leading global brands.",
-      icon: <Cpu className="w-8 h-8" />
+      description:
+        "Your trusted partner for premium electronics and technology solutions across Ethiopia. Official distributors of leading global brands.",
+      icon: <Cpu className="w-8 h-8" />,
     },
     {
       title: "Modern Laptops",
-      description: "High-performance laptops for business and personal use. Latest processors, premium displays, and enterprise-grade security features.",
-      icon: <Monitor className="w-8 h-8" />
+      description:
+        "High-performance laptops for business and personal use. Latest processors, premium displays, and enterprise-grade security features.",
+      icon: <Monitor className="w-8 h-8" />,
     },
     {
       title: "Cisco Products",
-      description: "Enterprise networking solutions, security systems, and collaboration tools. Certified Cisco products with full warranty support.",
-      icon: <Wifi className="w-8 h-8" />
+      description:
+        "Enterprise networking solutions, security systems, and collaboration tools. Certified Cisco products with full warranty support.",
+      icon: <Wifi className="w-8 h-8" />,
     },
     {
       title: "Digital Display",
-      description: "Interactive displays, digital signage, and presentation solutions for modern offices, retail spaces, and educational institutions.",
-      icon: <Tv className="w-8 h-8" />
+      description:
+        "Interactive displays, digital signage, and presentation solutions for modern offices, retail spaces, and educational institutions.",
+      icon: <Tv className="w-8 h-8" />,
     },
     {
       title: "Modern TV & Boards",
-      description: "Smart conference room solutions, interactive whiteboards, and large format displays for collaborative workspaces.",
-      icon: <Server className="w-8 h-8" />
+      description:
+        "Smart conference room solutions, interactive whiteboards, and large format displays for collaborative workspaces.",
+      icon: <Server className="w-8 h-8" />,
     },
     {
       title: "Advanced Tech Solutions",
-      description: "Complete technology ecosystems - from installation to maintenance, ensuring seamless integration and optimal performance.",
-      icon: <Settings className="w-8 h-8" />
-    }
+      description:
+        "Complete technology ecosystems - from installation to maintenance, ensuring seamless integration and optimal performance.",
+      icon: <Settings className="w-8 h-8" />,
+    },
   ];
 
   // Product images corresponding to each slide
   const productImages = [
     "/pro.png", // Proactive Trading
-    'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&h=600&fit=crop&auto=format', // Modern Laptops
-    'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w-800&h=600&fit=crop&auto=format', // Cisco Products
-    'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&h=600&fit=crop&auto=format', // Digital Display
-    'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&h=600&fit=crop&auto=format', // TV & Boards
-    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&auto=format'  // Tech Solutions
+    "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&h=600&fit=crop&auto=format", // Modern Laptops
+    "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w-800&h=600&fit=crop&auto=format", // Cisco Products
+    "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&h=600&fit=crop&auto=format", // Digital Display
+    "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&h=600&fit=crop&auto=format", // TV & Boards
+    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&auto=format", // Tech Solutions
   ];
 
   const featureCards = [
     {
       title: "Modern Laptops",
-      description: "High-performance laptops for business and personal use. Latest processors, premium displays, and enterprise-grade security features.",
+      description:
+        "High-performance laptops for business and personal use. Latest processors, premium displays, and enterprise-grade security features.",
       icon: <Monitor className="w-8 h-8" />,
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-500 to-cyan-500",
     },
     {
       title: "Cisco Products",
-      description: "Enterprise networking solutions, security systems, and collaboration tools. Certified Cisco products with full warranty support.",
+      description:
+        "Enterprise networking solutions, security systems, and collaboration tools. Certified Cisco products with full warranty support.",
       icon: <Wifi className="w-8 h-8" />,
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-500 to-pink-500",
     },
     {
       title: "Digital Display",
-      description: "Interactive displays, digital signage, and presentation solutions for modern offices, retail spaces, and educational institutions.",
+      description:
+        "Interactive displays, digital signage, and presentation solutions for modern offices, retail spaces, and educational institutions.",
       icon: <Tv className="w-8 h-8" />,
-      gradient: "from-orange-500 to-red-500"
+      gradient: "from-orange-500 to-red-500",
     },
     {
       title: "Smart Servers",
-      description: "Enterprise-grade servers with cloud integration, AI-powered monitoring, and 24/7 support for mission-critical operations.",
+      description:
+        "Enterprise-grade servers with cloud integration, AI-powered monitoring, and 24/7 support for mission-critical operations.",
       icon: <Server className="w-8 h-8" />,
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-green-500 to-emerald-500",
     },
     {
       title: "Mobile Devices",
-      description: "Latest smartphones and tablets with cutting-edge technology, stunning displays, and seamless ecosystem integration.",
+      description:
+        "Latest smartphones and tablets with cutting-edge technology, stunning displays, and seamless ecosystem integration.",
       icon: <Smartphone className="w-8 h-8" />,
-      gradient: "from-yellow-500 to-orange-500"
+      gradient: "from-yellow-500 to-orange-500",
     },
     {
       title: "Audio Systems",
-      description: "Premium audio equipment from headphones to conference systems. Crystal-clear sound for every environment.",
+      description:
+        "Premium audio equipment from headphones to conference systems. Crystal-clear sound for every environment.",
       icon: <Headphones className="w-8 h-8" />,
-      gradient: "from-pink-500 to-rose-500"
+      gradient: "from-pink-500 to-rose-500",
     },
     {
       title: "Security Cameras",
-      description: "Advanced surveillance systems with AI detection, cloud storage, and 4K resolution for complete security coverage.",
+      description:
+        "Advanced surveillance systems with AI detection, cloud storage, and 4K resolution for complete security coverage.",
       icon: <Camera className="w-8 h-8" />,
-      gradient: "from-indigo-500 to-blue-500"
-    }
+      gradient: "from-indigo-500 to-blue-500",
+    },
   ];
 
   useEffect(() => {
@@ -107,7 +132,7 @@ const HeroSection = () => {
 
     const slideInterval = setInterval(() => {
       if (!isPaused) {
-        setCurrentSlide(prev => (prev + 1) % slides.length);
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
       }
     }, 5000);
 
@@ -120,17 +145,20 @@ const HeroSection = () => {
         const rect = heroRef.current.getBoundingClientRect();
         setMousePosition({
           x: (e.clientX - rect.left) / rect.width,
-          y: (e.clientY - rect.top) / rect.height
+          y: (e.clientY - rect.top) / rect.height,
         });
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-orange-50">
+    <section
+      ref={heroRef}
+      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-orange-50"
+    >
       <style>{`
       @keyframes slide-in-right-to-left {
   0% { 
@@ -365,90 +393,96 @@ const HeroSection = () => {
         <div
           className="absolute w-[800px] h-[800px] rounded-full"
           style={{
-            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)',
-            left: '5%',
-            top: '5%',
-          }}
-         />
-
-      <div 
-      className="absolute w-[600px] h-[600px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%)',
-            right: '5%',
-            bottom: '10%',
-            animationDelay: '2s',
-          }}
-        />
-         <div 
-      className="absolute w-[600px] h-[600px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)',
-            right: '5%',
-            top: '20%',
-            animationDelay: '2s',
+            background:
+              "radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)",
+            left: "5%",
+            top: "5%",
           }}
         />
 
-       
-        
+        <div
+          className="absolute w-[600px] h-[600px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%)",
+            right: "5%",
+            bottom: "10%",
+            animationDelay: "2s",
+          }}
+        />
+        <div
+          className="absolute w-[600px] h-[600px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)",
+            right: "5%",
+            top: "20%",
+            animationDelay: "2s",
+          }}
+        />
       </div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
-
           {/* Left Content */}
-          <div className={`space-y-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
+          <div
+            className={`space-y-8 ${
+              isVisible ? "animate-slide-in-left" : "opacity-0"
+            }`}
+          >
             {/* Badge */}
             <div
               className="inline-flex items-center gap-2 px-5 py-2.5 glass-card rounded-full"
-              style={{ 
-                animation: 'badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+              style={{
+                animation:
+                  "badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
                 opacity: 0,
-                animationFillMode: 'forwards'
+                animationFillMode: "forwards",
               }}
             >
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50" />
-              <span className="text-sm text-gray-700 font-semibold">Official Authorized Distributor</span>
+              <span className="text-sm text-gray-700 font-semibold">
+                Official Authorized Distributor
+              </span>
             </div>
 
             {/* Dynamic Title */}
             <div className="space-y-5">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-                <span 
+                <span
                   className="text-gray-800 block"
                   style={{
-                    animation: 'text-glide 0.8s ease-out forwards',
-                    animationDelay: '0.2s',
+                    animation: "text-glide 0.8s ease-out forwards",
+                    animationDelay: "0.2s",
                     opacity: 0,
-                    animationFillMode: 'forwards'
+                    animationFillMode: "forwards",
                   }}
                 >
                   Welcome to
                 </span>
-                <span 
+                <span
                   className="text-gradient block mt-2"
                   key={`title-${currentSlide}`}
                   style={{
-                    animation: 'text-glide 0.8s ease-out forwards',
-                    animationDelay: '0.4s',
+                    animation: "text-glide 0.8s ease-out forwards",
+                    animationDelay: "0.4s",
                     opacity: 0,
-                    animationFillMode: 'forwards'
+                    animationFillMode: "forwards",
                   }}
                 >
                   {slides[currentSlide].title}
                 </span>
               </h1>
 
-              <p 
+              <p
                 className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed"
                 key={`desc-${currentSlide}`}
                 style={{
-                  animation: 'slide-in-left-smooth 0.8s ease-out forwards',
-                  animationDelay: '0.6s',
+                  animation: "slide-in-left-smooth 0.8s ease-out forwards",
+                  animationDelay: "0.6s",
                   opacity: 0,
-                  animationFillMode: 'forwards'
+                  animationFillMode: "forwards",
                 }}
               >
                 {slides[currentSlide].description}
@@ -457,13 +491,13 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button 
+              <button
                 className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-orange-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/40 hover:scale-105"
                 style={{
-                  animation: 'button-slide 0.8s ease-out forwards',
-                  animationDelay: '0.8s',
+                  animation: "button-slide 0.8s ease-out forwards",
+                  animationDelay: "0.8s",
                   opacity: 0,
-                  animationFillMode: 'forwards'
+                  animationFillMode: "forwards",
                 }}
               >
                 <span className="relative z-10 flex items-center gap-2">
@@ -473,13 +507,13 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
 
-              <button 
+              <button
                 className="group flex items-center gap-3 px-6 py-4 glass-card rounded-xl font-semibold text-gray-800 transition-all duration-300 hover:bg-white/90 hover:scale-105"
                 style={{
-                  animation: 'button-slide 0.8s ease-out forwards',
-                  animationDelay: '0.9s',
+                  animation: "button-slide 0.8s ease-out forwards",
+                  animationDelay: "0.9s",
                   opacity: 0,
-                  animationFillMode: 'forwards'
+                  animationFillMode: "forwards",
                 }}
               >
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-orange-500 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
@@ -490,13 +524,13 @@ const HeroSection = () => {
             </div>
 
             {/* Slide Indicators */}
-            <div 
+            <div
               className="flex gap-2 pt-4"
               style={{
-                animation: 'slide-in-left-smooth 0.8s ease-out forwards',
-                animationDelay: '1s',
+                animation: "slide-in-left-smooth 0.8s ease-out forwards",
+                animationDelay: "1s",
                 opacity: 0,
-                animationFillMode: 'forwards'
+                animationFillMode: "forwards",
               }}
             >
               {slides.map((_, idx) => (
@@ -505,8 +539,8 @@ const HeroSection = () => {
                   onClick={() => setCurrentSlide(idx)}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
                     idx === currentSlide
-                      ? 'w-10 bg-gradient-to-r from-blue-600 to-orange-500'
-                      : 'w-2 bg-gray-300 hover:bg-gray-400'
+                      ? "w-10 bg-gradient-to-r from-blue-600 to-orange-500"
+                      : "w-2 bg-gray-300 hover:bg-gray-400"
                   }`}
                 />
               ))}
@@ -514,16 +548,21 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Single Animated Image */}
-          <div className={`relative h-[500px] lg:h-[700px] flex items-center justify-end ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+          <div
+            className={`relative h-[500px] lg:h-[700px] flex items-center justify-end ${
+              isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+            style={{ animationDelay: "0.3s" }}
+          >
             <div className="relative w-full max-w-2xl">
               {/* Main Product Image Container */}
-              <div 
+              <div
                 key={currentSlide}
                 className="relative glass-card rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 group cursor-pointer animate-slide-in-right"
                 style={{
-                  width: '100%',
-                  height: '500px',
-                  maxHeight: '600px'
+                  width: "100%",
+                  height: "500px",
+                  maxHeight: "600px",
                 }}
               >
                 {/* Product Image */}
@@ -532,10 +571,10 @@ const HeroSection = () => {
                   alt={slides[currentSlide].title}
                   className="w-full h-full object-cover"
                 />
-                
+
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Image Title Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                   <div className="flex items-center gap-4">
@@ -543,14 +582,17 @@ const HeroSection = () => {
                       {slides[currentSlide].icon}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-1">{slides[currentSlide].title}</h3>
-                      <p className="text-gray-200 text-sm max-w-md">{slides[currentSlide].description.substring(0, 100)}...</p>
+                      <h3 className="text-2xl font-bold text-white mb-1">
+                        {slides[currentSlide].title}
+                      </h3>
+                      <p className="text-gray-200 text-sm max-w-md">
+                        {slides[currentSlide].description.substring(0, 100)}...
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Floating Badge */}
-               
 
                 {/* Glow Effect */}
                 <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 to-orange-500/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
@@ -558,15 +600,16 @@ const HeroSection = () => {
 
               {/* Background Decorative Elements */}
               <div className="absolute -z-10 -left-8 -bottom-8 w-[120%] h-[120%] bg-gradient-to-br from-blue-100/20 to-orange-100/20 rounded-3xl blur-xl" />
-              
+
               {/* Subtle Floating Elements */}
               <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-gradient-to-br from-blue-300/20 to-orange-300/20 animate-pulse" />
-              <div className="absolute -bottom-8 -left-6 w-40 h-40 rounded-full bg-gradient-to-br from-orange-300/20 to-blue-300/20 animate-pulse" style={{ animationDelay: '1s' }} />
+              <div
+                className="absolute -bottom-8 -left-6 w-40 h-40 rounded-full bg-gradient-to-br from-orange-300/20 to-blue-300/20 animate-pulse"
+                style={{ animationDelay: "1s" }}
+              />
             </div>
           </div>
         </div>
-
-       
       </div>
 
       {/* Bottom Gradient Fade */}

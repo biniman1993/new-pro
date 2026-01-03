@@ -6,12 +6,12 @@
   width: 100%;
   z-index: 100;
   background: linear-gradient(to right, #2a5da5, #0a0e27);
-  padding: 10px 0;
+  padding: 4px 0;
   display: flex;
   justify-content: center;
   transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.5px;
   text-transform: uppercase;

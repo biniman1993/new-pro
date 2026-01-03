@@ -12,7 +12,11 @@ interface CategoryTabsProps {
   onCategoryChange: (category: string) => void;
 }
 
-const CategoryTabs = ({ categories, activeCategory, onCategoryChange }: CategoryTabsProps) => {
+const CategoryTabs = ({
+  categories,
+  activeCategory,
+  onCategoryChange,
+}: CategoryTabsProps) => {
   return (
     <div className="flex flex-wrap gap-2 justify-center mb-8">
       {categories.map((category) => {
@@ -23,8 +27,8 @@ const CategoryTabs = ({ categories, activeCategory, onCategoryChange }: Category
             onClick={() => onCategoryChange(category)}
             className={cn(
               "relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ease-out",
-              isActive 
-                ? "text-white shadow-lg shadow-blue-900/25" 
+              isActive
+                ? "text-white shadow-lg shadow-blue-900/25"
                 : "bg-white text-gray-600 hover:bg-gray-50 hover:text-[#1c4c97] border border-gray-100"
             )}
           >
