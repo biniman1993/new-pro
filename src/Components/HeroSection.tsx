@@ -28,7 +28,7 @@ const HeroSection = () => {
 
   const slides: SlideContent[] = [
     {
-      title: "Proactive Trading",
+      title: "Welcome to Proactive Trading",
       description:
         "Your trusted partner for premium electronics and technology solutions across Ethiopia. Official distributors of leading global brands.",
       icon: <Cpu className="w-8 h-8" />,
@@ -441,7 +441,7 @@ const HeroSection = () => {
                 animationFillMode: "forwards",
               }}
             >
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50" />
+              <span className="w-4 h-4 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50" />
               <span className="text-sm text-gray-700 font-semibold">
                 Official Authorized Distributor
               </span>
@@ -450,17 +450,6 @@ const HeroSection = () => {
             {/* Dynamic Title */}
             <div className="space-y-5">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-                <span
-                  className="text-gray-800 block"
-                  style={{
-                    animation: "text-glide 0.8s ease-out forwards",
-                    animationDelay: "0.2s",
-                    opacity: 0,
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  Welcome to
-                </span>
                 <span
                   className="text-gradient block mt-2"
                   key={`title-${currentSlide}`}
@@ -549,64 +538,38 @@ const HeroSection = () => {
 
           {/* Right Content - Single Animated Image */}
           <div
-            className={`relative h-[500px] lg:h-[700px] flex items-center justify-end ${
+            className={`relative h-auto flex items-center justify-end ${
               isVisible ? "animate-fade-in" : "opacity-0"
             }`}
             style={{ animationDelay: "0.3s" }}
           >
-            <div className="relative w-full max-w-2xl">
+            <div className="relative">
               {/* Main Product Image Container */}
               <div
                 key={currentSlide}
-                className="relative glass-card rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 group cursor-pointer animate-slide-in-right"
+                className="relative overflow-hidden transition-all duration-500 group cursor-pointer animate-slide-in-right"
                 style={{
-                  width: "100%",
-                  height: "500px",
-                  maxHeight: "600px",
+                  maxHeight: "none", // Remove max height constraint
                 }}
               >
                 {/* Product Image */}
                 <img
                   src={productImages[currentSlide]}
                   alt={slides[currentSlide].title}
-                  className="w-full h-full object-cover"
+                  className="max-w-full h-auto object-contain" // Changed from object-cover to object-contain
+                  style={{
+                    backgroundColor: "transparent", // Ensure no background
+                  }}
                 />
 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Image Title Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-orange-500 flex items-center justify-center text-white shadow-lg">
-                      {slides[currentSlide].icon}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-1">
-                        {slides[currentSlide].title}
-                      </h3>
-                      <p className="text-gray-200 text-sm max-w-md">
-                        {slides[currentSlide].description.substring(0, 100)}...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Badge */}
+                
 
                 {/* Glow Effect */}
                 <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 to-orange-500/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
               </div>
-
-              {/* Background Decorative Elements */}
-              <div className="absolute -z-10 -left-8 -bottom-8 w-[120%] h-[120%] bg-gradient-to-br from-blue-100/20 to-orange-100/20 rounded-3xl blur-xl" />
-
-              {/* Subtle Floating Elements */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-gradient-to-br from-blue-300/20 to-orange-300/20 animate-pulse" />
-              <div
-                className="absolute -bottom-8 -left-6 w-40 h-40 rounded-full bg-gradient-to-br from-orange-300/20 to-blue-300/20 animate-pulse"
-                style={{ animationDelay: "1s" }}
-              />
             </div>
           </div>
         </div>

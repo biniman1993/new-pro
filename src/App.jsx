@@ -75,9 +75,9 @@ const App = () => {
 
           {/* Other Routes */}
           <Route path="/brand" element={<Brand />} />
-          <Route path="/shop" element={<Contact />} />
+          <Route path="/shop" element={<Catalog />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
 
           {/* Home Route */}

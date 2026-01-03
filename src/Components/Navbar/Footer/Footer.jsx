@@ -10,157 +10,193 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       alert('Please fill in all fields');
       return;
     }
 
-    // Success message
     alert('Message sent successfully!');
     setFormData({ name: '', email: '', message: '' });
   };
 
- 
-  const aboutLinks = [
-    'About Us',
-    'Store Location',
-    'Contact',
-    'Orders tracking'
+  const footerSections = [
+    {
+      title: "🏢 COMPANY",
+      links: [
+        "Proactive Trading",
+        "About Proactive Trading",
+        "Why Choose Us",
+        "Our Stores",
+        "Careers",
+        "Blog"
+      ]
+    },
+    {
+      title: "🛒 SHOP",
+      links: [
+        "All Products",
+        "Smartphones",
+        "Laptops & Computers",
+        "Accessories",
+        "Home Electronics",
+        "New Arrivals"
+      ]
+    },
+    {
+      title: "📞 CUSTOMER SUPPORT",
+      links: [
+        "Help Center",
+        "FAQs",
+        "Order Tracking",
+        "Shipping & Delivery",
+        "Returns & Refunds",
+        "Warranty Policy"
+      ]
+    },
+    {
+      title: "📜 LEGAL & POLICIES",
+      links: [
+        "Privacy Policy",
+        "Terms & Conditions",
+        "Cookie Policy",
+        "Payment Policy",
+        "User Agreement"
+      ]
+    }
   ];
 
-  const helpLinks = [
-    'Size Guide',
-    'FAQs',
-    'Terms & Conditions',
-    'Contact Us'
-  ];
+  
+
+  
 
   const socialLinks = [
-    { icon: '📘', href: '#', label: 'Facebook' },
-    { icon: '📸', href: '#', label: 'Instagram' },
-    { icon: '🐦', href: '#', label: 'Twitter' },
-    { icon: '💼', href: '#', label: 'LinkedIn' }
+    { icon: "📘", label: "Facebook", color: "#1877F2" },
+    { icon: "📸", label: "Instagram", color: "#E4405F" },
+    { icon: "📱", label: "Telegram", color: "#26A5E4" },
+    { icon: "💬", label: "WhatsApp", color: "#25D366" },
+    { icon: "▶️", label: "YouTube", color: "#FF0000" }
   ];
 
   return (
     <footer className="footer">
-    
-      {/* Main Footer Content */}
       <div className="footer-main">
         <div className="footer-container">
-          <div className="footer-grid">
-            {/* Company Info */}
-            <div className="footer-column">
-              <h2 className="footer-logo">Proactive Trading</h2>
-              <p className="footer-description">
-                Your trusted partner for technology solutions and services in Bangladesh. 
-                We provide comprehensive IT support and innovative business solutions.
+          <div className="company-intro">
+            <div className="intro-content">
+              <h2 className="footer-logo">
+                <span className="logo-text">Proactive Trading</span>
+                <span className="logo-shine"></span>
+              </h2>
+              <p className="company-description">
+                Your trusted partner for cutting-edge technology solutions in Ethiopia.
+                We provide comprehensive IT support, innovative business solutions,
+                and premium electronics to power your digital journey.
               </p>
-              <div className="footer-contact">
-                <p>📍 Dhaka, Bangladesh</p>
-                <p>📧 info@uniquebusiness.com</p>
-                <p>📞 +880 1234-567890</p>
+             
+            </div>
+          </div>
+
+          <div className="footer-grid">
+            {footerSections.map((section, index) => (
+              <div key={index} className="footer-column">
+                <h3 className="footer-heading">
+                  <span className="heading-icon">{section.title.split(' ')[0]}</span>
+                  <span className="heading-text">{section.title.replace(section.title.split(' ')[0], '')}</span>
+                </h3>
+                <ul className="footer-links">
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex} className="footer-link-item">
+                      <a href="#" className="link-anchor">
+                        <span className="link-arrow">→</span>
+                        <span className="link-text">{link}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            ))}
 
-            {/* Get to Know Us */}
-            <div className="footer-column">
-              <h3 className="footer-heading">Get to Know Us</h3>
-              <ul className="footer-links">
-                {aboutLinks.map((link, index) => (
-                  <li key={index}>
-                    <a href="#">{link}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Let us Help You */}
-            <div className="footer-column">
-              <h3 className="footer-heading">Let us Help You</h3>
-              <ul className="footer-links">
-                {helpLinks.map((link, index) => (
-                  <li key={index}>
-                    <a href="#">{link}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact Form */}
-            <div className="footer-column">
-              <h3 className="footer-heading">Contact Us</h3>
+            <div className="footer-column contact-column">
+              <h3 className="footer-heading">
+                <span className="heading-icon">📝</span>
+                <span className="heading-text"> QUICK CONTACT</span>
+              </h3>
               <form onSubmit={handleSubmit} className="contact-form">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="form-input"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="form-input"
-                />
-                <textarea
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="form-textarea"
-                  rows="3"
-                />
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <textarea
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="form-textarea"
+                    rows="3"
+                  />
+                </div>
                 <button type="submit" className="form-button">
-                  Send Message
+                  <span className="button-text">Send Message</span>
+                  <span className="button-arrow">→</span>
                 </button>
               </form>
             </div>
           </div>
-           {/* Payment Methods and Social Links */}
-      <div className="footer-bottom-section">
-        <div className="footer-container">
-          <div className="footer-bottom">
-            <div className="payment-methods">
-              <span className="payment-label">We Accept:</span>
-              <div className="payment-icons">
-                <span>💳</span>
-                <span>💰</span>
-                <span>🏦</span>
-                <span>📱</span>
+
+          <div className="footer-bottom-section">
+          
+
+            <div className="social-section">
+              <h4 className="section-title">
+                <span className="heading-icon">🌐</span> CONNECT WITH US
+              </h4>
+              <div className="social-links-grid">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className="social-link"
+                    style={{ '--social-color': social.color }}
+                    aria-label={social.label}
+                  >
+                    <span className="social-icon">{social.icon}</span>
+                    <span className="social-label">{social.label}</span>
+                  </a>
+                ))}
               </div>
-            </div>
-            <div className="social-links">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="social-link"
-                  aria-label={social.label}
-                >
-                  {social.icon}
-                </a>
-              ))}
             </div>
           </div>
         </div>
-        
-        
-       </div>
-        </div>
-         {/* Copyright */}
-              <div className="footer-copyright">
-            <div className="footer-container">
-              <p>© 2024 Proactive Trading. All rights reserved.</p>
-             </div>
-            </div>
       </div>
 
-     
-
-     
+      <div className="footer-copyright">
+        <div className="footer-container">
+          <p className="copyright-text">
+            © 2024 Proactive Trading. All rights reserved. | Designed with ❤️ for Ethiopia
+          </p>
+          <div className="copyright-links">
+            <a href="#" className="copyright-link">Privacy Center</a>
+            <a href="#" className="copyright-link">Cookies</a>
+            <a href="#" className="copyright-link">Legal</a>
+            <a href="#" className="copyright-link">Corporate Information</a>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

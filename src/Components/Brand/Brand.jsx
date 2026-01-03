@@ -101,7 +101,7 @@ const Brand = () => {
   return (
     <div className="brand-page">
       {/* New TechCatalog-style Header */}
-      <header className="relative overflow-hidden mb-8 mt-10">
+      <header className="relative overflow-hidden mb-8 ">
         <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] z-0" />
         
         {/* Decorative Elements */}
