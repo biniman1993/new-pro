@@ -1,4 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import hero1 from '../assets/heroassets/bin.png';  // ← CHANGE TO YOUR FILENAME
+import hero2 from '../assets/heroassets/serv.png';  // ← CHANGE TO YOUR FILENAME
+import hero3 from '../assets/heroassets/dig.png'; 
+import hero4 from '../assets/heroassets/bini5.jpg'; 
+import hero5 from '../assets/heroassets/desk.png'; 
+import hero6 from '../assets/heroassets/lap.png'; 
 import {
   Monitor,
   Server,
@@ -67,12 +73,13 @@ const HeroSection = () => {
 
   // Product images corresponding to each slide
   const productImages = [
-    "/pro.png", // Proactive Trading
-    "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&h=600&fit=crop&auto=format", // Modern Laptops
-    "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w-800&h=600&fit=crop&auto=format", // Cisco Products
-    "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&h=600&fit=crop&auto=format", // Digital Display
-    "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&h=600&fit=crop&auto=format", // TV & Boards
-    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&auto=format", // Tech Solutions
+    hero1,  // Your first image from heroassets
+  hero2,  // Your second image
+  hero3,  
+  hero4,
+  hero5,
+  hero6,// Your third image
+  // Add more as needed/ Tech Solutions
   ];
 
   const featureCards = [

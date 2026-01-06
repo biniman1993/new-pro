@@ -8,17 +8,29 @@ import caw from '../../assets/awardlogo/prim.png';
 import daw from '../../assets/awardlogo/trad.png';
 import eaw from '../../assets/awardlogo/def.png';
 import faw from '../../assets/awardlogo/insa.png';
-import gaw from '../../assets/awardlogo/trad.png';
 import { useNavigate } from 'react-router-dom';
 
 const Partners = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedPartner, setSelectedPartner] = useState(null);
-  const navigate = useNavigate(); // Moved inside component
+  const navigate = useNavigate();
+
+  // Handle body overflow when modal opens/closes
+  useEffect(() => {
+    if (selectedPartner) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [selectedPartner]); // Run this effect when selectedPartner changes
 
   // Handle click to navigate to About page and scroll to clients section
   const handleClick = () => {
-    // Navigate to About page with hash to identify clients section
     navigate("/about#clients");
   };
 
@@ -107,12 +119,14 @@ const Partners = () => {
 
   const openModal = (partner) => {
     setSelectedPartner(partner);
-    document.body.style.overflow = 'hidden';
+    // REMOVED: document.body.style.overflow = 'hidden'; 
+    // Now handled by useEffect above
   };
 
   const closeModal = () => {
     setSelectedPartner(null);
-    document.body.style.overflow = 'auto';
+    // REMOVED: document.body.style.overflow = 'auto';
+    // Now handled by useEffect above
   };
 
   return (
