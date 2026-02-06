@@ -18,6 +18,7 @@ import FridayPromo from "./Components/FridayPromo.js";
 import Aboutwhy from "./Components/About/Why/Aboutwhy.jsx";
 import HeroSection from "./Components/HeroSection.tsx";
 import Contact from "./Components/Contact/Contact.jsx";
+import AboutCards from "./Components/AboutCard";
 import {
   laptopsData,
   gamingProductsData,
@@ -26,7 +27,8 @@ import {
   printersProductsData,
 } from "./Components/Products/productsData.jsx";
 import Catalog from "./pages/Catalog.js";
-
+import Why from "./Components/why";
+import LetUsMeet from "./Components/LetUsMeet";
 const App = () => {
   // Refs for smooth scrolling
   const laptopsRef = useRef(null);
@@ -125,10 +127,14 @@ const App = () => {
                   />
 
                   <CompanyStats />
+               
                   <Partners />
+                  
                   <Logo />
-                  <Aboutwhy />
+                  <Why />
                   <Logobrand />
+                     <AboutCards />
+                    <LetUsMeet />
                 </div>
               </div>
             }
