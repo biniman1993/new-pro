@@ -5,8 +5,8 @@ import TopMenu from "./Components/TopMenu/TopMenu";
 import Carousel from "./Components/Carousel/Carousel";
 import CompanyStats from "./Components/CompanyStats/CompanyStats";
 import Partners from "./Components/Partners/Partners";
-import Footer from "./Components/Navbar/Footer/Footer";
-import TopProducts from "./Components/TopProducts/TopProducts";
+import Footer from "./Components/Footer.tsx";
+import TopProducts from "./Components/TopProducts.tsx";
 import Products from "./Components/Products/Products";
 import Logo from "./Components/logo/Logo";
 import Logobrand from "./Components/Logo/Logobrand.jsx";
@@ -29,6 +29,8 @@ import {
 import Catalog from "./pages/Catalog.js";
 import Why from "./Components/why";
 import LetUsMeet from "./Components/LetUsMeet";
+import BrandShowcase from "./Components/BrandShowcase.tsx";
+import Partnerslogo from "./Components/Partnerslogo.tsx";
 const App = () => {
   // Refs for smooth scrolling
   const laptopsRef = useRef(null);
@@ -130,9 +132,8 @@ const App = () => {
                
                   <Partners />
                   
-                  <Logo />
                   <Why />
-                  <Logobrand />
+                  <BrandShowcase />
                      <AboutCards />
                     <LetUsMeet />
                 </div>

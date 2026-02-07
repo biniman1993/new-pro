@@ -56,9 +56,19 @@ const Products = React.forwardRef(({
       <div className={`max-w-7xl mx-auto ${className}`} ref={containerRef}>
         {/* Title Section with Animation */}
         <div className="text-center mb-12">
-          <h1 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {title}
-          </h1>
+          <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <span className="relative">
+    <span style={{
+      background: 'linear-gradient(135deg, #1c4c97 0%, #ff7b16 50%, #0a0e27 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    }}>
+      {title}
+    </span>
+    <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] transition-all duration-1000 group-hover:w-full" />
+  </span>
+</h1>
           <div 
             className={`h-1 w-24 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}
           ></div>

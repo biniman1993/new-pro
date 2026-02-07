@@ -214,8 +214,7 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Dark CTA Card */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6 shadow-2xl lg:row-span-2 lg:p-8">
-            {/* Grid overlay */}
+<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#173c77] to-[#0a0e27] p-6 shadow-2xl lg:row-span-2 lg:p-8">            {/* Grid overlay */}
             <div
               className="absolute inset-0 opacity-30"
               style={{
@@ -228,7 +227,7 @@ const WhyChooseUs = () => {
             />
 
             {/* Floating particles */}
-            <div className="absolute right-4 top-4 h-2 w-2 animate-pulse rounded-full bg-orange-500/40" />
+            <div className="absolute right-4 top-4 h-2 w-2 animate-pulse rounded-full bg-orange-500" />
             <div className="absolute right-12 top-8 h-1 w-1 animate-ping rounded-full bg-orange-500/30" style={{ animationDuration: "2s" }} />
             <div className="absolute right-8 top-16 h-1.5 w-1.5 animate-pulse rounded-full bg-orange-500/35" style={{ animationDelay: "1s" }} />
             <div className="absolute bottom-20 left-8 h-1 w-1 animate-ping rounded-full bg-orange-500/25" style={{ animationDuration: "3s" }} />
@@ -244,7 +243,7 @@ const WhyChooseUs = () => {
                 <br />
                 <span className="text-orange-500">Future of IT</span>
                 <br />
-                in Bangladesh
+                in Ethiopia
               </h3>
 
               <p className="mb-4 text-lg font-semibold text-white">

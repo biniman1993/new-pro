@@ -1,9 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import p1Image from "../assets/printer/gamming.png";
-import p2Image from "../assets/printer/gam.png";
-import p3Image from "../assets/printer/hp.png";
-import p4Image from "../assets/printer/spectra.png";
-import p5Image from "../assets/printer/epson.png";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { placeholderImages } from "../assets/placeholder";
 
 import {
   MessageCircle,
@@ -18,6 +14,7 @@ import {
   Send,
   Mail,
 } from "lucide-react";
+
 interface Product {
   id: string;
   title: string;
@@ -39,12 +36,10 @@ const FridayPromo = () => {
     seconds: 20,
   });
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const [isPulsing, setIsPulsing] = useState(false);
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
 
   const products: Product[] = [
     {
@@ -54,7 +49,7 @@ const FridayPromo = () => {
       originalPrice: 89,
       salePrice: 53,
       specs: ["16K DPI", "Wireless", "RGB", "16K DPI", "Wireless", "RGB"],
-      image: p1Image,
+      image: placeholderImages.gaming,
       description:
         "Professional gaming mouse with advanced optical sensor and customizable RGB lighting. Perfect for competitive gaming and professional use.",
       features: [
@@ -82,7 +77,7 @@ const FridayPromo = () => {
         "4K HDMI",
         "Fast Charge",
       ],
-      image: p2Image,
+      image: placeholderImages.hub,
       description:
         "Versatile 7-in-1 USB-C hub with 4K HDMI output and fast charging capabilities. Expand your connectivity options instantly.",
       features: [
@@ -110,7 +105,7 @@ const FridayPromo = () => {
         "48hrs Battery",
         "Premium Sound",
       ],
-      image: p3Image,
+      image: placeholderImages.earbuds,
       description:
         "Premium wireless earbuds with active noise cancellation and exceptional battery life. Immerse yourself in crystal-clear audio.",
       features: [
@@ -138,7 +133,7 @@ const FridayPromo = () => {
         "Gateron Switches",
         "Aluminum",
       ],
-      image: p4Image,
+      image: placeholderImages.keyboard,
       description:
         "Mechanical keyboard with Gateron switches and full RGB backlighting. Built with aluminum frame for durability and style.",
       features: [
@@ -166,7 +161,7 @@ const FridayPromo = () => {
         "Multi-Device",
         "GaN Tech",
       ],
-      image: p5Image,
+      image: placeholderImages.charger,
       description:
         "Compact 65W GaN fast charger with multiple ports. Charge your devices quickly and efficiently with advanced technology.",
       features: [
@@ -186,8 +181,8 @@ const FridayPromo = () => {
       discount: 33,
       originalPrice: 149,
       salePrice: 100,
-      specs: ["4K Resolution", "Auto Focus", "Wide Angle"],
-      image: p3Image,
+      specs: ["4K Resolution", "Auto Focus", "Wide Angle", "4K Resolution", "Auto Focus", "Wide Angle"],
+      image: placeholderImages.webcam,
       description:
         "Professional 4K webcam with auto focus and wide-angle lens. Perfect for streaming, meetings, and content creation.",
       features: [
@@ -229,14 +224,6 @@ const FridayPromo = () => {
   }, []);
 
   useEffect(() => {
-    const carouselInterval = setInterval(() => {
-      setCarouselIndex((prev) => (prev + 1) % products.length);
-    }, 5000);
-
-    return () => clearInterval(carouselInterval);
-  }, [products.length]);
-
-  useEffect(() => {
     const pulseInterval = setInterval(() => {
       setIsPulsing(true);
       setTimeout(() => setIsPulsing(false), 600);
@@ -245,38 +232,12 @@ const FridayPromo = () => {
     return () => clearInterval(pulseInterval);
   }, []);
 
-  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
-    setIsDragging(true);
-    setDragStart("clientX" in e ? e.clientX : e.touches[0].clientX);
-  };
-
-  const handleDragEnd = (e: React.MouseEvent | React.TouchEvent) => {
-    if (!isDragging) return;
-    setIsDragging(false);
-
-    const dragEnd =
-      "clientX" in e
-        ? e.clientX
-        : (e as React.TouchEvent).changedTouches[0].clientX;
-    const diff = dragStart - dragEnd;
-
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        setCarouselIndex((prev) => (prev + 1) % products.length);
-      } else {
-        setCarouselIndex(
-          (prev) => (prev - 1 + products.length) % products.length
-        );
-      }
-    }
-  };
-
   const nextProduct = () => {
-    setCarouselIndex((prev) => (prev + 1) % products.length);
+    setCarouselIndex((prev) => (prev + 1) % (products.length - 2));
   };
 
   const prevProduct = () => {
-    setCarouselIndex((prev) => (prev - 1 + products.length) % products.length);
+    setCarouselIndex((prev) => (prev - 1 + (products.length - 2)) % (products.length - 2));
   };
 
   const openProductModal = (product: Product) => {
@@ -291,59 +252,52 @@ const FridayPromo = () => {
     document.body.style.overflow = "unset";
   };
 
+  const scrollMobile = (direction: 'left' | 'right') => {
+    if (mobileScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -300 : 300;
+      mobileScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  // Get 3 products for desktop view
+  const getDesktopProducts = () => {
+    const startIndex = carouselIndex;
+    return [
+      products[startIndex % products.length],
+      products[(startIndex + 1) % products.length],
+      products[(startIndex + 2) % products.length]
+    ];
+  };
+
   return (
-    <div className="relative  overflow-hidden">
+    <div className="relative overflow-hidden">
       <style>{`
-        @keyframes slideInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .mobile-scroll-container {
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          scroll-behavior: smooth;
+        }
+        
+        .mobile-scroll-container::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .card-hover {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(28, 76, 151, 0.2);
         }
 
-        @keyframes slideInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        @keyframes fadeInOut {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
         }
 
-        @keyframes gradientShift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-
-        @keyframes shimmer {
-          0%, 100% { opacity: 0.5; }
-          50% { opacity: 1; }
-        }
-
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
-        }
-
-        @keyframes glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(28, 76, 151, 0.3); }
-          50% { box-shadow: 0 0 40px rgba(28, 76, 151, 0.6); }
-        }
-
-        @keyframes tilt {
-          0%, 100% { transform: rotateY(0deg) rotateX(0deg); }
-          50% { transform: rotateY(5deg) rotateX(2deg); }
-        }
-
-        @keyframes countUp {
-          from { opacity: 0; transform: translateY(-10px); }
-          to { opacity: 1; transform: translateY(0); }
+        .animate-fade-in {
+          animation: fadeInOut 0.3s ease-out;
         }
 
         @keyframes modalEnter {
@@ -357,225 +311,152 @@ const FridayPromo = () => {
           }
         }
 
-        .animate-slide-in-down {
-          animation: slideInDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .animate-slide-in-up {
-          animation: slideInUp 0.6s ease-out;
-        }
-
-        .animate-gradient-shift {
-          background-size: 200% 200%;
-          animation: gradientShift 6s ease infinite;
-        }
-
-        .animate-shimmer {
-          animation: shimmer 2s ease-in-out infinite;
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-glow {
-          animation: glow 2s ease-in-out infinite;
-        }
-
-        .animate-tilt {
-          perspective: 1000px;
-          animation: tilt 4s ease-in-out infinite;
-        }
-
-        .animate-count-up {
-          animation: countUp 0.5s ease-out;
-        }
-
         .animate-modal-enter {
           animation: modalEnter 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-
-        .card-hover:hover {
-          transform: scale(1.05) translateY(-8px);
-          box-shadow: 0 20px 40px rgba(28, 76, 151, 0.3);
-        }
-
-        .pulse-ring {
-          animation: pulse 2s infinite;
-        }
-
-        .group:hover .product-discount {
-          animation: slideInDown 0.3s ease-out;
-        }
-
-        .carousel-container {
-          scroll-behavior: smooth;
-          scrollbar-width: none;
-        }
-
-        .carousel-container::-webkit-scrollbar {
-          display: none;
-        }
       `}</style>
 
-      {/* Product Modal */}
       {isModalOpen && selectedProduct && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
-            onClick={closeProductModal}
-          />
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    <div
+      className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
+      onClick={closeProductModal}
+    />
 
-          {/* Modal Content */}
-          <div className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden animate-modal-enter shadow-2xl">
-            <button
-              onClick={closeProductModal}
-              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
-            >
-              <X size={20} className="text-gray-700" />
-            </button>
+<div className="relative bg-white max-w-4xl w-full h-[90vh] animate-modal-enter shadow-2xl flex flex-col rounded-2xl overflow-hidden">
+        <button
+        onClick={closeProductModal}
+        className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+        aria-label="Close modal"
+      >
+        <X size={20} className="text-gray-700" />
+      </button>
 
-            <div className="grid md:grid-cols-2 gap-0 h-full">
-              {/* Product Image - Fixed size */}
-              <div className="relative w-full h-70 md:h-96  bg-gradient-to-br from-gray-100 to-gray-200">
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
-                  -{selectedProduct.discount}%
+      <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+        {/* Left side - Image */}
+        <div className="md:w-1/2 flex-shrink-0">
+          <div className="relative w-full h-64 md:h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+            <img
+              src={selectedProduct.image}
+              alt={selectedProduct.title}
+              className="w-full h-full object-contain p-4"
+            />
+            <div className="absolute top-4 left-4 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
+              -{selectedProduct.discount}%
+            </div>
+          </div>
+        </div>
+
+        {/* Right side - Content with vertical scrolling */}
+        <div className="md:w-1/2 flex flex-col overflow-hidden">
+          <div className="p-4 md:p-6 lg:p-8 overflow-y-auto flex-1">
+            <div className="space-y-4">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+                {selectedProduct.title}
+              </h2>
+
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={16}
+                      className={
+                        i < Math.floor(selectedProduct.rating)
+                          ? "text-[#ff7b16] fill-current"
+                          : "text-gray-300"
+                      }
+                    />
+                  ))}
+                </div>
+                <span className="text-sm text-gray-600">
+                  {selectedProduct.rating} ({selectedProduct.reviews} reviews)
+                </span>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-2xl md:text-3xl font-bold text-gray-900">
+                  ${selectedProduct.salePrice}
+                </span>
+                <span className="text-lg md:text-xl text-gray-500 line-through">
+                  ${selectedProduct.originalPrice}
+                </span>
+                <span className="bg-green-100 text-green-700 px-2 py-1 rounded-md text-sm font-bold">
+                  Save ${selectedProduct.originalPrice - selectedProduct.salePrice}
+                </span>
+              </div>
+
+              <p className="text-gray-600 leading-relaxed">
+                {selectedProduct.description}
+              </p>
+
+              <div className="space-y-3">
+                <h3 className="font-semibold text-gray-900">Key Features:</h3>
+                <div className="grid gap-2">
+                  {selectedProduct.features.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-[#1c4c97] rounded-full mt-1.5 flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Product Details */}
-              <div className="p-6 md:p-8 overflow-y-auto">
-                <div className="space-y-4">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                    {selectedProduct.title}
-                  </h2>
-
-                  {/* Rating */}
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={16}
-                          className={
-                            i < Math.floor(selectedProduct.rating)
-                              ? "text-[#ff7b16] fill-current"
-                              : "text-gray-300"
-                          }
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600">
-                      {selectedProduct.rating} ({selectedProduct.reviews}{" "}
-                      reviews)
+              <div className="space-y-3">
+                <h3 className="font-semibold text-gray-900">Specifications:</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProduct.specs.map((spec, index) => (
+                    <span
+                      key={index}
+                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm border border-gray-300"
+                    >
+                      {spec}
                     </span>
-                  </div>
-
-                  {/* Price */}
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl font-bold text-gray-900">
-                      ${selectedProduct.salePrice}
-                    </span>
-                    <span className="text-xl text-gray-500 line-through">
-                      ${selectedProduct.originalPrice}
-                    </span>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded-md text-sm font-bold">
-                      Save $
-                      {selectedProduct.originalPrice -
-                        selectedProduct.salePrice}
-                    </span>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-600 leading-relaxed">
-                    {selectedProduct.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="space-y-3">
-                    <h3 className="font-semibold text-gray-900">
-                      Key Features:
-                    </h3>
-                    <div className="grid gap-2">
-                      {selectedProduct.features.map((feature, index) => (
-                        <div key={index} className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[#1c4c97] rounded-full"></div>
-                          <span className="text-gray-700">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Specifications */}
-                  <div className="space-y-3">
-                    <h3 className="font-semibold text-gray-900">
-                      Specifications:
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProduct.specs.map((spec, index) => (
-                        <span
-                          key={index}
-                          className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm border border-gray-300"
-                        >
-                          {spec}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-[#1c4c97]/30 flex items-center justify-center gap-2">
-                      <ShoppingCart size={20} />
-                      Add to Cart
-                    </button>
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-[#ff7b16]/30">
-                      Buy Now
-                    </button>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
 
-      <div className="absolute inset-0 opacity-30">
-        <div
-          className="absolute top-0 left-0 w-96 h-96 bg-[#ff7b16]/20 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "0s" }}
-        ></div>
-        <div
-          className="absolute top-0 right-0 w-96 h-96 bg-[#1c4c97]/20 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "1s" }}
-        ></div>
-        <div
-          className="absolute -bottom-32 left-1/2 w-96 h-96 bg-[#0a0e27]/10 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
-        ></div>
+          {/* Buttons fixed at bottom */}
+          <div className="p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
+            <div className="flex gap-3">
+              <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base">
+                <ShoppingCart size={20} />
+                Add to Cart
+              </button>
+              <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] hover:from-[#ff7b16] hover:to-[#0a0e27] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm md:text-base">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#ff7b16]/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#1c4c97]/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-[#0a0e27]/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10">
-        <div className="bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] backdrop-blur-md border-b border-[#1c4c97]/30 py-6 px-4 sm:px-6 lg:px-8 animate-slide-in-down">
+        <div className="bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] border-b border-[#1c4c97]/30 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-[#ff7b16] animate-bounce" />
-              <span className="text-white font-bold text-sm md:text-base">
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff7b16]" />
+              <span className="text-white font-bold text-xs sm:text-sm md:text-base">
                 FRIDAY SPECIAL DEALS!
               </span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-white font-bold text-sm md:text-base">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <span className="text-white font-bold text-xs sm:text-sm md:text-base">
                 Ends in
               </span>
-              <div className="flex gap-1 bg-black/30 rounded-lg px-3 py-1">
+              <div className="flex gap-1 bg-black/30 rounded-lg px-2 sm:px-3 py-1">
                 {[
                   {
                     label: "H",
@@ -591,7 +472,7 @@ const FridayPromo = () => {
                   },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-1">
-                    <span className="text-[#ff7b16] font-mono font-bold text-xs md:text-sm">
+                    <span className="text-[#ff7b16] font-mono font-bold text-xs sm:text-sm">
                       {item.value}
                     </span>
                     {idx < 2 && (
@@ -606,117 +487,105 @@ const FridayPromo = () => {
               Limited Stock • Free Shipping
             </div>
           </div>
-          <div className="backdrop-blur-sm border-b border-gray-300/50 py-6 px-4 sm:px-6 lg:px-8 animate-slide-in-up">
-            <div className="max-w-7xl mx-auto">
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <div className="w-1 h-6 bg-gradient-to-b from-[#ff7b16] to-transparent rounded-full"></div>
-                <h2 className="text-center text-2xl md:text-3xl font-bold text-white bg-clip-text text-transparent">
-                  Friday Special Deals
-                </h2>
-                <div className="w-1 h-6 bg-gradient-to-b from-[#1c4c97] to-transparent rounded-full"></div>
-              </div>
-              <p className="text-center text-white text-sm">
-                Save up to 45% on premium tech products
-              </p>
+        </div>
 
-              <div className="flex justify-center gap-2 mt-3">
-                {[...Array(3)].map((_, i) => (
-                  <Sparkles
-                    key={i}
-                    size={16}
-                    className="text-white animate-shimmer"
-                    style={{ animationDelay: `${i * 0.3}s` }}
-                  />
-                ))}
-              </div>
+        <div className="border-b border-gray-200 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
+              <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#ff7b16] to-transparent rounded-full"></div>
+              <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+                Friday Special Deals
+              </h2>
+              <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#1c4c97] to-transparent rounded-full"></div>
+            </div>
+            <p className="text-center text-gray-600 text-xs sm:text-sm">
+              Save up to 45% on premium tech products
+            </p>
+
+            <div className="flex justify-center gap-2 mt-2 sm:mt-3">
+              {[...Array(3)].map((_, i) => (
+                <Sparkles
+                  key={i}
+                  size={14}
+                  className="text-[#1c4c97]"
+                />
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="py-8 px-4 sm:px-6 lg:px-8">
+        <div className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div
-              ref={carouselRef}
-              className="relative group"
-              onMouseDown={handleDragStart}
-              onMouseUp={handleDragEnd}
-              onTouchStart={handleDragStart}
-              onTouchEnd={handleDragEnd}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-hidden">
-                {[0, 1, 2].map((offset) => {
-                  const idx = (carouselIndex + offset) % products.length;
-                  const product = products[idx];
-
-                  return (
+            {/* Desktop/Laptop View (3 cards with arrows) */}
+            <div className="hidden md:block">
+              <div className="relative group">
+                <div className="grid grid-cols-3 gap-6">
+                  {getDesktopProducts().map((product) => (
                     <div
                       key={product.id}
-                      className="transform transition-all duration-500 scale-100 opacity-100"
+                      className="animate-fade-in"
                     >
                       <div
                         onClick={() => openProductModal(product)}
-                        className="bg-gradient-to-br from-white to-gray-100 backdrop-blur-sm border border-gray-300/50 rounded-2xl overflow-hidden card-hover group/card cursor-pointer h-full flex flex-col transition-all duration-300"
+                        className="bg-white border border-gray-200 rounded-2xl overflow-hidden card-hover group/card cursor-pointer h-full flex flex-col"
                       >
-                        <div className="relative h-56 md:h-64 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
+                        <div className="relative w-full h-56 bg-gray-100 flex items-center justify-center overflow-hidden">
                           <img
                             src={product.image}
                             alt={product.title}
-                            className="w-full h-full object-cover transform group-hover/card:scale-100 transition-transform duration-500"
+                            className="w-full h-full object-contain p-3"
                           />
 
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
-
-                          <div className="absolute top-6 right-3 bg-gradient-to-r from-[#ff7b16] to-[#ff7b13] text-white  font-bold px-2 py-1 rounded-1xl text-sm md:text-base shadow-lg transform -translate-y-1 group-hover/card:translate-y-0 transition-transform duration-300">
+                          <div className="absolute top-3 right-3 bg-gradient-to-r from-[#ff7b16] to-[#ff7b13] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
                             -{product.discount}%
                           </div>
 
-                          <div className="absolute bottom-3 left-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white font-100W px-1 py-1 rounded-lg text-xs md:text-sm opacity-0 group-hover/card:opacity-100 transform translate-y-2 group-hover/card:translate-y-0 transition-all duration-300">
+                          <div className="absolute bottom-3 left-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white font-semibold px-2 py-1 rounded-lg text-xs opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
                             New Arrival
                           </div>
                         </div>
 
                         <div className="flex-1 p-4 flex flex-col justify-between">
                           <div>
-                            <h3 className="text-lg text-ac font-bold text-gray-900 mb-2 line-clamp-2 text-center group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#1c4c97] group-hover/card:to-[#ff7b16] group-hover/card:bg-clip-text transition-all duration-300">
+                            <h3 className="text-base font-bold text-gray-900 mb-2 text-center h-12 flex items-center justify-center group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#1c4c97] group-hover/card:to-[#ff7b16] group-hover/card:bg-clip-text transition-all duration-300">
                               {product.title}
                             </h3>
-                            <div className="flex mb-4">
-                              {/* Left side specs */}
-                              <div className="flex-1 space-y-1">
+
+                            <div className="grid grid-cols-2 gap-2 mb-4">
+                              <div className="space-y-1">
                                 {product.specs
                                   .slice(0, Math.ceil(product.specs.length / 2))
                                   .map((spec, idx) => (
                                     <div
                                       key={idx}
-                                      className="flex items-center gap-2 text-gray-600 text-xs md:text-sm"
+                                      className="flex items-center gap-1 text-gray-600 text-xs"
                                     >
-                                      <div className="w-1 h-1 rounded-full bg-[#1c4c97]"></div>
-                                      <span>{spec}</span>
+                                      <div className="w-1 h-1 rounded-full bg-[#1c4c97] flex-shrink-0"></div>
+                                      <span className="truncate">{spec}</span>
                                     </div>
                                   ))}
                               </div>
 
-                              {/* Right side specs - aligned to right */}
-                              <div className="flex-1 space-y-1 text-right">
+                              <div className="space-y-1 text-right">
                                 {product.specs
                                   .slice(Math.ceil(product.specs.length / 2))
                                   .map((spec, idx) => (
                                     <div
                                       key={idx}
-                                      className="flex items-center justify-end gap-2 text-gray-600 text-xs md:text-sm"
+                                      className="flex items-center justify-end gap-1 text-gray-600 text-xs"
                                     >
-                                      <span>{spec}</span>
-                                      <div className="w-1 h-1 rounded-full bg-[#ff7b16]"></div>
+                                      <span className="truncate">{spec}</span>
+                                      <div className="w-1 h-1 rounded-full bg-[#ff7b16] flex-shrink-0"></div>
                                     </div>
                                   ))}
                               </div>
                             </div>
                           </div>
 
-                          <div className="border-t border-gray-300/50 pt-3 pb-3 mb-3">
-                            <div className="flex items-center gap-2 justify-between">
-                              <div className="flex gap-2">
-                                <span className="text-xl font-bold text-gray-900">
+                          <div className="border-t border-gray-200 pt-3 pb-3 mb-3">
+                            <div className="flex items-center justify-between gap-2">
+                              <div className="flex gap-2 min-w-0">
+                                <span className="text-lg font-bold text-gray-900">
                                   ${product.salePrice}
                                 </span>
                                 <span className="text-sm text-gray-500 line-through">
@@ -724,129 +593,219 @@ const FridayPromo = () => {
                                 </span>
                               </div>
 
-                              {/* Call-to-Action Icons */}
                               <div
-                                className="flex items-center gap-2 justify-between"
+                                className="flex items-center gap-1 flex-shrink-0"
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                {/* Call */}
                                 <a
                                   href="tel:+251911234567"
-                                  className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 
-               transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
+                                  className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 transition-all duration-200 hover:shadow-sm"
                                   title="Call Now"
+                                  aria-label="Call now"
                                 >
                                   <Phone className="w-4 h-4" />
                                 </a>
 
-                                {/* WhatsApp */}
                                 <a
                                   href="https://wa.me/251911234567"
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 
-               transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
+                                  className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 transition-all duration-200 hover:shadow-sm"
                                   title="WhatsApp"
+                                  aria-label="WhatsApp"
                                 >
                                   <MessageCircle className="w-4 h-4" />
-                                </a>
-
-                                {/* Telegram */}
-                                <a
-                                  href="https://t.me/yourusername"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="p-2 rounded-lg border border-gray-300 hover:border-blue-500 hover:text-blue-600 
-               transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
-                                  title="Telegram"
-                                >
-                                  <Send className="w-4 h-4" />
-                                </a>
-
-                                {/* Email */}
-                                <a
-                                  href="mailto:sales@example.com"
-                                  className="p-2 rounded-lg border border-gray-300 hover:border-red-500 hover:text-red-600 
-               transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
-                                  title="Email"
-                                >
-                                  <Mail className="w-4 h-4" />
                                 </a>
                               </div>
                             </div>
                           </div>
 
-                          <button className="w-full py-2.5 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-[#1c4c97]/30 text-sm md:text-base">
-                            Full Spesifications
+                          <button className="w-full py-2.5 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm">
+                            Full Specifications
                           </button>
                         </div>
                       </div>
                     </div>
-                  );
-                })}
+                  ))}
+                </div>
+
+                <button
+                  onClick={prevProduct}
+                  className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-20"
+                  aria-label="Previous products"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+
+                <button
+                  onClick={nextProduct}
+                  className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-20"
+                  aria-label="Next products"
+                >
+                  <ChevronRight size={20} />
+                </button>
               </div>
 
-              <button
-                onClick={prevProduct}
-                className="absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-20"
-              >
-                <ChevronLeft size={20} />
-              </button>
-
-              <button
-                onClick={nextProduct}
-                className="absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-20"
-              >
-                <ChevronRight size={20} />
-              </button>
+              <div className="flex justify-center gap-2 mt-6">
+                {Array.from({ length: products.length - 2 }).map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCarouselIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      idx === carouselIndex
+                        ? "bg-gradient-to-r from-[#ff7b16] to-[#1c4c97] w-8"
+                        : "bg-gray-300 hover:bg-gray-400 w-2"
+                    }`}
+                    aria-label={`Go to product set ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
 
-            <div className="flex justify-center gap-2 mt-6">
-              {products.map((_, idx) => (
+            {/* Mobile View (Horizontal Scroll) */}
+            <div className="md:hidden">
+              <div className="relative">
                 <button
-                  key={idx}
-                  onClick={() => setCarouselIndex(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    idx === carouselIndex
-                      ? "bg-gradient-to-r from-[#ff7b16] to-[#1c4c97] w-8"
-                      : "bg-gray-400 hover:bg-gray-500"
-                  }`}
-                />
-              ))}
+                  onClick={() => scrollMobile('left')}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white rounded-full flex items-center justify-center shadow-lg z-20"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+
+                <div 
+                  ref={mobileScrollRef}
+                  className="mobile-scroll-container flex gap-4 overflow-x-auto pb-4 px-2"
+                  style={{ scrollPadding: '0 16px' }}
+                >
+                  {products.map((product) => (
+                    <div
+                      key={product.id}
+                      className="flex-shrink-0 w-[calc(100vw-4rem)] bg-white border border-gray-200 rounded-xl overflow-hidden card-hover group/card cursor-pointer"
+                      onClick={() => openProductModal(product)}
+                    >
+                      <div className="relative w-full h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="w-full h-full object-contain p-3"
+                        />
+
+                        <div className="absolute top-2 right-2 bg-gradient-to-r from-[#ff7b16] to-[#ff7b13] text-white font-bold px-2 py-1 rounded-full text-xs shadow-lg">
+                          -{product.discount}%
+                        </div>
+
+                        <div className="absolute bottom-2 left-2 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white font-semibold px-2 py-1 rounded-lg text-xs opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                          New Arrival
+                        </div>
+                      </div>
+
+                      <div className="flex-1 p-3 flex flex-col justify-between">
+                        <div>
+                          <h3 className="text-sm font-bold text-gray-900 mb-2 text-center h-10 flex items-center justify-center">
+                            {product.title}
+                          </h3>
+
+                          <div className="grid grid-cols-2 gap-2 mb-3">
+                            <div className="space-y-1">
+                              {product.specs
+                                .slice(0, Math.ceil(product.specs.length / 2))
+                                .map((spec, idx) => (
+                                  <div
+                                    key={idx}
+                                    className="flex items-center gap-1 text-gray-600 text-xs"
+                                  >
+                                    <div className="w-1 h-1 rounded-full bg-[#1c4c97] flex-shrink-0"></div>
+                                    <span className="truncate">{spec}</span>
+                                  </div>
+                                ))}
+                            </div>
+
+                            <div className="space-y-1 text-right">
+                              {product.specs
+                                .slice(Math.ceil(product.specs.length / 2))
+                                .map((spec, idx) => (
+                                  <div
+                                    key={idx}
+                                    className="flex items-center justify-end gap-1 text-gray-600 text-xs"
+                                  >
+                                    <span className="truncate">{spec}</span>
+                                    <div className="w-1 h-1 rounded-full bg-[#ff7b16] flex-shrink-0"></div>
+                                  </div>
+                                ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="border-t border-gray-200 pt-2 pb-2 mb-2">
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex gap-1 min-w-0">
+                              <span className="text-base font-bold text-gray-900">
+                                ${product.salePrice}
+                              </span>
+                              <span className="text-xs text-gray-500 line-through">
+                                ${product.originalPrice}
+                              </span>
+                            </div>
+
+                            <div
+                              className="flex items-center gap-1 flex-shrink-0"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <a
+                                href="tel:+251911234567"
+                                className="p-1.5 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 transition-all duration-200 hover:shadow-sm"
+                                title="Call Now"
+                                aria-label="Call now"
+                              >
+                                <Phone className="w-3 h-3" />
+                              </a>
+
+                              <a
+                                href="https://wa.me/251911234567"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-1.5 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 transition-all duration-200 hover:shadow-sm"
+                                title="WhatsApp"
+                                aria-label="WhatsApp"
+                              >
+                                <MessageCircle className="w-3 h-3" />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button className="w-full py-2 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-xs">
+                          Full Specifications
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => scrollMobile('right')}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white rounded-full flex items-center justify-center shadow-lg z-20"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+
+              <div className="flex justify-center gap-2 mt-4">
+                {products.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className="h-1 w-6 bg-gray-300 rounded-full"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="fixed right-4 bottom-8 z-50 flex flex-col gap-3">
-        <button
-          className={`group relative w-14 h-14 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${
-            isPulsing ? "animate-pulse" : ""
-          }`}
-        >
-          <MessageCircle className="w-7 h-7 text-white" />
-          <div className="absolute -left-24 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            Chat on WhatsApp
-          </div>
-          <div className="absolute inset-0 rounded-full bg-green-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-pulse"></div>
-        </button>
-
-        <button className="group relative w-14 h-14 rounded-full bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
-          <MessageCircle className="w-7 h-7 text-white" />
-          <div className="absolute -left-24 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            Chat on Telegram
-          </div>
-          <div className="absolute inset-0 rounded-full bg-[#1c4c97] opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-pulse"></div>
-        </button>
-
-        <button className="group relative w-14 h-14 rounded-full bg-gradient-to-br from-[#ff7b16] to-[#1c4c97] shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
-          <Zap className="w-7 h-7 text-white" />
-          <div className="absolute -left-24 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            Best Price Alert
-          </div>
-          <div className="absolute inset-0 rounded-full bg-[#ff7b16] opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-pulse"></div>
-        </button>
-      </div>
+      
     </div>
   );
 };

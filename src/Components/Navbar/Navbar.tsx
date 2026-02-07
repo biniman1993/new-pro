@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { Search, Phone, Mail, Menu, X } from "lucide-react";
-import logo from "../../assets/logo.png";
 
 const CustomNavLink = ({
   to,
@@ -22,7 +21,7 @@ const CustomNavLink = ({
       to={to}
       onClick={handleClick}
       className={({ isActive }) =>
-        `relative px-4 py-2 font-semibold text-sm uppercase tracking-wide transition-all duration-300 group ${
+        `relative px-4 py-2 font-semibold text-sm  tracking-wide transition-all duration-300 group ${
           isActive ? "text-orange-400" : "text-white hover:text-orange-400"
         }`
       }
@@ -53,20 +52,35 @@ const Navbar = () => {
       <div className="border-b border-white/10">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo - Consistent Size */}
+            {/* Logo and Brand Name */}
             <div
               onClick={scrollToTop}
-              className="flex-shrink-0 cursor-pointer transform transition-transform duration-300 hover:scale-105"
+              className="flex-shrink-0 cursor-pointer transform transition-transform duration-300 hover:scale-105 flex flex-col items-start"
             >
-              <img
-                src={logo}
-                alt="Logo"
-                className="h-12 w-auto sm:h-12 md:h-12 lg:h-12 xl:h-12 object-contain drop-shadow-lg"
-              />
+              <div className="flex items-center gap-2">
+                <div className="relative">
+                  {/* Logo Container with gradient border */}
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-orange-500 to-blue-300 p-0.5">
+                    {/* Inner circle with solid color */}
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#0a0e27] to-[#2a5da5] flex items-center justify-center">
+                      {/* Logo Icon/Text */}
+                      <span className="text-white font-bold text-lg">P</span>
+                    </div>
+                  </div>
+                
+                </div>
+                {/* Brand Name */}
+                <div className="flex flex-col">
+<span className="text-white font-semibold text-xl tracking-tight">Proactive</span>
+                  <span className="text-xs text-white/70 tracking-wider font-medium mt-[-4px]">
+                    TRADING
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Desktop Menu with Centered Search */}
-            <div className="hidden lg:flex items-center justify-center flex-1 gap-1 xl:gap-3">
+            <div className="hidden lg:flex items-center justify-center flex-1 gap-0.5 xl:gap-0.5">
               <CustomNavLink to="/">Home</CustomNavLink>
               <CustomNavLink to="/about">About</CustomNavLink>
               <CustomNavLink to="/shop">Shop</CustomNavLink>
@@ -96,7 +110,7 @@ const Navbar = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
                 <Phone className="w-4 h-4 transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300 group-hover:text-blue-300" />
                 <span className="hidden xl:inline relative z-10 group-hover:text-blue-200 transition-colors duration-300">
-                  + (251) 911 517 628
+                  +251911517628
                 </span>
               </a>
 
@@ -112,21 +126,7 @@ const Navbar = () => {
                 </span>
               </a>
 
-              {/* Sign In - Updated to match other containers */}
-              <button
-                onClick={handleSignIn}
-                className="group relative flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-green-500/20 hover:to-emerald-500/20 hover:border-green-400/60 hover:shadow-lg hover:shadow-green-500/30"
-              >
-                {/* Animated gradient overlay - same as other containers */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-
-                {/* Icon (optional - you can add one or keep text only) */}
-
-                {/* Sign In text */}
-                <span className="relative z-10 group-hover:text-green-200 transition-colors duration-300">
-                  Sign In
-                </span>
-              </button>
+             
             </div>
 
             {/* Mobile Menu Button */}

@@ -112,13 +112,13 @@ function App() {
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4">
+          <h1 className="text-6xl md:text-7xl lg:text-6xl font-bold mb-4">
             <div className="text-gray-900">End-to-End AV</div>
-            <div className="text-orange-500">Integration Services</div>
+            <div className="text-orange-500 lg:text text-4xl">Integration Services</div>
           </h1>
         </div>
 
-        <div className="w-full max-w-7xl mx-auto mb-16" style={{ perspective: '2000px' }}>
+        <div className="w-full max-w-7xl mx-auto mb-6" style={{ perspective: '2000px' }}>
           <div className="relative h-[550px] flex items-center justify-center">
             {services.map((service, index) => {
               const style = getCardStyle(index);

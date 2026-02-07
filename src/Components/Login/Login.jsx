@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import Navbar from '../Navbar/Navbar';
 import TopMenu from '../TopMenu/TopMenu';
-import Footer from '../Navbar/Footer/Footer';
+import Footer from '../Footer';
 import './Login.css';
 
 const Login = () => {
