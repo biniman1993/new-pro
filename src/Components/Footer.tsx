@@ -1,4 +1,5 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Youtube, ArrowRight, ChevronRight } from 'lucide-react';
+import footerBg from '../assets/footer-bg.jpg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,28 +9,22 @@ const Footer = () => {
     { name: 'Accessories', href: '#' },
     { name: 'Electronics', href: '#' },
     { name: 'Networking', href: '#' },
-     { name: 'New Arival', href: '#' },
+    { name: 'New Arrival', href: '#' },
   ];
 
   const company = [
     { name: 'About Us', href: '#' },
-    { name: 'Contact Us', href: '#' },
-    { name: 'Profile', href: '#' },
-    { name: 'Brand', href: '#' },
-    { name: 'Store ', href: '#' },
+    { name: 'Our Brand', href: '#' },
+    { name: 'Store Locations', href: '#' },
+    { name: 'Careers', href: '#' },
   ];
 
   const support = [
     { name: 'Help Center', href: '#' },
     { name: 'FAQs', href: '#' },
-    { name: 'Contact Us', href: '#' },
     { name: 'Shipping & Returns', href: '#' },
-  ];
-
-  const legal = [
     { name: 'Terms & Conditions', href: '#' },
     { name: 'Privacy Policy', href: '#' },
-    { name: 'Cookie Policy', href: '#' },
   ];
 
   const socialLinks = [
@@ -42,163 +37,342 @@ const Footer = () => {
   return (
     <>
       <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .footer-wrapper {
+          position: relative;
+          overflow: hidden;
+        }
+        .footer-bg-img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .footer-overlay-1 {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, rgba(9,26,73,0.95), rgba(9,26,73,0.90), rgba(22,56,104,0.95));
+        }
+        .footer-overlay-2 {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to right, rgba(9,26,73,0.80), transparent);
+        }
+        .footer-accent-bar {
+          position: relative;
+          height: 4px;
+          background: linear-gradient(to right, #e67817, rgba(230,120,23,0.6), transparent);
+        }
+        .footer-content {
+          position: relative;
+          max-width: 80rem;
+          margin: 0 auto;
+          padding: 3.5rem 1.25rem;
+        }
+        @media (min-width: 640px) { .footer-content { padding: 4rem 2rem; } }
+        @media (min-width: 1024px) { .footer-content { padding: 5rem 2rem; } }
+
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .footer-grid { grid-template-columns: 4fr 2fr 2fr 4fr; gap: 2rem; } }
+
+        .footer-brand-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin-bottom: 0.75rem;
+          color: #ffffff;
+        }
+        @media (min-width: 640px) { .footer-brand-title { font-size: 1.875rem; } }
+        .footer-brand-title span { color: #e67817; }
+
+        .footer-desc {
+          color: #b0bec5;
+          font-size: 0.875rem;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+          max-width: 20rem;
         }
 
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+        .footer-contact-link {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          color: #b0bec5;
+          text-decoration: none;
+          transition: color 0.3s;
+          font-size: 0.875rem;
+        }
+        .footer-contact-link:hover { color: #e67817; }
+        .footer-contact-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2.25rem;
+          height: 2.25rem;
+          border-radius: 0.5rem;
+          background: rgba(255,255,255,0.1);
+          flex-shrink: 0;
+          transition: background 0.3s;
+        }
+        .footer-contact-link:hover .footer-contact-icon {
+          background: rgba(230,120,23,0.2);
         }
 
-        .footer-link:hover {
+        .footer-social-row { display: flex; gap: 0.75rem; }
+        .footer-social-btn {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 0.75rem;
+          background: rgba(255,255,255,0.1);
+          backdrop-filter: blur(4px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #b0bec5;
+          text-decoration: none;
+          transition: all 0.3s;
+          border: none;
+          cursor: pointer;
+        }
+        .footer-social-btn:hover {
+          background: #e67817;
+          color: #ffffff;
+          transform: translateY(-4px) scale(1.1);
+          box-shadow: 0 8px 20px -4px rgba(230,120,23,0.4);
+        }
+
+        .footer-col-title {
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 1rem;
+          margin-bottom: 1.25rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .footer-col-dot {
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background: #e67817;
+          display: inline-block;
+        }
+
+        .footer-link-list { list-style: none; padding: 0; margin: 0; }
+        .footer-link-list li { margin-bottom: 0.75rem; }
+        .footer-link-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #b0bec5;
+          text-decoration: none;
+          font-size: 0.875rem;
+          transition: color 0.3s;
+        }
+        .footer-link-item:hover { color: #e67817; }
+        .footer-link-chevron {
+          opacity: 0;
+          margin-left: -1rem;
           color: #e67817;
-          transform: translateX(4px);
+          transition: all 0.3s;
+        }
+        .footer-link-item:hover .footer-link-chevron {
+          opacity: 1;
+          margin-left: 0;
         }
 
-        .social-icon-btn:hover {
-          transform: translateY(-4px);
+        .footer-newsletter {
+          margin-top: 2rem;
+          padding: 1rem;
+          border-radius: 0.75rem;
+          background: rgba(255,255,255,0.1);
+          backdrop-filter: blur(4px);
+          border: 1px solid rgba(255,255,255,0.12);
+        }
+        .footer-newsletter-title {
+          color: #ffffff;
+          font-size: 0.875rem;
+          font-weight: 500;
+          margin-bottom: 0.75rem;
+        }
+        .footer-newsletter-row { display: flex; gap: 0.5rem; }
+        .footer-newsletter-input {
+          flex: 1;
+          padding: 0.5rem 0.75rem;
+          font-size: 0.875rem;
+          border-radius: 0.5rem;
+          background: rgba(255,255,255,0.1);
+          border: 1px solid rgba(255,255,255,0.12);
+          color: #ffffff;
+          outline: none;
+          transition: border-color 0.3s;
+        }
+        .footer-newsletter-input::placeholder { color: rgba(176,190,197,0.5); }
+        .footer-newsletter-input:focus { border-color: rgba(230,120,23,0.5); }
+        .footer-newsletter-btn {
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          background: #e67817;
+          color: #ffffff;
+          border: none;
+          cursor: pointer;
+          font-size: 0.875rem;
+          font-weight: 500;
+          transition: all 0.3s;
+          display: flex;
+          align-items: center;
+        }
+        .footer-newsletter-btn:hover {
+          filter: brightness(1.1);
+          transform: scale(1.05);
+          box-shadow: 0 4px 16px -2px rgba(230,120,23,0.5);
+        }
+
+        .footer-bottom {
+          margin-top: 3.5rem;
+          padding-top: 1.5rem;
+          border-top: 1px solid rgba(255,255,255,0.12);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+        }
+        @media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
+        .footer-bottom-text {
+          color: rgba(176,190,197,0.6);
+          font-size: 0.75rem;
+        }
+        .footer-bottom-flag {
+          color: rgba(176,190,197,0.4);
+          font-size: 0.75rem;
         }
       `}</style>
 
-      <footer className="bg-gradient-to-b from-[#091a49] to-[#163868] text-white">
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
-            {/* Brand & Contact Section */}
-            <div className="col-span-1 lg:col-span-1">
-              <div className="mb-8">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r from-[#e67817] to-[#e67817] bg-clip-text text-transparent">
-                  Proactive Trading
-                </h2>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Your trusted partner for cutting-edge technology solutions.
-                </p>
+      <footer className="footer-wrapper">
+        {/* Background */}
+        <img src={footerBg} alt="" className="footer-bg-img" />
+        <div className="footer-overlay-1" />
+        <div className="footer-overlay-2" />
+
+        {/* Top Accent */}
+        <div className="footer-accent-bar" />
+
+        {/* Main Content */}
+        <div className="footer-content">
+          <div className="footer-grid">
+
+            {/* Brand */}
+            <div>
+              <h2 className="footer-brand-title">
+                Proactive <span>Trading</span>
+              </h2>
+              <p className="footer-desc">
+                Your trusted partner for cutting-edge technology solutions. Delivering premium electronics across Ethiopia.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
+                <a href="tel:+251911123456" className="footer-contact-link">
+                  <span className="footer-contact-icon"><Phone size={16} /></span>
+                  +251 911 123 456
+                </a>
+                <a href="mailto:info@proactive.et" className="footer-contact-link">
+                  <span className="footer-contact-icon"><Mail size={16} /></span>
+                  info@proactive.et
+                </a>
+                <a href="#" className="footer-contact-link">
+                  <span className="footer-contact-icon"><MapPin size={16} /></span>
+                  Addis Ababa, Ethiopia
+                </a>
               </div>
 
-              {/* Contact Info */}
-              <div className="space-y-3 mb-6">
-                <a href="tel:+251911123456" className="flex items-center gap-3 text-gray-300 hover:text-[#e67817] transition-colors group">
-                  <Phone size={18} className="flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm">+251 911 123 456</span>
-                </a>
-                <a href="mailto:info@proactivetrading.et" className="flex items-center gap-3 text-gray-300 hover:text-[#e67817] transition-colors group">
-                  <Mail size={18} className="flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm">info@proactive.et</span>
-                </a>
-              </div>
-
-              {/* Social Links */}
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Follow Us</h3>
-                <div className="flex gap-3 flex-wrap">
-                  {socialLinks.map((social) => {
-                    const Icon = social.icon;
-                    return (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        aria-label={social.label}
-                        className="social-icon-btn w-10 h-10 rounded-lg bg-white/10 hover:bg-gradient-to-br hover:from-[#e67817] hover:to-[#e67817] flex items-center justify-center transition-all duration-300"
-                      >
-                        <Icon size={18} />
-                      </a>
-                    );
-                  })}
-                </div>
+              <div className="footer-social-row">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a key={social.label} href={social.href} aria-label={social.label} className="footer-social-btn">
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Shop Categories */}
+            {/* Categories */}
             <div>
-              <h3 className="text-white font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-gradient-to-r after:from-[#e67817] after:to-[#e67817]">
+              <h3 className="footer-col-title">
+                <span className="footer-col-dot" />
                 Categories
               </h3>
-              <ul className="space-y-3">
+              <ul className="footer-link-list">
                 {shopCategories.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className="footer-link text-gray-300 text-sm hover:text-[#e67817] transition-all duration-300">
-                      → {item.name}
+                    <a href={item.href} className="footer-link-item">
+                      <ChevronRight size={14} className="footer-link-chevron" />
+                      {item.name}
                     </a>
                   </li>
                 ))}
               </ul>
-              
             </div>
 
             {/* Company */}
             <div>
-              <h3 className="text-white font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-gradient-to-r after:from-[#e67817] after:to-[#e67817]">
+              <h3 className="footer-col-title">
+                <span className="footer-col-dot" />
                 Company
               </h3>
-              <ul className="space-y-3">
+              <ul className="footer-link-list">
                 {company.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className="footer-link text-gray-300 text-sm hover:text-[#e67817] transition-all duration-300">
-                      → {item.name}
+                    <a href={item.href} className="footer-link-item">
+                      <ChevronRight size={14} className="footer-link-chevron" />
+                      {item.name}
                     </a>
                   </li>
                 ))}
               </ul>
-              
             </div>
 
-            {/* Support & Legal */}
+            {/* Support & Newsletter */}
             <div>
-              <h3 className="text-white font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-gradient-to-r after:from-[#e67817] after:to-[#e67817]">
-                Support
+              <h3 className="footer-col-title">
+                <span className="footer-col-dot" />
+                Support & Legal
               </h3>
-              <ul className="space-y-3">
+              <ul className="footer-link-list">
                 {support.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className="footer-link text-gray-300 text-sm hover:text-[#e67817] transition-all duration-300">
-                      → {item.name}
+                    <a href={item.href} className="footer-link-item">
+                      <ChevronRight size={14} className="footer-link-chevron" />
+                      {item.name}
                     </a>
                   </li>
                 ))}
               </ul>
-            </div>
 
-            {/* Legal & Location */}
-            <div>
-              <h3 className="text-white font-bold text-lg mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-gradient-to-r after:from-[#e67817] after:to-[#e67817]">
-                Legal
-              </h3>
-              <ul className="space-y-3">
-                {legal.map((item) => (
-                  <li key={item.name}>
-                    <a href={item.href} className="footer-link text-gray-300 text-sm hover:text-[#e67817] transition-all duration-300">
-                      → {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <a href="#" className="inline-flex items-center gap-2 mt-4 text-[#e67817] text-sm font-semibold hover:text-[#e67817] transition-colors group">
-                <MapPin size={16} className="group-hover:scale-110 transition-transform" />
-                <span>Find Location</span>
-              </a>
+              <div className="footer-newsletter">
+                <p className="footer-newsletter-title">Stay updated with deals</p>
+                <div className="footer-newsletter-row">
+                  <input type="email" placeholder="Your email" className="footer-newsletter-input" />
+                  <button className="footer-newsletter-btn">
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Divider */}
-
-         
+          {/* Bottom */}
+          <div className="footer-bottom">
+            <p className="footer-bottom-text">© {currentYear} Proactive Trading. All rights reserved.</p>
+            <p className="footer-bottom-flag">Delivering Technology Across Ethiopia 🇪🇹</p>
+          </div>
         </div>
-
-        {/* Top Border Accent */}
       </footer>
     </>
   );

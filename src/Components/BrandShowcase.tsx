@@ -1,228 +1,177 @@
 import { useState } from 'react';
-import HP_Logo from '../assets/brandslogo/HP_Logo.png';
-import Lenovo from '../assets/brandslogo/Lenovo.png';
-import Dell from '../assets/brandslogo/Dell.png';
-import ThinkPad from '../assets/brandslogo/ThinkPad.png';
-import ZTE from '../assets/brandslogo/ZTE.png';
-import Canon from '../assets/brandslogo/canon.jpg';
-import Asus from '../assets/brandslogo/asus.png';
-import Apple from '../assets/brandslogo/apple.png';
-import Acer from '../assets/brandslogo/acer.png';
-import SanDisk from '../assets/brandslogo/SanDisk.png';
-import Epson from '../assets/brandslogo/epson.png';
-import Huawei from '../assets/brandslogo/Huawei.png';
-import BenQ from '../assets/brandslogo/benq.png';
+import { ChevronRight } from 'lucide-react';
+// Import statements remain the same as your original code...
 
 const BrandShowcase = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const logos = [
-    { id: 1, name: 'HP', image: HP_Logo },
-    { id: 2, name: 'Lenovo', image: Lenovo },
-    { id: 3, name: 'Dell', image: Dell },
-    { id: 4, name: 'ThinkPad', image: ThinkPad },
-    { id: 5, name: 'ZTE', image: ZTE },
-    { id: 6, name: 'Canon', image: Canon },
-    { id: 7, name: 'Asus', image: Asus },
-    { id: 8, name: 'Apple', image: Apple },
-    { id: 9, name: 'Acer', image: Acer },
-    { id: 10, name: 'SanDisk', image: SanDisk },
-    { id: 11, name: 'HP Duplicate', image: HP_Logo },
-    { id: 12, name: 'Epson', image: Epson },
-    { id: 13, name: 'Huawei', image: Huawei },
-    { id: 14, name: 'BenQ', image: BenQ }
+    { id: 1, name: 'HP', image: "/assets/brandslogo/HP_Logo.png" },
+    { id: 2, name: 'Lenovo', image: "/assets/brandslogo/Lenovo.png" },
+    { id: 3, name: 'Dell', image: "/assets/brandslogo/Dell.png" },
+    { id: 4, name: 'ThinkPad', image: "/assets/brandslogo/ThinkPad.png" },
+    { id: 5, name: 'ZTE', image: "/assets/brandslogo/ZTE.png" },
+    { id: 6, name: 'Canon', image: "/assets/brandslogo/canon.jpg" },
+    { id: 7, name: 'Asus', image: "/assets/brandslogo/asus.png" },
+    { id: 8, name: 'Apple', image: "/assets/brandslogo/apple.png" },
+    { id: 9, name: 'Acer', image: "/assets/brandslogo/acer.png" },
+    { id: 10, name: 'SanDisk', image: "/assets/brandslogo/SanDisk.png" },
+    { id: 11, name: 'HP Duplicate', image: "/assets/brandslogo/HP_Logo.png" },
+    { id: 12, name: 'Epson', image: "/assets/brandslogo/epson.png" },
+    { id: 13, name: 'Huawei', image: "/assets/brandslogo/Huawei.png" },
+    { id: 14, name: 'BenQ', image: "/assets/brandslogo/benq.png" }
   ];
 
-  const duplicatedLogos = [...logos, ...logos, ...logos];
+  // Duplicating for seamless infinite loop
+  const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div className="w-full py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="inline-block px-4 py-2 rounded-full bg-orange-50 border border-orange-200 mb-4">
-            <span className="text-sm font-semibold text-orange-600">PREMIUM PARTNERSHIPS</span>
+    <div className="w-full py-12 md:py-24 bg-white overflow-hidden relative">
+      {/* Background Decorative Element */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-5 pointer-events-none">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-[#2a5da5] rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-[#ff7b16] rounded-full blur-[120px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-10 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-4">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2a5da5]"></span>
+            </span>
+            <span className="text-[10px] md:text-xs font-bold text-[#2a5da5] tracking-widest uppercase">Global Partnerships</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Featured{' '}
-            <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
-                Tech Brands
-              </span>
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-orange-600 to-orange-500 rounded-full"></span>
-            </span>
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+            Our Trusted <span className="text-[#ff7b16]">Tech Brands</span>
           </h2>
-
-          <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto">
-            We collaborate with the world's leading technology innovators
-          </p>
+          <div className="h-1.5 w-20 bg-[#ff7b16] mx-auto rounded-full mb-6"></div>
         </div>
 
-        <div className="relative py-8">
-         
-          <div className="logo-scroll">
-            {duplicatedLogos.map((logo, index) => {
-              const uniqueId = `${logo.id}-${index}`;
-              const isHovered = hoveredId === uniqueId;
+        {/* Logo Slider Container */}
+        <div className="relative group">
+          {/* Fading Edges Overlay */}
+          <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-20"></div>
+          <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-20"></div>
 
-              return (
-                <div
-                  key={uniqueId}
-                  className="logo-item"
-                  onMouseEnter={() => setHoveredId(uniqueId)}
-                  onMouseLeave={() => setHoveredId(null)}
-                >
-                  <div className={`logo-card ${isHovered ? 'hovered' : ''}`}>
-                    <div className="logo-placeholder">
+          <div className="logo-scroll-container py-10">
+            <div className="logo-track">
+              {duplicatedLogos.map((logo, index) => {
+                const uniqueId = `${logo.id}-${index}`;
+                return (
+                  <div
+                    key={uniqueId}
+                    className="logo-card-wrapper"
+                    onMouseEnter={() => setHoveredId(uniqueId)}
+                    onMouseLeave={() => setHoveredId(null)}
+                  >
+                    <div className={`logo-card ${hoveredId === uniqueId ? 'active' : ''}`}>
                       <img 
                         src={logo.image} 
                         alt={logo.name}
-                        className="w-full h-full object-contain p-2"
+                        className="brand-img"
                       />
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-orange-600">14+</div>
-                <div className="text-xs sm:text-sm text-gray-600">Global Brands</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-orange-600">100%</div>
-                <div className="text-xs sm:text-sm text-gray-600">Authentic</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-blue-600">24/7</div>
-                <div className="text-xs sm:text-sm text-gray-600">Support</div>
-              </div>
+                );
+              })}
             </div>
           </div>
+        </div>
+
+        {/* Modern Action Button */}
+        <div className="mt-10 text-center">
+          <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#1c4c97] text-white font-bold rounded-full overflow-hidden transition-all hover:pr-12 active:scale-95 shadow-xl hover:shadow-[#2a5da5]/20">
+            <span className="relative z-10">Explore All Brands</span>
+            <ChevronRight className="absolute right-4 opacity-0 group-hover:opacity-100 transition-all duration-300" size={20} />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </button>
         </div>
       </div>
 
       <style>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(-100% / 3));
-          }
-        }
-
-        .logo-scroll {
+        .logo-scroll-container {
           display: flex;
-          animation: scroll 40s linear infinite;
-          will-change: transform;
+          overflow: hidden;
+          width: 100%;
         }
 
-        .logo-scroll:hover {
+        .logo-track {
+          display: flex;
+          width: fit-content;
+          animation: infiniteScroll 40s linear infinite;
+        }
+
+        .logo-track:hover {
           animation-play-state: paused;
         }
 
-        .logo-item {
+        .logo-card-wrapper {
           flex-shrink: 0;
-          padding: 0 1.5rem;
-          min-width: 180px;
+          padding: 0 12px; /* Gap control */
         }
 
         .logo-card {
-          position: relative;
-          padding: 1.5rem;
+          width: 120px;
+          height: 80px;
           background: white;
-          border-radius: 1rem;
-          border: 2px solid #e5e7eb;
-          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          cursor: pointer;
-          height: 140px;
+          border-radius: 16px;
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: 15px;
+          border: 1px solid #f1f5f9;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .logo-card:hover {
-          border-color: #e5e7eb;
-          box-shadow: none;
+        .brand-img {
+          max-width: 100%;
+          max-height: 100%;
+          object-contain;
+          filter: grayscale(100%);
+          opacity: 0.6;
+          transition: all 0.4s ease;
         }
 
-        .logo-card.hovered {
-          transform: scale(1.35);
-          z-index: 20;
-          border-color: #e5e7eb;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        /* Hover States */
+        .logo-card.active {
+          transform: translateY(-10px) scale(1.15);
+          border-color: #ff7b16;
+          box-shadow: 0 20px 25px -5px rgba(255, 123, 22, 0.15);
+          z-index: 50;
         }
 
-        .logo-placeholder {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 100%;
-          transition: all 0.5s ease;
+        .logo-card.active .brand-img {
+          filter: grayscale(0%);
+          opacity: 1;
+          transform: scale(1.05);
         }
 
-        .logo-card.hovered .logo-placeholder {
-          transform: none;
+        @keyframes infiniteScroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
         }
 
-        @media (max-width: 1024px) {
-          .logo-scroll {
-            animation-duration: 35s;
-          }
-
-          .logo-item {
-            min-width: 160px;
-            padding: 0 1rem;
-          }
-
+        /* Tablet Adjustments */
+        @media (min-width: 768px) {
           .logo-card {
-            height: 120px;
-            padding: 1rem;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .logo-scroll {
-            animation-duration: 30s;
-          }
-
-          .logo-item {
-            min-width: 140px;
-            padding: 0 0.75rem;
-          }
-
-          .logo-card {
+            width: 180px;
             height: 110px;
-            padding: 0.75rem;
+            padding: 25px;
           }
-
-          .logo-card.hovered {
-            transform: scale(1.25);
+          .logo-card-wrapper {
+            padding: 0 20px;
           }
         }
 
-        @media (max-width: 640px) {
-          .logo-scroll {
-            animation-duration: 25s;
-          }
-
-          .logo-item {
-            min-width: 120px;
-            padding: 0 0.5rem;
-          }
-
+        /* Desktop Adjustments */
+        @media (min-width: 1024px) {
           .logo-card {
-            height: 100px;
-            padding: 0.5rem;
-          }
-
-          .logo-card.hovered {
-            transform: scale(1.2);
+            width: 220px;
+            height: 130px;
           }
         }
       `}</style>

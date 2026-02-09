@@ -74,9 +74,9 @@ const Products = React.forwardRef(({
           ></div>
         </div>
         
-        {/* Products Grid - EXACT SAME as ItemCard */}
+        {/* Products Grid - UPDATED TO grid-cols-2 FOR PHONE */}
         <div className="mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {productsData.map((product, index) => (
               <div
                 key={product.id}

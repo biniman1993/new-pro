@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Building2, Send, Clock, Users, MessageCircle, Globe, Award, CheckCircle } from 'lucide-react';
-import './Contact.css';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
+import { Mail, Phone, MapPin, Building2, Send, Clock, Users, MessageCircle, Globe, Award, CheckCircle, ChevronDown } from 'lucide-react';
 
 const Contact = () => {
   const [activeSection, setActiveSection] = useState('office');
@@ -13,43 +12,42 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+ const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const offset = 100;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      setActiveSection(sectionId);
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
     });
-  };
+    setActiveSection(sectionId);
+  }
+};
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  console.log('Form submitted:', formData);
+  setIsSubmitting(false);
+  setFormData({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+};
 
+const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  });
+};
   const navigationButtons = [
     { id: 'office', label: 'Office', icon: Building2 },
     { id: 'branches', label: 'Branches', icon: MapPin },
@@ -60,14 +58,13 @@ const Contact = () => {
   ];
 
   const teamMembers = [
-    { name: 'Sarah Johnson', role: 'Sales Manager', email: 'sarah@startech.com', phone: '+1 234 567 890' },
-    { name: 'Mike Chen', role: 'Technical Lead', email: 'mike@startech.com', phone: '+1 234 567 891' },
-    { name: 'Emma Davis', role: 'Customer Support', email: 'emma@startech.com', phone: '+1 234 567 892' },
-    { name: 'Alex Rodriguez', role: 'Project Manager', email: 'alex@startech.com', phone: '+1 234 567 893' }
+    { name: 'Sarah Johnson', role: 'Sales Manager', email: 'sarah@proactive.com', phone: '+251 123 456 789' },
+    { name: 'Mike Chen', role: 'Technical Lead', email: 'mike@proactive.com', phone: '+251 987 654 321' },
+    { name: 'Emma Davis', role: 'Customer Support', email: 'emma@proactive.com', phone: '+251 456 789 123' },
   ];
 
   const faqItems = [
-    { question: 'What are your business hours?', answer: 'We are available Monday to Friday, 9:00 AM to 6:00 PM EST.' },
+    { question: 'What are your business hours?', answer: 'We are available Monday to Friday, 9:00 AM to 6:00 PM EAT.' },
     { question: 'Do you offer 24/7 support?', answer: 'Yes, we provide 24/7 technical support for all our enterprise clients.' },
     { question: 'How quickly do you respond to inquiries?', answer: 'We typically respond within 2 hours during business hours.' },
     { question: 'Do you offer custom solutions?', answer: 'Absolutely! We specialize in creating tailored solutions for our clients.' }
@@ -80,158 +77,280 @@ const Contact = () => {
     { value: '50+', label: 'Countries Served', icon: Globe }
   ];
 
+  // Brand colors
+  const brandColors = {
+    primaryBlue: '#1c4c97',
+    primaryBlueDark: '#0a0e27',
+    secondaryOrange: '#ff7b16',
+    secondaryOrangeDark: '#e47325',
+    white: '#ffffff'
+  };
+
   return (
-    <div className="contact-page-container">
-      <section className="contact-header-section">
-        <div className="contact-header-content">
-          <div className="contact-header-badge">Get in Touch</div>
-          <h1 className="contact-main-title">Let's Build Something <span className="contact-gradient-text">Amazing</span> Together</h1>
-          <p className="contact-subtitle">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden mt-6 pt-32 pb-20 bg-gradient-to-br from-[#0a0e27] via-[#1c4c97] to-[#0a0e27]">
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1c4c97]/20 rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#ff7b16]/5 to-[#1c4c97]/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+          <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white font-semibold text-sm uppercase tracking-wider mb-6">
+            Get in Touch
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Let's Build Something <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent animate-pulse">Amazing</span> Together
+          </h1>
+          
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-12">
             Your vision, our expertise. Let's create extraordinary solutions that drive your business forward.
           </p>
 
-          <div className="contact-stats-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="contact-stat-card" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="contact-stat-icon">
-                  <stat.icon />
+              <div 
+                key={index} 
+                className="bg-white/15 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-center gap-4 hover:bg-white/25 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#1c4c97] shadow-lg">
+                  <stat.icon size={24} />
                 </div>
-                <div className="contact-stat-content">
-                  <div className="contact-stat-value">{stat.value}</div>
-                  <div className="contact-stat-label">{stat.label}</div>
+                <div>
+                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-sm text-blue-100">{stat.label}</div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="contact-tab-navigation">
-        <div className="contact-tab-buttons">
-          {navigationButtons.map((button) => (
-            <button
-              key={button.id}
-              className={`contact-tab-button ${activeSection === button.id ? 'contact-tab-active' : ''}`}
-              onClick={() => scrollToSection(button.id)}
-            >
-              <button.icon className="contact-tab-icon" />
-              <span>{button.label}</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      <div className="contact-all-sections">
-        <section id="office" className="contact-content-section">
-          <div className="contact-section-header">
-            <h2 className="contact-section-title">Office Information</h2>
-            <p className="contact-section-subtitle">Reach out to us through any of these channels</p>
+          <div className="mt-12">
+            <ChevronDown className="mx-auto text-white animate-bounce" size={32} />
           </div>
-          <div className="contact-info-cards">
-            <div className="contact-info-card">
-              <div className="contact-info-icon contact-phone-icon">
-                <Phone />
+        </div>
+      </section>
+
+     {/* Tab Navigation - Inside content flow */}
+<div className="relative -mt-10 mb-10">
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="relative">
+      {/* Background container */}
+      <div className="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl border " />
+      
+      {/* Tab buttons */}
+      <div className="relative flex overflow-x-auto gap-2 p-2 scrollbar-hide">
+        {navigationButtons.map((button) => (
+          <button
+            key={button.id}
+            className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
+              activeSection === button.id 
+                ? 'text-white bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] shadow-lg' 
+                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+            }`}
+            onClick={() => scrollToSection(button.id)}
+          >
+            <button.icon size={20} />
+            <span>{button.label}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* Office Information */}
+        <section id="office" className="mb-20 scroll-mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Office <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">Information</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Reach out to us through any of these channels
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white mb-6 group-hover:rotate-12 transition-transform duration-300">
+                <Phone size={28} />
               </div>
-              <h3>Phone</h3>
-              <p>012 023-1678</p>
-              <div className="contact-card-badge">Primary</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Phone</h3>
+              <p className="text-gray-600 mb-6">+251 123 456 789</p>
+              <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
+                Primary
+              </span>
             </div>
-            <div className="contact-info-card">
-              <div className="contact-info-icon contact-email-icon">
-                <Mail />
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] flex items-center justify-center text-white mb-6 group-hover:rotate-12 transition-transform duration-300">
+                <Mail size={28} />
               </div>
-              <h3>E-Mail</h3>
-              <p>info@itadstore.co.za</p>
-              <div className="contact-card-badge">Fast Response</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">E-Mail</h3>
+              <p className="text-gray-600 mb-6">info@proactive.com</p>
+              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">
+                Fast Response
+              </span>
             </div>
-            <div className="contact-info-card">
-              <div className="contact-info-icon contact-address-icon">
-                <MapPin />
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white mb-6 group-hover:rotate-12 transition-transform duration-300">
+                <MapPin size={28} />
               </div>
-              <h3>Address</h3>
-              <p>Unit 10 Display Gardens, 6 Sarel Baard Crescent, Gateway Industrial Park, Rooihuiskraal, Centurion, 0154</p>
-              <div className="contact-card-badge">Headquarters</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Address</h3>
+              <p className="text-gray-600">
+                Unit 10 Display Gardens, 6 Sarel Baard Crescent, Gateway Industrial Park, Rooihuiskraal, Centurion, 0154
+              </p>
+              <span className="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-semibold rounded-full mt-4">
+                Headquarters
+              </span>
             </div>
           </div>
         </section>
 
-        <section id="branches" className="contact-content-section">
-          <div className="contact-section-header">
-            <h2 className="contact-section-title">Our Global Presence</h2>
-            <p className="contact-section-subtitle">Serving clients worldwide with local expertise</p>
+        {/* Global Presence */}
+        <section id="branches" className="mb-20 scroll-mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Global <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">Presence</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Serving clients worldwide with local expertise
+            </p>
           </div>
-          <div className="contact-info-cards">
-            <div className="contact-info-card contact-branch-card">
-              <div className="contact-branch-header">
-                <div className="contact-info-icon contact-branch-icon">
-                  <Building2 />
+
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="flex justify-between items-start mb-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center text-white">
+                  <Building2 size={28} />
                 </div>
-                <div className="contact-branch-flag">🇦🇪</div>
+                <div className="text-4xl animate-bounce">🇦🇪</div>
               </div>
-              <h3>Dubai Office</h3>
-              <div className="contact-branch-details">
-                <p><strong>Office #313</strong></p>
-                <p>Al Nazr Plaza, Oud Metha</p>
-                <p>Dubai, United Arab Emirates</p>
-                <p className="contact-branch-tel">Tel: +971 4 33 04 125</p>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Dubai Office</h3>
+              
+              <div className="space-y-2 mb-6">
+                <p><strong className="text-gray-900">Office #313</strong></p>
+                <p className="text-gray-600">Al Nazr Plaza, Oud Metha</p>
+                <p className="text-gray-600">Dubai, United Arab Emirates</p>
+                <p className="text-[#1c4c97] font-semibold mt-3">Tel: +971 4 33 04 125</p>
               </div>
-              <div className="contact-branch-hours">
-                <Clock size={16} />
+              
+              <div className="flex items-center gap-2 px-4 py-3 bg-blue-50 rounded-xl text-blue-800 font-medium">
+                <Clock size={18} />
                 <span>9:00 AM - 6:00 PM GST</span>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="support" className="contact-content-section">
-          <div className="contact-support-grid">
-            <div className="contact-support-content">
-              <div className="contact-section-header">
-                <h2 className="contact-section-title">Get in Touch</h2>
-                <p className="contact-section-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-              </div>
-              <div className="contact-support-features">
-                <div className="contact-feature-item">
-                  <CheckCircle className="contact-feature-icon" />
-                  <span>24/7 Technical Support</span>
+        {/* Contact Form */}
+        <section id="support" className="mb-20 scroll-mt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Get in <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">Touch</span>
+              </h2>
+              <p className="text-gray-600 text-lg mb-8">
+                We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <CheckCircle className="text-[#1c4c97]" size={20} />
+                  <span className="font-medium text-gray-900">24/7 Technical Support</span>
                 </div>
-                <div className="contact-feature-item">
-                  <CheckCircle className="contact-feature-icon" />
-                  <span>Dedicated Account Manager</span>
+                <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <CheckCircle className="text-[#1c4c97]" size={20} />
+                  <span className="font-medium text-gray-900">Dedicated Account Manager</span>
                 </div>
-                <div className="contact-feature-item">
-                  <CheckCircle className="contact-feature-icon" />
-                  <span>Custom Solutions Available</span>
+                <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <CheckCircle className="text-[#1c4c97]" size={20} />
+                  <span className="font-medium text-gray-900">Custom Solutions Available</span>
                 </div>
               </div>
             </div>
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="contact-form-row">
-                <div className="contact-form-group">
-                  <input type="text" name="name" placeholder="Full name" value={formData.name} onChange={handleChange} required className="contact-form-input" />
+
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Full name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1c4c97] focus:border-transparent transition-all"
+                  />
                 </div>
-                <div className="contact-form-group">
-                  <input type="email" name="email" placeholder="Email address" value={formData.email} onChange={handleChange} required className="contact-form-input" />
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email address"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1c4c97] focus:border-transparent transition-all"
+                  />
                 </div>
               </div>
-              <div className="contact-form-row">
-                <div className="contact-form-group">
-                  <input type="tel" name="phone" placeholder="Phone number" value={formData.phone} onChange={handleChange} required className="contact-form-input" />
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1c4c97] focus:border-transparent transition-all"
+                  />
                 </div>
-                <div className="contact-form-group">
-                  <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} required className="contact-form-input" />
+                <div>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1c4c97] focus:border-transparent transition-all"
+                  />
                 </div>
               </div>
-              <div className="contact-form-group">
-                <textarea name="message" placeholder="Tell us about your project..." value={formData.message} onChange={handleChange} required className="contact-form-textarea" rows={6} />
+              
+              <div className="mb-8">
+                <textarea
+                  name="message"
+                  placeholder="Tell us about your project..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1c4c97] focus:border-transparent transition-all resize-none"
+                />
               </div>
-              <button type="submit" className={`contact-submit-button ${isSubmitting ? 'contact-submitting' : ''}`} disabled={isSubmitting}>
+              
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] text-white font-bold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
                 {isSubmitting ? (
-                  <div className="contact-loading-spinner"></div>
+                  <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 ) : (
                   <>
                     <span>Send Message</span>
-                    <Send className="contact-button-icon" />
+                    <Send size={20} />
                   </>
                 )}
               </button>
@@ -239,12 +358,18 @@ const Contact = () => {
           </div>
         </section>
 
-        <section id="location" className="contact-content-section">
-          <div className="contact-section-header">
-            <h2 className="contact-section-title">Visit Our Office</h2>
-            <p className="contact-section-subtitle">Come see us in person and discuss your project face-to-face</p>
+        {/* Location Map */}
+        <section id="location" className="mb-20 scroll-mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Visit Our <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">Office</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Come see us in person and discuss your project face-to-face
+            </p>
           </div>
-          <div className="contact-map-container">
+
+          <div className="rounded-2xl overflow-hidden shadow-xl h-[500px] border border-gray-200">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.3586743382144!2d38.76371207501562!3d9.026984891029568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85c2c8ed82a1%3A0x9f3c1c5c5c5c5c5c!2sKazanchis%2C%20Addis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
               width="100%"
@@ -258,27 +383,33 @@ const Contact = () => {
           </div>
         </section>
 
-        <section id="team" className="contact-content-section">
-          <div className="contact-section-header">
-            <h2 className="contact-section-title">Meet Our Team</h2>
-            <p className="contact-section-subtitle">The talented professionals behind our success</p>
+        {/* Team Section */}
+        <section id="team" className="mb-20 scroll-mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">Team</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              The talented professionals behind our success
+            </p>
           </div>
-          <div className="contact-team-grid">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="contact-team-card" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="contact-team-avatar">
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 text-center">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6">
                   {member.name.split(' ').map(n => n[0]).join('')}
                 </div>
-                <h3>{member.name}</h3>
-                <p className="contact-team-role">{member.role}</p>
-                <div className="contact-team-contact">
-                  <div className="contact-contact-item">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                <p className="text-[#1c4c97] font-semibold mb-6">{member.role}</p>
+                <div className="space-y-3 pt-6 border-t border-gray-100">
+                  <div className="flex items-center justify-center gap-2 text-gray-600">
                     <Mail size={16} />
-                    <span>{member.email}</span>
+                    <span className="text-sm">{member.email}</span>
                   </div>
-                  <div className="contact-contact-item">
+                  <div className="flex items-center justify-center gap-2 text-gray-600">
                     <Phone size={16} />
-                    <span>{member.phone}</span>
+                    <span className="text-sm">{member.phone}</span>
                   </div>
                 </div>
               </div>
@@ -286,19 +417,25 @@ const Contact = () => {
           </div>
         </section>
 
-        <section id="faq" className="contact-content-section">
-          <div className="contact-section-header">
-            <h2 className="contact-section-title">Frequently Asked Questions</h2>
-            <p className="contact-section-subtitle">Quick answers to common questions</p>
+        {/* FAQ Section */}
+        <section id="faq" className="scroll-mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">Questions</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Quick answers to common questions
+            </p>
           </div>
-          <div className="contact-faq-grid">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {faqItems.map((item, index) => (
-              <div key={index} className="contact-faq-item" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="contact-faq-question">
-                  <MessageCircle className="contact-faq-icon" />
-                  <h3>{item.question}</h3>
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="flex items-start gap-4 mb-4">
+                  <MessageCircle className="text-[#1c4c97] mt-1 flex-shrink-0" size={24} />
+                  <h3 className="text-lg font-bold text-gray-900">{item.question}</h3>
                 </div>
-                <p className="contact-faq-answer">{item.answer}</p>
+                <p className="text-gray-600 pl-10">{item.answer}</p>
               </div>
             ))}
           </div>

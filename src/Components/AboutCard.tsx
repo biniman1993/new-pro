@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ServiceCard {
@@ -58,6 +59,10 @@ function App() {
     setCurrentIndex((prev) => (prev < services.length - 1 ? prev + 1 : 0));
   };
 
+  const handleCardClick = (index: number) => {
+    setCurrentIndex(index);
+  };
+
   const getCardStyle = (index: number) => {
     const diff = index - currentIndex;
 
@@ -66,36 +71,42 @@ function App() {
         transform: 'translateX(0%) scale(1) rotateY(0deg)',
         zIndex: 30,
         opacity: 1,
+        cursor: 'default',
       };
     } else if (diff === -1) {
       return {
         transform: 'translateX(-85%) scale(0.85) rotateY(25deg)',
         zIndex: 20,
         opacity: 0.7,
+        cursor: 'pointer',
       };
     } else if (diff === 1) {
       return {
         transform: 'translateX(85%) scale(0.85) rotateY(-25deg)',
         zIndex: 20,
         opacity: 0.7,
+        cursor: 'pointer',
       };
     } else if (diff === -2) {
       return {
         transform: 'translateX(-170%) scale(0.7) rotateY(35deg)',
         zIndex: 10,
         opacity: 0.4,
+        cursor: 'pointer',
       };
     } else if (diff === 2) {
       return {
         transform: 'translateX(170%) scale(0.7) rotateY(-35deg)',
         zIndex: 10,
         opacity: 0.4,
+        cursor: 'pointer',
       };
     } else {
       return {
         transform: 'translateX(0%) scale(0.5)',
         zIndex: 0,
         opacity: 0,
+        cursor: 'pointer',
       };
     }
   };
@@ -105,29 +116,39 @@ function App() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-16">
-        <div className="text-center mb-16 max-w-4xl">
-          <div className="inline-block mb-6">
-            <span className="px-6 py-2 rounded-full text-orange-500 font-semibold text-sm tracking-wider border-2 border-orange-200 bg-white/80 backdrop-blur-sm">
-              WORKFLOW ECOSYSTEM
-            </span>
-          </div>
-
-          <h1 className="text-6xl md:text-7xl lg:text-6xl font-bold mb-4">
-            <div className="text-gray-900">End-to-End AV</div>
-            <div className="text-orange-500 lg:text text-4xl">Integration Services</div>
-          </h1>
+        {/* Title Section - Using your provided code */}
+        <div className="text-center mb-16 space-y-4">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest border border-[#ff7b16]/20 bg-[#ff7b16]/5 text-[#ff7b16] uppercase"
+          >
+            Workflow Ecosystem
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-7xl font-black text-[#0a0e27] tracking-tight"
+          >
+            End-to-End <span className="text-[#1c4c97]">AV</span><br/>
+            <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">Integration</span>
+          </motion.h1>
         </div>
 
+        {/* Cards Section */}
         <div className="w-full max-w-7xl mx-auto mb-6" style={{ perspective: '2000px' }}>
           <div className="relative h-[550px] flex items-center justify-center">
             {services.map((service, index) => {
               const style = getCardStyle(index);
+              const isCenterCard = index === currentIndex;
 
               return (
                 <div
                   key={service.id}
                   className="absolute w-full max-w-md transition-all duration-700 ease-out"
                   style={style}
+                  onClick={() => handleCardClick(index)}
                 >
                   <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-b-4 border-orange-500 hover:shadow-orange-200/50 transition-shadow">
                     <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
@@ -142,7 +163,11 @@ function App() {
                     </div>
 
                     <div className="p-8 pb-10">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3" style={{ color: '#1a1a1a' }}>
+                      {/* Apply #1c4c97 color only to the center card's title */}
+                      <h3 
+                        className={`text-2xl font-bold mb-3 ${isCenterCard ? '' : 'text-gray-900'}`}
+                        style={{ color: isCenterCard ? '#1c4c97' : '#1a1a1a' }}
+                      >
                         {service.title}
                       </h3>
                       <p className="text-gray-600 text-lg leading-relaxed">
@@ -156,11 +181,12 @@ function App() {
           </div>
         </div>
 
+        {/* Navigation Controls */}
         <div className="flex items-center gap-8">
           <button
             onClick={handlePrev}
             className="w-14 h-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
-            style={{ color: '#276ab6' }}
+            style={{ color: '#1c4c97' }}
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -182,7 +208,7 @@ function App() {
           <button
             onClick={handleNext}
             className="w-14 h-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
-            style={{ color: '#276ab6' }}
+            style={{ color: '#1c4c97' }}
           >
             <ChevronRight className="w-6 h-6" />
           </button>

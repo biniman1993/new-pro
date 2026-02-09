@@ -4,7 +4,7 @@ import { Award, Layers, Server, Headphones, Clock, ArrowRight } from "lucide-rea
 const WhyChooseUs = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Animated particle background
+  // Simplified particle animation
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -19,24 +19,29 @@ const WhyChooseUs = () => {
       size: number;
       speedX: number;
       speedY: number;
-      opacity: number;
+      color: string;
     }> = [];
+
+    // Brand colors - using your blue (#1c4c97) and orange (#ff7b16)
+    const brandColors = ["rgba(28, 76, 151, 0.1)", "rgba(255, 123, 22, 0.08)"];
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+      particles.length = 0; // Clear particles
+      initParticles();
     };
 
-    const createParticles = () => {
-      const particleCount = Math.floor((canvas.width * canvas.height) / 20000);
+    const initParticles = () => {
+      const particleCount = Math.floor((canvas.width * canvas.height) / 25000);
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 1.5 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.3,
-          speedY: (Math.random() - 0.5) * 0.3,
-          opacity: Math.random() * 0.3 + 0.1,
+          size: Math.random() * 2 + 0.5,
+          speedX: (Math.random() - 0.5) * 0.2,
+          speedY: (Math.random() - 0.5) * 0.2,
+          color: brandColors[Math.floor(Math.random() * brandColors.length)],
         });
       }
     };
@@ -48,42 +53,23 @@ const WhyChooseUs = () => {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
 
+        // Bounce off edges
         if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(234, 88, 12, ${particle.opacity})`;
+        ctx.fillStyle = particle.color;
         ctx.fill();
-      });
-
-      // Draw connections
-      particles.forEach((p1, i) => {
-        particles.slice(i + 1).forEach((p2) => {
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(234, 88, 12, ${0.08 * (1 - distance / 100)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        });
       });
 
       animationId = requestAnimationFrame(animate);
     };
 
     resize();
-    createParticles();
     animate();
 
     window.addEventListener("resize", resize);
-
     return () => {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationId);
@@ -94,208 +80,182 @@ const WhyChooseUs = () => {
     {
       icon: Award,
       title: "Certified Expertise",
-      description: "Skilled AV professionals delivering reliable, high-performance solutions.",
+      description: "Skilled professionals delivering reliable, high-performance solutions.",
+      delay: 100
     },
     {
       icon: Layers,
-      title: "Complete End-to-End Service",
+      title: "End-to-End Service",
       description: "From design to maintenance, everything handled seamlessly.",
+      delay: 200
     },
     {
       icon: Server,
-      title: "Premium Technology Partners",
-      description: "Access to top global AV brands and future-ready systems.",
+      title: "Premium Partners",
+      description: "Access to top global brands and future-ready systems.",
+      delay: 300
     },
     {
       icon: Headphones,
-      title: "Fast, Dedicated Support",
+      title: "Dedicated Support",
       description: "Quick response times and ongoing service for maximum uptime.",
+      delay: 400
     },
+    
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-white to-orange-50/30 py-16 lg:py-24">
-      {/* Animated Canvas Background */}
+    <section className="relative min-h-screen overflow-hidden bg-white py-16 lg:py-24">
+      {/* Animated Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-full opacity-30"
         style={{ pointerEvents: "none" }}
       />
 
-      {/* Decorative SVG Curves - matching the reference design */}
-      <svg
-        className="absolute left-0 top-0 h-full w-full"
-        style={{ pointerEvents: "none" }}
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <linearGradient id="curveGradientOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#ea580c" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#ea580c" stopOpacity="0.1" />
-          </linearGradient>
-        </defs>
-        {/* Top curved dotted line */}
-        <path
-          d="M 200 80 Q 400 60 600 100 Q 800 140 1000 90 Q 1200 40 1400 120"
-          fill="none"
-          stroke="url(#curveGradientOrange)"
-          strokeWidth="1.5"
-          strokeDasharray="6 6"
-          className="hidden md:block"
-        />
-        {/* Second curved line */}
-        <path
-          d="M 100 200 Q 300 250 500 180 Q 700 110 900 200"
-          fill="none"
-          stroke="url(#curveGradientOrange)"
-          strokeWidth="1"
-          strokeDasharray="4 4"
-          className="hidden lg:block"
-        />
-      </svg>
+      {/* Decorative elements */}
+      <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-[#1c4c97]/5 to-transparent rounded-full blur-xl" />
+      <div className="absolute bottom-10 left-10 w-40 h-40 bg-gradient-to-tr from-[#ff7b16]/5 to-transparent rounded-full blur-xl" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
-        <div className="mb-10 lg:mb-14">
-          <div className="mb-4 inline-flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-orange-500 animate-pulse" />
-            <span className="text-sm font-semibold tracking-widest text-slate-700 uppercase">
+        <div className="mb-12 lg:mb-16 text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1c4c97]/10 to-[#ff7b16]/10 px-4 py-2">
+            <span className="h-2 w-2 rounded-full bg-[#ff7b16] animate-pulse" />
+            <span className="text-sm font-semibold tracking-wider text-[#1c4c97] uppercase">
               WHY CHOOSE US
             </span>
           </div>
-          <h2 className="text-3xl font-bold leading-tight text-slate-900 md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold leading-tight text-[#0a0e27] md:text-4xl lg:text-5xl mb-3">
             Why{" "}
-            <span className="relative inline-block text-orange-500">
-              Unique
-              <svg
-                className="absolute -bottom-1 left-0 w-full"
-                height="8"
-                viewBox="0 0 200 8"
-                fill="none"
-              >
-                <path
-                  d="M0 6 Q 50 0, 100 4 T 200 2"
-                  stroke="#ea580c"
-                  strokeWidth="2.5"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
+            <span className="relative ">
+              <span className="relative z-10 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+                Proactive Trading
+              </span>
+              <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] rounded-full" />
             </span>{" "}
-            is
-            <br />
-            The Right Choice
+            is The Right Choice
           </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Delivering excellence with our proven track record and customer-first approach
+          </p>
         </div>
 
         {/* Main Grid Layout */}
         <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
-          {/* Feature Cards - 2x2 Grid */}
+          {/* Feature Cards Grid */}
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2 lg:gap-6">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group cursor-pointer rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1 lg:p-8"
+                className="group relative cursor-pointer rounded-xl border border-gray-100 bg-white p-6 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-[#ff7b16]/30 overflow-hidden"
+                style={{ animationDelay: `${feature.delay}ms` }}
               >
-                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-slate-100 transition-all duration-500 group-hover:bg-orange-500 group-hover:scale-110 group-hover:rotate-3">
-                  <feature.icon
-                    className="h-7 w-7 text-slate-700 transition-all duration-500 group-hover:text-white group-hover:scale-110"
-                    strokeWidth={1.5}
-                  />
+                {/* Hover effect background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1c4c97]/5 via-white to-[#ff7b16]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Animated border on hover */}
+                <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-[#ff7b16]/20 transition-all duration-500" />
+                
+                {/* Icon with animation */}
+                <div className="relative mb-5">
+                  <div className="relative inline-flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-[#1c4c97]/30">
+                    <feature.icon
+                      className="h-7 w-7 text-white transition-transform duration-500 group-hover:scale-110"
+                      strokeWidth={1.5}
+                    />
+                  </div>
                 </div>
-                <h3 className="mb-3 text-lg font-bold text-slate-900 lg:text-xl transition-colors duration-300 group-hover:text-orange-600">
+
+                <h3 className="relative mb-3 text-lg font-bold text-[#0a0e27] lg:text-xl transition-colors duration-300 group-hover:text-[#1c4c97]">
                   {feature.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-500 lg:text-base">
+                <p className="relative text-sm leading-relaxed text-gray-600 lg:text-base">
                   {feature.description}
                 </p>
+
+                {/* Hover arrow indicator */}
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-2 group-hover:translate-x-0">
+                  <ArrowRight className="h-5 w-5 text-[#ff7b16]" />
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Dark CTA Card */}
-<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#173c77] to-[#0a0e27] p-6 shadow-2xl lg:row-span-2 lg:p-8">            {/* Grid overlay */}
-            <div
-              className="absolute inset-0 opacity-30"
-              style={{
-                backgroundImage: `
-                  linear-gradient(rgba(234, 88, 12, 0.1) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(234, 88, 12, 0.1) 1px, transparent 1px)
-                `,
-                backgroundSize: "25px 25px",
-              }}
-            />
+          {/* CTA Card */}
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0e27] via-[#1c4c97] to-[#0a0e27] p-6 shadow-2xl lg:row-span-2 lg:p-8">
+            {/* Animated gradient background */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff7b16] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1c4c97] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '3s', animationDelay: '1s' }} />
+            </div>
 
-            {/* Floating particles */}
-            <div className="absolute right-4 top-4 h-2 w-2 animate-pulse rounded-full bg-orange-500" />
-            <div className="absolute right-12 top-8 h-1 w-1 animate-ping rounded-full bg-orange-500/30" style={{ animationDuration: "2s" }} />
-            <div className="absolute right-8 top-16 h-1.5 w-1.5 animate-pulse rounded-full bg-orange-500/35" style={{ animationDelay: "1s" }} />
-            <div className="absolute bottom-20 left-8 h-1 w-1 animate-ping rounded-full bg-orange-500/25" style={{ animationDuration: "3s" }} />
-            <div className="absolute bottom-32 left-4 h-2 w-2 animate-pulse rounded-full bg-orange-500/20" style={{ animationDelay: "2s" }} />
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 opacity-5" style={{
+              backgroundImage: `linear-gradient(#ff7b16 1px, transparent 1px), linear-gradient(90deg, #ff7b16 1px, transparent 1px)`,
+              backgroundSize: "40px 40px",
+            }} />
 
             <div className="relative z-10 h-full flex flex-col">
-              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-sm">
-                <Clock className="h-7 w-7 text-white" strokeWidth={1.5} />
+              {/* Icon with glow effect */}
+              <div className="mb-6 relative">
+                <div className="relative inline-flex h-14 w-14 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                  <Clock className="h-7 w-7 text-white" strokeWidth={1.5} />
+                </div>
               </div>
 
-              <h3 className="mb-2 text-2xl font-bold leading-tight text-white lg:text-3xl">
-                Leading the
-                <br />
-                <span className="text-orange-500">Future of IT</span>
-                <br />
+              <h3 className="mb-4 text-2xl font-bold leading-tight text-white lg:text-3xl">
+                Leading the{" "}
+                <span className="bg-gradient-to-r from-[#ff7b16] to-yellow-300 bg-clip-text text-transparent">
+                  Future of IT
+                </span>{" "}
                 in Ethiopia
               </h3>
 
-              <p className="mb-4 text-lg font-semibold text-white">
-                Pioneering Innovation Since Day One
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7b16]/20 to-transparent px-4 py-2 w-fit">
+                <span className="text-sm font-semibold text-white">
+                  Pioneering Innovation Since Day One
+                </span>
+              </div>
+
+              <p className="mb-6 text-sm leading-relaxed text-white/70 lg:text-base flex-grow">
+                As Ethiopia's IT innovators, we've helped shape the nation's digital transformation with proven expertise and industry-defining solutions.
               </p>
 
-              <p className="mb-6 text-sm leading-relaxed text-white/60 lg:text-base flex-grow">
-                As one of Bangladesh's earliest IT innovators, we've helped
-                shape the nation's digital transformation with proven expertise
-                and industry-defining solutions.
-              </p>
-
-              {/* Check list */}
-              <ul className="mb-8 space-y-3">
-                <li className="flex items-center gap-3 group/item">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 transition-transform duration-300 group-hover/item:scale-110">
-                    <svg
-                      className="h-3 w-3 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-white/80 lg:text-base">
-                    Decades of trusted IT leadership
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 group/item">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 transition-transform duration-300 group-hover/item:scale-110">
-                    <svg
-                      className="h-3 w-3 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-white/80 lg:text-base">
-                    Benchmark-setting innovation & reliability
-                  </span>
-                </li>
+              {/* Benefits list */}
+              <ul className="mb-8 space-y-4">
+                {[
+                  "Decades of trusted IT leadership",
+                  "Benchmark-setting innovation & reliability",
+                  "Customer-first approach",
+                  "Future-ready solutions"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3 group/item">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-r from-[#ff7b16] to-[#e47325] transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-lg group-hover/item:shadow-[#ff7b16]/50">
+                      <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-sm text-white/80 lg:text-base transition-colors duration-300 group-hover/item:text-white">
+                      {item}
+                    </span>
+                  </li>
+                ))}
               </ul>
 
-              {/* CTA Button */}
-              <button className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-orange-500/30 transition-all duration-300 hover:bg-orange-600 hover:shadow-xl hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98]">
-                Visit Our Projects
-                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+              {/* CTA Button with hover effects */}
+              <button className="group/btn relative overflow-hidden rounded-full bg-gradient-to-r from-[#ff7b16] to-[#e47325] px-6 py-4 text-base font-semibold text-white shadow-xl shadow-[#ff7b16]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff7b16]/40 hover:scale-[1.02] active:scale-[0.98]">
+                {/* Shine effect */}
+                <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" 
+                  style={{
+                    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)'
+                  }}
+                />
+                
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Visit Our Projects
+                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                </span>
               </button>
             </div>
           </div>

@@ -86,7 +86,7 @@ const Navbar = () => {
               <CustomNavLink to="/shop">Shop</CustomNavLink>
 
               <CustomNavLink to="/brand">Brand</CustomNavLink>
-              <CustomNavLink to="/contact">Contact Us</CustomNavLink>
+              <CustomNavLink to="/contact">Contact</CustomNavLink>
               {/* Search in Middle */}
               <div className="relative mx-4 xl:mx-6 group">
                 <input
