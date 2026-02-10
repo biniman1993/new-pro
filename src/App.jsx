@@ -27,7 +27,7 @@ import {
   printersProductsData,
 } from "./Components/Products/productsData.jsx";
 import Catalog from "./pages/Catalog.js";
-import Why from "./Components/why";
+import Why from "./Components/Why.tsx";
 import LetUsMeet from "./Components/LetUsMeet";
 import BrandShowcase from "./Components/BrandShowcase.tsx";
 import Partnerslogo from "./Components/Partnerslogo.tsx";

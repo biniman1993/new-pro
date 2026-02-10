@@ -51,12 +51,12 @@ const Footer = () => {
         .footer-overlay-1 {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to bottom, rgba(9,26,73,0.95), rgba(9,26,73,0.90), rgba(22,56,104,0.95));
+          background: linear-gradient(to bottom, rgba(10, 51, 109, 0.95), rgba(7, 20, 58, 0.9), rgba(12, 36, 70, 0.95));
         }
         .footer-overlay-2 {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to right, rgba(9,26,73,0.80), transparent);
+          background: linear-gradient(to right, rgba(25, 47, 109, 0.8), transparent);
         }
         .footer-accent-bar {
           position: relative;

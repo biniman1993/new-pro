@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
-// Import statements remain the same as your original code...
 
 const BrandShowcase = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -14,12 +13,18 @@ const BrandShowcase = () => {
     { id: 6, name: 'Canon', image: "/assets/brandslogo/canon.jpg" },
     { id: 7, name: 'Asus', image: "/assets/brandslogo/asus.png" },
     { id: 8, name: 'Apple', image: "/assets/brandslogo/apple.png" },
-    { id: 9, name: 'Acer', image: "/assets/brandslogo/acer.png" },
+    { id: 9, name: 'Acer', image: "/assets/brandslogo/Acer.png" },
     { id: 10, name: 'SanDisk', image: "/assets/brandslogo/SanDisk.png" },
-    { id: 11, name: 'HP Duplicate', image: "/assets/brandslogo/HP_Logo.png" },
+    { id: 11, name: 'Vaio', image: "/assets/brandslogo/Vaio.png" },
     { id: 12, name: 'Epson', image: "/assets/brandslogo/epson.png" },
     { id: 13, name: 'Huawei', image: "/assets/brandslogo/Huawei.png" },
-    { id: 14, name: 'BenQ', image: "/assets/brandslogo/benq.png" }
+    { id: 14, name: 'BenQ', image: "/assets/brandslogo/benq.png" },
+    { id: 15, name: 'LG', image: "/assets/brandslogo/LG.png" },
+    { id: 16, name: 'NOKIA', image: "/assets/brandslogo/NOKIA.png" },
+    { id: 17, name: 'MSI', image: "/assets/brandslogo/MSI.png" },
+    { id: 18, name: 'APC', image: "/assets/brandslogo/apc.png" },
+    { id: 19, name: 'Hikvision', image: "/assets/brandslogo/Hikvision.png" },
+    { id: 20, name: 'Logitech', image: "/assets/brandslogo/Logitech.jpg" }
   ];
 
   // Duplicating for seamless infinite loop
@@ -72,6 +77,18 @@ const BrandShowcase = () => {
                         src={logo.image} 
                         alt={logo.name}
                         className="brand-img"
+                        onError={(e) => {
+                          console.error(`Failed to load: ${logo.name} - ${logo.image}`);
+                          const target = e.target as HTMLImageElement;
+                          target.style.backgroundColor = '#f5f5f5';
+                          target.style.display = 'flex';
+                          target.style.alignItems = 'center';
+                          target.style.justifyContent = 'center';
+                          target.style.color = '#666';
+                          target.style.fontSize = '12px';
+                          target.style.fontWeight = 'bold';
+                          target.innerHTML = logo.name;
+                        }}
                       />
                     </div>
                   </div>
@@ -110,7 +127,7 @@ const BrandShowcase = () => {
 
         .logo-card-wrapper {
           flex-shrink: 0;
-          padding: 0 12px; /* Gap control */
+          padding: 0 12px;
         }
 
         .logo-card {
@@ -130,13 +147,12 @@ const BrandShowcase = () => {
         .brand-img {
           max-width: 100%;
           max-height: 100%;
-          object-contain;
+          object-fit: contain;
           filter: grayscale(100%);
           opacity: 0.6;
           transition: all 0.4s ease;
         }
 
-        /* Hover States */
         .logo-card.active {
           transform: translateY(-10px) scale(1.15);
           border-color: #ff7b16;
@@ -155,7 +171,6 @@ const BrandShowcase = () => {
           to { transform: translateX(-50%); }
         }
 
-        /* Tablet Adjustments */
         @media (min-width: 768px) {
           .logo-card {
             width: 180px;
@@ -167,7 +182,6 @@ const BrandShowcase = () => {
           }
         }
 
-        /* Desktop Adjustments */
         @media (min-width: 1024px) {
           .logo-card {
             width: 220px;

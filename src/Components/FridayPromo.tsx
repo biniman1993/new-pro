@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { placeholderImages } from "../assets/placeholder";
+import { placeholderImages } from "./placeholder";
 
 import {
   MessageCircle,

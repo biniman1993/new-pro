@@ -16,12 +16,12 @@ interface TopProductsProps {
 }
 
 const products: Product[] = [
-  { name: "Laptop", count: "38 products", icon: <Laptop size={22} /> },
-  { name: "Desktop", count: "42 products", icon: <Cpu size={22} /> },
-  { name: "Monitor", count: "42 products", icon: <Monitor size={22} /> },
-  { name: "Networking", count: "21 products", icon: <Network size={22} /> },
-  { name: "Printer", count: "68 products", icon: <Printer size={22} /> },
-  { name: "Display", count: "68 products", icon: <Tv size={22} /> },
+  { name: "Laptop", count: "38 products", icon: <Laptop size={26} /> },
+  { name: "Desktop", count: "42 products", icon: <Cpu size={26} /> },
+  { name: "Monitor", count: "42 products", icon: <Monitor size={26} /> },
+  { name: "Networking", count: "21 products", icon: <Network size={26} /> },
+  { name: "Printer", count: "68 products", icon: <Printer size={26} /> },
+  { name: "Display", count: "68 products", icon: <Tv size={26} /> },
 ];
 
 export default function TopProducts({ onViewMore }: TopProductsProps) {
@@ -67,7 +67,7 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
           <h2
             className={`transition-all duration-1000 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            } font-bold text-2xl md:text-4xl lg:text-5xl text-[#0a0e27]`}
+            } font-extrabold text-2xl md:text-4xl lg:text-5xl text-[#0a0e27]`}
           >
             Most Popular <span className="text-[#ff7b16]">Products</span>
           </h2>
@@ -89,7 +89,7 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
               style={{ transitionDelay: `${index * 70}ms` }}
             >
               {/* Modern Icon Box */}
-              <div className="mb-3 p-2 md:p-3 rounded-lg bg-gray-50 text-[#1c4c97] group-hover:bg-[#1c4c97] group-hover:text-white group-hover:rotate-[360deg] transition-all duration-700">
+              <div className="mb-2 p-2 md:p-3 rounded-lg bg-gray-50 text-[#1c4c97] group-hover:bg-[#1c4c97] group-hover:text-white group-hover:rotate-[360deg] transition-all duration-700">
                 {item.icon}
               </div>
 
@@ -98,7 +98,7 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
                 {item.name}
               </h3>
               
-              <p className="hidden md:block text-[9px] text-gray-400 mt-1 font-medium">
+              <p className="hidden md:block text-[9px] text-gray-500 mt-1 font-medium">
                 {item.count}
               </p>
 
@@ -116,10 +116,10 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
         >
           <button
             onClick={handleViewAllClick}
-            className="group relative px-7 py-3 bg-[#0a0e27] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
+            className="group relative px-7 py-3 bg-gradient-to-r from-[#1c4c97] to-[#07162e] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
           >
             <span className="relative z-10">Explore All Categories</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ff7b16] to-[#e47325] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#ff7b16] to-[#07162e] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </div>
       </div>

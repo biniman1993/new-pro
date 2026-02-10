@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import { Search, Phone, Mail, Menu, X } from "lucide-react";
+import {
+  Search,
+  Phone,
+  Mail,
+  Menu,
+  X,
+  Home,
+  User,
+  ShoppingBag,
+  Info,
+  LogIn,
+  Contact,
+} from "lucide-react";
 
 const CustomNavLink = ({
   to,
@@ -41,10 +53,16 @@ const Navbar = () => {
   const handleSignIn = () => {
     navigate("/login");
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMenuOpen(false);
   };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -67,11 +85,12 @@ const Navbar = () => {
                       <span className="text-white font-bold text-lg">P</span>
                     </div>
                   </div>
-                
                 </div>
                 {/* Brand Name */}
                 <div className="flex flex-col">
-<span className="text-white font-semibold text-xl tracking-tight">Proactive</span>
+                  <span className="text-white font-semibold text-xl tracking-tight">
+                    Proactive
+                  </span>
                   <span className="text-xs text-white/70 tracking-wider font-medium mt-[-4px]">
                     TRADING
                   </span>
@@ -125,14 +144,12 @@ const Navbar = () => {
                   Pro2actives@gmail.com
                 </span>
               </a>
-
-             
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
+              className="lg:hidden p-2   text-white  transition-all duration-300 hover:scale-110"
             >
               {isMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -144,58 +161,104 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Modern Sidebar for Mobile/Tablet */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden fixed inset-0 z-50 transition-all duration-500 ease-in-out ${
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="px-4 py-4 space-y-3 bg-gradient-to-b from-[#0a0e27] to-[#050818] border-t border-white/10">
-          {/* Mobile Search */}
-          <div className="relative">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all duration-300"
-            />
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70" />
+        {/* Overlay */}
+        <div
+          className={`absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-500 ${
+            isMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        />
+
+        {/* Sidebar */}
+        <div
+          className={`absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-gradient-to-br from-[#2a5da5] via-[#16325a] to-[#081322] shadow-2xl transform transition-transform duration-500 ease-out ${
+            isMenuOpen
+              ? "translate-x-0 shadow-orange-500/20"
+              : "-translate-x-full"
+          }`}
+        >
+          {/* Sidebar Header */}
+          <div className="p-6 border-b border-white/10 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27]/30">
+            <div className="flex items-center gap-3 ">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-blue-300 p-1">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-[#0a0e27] to-[#2a5da5] flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">P</span>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-white font-bold text-2xl">Proactive</span>
+                <span className="text-white text-sm font-semibold tracking-wider">
+                  TRADING
+                </span>
+              </div>
+            </div>
           </div>
 
-          {/* Mobile Nav Links */}
-          <div className="flex flex-col space-y-1">
-            <CustomNavLink to="/">Home</CustomNavLink>
-            <CustomNavLink to="/about">About</CustomNavLink>
-            <CustomNavLink to="/shop">Shop</CustomNavLink>
-            <CustomNavLink to="/brand">Brand</CustomNavLink>
-            <CustomNavLink to="/contact">Contact Us</CustomNavLink>
-          </div>
+          {/* Sidebar Content */}
+          <div className="h-[calc(100%-140px)] overflow-y-auto">
+            {/* Navigation Links */}
+            <div className="p-4 space-y-2">
+              {[
+                { to: "/", icon: Home, label: "Home" },
+                { to: "/about", icon: Info, label: "About" },
+                { to: "/shop", icon: ShoppingBag, label: "Shop" },
+                { to: "/brand", icon: User, label: "Brand" },
+                { to: "/contact", icon: Contact, label: "Contact" },
+                { to: "/contact", icon: Contact, label: "Product" },
+                { to: "/contact", icon: Contact, label: "My Cart" },
+              ].map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={handleNavClick}
+                  className={({ isActive }) =>
+                    `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
+                      isActive
+                        ? "bg-gradient-to-r "
+                        : "hover:bg-blue-400 hover:border-l-4 hover:border-blue-400/50"
+                    }`
+                  }
+                >
+                  <item.icon
+                    className={`w-5 h-5 ${
+                      location.pathname === item.to
+                        ? "text-white"
+                        : "text-white/70 group-hover:text-orange-400"
+                    }`}
+                  />
+                  <span className="text-white font-medium text-lg group-hover:text-orange-300">
+                    {item.label}
+                  </span>
+                </NavLink>
+              ))}
+            </div>
 
-          {/* Mobile Contact Info */}
-          <div className="pt-3 border-t border-white/10 space-y-2">
-            <a
-              href="tel:+251911517628"
-              className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium hover:bg-blue-500/20 hover:border-blue-400/60 transition-all duration-300"
-            >
-              <Phone className="w-4 h-4" />
-              <span>+ (251) 911 517 628</span>
-            </a>
+            {/* Divider */}
+            <div className="px-6 py-2">
+              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            </div>
 
-            <a
-              href="mailto:Pro2actives@gmail.com"
-              className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium hover:bg-orange-500/20 hover:border-orange-400/60 transition-all duration-300"
-            >
-              <Mail className="w-4 h-4" />
-              <span>Pro2actives@gmail.com</span>
-            </a>
+            {/* Contact Info Section */}
+            <div className="p-4 space-y-4">
+              <div className="space-y-3"></div>
 
-            <button
-              onClick={handleSignIn}
-              className="w-full px-4 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white text-sm font-bold hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300"
-            >
-              Sign In
-            </button>
+              {/* Login Button */}
+              <button
+                onClick={handleSignIn}
+                className="w-full px-2 py-3 rounded-xl  text-white font-bold text-lg hover:shadow-xl hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3"
+              >
+                <LogIn className="w-5 h-5" />
+                Login
+              </button>
+            </div>
           </div>
         </div>
       </div>
