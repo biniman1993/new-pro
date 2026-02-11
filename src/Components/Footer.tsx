@@ -49,15 +49,15 @@ const Footer = () => {
           object-fit: cover;
         }
         .footer-overlay-1 {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to bottom, rgba(10, 51, 109, 0.95), rgba(7, 20, 58, 0.9), rgba(12, 36, 70, 0.95));
-        }
-        .footer-overlay-2 {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to right, rgba(25, 47, 109, 0.8), transparent);
-        }
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 51, 109, 0.7), rgba(7, 20, 58, 0.6), rgba(12, 36, 70, 0.7));
+}
+.footer-overlay-2 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(25, 47, 109, 0.4), transparent);
+}
         .footer-accent-bar {
           position: relative;
           height: 4px;

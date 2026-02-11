@@ -1,0 +1,136 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const TopMenu = () => {
+  const navigate = useNavigate();
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Data mapping
+  const menuData: Record<string, string[]> = {
+    Desktop: ["Business Desktop", "Gaming Desktop", "All-in-One PC", "Mini Desktop", "Workstation"],
+    Laptop: ["Business Laptop", "Student Laptop", "Ultrabook / Thin & Light", "Gaming Laptop", "2-in-1 Convertible Laptop"],
+    Monitor: ["Full HD Monitor", "2K / 4K Monitor", "Gaming Monitor", "Curved Monitor", "Professional Monitor"],
+    Networking: ["Home Networking", "Commercial Networking", "Network Accessories", "Routers & Switches", "Cables"],
+    Accessories: ["Keyboard & Mouse", "Webcams", "Headphones", "USB Hubs", "Laptop Stands"],
+    Printer: ["Inkjet Printer", "Laser Printer", "All-in-One Printer", "Scanners", "Toner", "Ink Tank", "Barcode Scanner", "Photocopier", "ID Card Printer", "POS Printer"],
+    Projector: ["Business Projector", "Home Cinema Projector", "Portable Projector", "Short-Throw", "Accessories"],
+    Components: ["Processor", "CPU Cooler", "Motherboard", "Graphics Card", "Power Supply", "Casing", "RAM"],
+    "Digital Display": ["LED Display", "Video Wall", "Advertising Displays", "Interactive Panel", "Kiosk"],
+    Server: ["Application Servers", "GPU Servers", "Storage Servers", "Blade Servers", "NAS", "Server Accessories"],
+  };
+
+  const menuItems = Object.keys(menuData);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  const formatSubcategoryName = (name: string) => {
+    return name.replace(/[&/\\#,+()$~%.'":*?<>{} ]/g, "");
+  };
+
+  const handleNavigation = (category: string, sub?: string) => {
+    const target = sub || menuData[category][0];
+    navigate(`/Catalog/${formatSubcategoryName(target)}`);
+  };
+
+  return (
+    <nav
+      className={`fixed top-[65px] left-0 w-full z-[100] h-[45px] flex items-center justify-center
+        transition-all duration-300 ease-in-out font-['Inter'] font-semibold uppercase tracking-wider
+        bg-gradient-to-r from-[#2a5da5] to-[#0a0e27]
+        ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
+        hidden lg:flex`} // Hidden on mobile/tablet, visible on desktop (1024px+)
+    >
+      <ul className="flex gap-[25px] px-[25px] list-none m-0 relative h-full items-center">
+        {menuItems.map((item) => (
+          <li
+            key={item}
+            onMouseEnter={() => setHoveredItem(item)}
+            onMouseLeave={() => setHoveredItem(null)}
+            onClick={() => handleNavigation(item)}
+            className={`relative py-2 px-2.5 text-[14px] font-medium cursor-pointer transition-colors duration-300 normal-case
+              ${hoveredItem === item ? "text-[#ff9800]" : "text-white"}`}
+          >
+            {item}
+
+            {/* Animated Underline */}
+            <span
+              className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-[#ff9800] to-[#ff6b35] transition-all duration-300 ease-out
+                ${hoveredItem === item ? "w-4/5 scale-x-100" : "w-0 scale-x-0"}`}
+            />
+
+            {/* Dropdown Container */}
+            {hoveredItem === item && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 animate-dropdownFadeIn">
+                <div
+                  className={`bg-white/98 backdrop-blur-[20px] p-3 rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.3),0_4px_20px_rgba(255,152,0,0.15)]
+                    grid gap-3 max-h-[400px] overflow-y-auto
+                    ${menuData[item].length > 5 ? "grid-cols-2 w-[550px]" : "grid-cols-1 w-[280px]"}`}
+                >
+                  {menuData[item].map((sub, idx) => (
+                    <div
+                      key={sub}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleNavigation(item, sub);
+                      }}
+                      className="group flex items-center gap-3 p-2.5 rounded-[10px] border border-[#ff98001a] bg-white transition-all duration-300 
+                        hover:translate-x-1 hover:scale-[1.02] hover:border-[#ff980066] hover:shadow-[0_6px_20px_rgba(255,152,0,0.25)]
+                        animate-cardSlideIn opacity-0 cursor-pointer"
+                      style={{ animationDelay: `${idx * 0.05}s`, animationFillMode: 'forwards' }}
+                    >
+                      {/* Icon Box */}
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#ff9800] to-[#ff6b35] flex items-center justify-center text-white shrink-0 transition-transform duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </div>
+
+                      {/* FIXED: Text - Changed to simple hover color change */}
+                      <span className="text-[13px] font-semibold text-gray-800 group-hover:text-[#ff6b35] transition-all duration-300">
+                        {sub}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      {/* Embedded Animations to ensure they work without external CSS files */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes dropdownFadeIn {
+          from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+          to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        @keyframes cardSlideIn {
+          from { opacity: 0; transform: translateY(-8px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Ensure text visibility */
+        .bg-clip-text {
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+      `}} />
+    </nav>
+  );
+};
+
+export default TopMenu;

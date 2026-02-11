@@ -1,4 +1,6 @@
 import React, { useRef } from "react";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import TopMenu from "./Components/TopMenu/TopMenu";
@@ -31,6 +33,21 @@ import Why from "./Components/Why.tsx";
 import LetUsMeet from "./Components/LetUsMeet";
 import BrandShowcase from "./Components/BrandShowcase.tsx";
 import Partnerslogo from "./Components/Partnerslogo.tsx";
+
+// 🔴 ADD THIS - Create ScrollToTop component INSIDE App.jsx
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => {
   // Refs for smooth scrolling
   const laptopsRef = useRef(null);
@@ -69,6 +86,9 @@ const App = () => {
       <div className="App">
         <Navbar />
         <TopMenu />
+        
+        {/* 🔴 ADD THIS - ScrollToTop component here */}
+        <ScrollToTop />
 
         <Routes>
           {/* Catalog Routes */}
@@ -91,9 +111,7 @@ const App = () => {
               <div>
                 <div>
                   <HeroSection />
-
                   <FridayPromo />
-
                   <TopProducts onViewMore={scrollToSection} />
 
                   {/* Products sections with refs and category props */}
@@ -129,13 +147,11 @@ const App = () => {
                   />
 
                   <CompanyStats />
-               
                   <Partners />
-                  
                   <Why />
                   <BrandShowcase />
-                     <AboutCards />
-                    <LetUsMeet />
+                  <AboutCards />
+                  <LetUsMeet />
                 </div>
               </div>
             }

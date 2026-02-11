@@ -529,7 +529,7 @@ const FridayPromo = () => {
                         onClick={() => openProductModal(product)}
                         className="bg-white border border-gray-200 rounded-2xl overflow-hidden card-hover group/card cursor-pointer h-full flex flex-col"
                       >
-                        <div className="relative w-full h-56 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <div className="relative w-full h-56 bg-[#ececec] flex items-center justify-center overflow-hidden">
                           <img
                             src={product.image}
                             alt={product.title}

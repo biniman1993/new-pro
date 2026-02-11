@@ -9,7 +9,12 @@ import {
   ChevronRight,
   Play,
 } from "lucide-react";
-
+import hero1 from '../assets/hero/h1.png';
+import hero2 from '../assets/hero/lsptop (2).png';
+import hero3 from '../assets/hero/cisco.png';
+import hero4 from '../assets/hero/disp.png';
+import hero5 from '../assets/hero/tv.png';
+import hero6 from '../assets/hero/server1.png';
 interface SlideContent {
   title: string;
   description: string;
@@ -25,7 +30,7 @@ const HeroSection = () => {
 
   const slides: SlideContent[] = [
     {
-      title: "Welcome to Proactive Trading",
+      title: "Modern World with Proactive",
       description:
         "Your trusted partner for premium electronics and technology solutions across Ethiopia. Official distributors of leading global brands.",
       icon: <Cpu className="w-8 h-8" />,
@@ -37,9 +42,9 @@ const HeroSection = () => {
       icon: <Monitor className="w-8 h-8" />,
     },
     {
-      title: "Cisco Products and Routers",
+      title: "Cisco Routers and Switches",
       description:
-        "Enterprise networking solutions, security systems, and collaboration tools. Certified Cisco products with full warranty support dfgdfgfgf.",
+        "Cisco routers, network switches, access points, firewalls, and essential networking accessories for business and enterprise environments.",
       icon: <Wifi className="w-8 h-8" />,
     },
     {
@@ -62,14 +67,14 @@ const HeroSection = () => {
     },
   ];
 
-  const productImages = [
-    "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop",
-  ];
+ const productImages = [
+  hero1,
+  hero2, 
+  hero3,
+  hero4,
+  hero5,
+  hero6,
+];
 
   // Intersection Observer for performance - only animate when in view
   useEffect(() => {
