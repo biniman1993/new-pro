@@ -139,11 +139,11 @@ const Contact = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1c4c97]/20 rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3" />
         <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#ff7b16]/5 to-[#1c4c97]/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center -mt-8 sm:-mt-12 md:-mt-16 lg:mt-0">
+          {" "}
           <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white font-semibold text-sm uppercase tracking-wider mb-6">
             Get in Touch
           </div>
-
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Let's Build Something{" "}
             <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent animate-pulse">
@@ -151,12 +151,10 @@ const Contact = () => {
             </span>{" "}
             Together
           </h1>
-
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-12">
             Your vision, our expertise. Let's create extraordinary solutions
             that drive your business forward.
           </p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {stats.map((stat, index) => (
               <div
@@ -175,7 +173,6 @@ const Contact = () => {
               </div>
             ))}
           </div>
-
           <div className="mt-12">
             <ChevronDown
               className="mx-auto text-white animate-bounce"
@@ -186,25 +183,25 @@ const Contact = () => {
       </section>
 
       {/* Tab Navigation - Inside content flow */}
-      <div className="relative -mt-10 mb-10">
-        <div className="max-w-7xl mx-auto px-4">
+      <div className="relative mt-7 mb-10 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="relative">
             {/* Background container */}
-            <div className="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl border " />
+            <div className="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl " />
 
             {/* Tab buttons */}
-            <div className="relative flex overflow-x-auto gap-2 p-2 scrollbar-hide">
+            <div className="relative flex flex-wrap justify-center gap-4 p-3 sm:p-4">
               {navigationButtons.map((button) => (
                 <button
                   key={button.id}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
+                  className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
                     activeSection === button.id
-                      ? "text-white bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] shadow-lg"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                      ? "text-white bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] "
+                      : "text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100"
                   }`}
                   onClick={() => scrollToSection(button.id)}
                 >
-                  <button.icon size={20} />
+                  <button.icon size={16} className="sm:w-[20px] sm:h-[20px]" />
                   <span>{button.label}</span>
                 </button>
               ))}
@@ -214,7 +211,7 @@ const Contact = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Office Information */}
         <section id="office" className="mb-20 scroll-mt-20">
           <div className="text-center mb-12">
@@ -228,46 +225,150 @@ const Contact = () => {
               Reach out to us through any of these channels
             </p>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              {
+                title: "Phone",
+                detail: "+251 911 517 628",
+                tag: "Primary",
+                icon: <Phone size={24} />,
+                color: "from-blue-600 to-[#1c4c97]",
+                lightColor: "bg-blue-50",
+                tagColor: "bg-blue-500/10 text-blue-600",
+                glowColor: "rgba(28,76,151,0.3)",
+              },
+              {
+                title: "E-Mail",
+                detail: "Pro2actives@gmail.com",
+                tag: "Fast Response",
+                icon: <Mail size={24} />,
+                color: "from-[#1c4c97] to-[#ff7b16]",
+                lightColor: "bg-indigo-50",
+                tagColor: "bg-indigo-500/10 text-indigo-600",
+                glowColor: "rgba(28,76,151,0.3)",
+              },
+              {
+                title: "Address",
+                detail: "Addis Ababa, Kazanchis, Garad Building, 11th Floor",
+                tag: "Headquarters",
+                icon: <MapPin size={24} />,
+                color: "from-[#ff7b16] to-orange-600",
+                lightColor: "bg-orange-50",
+                tagColor: "bg-orange-500/10 text-orange-600",
+                glowColor: "rgba(255,123,22,0.3)",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-3xl p-8 
+                 shadow-[0_8px_30px_rgb(0,0,0,0.04)] 
+                 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)]
+                 transition-all duration-700 ease-out 
+                 hover:-translate-y-3 cursor-pointer
+                 before:absolute before:inset-0 
+                 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
+                 before:translate-x-[-200%] hover:before:translate-x-[200%]
+                 before:transition-transform before:duration-1000
+                 before:rounded-3xl overflow-hidden
+                 border border-gray-100/80 hover:border-transparent
+                 after:absolute after:inset-0 
+                 after:bg-gradient-to-r after:from-transparent after:via-white/10 after:to-transparent
+                 after:opacity-0 hover:after:opacity-100
+                 after:transition-opacity after:duration-700"
+              >
+                {/* Animated Gradient Border */}
+                <div className="absolute inset-0 p-[2px] rounded-3xl bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:from-[#1c4c97]/20 group-hover:via-[#ff7b16]/20 group-hover:to-[#1c4c97]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute inset-0 rounded-3xl bg-white" />
+                </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white mb-6 group-hover:rotate-12 transition-transform duration-300">
-                <Phone size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Phone</h3>
-              <p className="text-gray-600 mb-6">+251 911 517 628</p>
-              <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
-                Primary
-              </span>
-            </div>
+                {/* Floating Glow Effect */}
+                <div
+                  className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-0 group-hover:opacity-30 blur-3xl transition-all duration-1000 group-hover:scale-150"
+                  style={{
+                    background: `radial-gradient(circle, ${item.glowColor} 0%, transparent 70%)`,
+                  }}
+                />
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] flex items-center justify-center text-white mb-6 group-hover:rotate-12 transition-transform duration-300">
-                <Mail size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">E-Mail</h3>
-              <p className="text-gray-600 mb-6">Pro2actives@gmail.com</p>
-              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">
-                Fast Response
-              </span>
-            </div>
+                {/* Modern Icon Container with 3D effect */}
+                <div className="relative mb-8">
+                  <div
+                    className={`absolute inset-0 ${item.lightColor} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
+                  />
+                  <div
+                    className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} 
+                        flex items-center justify-center text-white 
+                        shadow-xl group-hover:shadow-2xl
+                        transform group-hover:scale-110 group-hover:-rotate-3
+                        transition-all duration-500 ease-out
+                        before:absolute before:inset-0 before:rounded-2xl
+                        before:bg-gradient-to-r before:from-white/30 before:to-transparent
+                        before:opacity-0 group-hover:before:opacity-100
+                        before:transition-opacity before:duration-500`}
+                  >
+                    <span className="relative z-10 transform group-hover:scale-110 transition-transform duration-500">
+                      {item.icon}
+                    </span>
+                  </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white mb-6 group-hover:rotate-12 transition-transform duration-300">
-                <MapPin size={28} />
+                  {/* Decorative Dots */}
+                  <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <div
+                    className="absolute -bottom-1 -left-1 w-1.5 h-1.5 rounded-full bg-[#ff7b16] animate-ping"
+                    style={{ animationDuration: "3s" }}
+                  />
+                </div>
+
+                {/* Content with enhanced typography */}
+                <div className="relative">
+                  <h3
+                    className="text-2xl font-bold text-gray-900 mb-3 tracking-tight
+                       bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text"
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className="text-gray-600 mb-6 leading-relaxed text-base font-medium
+                      border-l-4 border-transparent group-hover:border-[#ff7b16]/30 pl-3
+                      transition-all duration-500"
+                  >
+                    {item.detail}
+                  </p>
+                </div>
+
+                {/* Modern Tag with Glass Effect */}
+                <div className="flex items-center justify-between relative">
+                  <span
+                    className={`px-4 py-2 ${item.tagColor} text-xs uppercase tracking-wider 
+                         font-bold rounded-full backdrop-blur-sm
+                         border border-white/20 shadow-sm
+                         group-hover:shadow-md transition-all duration-500
+                         transform group-hover:scale-105`}
+                  >
+                    {item.tag}
+                  </span>
+
+                  {/* Animated Arrow Circle */}
+                  <div className="relative">
+                    <div
+                      className={`w-8 h-8 rounded-full bg-gradient-to-r ${item.color} 
+                          opacity-0 group-hover:opacity-100 transition-all duration-500
+                          flex items-center justify-center text-white text-sm
+                          transform translate-x-0 group-hover:translate-x-1
+                          shadow-lg`}
+                    >
+                      →
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Gradient Line */}
+                <div
+                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 
+                      bg-gradient-to-r ${item.color} rounded-full
+                      group-hover:w-full transition-all duration-700 delay-300`}
+                />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Address</h3>
-              <p className="text-gray-600">
-                Addis Ababa ,Kazanchis, Garad Building next to ELEL Hotel, 11st
-                Floor, Shop No 04
-              </p>
-              <span className="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-semibold rounded-full mt-4">
-                Headquarters
-              </span>
-            </div>
+            ))}
           </div>
         </section>
         {/* Visit Our Shop - Gallery Section */}
@@ -290,8 +391,8 @@ const Contact = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
               {/* Image 1 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-                <img 
-                  src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?w=600&h=400&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?w=600&h=400&fit=crop"
                   alt="Store Front - Proactive Trading"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -305,8 +406,8 @@ const Contact = () => {
 
               {/* Image 2 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-                <img 
-                  src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&h=400&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&h=400&fit=crop"
                   alt="Laptop Display Section"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -320,8 +421,8 @@ const Contact = () => {
 
               {/* Image 3 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-                <img 
-                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop"
                   alt="Desktop Computers"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -335,8 +436,8 @@ const Contact = () => {
 
               {/* Image 4 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-                <img 
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop"
                   alt="Server Room Setup"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -353,8 +454,8 @@ const Contact = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Image 5 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-                <img 
-                  src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600&h=400&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600&h=400&fit=crop"
                   alt="Printer and Office Equipment"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -368,8 +469,8 @@ const Contact = () => {
 
               {/* Image 6 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-                <img 
-                  src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop"
                   alt="Networking Equipment"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -383,8 +484,8 @@ const Contact = () => {
 
               {/* Image 7 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-                <img 
-                  src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop"
                   alt="Computer Accessories"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -398,8 +499,8 @@ const Contact = () => {
 
               {/* Image 8 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-                <img 
-                  src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=400&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=400&fit=crop"
                   alt="Store Interior"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -411,8 +512,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
-           
           </div>
         </section>
         {/* Global Presence */}
@@ -612,53 +711,149 @@ const Contact = () => {
             />
           </div>
         </section>
+{/* Team Section - Modern Glass Cards with Floating Effect */}
+<section id="team" className="mb-20 scroll-mt-20 relative overflow-hidden">
+  {/* Background decorative elements */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-20 left-10 w-64 h-64 bg-[#1c4c97]/5 rounded-full blur-3xl animate-pulse" />
+    <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#ff7b16]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+  </div>
 
-        {/* Team Section */}
-        <section id="team" className="mb-20 scroll-mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Our{" "}
-              <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
-                Team
-              </span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              The talented professionals behind our success
-            </p>
+  <div className="text-center mb-12 relative">
+    <span className="inline-block px-4 py-2 bg-gradient-to-r from-[#1c4c97]/10 to-[#ff7b16]/10 rounded-full text-sm font-semibold text-[#1c4c97] mb-4">
+      ✦ Our Leadership ✦
+    </span>
+    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      Meet the{" "}
+      <span className="relative">
+        <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+          Dream Team
+        </span>
+        <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#1c4c97]/20 to-[#ff7b16]/20 blur-xl" />
+      </span>
+    </h2>
+    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+      The talented professionals behind our success
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+    {teamMembers.map((member, index) => (
+      <div
+        key={index}
+        className="group relative"
+      >
+        {/* Premium Card Design */}
+        <div className="relative bg-white rounded-3xl p-8 
+                      shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)]
+                      hover:shadow-[0_30px_70px_-15px_rgba(28,76,151,0.3)]
+                      transition-all duration-700 ease-out
+                      hover:-translate-y-4
+                      border border-gray-100/50
+                      backdrop-blur-sm
+                      overflow-hidden
+                      before:absolute before:inset-0 
+                      before:bg-gradient-to-br before:from-[#1c4c97]/5 before:to-[#ff7b16]/5
+                      before:opacity-0 before:group-hover:opacity-100
+                      before:transition-opacity before:duration-700">
+
+          {/* Animated Gradient Border */}
+          <div className="absolute inset-0 p-[2px] rounded-3xl bg-gradient-to-r from-transparent via-transparent to-transparent 
+                        group-hover:from-[#1c4c97] group-hover:via-[#ff7b16] group-hover:to-[#1c4c97] opacity-0 group-hover:opacity-100 
+                        transition-opacity duration-700">
+            <div className="absolute inset-0 rounded-3xl bg-white" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 text-center"
-              >
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6">
-                  {member.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
+          {/* Decorative Corner Elements */}
+          <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#1c4c97]/10 to-transparent rounded-tl-3xl" />
+          <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#ff7b16]/10 to-transparent rounded-br-3xl" />
+
+          {/* Profile Image with Modern Design */}
+          <div className="relative mb-8 flex justify-center">
+            {/* Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 scale-75 group-hover:scale-110" />
+            
+            {/* Avatar Container */}
+            <div className="relative w-28 h-28">
+              {/* Rotating Border */}
+              <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#1c4c97]/30 group-hover:border-[#ff7b16] group-hover:animate-[spin_8s_linear_infinite]" />
+              
+              {/* Avatar */}
+              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] 
+                            flex items-center justify-center text-white text-3xl font-bold
+                            shadow-xl group-hover:shadow-2xl
+                            transform group-hover:scale-105
+                            transition-all duration-500
+                            group-hover:rotate-6">
+                {member.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
+              </div>
+
+              {/* Status Indicator */}
+              <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white 
+                            animate-pulse shadow-lg" />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="relative text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2
+                         bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text">
+              {member.name}
+            </h3>
+            
+            {/* Role with decorative line */}
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-[#1c4c97]/30" />
+              <p className="text-[#1c4c97] font-semibold text-sm uppercase tracking-wider">
+                {member.role}
+              </p>
+              <div className="w-8 h-px bg-gradient-to-l from-transparent to-[#ff7b16]/30" />
+            </div>
+
+            {/* Contact Info with Modern Design */}
+            <div className="space-y-3 pt-6 border-t border-gray-100 relative">
+              {/* Contact Items */}
+              <div className="flex items-center justify-center gap-3 group/item">
+                <div className="p-2 bg-[#1c4c97]/5 rounded-lg group-hover/item:bg-[#1c4c97] transition-colors duration-300">
+                  <Mail size={14} className="text-[#1c4c97] group-hover/item:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-[#1c4c97] font-semibold mb-6">
-                  {member.role}
-                </p>
-                <div className="space-y-3 pt-6 border-t border-gray-100">
-                  <div className="flex items-center justify-center gap-2 text-gray-600">
-                    <Mail size={16} />
-                    <span className="text-sm">{member.email}</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-gray-600">
-                    <Phone size={16} />
-                    <span className="text-sm">{member.phone}</span>
-                  </div>
+                <span className="text-sm text-gray-600 group-hover/item:text-gray-900 transition-colors duration-300">
+                  {member.email}
+                </span>
+              </div>
+
+              <div className="flex items-center justify-center gap-3 group/item">
+                <div className="p-2 bg-[#ff7b16]/5 rounded-lg group-hover/item:bg-[#ff7b16] transition-colors duration-300">
+                  <Phone size={14} className="text-[#ff7b16] group-hover/item:text-white transition-colors duration-300" />
+                </div>
+                <span className="text-sm text-gray-600 group-hover/item:text-gray-900 transition-colors duration-300">
+                  {member.phone}
+                </span>
+              </div>
+
+              {/* Social Links Placeholder */}
+              <div className="flex justify-center gap-2 pt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#1c4c97] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                  <span className="text-xs">in</span>
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#ff7b16] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                  <span className="text-xs">tw</span>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </section>
+
+          {/* Floating Particle Effects */}
+          <div className="absolute -top-2 -right-2 w-12 h-12 bg-[#1c4c97]/5 rounded-full blur-xl group-hover:bg-[#ff7b16]/10 transition-colors duration-700" />
+          <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-[#ff7b16]/5 rounded-full blur-xl group-hover:bg-[#1c4c97]/10 transition-colors duration-700" />
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
         {/* FAQ Section */}
         <section id="faq" className="scroll-mt-20">

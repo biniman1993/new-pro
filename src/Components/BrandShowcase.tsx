@@ -1,30 +1,52 @@
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 
+// Import all images from assets folder
+import hpLogo from '../assets/brandslogo/HP_Logo.png';
+import lenovoLogo from '../assets/brandslogo/Lenovo.png';
+import dellLogo from '../assets/brandslogo/Dell.png';
+import thinkpadLogo from '../assets/brandslogo/ThinkPad.png';
+import zteLogo from '../assets/brandslogo/ZTE.png';
+import canonLogo from '../assets/brandslogo/canon.jpg';
+import asusLogo from '../assets/brandslogo/asus.png';
+import appleLogo from '../assets/brandslogo/apple.png';
+import acerLogo from '../assets/brandslogo/Acer.png';
+import sandiskLogo from '../assets/brandslogo/SanDisk.png';
+import vaioLogo from '../assets/brandslogo/Vaio.png';
+import epsonLogo from '../assets/brandslogo/epson.png';
+import huaweiLogo from '../assets/brandslogo/Huawei.png';
+import benqLogo from '../assets/brandslogo/benq.png';
+import lgLogo from '../assets/brandslogo/LG.png';
+import nokiaLogo from '../assets/brandslogo/NOKIA.png';
+import msiLogo from '../assets/brandslogo/MSI.png';
+import apcLogo from '../assets/brandslogo/apc.png';
+import hikvisionLogo from '../assets/brandslogo/Hikvision.png';
+import logitechLogo from '../assets/brandslogo/Logitech.jpg';
+
 const BrandShowcase = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const logos = [
-    { id: 1, name: 'HP', image: "/assets/brandslogo/HP_Logo.png" },
-    { id: 2, name: 'Lenovo', image: "/assets/brandslogo/Lenovo.png" },
-    { id: 3, name: 'Dell', image: "/assets/brandslogo/Dell.png" },
-    { id: 4, name: 'ThinkPad', image: "/assets/brandslogo/ThinkPad.png" },
-    { id: 5, name: 'ZTE', image: "/assets/brandslogo/ZTE.png" },
-    { id: 6, name: 'Canon', image: "/assets/brandslogo/canon.jpg" },
-    { id: 7, name: 'Asus', image: "/assets/brandslogo/asus.png" },
-    { id: 8, name: 'Apple', image: "/assets/brandslogo/apple.png" },
-    { id: 9, name: 'Acer', image: "/assets/brandslogo/Acer.png" },
-    { id: 10, name: 'SanDisk', image: "/assets/brandslogo/SanDisk.png" },
-    { id: 11, name: 'Vaio', image: "/assets/brandslogo/Vaio.png" },
-    { id: 12, name: 'Epson', image: "/assets/brandslogo/epson.png" },
-    { id: 13, name: 'Huawei', image: "/assets/brandslogo/Huawei.png" },
-    { id: 14, name: 'BenQ', image: "/assets/brandslogo/benq.png" },
-    { id: 15, name: 'LG', image: "/assets/brandslogo/LG.png" },
-    { id: 16, name: 'NOKIA', image: "/assets/brandslogo/NOKIA.png" },
-    { id: 17, name: 'MSI', image: "/assets/brandslogo/MSI.png" },
-    { id: 18, name: 'APC', image: "/assets/brandslogo/apc.png" },
-    { id: 19, name: 'Hikvision', image: "/assets/brandslogo/Hikvision.png" },
-    { id: 20, name: 'Logitech', image: "/assets/brandslogo/Logitech.jpg" }
+    { id: 1, name: 'HP', image: hpLogo },
+    { id: 2, name: 'Lenovo', image: lenovoLogo },
+    { id: 3, name: 'Dell', image: dellLogo },
+    { id: 4, name: 'ThinkPad', image: thinkpadLogo },
+    { id: 5, name: 'ZTE', image: zteLogo },
+    { id: 6, name: 'Canon', image: canonLogo },
+    { id: 7, name: 'Asus', image: asusLogo },
+    { id: 8, name: 'Apple', image: appleLogo },
+    { id: 9, name: 'Acer', image: acerLogo },
+    { id: 10, name: 'SanDisk', image: sandiskLogo },
+    { id: 11, name: 'Vaio', image: vaioLogo },
+    { id: 12, name: 'Epson', image: epsonLogo },
+    { id: 13, name: 'Huawei', image: huaweiLogo },
+    { id: 14, name: 'BenQ', image: benqLogo },
+    { id: 15, name: 'LG', image: lgLogo },
+    { id: 16, name: 'NOKIA', image: nokiaLogo },
+    { id: 17, name: 'MSI', image: msiLogo },
+    { id: 18, name: 'APC', image: apcLogo },
+    { id: 19, name: 'Hikvision', image: hikvisionLogo },
+    { id: 20, name: 'Logitech', image: logitechLogo }
   ];
 
   // Duplicating for seamless infinite loop
@@ -64,30 +86,39 @@ const BrandShowcase = () => {
           <div className="logo-scroll-container py-10">
             <div className="logo-track">
               {duplicatedLogos.map((logo, index) => {
-                const uniqueId = `${logo.id}-${index}`;
+                // Create unique identifiers for duplicated items
+                const uniqueKey = `logo-${logo.id}-${index}`;
+                const uniqueHoverId = `hover-${logo.id}-${index}`;
+                
                 return (
                   <div
-                    key={uniqueId}
+                    key={uniqueKey}
                     className="logo-card-wrapper"
-                    onMouseEnter={() => setHoveredId(uniqueId)}
+                    onMouseEnter={() => setHoveredId(uniqueHoverId)}
                     onMouseLeave={() => setHoveredId(null)}
                   >
-                    <div className={`logo-card ${hoveredId === uniqueId ? 'active' : ''}`}>
+                    <div className={`logo-card ${hoveredId === uniqueHoverId ? 'active' : ''}`}>
                       <img 
                         src={logo.image} 
                         alt={logo.name}
                         className="brand-img"
                         onError={(e) => {
-                          console.error(`Failed to load: ${logo.name} - ${logo.image}`);
+                          console.error(`Failed to load: ${logo.name}`);
+                          // Hide broken image and show text fallback
                           const target = e.target as HTMLImageElement;
-                          target.style.backgroundColor = '#f5f5f5';
-                          target.style.display = 'flex';
-                          target.style.alignItems = 'center';
-                          target.style.justifyContent = 'center';
-                          target.style.color = '#666';
-                          target.style.fontSize = '12px';
-                          target.style.fontWeight = 'bold';
-                          target.innerHTML = logo.name;
+                          target.style.display = 'none';
+                          
+                          // Add text fallback
+                          const parent = target.parentElement;
+                          if (parent && !parent.querySelector('.fallback-text')) {
+                            const fallback = document.createElement('div');
+                            fallback.className = 'fallback-text';
+                            fallback.textContent = logo.name;
+                            fallback.style.fontSize = '14px';
+                            fallback.style.fontWeight = 'bold';
+                            fallback.style.color = '#666';
+                            parent.appendChild(fallback);
+                          }
                         }}
                       />
                     </div>
@@ -142,15 +173,20 @@ const BrandShowcase = () => {
           border: 1px solid #f1f5f9;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
         }
 
         .brand-img {
           max-width: 100%;
           max-height: 100%;
           object-fit: contain;
-          filter: grayscale(100%);
-          opacity: 0.6;
+        
           transition: all 0.4s ease;
+        }
+
+        .fallback-text {
+          width: 100%;
+          text-align: center;
         }
 
         .logo-card.active {

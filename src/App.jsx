@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+//npm run dev -- --host
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,7 +16,7 @@ import Logobrand from "./Components/Logo/Logobrand.jsx";
 import Login from "./Components/Login/Login.jsx";
 import Brand from "./Components/Brand/Brand.jsx";
 import ContactPage from "./Components/style/ContactPage.jsx";
-import About from "./Components/About/About.jsx";
+import About from "./Components/About/About.tsx";
 import FridayPromo from "./Components/FridayPromo.js";
 import Aboutwhy from "./Components/About/Why/Aboutwhy.jsx";
 import HeroSection from "./Components/HeroSection.tsx";
@@ -165,3 +166,4 @@ const App = () => {
 };
 
 export default App;
+//       <header className="relative overflow-hidden mt-10 pphone sm:mt-10 tablet md:mt-20 desktop lg:mt-20--small laptop xl:mt-20 ">

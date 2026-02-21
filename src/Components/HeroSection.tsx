@@ -9,12 +9,12 @@ import {
   ChevronRight,
   Play,
 } from "lucide-react";
-import hero1 from '../assets/hero/h1.png';
-import hero2 from '../assets/hero/lsptop (2).png';
-import hero3 from '../assets/hero/cisco.png';
-import hero4 from '../assets/hero/disp.png';
-import hero5 from '../assets/hero/tv.png';
-import hero6 from '../assets/hero/server1.png';
+import hero1 from "../assets/hero/h1.png";
+import hero2 from "../assets/hero/lsptop (2).png";
+import hero3 from "../assets/hero/cisco.png";
+import hero4 from "../assets/hero/disp.png";
+import hero5 from "../assets/hero/tv.png";
+import hero6 from "../assets/hero/server1.png";
 interface SlideContent {
   title: string;
   description: string;
@@ -67,14 +67,7 @@ const HeroSection = () => {
     },
   ];
 
- const productImages = [
-  hero1,
-  hero2, 
-  hero3,
-  hero4,
-  hero5,
-  hero6,
-];
+  const productImages = [hero1, hero2, hero3, hero4, hero5, hero6];
 
   // Intersection Observer for performance - only animate when in view
   useEffect(() => {
@@ -82,7 +75,7 @@ const HeroSection = () => {
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (heroRef.current) {
@@ -133,16 +126,16 @@ const HeroSection = () => {
         }
         
         .hero-title-animate {
-          animation: heroTitleSlide 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          animation: heroTitleSlide 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
         
         .hero-desc-animate {
-          animation: heroDescFade 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+          animation: heroDescFade 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
           opacity: 0;
         }
         
         .hero-image-animate {
-          animation: heroImageSlide 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          animation: heroImageSlide 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
         
         @keyframes heroTitleSlide {
@@ -313,7 +306,7 @@ const HeroSection = () => {
           >
             {/* Fixed Badge - No animation on slide change */}
             <div className="inline-flex items-center mt-4 gap-2 px-4 py-2 hero-glass-card rounded-full fade-in-up">
-              <span className="w-3 h-3 rounded-full hero-badge-dot" />
+              <span className="w-3 h-3 rounded-full hero-badge-dot " />
               <span className="text-sm text-foreground/80 font-semibold">
                 Official Authorized Distributor
               </span>
@@ -343,37 +336,43 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Buttons - Fixed, no animation on slide change */}
-            <div className="flex flex-wrap gap-4 fade-in-up" style={{ animationDelay: "0.3s" }}>
-              <button className="group relative px-5 py-3.5 hero-primary-btn  font-semibold text-primary-foreground overflow-hidden transition-all duration-300 hover:scale-[1.02]">
+            <div
+              className="flex flex-wrap gap-4 fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <button className="group relative px-5 py-3.5 hero-primary-btn font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-[1.02]">
                 <span className="relative z-10 flex items-center gap-2">
                   Explore Products
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
 
               <button className="group flex items-center gap-3 px-5 py-3.5 hero-glass-card  font-semibold text-foreground transition-all duration-300 hover:bg-background/90 hover:scale-[1.02]">
                 <div className="w-9 h-9 rounded-full hero-play-btn-icon flex items-center justify-center text-primary-foreground group-hover:scale-105 transition-transform">
-                  <Play className="w-4 h-4 fill-current" />
+                  <Play className="w-4 h-4 fill-current  text-white " />
                 </div>
                 Watch Demo
               </button>
             </div>
 
-            {/* Slide Indicators - Fixed */}
-            <div className="flex gap-2 pt-2 fade-in-up" style={{ animationDelay: "0.4s" }}>
-              {slides.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSlideClick(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-400 ${
-                    idx === currentSlide
-                      ? "w-8 hero-indicator-active"
-                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
+           {/* Modern Slide Indicators - Minimalist */}
+<div
+  className="flex gap-2 pt-2 justify-center lg:justify-start"
+  style={{ animationDelay: "0.4s" }}
+>
+  {slides.map((_, idx) => (
+    <button
+      key={idx}
+      onClick={() => handleSlideClick(idx)}
+      className={`transition-all duration-300 rounded-full ${
+        idx === currentSlide
+          ? "w-8 h-2 bg-gradient-to-r from-[#ff7b16] to-[#e47325] shadow-sm shadow-orange-500/50"
+          : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+      }`}
+      aria-label={`Go to slide ${idx + 1}`}
+    />
+  ))}
+</div>
           </div>
 
           {/* Right Content - Image with fixed container */}
@@ -409,8 +408,18 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Title */}
-          <div className="text-center mb-4 title-container flex items-start justify-center">
+          {/* Image - MOVED UP: Now appears right after badge */}
+          <div className="flex-1 flex items-center justify-center mb-4 image-container">
+            <img
+              src={productImages[currentSlide]}
+              alt={slides[currentSlide].title}
+              className="w-full max-w-sm h-auto max-h-[250px] sm:max-h-[280px] object-contain hero-image-animate"
+              key={`mobile-img-${animatingSlide}`}
+            />
+          </div>
+
+          {/* Title - MOVED DOWN: Now appears after image */}
+          <div className="text-center mb-3 title-container flex items-start justify-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               <span
                 className="hero-text-gradient block hero-title-animate"
@@ -421,8 +430,8 @@ const HeroSection = () => {
             </h1>
           </div>
 
-          {/* Description */}
-          <div className="text-center mb-6 desc-container px-4">
+          {/* Description - MOVED DOWN: Now appears after title */}
+          <div className="text-center mb-4 desc-container px-4">
             <p
               className="text-base sm:text-lg text-muted-foreground leading-relaxed hero-desc-animate"
               key={`mobile-desc-${animatingSlide}`}
@@ -431,18 +440,8 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* Image - Below description for mobile */}
-          <div className="flex-1 flex items-center justify-center mb-6 image-container">
-            <img
-              src={productImages[currentSlide]}
-              alt={slides[currentSlide].title}
-              className="w-full max-w-sm h-auto max-h-[280px] sm:max-h-[320px] object-contain hero-image-animate"
-              key={`mobile-img-${animatingSlide}`}
-            />
-          </div>
-
           {/* Buttons - Below image for mobile */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 px-4">
             <button className="w-full sm:w-auto group relative px-6 py-3 hero-primary-btn rounded-xl font-semibold text-primary-foreground overflow-hidden transition-all duration-300 hover:shadow-xl">
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Explore Products
@@ -458,16 +457,16 @@ const HeroSection = () => {
             </button>
           </div>
 
-          {/* Slide Indicators */}
-          <div className="flex justify-center gap-2 pb-4">
+          {/* Slide Indicators - Minimal & Clean */}
+          <div className="flex justify-center items-center gap-2 pb-5 mt-4">
             {slides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => handleSlideClick(idx)}
-                className={`h-1.5 rounded-full transition-all duration-400 ${
+                className={`transition-all duration-300 rounded-full ${
                   idx === currentSlide
-                    ? "w-8 hero-indicator-active"
-                    : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                    ? "w-8 h-2.5 bg-gradient-to-r from-[#ff7b16] to-[#e47325] shadow-md shadow-orange-500/40"
+                    : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -476,9 +475,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 hero-bottom-fade pointer-events-none" />
-    </section>
+      </section>
   );
 };
 

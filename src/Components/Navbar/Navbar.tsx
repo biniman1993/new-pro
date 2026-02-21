@@ -66,7 +66,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] shadow-2xl">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] ">
       <div className="border-b border-white/10">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -223,7 +223,7 @@ const Navbar = () => {
                     `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
                       isActive
                         ? "bg-gradient-to-r "
-                        : "hover:bg-blue-400 hover:border-l-4 hover:border-blue-400/50"
+                        : " hover:border-l-4 hover:border-orange-400"
                     }`
                   }
                 >
@@ -234,7 +234,7 @@ const Navbar = () => {
                         : "text-white/70 group-hover:text-orange-400"
                     }`}
                   />
-                  <span className="text-white font-medium text-lg group-hover:text-orange-300">
+                  <span className="text-white font-medium text-lg group-hover:text-orange-400">
                     {item.label}
                   </span>
                 </NavLink>
