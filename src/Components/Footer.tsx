@@ -5,18 +5,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const shopCategories = [
-    { name: 'Laptops', href: '#' },
-    { name: 'Accessories', href: '#' },
-    { name: 'Electronics', href: '#' },
-    { name: 'Networking', href: '#' },
+    { name: 'Home', href: '#' },
+    { name: 'About Us', href: '#' },
+    { name: 'Contact Us', href: '#' },
+    { name: 'Our Brand', href: '#' },
     { name: 'New Arrival', href: '#' },
   ];
 
   const company = [
-    { name: 'About Us', href: '#' },
-    { name: 'Our Brand', href: '#' },
-    { name: 'Store Locations', href: '#' },
-    { name: 'Careers', href: '#' },
+    { name: 'Home Us', href: '#' },
+    { name: 'Our About', href: '#' },
+    { name: 'Brand Locations', href: '#' },
+    { name: 'Brand', href: '#' },
+    { name: 'Brand', href: '#' },
   ];
 
   const support = [
@@ -306,7 +307,7 @@ const Footer = () => {
             <div>
               <h3 className="footer-col-title">
                 <span className="footer-col-dot" />
-                Categories
+                Menu
               </h3>
               <ul className="footer-link-list">
                 {shopCategories.map((item) => (

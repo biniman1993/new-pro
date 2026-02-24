@@ -514,54 +514,69 @@ const Contact = () => {
             </div>
           </div>
         </section>
-        {/* Global Presence */}
-        <section id="branches" className="mb-20 scroll-mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Shop{" "}
-              <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
-                Address
-              </span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Serving clients worldwide with local expertise
-            </p>
+       {/* Global Presence */}
+<section id="branches" className="mb-20 scroll-mt-20">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      Shop{" "}
+      <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+        Address
+      </span>
+    </h2>
+    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+      Serving clients worldwide with local expertise
+    </p>
+  </div>
+
+  <div className="max-w-6xl mx-auto">
+    <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+      
+      {/* Background Image with Low Opacity */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/src/assets/back.png" 
+          alt="Ethiopia Map Background" 
+          className="w-full h-full object-cover opacity-10"
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/60"></div>
+      </div>
+
+      {/* Content - Relative to appear above background */}
+      <div className="relative z-10">
+        <div className="flex justify-between items-start mb-6 ml-10">
+          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center text-white">
+            <Building2 size={28} />
           </div>
+          <div className="text-4xl animate-bounce">Et</div>
+        </div>
 
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="flex justify-between items-start mb-6 ml-10">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center text-white">
-                  <Building2 size={28} />
-                </div>
-                <div className="text-4xl animate-bounce">Et</div>
-              </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          Addis Ababa
+        </h3>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Addis Ababa
-              </h3>
+        <div className="space-y-2 mb-6">
+          <p>
+            <strong className="text-gray-900">Kazanchise</strong>
+          </p>
+          <p className="text-gray-600"> Addis Ababa, Ethiopia </p>
+          <p className="text-gray-600">
+            Kazanchis, Garad Building next to ELEL Hotel
+          </p>
+          <p className="text-gray-600">Shop Number #04</p>
+          <p className="text-[#1c4c97] font-semibold mt-3">
+            Tel: +971 4 33 04 125
+          </p>
+        </div>
 
-              <div className="space-y-2 mb-6">
-                <p>
-                  <strong className="text-gray-900">Kazanchise</strong>
-                </p>
-                <p className="text-gray-600"> Addis Ababa, Ethiopia </p>
-                <p className="text-gray-600">
-                  Kazanchis, Garad Building next to ELEL Hotel
-                </p>
-                <p className="text-gray-600">Shop Number #04</p>
-                <p className="text-[#1c4c97] font-semibold mt-3">
-                  Tel: +971 4 33 04 125
-                </p>
-              </div>
-
-              <div className="flex items-center gap-2 px-4 py-3 bg-blue-50 rounded-xl text-blue-800 font-medium">
-                <Clock size={18} />
-                <span> Monday up to sunday 8:00 AM - 6:00 PM GST</span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="flex items-center gap-2 px-4 py-3 bg-blue-50 rounded-xl text-blue-800 font-medium">
+          <Clock size={18} />
+          <span> Monday up to sunday 8:00 AM - 6:00 PM GST</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Contact Form */}
         <section id="support" className="mb-20 scroll-mt-20">

@@ -355,24 +355,24 @@ const HeroSection = () => {
               </button>
             </div>
 
-           {/* Modern Slide Indicators - Minimalist */}
-<div
-  className="flex gap-2 pt-2 justify-center lg:justify-start"
-  style={{ animationDelay: "0.4s" }}
->
-  {slides.map((_, idx) => (
-    <button
-      key={idx}
-      onClick={() => handleSlideClick(idx)}
-      className={`transition-all duration-300 rounded-full ${
-        idx === currentSlide
-          ? "w-8 h-2 bg-gradient-to-r from-[#ff7b16] to-[#e47325] shadow-sm shadow-orange-500/50"
-          : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
-      }`}
-      aria-label={`Go to slide ${idx + 1}`}
-    />
-  ))}
-</div>
+            {/* Modern Slide Indicators - Minimalist */}
+            <div
+              className="flex gap-2 pt-2 justify-center lg:justify-start"
+              style={{ animationDelay: "0.4s" }}
+            >
+              {slides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleSlideClick(idx)}
+                  className={`transition-all duration-300 rounded-full ${
+                    idx === currentSlide
+                      ? "w-8 h-2 bg-gradient-to-r from-[#ff7b16] to-[#e47325] shadow-sm shadow-orange-500/50"
+                      : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right Content - Image with fixed container */}
@@ -380,12 +380,12 @@ const HeroSection = () => {
             className={`relative image-container flex items-center justify-center transition-opacity duration-500 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
-          >
-            <div className="relative w-full max-w-lg">
+           >
+            <div className="relative w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl mb-2 md:mt-2 lg:mt-10 xl:mt-10  ">
               <img
                 src={productImages[currentSlide]}
                 alt={slides[currentSlide].title}
-                className="w-full h-auto max-h-[450px] object-contain hero-image-animate"
+                className="w-full h-auto max-h-[450px] md:max-h-[500px] lg:max-h-[400px] xl:max-h-[500px] object-contain hero-image-animate"
                 key={`img-${animatingSlide}`}
               />
             </div>
@@ -402,24 +402,24 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 hero-glass-card rounded-full">
               <span className="w-3 h-3 rounded-full hero-badge-dot" />
-              <span className="text-sm text-foreground/80 font-semibold">
+              <span className="text-sm text-foreground/80 font-bold">
                 Official Authorized Distributor
               </span>
             </div>
           </div>
 
           {/* Image - MOVED UP: Now appears right after badge */}
-          <div className="flex-1 flex items-center justify-center mb-4 image-container">
+          <div className="flex-1 flex items-center justify-center mb-1 sm:mb-4 md:mb-6 image-container">
             <img
               src={productImages[currentSlide]}
               alt={slides[currentSlide].title}
-              className="w-full max-w-sm h-auto max-h-[250px] sm:max-h-[280px] object-contain hero-image-animate"
+              className="w-full max-w-md h-auto max-h-[260px] xs:max-h-[250px] sm:max-h-[300px] md:max-h-[350px] object-contain hero-image-animate"
               key={`mobile-img-${animatingSlide}`}
             />
           </div>
 
           {/* Title - MOVED DOWN: Now appears after image */}
-          <div className="text-center mb-3 title-container flex items-start justify-center">
+          <div className="text-center mb-2 sm:mb-0 md:mb-1  title-container flex items-start justify-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               <span
                 className="hero-text-gradient block hero-title-animate"
@@ -431,7 +431,7 @@ const HeroSection = () => {
           </div>
 
           {/* Description - MOVED DOWN: Now appears after title */}
-          <div className="text-center mb-4 desc-container px-4">
+          <div className="text-center mb-2 sm:mb-1 md:mb-1  desc-container px-4">
             <p
               className="text-base sm:text-lg text-muted-foreground leading-relaxed hero-desc-animate"
               key={`mobile-desc-${animatingSlide}`}
@@ -474,8 +474,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      </section>
+    </section>
   );
 };
 

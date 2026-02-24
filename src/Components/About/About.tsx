@@ -152,244 +152,288 @@ const About = () => {
     },
   ];
 
-  const clients = [
-    {
-      name: "Ministry of Finance",
-      logo: "/logos/ministry/ministry-finance.png",
-      initials: "MoF",
-    },
-    {
-      name: "Commercial Bank of Ethiopia",
-      logo: "/logos/banks/cbe.png",
-      initials: "CBE",
-    },
+    // Top Government & Federal Institutions
+   const clients = [
+  // Top Federal Ministries
+  {
+    name: "Office of Prime Minister",
+    logo: "/src/assets/awardlogo/prim.png",
+  },
+  {
+    name: "Ministry of Finance",
+    logo: "/src/assets/awardlogo/Finac-1.png",
+  },
+  {
+    name: "Ministry of Defence",
+    logo: "/src/assets/awardlogo/def.png",
+  },
+  {
+    name: "Ministry of Peace",
+    logo: "/src/assets/awardlogo/Ministry of Peace.png",
+  },
+  {
+    name: "Ministry of Justice",
+    logo: "/src/assets/awardlogo/Ministry of Justice.png",
+  },
+  {
+    name: "Ministry of Revenues",
+    logo: "/src/assets/awardlogo/Ministry of Revenues.png",
+  },
+  {
+    name: "Ministry of Foreign Affairs",
+    logo: "/src/assets/awardlogo/Ministry of Foreign Affairs.png",
+  },
+  {
+    name: "Ministry of Trade and Regional Integration",
+    logo: "/src/assets/awardlogo/trad.png",
+  },
+  {
+    name: "Ministry of Transport and Logistics",
+    logo: "/src/assets/awardlogo/Ministry of Transport and Logistics.png",
+  },
+  {
+    name: "Ministry of Water and Energy",
+    logo: "/src/assets/awardlogo/Ministry of Water and Energy.png",
+  },
+  {
+    name: "Ministry of Works and Urban Development",
+    logo: "/src/assets/awardlogo/Ministry of Works and Urban Development.png",
+  },
+  {
+    name: "Ministry of Urban and Infrastructure Development",
+    logo: "/src/assets/awardlogo/Ministry of Urban and Infrastructure Development.png",
+  },
+  {
+    name: "Ministry of Innovation and Technology",
+    logo: "/src/assets/awardlogo/Ministry of Innovation and Technology.png",
+  },
+  {
+    name: "Ministry of Mines and Petroleum",
+    logo: "/src/assets/awardlogo/Ministry of Mines and Petroleum.png",
+  },
+  {
+    name: "Ministry of Agriculture",
+    logo: "/src/assets/awardlogo/Ministry of Agriculture.png",
+  },
+  {
+    name: "Ministry of Education",
+    logo: "/src/assets/awardlogo/Ministry of Education.png",
+  },
+  {
+    name: "Ministry of Health",
+    logo: "/src/assets/awardlogo/Health.png",
+  },
+  {
+    name: "Ministry of Labour and Skills",
+    logo: "/src/assets/awardlogo/Ministry of Labour and Skills.png",
+  },
+  {
+    name: "Ministry of Women and Social Affairs",
+    logo: "/src/assets/awardlogo/Ministry of Women and Social Affairs.png",
+  },
+  {
+    name: "Ministry of Culture and Tourism",
+    logo: "/src/assets/awardlogo/Ministry of Culture and Tourism.png",
+  },
+ 
+    // Top Corporations & Airlines
     {
       name: "Ethiopian Airlines",
-      logo: "/logos/transport/ethiopian-airlines.png",
-      initials: "EA",
+      logo: "/src/assets/awardlogo/ethoair.png",
     },
-    {
-      name: "Addis Ababa University",
-      logo: "/logos/education/aau.png",
-      initials: "AAU",
-    },
-    {
-      name: "Black Lion Hospital",
-      logo: "/logos/health/black-lion-hospital.png",
-      initials: "BLH",
-    },
-    {
-      name: "Ministry of Education",
-      logo: "/logos/ministry/ministry-education.png",
-      initials: "MoE",
-    },
-    {
-      name: "Awash Bank",
-      logo: "/logos/banks/awash-bank.png",
-      initials: "AB",
-    },
-    {
-      name: "Ministry of Health",
-      logo: "/logos/ministry/ministry-health.png",
-      initials: "MoH",
-    },
-    {
-      name: "Haramaya University",
-      logo: "/logos/education/haramaya-university.png",
-      initials: "HU",
-    },
-    {
-      name: "Ethiopian Roads Authority",
-      logo: "/logos/transport/ethiopian-roads-authority.png",
-      initials: "ERA",
-    },
-    {
-      name: "Development Bank of Ethiopia",
-      logo: "/logos/banks/dbe.png",
-      initials: "DBE",
-    },
-    {
-      name: "St. Paul's Hospital",
-      logo: "/logos/health/st-pauls-hospital.png",
-      initials: "SPH",
-    },
-    {
-      name: "Ministry of Transport and Logistics",
-      logo: "/logos/ministry/ministry-transport.png",
-      initials: "MTL",
-    },
-    {
-      name: "Ethiopia Enterprise Development",
-      logo: "/logos/government/enterprise-development.png",
-      initials: "EED",
-    },
-    {
-      name: "Ministry of Defence",
-      logo: "/logos/ministry/ministry-defence.png",
-      initials: "MoD",
-    },
-    {
-      name: "Ethiopian Communication Authority",
-      logo: "/logos/government/communication-authority.png",
-      initials: "ECA",
-    },
-    {
-      name: "Ministry of works and Urban Development",
-      logo: "/logos/ministry/ministry-works.png",
-      initials: "MWUD",
-    },
-    {
-      name: "Ethiopian Science and Technology Agency",
-      logo: "/logos/government/science-technology-agency.png",
-      initials: "ESTA",
-    },
-    {
-      name: "Oromia Land Bureau",
-      logo: "/logos/regional/oromia-land-bureau.png",
-      initials: "OLB",
-    },
-    {
-      name: "Tsedey Bank",
-      logo: "/logos/banks/tsedey-bank.png",
-      initials: "TB",
-    },
-    {
-      name: "COOP Bank of Oromia",
-      logo: "/logos/banks/coop-bank-oromia.png",
-      initials: "CBO",
-    },
-    {
-      name: "Oromia Health Bureau",
-      logo: "/logos/regional/oromia-health-bureau.png",
-      initials: "OHB",
-    },
-    {
-      name: "Minilik Hospital",
-      logo: "/logos/health/minilik-hospital.png",
-      initials: "MH",
-    },
-    {
-      name: "Enat Bank",
-      logo: "/logos/banks/enat-bank.png",
-      initials: "EB",
-    },
-    {
-      name: "Akaki Kality Sub City",
-      logo: "/logos/municipal/akaki-kality.png",
-      initials: "AKSC",
-    },
-    {
-      name: "Ministry of Defense",
-      logo: "/logos/ministry/ministry-defense.png",
-      initials: "MoD",
-    },
-    {
-      name: "Yirgalem Construction",
-      logo: "/logos/construction/yirgalem-construction.png",
-      initials: "YC",
-    },
-    {
-      name: "Addis Ababa University School of Commerce",
-      logo: "/logos/education/aau-commerce.png",
-      initials: "AAU-SC",
-    },
-    {
-      name: "Manufacturing Industry Development Institute",
-      logo: "/logos/government/manufacturing-institute.png",
-      initials: "MIDI",
-    },
-    {
-      name: "City Government A.A Cleaning Agency",
-      logo: "/logos/municipal/cleaning-agency.png",
-      initials: "CAA",
-    },
-    {
-      name: "Educational Material Production Distribution Enterprise",
-      logo: "/logos/education/material-production.png",
-      initials: "EMPD",
-    },
-    {
-      name: "Hibret Bank",
-      logo: "/logos/banks/hibret-bank.png",
-      initials: "HB",
-    },
-    {
-      name: "Ethiopian Mineral Water Share Company",
-      logo: "/logos/companies/mineral-water.png",
-      initials: "EMW",
-    },
-    {
-      name: "Wolaitta Development Association",
-      logo: "/logos/ngo/wolaitta-development.png",
-      initials: "WDA",
-    },
-    {
-      name: "Wonj Showa Sugar Factory",
-      logo: "/logos/companies/sugar-factory.png",
-      initials: "WSSF",
-    },
-    {
-      name: "Oromia Milisha Office",
-      logo: "/logos/regional/oromia-milisha.png",
-      initials: "OMO",
-    },
-    {
-      name: "CGGC",
-      logo: "/logos/construction/cggc.png",
-      initials: "CGGC",
-    },
-    {
-      name: "Ministry of Resource Water Fund Project",
-      logo: "/logos/ministry/water-fund-project.png",
-      initials: "MRWF",
-    },
-    {
-      name: "ERCA Dire Dawa Branch",
-      logo: "/logos/government/erca-dire-dawa.png",
-      initials: "ERCA",
+     {
+      name: "Ethio-telecom",
+      logo: "/src/assets/awardlogo/Ethio-telecom.png",
     },
     {
       name: "Ethiopian Railways Corporation",
-      logo: "/logos/transport/ethiopian-railways.png",
-      initials: "ERC",
+      logo: "/src/assets/awardlogo/Ethiopian Railways Corporation.jpg",
+    },
+    {
+      name: "Ethiopian Roads Authority",
+      logo: "/src/assets/awardlogo/Ethiopian Roads Authority.png",
+    },
+    {
+      name: "Ethiopian Communication Authority",
+      logo: "/src/assets/awardlogo/Ethiopian Communication Authority.png",
     },
     {
       name: "Information Network Security Agency",
-      logo: "/logos/government/insa.png",
-      initials: "INSA",
+      logo: "/src/assets/awardlogo/insa.png",
+    },
+    
+    {
+      name: "Ethiopian Enterprise Development",
+      logo: "/src/assets/awardlogo/Ethiopian Enterprise Development.png",
+    },
+   
+
+    // Top Banks
+    {
+      name: "Commercial Bank of Ethiopia",
+      logo: "/src/assets/awardlogo/cbe1.png",
+    },
+    {
+      name: "Development Bank of Ethiopia",
+      logo: "/src/assets/awardlogo/Development Bank of Ethiopia.png",
+    },
+    {
+      name: "Awash Bank",
+      logo: "/src/assets/awardlogo/Awash Bank.png",
+    },
+    {
+      name: "Enat Bank",
+      logo: "/src/assets/awardlogo/Enat Bank.png",
+    },
+    {
+      name: "Hibret Bank",
+      logo: "/src/assets/awardlogo/Hibret Bank.png",
+    },
+    {
+      name: "Tsedey Bank",
+      logo: "/src/assets/awardlogo/Tsedey Bank.png",
+    },
+    {
+      name: "COOP Bank of Oromia",
+      logo: "/src/assets/awardlogo/COOP Bank of Oromia.png",
+    },
+     {
+      name: "Dashin Bank",
+      logo: "/src/assets/awardlogo/Dashin Bank.png",
+    },
+ {
+      name: "Abyssinia Bank",
+      logo: "/src/assets/awardlogo/Abyssinia Bank.png",
+    },
+     {
+      name: "Zemen Bank",
+      logo: "/src/assets/awardlogo/Zemen Bank.png",
+    },
+     {
+      name: "Nib International Bank",
+      logo: "/src/assets/awardlogo/Nib International Bank.png",
+    },
+     {
+      name: "Global Bank",
+      logo: "/src/assets/awardlogo/Global Bank.png",
+    },
+
+    // Top Universities
+    {
+      name: "Addis Ababa University",
+      logo: "/src/assets/awardlogo/addis.png",
+    },
+    
+    {
+      name: "Haramaya University",
+      logo: "/src/assets/awardlogo/Haramaya University.png",
+    },
+
+    // Top Hospitals
+   
+    {
+      name: "St. Paul's Hospital",
+      logo: "/src/assets/awardlogo/St. Paul's Hospital.png",
+    },
+    {
+      name: "Minilik Hospital",
+      logo: "/src/assets/awardlogo/menelik.png",
+    },
+     {
+      name: "Tikur Anbesa Hospital",
+      logo: "/src/assets/awardlogo/tikure-anbsa.png",
+    },
+     {
+      name: "Alert Hospital",
+      logo: "/src/assets/awardlogo/Alert.png",
+    },
+    
+       {
+      name: "Ethiopian Pharmaceutical Supply Agency",
+      logo: "/src/assets/awardlogo/epss-logo.png",
+    },
+
+
+    // Regional & Other Institutions
+    
+    {
+  name: "UNDP",
+  logo: "/src/assets/awardlogo/undp.png",
+},
+{
+  name: "UNICEF",
+  logo: "/src/assets/awardlogo/unicef-logos.png",
+},
+{
+  name: "WHO",
+  logo: "/src/assets/awardlogo/who.png",
+},
+{
+  name: "WFP",
+  logo: "/src/assets/awardlogo/wfp.png",
+},
+{
+  name: "UNHCR",
+  logo: "/src/assets/awardlogo/unhcr.png",
+},
+   {
+  name: "FAO",
+  logo: "/src/assets/awardlogo/fao.png",
+},
+{
+  name: "IFAD",
+  logo: "/src/assets/awardlogo/ifad.png",
+},
+{
+  name: "ERCS",
+  logo: "/src/assets/awardlogo/ercs.png",
+},
+{
+  name: "Save the Children",
+  logo: "/src/assets/awardlogo/save-ch.png",
+},
+ 
+    {
+      name: "Oromia Milisha Office",
+      logo: "/src/assets/awardlogo/cbe1.png",
+    },
+    
+   
+
+   
+    {
+      name: "Manufacturing Industry Development Institute",
+      logo: "/src/assets/awardlogo/cbe1.png",
+    },
+    {
+      name: "Educational Material Production Distribution Enterprise",
+      logo: "/src/assets/awardlogo/cbe1.png",
+    },
+    {
+      name: "Wonj Showa Sugar Factory",
+      logo: "/src/assets/awardlogo/cbe1.png",
+    },
+    {
+      name: "Yirgalem Construction",
+      logo: "/src/assets/awardlogo/cbe1.png",
+    },
+    {
+      name: "CGGC",
+      logo: "/src/assets/awardlogo/CGGC.png",
     },
     {
       name: "China Wu Yi Co LTD",
-      logo: "/logos/construction/china-wu-yi.png",
-      initials: "CWY",
+      logo: "/src/assets/awardlogo/China Wu Yi Co LTD.png",
     },
     {
-      name: "Yeka Sub City Capacity Building",
-      logo: "/logos/municipal/yeka-subcity.png",
-      initials: "YSC",
-    },
-    {
-      name: "Ministry of Trade",
-      logo: "/logos/ministry/ministry-trade.png",
-      initials: "MoT",
-    },
-    {
-      name: "Ethiopian Enterprise Development",
-      logo: "/logos/government/enterprise-development-eth.png",
-      initials: "EED",
+      name: "Wolaitta Development Association",
+      logo: "/src/assets/awardlogo/Wolaitta Development Association.png",
     },
     {
       name: "SNV Ethiopia",
-      logo: "/logos/ngo/snv-ethiopia.png",
-      initials: "SNV",
-    },
-    {
-      name: "Office of Prime Minister",
-      logo: "/logos/government/prime-minister-office.png",
-      initials: "OPM",
+      logo: "/src/assets/awardlogo/SNV Ethiopia.png",
     },
   ];
-
   const whyChooseUs = [
     {
       icon: <TrendingUp size={24} />,
@@ -471,9 +515,9 @@ const About = () => {
               <span className="text-[#e47325] font-semibold">2022</span>
             </p>
           </div>
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-[bounce_2s_infinite] z-20">
-  <ChevronDown size={32} color="#ffffff" />
-</div>
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-[bounce_2s_infinite] z-20">
+            <ChevronDown size={32} color="#ffffff" />
+          </div>
         </div>
       </section>
 
@@ -618,34 +662,31 @@ const About = () => {
         {/* Values Section */}
         <section
           ref={valuesRef}
-          className="mb-16 animate-[fadeIn_0.6s_ease-out]"
+          className="values-section mb-16 animate-[fadeIn_0.6s_ease-out]"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#1c4c97] to-[#1d1f30] bg-clip-text text-transparent">
+          <h2 className="values-title text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#1c4c97] to-[#1d1f30] bg-clip-text text-transparent">
             Core Values
           </h2>
 
-          <div className="text-lg leading-relaxed text-gray-600 mb-8">
+          <div className="values-description text-lg leading-relaxed text-gray-600 mb-8">
             <p>
               Our values define who we are and guide every decision we make.
-              They are the foundation of our relationships with clients,
-              partners, and team members.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="values-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-md transition-all duration-400 hover:translate-y-[-10px] hover:scale-105 hover:shadow-[0_20px_60px_rgba(28,76,151,0.2)] relative border-2 border-transparent hover:border-gradient-to-r from-[#1c4c97] to-[#ff7b16] group cursor-pointer"
+                className="value-card bg-white p-8 rounded-xl shadow-md transition-all duration-500 hover:-translate-y-2.5 hover:scale-105 hover:shadow-[0_20px_60px_rgba(28,76,151,0.2)] group cursor-pointer"
               >
-                <div className="absolute inset-0 rounded-xl p-[2px] bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] opacity-0 transition-opacity duration-400 group-hover:opacity-100 pointer-events-none" />
-                <div className="w-[70px] h-[70px] bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] rounded-xl flex items-center justify-center mb-5 transition-all duration-400 group-hover:bg-gradient-to-br group-hover:from-[#ff7b16] group-hover:to-[#1c4c97] group-hover:rotate-360">
-                  <div className="text-white">{value.icon}</div>
+                <div className="value-icon-wrapper w-[70px] h-[70px] bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] rounded-xl flex items-center justify-center mb-5 transition-all duration-400 group-hover:from-[#ff7b16] group-hover:to-[#1c4c97] group-hover:rotate-180">
+                  <div className="value-icon text-white">{value.icon}</div>
                 </div>
-                <h3 className="text-2xl font-bold text-[#0a0e27] mb-4">
+                <h3 className="value-card-title text-2xl font-bold text-[#0a0e27] mb-4">
                   {value.title}
                 </h3>
-                <p className="text-gray-500 leading-relaxed">
+                <p className="value-card-description text-gray-500 leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -677,7 +718,8 @@ const About = () => {
                 className="bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl shadow-md transition-all duration-400 hover:translate-y-[-8px] hover:scale-105 hover:shadow-[0_15px_40px_rgba(28,76,151,0.2)] hover:border-[#1c4c97] border-2 border-transparent flex flex-col items-center min-h-[180px] relative overflow-hidden group"
               >
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e47325] to-[#1a4892] transform scale-x-0 transition-transform duration-400 group-hover:scale-x-100" />
-                <div className="w-[70px] h-[70px] mb-4 flex items-center justify-center bg-white rounded-full p-2 shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div className="w-[100px] h-[100px] mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                  {" "}
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}
@@ -691,9 +733,6 @@ const About = () => {
                       if (fallback) fallback.style.display = "flex";
                     }}
                   />
-                  <div className="client-logo-fallback hidden w-full h-full items-center justify-center bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] text-white font-bold text-xl rounded-full">
-                    {client.initials}
-                  </div>
                 </div>
                 <div className="font-semibold text-gray-700 text-sm text-center leading-tight mt-auto px-1">
                   {client.name}
