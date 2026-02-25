@@ -44,7 +44,7 @@ const FridayPromo = () => {
   const products: Product[] = [
     {
       id: "1",
-      title: "Pro Gaming Mouse",
+      title: "AZTECH Digital Signage 55-inch Display",
       discount: 40,
       originalPrice: 89,
       salePrice: 53,
@@ -457,11 +457,7 @@ const FridayPromo = () => {
         </div>
       )}
 
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#ff7b16]/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#1c4c97]/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-[#0a0e27]/10 rounded-full blur-3xl"></div>
-      </div>
+     
 
       <div className="relative z-10">
         <div className="bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] border-b border-[#1c4c97]/30 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
@@ -510,7 +506,7 @@ const FridayPromo = () => {
           </div>
         </div>
 
-        <div className="border-b border-gray-200 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
+        <div className="border-b border-gray-200 py-4 sm:py-6 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
               <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#ff7b16] to-transparent rounded-full"></div>
@@ -531,7 +527,7 @@ const FridayPromo = () => {
           </div>
         </div>
 
-        <div className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
+        <div className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             {/* Desktop/Laptop View (3 cards with arrows) */}
             <div className="hidden md:block">
@@ -541,9 +537,9 @@ const FridayPromo = () => {
                     <div key={product.id} className="animate-fade-in">
                       <div
                         onClick={() => openProductModal(product)}
-                        className="bg-white border border-gray-200 rounded-2xl overflow-hidden card-hover group/card cursor-pointer h-full flex flex-col"
+                        className="bg-[#fafafa] border border-gray-200 rounded-2xl overflow-hidden card-hover group/card cursor-pointer h-full flex flex-col"
                       >
-                        <div className="relative w-full h-56 bg-[#f7f7f7] flex items-center justify-center overflow-hidden">
+                        <div className="relative w-full h-56 bg-[#ffffff] flex items-center justify-center overflow-hidden">
                           <img
                             src={product.image}
                             alt={product.title}
@@ -828,7 +824,10 @@ const FridayPromo = () => {
 
               <div className="flex justify-center gap-2 mt-4">
                 {products.map((_, idx) => (
-                  <div key={idx} className="h-1 w-6 bg-orange-400 rounded-full" />
+                  <div
+                    key={idx}
+                    className="h-1 w-6 bg-orange-400 rounded-full"
+                  />
                 ))}
               </div>
             </div>

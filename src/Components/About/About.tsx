@@ -698,7 +698,7 @@ const About = () => {
         <section
           ref={clientsRef}
           className="mb-16 animate-[fadeIn_0.6s_ease-out]"
-        >
+         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#1c4c97] to-[#1d1f30] bg-clip-text text-transparent">
             Our Distinguished Clients
           </h2>

@@ -3,7 +3,7 @@ import {
   Mail,
   Phone,
   MapPin,
-  Building2,
+  Building2, // You have this
   Send,
   Clock,
   Users,
@@ -12,6 +12,8 @@ import {
   Award,
   CheckCircle,
   ChevronDown,
+  Hash,
+  Building, // Add this if you want to use Building instead of Building2
 } from "lucide-react";
 
 const Contact = () => {
@@ -514,69 +516,183 @@ const Contact = () => {
             </div>
           </div>
         </section>
-       {/* Global Presence */}
-<section id="branches" className="mb-20 scroll-mt-20">
-  <div className="text-center mb-12">
-    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-      Shop{" "}
-      <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
-        Address
-      </span>
-    </h2>
-    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-      Serving clients worldwide with local expertise
-    </p>
-  </div>
-
-  <div className="max-w-6xl mx-auto">
-    <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-      
-      {/* Background Image with Low Opacity */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/src/assets/back.png" 
-          alt="Ethiopia Map Background" 
-          className="w-full h-full object-cover opacity-10"
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/60"></div>
-      </div>
-
-      {/* Content - Relative to appear above background */}
-      <div className="relative z-10">
-        <div className="flex justify-between items-start mb-6 ml-10">
-          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center text-white">
-            <Building2 size={28} />
+        {/* Our Office */}
+        <section id="branches" className="mb-20 scroll-mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Our{" "}
+              <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+                Office
+              </span>
+            </h2>
+            <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto font-light">
+              Visit us at our headquarters in the heart of Addis Ababa
+            </p>
           </div>
-          <div className="text-4xl animate-bounce">Et</div>
-        </div>
 
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-          Addis Ababa
-        </h3>
+          <div className="max-w-6xl mx-auto">
+            {/* Addis Ababa Card - Single Office */}
+            <div className="group relative bg-white rounded-3xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden backdrop-blur-sm">
+              {/* Animated Background Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1c4c97]/5 via-transparent to-[#ff7b16]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-        <div className="space-y-2 mb-6">
-          <p>
-            <strong className="text-gray-900">Kazanchise</strong>
-          </p>
-          <p className="text-gray-600"> Addis Ababa, Ethiopia </p>
-          <p className="text-gray-600">
-            Kazanchis, Garad Building next to ELEL Hotel
-          </p>
-          <p className="text-gray-600">Shop Number #04</p>
-          <p className="text-[#1c4c97] font-semibold mt-3">
-            Tel: +971 4 33 04 125
-          </p>
-        </div>
+              {/* Decorative Elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#1c4c97]/10 to-[#ff7b16]/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[#1c4c97]/5 to-[#ff7b16]/5 rounded-full blur-3xl -ml-16 -mb-16"></div>
 
-        <div className="flex items-center gap-2 px-4 py-3 bg-blue-50 rounded-xl text-blue-800 font-medium">
-          <Clock size={18} />
-          <span> Monday up to sunday 8:00 AM - 6:00 PM GST</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Header with Flag and Badge */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                      <Building2 size={28} />
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl font-bold text-gray-900">
+                        Addis Ababa
+                      </span>
+                      <img
+                        src="/src/assets/ethiopia-flag.png"
+                        alt="Ethiopian Flag"
+                        className="w-10 h-7 rounded-md shadow-md object-cover border border-gray-200"
+                        onError={(
+                          e: React.SyntheticEvent<HTMLImageElement, Event>,
+                        ) => {
+                          const target = e.target as HTMLImageElement;
+                          target.onerror = null;
+                          target.src = "https://flagcdn.com/w320/et.png";
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div className="px-4 py-2 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] rounded-full shadow-lg transform hover:scale-105 transition-transform">
+                    <span className="text-sm font-bold text-white tracking-wide">
+                      ★ HEADQUARTERS ★
+                    </span>
+                  </div>
+                </div>
+
+                {/* Main Content Grid - 2 columns on larger screens */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Left Column - Location Details */}
+                  <div className="space-y-5">
+                    <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
+                      <span className="w-1 h-6 bg-gradient-to-b from-[#1c4c97] to-[#ff7b16] rounded-full"></span>
+                      Location Details
+                    </h3>
+
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                        <div className="w-10 h-10 rounded-lg bg-[#ff7b16]/10 flex items-center justify-center flex-shrink-0">
+                          <MapPin size={18} className="text-[#ff7b16]" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500">Area</p>
+                          <p className="font-bold text-gray-900">Kazanchise</p>
+                          <p className="text-gray-600 text-sm">
+                            Addis Ababa, Ethiopia
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                        <div className="w-10 h-10 rounded-lg bg-[#1c4c97]/10 flex items-center justify-center flex-shrink-0">
+                          <Building size={18} className="text-[#1c4c97]" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500">Building</p>
+                          <p className="font-bold text-gray-900">
+                            Garad Building
+                          </p>
+                          <p className="text-gray-600 text-sm">
+                            Next to ELEL Hotel, 11th Floor
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                        <div className="w-10 h-10 rounded-lg bg-gray-200/50 flex items-center justify-center flex-shrink-0">
+                          <Hash size={18} className="text-gray-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500">Shop Number</p>
+                          <p className="font-bold text-gray-900">#04</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Contact & Hours */}
+                  <div className="space-y-5">
+                    <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
+                      <span className="w-1 h-6 bg-gradient-to-b from-[#ff7b16] to-[#1c4c97] rounded-full"></span>
+                      Contact & Hours
+                    </h3>
+
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-4 p-3 bg-green-50 rounded-xl">
+                        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                          <Phone size={18} className="text-green-600" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500">Phone</p>
+                          <p className="text-[#1c4c97] font-bold text-lg">
+                            +971 4 33 04 125
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 p-3 bg-green-50 rounded-xl">
+                        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                          <Phone size={18} className="text-green-600" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500">Phone</p>
+                          <p className="text-[#1c4c97] font-bold text-lg">
+                            +971 4 33 04 125
+                          </p>
+                        </div>
+                      </div>
+                      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-4 border border-blue-100">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shadow-sm">
+                            <Clock size={18} className="text-[#1c4c97]" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-gray-500">
+                              Business Hours
+                            </p>
+                            <p className="font-bold text-gray-800">
+                              Monday - Sunday
+                            </p>
+                            <p className="text-gray-700">8:00 AM - 6:00 PM</p>
+                            <p className="text-xs text-gray-500 mt-1">
+                              GST (Gulf Standard Time)
+                            </p>
+                          </div>
+                        </div>
+                        {/* Decorative stripe */}
+                        <div className="absolute right-0 top-0 w-2 h-full bg-gradient-to-b from-[#1c4c97] to-[#ff7b16]"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Action Buttons */}
+                <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="px-6 py-3 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                    <MapPin size={18} />
+                    Get Directions
+                  </button>
+                  <button className="px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                    <Phone size={18} />
+                    Call Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Contact Form */}
         <section id="support" className="mb-20 scroll-mt-20">
@@ -726,40 +842,44 @@ const Contact = () => {
             />
           </div>
         </section>
-{/* Team Section - Modern Glass Cards with Floating Effect */}
-<section id="team" className="mb-20 scroll-mt-20 relative overflow-hidden">
-  {/* Background decorative elements */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute top-20 left-10 w-64 h-64 bg-[#1c4c97]/5 rounded-full blur-3xl animate-pulse" />
-    <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#ff7b16]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-  </div>
+        {/* Team Section - Modern Glass Cards with Floating Effect */}
+        <section
+          id="team"
+          className="mb-20 scroll-mt-20 relative overflow-hidden"
+        >
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-20 left-10 w-64 h-64 bg-[#1c4c97]/5 rounded-full blur-3xl animate-pulse" />
+            <div
+              className="absolute bottom-20 right-10 w-80 h-80 bg-[#ff7b16]/5 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "1s" }}
+            />
+          </div>
 
-  <div className="text-center mb-12 relative">
-    <span className="inline-block px-4 py-2 bg-gradient-to-r from-[#1c4c97]/10 to-[#ff7b16]/10 rounded-full text-sm font-semibold text-[#1c4c97] mb-4">
-      ✦ Our Leadership ✦
-    </span>
-    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-      Meet the{" "}
-      <span className="relative">
-        <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
-          Dream Team
-        </span>
-        <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#1c4c97]/20 to-[#ff7b16]/20 blur-xl" />
-      </span>
-    </h2>
-    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-      The talented professionals behind our success
-    </p>
-  </div>
+          <div className="text-center mb-12 relative">
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-[#1c4c97]/10 to-[#ff7b16]/10 rounded-full text-sm font-semibold text-[#1c4c97] mb-4">
+              ✦ Our Leadership ✦
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Meet the{" "}
+              <span className="relative">
+                <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+                  Dream Team
+                </span>
+                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#1c4c97]/20 to-[#ff7b16]/20 blur-xl" />
+              </span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              The talented professionals behind our success
+            </p>
+          </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-    {teamMembers.map((member, index) => (
-      <div
-        key={index}
-        className="group relative"
-      >
-        {/* Premium Card Design */}
-        <div className="relative bg-white rounded-3xl p-8 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="group relative">
+                {/* Premium Card Design */}
+                <div
+                  className="relative bg-white rounded-3xl p-8 
                       shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)]
                       hover:shadow-[0_30px_70px_-15px_rgba(28,76,151,0.3)]
                       transition-all duration-700 ease-out
@@ -770,105 +890,119 @@ const Contact = () => {
                       before:absolute before:inset-0 
                       before:bg-gradient-to-br before:from-[#1c4c97]/5 before:to-[#ff7b16]/5
                       before:opacity-0 before:group-hover:opacity-100
-                      before:transition-opacity before:duration-700">
-
-          {/* Animated Gradient Border */}
-          <div className="absolute inset-0 p-[2px] rounded-3xl bg-gradient-to-r from-transparent via-transparent to-transparent 
+                      before:transition-opacity before:duration-700"
+                >
+                  {/* Animated Gradient Border */}
+                  <div
+                    className="absolute inset-0 p-[2px] rounded-3xl bg-gradient-to-r from-transparent via-transparent to-transparent 
                         group-hover:from-[#1c4c97] group-hover:via-[#ff7b16] group-hover:to-[#1c4c97] opacity-0 group-hover:opacity-100 
-                        transition-opacity duration-700">
-            <div className="absolute inset-0 rounded-3xl bg-white" />
-          </div>
+                        transition-opacity duration-700"
+                  >
+                    <div className="absolute inset-0 rounded-3xl bg-white" />
+                  </div>
 
-          {/* Decorative Corner Elements */}
-          <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#1c4c97]/10 to-transparent rounded-tl-3xl" />
-          <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#ff7b16]/10 to-transparent rounded-br-3xl" />
+                  {/* Decorative Corner Elements */}
+                  <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#1c4c97]/10 to-transparent rounded-tl-3xl" />
+                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#ff7b16]/10 to-transparent rounded-br-3xl" />
 
-          {/* Profile Image with Modern Design */}
-          <div className="relative mb-8 flex justify-center">
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 scale-75 group-hover:scale-110" />
-            
-            {/* Avatar Container */}
-            <div className="relative w-28 h-28">
-              {/* Rotating Border */}
-              <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#1c4c97]/30 group-hover:border-[#ff7b16] group-hover:animate-[spin_8s_linear_infinite]" />
-              
-              {/* Avatar */}
-              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] 
+                  {/* Profile Image with Modern Design */}
+                  <div className="relative mb-8 flex justify-center">
+                    {/* Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 scale-75 group-hover:scale-110" />
+
+                    {/* Avatar Container */}
+                    <div className="relative w-28 h-28">
+                      {/* Rotating Border */}
+                      <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#1c4c97]/30 group-hover:border-[#ff7b16] group-hover:animate-[spin_8s_linear_infinite]" />
+
+                      {/* Avatar */}
+                      <div
+                        className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] 
                             flex items-center justify-center text-white text-3xl font-bold
                             shadow-xl group-hover:shadow-2xl
                             transform group-hover:scale-105
                             transition-all duration-500
-                            group-hover:rotate-6">
-                {member.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </div>
+                            group-hover:rotate-6"
+                      >
+                        {member.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </div>
 
-              {/* Status Indicator */}
-              <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white 
-                            animate-pulse shadow-lg" />
-            </div>
+                      {/* Status Indicator */}
+                      <div
+                        className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white 
+                            animate-pulse shadow-lg"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative text-center">
+                    <h3
+                      className="text-2xl font-bold text-gray-900 mb-2
+                         bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text"
+                    >
+                      {member.name}
+                    </h3>
+
+                    {/* Role with decorative line */}
+                    <div className="flex items-center justify-center gap-2 mb-6">
+                      <div className="w-8 h-px bg-gradient-to-r from-transparent to-[#1c4c97]/30" />
+                      <p className="text-[#1c4c97] font-semibold text-sm uppercase tracking-wider">
+                        {member.role}
+                      </p>
+                      <div className="w-8 h-px bg-gradient-to-l from-transparent to-[#ff7b16]/30" />
+                    </div>
+
+                    {/* Contact Info with Modern Design */}
+                    <div className="space-y-3 pt-6 border-t border-gray-100 relative">
+                      {/* Contact Items */}
+                      <div className="flex items-center justify-center gap-3 group/item">
+                        <div className="p-2 bg-[#1c4c97]/5 rounded-lg group-hover/item:bg-[#1c4c97] transition-colors duration-300">
+                          <Mail
+                            size={14}
+                            className="text-[#1c4c97] group-hover/item:text-white transition-colors duration-300"
+                          />
+                        </div>
+                        <span className="text-sm text-gray-600 group-hover/item:text-gray-900 transition-colors duration-300">
+                          {member.email}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-center gap-3 group/item">
+                        <div className="p-2 bg-[#ff7b16]/5 rounded-lg group-hover/item:bg-[#ff7b16] transition-colors duration-300">
+                          <Phone
+                            size={14}
+                            className="text-[#ff7b16] group-hover/item:text-white transition-colors duration-300"
+                          />
+                        </div>
+                        <span className="text-sm text-gray-600 group-hover/item:text-gray-900 transition-colors duration-300">
+                          {member.phone}
+                        </span>
+                      </div>
+
+                      {/* Social Links Placeholder */}
+                      <div className="flex justify-center gap-2 pt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#1c4c97] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                          <span className="text-xs">in</span>
+                        </div>
+                        <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#ff7b16] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                          <span className="text-xs">tw</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating Particle Effects */}
+                  <div className="absolute -top-2 -right-2 w-12 h-12 bg-[#1c4c97]/5 rounded-full blur-xl group-hover:bg-[#ff7b16]/10 transition-colors duration-700" />
+                  <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-[#ff7b16]/5 rounded-full blur-xl group-hover:bg-[#1c4c97]/10 transition-colors duration-700" />
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Content */}
-          <div className="relative text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2
-                         bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text">
-              {member.name}
-            </h3>
-            
-            {/* Role with decorative line */}
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <div className="w-8 h-px bg-gradient-to-r from-transparent to-[#1c4c97]/30" />
-              <p className="text-[#1c4c97] font-semibold text-sm uppercase tracking-wider">
-                {member.role}
-              </p>
-              <div className="w-8 h-px bg-gradient-to-l from-transparent to-[#ff7b16]/30" />
-            </div>
-
-            {/* Contact Info with Modern Design */}
-            <div className="space-y-3 pt-6 border-t border-gray-100 relative">
-              {/* Contact Items */}
-              <div className="flex items-center justify-center gap-3 group/item">
-                <div className="p-2 bg-[#1c4c97]/5 rounded-lg group-hover/item:bg-[#1c4c97] transition-colors duration-300">
-                  <Mail size={14} className="text-[#1c4c97] group-hover/item:text-white transition-colors duration-300" />
-                </div>
-                <span className="text-sm text-gray-600 group-hover/item:text-gray-900 transition-colors duration-300">
-                  {member.email}
-                </span>
-              </div>
-
-              <div className="flex items-center justify-center gap-3 group/item">
-                <div className="p-2 bg-[#ff7b16]/5 rounded-lg group-hover/item:bg-[#ff7b16] transition-colors duration-300">
-                  <Phone size={14} className="text-[#ff7b16] group-hover/item:text-white transition-colors duration-300" />
-                </div>
-                <span className="text-sm text-gray-600 group-hover/item:text-gray-900 transition-colors duration-300">
-                  {member.phone}
-                </span>
-              </div>
-
-              {/* Social Links Placeholder */}
-              <div className="flex justify-center gap-2 pt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#1c4c97] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                  <span className="text-xs">in</span>
-                </div>
-                <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#ff7b16] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                  <span className="text-xs">tw</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Floating Particle Effects */}
-          <div className="absolute -top-2 -right-2 w-12 h-12 bg-[#1c4c97]/5 rounded-full blur-xl group-hover:bg-[#ff7b16]/10 transition-colors duration-700" />
-          <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-[#ff7b16]/5 rounded-full blur-xl group-hover:bg-[#1c4c97]/10 transition-colors duration-700" />
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+        </section>
 
         {/* FAQ Section */}
         <section id="faq" className="scroll-mt-20">

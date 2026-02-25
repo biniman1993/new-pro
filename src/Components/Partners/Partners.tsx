@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Mail, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Add this import
 import p1 from "../../assets/awardlogo/ethoair.png";
-import p2 from "../../assets/awardlogo/cbe1.png";
+import p2 from "../../assets/awardlogo/image.png";
 import p3 from "../../assets/awardlogo/helth.png";
 import p4 from "../../assets/awardlogo/addis.png";
 import p5 from "../../assets/awardlogo/prim.png";
@@ -22,6 +23,7 @@ const Partners = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedPartner, setSelectedPartner] = useState<Partner | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const navigate = useNavigate(); // Add this hook
 
   const partners: Partner[] = [
     {
@@ -112,11 +114,17 @@ const Partners = () => {
   const openModal = (partner: Partner) => setSelectedPartner(partner);
   const closeModal = () => setSelectedPartner(null);
 
+  // Updated function to handle button click - Navigate to about page with #clients hash
+  const handleViewAllClients = () => {
+    // Navigate to about page with #clients hash
+    navigate("/about#clients");
+  };
+
   return (
     <section
       ref={sectionRef}
       className="py-12 md:py-20 bg-[#f8fafc] w-full overflow-hidden font-sans"
-      >
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-20">
@@ -186,11 +194,31 @@ const Partners = () => {
               </div>
             </div>
           ))}
-          
+        </div>
+
+        {/* View All Clients Button - Added here */}
+        <div 
+          className={`text-center mt-12 transition-all duration-1000 delay-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <button
+            onClick={handleViewAllClients}
+            className="group relative px-8 py-4 bg-gradient-to-r from-[#1c4c97] to-[#07162e] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              View All Distinguished Clients
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#ff7b16] to-[#07162e] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </button>
+          <p className="text-sm text-gray-500 mt-4">
+            Explore our complete list of prestigious clients and partners
+          </p>
         </div>
       </div>
 
-      {/* --- Keep your existing Modal Logic here (it is untouched) --- */}
+      {/* Modal */}
       {selectedPartner && (
         <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[1000] p-4"

@@ -46,31 +46,7 @@ const CompanyStats = () => {
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !started.current) {
-            started.current = true;
-            setVisible(true);
-            startCounting();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
+  // MOVE THIS FUNCTION ABOVE THE useEffect
   const startCounting = () => {
     stats.forEach((stat, index) => {
       let start = 0;
@@ -91,6 +67,31 @@ const CompanyStats = () => {
       }, duration / (end / step));
     });
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !started.current) {
+            started.current = true;
+            setVisible(true);
+            startCounting(); // Now this works because function is defined above
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []); // Empty dependency array is fine
 
   return (
     <section className={`acme-company-stats ${visible ? 'acme-section-visible' : ''}`} ref={sectionRef}>

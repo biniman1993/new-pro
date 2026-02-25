@@ -56,11 +56,9 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
   };
 
   return (
-    <div className="relative w-full bg-white overflow-hidden py-10 md:py-16 px-3">
+    <div className="relative w-full bg-[#fcfcfc] overflow-hidden py-10 md:py-16 px-3">
       {/* Background Glows (Bard style subtle gradients) */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#2a5da5] rounded-full filter blur-[100px] opacity-10 -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#ff7b16] rounded-full filter blur-[100px] opacity-10 translate-x-1/2 translate-y-1/2"></div>
-
+      
       <div className="relative z-10 max-w-7xl mx-auto" ref={sectionRef}>
         {/* Header */}
         <div className="text-center mb-10 md:mb-12">

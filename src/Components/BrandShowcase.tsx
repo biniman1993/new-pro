@@ -55,10 +55,7 @@ const BrandShowcase = () => {
   return (
     <div className="w-full py-12 md:py-24 bg-white overflow-hidden relative">
       {/* Background Decorative Element */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-5 pointer-events-none">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-[#2a5da5] rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-10 right-10 w-64 h-64 bg-[#ff7b16] rounded-full blur-[120px]"></div>
-      </div>
+     
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Header Section */}

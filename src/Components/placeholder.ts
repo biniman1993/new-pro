@@ -1,6 +1,6 @@
 // Import your local images
-import gaming from '../assets/printer/gamming.png';
-import hub from '../assets/printer/epson.png';
+import gaming from '../assets/printer/disp.png';
+import hub from '../assets/printer/serv2.png';
 import earbuds from '../assets/printer/hp.png';
 import keyboard from '../assets/printer/p1.jpg';
 import charger from '../assets/printer/p2.jpg';
