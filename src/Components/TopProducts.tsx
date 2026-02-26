@@ -56,7 +56,7 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
   };
 
   return (
-    <div className="relative w-full bg-[#fcfcfc] overflow-hidden py-10 md:py-16 px-3">
+    <div className="relative w-full bg-[#f5f5f5] overflow-hidden py-10 md:py-16 px-3">
       {/* Background Glows (Bard style subtle gradients) */}
       
       <div className="relative z-10 max-w-7xl mx-auto" ref={sectionRef}>

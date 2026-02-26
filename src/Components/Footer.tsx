@@ -1,38 +1,49 @@
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Youtube, ArrowRight, ChevronRight } from 'lucide-react';
-import footerBg from '../assets/footer-bg.jpg';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Linkedin,
+  Twitter,
+  Youtube,
+  ArrowRight,
+  ChevronRight,
+} from "lucide-react";
+import footerBg from "../assets/footer-bg.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const shopCategories = [
-    { name: 'Home', href: '#' },
-    { name: 'About Us', href: '#' },
-    { name: 'Contact Us', href: '#' },
-    { name: 'Our Brand', href: '#' },
-    { name: 'New Arrival', href: '#' },
+    { name: "Home", href: "#" },
+    { name: "About Us", href: "#" },
+    { name: "Contact Us", href: "#" },
+    { name: "Our Brand", href: "#" },
+    { name: "Our Shop", href: "#" },
   ];
 
   const company = [
-    { name: 'Home Us', href: '#' },
-    { name: 'Our About', href: '#' },
-    { name: 'Brand Locations', href: '#' },
-    { name: 'Brand', href: '#' },
-    { name: 'Brand', href: '#' },
+    { name: "Profile", href: "#" },
+    { name: "Address", href: "#" },
+    { name: "Shop Locations", href: "#" },
+    { name: "Our Clients", href: "#" },
+    { name: "Our Brands", href: "#" },
   ];
 
   const support = [
-    { name: 'Help Center', href: '#' },
-    { name: 'FAQs', href: '#' },
-    { name: 'Shipping & Returns', href: '#' },
-    { name: 'Terms & Conditions', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
+    { name: "Help Center", href: "#" },
+    { name: "FAQs", href: "#" },
+    { name: "Terms & Conditions", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: 'Shipping and Returns', href: '#' },
+
   ];
 
   const socialLinks = [
-    { icon: Facebook, label: 'Facebook', href: '#' },
-    { icon: Twitter, label: 'Twitter', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-    { icon: Youtube, label: 'YouTube', href: '#' },
+    { icon: Facebook, label: "Facebook", href: "#" },
+    { icon: Twitter, label: "Twitter", href: "#" },
+    { icon: Linkedin, label: "LinkedIn", href: "#" },
+    { icon: Youtube, label: "YouTube", href: "#" },
   ];
 
   return (
@@ -266,27 +277,43 @@ const Footer = () => {
         {/* Main Content */}
         <div className="footer-content">
           <div className="footer-grid">
-
             {/* Brand */}
             <div>
               <h2 className="footer-brand-title">
                 Proactive <span>Trading</span>
               </h2>
               <p className="footer-desc">
-                Your trusted partner for cutting-edge technology solutions. Delivering premium electronics across Ethiopia.
+                Your trusted partner for cutting-edge technology solutions.
+                Delivering premium electronics across Ethiopia.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.75rem",
+                  marginBottom: "2rem",
+                }}
+              >
                 <a href="tel:+251911123456" className="footer-contact-link">
-                  <span className="footer-contact-icon"><Phone size={16} /></span>
+                  <span className="footer-contact-icon">
+                    <Phone size={16} />
+                  </span>
                   +251 911 123 456
                 </a>
-                <a href="mailto:info@proactive.et" className="footer-contact-link">
-                  <span className="footer-contact-icon"><Mail size={16} /></span>
+                <a
+                  href="mailto:info@proactive.et"
+                  className="footer-contact-link"
+                >
+                  <span className="footer-contact-icon">
+                    <Mail size={16} />
+                  </span>
                   info@proactive.et
                 </a>
                 <a href="#" className="footer-contact-link">
-                  <span className="footer-contact-icon"><MapPin size={16} /></span>
+                  <span className="footer-contact-icon">
+                    <MapPin size={16} />
+                  </span>
                   Addis Ababa, Ethiopia
                 </a>
               </div>
@@ -295,7 +322,12 @@ const Footer = () => {
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
-                    <a key={social.label} href={social.href} aria-label={social.label} className="footer-social-btn">
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      aria-label={social.label}
+                      className="footer-social-btn"
+                    >
                       <Icon size={18} />
                     </a>
                   );
@@ -357,9 +389,15 @@ const Footer = () => {
               </ul>
 
               <div className="footer-newsletter">
-                <p className="footer-newsletter-title">Stay updated with deals</p>
+                <p className="footer-newsletter-title">
+                  Stay updated with deals
+                </p>
                 <div className="footer-newsletter-row">
-                  <input type="email" placeholder="Your email" className="footer-newsletter-input" />
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    className="footer-newsletter-input"
+                  />
                   <button className="footer-newsletter-btn">
                     <ArrowRight size={16} />
                   </button>
@@ -370,8 +408,12 @@ const Footer = () => {
 
           {/* Bottom */}
           <div className="footer-bottom">
-            <p className="footer-bottom-text">© {currentYear} Proactive Trading. All rights reserved.</p>
-            <p className="footer-bottom-flag">Delivering Technology Across Ethiopia 🇪🇹</p>
+            <p className="footer-bottom-text">
+              © {currentYear} Proactive Trading. All rights reserved.
+            </p>
+            <p className="footer-bottom-flag">
+              Delivering Technology Across Ethiopia 🇪🇹
+            </p>
           </div>
         </div>
       </footer>

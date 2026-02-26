@@ -145,7 +145,7 @@ const brands = [
 ];
 const Brands = () => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden pt-[90px]">
+    <div className="min-h-screen bg-background overflow-x-hidden pt-[40px] md:pt-[60px] lg:pt-[90px] xl:pt-[90px] 2xl:pt-[90px]">
       {/* Header */}
       <header className="relative overflow-hidden mb-32">
         <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] z-0" />

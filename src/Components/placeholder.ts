@@ -1,10 +1,10 @@
 // Import your local images
-import gaming from '../assets/printer/disp.png';
-import hub from '../assets/printer/serv2.png';
-import earbuds from '../assets/printer/hp.png';
-import keyboard from '../assets/printer/p1.jpg';
-import charger from '../assets/printer/p2.jpg';
-import webcam from '../assets/printer/gam.png';
+import gaming from '../assets/printer/disp5.jpg';
+import hub from '../assets/printer/serv.jpg';
+import earbuds from '../assets/printer/delserv.jpg';
+import keyboard from '../assets/printer/can2945.jpg';
+import charger from '../assets/printer/can2425.jpg';
+import webcam from '../assets/printer/eco.jpg';
  // or any other image for webcam
 
 // Export the placeholderImages object

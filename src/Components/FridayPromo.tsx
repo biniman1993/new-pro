@@ -40,7 +40,7 @@ const FridayPromo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPulsing, setIsPulsing] = useState(false);
   const mobileScrollRef = useRef<HTMLDivElement>(null);
-
+  const [mobileIndex, setMobileIndex] = useState(0); // Add state for mobile index
   const products: Product[] = [
     {
       id: "1",
@@ -48,45 +48,58 @@ const FridayPromo = () => {
       discount: 40,
       originalPrice: 89,
       salePrice: 53,
-      specs: ["16K DPI", "Wireless", "RGB", "16K DPI", "Wireless", "RGB"],
+      specs: [
+        "Android 11",
+        "Memory Size:55",
+        "Panel Type:DLED",
+        "55 Inches",
+        " RAM: 4GB",
+        "4K UHD",
+      ],
       image: placeholderImages.gaming,
       description:
-        "Professional gaming mouse with advanced optical sensor and customizable RGB lighting. Perfect for competitive gaming and professional use.",
+        " AZTECH Digital Signage Display. This 55-inch digital signage display is perfect for businesses looking to engage customers with vibrant visuals and interactive content. With Android 11, it offers a user-friendly interface and access to a wide range of apps for dynamic advertising and information sharing.",
       features: [
-        "16,000 DPI optical sensor",
-        "Wireless 2.4GHz connectivity",
-        "Customizable RGB lighting",
-        "8 programmable buttons",
-        "50 million click durability",
-        "Lightweight design (75g)",
+        "55-inch 4K UHD (3840×2160) DLED display",
+        "400 nits brightness, 1200:1 contrast",
+        "60Hz refresh rate, 8ms response time",
+        "178° wide viewing angle",
+        "RK3568 CPU, 4GB RAM, 64GB storage",
+        "Android 11 OS",
+        "20-point infrared touch (3mm tempered glass)",
+        "2×5W speakers",
+        "AC 100–240V power, 155W typical usage",
+        "Includes remote, power supply & WiFi antenna",
       ],
       rating: 4.8,
       reviews: 1247,
     },
     {
       id: "2",
-      title: "USB-C Hub Pro",
+      title: "HPE ProLiant ML30 Gen10 Server",
       discount: 35,
       originalPrice: 79,
       salePrice: 51,
       specs: [
-        "7-in-1",
-        "4K HDMI",
-        "Fast Charge",
-        "7-in-1",
-        "4K HDMI",
-        "Fast Charge",
+        "Intel® Xeon® E-2314",
+        "Memory: 64GB ",
+        "Storage: 4× 1TB",
+        "Graphics: NVIDIA RTX",
+        " Power Supply: 350W",
+        "Tower Server",
       ],
       image: placeholderImages.hub,
       description:
         "Versatile 7-in-1 USB-C hub with 4K HDMI output and fast charging capabilities. Expand your connectivity options instantly.",
       features: [
-        "4K HDMI @ 60Hz",
-        "100W Power Delivery",
-        "3x USB 3.0 ports",
-        "SD/TF card readers",
-        "Gigabit Ethernet",
-        "Compact aluminum design",
+        "Intel Xeon E-2314 processor",
+        "64GB DDR4 (2666 MT/s) memory",
+        '4× 1TB SATA 3.5" HDD storage',
+        "NVIDIA RTX 3050 (8GB) graphics",
+        "Up to 4 PCIe Gen3 expansion slots",
+        "Dual-port 1GbE networking",
+        "350W power supply",
+        "Tower server form factor",
       ],
       rating: 4.6,
       reviews: 892,
@@ -229,7 +242,23 @@ const FridayPromo = () => {
 
     return () => clearInterval(interval);
   }, []);
+  // Add scroll listener for mobile
+  useEffect(() => {
+    const scrollContainer = mobileScrollRef.current;
+    if (!scrollContainer) return;
 
+    const handleScroll = () => {
+      const scrollPosition = scrollContainer.scrollLeft;
+      const cardWidth = window.innerWidth - 64; // 100vw - 4rem (from w-[calc(100vw-4rem)])
+      const newIndex = Math.round(scrollPosition / cardWidth);
+      if (newIndex >= 0 && newIndex < products.length) {
+        setMobileIndex(newIndex);
+      }
+    };
+
+    scrollContainer.addEventListener("scroll", handleScroll);
+    return () => scrollContainer.removeEventListener("scroll", handleScroll);
+  }, [products.length]);
   useEffect(() => {
     const pulseInterval = setInterval(() => {
       setIsPulsing(true);
@@ -331,7 +360,7 @@ const FridayPromo = () => {
       {isModalOpen && selectedProduct && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
+            className="absolute inset-0 bg-[black/60] backdrop-blur-sm transition-opacity duration-300"
             onClick={closeProductModal}
           />
 
@@ -347,7 +376,7 @@ const FridayPromo = () => {
             <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
               {/* Left side - Image */}
               <div className="md:w-1/2 flex-shrink-0">
-                <div className="relative w-full h-64 md:h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-64 md:h-full bg-gradient-to-br from-[#ffffff] to-[#f7faff] flex items-center justify-center overflow-hidden">
                   <img
                     src={selectedProduct.image}
                     alt={selectedProduct.title}
@@ -456,8 +485,6 @@ const FridayPromo = () => {
           </div>
         </div>
       )}
-
-     
 
       <div className="relative z-10">
         <div className="bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] border-b border-[#1c4c97]/30 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
@@ -705,7 +732,7 @@ const FridayPromo = () => {
                       className="flex-shrink-0 w-[calc(100vw-4rem)] bg-white border border-gray-200 rounded-xl overflow-hidden card-hover group/card cursor-pointer"
                       onClick={() => openProductModal(product)}
                     >
-                      <div className="relative w-full h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
+                      <div className="relative w-full h-40 bg-[#ffffff] flex items-center justify-center overflow-hidden">
                         <img
                           src={product.image}
                           alt={product.title}
@@ -822,14 +849,29 @@ const FridayPromo = () => {
                 </button>
               </div>
 
+              {/* Slide Indicators - Now Working */}
               <div className="flex justify-center gap-2 mt-4">
                 {products.map((_, idx) => (
-                  <div
+                  <button
                     key={idx}
-                    className="h-1 w-6 bg-orange-400 rounded-full"
+                    onClick={() => {
+                      if (mobileScrollRef.current) {
+                        const cardWidth = window.innerWidth - 64; // matches w-[calc(100vw-4rem)]
+                        mobileScrollRef.current.scrollTo({
+                          left: cardWidth * idx,
+                          behavior: "smooth",
+                        });
+                      }
+                    }}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      idx === mobileIndex
+                        ? "bg-gradient-to-r from-[#ff7b16] to-[#1c4c97] w-8"
+                        : "bg-gray-300 hover:bg-gray-400 w-2"
+                    }`}
+                    aria-label={`Go to product ${idx + 1}`}
                   />
                 ))}
-              </div>
+              </div> 
             </div>
           </div>
         </div>

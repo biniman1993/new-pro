@@ -113,7 +113,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-white/40 py-16 lg:py-24">
+    <section className="relative min-h-screen overflow-hidden bg-[#f5f9ff] py-16 lg:py-24">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}

@@ -1,4 +1,15 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
+import shopImage from "../../assets/shop/shop1.png";
+import shopImage2 from "../../assets/shop/shop2.png";
+import shopImage3 from "../../assets/shop/shop3.png";
+import shopImage4 from "../../assets/shop/shop4.png";
+import shopImage5 from "../../assets/shop/shop5.png";
+import shopImage6 from "../../assets/shop/shop6.png";
+import shopImage7 from "../../assets/shop/shop7.png";
+import shopImage8 from "../../assets/shop/shop8.png";
+
+
+
 import {
   Mail,
   Phone,
@@ -394,7 +405,7 @@ const Contact = () => {
               {/* Image 1 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?w=600&h=400&fit=crop"
+                  src={shopImage}
                   alt="Store Front - Proactive Trading"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -409,7 +420,7 @@ const Contact = () => {
               {/* Image 2 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&h=400&fit=crop"
+                  src={shopImage2}
                   alt="Laptop Display Section"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -424,7 +435,7 @@ const Contact = () => {
               {/* Image 3 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop"
+                  src={shopImage3}
                   alt="Desktop Computers"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -439,7 +450,7 @@ const Contact = () => {
               {/* Image 4 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop"
+                  src={shopImage4}
                   alt="Server Room Setup"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -457,7 +468,7 @@ const Contact = () => {
               {/* Image 5 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600&h=400&fit=crop"
+                  src={shopImage5}
                   alt="Printer and Office Equipment"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -472,7 +483,7 @@ const Contact = () => {
               {/* Image 6 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop"
+                  src={shopImage6}
                   alt="Networking Equipment"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -487,7 +498,7 @@ const Contact = () => {
               {/* Image 7 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop"
+                  src={shopImage7}
                   alt="Computer Accessories"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -502,7 +513,7 @@ const Contact = () => {
               {/* Image 8 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=400&fit=crop"
+                  src={shopImage8}
                   alt="Store Interior"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
