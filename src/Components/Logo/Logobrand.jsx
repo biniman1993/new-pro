@@ -10,7 +10,7 @@ import helth from '../../assets/brandslogo/ZTE.png';
 import image from '../../assets/brandslogo/canon.jpg';
 import insa from '../../assets/brandslogo/asus.png';
 import prim from '../../assets/brandslogo/apple.png';
-import trad from '../../assets/brandslogo/acer.png';
+import trad from '../../assets/brandslogo/Acer.png';
 import atrad from '../../assets/brandslogo/SanDisk.png';
 import btrad from '../../assets/brandslogo/HP_Logo.png';
 import ctrad from '../../assets/brandslogo/epson.png';
