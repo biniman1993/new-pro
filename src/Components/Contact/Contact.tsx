@@ -10,8 +10,6 @@ import shopImage7 from "../../assets/shop/shop7.png";
 import shopImage8 from "../../assets/shop/shop8.png";
 import shopImage9 from "../../assets/shop/shop.png";
 
-
-
 import {
   Mail,
   Phone,

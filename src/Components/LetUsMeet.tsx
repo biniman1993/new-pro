@@ -221,7 +221,7 @@ const LetUsMeet = () => {
                   lineHeight: 1.7,
                 }}>
                   If you're looking to dive into the world of partnership and seek
-                  a dynamic ally, look no further than MBUZZ Technologies. Our
+                  a dynamic ally, look no further than Proactive Trading. Our
                   dedication to advanced solutions, inventive technology, and
                   unmatched support makes us the perfect choice for those aiming
                   to succeed in the partner domain.
@@ -247,7 +247,7 @@ const LetUsMeet = () => {
                   color: colors.muted,
                   lineHeight: 1.7,
                 }}>
-                  At MBUZZ, we prioritize nurturing mutually advantageous
+                  At Proactive Trading, we prioritize nurturing mutually advantageous
                   relationships, guaranteeing that our partners not only have
                   access to a wide array of premium products but also receive the
                   essential resources and guidance to thrive in the competitive

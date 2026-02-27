@@ -115,7 +115,7 @@ const Navbar = () => {
                   placeholder="Search..."
                   className="w-70 xl:w-66 pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:bg-white/15 transition-all duration-300"
                 />
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70 group-hover:text-orange-400 transition-colors duration-300" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70 group-hover:text-[#ff6b35] transition-colors duration-300" />
               </div>
             </div>
 

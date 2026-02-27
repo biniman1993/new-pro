@@ -52,16 +52,16 @@ const TopMenu = () => {
         transition-all duration-300 ease-in-out font-['Inter'] font-semibold uppercase tracking-wider
         bg-gradient-to-r from-[#2a5da5] to-[#0a0e27]
         ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
-        hidden lg:flex`} // Hidden on mobile/tablet, visible on desktop (1024px+)
+        hidden lg:flex overflow-visible`}
     >
-      <ul className="flex gap-[25px] px-[25px] list-none m-0 relative h-full items-center">
+      <ul className="flex gap-[25px] px-[25px] list-none m-0 relative h-full items-center overflow-visible">
         {menuItems.map((item) => (
           <li
             key={item}
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
             onClick={() => handleNavigation(item)}
-            className={`relative py-2 px-2.5 text-[14px] font-medium cursor-pointer transition-colors duration-300 normal-case
+            className={`relative py-2 px-2.5 text-[14px] font-medium cursor-pointer transition-colors duration-300 normal-case overflow-visible
               ${hoveredItem === item ? "text-[#ff9800]" : "text-white"}`}
           >
             {item}
@@ -74,7 +74,7 @@ const TopMenu = () => {
 
             {/* Dropdown Container */}
             {hoveredItem === item && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 animate-dropdownFadeIn">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-[1000] ">
                 <div
                   className={`bg-white/98 backdrop-blur-[20px] p-3 rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.3),0_4px_20px_rgba(255,152,0,0.15)]
                     grid gap-3 max-h-[400px] overflow-y-auto
@@ -87,10 +87,13 @@ const TopMenu = () => {
                         e.stopPropagation();
                         handleNavigation(item, sub);
                       }}
-                      className="group flex items-center gap-3 p-2.5 rounded-[10px] border border-[#ff98001a] bg-white transition-all duration-300 
+                      className="group flex items-center gap-3 p-2.5 rounded-[10px] border border-[#ff98001a] bg-transparent transition-all duration-300 
                         hover:translate-x-1 hover:scale-[1.02] hover:border-[#ff980066] hover:shadow-[0_6px_20px_rgba(255,152,0,0.25)]
-                        animate-cardSlideIn opacity-0 cursor-pointer"
-                      style={{ animationDelay: `${idx * 0.05}s`, animationFillMode: 'forwards' }}
+                        animate-cardSlideIn cursor-pointer"
+                      style={{ 
+                        animationDelay: `${idx * 0.08}s`, 
+                        animationFillMode: 'forwards'
+                      }}
                     >
                       {/* Icon Box */}
                       <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#ff9800] to-[#ff6b35] flex items-center justify-center text-white shrink-0 transition-transform duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
@@ -99,8 +102,7 @@ const TopMenu = () => {
                         </svg>
                       </div>
 
-                      {/* FIXED: Text - Changed to simple hover color change */}
-                      <span className="text-[13px] font-semibold text-gray-800 group-hover:text-[#ff6b35] transition-all duration-300">
+                      <span className="text-[14px] font-semibold text-gray-800 group-hover:text-[#ff6b35] transition-all duration-300">
                         {sub}
                       </span>
                     </div>
@@ -112,21 +114,62 @@ const TopMenu = () => {
         ))}
       </ul>
 
-      {/* Embedded Animations to ensure they work without external CSS files */}
+      {/* Updated Animations for smooth top-to-bottom appearance */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes dropdownFadeIn {
-          from { opacity: 0; transform: translateX(-50%) translateY(10px); }
-          to { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-        @keyframes cardSlideIn {
-          from { opacity: 0; transform: translateY(-8px); }
-          to { opacity: 1; transform: translateY(0); }
+          from { 
+            opacity: 0; 
+            transform: translateX(-50%) translateY(-15px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateX(-50%) translateY(0); 
+          }
         }
         
-        /* Ensure text visibility */
-        .bg-clip-text {
-          -webkit-background-clip: text;
-          background-clip: text;
+        @keyframes cardSlideIn {
+          0% { 
+            opacity: 0.3; 
+            transform: translateY(-20px) scale(0.95);
+            filter: blur(2px);
+          }
+          30% { 
+            opacity: 0.7; 
+            transform: translateY(-8px) scale(0.98);
+            filter: blur(1px);
+          }
+          70% { 
+            opacity: 0.9; 
+            transform: translateY(-2px) scale(0.99);
+            filter: blur(0px);
+          }
+          100% { 
+            opacity: 1; 
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+          }
+        }
+        
+        /* Ensure dropdown containers are visible */
+        .overflow-visible {
+          overflow: visible !important;
+        }
+        
+        /* Ensure the dropdown appears above other elements */
+        .z-\\[1000\\] {
+          z-index: 1000 !important;
+        }
+        
+        /* Animation fill mode fix */
+        .animate-cardSlideIn {
+          animation-fill-mode: forwards !important;
+          animation-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1.1) !important;
+          animation-duration: 0.6s !important;
+        }
+        
+        .animate-dropdownFadeIn {
+          animation-duration: 0.4s !important;
+          animation-timing-function: ease-out !important;
         }
       `}} />
     </nav>

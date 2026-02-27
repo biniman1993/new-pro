@@ -23,10 +23,11 @@ import Contact from "./Components/Contact/Contact.jsx";
 import AboutCards from "./Components/AboutCard";
 import {
   laptopsData,
-  gamingProductsData,
-  officeProductsData,
-  displayProductsData,
-  printersProductsData,
+  desktopData, // Changed from gamingProductsData
+  monitorData, // Changed from officeProductsData
+  displayData, // Changed from displayProductsData
+  printerData, // Changed from printersProductsData
+  networkingData, // Added this (you were missing it)
 } from "./Components/Products/productsData.jsx";
 import Catalog from "./pages/Catalog.js";
 import Why from "./Components/Why.tsx";
@@ -41,7 +42,7 @@ const ScrollToTop = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "instant"
+      behavior: "instant",
     });
   }, [pathname]);
 
@@ -86,7 +87,7 @@ const App = () => {
       <div className="App">
         <Navbar />
         <TopMenu />
-        
+
         {/* 🔴 ADD THIS - ScrollToTop component here */}
         <ScrollToTop />
 
@@ -123,27 +124,34 @@ const App = () => {
                   />
                   <Products
                     title="Desktop Products"
-                    productsData={gamingProductsData}
+                    productsData={desktopData}
                     ref={gamingRef}
                     category="desktop"
                   />
                   <Products
                     title="Monitor Equipment"
-                    productsData={officeProductsData}
+                    productsData={monitorData}
                     ref={officeRef}
                     category="monitor"
                   />
                   <Products
                     title="Printer Equipment"
-                    productsData={printersProductsData}
+                    productsData={printerData}
                     ref={printersRef}
                     category="printer"
                   />
                   <Products
                     title="Display Equipment"
-                    productsData={displayProductsData}
+                    productsData={displayData}
                     ref={displayRef}
                     category="display"
+                  />
+                  {/* Add Networking if you have it */}
+                  <Products
+                    title="Networking Equipment"
+                    productsData={networkingData}
+                    ref={displayRef} // You might want a new ref for networking
+                    category="networking"
                   />
 
                   <CompanyStats />
