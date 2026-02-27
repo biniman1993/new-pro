@@ -1,4 +1,5 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
+import shopImage0 from "../../assets/shop/shop0.png";
 import shopImage from "../../assets/shop/shop1.png";
 import shopImage2 from "../../assets/shop/shop2.png";
 import shopImage3 from "../../assets/shop/shop3.png";
@@ -7,6 +8,7 @@ import shopImage5 from "../../assets/shop/shop5.png";
 import shopImage6 from "../../assets/shop/shop6.png";
 import shopImage7 from "../../assets/shop/shop7.png";
 import shopImage8 from "../../assets/shop/shop8.png";
+import shopImage9 from "../../assets/shop/shop.png";
 
 
 

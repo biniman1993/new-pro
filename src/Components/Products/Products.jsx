@@ -70,9 +70,9 @@ useEffect(() => {
       <div className="w-full py-10 px-4 sm:px-6 lg:px-8 bg-[#f9fbfd]" ref={ref}>
         <div className={`max-w-7xl mx-auto ${className}`} ref={containerRef}>
           {/* Title Section with Animation - UPDATED duration to match Partners */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h1
-              className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 transition-all duration-1000 ${hasAnimated  ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} // Changed to translate-y-10 and duration-1000
+              className={`text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 transition-all duration-1000 ${hasAnimated  ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} // Changed to translate-y-10 and duration-1000
             >
               <span className="relative">
                 <span
@@ -108,7 +108,7 @@ useEffect(() => {
                   style={{ transitionDelay: `${index * 100}ms` }} // Keep the stagger effect
                 >
                   {/* Rest of your component remains EXACTLY the same */}
-                  <div className="relative h-48 bg-gray-100 overflow-hidden">
+                  <div className="relative h-42 bg-gray-100 overflow-hidden">
                     {product.image && (
                       <img
                         src={product.image}

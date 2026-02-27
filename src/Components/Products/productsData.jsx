@@ -1,4 +1,4 @@
-import imgA from '../../assets/laptop/asu.jpg';
+import imgA from '../../assets/laptop/asus.png';
 import imgB from '../../assets/laptop/a.jpg';
 import imgC from '../../assets/laptop/hp.jpg';
 import imgD from '../../assets/laptop/lap3.jpg';

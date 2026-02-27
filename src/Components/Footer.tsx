@@ -27,7 +27,7 @@ const Footer = () => {
     { name: "Address", href: "#" },
     { name: "Shop Locations", href: "#" },
     { name: "Our Clients", href: "#" },
-    { name: "Our Brands", href: "#" },
+    { name: "Our Products", href: "#" },
   ];
 
   const support = [
@@ -308,7 +308,7 @@ const Footer = () => {
                   <span className="footer-contact-icon">
                     <Mail size={16} />
                   </span>
-                  info@proactive.et
+                  pro2activetra
                 </a>
                 <a href="#" className="footer-contact-link">
                   <span className="footer-contact-icon">
