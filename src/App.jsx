@@ -23,11 +23,11 @@ import Contact from "./Components/Contact/Contact.jsx";
 import AboutCards from "./Components/AboutCard";
 import {
   laptopsData,
-  desktopData, // Changed from gamingProductsData
-  monitorData, // Changed from officeProductsData
-  displayData, // Changed from displayProductsData
-  printerData, // Changed from printersProductsData
-  networkingData, // Added this (you were missing it)
+  desktopData,
+  monitorData,
+  displayData,
+  printerData,
+  networkingData,
 } from "./Components/Products/productsData.jsx";
 import Catalog from "./pages/Catalog.js";
 import Why from "./Components/Why.tsx";
@@ -35,7 +35,7 @@ import LetUsMeet from "./Components/LetUsMeet";
 import BrandShowcase from "./Components/BrandShowcase.tsx";
 import Partnerslogo from "./Components/Partnerslogo.tsx";
 
-// 🔴 ADD THIS - Create ScrollToTop component INSIDE App.jsx
+// ScrollToTop component
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -87,8 +87,6 @@ const App = () => {
       <div className="App">
         <Navbar />
         <TopMenu />
-
-        {/* 🔴 ADD THIS - ScrollToTop component here */}
         <ScrollToTop />
 
         <Routes>
@@ -105,7 +103,64 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
 
-          {/* Home Route */}
+          {/* ===== PRODUCT CATEGORY ROUTES ===== */}
+          {/* These must come BEFORE the home route */}
+          
+          {/* Laptops Page */}
+          <Route 
+            path="/products/laptops" 
+            element={
+              <div className="pt-24">
+                <Products 
+                  title="Laptops" 
+                  productsData={laptopsData}
+                  category="laptops"
+                />
+              </div>
+            } 
+          />
+
+          {/* Desktops Page */}
+          <Route 
+            path="/products/desktops" 
+            element={
+              <div className="pt-24">
+                <Products 
+                  title="Desktops" 
+                  productsData={desktopData}
+                  category="desktops"
+                />
+              </div>
+            } 
+          />
+
+          {/* Printers Page */}
+          <Route 
+            path="/products/printers" 
+            element={
+              <div className="pt-24">
+                <Products 
+                  title="Printers" 
+                  productsData={printerData}
+                  category="printers"
+                />
+              </div>
+            } 
+          />
+ {/* Networking Page */}
+          <Route 
+            path="/products/networking" 
+            element={
+              <div className="pt-24">
+                <Products 
+                  title="Networking Equipment" 
+                  productsData={networkingData}
+                  category="networking"
+                />
+              </div>
+            } 
+          />
+          {/* ===== HOME ROUTE (ALWAYS LAST) ===== */}
           <Route
             path="/"
             element={
@@ -146,11 +201,10 @@ const App = () => {
                     ref={displayRef}
                     category="display"
                   />
-                  {/* Add Networking if you have it */}
                   <Products
                     title="Networking Equipment"
                     productsData={networkingData}
-                    ref={displayRef} // You might want a new ref for networking
+                    ref={displayRef}
                     category="networking"
                   />
 
@@ -173,4 +227,3 @@ const App = () => {
 };
 
 export default App;
-//       <header className="relative overflow-hidden mt-10 pphone sm:mt-10 tablet md:mt-20 desktop lg:mt-20--small laptop xl:mt-20 ">

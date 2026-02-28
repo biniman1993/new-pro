@@ -142,6 +142,8 @@ const brands = [
   { id: 86, name: "Vizio", logo: "/src/assets/brandslogo/Vizio.png" },
   { id: 87, name: "Philips", logo: "/src/assets/brandslogo/Philips.png" },
   { id: 88, name: "Xiaomi", logo: "/src/assets/brandslogo/Xiaomi.png" },
+   { id: 89, name: "Team Group", logo: "/src/assets/brandslogo/Team Group.png" },
+  { id: 90, name: "Seagate", logo: "/src/assets/brandslogo/Seagate.png" },
 ];
 const Brands = () => {
   return (
@@ -202,10 +204,10 @@ const Brands = () => {
                   delay: Math.min(index * 0.03, 1),
                   type: "spring",
                 }}
-                className="group relative bg-[#ffffff] p-5 sm:p-6 rounded-2xl shadow-md border-2 border-transparent hover:border-primary hover:-translate-y-3 hover:scale-105 hover:shadow-2xl transition-all duration-400 flex flex-col items-center min-h-[160px] md:min-h-[200px] cursor-pointer overflow-hidden"
+                className="group relative bg-[#ffffff] p-5 sm:p-6 rounded-2xl shadow-md border-2 border-transparent hover:border-[#2a5da5] hover:-translate-y-3 hover:scale-105 hover:shadow-2xl transition-all duration-400 flex flex-col items-center min-h-[160px] md:min-h-[200px] cursor-pointer overflow-hidden"
               >
                 {/* Top accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff7b16] to-[#2a5da5] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
                 {/* Logo */}
                 <img
                   src={brand.logo}
@@ -320,7 +322,7 @@ const Brands = () => {
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-foreground mb-8 md:mb-10 leading-tight tracking-tight">
             Let's Work Together & Boost Your Technology Success!
           </h2>
-          <button className="group inline-flex items-center gap-3 px-10 md:px-12 py-4 md:py-5 text-base md:text-lg font-bold text-[#ffffff] bg-gradient-to-br from-primary to-[#0a0e27] rounded-full shadow-[0_15px_40px_rgba(28,76,151,0.4)] hover:shadow-[0_20px_50px_rgba(28,76,151,0.6)] hover:-translate-y-1 hover:from-brand-orange hover:to-brand-orange-dark transition-all duration-300 relative overflow-hidden">
+          <button className="group inline-flex items-center gap-3 px-10 md:px-12 py-4 md:py-5 text-base md:text-lg font-bold text-[#ffffff] bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] rounded-full shadow-[0_15px_40px_rgba(28,76,151,0.4)] hover:shadow-[0_20px_50px_rgba(28,76,151,0.6)] hover:-translate-y-1 hover:from-brand-orange hover:to-brand-orange-dark transition-all duration-300 relative overflow-hidden">
             <span className="tracking-wide">Get Started</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>

@@ -117,7 +117,7 @@ function App() {
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-16">
         {/* Title Section - Using your provided code */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-9 space-y-4">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,10 +129,10 @@ function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-[#0a0e27] tracking-tight"
+            className="text-5xl md:text-6xl font-black text-[#0a0e27] tracking-tight"
           >
-            End-to-End <span className="text-[#1c4c97]">AV</span><br/>
-            <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">Integration</span>
+            End-to-End <span className="text-[#2a5da5]">AV</span><br/>
+            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">Integration</span>
           </motion.h1>
         </div>
 
@@ -166,7 +166,7 @@ function App() {
                       {/* Apply #1c4c97 color only to the center card's title */}
                       <h3 
                         className={`text-2xl font-bold mb-3 ${isCenterCard ? '' : 'text-gray-900'}`}
-                        style={{ color: isCenterCard ? '#1c4c97' : '#1a1a1a' }}
+                        style={{ color: isCenterCard ? '#2a5da5' : '#1a1a1a' }}
                       >
                         {service.title}
                       </h3>
@@ -186,7 +186,7 @@ function App() {
           <button
             onClick={handlePrev}
             className="w-14 h-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
-            style={{ color: '#1c4c97' }}
+            style={{ color: '#2a5da5' }}
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -208,7 +208,7 @@ function App() {
           <button
             onClick={handleNext}
             className="w-14 h-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
-            style={{ color: '#1c4c97' }}
+            style={{ color: '#2a5da5' }}
           >
             <ChevronRight className="w-6 h-6" />
           </button>

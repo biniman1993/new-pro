@@ -122,27 +122,29 @@ const WhyChooseUs = () => {
       />
 
       {/* Decorative elements */}
-      <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-[#1c4c97]/5 to-transparent rounded-full blur-xl" />
+      <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-[#2a5da5]/5 to-transparent rounded-full blur-xl" />
       <div className="absolute bottom-10 left-10 w-40 h-40 bg-gradient-to-tr from-[#ff7b16]/5 to-transparent rounded-full blur-xl" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
         <div className="mb-6 lg:mb-10 text-start">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1c4c97]/10 to-[#ff7b16]/10 px-4 py-2">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#2a5da5]/10 to-[#ff7b16]/10 px-4 py-2">
             <span className="h-2 w-2 rounded-full bg-[#ff7b16] animate-pulse" />
-            <span className="text-sm font-semibold tracking-wider text-[#1c4c97] uppercase">
+            <span className="text-sm font-semibold tracking-wider text-[#2a5da5] uppercase">
               WHY CHOOSE US
             </span>
           </div>
           <h2 className="text-3xl font-bold leading-tight text-[#0a0e27] md:text-4xl lg:text-5xl mb-3">
             Why{" "}
             <span className="relative ">
-              <span className="relative z-10 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+              <span className="relative z-10 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
                 Proactive Trading
               </span>
             </span>{" "}
           </h2>
-          <p className=" text-start text-3xl font-bold text-[#1c4c97] mb-2 ">The Right Choice</p>
+          <p className=" text-start text-3xl font-bold text-[#2a5da5] mb-2 ">
+            The Right Choice
+          </p>
           <p className="text-gray-600 ">
             Delivering excellence with our proven track record and
             customer-first approach
@@ -160,14 +162,14 @@ const WhyChooseUs = () => {
                 style={{ animationDelay: `${feature.delay}ms` }}
               >
                 {/* Hover effect background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1c4c97]/5 via-white to-[#ff7b16]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2a5da5]/5 via-white to-[#ff7b16]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Animated border on hover */}
                 <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-[#ff7b16]/20 transition-all duration-500" />
 
                 {/* Icon with animation */}
                 <div className="relative mb-5">
-                  <div className="relative inline-flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-[#1c4c97]/30">
+                  <div className="relative inline-flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-[#2a5da5]/30">
                     <feature.icon
                       className="h-7 w-7 text-white transition-transform duration-500 group-hover:scale-110"
                       strokeWidth={1.5}
@@ -175,7 +177,7 @@ const WhyChooseUs = () => {
                   </div>
                 </div>
 
-                <h3 className="relative mb-3 text-lg font-bold text-[#0a0e27] lg:text-xl transition-colors duration-300 group-hover:text-[#1c4c97]">
+                <h3 className="relative mb-3 text-lg font-bold text-[#0a0e27] lg:text-xl transition-colors duration-300 group-hover:text-[#2a5da5]">
                   {feature.title}
                 </h3>
                 <p className="relative text-sm leading-relaxed text-gray-600 lg:text-base">
@@ -191,7 +193,7 @@ const WhyChooseUs = () => {
           </div>
 
           {/* CTA Card */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0e27] via-[#1c4c97] to-[#0a0e27] p-6 shadow-2xl lg:row-span-2 lg:p-8">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0e27] via-[#2a5da5] to-[#0a0e27] p-6 shadow-2xl lg:row-span-2 lg:p-8">
             {/* Animated gradient background */}
             <div className="absolute inset-0 opacity-10">
               <div
@@ -199,7 +201,7 @@ const WhyChooseUs = () => {
                 style={{ animationDuration: "4s" }}
               />
               <div
-                className="absolute bottom-0 left-0 w-64 h-64 bg-[#1c4c97] rounded-full blur-3xl animate-pulse"
+                className="absolute bottom-0 left-0 w-64 h-64 bg-[#2a5da5] rounded-full blur-3xl animate-pulse"
                 style={{ animationDuration: "3s", animationDelay: "1s" }}
               />
             </div>

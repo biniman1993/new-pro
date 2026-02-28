@@ -6,44 +6,64 @@ import {
   Linkedin,
   Twitter,
   Youtube,
+  Instagram,
+  MessageCircle, // for WhatsApp
+  Send, // for Telegram
+  Music2, // for TikTok
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
 import footerBg from "../assets/footer-bg.jpg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const shopCategories = [
-    { name: "Home", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Contact Us", href: "#" },
-    { name: "Our Brand", href: "#" },
-    { name: "Our Shop", href: "#" },
+    { name: "Home", path: "/" },
+    { name: "New Laptops", path: "/products/laptops" }, // Go to laptops page
+    { name: "New Desktops", path: "/products/desktops" }, // Go to desktops page
+    { name: "New Printers", path: "/products/printers" }, // Go to printers page
+    { name: "Cisco Products", path: "/products/networking" },
   ];
-
   const company = [
-    { name: "Profile", href: "#" },
-    { name: "Address", href: "#" },
-    { name: "Shop Locations", href: "#" },
-    { name: "Our Clients", href: "#" },
-    { name: "Our Products", href: "#" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact Us", path: "/contact" },
+    { name: "Our Brand", path: "/brand" },
+    { name: "Our Clients", path: "/brand" },
+    { name: "Our Shop", path: "/contact#shop-gallery" },
   ];
 
   const support = [
-    { name: "Help Center", href: "#" },
-    { name: "FAQs", href: "#" },
+    { name: "Head Office", path: "#" },
+    { name: "Shop Locations", href: "#" },
     { name: "Terms & Conditions", href: "#" },
     { name: "Privacy Policy", href: "#" },
-    { name: 'Shipping and Returns', href: '#' },
-
+    { name: "Shipping and Returns", href: "#" },
   ];
 
   const socialLinks = [
-    { icon: Facebook, label: "Facebook", href: "#" },
-    { icon: Twitter, label: "Twitter", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Youtube, label: "YouTube", href: "#" },
+    {
+      icon: Facebook,
+      label: "Facebook",
+      href: "https://facebook.com/proactivetrading",
+    },
+    {
+      icon: MessageCircle,
+      label: "WhatsApp",
+      href: "https://wa.me/251911123456",
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://instagram.com/proactivetrading",
+    },
+    { icon: Send, label: "Telegram", href: "https://t.me/proactivetrading" },
+    {
+      icon: Music2,
+      label: "TikTok",
+      href: "https://tiktok.com/@proactivetrading",
+    },
   ];
 
   return (
@@ -344,10 +364,10 @@ const Footer = () => {
               <ul className="footer-link-list">
                 {shopCategories.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className="footer-link-item">
+                    <Link to={item.path} className="footer-link-item">
                       <ChevronRight size={14} className="footer-link-chevron" />
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -362,10 +382,10 @@ const Footer = () => {
               <ul className="footer-link-list">
                 {company.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className="footer-link-item">
+                    <Link to={item.path} className="footer-link-item">
                       <ChevronRight size={14} className="footer-link-chevron" />
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -375,7 +395,7 @@ const Footer = () => {
             <div>
               <h3 className="footer-col-title">
                 <span className="footer-col-dot" />
-                Support & Legal
+                Contact
               </h3>
               <ul className="footer-link-list">
                 {support.map((item) => (

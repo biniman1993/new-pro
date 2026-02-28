@@ -61,11 +61,11 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
       
       <div className="relative z-10 max-w-7xl mx-auto" ref={sectionRef}>
         {/* Header */}
-        <div className="text-center mb-10 md:mb-12">
+        <div className="text-center mb-12 md:mb-12">
           <h2
             className={`transition-all duration-1000 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            } font-extrabold text-2xl md:text-4xl lg:text-5xl text-[#0a0e27]`}
+            } font-extrabold text-3xl md:text-4xl lg:text-5xl text-[#0a0e27]`}
           >
             Most Popular <span className="text-[#ff7b16]">Products</span>
           </h2>
@@ -81,13 +81,13 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
             <div
               key={index}
               onClick={() => handleProductClick(item.name)}
-              className={`group relative flex flex-col items-center p-3 md:p-5 rounded-xl border border-gray-100 bg-white shadow-sm hover:shadow-xl hover:border-orange-200 transition-all duration-500 cursor-pointer ${
+              className={`group relative flex flex-col items-center p-3 md:p-5 rounded-xl border border-gray-100 bg-white shadow-md hover:shadow-xl hover:border-orange-200 transition-all duration-500 cursor-pointer ${
                 visible ? "opacity-100 scale-100" : "opacity-0 scale-90"
               }`}
               style={{ transitionDelay: `${index * 70}ms` }}
             >
               {/* Modern Icon Box */}
-              <div className="mb-2 p-2 md:p-3 rounded-lg bg-gray-50 text-[#1c4c97] group-hover:bg-[#1c4c97] group-hover:text-white group-hover:rotate-[360deg] transition-all duration-700">
+              <div className="mb-2 p-2 md:p-3 rounded-lg bg-gray-50 text-[#2a5da5] group-hover:bg-[#2a5da5] group-hover:text-white group-hover:rotate-[360deg] transition-all duration-700">
                 {item.icon}
               </div>
 
@@ -114,7 +114,7 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
         >
           <button
             onClick={handleViewAllClick}
-            className="group relative px-7 py-3 bg-gradient-to-r from-[#1c4c97] to-[#07162e] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
+            className="group relative px-7 py-3 bg-gradient-to-r from-[#2a5da5] to-[#07162e] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
           >
             <span className="relative z-10">Explore All Categories</span>
             <div className="absolute inset-0 bg-gradient-to-r from-[#ff7b16] to-[#07162e] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

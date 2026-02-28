@@ -442,16 +442,16 @@ const HeroSection = () => {
 
           {/* Buttons - Below image for mobile */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 px-4">
-            <button className="w-full sm:w-auto group relative px-6 py-3 hero-primary-btn rounded-xl font-semibold text-primary-foreground overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <button className="w-full sm:w-auto group relative px-6 py-3 hero-primary-btn rounded-xl font-semibold text-[#ffffff] overflow-hidden transition-all duration-300 hover:shadow-xl">
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Explore Products
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
 
-            <button className="w-full sm:w-auto group flex items-center justify-center gap-3 px-5 py-3 hero-glass-card rounded-xl font-semibold text-foreground transition-all duration-300 hover:bg-background/90">
+            <button className="w-full text-black sm:w-auto group flex items-center justify-center gap-3 px-5 py-3 hero-glass-card rounded-xl font-semibold text-foreground transition-all duration-300 hover:bg-background/90">
               <div className="w-9 h-9 rounded-full hero-play-btn-icon flex items-center justify-center text-primary-foreground">
-                <Play className="w-4 h-4 fill-current" />
+                <Play className=" text-black w-4 h-4 fill-current" />
               </div>
               Watch Demo
             </button>

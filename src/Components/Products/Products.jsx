@@ -122,7 +122,7 @@ useEffect(() => {
               <span className="relative">
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #1c4c97 0%, #ff7b16 50%, #0a0e27 100%)",
+                    background: "linear-gradient(135deg, #2a5da5 0%, #ff7b16 50%, #0a0e27 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -130,11 +130,11 @@ useEffect(() => {
                 >
                   {title}
                 </span>
-                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] transition-all duration-1000 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] transition-all duration-1000 group-hover:w-full" />
               </span>
             </h1>
             <div
-              className={`h-1 w-24 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] mx-auto transition-all duration-1000 ${hasAnimated ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
+              className={`h-1 w-24 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] mx-auto transition-all duration-1000 ${hasAnimated ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
             ></div>
           </div>
 
@@ -162,13 +162,13 @@ useEffect(() => {
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#96c4ee]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    <div className="absolute top-3 right-3 bg-gradient-to-r from-[#e47325] to-[#ff7b16] text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-                      {discountPercentages[index % discountPercentages.length]}% OFF
+                    <div className="absolute top-2 right-2 bg-gradient-to-r from-[#e47325] to-[#ff7b16] text-white px-2 py-1 rounded-md text-sm font-semibold shadow-lg">
+                      {discountPercentages[index % discountPercentages.length]}%
                     </div>
                   </div>
 
                   <div className="p-4">
-                    <h3 className="font-bold text-gray-900 text-lg mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-500">
+                    <h3 className="font-bold text-gray-900 text-lg mb-2 line-clamp-2 group-hover:text-[#2a5da5] transition-colors duration-500">
                       {product.name}
                     </h3>
 
@@ -191,7 +191,7 @@ useEffect(() => {
                             key={idx}
                             className="flex items-center gap-2 text-xs text-gray-600"
                           >
-                            <Package size={14} className="text-blue-600" />
+                            <Package size={14} className="text-[#2a5da5]" />
                             <span>{spec}</span>
                           </div>
                         ))}
@@ -204,11 +204,11 @@ useEffect(() => {
                     ) : (
                       <div className="mb-3 space-y-1">
                         <div className="flex items-center gap-2 text-xs text-gray-600">
-                          <Package size={14} className="text-blue-600" />
+                          <Package size={14} className="text-[#2a5da5]" />
                           <span>Premium Quality</span>
                         </div>
                         <div className="flex items-center gap-2 text-xs text-gray-600">
-                          <Package size={14} className="text-blue-600" />
+                          <Package size={14} className="text-[#2a5da5]" />
                           <span>1 Year Warranty</span>
                         </div>
                         <p className="text-xs text-gray-500 mt-2">
@@ -228,7 +228,7 @@ useEffect(() => {
                       </div>
 
                       <button
-                        className="flex items-center gap-2 bg-gradient-to-r from-[#1c4c97] via-[#1c4c97] to-[#1c4c97] hover:from-[#ff7b16] hover:via-[#1c4c97] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-300 group/btn"
+                        className="flex items-center gap-2 bg-gradient-to-r from-[#2a5da5] via-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:via-[#1c4c97] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-300 group/btn"
                         onClick={(e) => {
                           e.stopPropagation();
                           openProductModal(product);
@@ -255,7 +255,7 @@ useEffect(() => {
             }`}
           >
             <button
-              className="px-10 py-3 bg-white border-2 border-[#0a0e27] text-[#0a0e27] font-bold hover:bg-gradient-to-br hover:from-[#1c4c97] hover:to-[#0a0e27] hover:text-white transition-all duration-300 hover:border-transparent"
+              className="px-10 py-3 bg-white border-2 border-[#0a0e27] text-[#0a0e27] font-bold hover:bg-gradient-to-br hover:from-[#2a5da5] hover:to-[#0a0e27] hover:text-white transition-all duration-300 hover:border-transparent"
               onClick={handleClick}
             >
               Explore More
@@ -343,7 +343,7 @@ useEffect(() => {
                         <div className="grid gap-1.5 sm:gap-2">
                           {selectedProduct.specs.slice(0, 6).map((feature, index) => (
                             <div key={index} className="flex items-start gap-2 sm:gap-3">
-                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#1c4c97] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#2a5da5] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
                               <span className="text-gray-700 text-xs sm:text-sm">
                                 {feature}
                               </span>
@@ -375,7 +375,7 @@ useEffect(() => {
                   <div className="p-3 sm:p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
                     {!showContactOptions ? (
                       <div className="flex gap-2 sm:gap-3">
-                        <button className="flex-1 py-2 sm:py-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base">
+                        <button className="flex-1 py-2 sm:py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base">
                           <ShoppingCart size={16} className="sm:w-5 sm:h-5" />
                           Add to Cart
                         </button>
@@ -406,7 +406,7 @@ useEffect(() => {
                           </button>
                           <button
                             onClick={() => handleContactOption('telegram')}
-                            className="flex-1 py-2 sm:py-3 bg-[#0088cc] hover:bg-[#0077B5] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
+                            className="flex-1 py-2 sm:py-3 bg-[#2a5da5] hover:bg-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
                           >
                             <Send size={16} className="sm:w-5 sm:h-5" />
                             <span className="hidden xs:inline">Telegram</span>

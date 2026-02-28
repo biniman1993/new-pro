@@ -1,14 +1,19 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
-import shopImage0 from "../../assets/shop/shop0.png";
-import shopImage from "../../assets/shop/shop1.png";
-import shopImage2 from "../../assets/shop/shop2.png";
-import shopImage3 from "../../assets/shop/shop3.png";
-import shopImage4 from "../../assets/shop/shop4.png";
-import shopImage5 from "../../assets/shop/shop5.png";
-import shopImage6 from "../../assets/shop/shop6.png";
-import shopImage7 from "../../assets/shop/shop7.png";
-import shopImage8 from "../../assets/shop/shop8.png";
-import shopImage9 from "../../assets/shop/shop.png";
+import shopImage from "../../assets/shop/shop0.png";
+import shopImage2 from "../../assets/shop/shop1.png";
+import shopImage3 from "../../assets/shop/shop2.png";
+import shopImage4 from "../../assets/shop/shop8.png";
+import shopImage5 from "../../assets/shop/shop4.png";
+import shopImage6 from "../../assets/shop/shop9.jpg";
+import shopImage7 from "../../assets/shop/shop6.png";
+import shopImage8 from "../../assets/shop/shop7.png";
+import shopImage9 from "../../assets/shop/lap1.jpg";
+import shopImage13 from "../../assets/shop/offic.jpg";
+import shopImage10 from "../../assets/shop/canon.png";
+import shopImage11 from "../../assets/shop/lap.jpg";
+import shopImage45 from "../../assets/shop/shop3.png";
+import shopImage44 from "../../assets/shop/pri.png";
+import { useEffect } from "react";
 
 import {
   Mail,
@@ -28,7 +33,7 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
-  const [activeSection, setActiveSection] = useState("office");
+  const [activeSection, setActiveSection] = useState("Contact");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -77,8 +82,8 @@ const Contact = () => {
     });
   };
   const navigationButtons = [
-    { id: "office", label: "Office", icon: Building2 },
-    { id: "branches", label: "Branches", icon: MapPin },
+    { id: "Contact", label: "Contact", icon: Building2 },
+    { id: "Office", label: "Office", icon: MapPin },
     { id: "support", label: "Support", icon: Mail },
     { id: "location", label: "Location", icon: MapPin },
     { id: "team", label: "Our Team", icon: Users },
@@ -142,7 +147,18 @@ const Contact = () => {
     secondaryOrangeDark: "#e47325",
     white: "#ffffff",
   };
-
+  useEffect(() => {
+    // Check if URL has hash
+    if (window.location.hash) {
+      const id = window.location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -224,166 +240,133 @@ const Contact = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        {/* Office Information */}
-        <section id="office" className="mb-20 scroll-mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Office{" "}
-              <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
-                Information
-              </span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Reach out to us through any of these channels
-            </p>
+<div className="max-w-7xl mx-auto px-4 py-4">
+  {/* Office Information */}
+  <section id="Contact" className="mb-20 scroll-mt-20">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Company {" "}
+        <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
+          Contact Information
+        </span>
+      </h2>
+      <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+        Reach out to us through any of these channels
+      </p>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Phone Card - Multiple Numbers */}
+      <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-3 bg-[#2a5da5] rounded-lg text-[#ffffff]">
+            <Phone size={24} />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              {
-                title: "Phone",
-                detail: "+251 911 517 628",
-                tag: "Primary",
-                icon: <Phone size={24} />,
-                color: "from-blue-600 to-[#1c4c97]",
-                lightColor: "bg-blue-50",
-                tagColor: "bg-blue-500/10 text-blue-600",
-                glowColor: "rgba(28,76,151,0.3)",
-              },
-              {
-                title: "E-Mail",
-                detail: "Pro2actives@gmail.com",
-                tag: "Fast Response",
-                icon: <Mail size={24} />,
-                color: "from-[#1c4c97] to-[#ff7b16]",
-                lightColor: "bg-indigo-50",
-                tagColor: "bg-indigo-500/10 text-indigo-600",
-                glowColor: "rgba(28,76,151,0.3)",
-              },
-              {
-                title: "Address",
-                detail: "Addis Ababa, Kazanchis, Garad Building, 11th Floor",
-                tag: "Headquarters",
-                icon: <MapPin size={24} />,
-                color: "from-[#ff7b16] to-orange-600",
-                lightColor: "bg-orange-50",
-                tagColor: "bg-orange-500/10 text-orange-600",
-                glowColor: "rgba(255,123,22,0.3)",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="group relative bg-white rounded-3xl p-8 
-                 shadow-[0_8px_30px_rgb(0,0,0,0.04)] 
-                 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)]
-                 transition-all duration-700 ease-out 
-                 hover:-translate-y-3 cursor-pointer
-                 before:absolute before:inset-0 
-                 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
-                 before:translate-x-[-200%] hover:before:translate-x-[200%]
-                 before:transition-transform before:duration-1000
-                 before:rounded-3xl overflow-hidden
-                 border border-gray-100/80 hover:border-transparent
-                 after:absolute after:inset-0 
-                 after:bg-gradient-to-r after:from-transparent after:via-white/10 after:to-transparent
-                 after:opacity-0 hover:after:opacity-100
-                 after:transition-opacity after:duration-700"
-              >
-                {/* Animated Gradient Border */}
-                <div className="absolute inset-0 p-[2px] rounded-3xl bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:from-[#1c4c97]/20 group-hover:via-[#ff7b16]/20 group-hover:to-[#1c4c97]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                  <div className="absolute inset-0 rounded-3xl bg-white" />
-                </div>
+          <h3 className="text-xl font-bold text-gray-800">Call Us</h3>
+        </div>
+        
+        <div className="space-y-3">
+          <a 
+            href="tel:+251911517628" 
+            className="flex items-center justify-between p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors group"
+          >
+            <span className="font-medium text-gray-700">Primary</span>
+            <span className="text-[#2a5da5] font-bold group-hover:underline">+251 911 517 628</span>
+          </a>
+          
+          <a 
+            href="tel:+251911123456" 
+            className="flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group"
+          >
+            <span className="font-medium text-gray-700">Secondary</span>
+            <span className="text-[#2a5da5] font-bold group-hover:underline">+251 911 123 456</span>
+          </a>
+          
+          <a 
+            href="tel:+251911789012" 
+            className="flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group"
+          >
+            <span className="font-medium text-gray-700">Support</span>
+            <span className="text-[#1c4c97] font-bold group-hover:underline">+251 911 789 012</span>
+          </a>
+        </div>
+        
+        <p className="text-xs text-gray-500 mt-4 text-center">Click any number to call directly</p>
+      </div>
 
-                {/* Floating Glow Effect */}
-                <div
-                  className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-0 group-hover:opacity-30 blur-3xl transition-all duration-1000 group-hover:scale-150"
-                  style={{
-                    background: `radial-gradient(circle, ${item.glowColor} 0%, transparent 70%)`,
-                  }}
-                />
-
-                {/* Modern Icon Container with 3D effect */}
-                <div className="relative mb-8">
-                  <div
-                    className={`absolute inset-0 ${item.lightColor} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
-                  />
-                  <div
-                    className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} 
-                        flex items-center justify-center text-white 
-                        shadow-xl group-hover:shadow-2xl
-                        transform group-hover:scale-110 group-hover:-rotate-3
-                        transition-all duration-500 ease-out
-                        before:absolute before:inset-0 before:rounded-2xl
-                        before:bg-gradient-to-r before:from-white/30 before:to-transparent
-                        before:opacity-0 group-hover:before:opacity-100
-                        before:transition-opacity before:duration-500`}
-                  >
-                    <span className="relative z-10 transform group-hover:scale-110 transition-transform duration-500">
-                      {item.icon}
-                    </span>
-                  </div>
-
-                  {/* Decorative Dots */}
-                  <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <div
-                    className="absolute -bottom-1 -left-1 w-1.5 h-1.5 rounded-full bg-[#ff7b16] animate-ping"
-                    style={{ animationDuration: "3s" }}
-                  />
-                </div>
-
-                {/* Content with enhanced typography */}
-                <div className="relative">
-                  <h3
-                    className="text-2xl font-bold text-gray-900 mb-3 tracking-tight
-                       bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text"
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className="text-gray-600 mb-6 leading-relaxed text-base font-medium
-                      border-l-4 border-transparent group-hover:border-[#ff7b16]/30 pl-3
-                      transition-all duration-500"
-                  >
-                    {item.detail}
-                  </p>
-                </div>
-
-                {/* Modern Tag with Glass Effect */}
-                <div className="flex items-center justify-between relative">
-                  <span
-                    className={`px-4 py-2 ${item.tagColor} text-xs uppercase tracking-wider 
-                         font-bold rounded-full backdrop-blur-sm
-                         border border-white/20 shadow-sm
-                         group-hover:shadow-md transition-all duration-500
-                         transform group-hover:scale-105`}
-                  >
-                    {item.tag}
-                  </span>
-
-                  {/* Animated Arrow Circle */}
-                  <div className="relative">
-                    <div
-                      className={`w-8 h-8 rounded-full bg-gradient-to-r ${item.color} 
-                          opacity-0 group-hover:opacity-100 transition-all duration-500
-                          flex items-center justify-center text-white text-sm
-                          transform translate-x-0 group-hover:translate-x-1
-                          shadow-lg`}
-                    >
-                      →
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Gradient Line */}
-                <div
-                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 
-                      bg-gradient-to-r ${item.color} rounded-full
-                      group-hover:w-full transition-all duration-700 delay-300`}
-                />
-              </div>
-            ))}
+      {/* Email Card - Multiple Emails */}
+      <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-3 bg-[#ff7b16] rounded-lg text-[#ffffff]">
+            <Mail size={24} />
           </div>
-        </section>
+          <h3 className="text-xl font-bold text-gray-800">Email Us</h3>
+        </div>
+        
+        <div className="space-y-3">
+          <a 
+            href="mailto:Pro2actives@gmail.com?subject=Inquiry%20from%20Website" 
+            className="flex items-center justify-between p-3 bg-orange-50 hover:bg-orange-100 rounded-lg transition-colors group"
+          >
+            <span className="font-medium text-gray-700">General</span>
+            <span className="text-[#ff7b16] font-bold group-hover:underline">Pro2actives</span>
+          </a>
+          
+          <a 
+            href="mailto:sales@proactive.et?subject=Sales%20Inquiry" 
+            className="flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group"
+          >
+            <span className="font-medium text-gray-700">Sales</span>
+            <span className="text-[#ff7b16] font-bold group-hover:underline">sales@proactive.et</span>
+          </a>
+          
+          <a 
+            href="mailto:support@proactive.et?subject=Support%20Request" 
+            className="flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group"
+          >
+            <span className="font-medium text-gray-700">Support</span>
+            <span className="text-[#ff7b16] font-bold group-hover:underline">support@proactive.et</span>
+          </a>
+        </div>
+        
+        <p className="text-xs text-gray-500 mt-4 text-center">Click any email to open Gmail</p>
+      </div>
+
+      {/* Address Card */}
+      <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-3 bg-[#2a5da5] rounded-lg text-[#ffffff]">
+            <MapPin size={24} />
+          </div>
+          <h3 className="text-xl font-bold text-gray-800">Visit Us</h3>
+        </div>
+        
+        <div className="space-y-4">
+          <div className="p-4 bg-[#2a5da5]/10 rounded-lg">
+            <p className="font-medium text-gray-700 mb-1">Headquarters</p>
+            <p className="text-gray-600">Addis Ababa, Kazanchis</p>
+            <p className="text-gray-600">Garad Building, 11th Floor</p>
+            <p className="text-gray-600">Office #04</p>
+          </div>
+          
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <Clock size={16} className="text-[#2a5da5]" />
+            <span>Mon - Sun: 8:00 AM - 6:00 PM</span>
+          </div>
+          
+          <a 
+            href="https://maps.google.com/?q=Kazanchis+Addis+Ababa" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block text-center py-2 bg-[#2a5da5] text-white rounded-lg hover:bg-[#0f3a7a] transition-colors font-medium"
+          >
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
         {/* Visit Our Shop - Gallery Section */}
         <section id="shop-gallery" className="mb-20 scroll-mt-20">
           <div className="text-center mb-12">
@@ -400,9 +383,22 @@ const Contact = () => {
 
           {/* Image Gallery Grid */}
           <div className="max-w-7xl mx-auto">
-            {/* First Row - 4 Images */}
+            {/* First Row - 1 Images */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
               {/* Image 1 */}
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
+                <img
+                  src={shopImage13}
+                  alt="Store Front - Proactive Trading"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="text-sm font-semibold">Store Front</p>
+                    <p className="text-xs opacity-90">Main Entrance</p>
+                  </div>
+                </div>
+              </div>
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
                   src={shopImage}
@@ -416,11 +412,49 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Image 2 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
                   src={shopImage2}
+                  alt="Store Front - Proactive Trading"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="text-sm font-semibold">Store Front</p>
+                    <p className="text-xs opacity-90">Main Entrance</p>
+                  </div>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
+                <img
+                  src={shopImage3}
+                  alt="Store Front - Proactive Trading"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="text-sm font-semibold">Store Front</p>
+                    <p className="text-xs opacity-90">Main Entrance</p>
+                  </div>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
+                <img
+                  src={shopImage4}
+                  alt="Store Front - Proactive Trading"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="text-sm font-semibold">Store Front</p>
+                    <p className="text-xs opacity-90">Main Entrance</p>
+                  </div>
+                </div>
+              </div>
+              {/* Image 2 */}
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
+                <img
+                  src={shopImage5}
                   alt="Laptop Display Section"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -435,7 +469,7 @@ const Contact = () => {
               {/* Image 3 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src={shopImage3}
+                  src={shopImage6}
                   alt="Desktop Computers"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -450,7 +484,7 @@ const Contact = () => {
               {/* Image 4 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src={shopImage4}
+                  src={shopImage11}
                   alt="Server Room Setup"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -468,7 +502,7 @@ const Contact = () => {
               {/* Image 5 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src={shopImage5}
+                  src={shopImage10}
                   alt="Printer and Office Equipment"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -483,7 +517,7 @@ const Contact = () => {
               {/* Image 6 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src={shopImage6}
+                  src={shopImage9}
                   alt="Networking Equipment"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -498,7 +532,7 @@ const Contact = () => {
               {/* Image 7 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src={shopImage7}
+                  src={shopImage45}
                   alt="Computer Accessories"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -513,7 +547,7 @@ const Contact = () => {
               {/* Image 8 */}
               <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src={shopImage8}
+                  src={shopImage44}
                   alt="Store Interior"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -528,11 +562,11 @@ const Contact = () => {
           </div>
         </section>
         {/* Our Office */}
-        <section id="branches" className="mb-20 scroll-mt-20">
+        <section id="Office" className="mb-20 scroll-mt-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Our{" "}
-              <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
                 Office
               </span>
             </h2>
@@ -545,18 +579,18 @@ const Contact = () => {
             {/* Addis Ababa Card - Single Office */}
             <div className="group relative bg-white rounded-3xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden backdrop-blur-sm">
               {/* Animated Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1c4c97]/5 via-transparent to-[#ff7b16]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2a5da5]/5 via-transparent to-[#ff7b16]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
               {/* Decorative Elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#1c4c97]/10 to-[#ff7b16]/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[#1c4c97]/5 to-[#ff7b16]/5 rounded-full blur-3xl -ml-16 -mb-16"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[#2a5da5]/5 to-[#ff7b16]/5 rounded-full blur-3xl -ml-16 -mb-16"></div>
 
               {/* Content */}
               <div className="relative z-10">
                 {/* Header with Flag and Badge */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                       <Building2 size={28} />
                     </div>
                     <div className="flex items-center gap-3">
@@ -577,7 +611,7 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  <div className="px-4 py-2 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] rounded-full shadow-lg transform hover:scale-105 transition-transform">
+                  <div className="px-4 py-2 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] rounded-full shadow-lg transform hover:scale-105 transition-transform">
                     <span className="text-sm font-bold text-white tracking-wide">
                       ★ HEADQUARTERS ★
                     </span>
@@ -589,7 +623,7 @@ const Contact = () => {
                   {/* Left Column - Location Details */}
                   <div className="space-y-5">
                     <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
-                      <span className="w-1 h-6 bg-gradient-to-b from-[#1c4c97] to-[#ff7b16] rounded-full"></span>
+                      <span className="w-1 h-6 bg-gradient-to-b from-[#2a5da5] to-[#ff7b16] rounded-full"></span>
                       Location Details
                     </h3>
 
@@ -608,8 +642,8 @@ const Contact = () => {
                       </div>
 
                       <div className="flex items-start gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                        <div className="w-10 h-10 rounded-lg bg-[#1c4c97]/10 flex items-center justify-center flex-shrink-0">
-                          <Building size={18} className="text-[#1c4c97]" />
+                        <div className="w-10 h-10 rounded-lg bg-[#2a5da5]/10 flex items-center justify-center flex-shrink-0">
+                          <Building size={18} className="text-[#2a5da5]" />
                         </div>
                         <div>
                           <p className="text-sm text-gray-500">Building</p>
@@ -637,37 +671,37 @@ const Contact = () => {
                   {/* Right Column - Contact & Hours */}
                   <div className="space-y-5">
                     <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
-                      <span className="w-1 h-6 bg-gradient-to-b from-[#ff7b16] to-[#1c4c97] rounded-full"></span>
+                      <span className="w-1 h-6 bg-gradient-to-b from-[#ff7b16] to-[#2a5da5] rounded-full"></span>
                       Contact & Hours
                     </h3>
 
                     <div className="space-y-4">
-                      <div className="flex items-center gap-4 p-3 bg-green-50 rounded-xl">
-                        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                          <Phone size={18} className="text-green-600" />
+                      <div className="flex items-center gap-4 p-3 bg-[#f4faff] rounded-xl">
+                        <div className="w-10 h-10 rounded-full bg-[#ff7b16] flex items-center justify-center">
+                          <Phone size={18} className="text-[#ffffff]" />
                         </div>
                         <div>
                           <p className="text-xs text-gray-500">Phone</p>
-                          <p className="text-[#1c4c97] font-bold text-lg">
-                            +971 4 33 04 125
+                          <p className="text-[#2a5da5] font-bold text-lg">
+                            +251911517628
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-4 p-3 bg-green-50 rounded-xl">
-                        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                          <Phone size={18} className="text-green-600" />
+                      <div className="flex items-center gap-4 p-3 bg-[#f4faff] rounded-xl">
+                        <div className="w-10 h-10 rounded-full bg-[#1c4c97] flex items-center justify-center">
+                          <Phone size={18} className="text-[#ffffff]" />
                         </div>
                         <div>
                           <p className="text-xs text-gray-500">Phone</p>
-                          <p className="text-[#1c4c97] font-bold text-lg">
-                            +971 4 33 04 125
+                          <p className="text-[#2a5da5] font-bold text-lg">
+                            +251115578994 
                           </p>
                         </div>
                       </div>
                       <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-4 border border-blue-100">
                         <div className="flex items-center gap-4">
                           <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shadow-sm">
-                            <Clock size={18} className="text-[#1c4c97]" />
+                            <Clock size={18} className="text-[#2a5da5]" />
                           </div>
                           <div>
                             <p className="text-xs text-gray-500">
@@ -683,7 +717,7 @@ const Contact = () => {
                           </div>
                         </div>
                         {/* Decorative stripe */}
-                        <div className="absolute right-0 top-0 w-2 h-full bg-gradient-to-b from-[#1c4c97] to-[#ff7b16]"></div>
+                        <div className="absolute right-0 top-0 w-2 h-full bg-gradient-to-b from-[#2a5da5] to-[#ff7b16]"></div>
                       </div>
                     </div>
                   </div>
@@ -691,7 +725,7 @@ const Contact = () => {
 
                 {/* Bottom Action Buttons */}
                 <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-6 py-3 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                  <button className="px-6 py-3 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
                     <MapPin size={18} />
                     Get Directions
                   </button>
@@ -708,10 +742,10 @@ const Contact = () => {
         {/* Contact Form */}
         <section id="support" className="mb-20 scroll-mt-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
+            <div className="ml-[2rem] md:ml-[4rem] lg:ml-[4rem]">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Get in{" "}
-                <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
                   Touch
                 </span>
               </h2>
@@ -722,7 +756,7 @@ const Contact = () => {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                  <CheckCircle className="text-[#1c4c97]" size={20} />
+                  <CheckCircle className="text-[#2a5da5]" size={20} />
                   <span className="font-medium text-gray-900">
                     24/7 Technical Support
                   </span>
@@ -1050,7 +1084,7 @@ const Contact = () => {
           </div>
         </section>
       </div>
-    </div>
+    
   );
 };
 

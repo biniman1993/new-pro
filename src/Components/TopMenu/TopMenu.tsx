@@ -9,16 +9,84 @@ const TopMenu = () => {
 
   // Data mapping
   const menuData: Record<string, string[]> = {
-    Desktop: ["Business Desktop", "Gaming Desktop", "All-in-One PC", "Mini Desktop", "Workstation"],
-    Laptop: ["Business Laptop", "Student Laptop", "Ultrabook / Thin & Light", "Gaming Laptop", "2-in-1 Convertible Laptop"],
-    Monitor: ["Full HD Monitor", "2K / 4K Monitor", "Gaming Monitor", "Curved Monitor", "Professional Monitor"],
-    Networking: ["Home Networking", "Commercial Networking", "Network Accessories", "Routers & Switches", "Cables"],
-    Accessories: ["Keyboard & Mouse", "Webcams", "Headphones", "USB Hubs", "Laptop Stands"],
-    Printer: ["Inkjet Printer", "Laser Printer", "All-in-One Printer", "Scanners", "Toner", "Ink Tank", "Barcode Scanner", "Photocopier", "ID Card Printer", "POS Printer"],
-    Projector: ["Business Projector", "Home Cinema Projector", "Portable Projector", "Short-Throw", "Accessories"],
-    Components: ["Processor", "CPU Cooler", "Motherboard", "Graphics Card", "Power Supply", "Casing", "RAM"],
-    "Digital Display": ["LED Display", "Video Wall", "Advertising Displays", "Interactive Panel", "Kiosk"],
-    Server: ["Application Servers", "GPU Servers", "Storage Servers", "Blade Servers", "NAS", "Server Accessories"],
+    Desktop: [
+      "Business Desktop",
+      "Gaming Desktop",
+      "All-in-One PC",
+      "Mini Desktop",
+      "Workstation",
+    ],
+    Laptop: [
+      "Business Laptop",
+      "Student Laptop",
+      "Ultrabook / Thin & Light",
+      "Gaming Laptop",
+      "2-in-1 Convertible Laptop",
+    ],
+    Monitor: [
+      "Full HD Monitor",
+      "2K / 4K Monitor",
+      "Gaming Monitor",
+      "Curved Monitor",
+      "Professional Monitor",
+    ],
+    Networking: [
+      "Home Networking",
+      "Commercial Networking",
+      "Network Accessories",
+      "Routers & Switches",
+      "Cables",
+    ],
+    Accessories: [
+      "Keyboard & Mouse",
+      "Webcams",
+      "Headphones",
+      "USB Hubs",
+      "Laptop Stands",
+    ],
+    Printer: [
+      "Inkjet Printer",
+      "Laser Printer",
+      "All-in-One Printer",
+      "Scanners",
+      "Toner",
+      "Ink Tank",
+      "Barcode Scanner",
+      "Photocopier",
+      "ID Card Printer",
+      "POS Printer",
+    ],
+    Projector: [
+      "Business Projector",
+      "Home Cinema Projector",
+      "Portable Projector",
+      "Short-Throw",
+      "Accessories",
+    ],
+    Components: [
+      "Processor",
+      "CPU Cooler",
+      "Motherboard",
+      "Graphics Card",
+      "Power Supply",
+      "Casing",
+      "RAM",
+    ],
+    "Digital Display": [
+      "LED Display",
+      "Video Wall",
+      "Advertising Displays",
+      "Interactive Panel",
+      "Kiosk",
+    ],
+    Server: [
+      "Application Servers",
+      "GPU Servers",
+      "Storage Servers",
+      "Blade Servers",
+      "NAS",
+      "Server Accessories",
+    ],
   };
 
   const menuItems = Object.keys(menuData);
@@ -54,7 +122,7 @@ const TopMenu = () => {
         ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         hidden lg:flex overflow-visible`}
     >
-      <ul className="flex gap-[25px] px-[25px] list-none m-0 relative h-full items-center overflow-visible">
+      <ul className="flex  md:gap-[25px] lg:gap-[20px] xl:gap-[25px] px-[25px] list-none m-0 relative h-full items-center overflow-visible">
         {menuItems.map((item) => (
           <li
             key={item}
@@ -90,14 +158,21 @@ const TopMenu = () => {
                       className="group flex items-center gap-3 p-2.5 rounded-[10px] border border-[#ff98001a] bg-transparent transition-all duration-300 
                         hover:translate-x-1 hover:scale-[1.02] hover:border-[#ff980066] hover:shadow-[0_6px_20px_rgba(255,152,0,0.25)]
                         animate-cardSlideIn cursor-pointer"
-                      style={{ 
-                        animationDelay: `${idx * 0.08}s`, 
-                        animationFillMode: 'forwards'
+                      style={{
+                        animationDelay: `${idx * 0.08}s`,
+                        animationFillMode: "forwards",
                       }}
                     >
                       {/* Icon Box */}
                       <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#ff9800] to-[#ff6b35] flex items-center justify-center text-white shrink-0 transition-transform duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <svg
+                          width="16"
+                          height="16"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          viewBox="0 0 24 24"
+                        >
                           <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                       </div>
@@ -115,7 +190,9 @@ const TopMenu = () => {
       </ul>
 
       {/* Updated Animations for smooth top-to-bottom appearance */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @keyframes dropdownFadeIn {
           from { 
             opacity: 0; 
@@ -171,7 +248,9 @@ const TopMenu = () => {
           animation-duration: 0.4s !important;
           animation-timing-function: ease-out !important;
         }
-      `}} />
+      `,
+        }}
+      />
     </nav>
   );
 };

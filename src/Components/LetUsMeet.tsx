@@ -1,11 +1,12 @@
 import { useState } from "react";
 import heroBg from "../assets/hero-bg.jpg";
+import { Phone } from "lucide-react";
 
 const LetUsMeet = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    website: "",
+    phone: "",
     comment: "",
   });
 
@@ -445,12 +446,12 @@ const LetUsMeet = () => {
                       fontWeight: 500,
                       color: colors.foreground,
                       marginBottom: "0.5rem",
-                    }}>Website</label>
+                    }}>Phone Number</label>
                     <input
-                      type="url"
-                      name="website"
-                      placeholder="https://example.com"
-                      value={formData.website}
+                      type="tel"
+                      name="phone"
+                      placeholder="123-456-7890"
+                      value={formData.phone}
                       onChange={handleInputChange}
                       style={{
                         width: "100%",

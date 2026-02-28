@@ -57,9 +57,9 @@ const BrandShowcase = () => {
       {/* Background Decorative Element */}
      
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+      <div className="w-full mx-auto px-4 relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-10 md:mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-4">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -77,8 +77,6 @@ const BrandShowcase = () => {
         {/* Logo Slider Container */}
         <div className="relative group">
           {/* Fading Edges Overlay */}
-          <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-20"></div>
-          <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-20"></div>
 
           <div className="logo-scroll-container py-10">
             <div className="logo-track">
@@ -128,7 +126,7 @@ const BrandShowcase = () => {
 
         {/* Modern Action Button */}
         <div className="mt-10 text-center">
-          <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#1c4c97] text-white font-bold rounded-full overflow-hidden transition-all hover:pr-12 active:scale-95 shadow-xl hover:shadow-[#2a5da5]/20">
+          <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#2a5da5] text-white font-bold rounded-full overflow-hidden transition-all hover:pr-12 active:scale-95 shadow-xl hover:shadow-[#2a5da5]/20">
             <span className="relative z-10">Explore All Brands</span>
             <ChevronRight className="absolute right-4 opacity-0 group-hover:opacity-100 transition-all duration-300" size={20} />
             <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -159,14 +157,14 @@ const BrandShowcase = () => {
         }
 
         .logo-card {
-          width: 120px;
-          height: 80px;
+          width: 180px;
+          height: 120px;
           background: white;
           border-radius: 16px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 15px;
+          padding: 25px;
           border: 1px solid #f1f5f9;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -206,9 +204,9 @@ const BrandShowcase = () => {
 
         @media (min-width: 768px) {
           .logo-card {
-            width: 180px;
-            height: 110px;
-            padding: 25px;
+            width: 220px;
+            height: 140px;
+            padding: 20px;
           }
           .logo-card-wrapper {
             padding: 0 20px;
