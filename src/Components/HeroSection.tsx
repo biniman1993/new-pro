@@ -30,39 +30,39 @@ const HeroSection = () => {
 
   const slides: SlideContent[] = [
     {
-      title: "Modern World with Proactive",
+      title: "Proactive for Modern World",
       description:
-        "Your trusted partner for premium electronics and technology solutions across Ethiopia. Official distributors of leading global brands.",
+        "Proactive Trading: Your trusted partner for premium electronics and enterprise technology solutions across Ethiopia. Proud official distributors of leading global technology brands.",
       icon: <Cpu className="w-8 h-8" />,
     },
     {
       title: "Modern Laptops and Gamming",
       description:
-        "High-performance laptops for business and personal use. Latest processors, premium displays, and enterprise-grade security features brands .",
+        "Powerful and reliable laptops designed for work and personal use, with next-gen Intel and Ryzen processors, premium 4K screens, and enterprise-level security from top brands.",
       icon: <Monitor className="w-8 h-8" />,
     },
     {
       title: "Cisco Routers and Switches",
       description:
-        "Cisco routers, network switches, access points, firewalls, and essential networking accessories for business and enterprise environments.",
+        "Complete Cisco networking solutions including enterprise routers, managed switches, high-performance access points, advanced firewalls, and essential accessories for secure business connectivity.",
       icon: <Wifi className="w-8 h-8" />,
     },
     {
       title: "Digital Display and Signage",
       description:
-        "Interactive displays, digital signage, and presentation solutions for modern offices, retail spaces, and educational institutions offices.",
+        "Premium interactive touch displays, dynamic digital signage, and professional presentation solutions for modern offices, retail spaces, educational institutions, and hospitality environments",
       icon: <Tv className="w-8 h-8" />,
     },
     {
       title: "Modern TV & Boards",
       description:
-        "Smart conference room solutions, interactive whiteboards, and large format displays for collaborative workspaces interactive whiteboards .",
+        "Smart conference room solutions with interactive whiteboards, large format 4K displays, and wireless presentation systems for seamless collaboration in modern workspaces and boardrooms.",
       icon: <Server className="w-8 h-8" />,
     },
     {
-      title: "Advanced Tech Solutions",
+      title: "Data Center Infrastructure",
       description:
-        "Complete technology ecosystems - from installation to maintenance, ensuring seamless integration and optimal performance interactive whiteboards .",
+        "Premium supplier of HPE ProLiant, Dell PowerEdge, and Cisco UCS servers - from rackmount and blade systems to storage arrays and virtualization solutions for modern data centers.",
       icon: <Settings className="w-8 h-8" />,
     },
   ];
@@ -187,19 +187,19 @@ const HeroSection = () => {
           opacity: 0;
         }
         
-        .hero-text-gradient {
-          background: linear-gradient(135deg, 
-            hsl(221 83% 40%) 0%, 
-            hsl(217 91% 60%) 25%, 
-            hsl(24 95% 53%) 50%, 
-            hsl(21 90% 48%) 75%, 
-            hsl(221 83% 40%) 100%
-          );
-          background-size: 200% 200%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
+       .hero-text-gradient {
+  background: linear-gradient(135deg, 
+    #2a5da5 0%,      /* hsl(221 83% 40%) */
+    #3B82F6 25%,     /* hsl(217 91% 60%) */
+    #F97316 50%,     /* hsl(24 95% 53%) */
+    #E96D1C 75%,     /* hsl(21 90% 48%) */
+    #12428B 100%     /* hsl(221 83% 40%) */
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
         
         .hero-glass-card {
           background: hsla(0, 0%, 100%, 0.7);
@@ -208,12 +208,12 @@ const HeroSection = () => {
           box-shadow: 0 8px 32px 0 hsla(234, 59%, 33%, 0.1);
         }
         
-        .hero-primary-btn {
-          background: linear-gradient(135deg, 
-            hsl(217 91% 50%) 0%, 
-            hsl(24 95% 53%) 100%
-          );
-        }
+ .hero-primary-btn {
+  background: linear-gradient(135deg, 
+    #2a5da5 20%,     /* Dark blue */
+    #F97316 80%     /* Orange - appears at 80% for dramatic effect */
+  );
+}
         
         .hero-primary-btn:hover {
           box-shadow: 0 20px 40px -12px hsla(24, 95%, 53%, 0.4);
@@ -284,13 +284,59 @@ const HeroSection = () => {
 
       {/* Static Background Elements - No animation for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large Blue Orb - Very subtle */}
         <div
-          className="absolute w-[600px] h-[600px] rounded-full opacity-60 hero-orb-blue"
-          style={{ left: "0%", top: "0%" }}
+          className="absolute w-[800px] h-[800px] rounded-full blur-3xl"
+          style={{
+            left: "-10%",
+            top: "-20%",
+            background: "#d3dce9",
+            opacity: 0.15,
+          }}
         />
+
+        {/* Medium Blue Orb - Secondary */}
         <div
-          className="absolute w-[500px] h-[500px] rounded-full opacity-50 hero-orb-orange"
-          style={{ right: "0%", bottom: "5%" }}
+          className="absolute w-[500px] h-[500px] rounded-full blur-3xl"
+          style={{
+            left: "20%",
+            bottom: "10%",
+            background: "#e0edff",
+            opacity: 0.1,
+          }}
+        />
+
+        {/* Large Orange Orb - Very subtle */}
+        <div
+          className="absolute w-[700px] h-[700px] rounded-full blur-3xl"
+          style={{
+            right: "-5%",
+            top: "10%",
+            background: "#ffffff",
+            opacity: 0.12,
+          }}
+        />
+
+        {/* Medium Orange Orb - Bottom right */}
+        <div
+          className="absolute w-[450px] h-[450px] rounded-full blur-3xl"
+          style={{
+            right: "15%",
+            bottom: "0%",
+            background: "#4275bd",
+            opacity: 0.08,
+          }}
+        />
+
+        {/* Small Center Orb - Very light blend */}
+        <div
+          className="absolute w-[300px] h-[300px] rounded-full blur-3xl"
+          style={{
+            left: "10%",
+            top: "10%",
+            background: "#285594",
+            opacity: 0.05,
+          }}
         />
       </div>
 
@@ -380,7 +426,7 @@ const HeroSection = () => {
             className={`relative image-container flex items-center justify-center transition-opacity duration-500 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
-           >
+          >
             <div className="relative w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl mb-2 md:mt-2 lg:mt-10 xl:mt-10  ">
               <img
                 src={productImages[currentSlide]}

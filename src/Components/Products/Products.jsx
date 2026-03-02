@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { ShoppingCart, Package, ArrowRight, X, Star, Phone, MessageCircle, Send } from "lucide-react";
+import {
+  ShoppingCart,
+  Package,
+  ArrowRight,
+  X,
+  Star,
+  Phone,
+  MessageCircle,
+  Send,
+} from "lucide-react";
 
 const Products = React.forwardRef(
   (
@@ -62,54 +71,62 @@ const Products = React.forwardRef(
     // Handle contact option selection
     const handleContactOption = (type) => {
       const phoneNumber = "1234567890"; // Replace with your actual phone number
-      const whatsappMessage = encodeURIComponent(`Hello, I'm interested in ${selectedProduct?.name}`);
-      const telegramMessage = encodeURIComponent(`Hello, I'm interested in ${selectedProduct?.name}`);
-      
-      switch(type) {
-        case 'phone':
+      const whatsappMessage = encodeURIComponent(
+        `Hello, I'm interested in ${selectedProduct?.name}`,
+      );
+      const telegramMessage = encodeURIComponent(
+        `Hello, I'm interested in ${selectedProduct?.name}`,
+      );
+
+      switch (type) {
+        case "phone":
           window.location.href = `tel:${phoneNumber}`;
           break;
-        case 'whatsapp':
-          window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+        case "whatsapp":
+          window.open(
+            `https://wa.me/${phoneNumber}?text=${whatsappMessage}`,
+            "_blank",
+          );
           break;
-        case 'telegram':
-          window.open(`https://t.me/${phoneNumber}?text=${telegramMessage}`, '_blank');
+        case "telegram":
+          window.open(
+            `https://t.me/${phoneNumber}?text=${telegramMessage}`,
+            "_blank",
+          );
           break;
         default:
           break;
       }
     };
 
-// Intersection Observer for animation - FIXED VERSION
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      // Only set to true if it's intersecting AND hasn't animated yet
-      if (entry.isIntersecting && !hasAnimated) {
-        setHasAnimated(true);
+    // Intersection Observer for animation - FIXED VERSION
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          // Only set to true if it's intersecting AND hasn't animated yet
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+          }
+        },
+        { threshold: 0.1 },
+      );
+
+      // Store the current ref value in a variable
+      const currentContainer = containerRef.current;
+
+      if (currentContainer) {
+        observer.observe(currentContainer);
       }
-    },
-    { threshold: 0.1 },
-  );
 
-  // Store the current ref value in a variable
-  const currentContainer = containerRef.current;
+      return () => {
+        // Use the stored variable, not containerRef.current
+        if (currentContainer) {
+          observer.unobserve(currentContainer);
+        }
+      };
+    }, [hasAnimated]); // Only re-run if hasAnimated changes
 
-  if (currentContainer) {
-    observer.observe(currentContainer);
-  }
-
-  return () => {
-    // Use the stored variable, not containerRef.current
-    if (currentContainer) {
-      observer.unobserve(currentContainer);
-    }
-  };
-}, [hasAnimated]); // Only re-run if hasAnimated changes
-
-    const discountPercentages = [
-      "20", "15", "10", "25", "5", "30", "12", "18"
-    ];
+    const discountPercentages = ["20", "15", "10", "25", "5", "30", "12", "18"];
 
     return (
       <div className="w-full py-10 px-4 sm:px-6 lg:px-8 bg-[#f9fbfd]" ref={ref}>
@@ -122,7 +139,8 @@ useEffect(() => {
               <span className="relative">
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #2a5da5 0%, #ff7b16 50%, #0a0e27 100%)",
+                    background:
+                      "linear-gradient(135deg, #2a5da5 0%, #ff7b16 50%, #0a0e27 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -224,7 +242,9 @@ useEffect(() => {
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                         </span>
-                        <span className="text-sm font-semibold text-green-600">In Stock</span>
+                        <span className="text-sm font-semibold text-green-600">
+                          In Stock
+                        </span>
                       </div>
 
                       <button
@@ -249,16 +269,37 @@ useEffect(() => {
           </div>
 
           {/* Explore More Button */}
-          <div 
+          <div
             className={`text-center pt-8 transition-all duration-1000 delay-500 ${
-              hasAnimated ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              hasAnimated
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             }`}
           >
             <button
-              className="px-10 py-3 bg-white border-2 border-[#0a0e27] text-[#0a0e27] font-bold hover:bg-gradient-to-br hover:from-[#2a5da5] hover:to-[#0a0e27] hover:text-white transition-all duration-300 hover:border-transparent"
+              className="group relative px-8 py-3 bg-white border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               onClick={handleClick}
             >
-              Explore More
+              {/* Background gradient that slides in on hover */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+
+              {/* Button text with hover effect */}
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
+                Explore More
+                <svg
+                  className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
         </div>
@@ -290,7 +331,13 @@ useEffect(() => {
                       className="w-full h-full object-contain p-2 sm:p-4"
                     />
                     <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-gradient-to-r from-[#e47325] to-[#ff7b16] text-white font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm shadow-lg">
-                      -{discountPercentages[selectedProduct.id % discountPercentages.length]}%
+                      -
+                      {
+                        discountPercentages[
+                          selectedProduct.id % discountPercentages.length
+                        ]
+                      }
+                      %
                     </div>
                   </div>
                 </div>
@@ -313,7 +360,7 @@ useEffect(() => {
                               className="sm:w-4 sm:h-4"
                               style={{
                                 color: i < 4 ? "#ff7b16" : "#e5e7eb",
-                                fill: i < 4 ? "#ff7b16" : "none"
+                                fill: i < 4 ? "#ff7b16" : "none",
                               }}
                             />
                           ))}
@@ -325,7 +372,8 @@ useEffect(() => {
 
                       {/* Description */}
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        {selectedProduct.description || `High-performance ${selectedProduct.name} with premium features and excellent reliability.`}
+                        {selectedProduct.description ||
+                          `High-performance ${selectedProduct.name} with premium features and excellent reliability.`}
                       </p>
 
                       {/* Full Description (if available) */}
@@ -341,14 +389,19 @@ useEffect(() => {
                           Key Features:
                         </h3>
                         <div className="grid gap-1.5 sm:gap-2">
-                          {selectedProduct.specs.slice(0, 6).map((feature, index) => (
-                            <div key={index} className="flex items-start gap-2 sm:gap-3">
-                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#2a5da5] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-700 text-xs sm:text-sm">
-                                {feature}
-                              </span>
-                            </div>
-                          ))}
+                          {selectedProduct.specs
+                            .slice(0, 6)
+                            .map((feature, index) => (
+                              <div
+                                key={index}
+                                className="flex items-start gap-2 sm:gap-3"
+                              >
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#2a5da5] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                                <span className="text-gray-700 text-xs sm:text-sm">
+                                  {feature}
+                                </span>
+                              </div>
+                            ))}
                         </div>
                       </div>
 
@@ -379,7 +432,7 @@ useEffect(() => {
                           <ShoppingCart size={16} className="sm:w-5 sm:h-5" />
                           Add to Cart
                         </button>
-                        <button 
+                        <button
                           onClick={handleBuyNow}
                           className="flex-1 py-2 sm:py-3 bg-gradient-to-r from-[#e47325] to-[#ff7b16] hover:from-[#ff7b16] hover:to-[#e47325] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-xs sm:text-sm md:text-base"
                         >
@@ -388,24 +441,29 @@ useEffect(() => {
                       </div>
                     ) : (
                       <div className="space-y-2 sm:space-y-3">
-                        <p className="text-xs sm:text-sm text-gray-600 text-center">Contact us via:</p>
+                        <p className="text-xs sm:text-sm text-gray-600 text-center">
+                          Contact us via:
+                        </p>
                         <div className="flex gap-2 sm:gap-3">
                           <button
-                            onClick={() => handleContactOption('phone')}
+                            onClick={() => handleContactOption("phone")}
                             className="flex-1 py-2 sm:py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
                           >
                             <Phone size={16} className="sm:w-5 sm:h-5" />
                             <span className="hidden xs:inline">Phone</span>
                           </button>
                           <button
-                            onClick={() => handleContactOption('whatsapp')}
+                            onClick={() => handleContactOption("whatsapp")}
                             className="flex-1 py-2 sm:py-3 bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
                           >
-                            <MessageCircle size={16} className="sm:w-5 sm:h-5" />
+                            <MessageCircle
+                              size={16}
+                              className="sm:w-5 sm:h-5"
+                            />
                             <span className="hidden xs:inline">WhatsApp</span>
                           </button>
                           <button
-                            onClick={() => handleContactOption('telegram')}
+                            onClick={() => handleContactOption("telegram")}
                             className="flex-1 py-2 sm:py-3 bg-[#2a5da5] hover:bg-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
                           >
                             <Send size={16} className="sm:w-5 sm:h-5" />

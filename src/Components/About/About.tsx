@@ -21,7 +21,7 @@ import {
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("profile");
-  const [statCount, setStatCount] = useState(2000);
+  const [statCount, setStatCount] = useState(1000);
   const location = useLocation();
 
   // Create refs for each section
@@ -590,7 +590,7 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-12">
             {[
               { number: `${statCount}+`, label: "Trusted Organizations" },
-              { number: "3", label: "Years of Excellence" },
+              { number: "5", label: "Years of Excellence" },
               { number: "100%", label: "Genuine Products" },
               { number: "24/7", label: "Customer Support" },
             ].map((stat, index) => (
@@ -715,9 +715,9 @@ const About = () => {
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl shadow-md transition-all duration-400 hover:translate-y-[-8px] hover:scale-105 hover:shadow-[0_15px_40px_rgba(28,76,151,0.2)] hover:border-[#1c4c97] border-2 border-transparent flex flex-col items-center min-h-[180px] relative overflow-hidden group"
+                className="bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl shadow-md transition-all duration-400 hover:translate-y-[-8px] hover:scale-105 hover:shadow-[0_15px_40px_rgba(28,76,151,0.2)]  border-2 border-transparent flex flex-col items-center min-h-[180px] relative overflow-hidden group"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e47325] to-[#1a4892] transform scale-x-0 transition-transform duration-400 group-hover:scale-x-100" />
+                <div className="absolute top-0 left-0 right-0 h-1  transform scale-x-0 transition-transform duration-400 group-hover:scale-x-100" />
                 <div className="w-[100px] h-[100px] mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                   {" "}
                   <img
@@ -782,7 +782,7 @@ const About = () => {
               size={24}
               className="inline-block align-middle mr-2 text-[#1c4c97]"
             />
-            <strong className="font-bold">Join 2000+ Organizations</strong> who
+            <strong className="font-bold">Join 1000+ Organizations</strong> who
             trust Proactive Trading as their technology partner. Experience the
             difference that quality, integrity, and innovation make in
             transforming your operations.

@@ -175,8 +175,7 @@ const FridayPromo = () => {
         " Up to 580 sheets",
       ],
       image: placeholderImages.charger,
-      description:
-        "High-performance A3 Monochrome Laser Multifunction Printer",
+      description: "High-performance A3 Monochrome Laser Multifunction Printer",
       features: [
         "Functions: Print | Copy | Scan | Send | Optional Fax",
         "️ Speed: Up to 25 pages per minute (A4)",
@@ -184,7 +183,7 @@ const FridayPromo = () => {
         "Display: 7” Color Touchscreen",
         "Connectivity: Wi-Fi + LAN + USB",
         "Paper Capacity: Up to 580 sheets",
-         "Toner Yield: Up to 10,200 pages (Black)"
+        "Toner Yield: Up to 10,200 pages (Black)",
       ],
       rating: 4.5,
       reviews: 734,
@@ -213,7 +212,7 @@ const FridayPromo = () => {
         "Colors: 4 (Black, Cyan, Magenta, Yellow)",
         "Print Speed: Up to 33 ppm (B/W), 15 ppm (Color)",
         "Paper Capacity: 100 sheets (30-sheet output)",
-        'Connectivity: USB, WiFi, Wi-Fi Direct',
+        "Connectivity: USB, WiFi, Wi-Fi Direct",
       ],
       rating: 4.4,
       reviews: 543,
@@ -473,7 +472,7 @@ const FridayPromo = () => {
                 {/* Buttons fixed at bottom */}
                 <div className="p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
                   <div className="flex gap-3">
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base">
+                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base">
                       <ShoppingCart size={20} />
                       Add to Cart
                     </button>
@@ -489,7 +488,7 @@ const FridayPromo = () => {
       )}
 
       <div className="relative z-10">
-        <div className="bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] border-b border-[#1c4c97]/30 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-r from-[#2a5da5] to-[#143057] border-b border-[#1c4c97]/30 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff7b16]" />
@@ -873,7 +872,7 @@ const FridayPromo = () => {
                     aria-label={`Go to product ${idx + 1}`}
                   />
                 ))}
-              </div> 
+              </div>
             </div>
           </div>
         </div>

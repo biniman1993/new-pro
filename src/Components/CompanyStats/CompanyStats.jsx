@@ -37,7 +37,7 @@ const CompanyStats = () => {
     },
     {
       id: 4,
-      target: 15,
+      target: 5,
       suffix: '+',
       title: 'Years of Excellence',
       description: 'Years of Industry Leadership',

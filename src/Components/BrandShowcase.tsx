@@ -22,8 +22,11 @@ import msiLogo from '../assets/brandslogo/MSI.png';
 import apcLogo from '../assets/brandslogo/apc.png';
 import hikvisionLogo from '../assets/brandslogo/Hikvision.png';
 import logitechLogo from '../assets/brandslogo/Logitech.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const BrandShowcase = () => {
+  const navigate = useNavigate();
+
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const logos = [
@@ -126,7 +129,10 @@ const BrandShowcase = () => {
 
         {/* Modern Action Button */}
         <div className="mt-10 text-center">
-          <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#2a5da5] text-white font-bold rounded-full overflow-hidden transition-all hover:pr-12 active:scale-95 shadow-xl hover:shadow-[#2a5da5]/20">
+          <button
+            onClick={() => navigate("/brand")}
+
+          className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#2a5da5] text-white font-bold rounded-full overflow-hidden transition-all hover:pr-12 active:scale-95 shadow-xl hover:shadow-[#2a5da5]/20">
             <span className="relative z-10">Explore All Brands</span>
             <ChevronRight className="absolute right-4 opacity-0 group-hover:opacity-100 transition-all duration-300" size={20} />
             <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

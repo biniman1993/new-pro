@@ -19,7 +19,7 @@ import printer7 from "../../assets/printer/p4.jpg"; // You'll need to add this i
 import printer8 from "../../assets/printer/p4.jpg"; // You'll need to add this image
 
 // Monitors - 8 different images
-import monitor1 from "../../assets/monitor/mon1.png";
+import monitor1 from "../../assets/monitor/mon2.png";
 import monitor2 from "../../assets/monitor/mon2.jpg";
 import monitor3 from "../../assets/monitor/mon3.jpg";
 import monitor4 from "../../assets/monitor/mon4.jpg";
@@ -409,8 +409,8 @@ export const desktopData = [
 export const monitorData = [
   {
     id: 17,
-    name: 'Dell 27" 4K Monitor',
-    description: "Ultra HD professional monitor with IPS panel",
+    name: 'HP Series 5 27" FHD Monitor',
+    description: "Ultra HD professional monitor perfect for home use, work, and entertainment!",
     fullDescription:
       "Experience stunning detail and color accuracy with this 4K professional monitor. Perfect for designers, editors, and power users.",
     status: "In stock",

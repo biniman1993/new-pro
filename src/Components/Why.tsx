@@ -7,10 +7,11 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const WhyChooseUs = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
+const navigate = useNavigate();
   // Simplified particle animation
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -275,7 +276,9 @@ const WhyChooseUs = () => {
               </ul>
 
               {/* CTA Button with hover effects */}
-              <button className="group/btn relative overflow-hidden rounded-full bg-gradient-to-r from-[#ff7b16] to-[#e47325] px-6 py-4 text-base font-semibold text-white shadow-xl shadow-[#ff7b16]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff7b16]/40 hover:scale-[1.02] active:scale-[0.98]">
+              <button 
+               onClick={() => navigate("/about")}
+              className="group/btn relative overflow-hidden rounded-full bg-gradient-to-r from-[#ff7b16] to-[#e47325] px-6 py-4 text-base font-semibold text-white shadow-xl shadow-[#ff7b16]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff7b16]/40 hover:scale-[1.02] active:scale-[0.98]">
                 {/* Shine effect */}
                 <div
                   className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"
@@ -286,7 +289,7 @@ const WhyChooseUs = () => {
                 />
 
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Visit Our Projects
+                More About Us
                   <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </span>
               </button>

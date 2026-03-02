@@ -34,6 +34,10 @@ import Why from "./Components/Why.tsx";
 import LetUsMeet from "./Components/LetUsMeet";
 import BrandShowcase from "./Components/BrandShowcase.tsx";
 import Partnerslogo from "./Components/Partnerslogo.tsx";
+import DataCenterPage from "./Components/DataCenterPage.tsx";
+import DataCenter from "./Components/Datacenter.tsx";
+import NetworkingPage from "./Components/NetworkingPage.tsx";
+import DigitalSignagePage from "./Components/DigitalSignagePage;.tsx";
 
 // ScrollToTop component
 const ScrollToTop = () => {
@@ -213,6 +217,7 @@ const App = () => {
                   <Why />
                   <BrandShowcase />
                   <AboutCards />
+                 
                   <LetUsMeet />
                 </div>
               </div>
