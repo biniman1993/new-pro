@@ -207,7 +207,7 @@ const Partners = () => {
             className="group relative px-8 py-4 bg-gradient-to-r from-[#2a5da5] to-[#07162e] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
           >
             <span className="relative z-10 flex items-center gap-2">
-              View All Distinguished Clients
+             View All Clients
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform"

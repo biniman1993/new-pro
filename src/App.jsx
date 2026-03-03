@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import TopMenu from "./Components/TopMenu/TopMenu";
+import TermsPage from "./Components/TermsPage";
+
 import Carousel from "./Components/Carousel/Carousel";
 import CompanyStats from "./Components/CompanyStats/CompanyStats";
 import Partners from "./Components/Partners/Partners";
@@ -12,6 +14,7 @@ import Footer from "./Components/Footer.tsx";
 import TopProducts from "./Components/TopProducts.tsx";
 import Products from "./Components/Products/Products";
 import Logobrand from "./Components/Logo/Logobrand.jsx";
+
 import Login from "./Components/Login/Login.jsx";
 import Brand from "./Components/Brand/Brand.tsx";
 import ContactPage from "./Components/style/ContactPage.jsx";
@@ -21,6 +24,8 @@ import Aboutwhy from "./Components/About/Why/Aboutwhy.jsx";
 import HeroSection from "./Components/HeroSection.tsx";
 import Contact from "./Components/Contact/Contact.jsx";
 import AboutCards from "./Components/AboutCard";
+import DataCenterPage from "./Components/DataCenterPage";
+
 import {
   laptopsData,
   desktopData,
@@ -33,11 +38,7 @@ import Catalog from "./pages/Catalog.js";
 import Why from "./Components/Why.tsx";
 import LetUsMeet from "./Components/LetUsMeet";
 import BrandShowcase from "./Components/BrandShowcase.tsx";
-import Partnerslogo from "./Components/Partnerslogo.tsx";
-import DataCenterPage from "./Components/DataCenterPage.tsx";
-import DataCenter from "./Components/Datacenter.tsx";
-import NetworkingPage from "./Components/NetworkingPage.tsx";
-import DigitalSignagePage from "./Components/DigitalSignagePage;.tsx";
+
 
 // ScrollToTop component
 const ScrollToTop = () => {
@@ -99,70 +100,71 @@ const App = () => {
             <Route index element={<Catalog />} />
             <Route path=":category" element={<Catalog />} />
           </Route>
-
+          <Route path="/datacenter" element={<DataCenterPage />} />
           {/* Other Routes */}
           <Route path="/brand" element={<Brand />} />
           <Route path="/shop" element={<Catalog />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+<Route path="/terms" element={<TermsPage />} />
 
           {/* ===== PRODUCT CATEGORY ROUTES ===== */}
           {/* These must come BEFORE the home route */}
-          
+
           {/* Laptops Page */}
-          <Route 
-            path="/products/laptops" 
+          <Route
+            path="/products/laptops"
             element={
               <div className="pt-24">
-                <Products 
-                  title="Laptops" 
+                <Products
+                  title="Laptops"
                   productsData={laptopsData}
                   category="laptops"
                 />
               </div>
-            } 
+            }
           />
 
           {/* Desktops Page */}
-          <Route 
-            path="/products/desktops" 
+          <Route
+            path="/products/desktops"
             element={
               <div className="pt-24">
-                <Products 
-                  title="Desktops" 
+                <Products
+                  title="Desktops"
                   productsData={desktopData}
                   category="desktops"
                 />
               </div>
-            } 
+            }
           />
 
           {/* Printers Page */}
-          <Route 
-            path="/products/printers" 
+          <Route
+            path="/products/printers"
             element={
               <div className="pt-24">
-                <Products 
-                  title="Printers" 
+                <Products
+                  title="Printers"
                   productsData={printerData}
                   category="printers"
                 />
               </div>
-            } 
+            }
           />
- {/* Networking Page */}
-          <Route 
-            path="/products/networking" 
+          {/* Networking Page */}
+          <Route
+            path="/products/networking"
             element={
               <div className="pt-24">
-                <Products 
-                  title="Networking Equipment" 
+                <Products
+                  title="Networking Equipment"
                   productsData={networkingData}
                   category="networking"
                 />
               </div>
-            } 
+            }
           />
           {/* ===== HOME ROUTE (ALWAYS LAST) ===== */}
           <Route
@@ -217,7 +219,6 @@ const App = () => {
                   <Why />
                   <BrandShowcase />
                   <AboutCards />
-                 
                   <LetUsMeet />
                 </div>
               </div>

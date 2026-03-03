@@ -80,7 +80,7 @@ const Navbar = () => {
                   {/* Logo Container with gradient border */}
                   <div className="w-9 h-9 rounded-full bg-gradient-to-br from-orange-500 to-blue-300 p-0.5">
                     {/* Inner circle with solid color */}
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#0a0e27] to-[#2a5da5] flex items-center justify-center">
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#143057] to-[#2a5da5] flex items-center justify-center">
                       {/* Logo Icon/Text */}
                       <span className="text-white font-bold text-lg">P</span>
                     </div>
@@ -189,7 +189,7 @@ const Navbar = () => {
           <div className="p-6 border-b border-white/10 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27]/30">
             <div className="flex items-center gap-3 ">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-blue-300 p-1">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-[#0a0e27] to-[#2a5da5] flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-[#143057] to-[#2a5da5] flex items-center justify-center">
                   <span className="text-white font-bold text-xl">P</span>
                 </div>
               </div>

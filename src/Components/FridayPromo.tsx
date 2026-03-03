@@ -417,19 +417,7 @@ const FridayPromo = () => {
                       </span>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="text-2xl md:text-3xl font-bold text-gray-900">
-                        ${selectedProduct.salePrice}
-                      </span>
-                      <span className="text-lg md:text-xl text-gray-500 line-through">
-                        ${selectedProduct.originalPrice}
-                      </span>
-                      <span className="bg-green-100 text-green-700 px-2 py-1 rounded-md text-sm font-bold">
-                        Save $
-                        {selectedProduct.originalPrice -
-                          selectedProduct.salePrice}
-                      </span>
-                    </div>
+                  
 
                     <p className="text-gray-600 leading-relaxed">
                       {selectedProduct.description}
@@ -623,12 +611,9 @@ const FridayPromo = () => {
                           <div className="border-t border-gray-200 pt-3 pb-3 mb-3">
                             <div className="flex items-center justify-between gap-2">
                               <div className="flex gap-2 min-w-0">
-                                <span className="text-lg font-bold text-gray-900">
-                                  ${product.salePrice}
-                                </span>
-                                <span className="text-sm text-gray-500 line-through">
-                                  ${product.originalPrice}
-                                </span>
+                               <p className="text-sm font-bold text-gray-500"> 
+                                Call Us Now
+                               </p>
                               </div>
 
                               <div

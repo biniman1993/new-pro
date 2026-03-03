@@ -9,24 +9,24 @@ import laptop7 from "../../assets/laptop/Hp4.png"; // You'll need to add this im
 import laptop8 from "../../assets/laptop/asus6.png"; // You'll need to add this image
 
 // Printers - 8 different images
-import printer1 from "../../assets/printer/p1.jpg";
-import printer2 from "../../assets/printer/p2.jpg";
-import printer3 from "../../assets/printer/p3.jpg";
-import printer4 from "../../assets/printer/p4.jpg";
-import printer5 from "../../assets/printer/p5.jpg";
-import printer6 from "../../assets/printer/p4.jpg"; // You'll need to add this image
-import printer7 from "../../assets/printer/p4.jpg"; // You'll need to add this image
-import printer8 from "../../assets/printer/p4.jpg"; // You'll need to add this image
+import printer1 from "../../assets/printer/printer1.png";
+import printer2 from "../../assets/printer/Printer2.png";
+import printer3 from "../../assets/printer/printer3.png";
+import printer4 from "../../assets/printer/printer4.png";
+import printer5 from "../../assets/printer/p4.jpg";
+import printer6 from "../../assets/printer/printer5.png"; // You'll need to add this image
+import printer7 from "../../assets/printer/epson.png"; // You'll need to add this image
+import printer8 from "../../assets/printer/printer6.png"; // You'll need to add this image
 
 // Monitors - 8 different images
 import monitor1 from "../../assets/monitor/mon2.png";
-import monitor2 from "../../assets/monitor/mon2.jpg";
-import monitor3 from "../../assets/monitor/mon3.jpg";
-import monitor4 from "../../assets/monitor/mon4.jpg";
-import monitor5 from "../../assets/monitor/mon5.jpg";
-import monitor6 from "../../assets/monitor/mon5.jpg"; // You'll need to add this image
-import monitor7 from "../../assets/monitor/mon5.jpg"; // You'll need to add this image
-import monitor8 from "../../assets/monitor/mon5.jpg"; // You'll need to add this image
+import monitor2 from "../../assets/monitor/mon4.png";
+import monitor3 from "../../assets/monitor/mon5.jpg";
+import monitor4 from "../../assets/monitor/mon5.png";
+import monitor5 from "../../assets/monitor/mon6.png";
+import monitor6 from "../../assets/monitor/mon7.png"; // You'll need to add this image
+import monitor7 from "../../assets/monitor/mon8.png"; // You'll need to add this image
+import monitor8 from "../../assets/monitor/mon9.png"; // You'll need to add this image
 
 // Desktops - 8 different images
 import desktop1 from "../../assets/desktop/Desk2.png";
@@ -39,24 +39,24 @@ import desktop7 from "../../assets/desktop/gem.png"; // You'll need to add this 
 import desktop8 from "../../assets/desktop/de7.png"; // You'll need to add this image
 
 // Networking Equipment - 8 different images
-import network1 from "../../assets/laptop/a.jpg"; // You'll need to add these images
-import network2 from "../../assets/laptop/b.jpg";
-import network3 from "../../assets/laptop/dell.png";
-import network4 from "../../assets/laptop/c.jpg";
-import network5 from "../../assets/laptop/c.jpg";
-import network6 from "../../assets/laptop/c.jpg";
-import network7 from "../../assets/laptop/c.jpg";
-import network8 from "../../assets/laptop/c.jpg";
+import network1 from "../../assets/network/network1.png"; // You'll need to add these images
+import network2 from "../../assets/network/network2.png";
+import network3 from "../../assets/network/network3.png";
+import network4 from "../../assets/network/network4.png";
+import network5 from "../../assets/network/network5.png";
+import network6 from "../../assets/network/network6.png";
+import network7 from "../../assets/network/network7.png";
+import network8 from "../../assets/network/network8.png";
 
 // Display Equipment - 8 different images
-import display1 from "../../assets/monitor/mon1.png"; // You'll need to add these images
-import display2 from "../../assets/monitor/mon2.jpg";
-import display3 from "../../assets/monitor/mon3.jpg";
-import display4 from "../../assets/monitor/mon4.jpg";
-import display5 from "../../assets/monitor/mon5.jpg";
-import display6 from "../../assets/monitor/mon4.jpg";
-import display7 from "../../assets/monitor/mon2.jpg";
-import display8 from "../../assets/monitor/mon1.png";
+import display1 from "../../assets/monitor/disp1.png"; // You'll need to add these images
+import display2 from "../../assets/monitor/disp2.png";
+import display3 from "../../assets/monitor/disp3.png";
+import display4 from "../../assets/monitor/disp4.png";
+import display5 from "../../assets/monitor/disp5.png";
+import display6 from "../../assets/monitor/disp6.png";
+import display7 from "../../assets/monitor/disp7.png";
+import display8 from "../../assets/monitor/disp8.png";
 
 //=============================================
 // LAPTOPS - 8 Products with 8 different images
@@ -416,37 +416,35 @@ export const monitorData = [
     status: "In stock",
     image: monitor1,
     specs: [
-      "27-inch Display",
-      "3840x2160 4K",
-      "IPS Panel",
-      "60Hz Refresh",
-      "350 nits Brightness",
-      "1000:1 Contrast Ratio",
+      "Display: 27\" IPS, FHD",
+      "Brightness: 300 nits",
+      "Response Time: 5ms GtG",
+      "Ports: 2x HDMI 1.4",
+      "Power: 24W max",
+      "Tilt Adjustment: -5° to +25°",
       "HDMI 2.0 Ports",
-      "DisplayPort 1.4",
-      "USB-C with Power Delivery",
-      "VESA Mount Compatible",
+      "Weight: 3.2 kg",
+     
     ],
   },
   {
     id: 18,
-    name: 'Samsung Curved 32"',
+    name: 'HP Series 3 Pro FHD Monitor',
     description: "Curved gaming monitor with 144Hz refresh",
     fullDescription:
       "Immerse yourself in gaming with this curved monitor. The 144Hz refresh rate and QHD resolution deliver smooth, detailed visuals.",
     status: "In stock",
     image: monitor2,
     specs: [
-      "32-inch Curved",
-      "2560x1440 QHD",
-      "144Hz Refresh",
-      "1ms Response",
-      "VA Panel",
-      "3000:1 Contrast",
-      "AMD FreeSync Premium",
+      "100Hz refresh rate",
+      "21.45 inch Full HD",
+      "5ms response time",
+      "3-sided slim",
+      "Anti-glare + Low Blue Light",
+      "HDMI & VGA ports",
+      "VESA mount support",
       "HDR10 Support",
       "HDMI 2.0 + DisplayPort",
-      "Headphone Jack",
     ],
   },
   {
@@ -472,31 +470,28 @@ export const monitorData = [
   },
   {
     id: 20,
-    name: 'ASUS ProArt 27"',
+    name: 'Dell D2020H Monitor',
     description: "Professional color monitor for creators",
     fullDescription:
-      "Calman Verified professional monitor with factory-calibrated colors. Ideal for photography, video editing, and graphic design.",
+      "Dell 19.5 inch (49.5 cm) LED Backlit Computer Monitor - HD, TN Panel with VGA & HDMI Port - D2020H (Black)",
     status: "In stock",
     image: monitor4,
     specs: [
-      "27-inch 4K",
-      "100% sRGB",
-      "Calman Verified",
-      "Delta E<2",
-      "IPS Panel",
-      "400 nits Brightness",
+      "19.5″ HD (1366×768)",
+      "Refresh Rate: 60Hz",
+      "Resolution: HD+ (1600 x 900)",
+      "Ports: HDMI, VGA",
       "Thunderbolt 3 Ports",
       "USB Hub",
-      "Ergotech Stand",
-      "Anti-Glare Coating",
+      
     ],
   },
   {
     id: 21,
-    name: 'HP 24" Business',
-    description: "Reliable office monitor with VESA mount",
+    name: 'ASUS ROG Strix 34',
+    description: " Gaming monitor with 175Hz refresh rate",
     fullDescription:
-      "Essential monitor for everyday business use. Reliable, affordable, and versatile with multiple connectivity options.",
+      "ASUS ROG Strix 34” Ultrawide QD-OLED HDR Gaming Monitor (XG34WCDG) - 3440x1440, 175Hz, 0.03ms, OLED Care Pro, True 10-bit, G-SYNC Compatible, DisplayWidget, Extreme Low Motion Blur, 1 yr Warranty",
     status: "Available on backorder",
     image: monitor5,
     specs: [
@@ -514,10 +509,10 @@ export const monitorData = [
   },
   {
     id: 22,
-    name: "Acer Predator X34",
+    name: "SAMSUNG 34 Monitor",
     description: "Ultrawide gaming monitor",
     fullDescription:
-      "The Acer Predator X34 delivers an immersive gaming experience with its ultrawide curved display and lightning-fast refresh rate.",
+      "SAMSUNG 34\" ViewFinity S50GC Series Ultra-WQHD Monitor, 100Hz, 5ms, HDR10, AMD FreeSync, Eye Care, Borderless Design, PIP, PBP, LS34C502GANXZA, 2023, Black",
     status: "In stock",
     image: monitor6,
     specs: [
@@ -535,14 +530,14 @@ export const monitorData = [
   },
   {
     id: 23,
-    name: "BenQ PD3220U",
+    name: "Dell 34 Plus Monitor",
     description: "Designer monitor with Thunderbolt 3",
     fullDescription:
-      "The BenQ PD3220U is specifically designed for designers and content creators who demand color accuracy and connectivity.",
+      "Dell 34 Plus USB-C Curved Monitor - S3425DW - 34-inch (3440 x 1440) up to 120 Hz 21:9 Display, VA Panel, AMD FreeSync Premium, 99% sRGB, 95% DCI-P3",
     status: "In stock",
     image: monitor7,
     specs: [
-      "32-inch 4K",
+      "34-inch 4K",
       "95% P3 Color",
       "Thunderbolt 3",
       "Hotkey Puck",
@@ -556,7 +551,7 @@ export const monitorData = [
   },
   {
     id: 24,
-    name: "ViewSonic VP3881",
+    name: "acer 27 Inch Monitor",
     description: "Professional ultrawide for creatives",
     fullDescription:
       "The ViewSonic VP3881 offers professional-grade color accuracy in a stunning ultrawide format for creative professionals.",
@@ -576,177 +571,173 @@ export const monitorData = [
     ],
   },
 ];
-
 //=============================================
 // PRINTERS - 8 Products with 8 different images
 //=============================================
 export const printerData = [
   {
     id: 25,
-    name: "HP LaserJet Pro",
-    description: "Laser printer for office with duplex printing",
-    fullDescription:
-      "Reliable monochrome laser printer for busy offices. Fast printing speeds and low cost per page.",
+    name: "Canon Copy Machine IR 2425i",
+    description: "A3 monochrome laser multifunction printer for small to medium offices",
+    fullDescription: "The Canon imageRUNNER 2425i is a compact A3 monochrome laser MFP designed for small to medium offices with significant printing and scanning volumes. Features a 7-inch color touchscreen and automatic document feeder.",
     status: "In stock",
-    image: printer1,
+    image: printer1, // This should be your printer1.png file
     specs: [
-      "Laser Printer",
-      "30 ppm Speed",
-      "Duplex Print",
-      "WiFi Connect",
-      "250-Sheet Input",
-      "Monthly Duty 20,000 Pages",
-      "Mobile Printing",
-      "Ethernet Port",
-      "USB 2.0",
-      "1 Year Warranty",
+      "A3 Monochrome Laser MFP",
+      "Print/Copy/Scan (Color Scan)",
+      "25 ppm Print Speed (A4)",
+      "7-inch Color Touch Screen",
+      "2GB RAM, 30GB eMMC",
+      "600×600 dpi Resolution",
+      "Auto Document Feeder (50 sheets)",
+      "250-Sheet Cassette + 80-Sheet Multipurpose",
+      "USB, Ethernet, Wi-Fi",
+      "1 Year Warranty (up to 65,000 pages)",
     ],
   },
-  {
-    id: 26,
-    name: "Epson EcoTank",
-    description: "Ink tank printer with high-yield ink",
-    fullDescription:
-      "Revolutionary ink tank system that saves money with high-yield ink bottles. Perfect for high-volume printing.",
-    status: "In stock",
-    image: printer2,
-    specs: [
-      "EcoTank System",
-      "Color Printing",
-      "Scanner",
-      "Copier",
-      "WiFi Direct",
-      "2.4-inch Touch Screen",
-      "Up to 2 Years Ink Included",
-      "Fax Capability",
-      "Automatic Document Feeder",
-      "Borderless Photo Printing",
-    ],
-  },
+{
+  id: 26,
+  name: "Canon imageRUNNER C3326i",
+  description: "A3 color laser multifunction printer with 26ppm speed and advanced security",
+  fullDescription: "The Canon imageRUNNER C3326i is a high-performance A3 color laser MFP designed for small to medium offices. Features a 7-inch intuitive touchscreen, robust security features, and versatile finishing options for enhanced productivity.",
+  status: "In stock",
+  image: printer2, // This should be your printer2.png file
+  specs: [
+    "A3 Color Laser Multifunctional",
+    "Print/Copy/Scan/Send (Optional Fax)",
+    "26 ppm Print Speed (Black & Color, A4)",
+    "7.0 sec First Copy (Black), 8.7 sec (Color)",
+    "7-inch TFT LCD WVGA Color Touch Panel",
+    "2.0 GB RAM + 64 GB eMMC Storage",
+    "100-sheet Duplexing Automatic Document Feeder",
+    "70 ipm Scan Speed (1-sided, 300 dpi)",
+    "1,200-sheet Standard Paper Capacity (2x550 + 100 MP Tray)",
+    "1,200 x 1,200 dpi Print Resolution",
+    "AirPrint, Mopria, Canon PRINT Business Compatible",
+    "Wireless LAN, Ethernet, USB 2.0",
+    "Warm-up Time: 4 seconds (Quick Startup)",
+    "Monthly Duty Cycle: Up to 50,000 Pages",
+    "Weight: Approx. 74.7 kg including toner",
+  ],
+},
   {
     id: 27,
-    name: "Canon PIXMA",
-    description: "All-in-one inkjet printer with wireless",
-    fullDescription:
-      "Versatile all-in-one printer perfect for home and small office use. Great photo printing quality.",
+    name: "Canon Copy Machine 2945i",
+    description: "High-speed A3 multifunction printer with 45ppm output",
+    fullDescription: "The Canon imageRUNNER 2945i is a powerful A3 monochrome MFP designed for high-volume office environments. Delivers exceptional performance with 45ppm speeds and advanced document handling capabilities.",
     status: "In stock",
-    image: printer3,
+    image: printer3, // This should be your printer3.png file
     specs: [
-      "Inkjet Printer",
-      "Print/Scan/Copy",
-      "Wireless",
-      "Mobile Print",
-      "5-Color Ink System",
-      "4x6 Photo Printing",
-      "Auto Document Feeder",
-      "2-Way Paper Feed",
-      "Memory Card Slot",
-      "CD/DVD Printing",
+      "A3 Monochrome Laser MFP",
+      "45 ppm Print Speed",
+      "5.3 sec First Copy Time",
+      "Print/Copy/Scan/Fax (Optional)",
+      "2GB RAM, 64GB eMMC",
+      "100-sheet Dual Pass ADF",
+      "550-Sheet Drawers x2",
+      "100-Sheet Multipurpose Tray",
+      "Up to 1,200 dpi Resolution",
+      "Ethernet, USB, Optional Wi-Fi",
     ],
   },
   {
     id: 28,
-    name: "Brother MFC-L2750",
-    description: "Monochrome laser printer with automatic feeder",
-    fullDescription:
-      "Feature-rich monochrome laser multifunction printer for busy offices needing speed and reliability.",
+    name: "HP 137fnw Printer",
+    description: "Compact laser multifunction printer with fax and wireless",
+    fullDescription: "The HP Laser MFP 137fnw is a space-saving 4-in-1 printer perfect for small offices. Combines print, copy, scan, and fax capabilities with reliable wireless connectivity.",
     status: "In stock",
-    image: printer4,
+    image: printer4, // This should be your printer4.png file
     specs: [
-      "Monochrome Laser",
-      "50 ppm Speed",
-      "Automatic Feeder",
-      "Network Ready",
-      "Duplex Printing",
-      "Color Scanning",
-      "Fax Capability",
-      "3.7-inch Touch Screen",
-      "AirPrint Support",
-      "Up to 3,000 Page Yield",
+      "Monochrome Laser MFP",
+      "Print/Copy/Scan/Fax",
+      "20 ppm Print Speed",
+      "8.3 sec First Page Out",
+      "150-Sheet Input Tray",
+      "40-sheet ADF",
+      "2-Line LCD Display",
+      "Wi-Fi, Ethernet, USB",
+      "Monthly Duty: 10,000 Pages",
+      "Apple AirPrint, Mopria, Wi-Fi Direct",
     ],
   },
   {
     id: 29,
-    name: "Lexmark C3326",
-    description: "Color laser printer with Ethernet port",
-    fullDescription:
-      "Affordable color laser printer for small workgroups needing vibrant color documents.",
-    status: "Available on backorder",
-    image: printer5,
+    name: "HP Colour LaserJet Pro MFP 4303dw",
+    description: "Color laser all-in-one with advanced security and mobile printing",
+    fullDescription: "This HP Color LaserJet Pro MFP delivers vibrant color prints with fast performance. Built-in security features protect sensitive data, while mobile printing options provide flexibility for modern workflows.",
+    status: "In stock",
+    image: printer5, // This should be your printer5.png file
     specs: [
-      "Color Laser",
-      "26 ppm Speed",
-      "1200x1200 dpi",
-      "Ethernet Port",
-      "250-Sheet Input",
-      "Duplex Printing",
-      "USB Port",
-      "Monthly Duty 3,000 Pages",
-      "Energy Star Certified",
-      "1 Year On-Site Service",
+      "Color Laser Multifunction",
+      "Print/Copy/Scan",
+      "33 ppm Black & Color",
+      "50,000 Pages Monthly Duty",
+      "4.3-inch Touchscreen",
+      "Auto Duplex Printing",
+      "50-sheet ADF",
+      "250-sheet Tray + 50-sheet Multipurpose",
+      "Gigabit Ethernet, Wi-Fi, USB",
+      "HP Auto-On/Auto-Off Technology",
     ],
   },
   {
     id: 30,
-    name: "Xerox WorkCentre",
-    description: "Multifunction printer for businesses",
-    fullDescription:
-      "The Xerox WorkCentre series delivers professional-quality printing, copying, scanning, and faxing in one device.",
+    name: "HP DeskJet 2855e",
+    description: "Affordable all-in-one inkjet printer for home use",
+    fullDescription: "The HP DeskJet 2855e is a reliable and affordable inkjet printer perfect for everyday home printing, copying, and scanning. Compact design with easy mobile setup.",
     status: "In stock",
-    image: printer6,
+    image: printer6, // This should be your printer6.png file
     specs: [
-      "Color Multifunction",
-      "35 ppm Speed",
-      "Duplex Print/Scan",
-      "Touch Screen Interface",
-      "Cloud Connectivity",
-      "Security Features",
-      "Mobile Printing",
-      "550-Sheet Capacity",
-      "Finishing Options",
-      "2 Year Warranty",
+      "Inkjet Multifunction",
+      "Print/Copy/Scan",
+      "7.5 ppm Black, 5.5 ppm Color",
+      "Up to 4800 dpi Color Resolution",
+      "60-sheet Input Tray",
+      "35-sheet Output Tray",
+      "USB 2.0",
+      "HP Smart App Compatible",
+      "Monthly Duty: 1,000 Pages",
+      "Energy Star Certified",
     ],
   },
   {
     id: 31,
-    name: "Kyocera ECOSYS",
-    description: "Long-life cartridge system printer",
-    fullDescription:
-      "The Kyocera ECOSYS series features long-life components and low total cost of ownership for busy offices.",
+    name: "Epson EcoTank 3252",
+    description: "Cartridge-free all-in-one with massive page yield",
+    fullDescription: "The Epson EcoTank ET-3252 eliminates cartridges with high-capacity ink tanks. Includes up to 2 years of ink in the box, delivering incredible savings for high-volume home or office printing.",
     status: "In stock",
-    image: printer7,
+    image: printer7, // This should be your printer7.png file
     specs: [
-      "Monochrome Printer",
-      "45 ppm Speed",
-      "Long-Life Drum",
-      "Low Cost Per Page",
-      "Duplex Standard",
-      "Optional Paper Trays",
-      "Network Ready",
-      "Secure Print",
-      "Mobile Support",
-      "3 Year Warranty",
+      "EcoTank Inkjet System",
+      "Print/Copy/Scan",
+      "33 ppm Black, 15 ppm Color",
+      "Up to 4,500 Black / 7,500 Color Pages Included",
+      "150-sheet Cassette",
+      "30-sheet ADF",
+      "1.44-inch Color Display",
+      "Wi-Fi, Wi-Fi Direct, USB",
+      "Borderless Photo Printing",
+      "2 Years of Ink Included",
     ],
   },
   {
     id: 32,
-    name: "Ricoh SP C360DNw",
-    description: "Color laser printer for workgroups",
-    fullDescription:
-      "The Ricoh SP C360DNw delivers vibrant color prints and fast speeds for small to medium workgroups.",
+    name: "HP LaserJet Pro MFP M428fdw",
+    description: "Professional monochrome laser printer with advanced features",
+    fullDescription: "The HP LaserJet Pro MFP M428fdw delivers fast, high-quality monochrome printing for professional environments. Enhanced security features and intuitive touchscreen streamline workflows.",
     status: "In stock",
-    image: printer8,
+    image: printer8, // This should be your printer8.png file
     specs: [
-      "Color Laser",
-      "30 ppm Color",
-      "30 ppm B&W",
-      "Duplex Standard",
-      "WiFi Direct",
-      "NFC Printing",
-      "2.8-inch Touch Panel",
-      "Cloud Support",
-      "Security Features",
-      "1 Year Warranty",
+      "Monochrome Laser MFP",
+      "Print/Copy/Scan",
+      "33 ppm Print Speed",
+      "9.5 sec First Page Out",
+      "4.3-inch Touchscreen",
+      "512MB Memory",
+      "50-sheet ADF, 250-sheet Tray",
+      "Auto Duplex Printing",
+      "Gigabit Ethernet, Wi-Fi, USB",
+      "HP Wolf Security Protection",
     ],
   },
 ];
@@ -757,344 +748,339 @@ export const printerData = [
 export const networkingData = [
   {
     id: 33,
-    name: "Cisco Router 1000",
-    description: "Enterprise network router with advanced security",
-    fullDescription:
-      "Enterprise-grade router designed for businesses requiring reliable connectivity and advanced security features.",
+    name: "Cisco 1941-SEC/K9 Router",
+    description: "Modular router with hardware-based encryption and firewall",
+    fullDescription: "The Cisco 1941-SEC/K9 is a modular, multi-service router designed for enterprise and branch office deployments. Features hardware-based encryption acceleration, integrated firewall, and supports a wide range of wired and wireless connectivity options including Serial, T1/E1, xDSL, and Gigabit Ethernet [citation:1][citation:8].",
     status: "In stock",
-    image: network1,
+    image: network1, // This should be your net1.png file
     specs: [
-      "Gigabit Ethernet",
-      "VPN Support",
-      "Firewall",
-      "Dual WAN",
-      "QoS Support",
-      "IPv6 Ready",
-      "VLAN Support",
-      "SNMP Management",
-      "1U Rack Mountable",
-      "5 Year Warranty",
+      "Modular Router with 2 EHWIC + 1 ISM Slots",
+      "2 x 10/100/1000BASE-T Gigabit Ethernet Ports",
+      "512 MB DRAM + 256 MB Compact Flash",
+      "Hardware-Accelerated VPN (DES, 3DES, AES-256)",
+      "Cisco IOS Firewall with Zone-Based Policy",
+      "IPv4, IPv6, OSPF, EIGRP, BGP Routing Support",
+      "IPSec VPN, DMVPN, Easy VPN Server",
+      "QoS, PBR, NBAR Traffic Management",
+      "Dual USB 2.0 Ports + Console/AUX Ports",
+      "1U Rack-Mountable, 5.4 kg [citation:1]",
     ],
   },
   {
     id: 34,
-    name: "Cisco Switch 24-Port",
-    description: "Managed network switch with PoE+",
-    fullDescription:
-      "Layer 2 managed switch perfect for business networks requiring PoE for phones, cameras, and access points.",
+    name: "Cisco Catalyst WS-C2960X-24PS-L",
+    description: "24-Port Gigabit PoE+ managed switch with 370W budget",
+    fullDescription: "The Cisco Catalyst 2960X-24PS-L is a stackable Gigabit Ethernet switch with Power over Ethernet Plus (PoE+), delivering 370W of PoE budget for VoIP phones, cameras, and wireless access points. Features enterprise-class Layer 2 and Layer 3 capabilities with advanced security [citation:2][citation:5].",
     status: "In stock",
-    image: network2,
+    image: network2, // This should be your net2.png file
     specs: [
-      "24 Ports",
-      "PoE+ Support",
-      "Layer 2 Managed",
-      "SFP Slots",
-      "370W PoE Budget",
-      "VLAN Support",
-      "IGMP Snooping",
-      "SNMP v3",
-      "Rack Mountable",
-      "Limited Lifetime Warranty",
+      "24 x 10/100/1000 PoE+ Ports + 4 x SFP Uplinks",
+      "370W PoE Budget (supports IEEE 802.3at/af)",
+      "216 Gbps Switching Capacity, 95.2 Mpps Forwarding",
+      "Cisco IOS LAN Base Software",
+      "FlexStack-Plus Stacking (Up to 8 Switches)",
+      "512 MB DRAM, 128 MB Flash Memory",
+      "802.1X, BPDU Guard, DHCP Snooping Security",
+      "VLAN, STP, RSTP, MSTP, IGMP Snooping",
+      "SNMP, CLI, Web UI Management",
+      "Limited Lifetime Warranty [citation:2][citation:5]",
     ],
   },
   {
     id: 35,
-    name: "Cisco Access Point",
-    description: "Wireless access point with WiFi 6",
-    fullDescription:
-      "High-performance WiFi 6 access point for businesses needing fast, reliable wireless connectivity.",
+    name: "Cisco WS-C2960+48TC-L Switch",
+    description: "48-Port Gigabit switch with 2 combo uplinks",
+    fullDescription: "The Cisco Catalyst 2960 Plus 48TC-L is a reliable 48-port Gigabit Ethernet switch for enterprise access deployments. Features 2 dual-purpose uplink ports (10/100/1000BASE-T or SFP) and delivers essential intelligent services for secure business operations [citation:4][citation:7].",
     status: "In stock",
-    image: network3,
+    image: network3, // This should be your net3.png file
     specs: [
-      "WiFi 6",
-      "MU-MIMO",
-      "Cloud Managed",
-      "Dual Band",
-      "OFDMA Technology",
-      "4x4 MIMO",
-      "PoE Powered",
-      "2.5G Ethernet Port",
-      "Multiple SSIDs",
-      "Ceiling Mount Included",
+      "48 x 10/100/1000 Ethernet Ports",
+      "2 x Combo Uplink Ports (RJ-45/SFP)",
+      "13.6 Gbps Backplane, 10.1 Mpps Forwarding Rate",
+      "64 MB DRAM, 8K MAC Address Table",
+      "VLAN, Port Aggregation, QoS Support",
+      "Network Access Control (NAC)",
+      "Web Browser, SNMP, CLI Management",
+      "IEEE 802.1x, ACLs, Port Security",
+      "1U Rack-Mountable, 3.6 kg [citation:4]",
+      "Energy-Efficient Ethernet (802.3az)",
     ],
   },
   {
     id: 36,
-    name: "Cisco Firewall",
-    description: "Network security appliance with threat protection",
-    fullDescription:
-      "Next-generation firewall providing advanced threat protection and secure connectivity for business networks.",
+    name: "Cisco Aironet 1602i",
+    description: "Dual-band 802.11n wireless access point with integrated antennas",
+    fullDescription: "The Cisco Aironet 1602i is an enterprise-class, entry-level 802.11n access point with integrated antennas, designed for small and medium business networks. Features 3x3 MIMO technology with two spatial streams and ClientLink 2.0 for improved coverage and performance [citation:3][citation:10].",
     status: "In stock",
-    image: network4,
+    image: network4, // This should be your net4.png file
     specs: [
-      "Threat Protection",
-      "VPN Support",
-      "Intrusion Prevention",
-      "URL Filtering",
-      "Application Control",
-      "SSL Inspection",
-      "High Availability",
-      "8 Gigabit Ports",
-      "1U Form Factor",
-      "Cloud Management",
+      "Dual-Band 2.4 GHz & 5 GHz Concurrent Radios",
+      "3x3 MIMO with 2 Spatial Streams (300 Mbps PHY Rate)",
+      "Integrated Inverted-F Antennas (4 dBi Peak Gain)",
+      "10/100/1000BASE-T Ethernet Port (PoE 802.3af)",
+      "256 MB DRAM, 32 MB Flash",
+      "ClientLink 2.0 BeamForming Technology",
+      "CleanAir Express Spectrum Intelligence",
+      "WPA2, 802.1X, AES Encryption",
+      "Multiple SSIDs, VLAN Tagging",
+      "Controller-Based or Cloud-Managed Options [citation:3][citation:10]",
     ],
   },
   {
     id: 37,
-    name: "Cisco IP Phone",
-    description: "VoIP business phone with HD audio",
-    fullDescription:
-      "Enterprise-grade IP phone with crystal clear HD audio and advanced call features for business communications.",
-    status: "Available on backorder",
-    image: network5,
+    name: "Cisco WS-C2960-48TC-L 2960",
+    description: "48-Port 10/100 switch with dual gigabit uplinks",
+    fullDescription: "The Cisco Catalyst 2960-48TC-L is a proven, reliable access switch featuring 48 Fast Ethernet ports and 2 dual-purpose gigabit uplinks. Provides entry-level intelligent services with integrated security, QoS, and network management capabilities [citation:4][citation:7].",
+    status: "In stock",
+    image: network5, // This should be your net5.png file
     specs: [
-      "PoE Supported",
-      "HD Audio",
-      "LCD Display",
-      "Gigabit Ethernet",
-      "Speakerphone",
-      "Headset Port",
-      "Multiple Line Keys",
-      "XML Applications",
-      "Wall Mountable",
-      "2 Year Warranty",
+      "48 x 10/100 Fast Ethernet Ports",
+      "2 x Dual-Purpose Uplinks (10/100/1000 or SFP)",
+      "6.8 Gbps Backplane, 10.1 Mpps Forwarding",
+      "64 MB DRAM, 8K MAC Address Table",
+      "VLAN Support (Up to 255 VLANs)",
+      "IEEE 802.1x, Port Security, ACLs",
+      "QoS with 4 Egress Queues",
+      "Web, SNMP, CLI Management",
+      "Standard 1U Rack Height",
+      "AC 100-240V, 45W Power Consumption [citation:7]",
     ],
   },
   {
-    id: 38,
-    name: "Ubiquiti UniFi AP",
-    description: "Mesh WiFi access point",
-    fullDescription:
-      "The Ubiquiti UniFi access point provides seamless mesh WiFi coverage for homes and businesses.",
-    status: "In stock",
-    image: network6,
-    specs: [
-      "WiFi 6",
-      "Mesh Technology",
-      "4x4 MIMO",
-      "160MHz Channel",
-      "PoE Powered",
-      "UniFi Controller",
-      "Guest Network",
-      "Band Steering",
-      "Weather Resistant",
-      "Wall/Ceiling Mount",
-    ],
-  },
-  {
-    id: 39,
-    name: "Netgear Orbi Pro",
-    description: "Business mesh WiFi system",
-    fullDescription:
-      "The Netgear Orbi Pro delivers reliable, high-performance mesh WiFi coverage for small to medium businesses.",
-    status: "In stock",
-    image: network7,
-    specs: [
-      "Tri-Band Mesh",
-      "WiFi 6",
-      "6Gbps Speed",
-      "Dedicated Backhaul",
-      "2.5G Ports",
-      "Guest Network",
-      "VLAN Support",
-      "VPN Support",
-      "Advanced Security",
-      "3 Year Warranty",
-    ],
-  },
-  {
-    id: 40,
-    name: "TP-Link Omada",
-    description: "SDN integrated networking system",
-    fullDescription:
-      "The TP-Link Omada system provides software-defined networking for easy management of business networks.",
-    status: "In stock",
-    image: network8,
-    specs: [
-      "SDN Integrated",
-      "WiFi 6",
-      "Central Management",
-      "Mesh Support",
-      "PoE Switches",
-      "VPN Router",
-      "Cloud Access",
-      "VLAN Support",
-      "Captive Portal",
-      "Lifetime Warranty",
-    ],
-  },
+  id: 38,
+  name: "Cisco Firewall (Next-Gen)",
+  description: "Enterprise next-generation firewall with advanced threat protection",
+  fullDescription: "The Cisco Next-Generation Firewall provides enterprise-grade security with advanced threat protection, intrusion prevention, and application visibility. Ideal for businesses needing robust network security and VPN connectivity.",
+  status: "In stock",
+  image: network6, // This should be your network6.png file
+  specs: [
+    "Next-Generation Firewall (NGFW)",
+    "Intrusion Prevention System (IPS)",
+    "Application Visibility & Control",
+    "SSL/TLS Decryption & Inspection",
+    "Site-to-Site & Remote VPN",
+    "URL Filtering & Content Security",
+    "8 x Gigabit Ethernet Ports",
+    "High Availability Support",
+    "1U Rack-Mountable",
+    "Cloud-Based Management",
+  ],
+},
+{
+  id: 39,
+  name: "TP-Link AC1750 Smart WiFi Router (Archer A7)",
+  description: "Dual-band gigabit wireless router with Alexa support and 1.75Gbps speed",
+  fullDescription: "The TP-Link Archer A7 is a budget-friendly AC1750 dual-band router featuring 450 Mbps on 2.4GHz and 1300 Mbps on 5GHz bands. With three external antennas, QoS, and parental controls, it delivers reliable whole-home coverage up to 2,500 sq ft. Ideal for 4K streaming and everyday use.",
+  status: "In stock",
+  image: network7, // This should be your network7.png file
+  specs: [
+    "AC1750 Dual-Band Wi-Fi (450 Mbps 2.4GHz + 1300 Mbps 5GHz)",
+    "3× External High-Gain Antennas for Long Range Coverage",
+    "Qualcomm CPU (750 MHz) with 128 MB RAM & 16 MB Flash",
+    "4× Gigabit LAN Ports + 1× Gigabit WAN Port",
+    "1× USB 2.0 Port for Media Sharing (FTP, Samba, Media Server)",
+    "Works with Amazon Alexa & IFTTT for Voice Control",
+    "QoS (Quality of Service) for Bandwidth Prioritization",
+    "Parental Controls with URL Filtering & Time Restrictions",
+    "VPN Server Support (OpenVPN, PPTP)",
+    "Guest Network Access (2.4GHz & 5GHz Separate SSIDs)",
+    "IPv4 & IPv6 Protocol Support",
+    "SPI Firewall, Access Control, IP & MAC Binding Security",
+    "TP-Link Tether App for Easy Setup & Remote Management",
+    "2 Year Warranty with 24/7 Technical Support",
+  ],
+},
+{
+  id: 40,
+  name: "Ubiquiti UniFi 6 AP",
+  description: "Enterprise WiFi 6 access point with mesh technology",
+  fullDescription: "The Ubiquiti UniFi 6 Access Point delivers high-performance WiFi 6 connectivity with mesh technology, 4x4 MIMO, and seamless roaming. Perfect for businesses needing reliable, scalable wireless coverage.",
+  status: "In stock",
+  image: network8, // This should be your network8.png file
+  specs: [
+    "WiFi 6 (802.11ax) Technology",
+    "Up to 2.4 Gbps Aggregate Throughput",
+    "4x4 MIMO on 5 GHz, 2x2 MIMO on 2.4 GHz",
+    "Mesh Technology for Seamless Roaming",
+    "PoE+ Powered (802.3at)",
+    "OFDMA for Better Efficiency",
+    "UniFi Controller Managed",
+    "Multiple SSIDs with VLAN Tagging",
+    "Weather-Resistant Casing",
+    "Wall/Ceiling Mount Included",
+  ],
+},
 ];
-
 //=============================================
 // DISPLAY - 8 Products with 8 different images
 //=============================================
 export const displayData = [
   {
     id: 41,
-    name: "LED Video Wall",
-    description: "Commercial display screen for digital signage",
+    name: "AZTECH Digital Signage Display",
+    description: "📺 55\" Interactive Display Panel – Android 11 Powered!",
     fullDescription:
-      "Professional LED video wall solution for impactful digital signage in retail, corporate, and public spaces.",
+      "Professional 55-inch interactive display panel powered by Android 11. Perfect for digital signage, interactive presentations, and business applications requiring touch functionality.",
     status: "In stock",
     image: display1,
     specs: [
-      "LED Display",
-      "Full HD",
-      "Outdoor Rated",
-      "IP65 Waterproof",
-      "5000 nits Brightness",
-      "High Contrast Ratio",
-      "24/7 Operation",
+      "55-inch Interactive Display",
+      "Android 11 Operating System",
+      "Full HD Resolution",
+      "10-Point Multi-Touch",
+      "Built-in Media Player",
+      "WiFi + Ethernet Connectivity",
+      "HDMI + USB Ports",
       "Content Management Software",
-      "Modular Design",
-      "3 Year On-Site Warranty",
+      "VESA Mount Compatible",
+      "Remote Management Capability",
     ],
   },
   {
     id: 42,
-    name: "Interactive Whiteboard",
-    description: "Touch screen display for collaboration",
+    name: "Huawei IdeaHub B3",
+    description: "IHB3-86SA – 86\" Smart Interactive Meeting Board",
     fullDescription:
-      "Interactive whiteboard that transforms meetings and classrooms with touch collaboration and annotation.",
+      "The Huawei IdeaHub B3 (Model: IHB3-86SA) is an 86-inch smart interactive meeting board designed for seamless collaboration in modern meeting rooms and boardrooms.",
     status: "In stock",
     image: display2,
     specs: [
-      "86-inch Display",
-      "4K Resolution",
-      "Touch Screen",
-      "Android OS",
-      "20-Point Multi-Touch",
-      "Built-in Whiteboard App",
-      "Screen Mirroring",
-      "Wireless Presentation",
-      "HDMI + USB Ports",
-      "Mobile Stand Included",
+      "86-inch Interactive Display",
+      "IHB3-86SA Model",
+      "4K Ultra HD Resolution",
+      "Built-in 4K Camera",
+      "12-Mic Array",
+      "Built-in Speakers",
+      "Wireless Screen Sharing",
+      "Touch Writing Technology",
+      "Huawei Cloud Meeting Ready",
+      "Dual-band WiFi",
     ],
   },
   {
     id: 43,
-    name: "Digital Signage",
-    description: "Advertising display with content management",
+    name: "LG Digital Signage",
+    description: "Professional Commercial Display for Digital Signage",
     fullDescription:
-      "Professional digital signage display for advertising and information sharing in retail and hospitality.",
+      "LG professional digital signage display delivering stunning visuals and reliability for commercial environments, retail spaces, and corporate communications.",
     status: "In stock",
     image: display3,
     specs: [
       "55-inch Display",
-      "Full HD",
-      "24/7 Operation",
-      "Content Management",
-      "700 nits Brightness",
-      "Built-in Media Player",
-      "Scheduled Playback",
-      "Remote Management",
-      "VESA Mount Compatible",
-      "3 Year Warranty",
-    ],
-  },
-  {
-    id: 44,
-    name: "Video Conferencing",
-    description: "Meeting room display with camera and mic",
-    fullDescription:
-      "All-in-one video conferencing solution for modern meeting rooms. Includes 4K camera and built-in microphone array.",
-    status: "In stock",
-    image: display4,
-    specs: [
-      "4K Camera",
-      "Built-in Mic",
-      "Zoom Certified",
-      "Android System",
-      "65-inch 4K Display",
-      "8-Mic Array",
-      "20W Speakers",
-      "Wireless Sharing",
-      "HDMI + USB-C",
-      "Wall Mount Included",
-    ],
-  },
-  {
-    id: 45,
-    name: "Kiosk Display",
-    description: "Self-service terminal with touch screen",
-    fullDescription:
-      "Interactive kiosk display for self-service applications in retail, hospitality, and public spaces.",
-    status: "Available on backorder",
-    image: display5,
-    specs: [
-      "Touch Screen",
-      "Stand Included",
-      "Payment Ready",
-      "Weather Proof",
-      "32-inch Display",
-      "Full HD Resolution",
-      "Android 11 OS",
-      "4GB RAM + 64GB Storage",
-      "WiFi + Ethernet",
-      "Optional Thermal Printer",
-    ],
-  },
-  {
-    id: 46,
-    name: "Samsung QMR Series",
-    description: "Professional signage display",
-    fullDescription:
-      "The Samsung QMR Series delivers stunning picture quality and reliability for professional signage applications.",
-    status: "In stock",
-    image: display6,
-    specs: [
-      "65-inch 4K",
-      "QLED Technology",
-      "Non-Glare Panel",
-      "24/7 Operation",
-      "Tizen OS",
-      "MagicINFO Support",
-      "Dynamic Refresh Rate",
-      "Built-in Speakers",
-      "IP5x Rating",
-      "3 Year Warranty",
-    ],
-  },
-  {
-    id: 47,
-    name: "LG Stretch Display",
-    description: "Unique digital signage for retail",
-    fullDescription:
-      "The LG Stretch Display offers a unique form factor perfect for retail shelves and transportation information displays.",
-    status: "In stock",
-    image: display7,
-    specs: [
-      "58:9 Aspect Ratio",
-      "Full HD",
-      "Ultra-Stretch Design",
-      "700 nits Brightness",
-      "IPS Panel",
+      "4K Resolution",
+      "IPS Panel Technology",
       "webOS Smart Platform",
-      "Content Management",
-      "Video Wall Capability",
-      "VESA Mount",
+      "24/7 Operation",
+      "700 nits Brightness",
+      "Content Management Software",
+      "Built-in Media Player",
+      "VESA Mount Compatible",
       "Commercial Grade",
     ],
   },
   {
-    id: 48,
-    name: "NEC MultiSync",
-    description: "Professional large format display",
+    id: 44,
+    name: "Samsung LED Video Wall System",
+    description: "Modular LED Display for Impactful Visual Experiences",
     fullDescription:
-      "The NEC MultiSync series offers professional-grade displays for demanding commercial environments.",
+      "Samsung professional LED video wall system designed for creating immersive visual experiences in retail, corporate lobbies, and public spaces with seamless modular design.",
+    status: "In stock",
+    image: display4,
+    specs: [
+      "Modular LED Design",
+      "Seamless Video Wall",
+      "High Brightness",
+      "Wide Viewing Angle",
+      "24/7 Operation Capable",
+      "Content Management System",
+      "Ultra-Slim Cabinet Design",
+      "Easy Installation",
+      "Low Power Consumption",
+      "MagicINFO Compatible",
+    ],
+  },
+  {
+    id: 45,
+    name: "Samsung Interactive Displays",
+    description: "Touch Screen Display for Collaboration and Engagement",
+    fullDescription:
+      "Samsung interactive display with multi-touch technology, perfect for classrooms, meeting rooms, and interactive spaces requiring engaging digital experiences.",
+    status: "Available on backorder",
+    image: display5,
+    specs: [
+      "65-inch Interactive Display",
+      "4K UHD Resolution",
+      "20-Point Multi-Touch",
+      "Tizen OS",
+      "Built-in Writing Software",
+      "Screen Mirroring",
+      "Wireless Connectivity",
+      "HDMI + USB Ports",
+      "Mobile Device Integration",
+      "VESA Mount Compatible",
+    ],
+  },
+  {
+    id: 46,
+    name: "LG Commercial Monitors",
+    description: "UltraStretch and High-Brightness Commercial Displays",
+    fullDescription:
+      "LG commercial monitors designed for specialized applications including retail signage, transportation displays, and professional environments requiring reliable 24/7 operation.",
+    status: "In stock",
+    image: display6,
+    specs: [
+      "49-inch UltraStretch Display",
+      "Full HD Resolution",
+      "700 nits Brightness",
+      "IPS Panel Technology",
+      "24/7 Operation",
+      "webOS Smart Platform",
+      "Video Wall Capability",
+      "Tile Matrix Support",
+      "DisplayPort + HDMI Inputs",
+      "RS232 Control",
+    ],
+  },
+  {
+    id: 47,
+    name: "Samsung Conference Room Displays",
+    description: "Professional Displays for Meeting and Board Rooms",
+    fullDescription:
+      "Samsung professional displays optimized for conference rooms and boardrooms, offering seamless integration with collaboration tools and stunning visual clarity.",
+    status: "In stock",
+    image: display7,
+    specs: [
+      "75-inch Display",
+      "4K UHD Resolution",
+      "Non-Glare Panel",
+      "Tizen OS",
+      "Wireless Screen Sharing",
+      "MagicINFO Support",
+      "Built-in Speakers",
+      "Multiple Connectivity Options",
+      "VESA Mount Compatible",
+      "Business Ready Features",
+    ],
+  },
+  {
+    id: 48,
+    name: "LG LED Video Wall System",
+    description: "Premium Direct-View LED Display for Indoor Signage",
+    fullDescription:
+      "LG premium direct-view LED video wall system delivering exceptional brightness and color accuracy for high-impact indoor signage applications.",
     status: "In stock",
     image: display8,
     specs: [
-      "49-inch Display",
-      "4K Resolution",
-      "IPS Panel",
+      "Direct-View LED Technology",
+      "Fine Pixel Pitch",
+      "Seamless Modular Design",
+      "High Brightness",
+      "Wide Color Gamut",
       "24/7 Operation",
-      "Open Modular Platform",
-      "Built-in Compute",
-      "Tile Matrix Support",
-      "DisplayPort 1.4",
-      "HDMI 2.0",
-      "5 Year Warranty",
+      "Content Management Ready",
+      "Easy Maintenance",
+      "Low Power Consumption",
+      "Commercial Warranty",
     ],
   },
 ];

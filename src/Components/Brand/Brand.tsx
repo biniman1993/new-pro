@@ -154,7 +154,7 @@ const Brands = () => {
     <div className="min-h-screen bg-background overflow-x-hidden pt-[40px] md:pt-[60px] lg:pt-[90px] xl:pt-[90px] 2xl:pt-[90px]">
       {/* Header */}
       <header className="relative overflow-hidden mb-32">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#143057] z-0" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[rgba(28,76,151,0.2)] rounded-full blur-[3rem] -translate-x-1/2 translate-y-1/2" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 py-16 text-center">
           <motion.h1

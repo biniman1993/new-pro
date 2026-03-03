@@ -30,16 +30,16 @@ const Footer = () => {
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },
     { name: "Our Brand", path: "/brand" },
-    { name: "Our Clients", path: "/brand" },
+{ name: "Our Clients", path: "/about#clients" },
     { name: "Our Shop", path: "/contact#shop-gallery" },
   ];
 
   const support = [
-    { name: "Head Office", path: "#" },
-    { name: "Shop Locations", href: "#" },
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Shipping and Returns", href: "#" },
+    { name: "Head Office", path: "/contact#Office" },
+    { name: "Shop Locations", path: "/contact#Contact" },
+   { name: "Terms & Conditions", path: "/terms#terms" },
+{ name: "Privacy Policy", path: "/terms#privacy" },
+{ name: "Shipping and Returns", path: "/terms#shipping" },
   ];
 
   const socialLinks = [
@@ -80,15 +80,17 @@ const Footer = () => {
           height: 100%;
           object-fit: cover;
         }
-        .footer-overlay-1 {
+  .footer-overlay-1 {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10, 51, 109, 0.7), rgba(7, 20, 58, 0.6), rgba(12, 36, 70, 0.7));
+  background: linear-gradient(to bottom, #2a5da5, #143057, #143057);
+  opacity: 0.7;
 }
 .footer-overlay-2 {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(25, 47, 109, 0.4), transparent);
+  background: linear-gradient(to right, #143057, transparent);
+  opacity: 0.4;
 }
         .footer-accent-bar {
           position: relative;
@@ -389,7 +391,7 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> 
 
             {/* Support & Newsletter */}
             <div>
@@ -400,10 +402,10 @@ const Footer = () => {
               <ul className="footer-link-list">
                 {support.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className="footer-link-item">
+                    <Link to={item.path} className="footer-link-item">
                       <ChevronRight size={14} className="footer-link-chevron" />
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

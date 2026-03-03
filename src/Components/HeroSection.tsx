@@ -15,6 +15,7 @@ import hero3 from "../assets/hero/cisco.png";
 import hero4 from "../assets/hero/disp.png";
 import hero5 from "../assets/hero/tv.png";
 import hero6 from "../assets/hero/server1.png";
+import { useNavigate } from "react-router-dom";
 interface SlideContent {
   title: string;
   description: string;
@@ -27,6 +28,7 @@ const HeroSection = () => {
   const [isInView, setIsInView] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const [animatingSlide, setAnimatingSlide] = useState(0);
+  const navigate = useNavigate();
 
   const slides: SlideContent[] = [
     {
@@ -386,18 +388,24 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4 fade-in-up"
               style={{ animationDelay: "0.3s" }}
             >
-              <button className="group relative px-5 py-3.5 hero-primary-btn font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-[1.02]">
+              <button
+                onClick={() => navigate("/shop")}
+                className="group relative px-5 py-3.5 hero-primary-btn font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-[1.02]"
+              >
                 <span className="relative z-10 flex items-center gap-2">
                   Explore Products
                   <ChevronRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
 
-              <button className="group flex items-center gap-3 px-5 py-3.5 hero-glass-card  font-semibold text-foreground transition-all duration-300 hover:bg-background/90 hover:scale-[1.02]">
+              <button
+                onClick={() => navigate("/datacenter")}
+                className="group flex items-center gap-3 px-5 py-3.5 hero-glass-card  font-semibold text-foreground transition-all duration-300 hover:bg-background/90 hover:scale-[1.02]"
+              >
                 <div className="w-9 h-9 rounded-full hero-play-btn-icon flex items-center justify-center text-primary-foreground group-hover:scale-105 transition-transform">
                   <Play className="w-4 h-4 fill-current  text-white " />
                 </div>
-                Watch Demo
+                Read More
               </button>
             </div>
 
@@ -488,18 +496,24 @@ const HeroSection = () => {
 
           {/* Buttons - Below image for mobile */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 px-4">
-            <button className="w-full sm:w-auto group relative px-6 py-3 hero-primary-btn rounded-xl font-semibold text-[#ffffff] overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <button
+              onClick={() => navigate("/shop")}
+              className="w-full sm:w-auto group relative px-6 py-3 hero-primary-btn rounded-xl font-semibold text-[#ffffff] overflow-hidden transition-all duration-300 hover:shadow-xl"
+            >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Explore Products
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
 
-            <button className="w-full text-black sm:w-auto group flex items-center justify-center gap-3 px-5 py-3 hero-glass-card rounded-xl font-semibold text-foreground transition-all duration-300 hover:bg-background/90">
+            <button
+              onClick={() => navigate("/data-center-solutions")}
+              className="w-full text-black sm:w-auto group flex items-center justify-center gap-3 px-5 py-3 hero-glass-card rounded-xl font-semibold text-foreground transition-all duration-300 hover:bg-background/90"
+            >
               <div className="w-9 h-9 rounded-full hero-play-btn-icon flex items-center justify-center text-primary-foreground">
                 <Play className=" text-black w-4 h-4 fill-current" />
               </div>
-              Watch Demo
+              Read More
             </button>
           </div>
 

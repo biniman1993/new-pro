@@ -312,7 +312,7 @@ const Products = React.forwardRef(
               onClick={closeProductModal}
             />
 
-            <div className="relative bg-white w-full max-w-4xl max-h-[95vh] sm:max-h-[90vh] animate-modal-enter shadow-2xl flex flex-col rounded-xl sm:rounded-2xl overflow-hidden">
+            <div className="relative bg-white w-full ml-2 mr-2 max-w-4xl max-h-[90vh] sm:max-h-[90vh] animate-modal-enter shadow-2xl flex flex-col rounded-2xl sm:rounded-2xl overflow-hidden">
               <button
                 onClick={closeProductModal}
                 className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
@@ -346,7 +346,7 @@ const Products = React.forwardRef(
                 <div className="md:w-1/2 flex flex-col overflow-hidden">
                   <div className="p-3 sm:p-4 md:p-6 lg:p-8 overflow-y-auto flex-1">
                     <div className="space-y-3 sm:space-y-4">
-                      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+                      <h2 className="text-3xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
                         {selectedProduct.name}
                       </h2>
 
@@ -371,14 +371,14 @@ const Products = React.forwardRef(
                       </div>
 
                       {/* Description */}
-                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      <p className="text-lg sm:text-base text-gray-600 leading-relaxed">
                         {selectedProduct.description ||
                           `High-performance ${selectedProduct.name} with premium features and excellent reliability.`}
                       </p>
 
                       {/* Full Description (if available) */}
                       {selectedProduct.fullDescription && (
-                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                        <p className="text-sm font-medium sm:text-base text-gray-600 leading-relaxed">
                           {selectedProduct.fullDescription}
                         </p>
                       )}
@@ -428,33 +428,30 @@ const Products = React.forwardRef(
                   <div className="p-3 sm:p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
                     {!showContactOptions ? (
                       <div className="flex gap-2 sm:gap-3">
-                        <button className="flex-1 py-2 sm:py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base">
-                          <ShoppingCart size={16} className="sm:w-5 sm:h-5" />
-                          Add to Cart
-                        </button>
                         <button
-                          onClick={handleBuyNow}
-                          className="flex-1 py-2 sm:py-3 bg-gradient-to-r from-[#e47325] to-[#ff7b16] hover:from-[#ff7b16] hover:to-[#e47325] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-xs sm:text-sm md:text-base"
-                        >
-                          Buy Now
+                        onClick={handleBuyNow}
+                        className="flex-1 py-2 sm:py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base">
+                          <ShoppingCart size={16} className="sm:w-5 sm:h-5" />
+                        Buy Now
                         </button>
+                        
                       </div>
                     ) : (
                       <div className="space-y-2 sm:space-y-3">
-                        <p className="text-xs sm:text-sm text-gray-600 text-center">
+                        <p className="text-lg font-bold sm:text-sm text-gray-600 text-center">
                           Contact us via:
                         </p>
                         <div className="flex gap-2 sm:gap-3">
                           <button
                             onClick={() => handleContactOption("phone")}
-                            className="flex-1 py-2 sm:py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
+                            className="flex-1 py-2 sm:py-3 bg-[#ff7b16] hover:bg-[#46403c] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
                           >
                             <Phone size={16} className="sm:w-5 sm:h-5" />
                             <span className="hidden xs:inline">Phone</span>
                           </button>
                           <button
                             onClick={() => handleContactOption("whatsapp")}
-                            className="flex-1 py-2 sm:py-3 bg-[#25D366] hover:bg-[#20BA5C] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
+                            className="flex-1 py-2 sm:py-3 bg-[#20BA5C] hover:bg-[#685fe7] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
                           >
                             <MessageCircle
                               size={16}
@@ -464,7 +461,7 @@ const Products = React.forwardRef(
                           </button>
                           <button
                             onClick={() => handleContactOption("telegram")}
-                            className="flex-1 py-2 sm:py-3 bg-[#2a5da5] hover:bg-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
+                            className="flex-1 py-2 sm:py-3 bg-[#2a5da5] hover:bg-[#882aa5] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
                           >
                             <Send size={16} className="sm:w-5 sm:h-5" />
                             <span className="hidden xs:inline">Telegram</span>

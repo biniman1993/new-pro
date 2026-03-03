@@ -1126,11 +1126,9 @@ const Catalog = () => {
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Header with Gradient */}
       <header className="relative overflow-hidden mt-10 sm:mt-10 md:mt-20 lg:mt-16 xl:mt-20 ">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#143057] z-0" />
 
-        {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#437dcf]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2a5da5]/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-20 mb-6 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4  tracking-tight ">
             {getCategoryDisplayName(activeCategory)}
