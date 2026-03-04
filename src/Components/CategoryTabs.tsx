@@ -29,13 +29,13 @@ const CategoryTabs = ({
               "relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ease-out",
               isActive
                 ? "text-white shadow-lg shadow-blue-900/25"
-                : "bg-white text-gray-600 hover:bg-gray-50 hover:text-[#1c4c97] border border-gray-100"
+                : "bg-white text-gray-600 hover:bg-gray-50 hover:text-[#2a5da5] border border-gray-100"
             )}
           >
             {isActive && (
               <motion.div
                 layoutId="activeTab"
-                className="absolute inset-0 bg-[#1c4c97] rounded-full"
+                className="absolute inset-0 bg-[#2a5da5] rounded-full"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
             )}

@@ -79,7 +79,7 @@ const ContactPage = () => {
     {/* Section Title */}
     <div className="text-center mb-12 md:mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-        <span className="bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] bg-clip-text text-transparent">
           Proactive Trading
         </span>
         <span className="text-[#e47325]"> - Where Innovation Meets Reliability</span>

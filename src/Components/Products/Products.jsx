@@ -152,7 +152,7 @@ const Products = React.forwardRef(
               </span>
             </h1>
             <div
-              className={`h-1 w-24 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] mx-auto transition-all duration-1000 ${hasAnimated ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
+              className={`h-1 w-24 bg-gradient-to-r from-[#2a5da5] to-[#143057] mx-auto transition-all duration-1000 ${hasAnimated ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
             ></div>
           </div>
 
@@ -248,7 +248,7 @@ const Products = React.forwardRef(
                       </div>
 
                       <button
-                        className="flex items-center gap-2 bg-gradient-to-r from-[#2a5da5] via-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:via-[#1c4c97] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-300 group/btn"
+                        className="flex items-center gap-2 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white px-3 py-2 rounded-lg font-medium transition-all duration-300 group/btn"
                         onClick={(e) => {
                           e.stopPropagation();
                           openProductModal(product);
@@ -279,7 +279,7 @@ const Products = React.forwardRef(
             <button
               className="group relative px-8 py-3 bg-white border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               onClick={handleClick}
-            >
+             >
               {/* Background gradient that slides in on hover */}
               <span className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
 

@@ -67,7 +67,7 @@ const TermsPage = () => {
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className="flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-[#1c4c97] whitespace-nowrap"
+                className="flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-[#2a5da5] whitespace-nowrap"
               >
                 <Icon size={16} />
                 {section.label}
@@ -83,7 +83,7 @@ const TermsPage = () => {
         {/* Terms Section */}
         <section id="terms" className="bg-white rounded-xl p-6 shadow-sm scroll-mt-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-[#1c4c97] text-white flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-[#2a5da5] text-white flex items-center justify-center">
               <FileText size={20} />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Terms & Conditions</h2>
@@ -109,17 +109,17 @@ const TermsPage = () => {
 </p>
             
             <div>
-              <h3 className="font-bold text-[#1c4c97] mb-2">1. Introduction</h3>
+              <h3 className="font-bold text-[#2a5da5] mb-2">1. Introduction</h3>
               <p>Proactive Trading provides electronics and IT solutions across Ethiopia.</p>
             </div>
             
             <div>
-              <h3 className="font-bold text-[#1c4c97] mb-2">2. User Responsibilities</h3>
+              <h3 className="font-bold text-[#2a5da5] mb-2">2. User Responsibilities</h3>
               <p>You are responsible for providing accurate information.</p>
             </div>
             
             <div>
-              <h3 className="font-bold text-[#1c4c97] mb-2">3. Limitation of Liability</h3>
+              <h3 className="font-bold text-[#2a5da5] mb-2">3. Limitation of Liability</h3>
               <p>We are not liable for technical disruptions beyond our control.</p>
             </div>
           </div>
@@ -128,7 +128,7 @@ const TermsPage = () => {
         {/* Privacy Section */}
         <section id="privacy" className="bg-white rounded-xl p-6 shadow-sm scroll-mt-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-[#1c4c97] text-white flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-[#2a5da5] text-white flex items-center justify-center">
               <Lock size={20} />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Privacy Policy</h2>
@@ -136,7 +136,7 @@ const TermsPage = () => {
           
          <div className="space-y-6 text-gray-700">
   <div>
-    <h3 className="text-lg font-bold text-[#1c4c97] mb-3">Data Collection and Privacy</h3>
+    <h3 className="text-lg font-bold text-[#2a5da5] mb-3">Data Collection and Privacy</h3>
     <p className="leading-relaxed">
       At Proactive Trading, we prioritize the privacy and protection of your personal information. 
       When you interact with us through our website, social media channels, or Facebook Messenger, 
@@ -145,7 +145,7 @@ const TermsPage = () => {
   </div>
 
   <div>
-    <h4 className="font-bold text-[#1c4c97] mb-2">1. Data Collected</h4>
+    <h4 className="font-bold text-[#2a5da5] mb-2">1. Data Collected</h4>
     <p className="leading-relaxed">
       We may collect basic profile information when you interact with us, including:
     </p>
@@ -158,7 +158,7 @@ const TermsPage = () => {
   </div>
 
   <div>
-    <h4 className="font-bold text-[#1c4c97] mb-2">2. Purpose of Data Collection</h4>
+    <h4 className="font-bold text-[#2a5da5] mb-2">2. Purpose of Data Collection</h4>
     <p className="leading-relaxed">
       Your information is used solely for legitimate business purposes, including:
     </p>
@@ -172,7 +172,7 @@ const TermsPage = () => {
   </div>
 
   <div>
-    <h4 className="font-bold text-[#1c4c97] mb-2">3. Data Sharing and Protection</h4>
+    <h4 className="font-bold text-[#2a5da5] mb-2">3. Data Sharing and Protection</h4>
     <p className="leading-relaxed">
       We are committed to maintaining your trust through strict data protection practices:
     </p>
@@ -184,7 +184,7 @@ const TermsPage = () => {
     </ul>
   </div>
 
-  <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-[#1c4c97] mt-4">
+  <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-[#2a5da5] mt-4">
     <p className="text-sm text-gray-700">
       <span className="font-bold">Our Commitment:</span> We adhere to applicable data protection laws 
       and continuously review our practices to ensure your information remains secure and confidential.
@@ -196,7 +196,7 @@ const TermsPage = () => {
         {/* Shipping Section */}
         <section id="shipping" className="bg-white rounded-xl p-6 shadow-sm scroll-mt-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-[#1c4c97] text-white flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-[#2a5da5] text-white flex items-center justify-center">
               <Truck size={20} />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Shipping & Returns</h2>
@@ -204,7 +204,7 @@ const TermsPage = () => {
           
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <h3 className="font-bold text-[#1c4c97] mb-2 flex items-center gap-2">
+              <h3 className="font-bold text-[#2a5da5] mb-2 flex items-center gap-2">
                 <CheckCircle size={16} /> Shipping
               </h3>
               <ul className="space-y-2 text-gray-600">
@@ -215,7 +215,7 @@ const TermsPage = () => {
             </div>
             
             <div>
-              <h3 className="font-bold text-[#1c4c97] mb-2 flex items-center gap-2">
+              <h3 className="font-bold text-[#2a5da5] mb-2 flex items-center gap-2">
                 <RefreshCw size={16} /> Returns
               </h3>
               <ul className="space-y-2 text-gray-600">
@@ -230,7 +230,7 @@ const TermsPage = () => {
         {/* Warranty Overview - Simple Table */}
         <section id="warranty" className="bg-white rounded-xl p-6 shadow-sm scroll-mt-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-[#1c4c97] text-white flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-[#2a5da5] text-white flex items-center justify-center">
               <Shield size={20} />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Warranty Options</h2>
@@ -240,7 +240,7 @@ const TermsPage = () => {
 
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-200">
-              <thead className="bg-[#1c4c97] text-white">
+              <thead className="bg-[#2a5da5] text-white">
                 <tr>
                   <th className="p-3 text-left">Service</th>
                   <th className="p-3 text-left">Standard</th>
@@ -278,7 +278,7 @@ const TermsPage = () => {
           </div>
 
           <div className="mt-4 flex flex-wrap gap-2">
-            <span className="bg-blue-100 text-[#1c4c97] px-3 py-1 rounded-full text-sm">3 Years Standard</span>
+            <span className="bg-blue-100 text-[#2a5da5] px-3 py-1 rounded-full text-sm">3 Years Standard</span>
             <span className="bg-orange-100 text-[#ff7b16] px-3 py-1 rounded-full text-sm">1-5 Years Extended</span>
           </div>
         </section>
@@ -316,7 +316,7 @@ const TermsPage = () => {
         {/* Contact Section */}
         <section id="contact" className="bg-white rounded-xl p-6 shadow-sm scroll-mt-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-[#1c4c97] text-white flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-[#2a5da5] text-white flex items-center justify-center">
               <Phone size={20} />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Contact Us</h2>
@@ -324,19 +324,19 @@ const TermsPage = () => {
 
           <div className="grid md:grid-cols-3 gap-4">
             <div className="text-center p-4">
-              <Phone className="mx-auto text-[#1c4c97] mb-2" size={24} />
+              <Phone className="mx-auto text-[#2a5da5] mb-2" size={24} />
               <p className="font-semibold">Call</p>
               <p className="text-sm text-gray-600">+251 911 517 628</p>
             </div>
             
             <div className="text-center p-4">
-              <Mail className="mx-auto text-[#1c4c97] mb-2" size={24} />
+              <Mail className="mx-auto text-[#2a5da5] mb-2" size={24} />
               <p className="font-semibold">Email</p>
               <p className="text-sm text-gray-600">Pro2actives@gmail.com</p>
             </div>
             
             <div className="text-center p-4">
-              <MapPin className="mx-auto text-[#1c4c97] mb-2" size={24} />
+              <MapPin className="mx-auto text-[#2a5da5] mb-2" size={24} />
               <p className="font-semibold">Visit</p>
               <p className="text-sm text-gray-600">Kazanchis, Garad Bldg</p>
             </div>
@@ -345,10 +345,10 @@ const TermsPage = () => {
           <div className="text-center mt-6">
             <p className="text-sm text-gray-500 mb-2">Follow us</p>
             <div className="flex justify-center gap-3">
-              <Facebook className="text-gray-400 hover:text-[#1c4c97] cursor-pointer" size={20} />
-              <Twitter className="text-gray-400 hover:text-[#1c4c97] cursor-pointer" size={20} />
-              <Linkedin className="text-gray-400 hover:text-[#1c4c97] cursor-pointer" size={20} />
-              <Instagram className="text-gray-400 hover:text-[#1c4c97] cursor-pointer" size={20} />
+              <Facebook className="text-gray-400 hover:text-[#2a5da5] cursor-pointer" size={20} />
+              <Twitter className="text-gray-400 hover:text-[#2a5da5] cursor-pointer" size={20} />
+              <Linkedin className="text-gray-400 hover:text-[#2a5da5] cursor-pointer" size={20} />
+              <Instagram className="text-gray-400 hover:text-[#2a5da5] cursor-pointer" size={20} />
             </div>
           </div>
         </section>

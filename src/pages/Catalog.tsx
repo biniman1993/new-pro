@@ -1238,7 +1238,7 @@ const Catalog = () => {
                   </p>
                   <button
                     onClick={clearAllFilters}
-                    className="px-6 py-2.5 bg-[#1c4c97] hover:bg-[#153975] text-white rounded-full font-medium transition-all shadow-lg shadow-blue-900/20 hover:shadow-blue-900/30"
+                    className="px-6 py-2.5 bg-[#2a5da5] hover:bg-[#153975] text-white rounded-full font-medium transition-all shadow-lg shadow-blue-900/20 hover:shadow-blue-900/30"
                   >
                     Clear All Filters
                   </button>
@@ -1253,7 +1253,7 @@ const Catalog = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-100">
             <div className="text-center px-4 pt-8 md:pt-0">
-              <div className="text-4xl font-bold text-[#1c4c97] mb-2">500+</div>
+              <div className="text-4xl font-bold text-[#2a5da5] mb-2">500+</div>
               <p className="text-gray-500 font-medium">Premium Products</p>
             </div>
             <div className="text-center px-4 pt-8 md:pt-0">
@@ -1261,7 +1261,7 @@ const Catalog = () => {
               <p className="text-gray-500 font-medium">Expert Support</p>
             </div>
             <div className="text-center px-4 pt-8 md:pt-0">
-              <div className="text-4xl font-bold text-[#1c4c97] mb-2">2k+</div>
+              <div className="text-4xl font-bold text-[#2a5da5] mb-2">2k+</div>
               <p className="text-gray-500 font-medium">Trusted Customers</p>
             </div>
           </div>

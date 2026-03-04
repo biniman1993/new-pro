@@ -163,7 +163,7 @@ function App() {
                     </div>
 
                     <div className="p-8 pb-10">
-                      {/* Apply #1c4c97 color only to the center card's title */}
+                      {/* Apply #2a5da5 color only to the center card's title */}
                       <h3 
                         className={`text-2xl font-bold mb-3 ${isCenterCard ? '' : 'text-gray-900'}`}
                         style={{ color: isCenterCard ? '#2a5da5' : '#1a1a1a' }}

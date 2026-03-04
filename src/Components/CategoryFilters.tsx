@@ -61,7 +61,7 @@ const CategoryFilters = ({
           {getFilterCount() > 0 && (
             <button
               onClick={onClearFilters}
-              className="text-sm text-[#1c4c97] hover:text-[#153975] font-medium flex items-center gap-1"
+              className="text-sm text-[#2a5da5] hover:text-[#153975] font-medium flex items-center gap-1"
             >
               <X size={14} />
               Clear all
@@ -116,7 +116,7 @@ const CategoryFilters = ({
                             className={cn(
                               "w-4 h-4 border-2 rounded flex items-center justify-center transition-all duration-200",
                               isActive
-                                ? "border-[#1c4c97] bg-[#1c4c97]"
+                                ? "border-[#2a5da5] bg-[#2a5da5]"
                                 : "border-gray-300 bg-white group-hover:border-gray-400"
                             )}
                           >
@@ -177,7 +177,7 @@ const CategoryFilters = ({
                   {activeFilters[filterType].map((value) => (
                     <span
                       key={value}
-                      className="inline-flex items-center gap-1 bg-blue-50 text-[#1c4c97] text-xs px-2 py-1 rounded"
+                      className="inline-flex items-center gap-1 bg-blue-50 text-[#2a5da5] text-xs px-2 py-1 rounded"
                     >
                       {value}
                       <button
@@ -208,10 +208,10 @@ const CategoryFilters = ({
               min="0"
               max="5000"
               step="100"
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#1c4c97]"
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#2a5da5]"
             />
           </div>
-          <div className="flex justify-between text-sm font-medium text-[#1c4c97]">
+          <div className="flex justify-between text-sm font-medium text-[#2a5da5]">
             <span>$0</span>
             <span>$5000</span>
           </div>
@@ -225,7 +225,7 @@ const CategoryFilters = ({
             <span className="text-sm font-medium text-gray-700">
               Active Filters
             </span>
-            <span className="text-xs bg-[#1c4c97] text-white px-2 py-0.5 rounded-full">
+            <span className="text-xs bg-[#2a5da5] text-white px-2 py-0.5 rounded-full">
               {getFilterCount()}
             </span>
           </div>
@@ -234,7 +234,7 @@ const CategoryFilters = ({
               values.map((value) => (
                 <span
                   key={`${type}-${value}`}
-                  className="inline-flex items-center gap-1 bg-blue-50 text-[#1c4c97] text-xs px-2 py-1 rounded"
+                  className="inline-flex items-center gap-1 bg-blue-50 text-[#2a5da5] text-xs px-2 py-1 rounded"
                 >
                   {type}: {value}
                   <button

@@ -383,7 +383,7 @@ const FridayPromo = () => {
                     alt={selectedProduct.title}
                     className="w-full h-full object-contain p-4"
                   />
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
                     -{selectedProduct.discount}%
                   </div>
                 </div>
@@ -430,7 +430,7 @@ const FridayPromo = () => {
                       <div className="grid gap-2">
                         {selectedProduct.features.map((feature, index) => (
                           <div key={index} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-[#1c4c97] rounded-full mt-1.5 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-[#2a5da5] rounded-full mt-1.5 flex-shrink-0"></div>
                             <span className="text-gray-700 text-sm">
                               {feature}
                             </span>
@@ -460,11 +460,11 @@ const FridayPromo = () => {
                 {/* Buttons fixed at bottom */}
                 <div className="p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
                   <div className="flex gap-3">
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base">
+                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base">
                       <ShoppingCart size={20} />
                       Add to Cart
                     </button>
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#1c4c97] hover:from-[#ff7b16] hover:to-[#0a0e27] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm md:text-base">
+                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:to-[#0a0e27] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm md:text-base">
                       Buy Now
                     </button>
                   </div>
@@ -476,7 +476,7 @@ const FridayPromo = () => {
       )}
 
       <div className="relative z-10">
-        <div className="bg-gradient-to-r from-[#2a5da5] to-[#143057] border-b border-[#1c4c97]/30 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-r from-[#2a5da5] to-[#143057] border-b border-[#2a5da5]/30 py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff7b16]" />
@@ -526,10 +526,10 @@ const FridayPromo = () => {
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
               <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#ff7b16] to-transparent rounded-full"></div>
-              <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+              <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900">
                 Friday Special Deals
               </h2>
-              <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#1c4c97] to-transparent rounded-full"></div>
+              <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#2a5da5] to-transparent rounded-full"></div>
             </div>
             <p className="text-center text-gray-600 text-xs sm:text-sm">
               Save up to 45% on premium tech products
@@ -537,7 +537,7 @@ const FridayPromo = () => {
 
             <div className="flex justify-center gap-2 mt-2 sm:mt-3">
               {[...Array(3)].map((_, i) => (
-                <Sparkles key={i} size={14} className="text-[#1c4c97]" />
+                <Sparkles key={i} size={14} className="text-[#2a5da5]" />
               ))}
             </div>
           </div>
@@ -566,14 +566,14 @@ const FridayPromo = () => {
                             -{product.discount}%
                           </div>
 
-                          <div className="absolute bottom-3 left-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white font-semibold px-2 py-1 rounded-lg text-xs opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                          <div className="absolute bottom-3 left-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white font-semibold px-2 py-1 rounded-lg text-xs opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
                             New Arrival
                           </div>
                         </div>
 
                         <div className="flex-1 p-4 flex flex-col justify-between">
                           <div>
-                            <h3 className="text-base font-bold text-gray-900 mb-2 text-center h-12 flex items-center justify-center group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#1c4c97] group-hover/card:to-[#ff7b16] group-hover/card:bg-clip-text transition-all duration-300">
+                            <h3 className="text-base font-bold text-gray-900 mb-2 text-center h-12 flex items-center justify-center group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#2a5da5] group-hover/card:to-[#ff7b16] group-hover/card:bg-clip-text transition-all duration-300">
                               {product.title}
                             </h3>
 
@@ -586,7 +586,7 @@ const FridayPromo = () => {
                                       key={idx}
                                       className="flex items-center gap-1 text-gray-600 text-xs"
                                     >
-                                      <div className="w-1 h-1 rounded-full bg-[#1c4c97] flex-shrink-0"></div>
+                                      <div className="w-1 h-1 rounded-full bg-[#2a5da5] flex-shrink-0"></div>
                                       <span className="truncate">{spec}</span>
                                     </div>
                                   ))}
@@ -621,8 +621,8 @@ const FridayPromo = () => {
                                 onClick={(e) => e.stopPropagation()}
                               >
                                 <a
-                                  href="tel:+251911234567"
-                                  className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 transition-all duration-200 hover:shadow-sm"
+                                  href="tel:+251911517628"
+                                  className="p-2 rounded-lg border border-gray-300 hover:border-[#ff7b16] hover:text-[#ff7b16] transition-all duration-200 hover:shadow-sm"
                                   title="Call Now"
                                   aria-label="Call now"
                                 >
@@ -630,7 +630,7 @@ const FridayPromo = () => {
                                 </a>
 
                                 <a
-                                  href="https://wa.me/251911234567"
+                                  href="https://wa.me/251911517628"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 transition-all duration-200 hover:shadow-sm"
@@ -641,10 +641,10 @@ const FridayPromo = () => {
                                 </a>
 
                                 <a
-                                  href="https://t.me/yourusername"
+                                  href="https://t.me/@tibe2581"
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="p-2 rounded-lg border border-gray-300 hover:border-blue-400 hover:text-blue-500 transition-all duration-200 hover:shadow-sm"
+                                  className="p-2 rounded-lg border border-gray-300 hover:border-[#2a5da5] hover:text-[#2a5da5] transition-all duration-200 hover:shadow-sm"
                                   title="Telegram"
                                   aria-label="Telegram"
                                 >
@@ -654,7 +654,7 @@ const FridayPromo = () => {
                             </div>
                           </div>
 
-                          <button className="w-full py-2.5 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm">
+                          <button className="w-full py-2.5 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm">
                             Full Specifications
                           </button>
                         </div>
@@ -665,7 +665,7 @@ const FridayPromo = () => {
 
                 <button
                   onClick={prevProduct}
-                  className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-20"
+                  className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-20"
                   aria-label="Previous products"
                 >
                   <ChevronLeft size={20} />
@@ -673,7 +673,7 @@ const FridayPromo = () => {
 
                 <button
                   onClick={nextProduct}
-                  className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-20"
+                  className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-20"
                   aria-label="Next products"
                 >
                   <ChevronRight size={20} />
@@ -687,7 +687,7 @@ const FridayPromo = () => {
                     onClick={() => setCarouselIndex(idx)}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       idx === carouselIndex
-                        ? "bg-gradient-to-r from-[#ff7b16] to-[#1c4c97] w-8"
+                        ? "bg-gradient-to-r from-[#ff7b16] to-[#2a5da5] w-8"
                         : "bg-gray-300 hover:bg-gray-400 w-2"
                     }`}
                     aria-label={`Go to product set ${idx + 1}`}
@@ -701,7 +701,7 @@ const FridayPromo = () => {
               <div className="relative">
                 <button
                   onClick={() => scrollMobile("left")}
-                  className="absolute left-0 top-1/4 -translate-y-1/2 -translate-x-2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white rounded-full flex items-center justify-center shadow-lg z-20"
+                  className="absolute left-0 top-1/4 -translate-y-1/2 -translate-x-2 w-10 h-10 bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white rounded-full flex items-center justify-center shadow-lg z-20"
                   aria-label="Scroll left"
                 >
                   <ChevronLeft size={20} />
@@ -729,7 +729,7 @@ const FridayPromo = () => {
                           -{product.discount}%
                         </div>
 
-                        <div className="absolute bottom-0 left-2 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white font-semibold px-2 py-1 rounded-lg text-xs opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-0 left-2 bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white font-semibold px-2 py-1 rounded-lg text-xs opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
                           New Arrival
                         </div>
                       </div>
@@ -749,7 +749,7 @@ const FridayPromo = () => {
                                     key={idx}
                                     className="flex items-center gap-1 text-gray-600 text-sm"
                                   >
-                                    <div className="w-1 h-1 rounded-full bg-[#1c4c97] flex-shrink-0"></div>
+                                    <div className="w-1 h-1 rounded-full bg-[#2a5da5] flex-shrink-0"></div>
                                     <span className="truncate">{spec}</span>
                                   </div>
                                 ))}
@@ -787,15 +787,15 @@ const FridayPromo = () => {
                               onClick={(e) => e.stopPropagation()}
                             >
                               <a
-                                href="tel:+251911234567"
-                                className="p-1.5 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 transition-all duration-200 hover:shadow-sm"
+                                href="tel:+251911517628"
+                                className="p-1.5 rounded-lg border border-gray-300 hover:[border]-green-500 hover:[#ff7b16] transition-all duration-200 hover:shadow-sm"
                                 title="Call Now"
                                 aria-label="Call now"
                               >
                                 <Phone className="w-3 h-3" />
                               </a>
                               <a
-                                href="https://wa.me/251911234567"
+                                href="https://wa.me/251911517628"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-600 transition-all duration-200 hover:shadow-sm"
@@ -805,7 +805,7 @@ const FridayPromo = () => {
                                 <MessageCircle className="w-4 h-4" />
                               </a>
                               <a
-                                href="https://t.me/yourusername"
+                                href="https://t.me/@tibe2581"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-lg border border-gray-300 hover:border-blue-400 hover:text-blue-500 transition-all duration-200 hover:shadow-sm"
@@ -818,7 +818,7 @@ const FridayPromo = () => {
                           </div>
                         </div>
 
-                        <button className="w-full py-2 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#1c4c97] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm">
+                        <button className="w-full py-2 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm">
                           Full Specifications
                         </button>
                       </div>
@@ -828,7 +828,7 @@ const FridayPromo = () => {
 
                 <button
                   onClick={() => scrollMobile("right")}
-                  className="absolute right-0 top-1/4 -translate-y-1/2 translate-x-2 w-10 h-10 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white rounded-full flex items-center justify-center shadow-lg z-20"
+                  className="absolute right-0 top-1/4 -translate-y-1/2 translate-x-2 w-10 h-10 bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white rounded-full flex items-center justify-center shadow-lg z-20"
                   aria-label="Scroll right"
                 >
                   <ChevronRight size={20} />
@@ -851,7 +851,7 @@ const FridayPromo = () => {
                     }}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       idx === mobileIndex
-                        ? "bg-gradient-to-r from-[#ff7b16] to-[#1c4c97] w-8"
+                        ? "bg-gradient-to-r from-[#ff7b16] to-[#2a5da5] w-8"
                         : "bg-gray-300 hover:bg-gray-400 w-2"
                     }`}
                     aria-label={`Go to product ${idx + 1}`}

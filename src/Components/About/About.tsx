@@ -488,12 +488,12 @@ const About = () => {
   return (
     <div className="font-['Inter'] bg-white min-h-screen overflow-x-hidden relative">
       {/* Hero Section */}
-      <section className="relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[60vh] lg:h-[75vh] xl:h-[75vh] pt-[50px] sm:pt-[60px] md:pt-[80px] lg:pt-[80px] xl:pt-[70px] bg-gradient-to-r from-[#1c4c97] to-[#0a0e27]">
+      <section className="relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[60vh] lg:h-[75vh] xl:h-[75vh] pt-[50px] sm:pt-[60px] md:pt-[80px] lg:pt-[80px] xl:pt-[70px] bg-gradient-to-r from-[#2a5da5] to-[#0a0e27]">
         <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#143057] z-0" />
 
         {/* Decorative Elements - Responsive sizing */}
         <div className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 lg:w-64 h-32 sm:h-40 md:h-48 lg:h-64 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#1c4c97]/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#2a5da5]/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 lg:py-20 text-center h-full flex flex-col justify-center">
           <div className="overflow-hidden">
@@ -535,7 +535,7 @@ const About = () => {
             key={tab.id}
             className={`px-7 py-3 font-semibold rounded-full transition-all duration-300 relative overflow-hidden hover:translate-y-[-2px] hover:shadow-lg ${
               activeTab === tab.id
-                ? "bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white shadow-[0_6px_20px_rgba(28,76,151,0.3)]"
+                ? "bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] text-white shadow-[0_6px_20px_rgba(28,76,151,0.3)]"
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:shadow-[0_4px_12px_rgba(28,76,151,0.15)]"
             }`}
             onClick={() => handleTabClick(tab.id)}
@@ -553,14 +553,14 @@ const About = () => {
           ref={profileRef}
           className="mb-16 animate-[fadeIn_0.6s_ease-out]"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-[#1c4c97] to-[#1d1f30] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-[#2a5da5] to-[#1d1f30] bg-clip-text text-transparent">
             Proactive Trading
           </h2>
 
           <div className="text-lg leading-relaxed text-gray-600 mb-8">
             <p className="mb-4">
               Founded in{" "}
-              <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent font-bold">
+              <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent font-bold">
                 2022
               </span>
               , Proactive Trading has rapidly become Ethiopia's trusted partner
@@ -613,7 +613,7 @@ const About = () => {
           ref={missionRef}
           className="mb-16 animate-[fadeIn_0.6s_ease-out]"
         >
-          <div className="mission-card bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] p-8 md:p-12 rounded-2xl text-white shadow-[0_10px_40px_rgba(28,76,151,0.3)] relative overflow-hidden">
+          <div className="mission-card bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] p-8 md:p-12 rounded-2xl text-white shadow-[0_10px_40px_rgba(28,76,151,0.3)] relative overflow-hidden">
             <div className="absolute top-[-50%] right-[-50%] w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,123,22,0.1)_0%,transparent_70%)] animate-[spin_20s_linear_infinite]" />
             <Target size={60} className="mb-6 relative z-10" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">
@@ -638,7 +638,7 @@ const About = () => {
           ref={visionRef}
           className="mb-16 animate-[fadeIn_0.6s_ease-out]"
         >
-          <div className="vision-card bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] p-8 md:p-12 rounded-2xl text-white shadow-[0_10px_40px_rgba(28,76,151,0.3)] relative overflow-hidden">
+          <div className="vision-card bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] p-8 md:p-12 rounded-2xl text-white shadow-[0_10px_40px_rgba(28,76,151,0.3)] relative overflow-hidden">
             <div className="absolute top-[-50%] right-[-50%] w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,123,22,0.1)_0%,transparent_70%)] animate-[spin_20s_linear_infinite]" />
             <Eye size={60} className="mb-6 relative z-10" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">
@@ -664,7 +664,7 @@ const About = () => {
           ref={valuesRef}
           className="values-section mb-16 animate-[fadeIn_0.6s_ease-out]"
         >
-          <h2 className="values-title text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#1c4c97] to-[#1d1f30] bg-clip-text text-transparent">
+          <h2 className="values-title text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#2a5da5] to-[#1d1f30] bg-clip-text text-transparent">
             Core Values
           </h2>
 
@@ -680,7 +680,7 @@ const About = () => {
                 key={index}
                 className="value-card bg-white p-8 rounded-xl shadow-md transition-all duration-500 hover:-translate-y-2.5 hover:scale-105 hover:shadow-[0_20px_60px_rgba(28,76,151,0.2)] group cursor-pointer"
               >
-                <div className="value-icon-wrapper w-[70px] h-[70px] bg-gradient-to-br from-[#1c4c97] to-[#0a0e27] rounded-xl flex items-center justify-center mb-5 transition-all duration-400 group-hover:from-[#ff7b16] group-hover:to-[#1c4c97] group-hover:rotate-180">
+                <div className="value-icon-wrapper w-[70px] h-[70px] bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] rounded-xl flex items-center justify-center mb-5 transition-all duration-400 group-hover:from-[#ff7b16] group-hover:to-[#2a5da5] group-hover:rotate-180">
                   <div className="value-icon text-white">{value.icon}</div>
                 </div>
                 <h3 className="value-card-title text-2xl font-bold text-[#0a0e27] mb-4">
@@ -699,7 +699,7 @@ const About = () => {
           ref={clientsRef}
           className="mb-16 animate-[fadeIn_0.6s_ease-out]"
          >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#1c4c97] to-[#1d1f30] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#2a5da5] to-[#1d1f30] bg-clip-text text-transparent">
             Our Distinguished Clients
           </h2>
 
@@ -744,7 +744,7 @@ const About = () => {
 
         {/* Why Choose Us Section */}
         <section ref={whyRef} className="mb-16 animate-[fadeIn_0.6s_ease-out]">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#1c4c97] to-[#1d1f30] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#2a5da5] to-[#1d1f30] bg-clip-text text-transparent">
             Why Choose Proactive Trading
           </h2>
 
@@ -760,9 +760,9 @@ const About = () => {
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-lg border-l-4 border-[#1c4c97] shadow-md transition-all duration-300 hover:translate-x-2.5 hover:shadow-[0_8px_30px_rgba(28,76,151,0.15)] hover:border-l-[#ff7b16] flex items-start gap-5"
+                className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-lg border-l-4 border-[#2a5da5] shadow-md transition-all duration-300 hover:translate-x-2.5 hover:shadow-[0_8px_30px_rgba(28,76,151,0.15)] hover:border-l-[#ff7b16] flex items-start gap-5"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] rounded-lg flex items-center justify-center flex-shrink-0">
                   <div className="text-white">{item.icon}</div>
                 </div>
                 <div className="flex-1">
@@ -780,7 +780,7 @@ const About = () => {
           <div className="bg-gradient-to-r from-[rgba(28,76,151,0.05)] to-[rgba(255,123,22,0.05)] border-l-4 border-[#ff7b16] p-6 rounded-lg mt-12 text-gray-600">
             <CheckCircle
               size={24}
-              className="inline-block align-middle mr-2 text-[#1c4c97]"
+              className="inline-block align-middle mr-2 text-[#2a5da5]"
             />
             <strong className="font-bold">Join 1000+ Organizations</strong> who
             trust Proactive Trading as their technology partner. Experience the

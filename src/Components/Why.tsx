@@ -30,7 +30,7 @@ const navigate = useNavigate();
       color: string;
     }> = [];
 
-    // Brand colors - using your blue (#1c4c97) and orange (#ff7b16)
+    // Brand colors - using your blue (#2a5da5) and orange (#ff7b16)
     const brandColors = ["rgba(28, 76, 151, 0.1)", "rgba(255, 123, 22, 0.08)"];
 
     const resize = () => {
@@ -135,7 +135,7 @@ const navigate = useNavigate();
               WHY CHOOSE US
             </span>
           </div>
-          <h2 className="text-3xl font-bold leading-tight text-[#0a0e27] md:text-4xl lg:text-5xl mb-3">
+          <h2 className="text-3xl font-bold leading-tight text-[#2a5da5] md:text-4xl lg:text-5xl mb-3">
             Why{" "}
             <span className="relative ">
               <span className="relative z-10 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
@@ -143,7 +143,7 @@ const navigate = useNavigate();
               </span>
             </span>{" "}
           </h2>
-          <p className=" text-start text-3xl font-bold text-[#2a5da5] mb-2 ">
+          <p className=" text-start text-3xl font-bold text-gray-600 mb-2">
             The Right Choice
           </p>
           <p className="text-gray-600 ">
@@ -170,7 +170,7 @@ const navigate = useNavigate();
 
                 {/* Icon with animation */}
                 <div className="relative mb-5">
-                  <div className="relative inline-flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-[#2a5da5]/30">
+                  <div className="relative inline-flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#2a5da5] to-[#143057] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-[#2a5da5]/30">
                     <feature.icon
                       className="h-7 w-7 text-white transition-transform duration-500 group-hover:scale-110"
                       strokeWidth={1.5}
@@ -194,7 +194,7 @@ const navigate = useNavigate();
           </div>
 
           {/* CTA Card */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0e27] via-[#2a5da5] to-[#0a0e27] p-6 shadow-2xl lg:row-span-2 lg:p-8">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0e27] via-[#2a5da5] to-[#143057] p-6 shadow-2xl lg:row-span-2 lg:p-8">
             {/* Animated gradient background */}
             <div className="absolute inset-0 opacity-10">
               <div
@@ -253,7 +253,7 @@ const navigate = useNavigate();
                   "Future-ready solutions",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3 group/item">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-r from-[#ff7b16] to-[#e47325] transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-lg group-hover/item:shadow-[#ff7b16]/50">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-r from-[#ff7b16] to-[#ff7b16] transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-lg group-hover/item:shadow-[#ff7b16]/50">
                       <svg
                         className="h-3 w-3 text-white"
                         fill="none"
@@ -278,7 +278,7 @@ const navigate = useNavigate();
               {/* CTA Button with hover effects */}
               <button 
                onClick={() => navigate("/about")}
-              className="group/btn relative overflow-hidden rounded-full bg-gradient-to-r from-[#ff7b16] to-[#e47325] px-6 py-4 text-base font-semibold text-white shadow-xl shadow-[#ff7b16]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff7b16]/40 hover:scale-[1.02] active:scale-[0.98]">
+              className="group/btn relative overflow-hidden rounded-full bg-gradient-to-r from-[#ff7b16] to-[#af5617] px-6 py-4 text-base font-semibold text-white shadow-xl shadow-[#ff7b16]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff7b16]/40 hover:scale-[1.02] active:scale-[0.98]">
                 {/* Shine effect */}
                 <div
                   className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"

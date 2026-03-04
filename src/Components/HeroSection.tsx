@@ -212,7 +212,7 @@ const HeroSection = () => {
         
  .hero-primary-btn {
   background: linear-gradient(135deg, 
-    #2a5da5 20%,     /* Dark blue */
+    #F97316 20%,     /* Dark blue */
     #F97316 80%     /* Orange - appears at 80% for dramatic effect */
   );
 }
@@ -383,31 +383,35 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* CTA Buttons - Fixed, no animation on slide change */}
-            <div
-              className="flex flex-wrap gap-4 fade-in-up"
-              style={{ animationDelay: "0.3s" }}
-            >
-              <button
-                onClick={() => navigate("/shop")}
-                className="group relative px-5 py-3.5 hero-primary-btn font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-[1.02]"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Explore Products
-                  <ChevronRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
-                </span>
-              </button>
+           {/* CTA Buttons - Fixed, no animation on slide change */}
+<div
+  className="flex flex-wrap gap-4 fade-in-up"
+  style={{ animationDelay: "0.3s" }}
+>
+  {/* Primary Button - Explore Products (Updated Style) */}
+  <button
+    onClick={() => navigate("/shop")}
+    className="group relative px-8 py-3 border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+  >
+    {/* Background gradient that slides in on hover */}
+    <span className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
 
-              <button
-                onClick={() => navigate("/datacenter")}
-                className="group flex items-center gap-3 px-5 py-3.5 hero-glass-card  font-semibold text-foreground transition-all duration-300 hover:bg-background/90 hover:scale-[1.02]"
-              >
-                <div className="w-9 h-9 rounded-full hero-play-btn-icon flex items-center justify-center text-primary-foreground group-hover:scale-105 transition-transform">
-                  <Play className="w-4 h-4 fill-current  text-white " />
-                </div>
-                Read More
-              </button>
-            </div>
+    {/* Button text with hover effect */}
+    <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
+      Explore Products
+      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+    </span>
+  </button>
+
+  {/* Secondary Button - Read More (Kept as is) */}
+  <button
+    onClick={() => navigate("/datacenter")}
+    className="group flex items-center gap-3 px-5 py-3.5 font-semibold text-[#1F2A3A] transition-all duration-300 hover:bg-white/90 hover:scale-[1.02] border-2 border-[#12428B] hover:border-[#F97316] hover:text-[#F97316] hover:bg-[rgba(249,115,22,0.05)] rounded-xl"
+  >
+    
+    Read More
+  </button>
+</div>
 
             {/* Modern Slide Indicators - Minimalist */}
             <div

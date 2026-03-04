@@ -24,7 +24,7 @@ const Filters = ({ filters, onFiltersChange, maxPrice }: FiltersProps) => {
         <div className="w-full md:w-2/3 space-y-4">
           <div className="flex justify-between text-sm font-medium text-gray-600">
             <span>Price Limit</span>
-            <span className="text-[#1c4c97] font-bold">
+            <span className="text-[#2a5da5] font-bold">
               ${filters.priceRange[0]} - ${filters.priceRange[1]}
             </span>
           </div>
@@ -40,7 +40,7 @@ const Filters = ({ filters, onFiltersChange, maxPrice }: FiltersProps) => {
                 priceRange: [0, parseInt(e.target.value)],
               })
             }
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#1c4c97] focus:outline-none focus:ring-2 focus:ring-[#1c4c97]/20"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#2a5da5] focus:outline-none focus:ring-2 focus:ring-[#2a5da5]/20"
           />
         </div>
 
@@ -54,7 +54,7 @@ const Filters = ({ filters, onFiltersChange, maxPrice }: FiltersProps) => {
             }
             className={cn(
               "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50",
-              filters.inStock ? "bg-[#1c4c97]" : "bg-gray-200"
+              filters.inStock ? "bg-[#2a5da5]" : "bg-gray-200"
             )}
           >
             <span

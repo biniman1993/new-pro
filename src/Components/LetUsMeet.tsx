@@ -1,6 +1,7 @@
 import { useState } from "react";
 import heroBg from "../assets/hero-bg.jpg";
 import { Phone } from "lucide-react";
+import { title } from "framer-motion/client";
 
 const LetUsMeet = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +26,7 @@ const LetUsMeet = () => {
 
   // Updated color variables with more vibrant options
   const colors = {
+    title: "#2a5da5",
     background: "hsl(0 0% 100%)",
     foreground: "hsl(215 25% 15%)",
     card: "hsl(0 0% 100%)",
@@ -172,7 +174,7 @@ const LetUsMeet = () => {
                 position: "relative",
               }}>
                 <span style={{
-                  background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
+                  background: `linear-gradient(135deg, ${colors.title}, ${colors.title})`,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -193,7 +195,7 @@ const LetUsMeet = () => {
                 lineHeight: 1.1,
                 marginBottom: "1.5rem",
                 letterSpacing: "-0.025em",
-                background: `linear-gradient(135deg, ${colors.foreground}, ${colors.primary})`,
+                background: `linear-gradient(135deg, ${colors.title}, ${colors.title})`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -268,36 +270,36 @@ const LetUsMeet = () => {
                   <div style={{
                     fontSize: "1.5rem",
                     fontWeight: 700,
-                    color: colors.primary,
+                    color: colors.title,
                     marginBottom: "0.25rem",
                   }}>100+</div>
                   <div style={{
                     fontSize: "0.875rem",
-                    color: colors.muted,
+                    color: colors.title,
                   }}>Partners</div>
                 </div>
                 <div>
                   <div style={{
                     fontSize: "1.5rem",
                     fontWeight: 700,
-                    color: colors.primary,
+                    color: colors.title,
                     marginBottom: "0.25rem",
                   }}>24/7</div>
                   <div style={{
                     fontSize: "0.875rem",
-                    color: colors.muted,
+                    color: colors.title,
                   }}>Support</div>
                 </div>
                 <div>
                   <div style={{
                     fontSize: "1.5rem",
                     fontWeight: 700,
-                    color: colors.primary,
+                    color: colors.title,
                     marginBottom: "0.25rem",
                   }}>99%</div>
                   <div style={{
                     fontSize: "0.875rem",
-                    color: colors.muted,
+                    color: colors.title,
                   }}>Satisfaction</div>
                 </div>
               </div>
@@ -343,7 +345,7 @@ const LetUsMeet = () => {
                   zIndex: 1,
                 }}>
                   <span style={{ 
-                    color: colors.primary, 
+                    color: colors.title, 
                     fontWeight: 700, 
                     fontSize: "0.875rem",
                     letterSpacing: "0.1em",
@@ -517,12 +519,12 @@ const LetUsMeet = () => {
                       transition: "all 0.3s",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = `linear-gradient(135deg, ${colors.primaryLight}, ${colors.accent})`;
+                      e.currentTarget.style.background = `linear-gradient(135deg, ${colors.title}, ${colors.accent})`;
                       e.currentTarget.style.transform = "translateY(-2px)";
-                      e.currentTarget.style.boxShadow = `0 10px 25px ${colors.primary}30`;
+                      e.currentTarget.style.boxShadow = `0 10px 25px ${colors.title}30`;
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = `linear-gradient(135deg, ${colors.primary}, ${colors.primaryLight})`;
+                      e.currentTarget.style.background = `linear-gradient(135deg, ${colors.primary}, ${colors.title})`;
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.boxShadow = "none";
                     }}
@@ -538,7 +540,7 @@ const LetUsMeet = () => {
                       width: "0",
                       height: "0",
                       borderRadius: "50%",
-                      background: "rgba(255, 255, 255, 0.1)",
+                      background: "title",
                       transition: "all 0.5s",
                     }}></div>
                   </button>

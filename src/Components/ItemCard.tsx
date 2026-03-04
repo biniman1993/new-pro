@@ -16,7 +16,7 @@ const ItemCard = ({ product }: ItemCardProps) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        <div className="absolute top-3 right-3 bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] text-white px-3 py-1 rounded-full text-sm font-semibold">
+        <div className="absolute top-3 right-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] text-white px-3 py-1 rounded-full text-sm font-semibold">
           {product.count} in stock
         </div>
       </div>
@@ -60,7 +60,7 @@ const ItemCard = ({ product }: ItemCardProps) => {
               </span>
             </div>
           )}
-          <button className="flex items-center gap-2 bg-gradient-to-r from-[#1c4c97] via-[#1c4c97] to-[#1c4c97] hover:from-[#ff7b16] hover:via-[#1c4c97] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-200 group/btn">
+          <button className="flex items-center gap-2 bg-gradient-to-r from-[#2a5da5] via-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:via-[#2a5da5] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-200 group/btn">
             <ShoppingCart size={16} />
             <span className="hidden sm:inline">Add</span>
             <ArrowRight

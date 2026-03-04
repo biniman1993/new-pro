@@ -193,7 +193,7 @@ const Contact = () => {
                 key={index}
                 className="bg-white/15 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-center gap-4 hover:bg-white/25 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#1c4c97] shadow-lg">
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#2a5da5] shadow-lg">
                   <stat.icon size={24} />
                 </div>
                 <div>
@@ -228,7 +228,7 @@ const Contact = () => {
                   key={button.id}
                   className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
                     activeSection === button.id
-                      ? "text-white bg-gradient-to-r from-[#1c4c97] to-[#0a0e27] "
+                      ? "text-white bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] "
                       : "text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100"
                   }`}
                   onClick={() => scrollToSection(button.id)}
@@ -476,7 +476,7 @@ const Contact = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Visit Our{" "}
-            <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
               Shop
             </span>
           </h2>
@@ -805,7 +805,7 @@ const Contact = () => {
                       href="tel:+251115578994"
                       className="flex items-center gap-4 p-3 bg-[#f4faff] rounded-xl hover:bg-[#e8f0fe] transition-all duration-300 cursor-pointer"
                     >
-                      <div className="w-10 h-10 rounded-full bg-[#1c4c97] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-[#2a5da5] flex items-center justify-center">
                         <Phone size={18} className="text-[#ffffff]" />
                       </div>
                       <div className="flex-1">
@@ -880,7 +880,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-6">
-                Get in <span className="text-[#1c4c97]">Touch</span>
+                Get in <span className="text-[#2a5da5]">Touch</span>
                 <span className="block h-1.5 w-20 bg-[#ff7b16] mt-4 rounded-full"></span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed max-w-md">
@@ -895,8 +895,8 @@ const Contact = () => {
                 { title: "Dedicated Account Manager", icon: <CheckCircle /> },
                 { title: "Custom Solutions Available", icon: <CheckCircle /> }
               ].map((item, index) => (
-                <div key={index} className="group flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-[#1c4c97]/30 hover:shadow-md transition-all duration-300">
-                  <div className="p-2 rounded-lg bg-[#1c4c97]/5 text-[#1c4c97] group-hover:bg-[#1c4c97] group-hover:text-white transition-colors">
+                <div key={index} className="group flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-[#2a5da5]/30 hover:shadow-md transition-all duration-300">
+                  <div className="p-2 rounded-lg bg-[#2a5da5]/5 text-[#2a5da5] group-hover:bg-[#2a5da5] group-hover:text-white transition-colors">
                     {item.icon}
                   </div>
                   <span className="font-semibold text-gray-800">{item.title}</span>
@@ -908,7 +908,7 @@ const Contact = () => {
           {/* Right Side: Simple Modern Form */}
           <div className="relative">
             {/* Decorative background element */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-[#1c4c97]/10 to-[#ff7b16]/10 rounded-3xl blur-2xl -z-10" />
+            <div className="absolute -inset-4 bg-gradient-to-tr from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-3xl blur-2xl -z-10" />
             
             <form
               onSubmit={handleSubmit}
@@ -923,7 +923,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#1c4c97] transition-all placeholder:text-gray-400"
+                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-gray-400"
                   />
                   <input
                     type="email"
@@ -932,7 +932,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#1c4c97] transition-all placeholder:text-gray-400"
+                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-gray-400"
                   />
                 </div>
 
@@ -943,7 +943,7 @@ const Contact = () => {
                     placeholder="Phone number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#1c4c97] transition-all placeholder:text-gray-400"
+                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-gray-400"
                   />
                   <input
                     type="text"
@@ -951,7 +951,7 @@ const Contact = () => {
                     placeholder="Subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#1c4c97] transition-all placeholder:text-gray-400"
+                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-gray-400"
                   />
                 </div>
 
@@ -962,13 +962,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#1c4c97] transition-all resize-none placeholder:text-gray-400"
+                  className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all resize-none placeholder:text-gray-400"
                 />
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full group py-4 bg-[#1c4c97] hover:bg-[#143a75] text-white font-bold rounded-2xl shadow-lg shadow-[#1c4c97]/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3"
+                  className="w-full group py-4 bg-[#2a5da5] hover:bg-[#143a75] text-white font-bold rounded-2xl shadow-lg shadow-[#2a5da5]/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3"
                 >
                   {isSubmitting ? (
                     <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -992,14 +992,14 @@ const Contact = () => {
 <section id="location" className="py-20 px-4 scroll-mt-20 max-w-7xl mx-auto">
   {/* Header */}
   <div className="text-center mb-12">
-    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1c4c97]/10 rounded-full mb-4">
+    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2a5da5]/10 rounded-full mb-4">
       <MapPin size={16} className="text-[#ff7b16]" />
-      <span className="text-sm font-semibold text-[#1c4c97]">Addis Ababa, Ethiopia</span>
+      <span className="text-sm font-semibold text-[#2a5da5]">Addis Ababa, Ethiopia</span>
     </div>
     
     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
       Find Us{" "}
-      <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+      <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
         Here
       </span>
     </h2>
@@ -1046,7 +1046,7 @@ const Contact = () => {
           href="https://maps.app.goo.gl/BYSKFBf8eSgNUqqf7"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#1c4c97] text-white rounded-xl hover:bg-[#143a75] transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl"
+          className="flex items-center gap-2 px-5 py-2.5 bg-[#2a5da5] text-white rounded-xl hover:bg-[#143a75] transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl"
         >
           <Navigation size={18} />
           <span>Directions</span>
@@ -1066,7 +1066,7 @@ const Contact = () => {
   {/* Quick Info Strip */}
   <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-gray-600">
     <div className="flex items-center gap-2">
-      <div className="w-1.5 h-1.5 rounded-full bg-[#1c4c97]"></div>
+      <div className="w-1.5 h-1.5 rounded-full bg-[#2a5da5]"></div>
       <span>Kazanchis Area</span>
     </div>
     <div className="flex items-center gap-2">
@@ -1102,7 +1102,7 @@ const Contact = () => {
       >
         {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-[#1c4c97]/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute top-20 left-10 w-64 h-64 bg-[#2a5da5]/5 rounded-full blur-3xl animate-pulse" />
           <div
             className="absolute bottom-20 right-10 w-80 h-80 bg-[#ff7b16]/5 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "1s" }}
@@ -1110,16 +1110,16 @@ const Contact = () => {
         </div>
 
         <div className="text-center mb-12 relative">
-          <span className="inline-block px-4 py-2 bg-gradient-to-r from-[#1c4c97]/10 to-[#ff7b16]/10 rounded-full text-sm font-semibold text-[#1c4c97] mb-4">
+          <span className="inline-block px-4 py-2 bg-gradient-to-r from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-full text-sm font-semibold text-[#2a5da5] mb-4">
             ✦ Our Leadership ✦
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Meet the{" "}
             <span className="relative">
-              <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
                 Dream Team
               </span>
-              <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#1c4c97]/20 to-[#ff7b16]/20 blur-xl" />
+              <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#2a5da5]/20 to-[#ff7b16]/20 blur-xl" />
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -1141,36 +1141,36 @@ const Contact = () => {
                       backdrop-blur-sm
                       overflow-hidden
                       before:absolute before:inset-0 
-                      before:bg-gradient-to-br before:from-[#1c4c97]/5 before:to-[#ff7b16]/5
+                      before:bg-gradient-to-br before:from-[#2a5da5]/5 before:to-[#ff7b16]/5
                       before:opacity-0 before:group-hover:opacity-100
                       before:transition-opacity before:duration-700"
               >
                 {/* Animated Gradient Border */}
                 <div
                   className="absolute inset-0 p-[2px] rounded-3xl bg-gradient-to-r from-transparent via-transparent to-transparent 
-                        group-hover:from-[#1c4c97] group-hover:via-[#ff7b16] group-hover:to-[#1c4c97] opacity-0 group-hover:opacity-100 
+                        group-hover:from-[#2a5da5] group-hover:via-[#ff7b16] group-hover:to-[#2a5da5] opacity-0 group-hover:opacity-100 
                         transition-opacity duration-700"
                 >
                   <div className="absolute inset-0 rounded-3xl bg-white" />
                 </div>
 
                 {/* Decorative Corner Elements */}
-                <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#1c4c97]/10 to-transparent rounded-tl-3xl" />
+                <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#2a5da5]/10 to-transparent rounded-tl-3xl" />
                 <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#ff7b16]/10 to-transparent rounded-br-3xl" />
 
                 {/* Profile Image with Modern Design */}
                 <div className="relative mb-8 flex justify-center">
                   {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 scale-75 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 scale-75 group-hover:scale-110" />
 
                   {/* Avatar Container */}
                   <div className="relative w-28 h-28">
                     {/* Rotating Border */}
-                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#1c4c97]/30 group-hover:border-[#ff7b16] group-hover:animate-[spin_8s_linear_infinite]" />
+                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#2a5da5]/30 group-hover:border-[#ff7b16] group-hover:animate-[spin_8s_linear_infinite]" />
 
                     {/* Avatar */}
                     <div
-                      className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1c4c97] to-[#ff7b16] 
+                      className="absolute inset-2 rounded-full bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] 
                             flex items-center justify-center text-white text-3xl font-bold
                             shadow-xl group-hover:shadow-2xl
                             transform group-hover:scale-105
@@ -1202,8 +1202,8 @@ const Contact = () => {
 
                   {/* Role with decorative line */}
                   <div className="flex items-center justify-center gap-2 mb-6">
-                    <div className="w-8 h-px bg-gradient-to-r from-transparent to-[#1c4c97]/30" />
-                    <p className="text-[#1c4c97] font-semibold text-sm uppercase tracking-wider">
+                    <div className="w-8 h-px bg-gradient-to-r from-transparent to-[#2a5da5]/30" />
+                    <p className="text-[#2a5da5] font-semibold text-sm uppercase tracking-wider">
                       {member.role}
                     </p>
                     <div className="w-8 h-px bg-gradient-to-l from-transparent to-[#ff7b16]/30" />
@@ -1213,10 +1213,10 @@ const Contact = () => {
                   <div className="space-y-3 pt-6 border-t border-gray-100 relative">
                     {/* Contact Items */}
                     <div className="flex items-center justify-center gap-3 group/item">
-                      <div className="p-2 bg-[#1c4c97]/5 rounded-lg group-hover/item:bg-[#1c4c97] transition-colors duration-300">
+                      <div className="p-2 bg-[#2a5da5]/5 rounded-lg group-hover/item:bg-[#2a5da5] transition-colors duration-300">
                         <Mail
                           size={14}
-                          className="text-[#1c4c97] group-hover/item:text-white transition-colors duration-300"
+                          className="text-[#2a5da5] group-hover/item:text-white transition-colors duration-300"
                         />
                       </div>
                       <span className="text-sm text-gray-600 group-hover/item:text-gray-900 transition-colors duration-300">
@@ -1238,7 +1238,7 @@ const Contact = () => {
 
                     {/* Social Links Placeholder */}
                     <div className="flex justify-center gap-2 pt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#1c4c97] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                      <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#2a5da5] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                         <span className="text-xs">in</span>
                       </div>
                       <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#ff7b16] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
@@ -1249,8 +1249,8 @@ const Contact = () => {
                 </div>
 
                 {/* Floating Particle Effects */}
-                <div className="absolute -top-2 -right-2 w-12 h-12 bg-[#1c4c97]/5 rounded-full blur-xl group-hover:bg-[#ff7b16]/10 transition-colors duration-700" />
-                <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-[#ff7b16]/5 rounded-full blur-xl group-hover:bg-[#1c4c97]/10 transition-colors duration-700" />
+                <div className="absolute -top-2 -right-2 w-12 h-12 bg-[#2a5da5]/5 rounded-full blur-xl group-hover:bg-[#ff7b16]/10 transition-colors duration-700" />
+                <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-[#ff7b16]/5 rounded-full blur-xl group-hover:bg-[#2a5da5]/10 transition-colors duration-700" />
               </div>
             </div>
           ))}
@@ -1262,7 +1262,7 @@ const Contact = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Frequently Asked{" "}
-            <span className="bg-gradient-to-r from-[#1c4c97] to-[#ff7b16] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
@@ -1279,7 +1279,7 @@ const Contact = () => {
             >
               <div className="flex items-start gap-4 mb-4">
                 <MessageCircle
-                  className="text-[#1c4c97] mt-1 flex-shrink-0"
+                  className="text-[#2a5da5] mt-1 flex-shrink-0"
                   size={24}
                 />
                 <h3 className="text-lg font-bold text-gray-900">

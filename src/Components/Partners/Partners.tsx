@@ -185,7 +185,7 @@ const Partners = () => {
                 <div className="flex flex-col sm:flex-row gap-2 mt-auto pt-4 border-t border-gray-50">
                   <button
                     onClick={() => openModal(partner)}
-                    className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:bg-gradient-to-r hover:from-[#e67817] hover:to-[#0a0e27]
+                    className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:bg-gradient-to-r hover:from-[#e67817] hover:to-[#0a0e27]
         text-white text-[10px] md:text-xs font-bold rounded-lg transition-all active:scale-95"
                   >
                     READ MORE <ArrowRight size={14} />
@@ -204,7 +204,7 @@ const Partners = () => {
         >
           <button
             onClick={handleViewAllClients}
-            className="group relative px-8 py-4 bg-gradient-to-r from-[#2a5da5] to-[#07162e] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
+            className="group relative px-8 py-4 bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
           >
             <span className="relative z-10 flex items-center gap-2">
              View All Clients

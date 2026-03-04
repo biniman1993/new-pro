@@ -114,10 +114,10 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
         >
           <button
             onClick={handleViewAllClick}
-            className="group relative px-7 py-3 bg-gradient-to-r from-[#2a5da5] to-[#07162e] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
+            className="group relative px-7 py-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white font-bold rounded-full overflow-hidden shadow-lg transition-all hover:scale-105 active:scale-95 text-sm md:text-base"
           >
             <span className="relative z-10">Explore All Categories</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ff7b16] to-[#07162e] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#ff7b16] to-[#143057] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </div>
       </div>
