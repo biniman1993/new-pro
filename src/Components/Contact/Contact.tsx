@@ -1,18 +1,16 @@
 import React, { useState, FormEvent, ChangeEvent, useEffect } from "react";
-import shopImage from "../../assets/shop/shop0.png";
-import shopImage2 from "../../assets/shop/shop1.png";
-import shopImage3 from "../../assets/shop/shop2.png";
-import shopImage4 from "../../assets/shop/shop8.png";
-import shopImage5 from "../../assets/shop/shop4.png";
-import shopImage6 from "../../assets/shop/shop9.jpg";
-import shopImage7 from "../../assets/shop/shop6.png";
-import shopImage8 from "../../assets/shop/shop7.png";
-import shopImage9 from "../../assets/shop/lap1.jpg";
-import shopImage13 from "../../assets/shop/offic.jpg";
-import shopImage10 from "../../assets/shop/canon.png";
-import shopImage11 from "../../assets/shop/lap.jpg";
-import shopImage45 from "../../assets/shop/shop3.png";
-import shopImage44 from "../../assets/shop/pri.png";
+import shopImage from "../../assets/shop/shop0.webp";
+import shopImage2 from "../../assets/shop/shop1.webp";
+import shopImage3 from "../../assets/shop/shop2.webp";
+import shopImage4 from "../../assets/shop/shop8.webp";
+import shopImage5 from "../../assets/shop/shop4.webp";
+import shopImage6 from "../../assets/shop/shop9.webp";
+import shopImage9 from "../../assets/shop/lap.webp";
+import shopImage13 from "../../assets/shop/offic.webp";
+import shopImage10 from "../../assets/shop/canon.webp";
+import shopImage11 from "../../assets/shop/lap.webp";
+import shopImage45 from "../../assets/shop/shop3.webp";
+import shopImage44 from "../../assets/shop/pri.webp";
 
 import {
   Mail,
@@ -496,65 +494,70 @@ const Contact = () => {
                 alt="Store Front - Proactive Trading"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Store Front</p>
-                  <p className="text-xs opacity-90">Main Entrance</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
+                <div className="absolute bottom-4 left-4 text-[#f0f0f0]">
+                  <p className="text-sm font-semibold">Our office</p>
+                  <p className="text-xs opacity-90">Addis Ababa</p>
                 </div>
               </div>
             </div>
+
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
               <img
                 src={shopImage}
                 alt="Store Front - Proactive Trading"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Store Front</p>
-                  <p className="text-xs opacity-90">Main Entrance</p>
+                  <p className="text-sm font-semibold">Our Shop</p>
+                  <p className="text-xs opacity-90">At Kazannchise</p>
                 </div>
               </div>
             </div>
+
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
               <img
                 src={shopImage2}
                 alt="Store Front - Proactive Trading"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Store Front</p>
-                  <p className="text-xs opacity-90">Main Entrance</p>
+                  <p className="text-sm font-semibold">Our Shop</p>
+                  <p className="text-xs opacity-90">Front view</p>
                 </div>
               </div>
             </div>
+
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
               <img
                 src={shopImage3}
                 alt="Store Front - Proactive Trading"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Store Front</p>
-                  <p className="text-xs opacity-90">Main Entrance</p>
+                  <p className="text-sm font-semibold">Our Shop</p>
+                  <p className="text-xs opacity-90">Accessories</p>
                 </div>
               </div>
             </div>
+
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
               <img
                 src={shopImage4}
                 alt="Store Front - Proactive Trading"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
                   <p className="text-sm font-semibold">Store Front</p>
                   <p className="text-xs opacity-90">Main Entrance</p>
                 </div>
               </div>
             </div>
+
             {/* Image 2 */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
               <img
@@ -562,10 +565,10 @@ const Contact = () => {
                 alt="Laptop Display Section"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Laptops</p>
-                  <p className="text-xs opacity-90">Gaming & Business</p>
+                  <p className="text-sm font-semibold">Printers</p>
+                  <p className="text-xs opacity-90">Office & Production</p>
                 </div>
               </div>
             </div>
@@ -577,10 +580,10 @@ const Contact = () => {
                 alt="Desktop Computers"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
                   <p className="text-sm font-semibold">Desktops</p>
-                  <p className="text-xs opacity-90">Workstations & PCs</p>
+                  <p className="text-xs opacity-90">All in one PCs</p>
                 </div>
               </div>
             </div>
@@ -592,10 +595,10 @@ const Contact = () => {
                 alt="Server Room Setup"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Servers</p>
-                  <p className="text-xs opacity-90">Enterprise Solutions</p>
+                  <p className="text-sm font-semibold">Our Shop</p>
+                  <p className="text-xs opacity-90">Side View </p>
                 </div>
               </div>
             </div>
@@ -610,10 +613,10 @@ const Contact = () => {
                 alt="Printer and Office Equipment"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
                   <p className="text-sm font-semibold">Printers</p>
-                  <p className="text-xs opacity-90">Office & Production</p>
+                  <p className="text-xs opacity-90">Canon Copy Machines </p>
                 </div>
               </div>
             </div>
@@ -625,7 +628,7 @@ const Contact = () => {
                 alt="Networking Equipment"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
                   <p className="text-sm font-semibold">Networking</p>
                   <p className="text-xs opacity-90">Routers & Switches</p>
@@ -640,10 +643,10 @@ const Contact = () => {
                 alt="Computer Accessories"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Accessories</p>
-                  <p className="text-xs opacity-90">Keyboards & Mice</p>
+                  <p className="text-sm font-semibold">Monitors</p>
+                  <p className="text-xs opacity-90">4k monitors</p>
                 </div>
               </div>
             </div>
@@ -655,10 +658,10 @@ const Contact = () => {
                 alt="Store Interior"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Store Interior</p>
-                  <p className="text-xs opacity-90">Showroom Display</p>
+                  <p className="text-sm font-semibold">Printersr</p>
+                  <p className="text-xs opacity-90">Store of Printers</p>
                 </div>
               </div>
             </div>
@@ -814,7 +817,7 @@ const Contact = () => {
                           +251115578994
                         </p>
                       </div>
-                      
+
                       <span className="text-[#2a5da5] opacity-0 group-hover:opacity-100 transition-opacity">
                         📞
                       </span>
@@ -874,9 +877,11 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="support" className="py-20 px-6 lg:px-12 scroll-mt-20 max-w-7xl mx-auto">
+      <section
+        id="support"
+        className="py-20 px-6 lg:px-12 scroll-mt-20 max-w-7xl mx-auto"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
           {/* Left Side: Content & Feature Cards */}
           <div className="space-y-8">
             <div>
@@ -885,7 +890,8 @@ const Contact = () => {
                 <span className="block h-1.5 w-20 bg-[#ff7b16] mt-4 rounded-full"></span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-                Have a project in mind? We'd love to hear from you. Send us a message and our team will get back to you within 24 hours.
+                Have a project in mind? We'd love to hear from you. Send us a
+                message and our team will get back to you within 24 hours.
               </p>
             </div>
 
@@ -894,13 +900,18 @@ const Contact = () => {
               {[
                 { title: "24/7 Technical Support", icon: <CheckCircle /> },
                 { title: "Dedicated Account Manager", icon: <CheckCircle /> },
-                { title: "Custom Solutions Available", icon: <CheckCircle /> }
+                { title: "Custom Solutions Available", icon: <CheckCircle /> },
               ].map((item, index) => (
-                <div key={index} className="group flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-[#2a5da5]/30 hover:shadow-md transition-all duration-300">
+                <div
+                  key={index}
+                  className="group flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-[#2a5da5]/30 hover:shadow-md transition-all duration-300"
+                >
                   <div className="p-2 rounded-lg bg-[#2a5da5]/5 text-[#2a5da5] group-hover:bg-[#2a5da5] group-hover:text-white transition-colors">
                     {item.icon}
                   </div>
-                  <span className="font-semibold text-gray-800">{item.title}</span>
+                  <span className="font-semibold text-gray-800">
+                    {item.title}
+                  </span>
                 </div>
               ))}
             </div>
@@ -910,10 +921,10 @@ const Contact = () => {
           <div className="relative">
             {/* Decorative background element */}
             <div className="absolute -inset-4 bg-gradient-to-tr from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-3xl blur-2xl -z-10" />
-            
+
             <form
               onSubmit={handleSubmit}
-              className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-2xl border border-white/20"
+              className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-sm border border-white/20"
             >
               <div className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -944,7 +955,7 @@ const Contact = () => {
                     placeholder="Phone number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-gray-400"
+                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-[gray]-400"
                   />
                   <input
                     type="text"
@@ -976,11 +987,14 @@ const Contact = () => {
                   ) : (
                     <>
                       <span>Send Message</span>
-                      <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                      <Send
+                        size={18}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
                     </>
                   )}
                 </button>
-                
+
                 <p className="text-center text-xs text-gray-400 mt-4">
                   By clicking send, you agree to our privacy policy.
                 </p>
@@ -989,112 +1003,122 @@ const Contact = () => {
           </div>
         </div>
       </section>
-{/* Location & Map Section */}
-<section id="location" className="py-20 px-4 scroll-mt-20 max-w-7xl mx-auto">
-  {/* Header */}
-  <div className="text-center mb-12">
-    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2a5da5]/10 rounded-full mb-4">
-      <MapPin size={16} className="text-[#ff7b16]" />
-      <span className="text-sm font-semibold text-[#2a5da5]">Addis Ababa, Ethiopia</span>
-    </div>
-    
-    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-      Find Us{" "}
-      <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
-        Here
-      </span>
-    </h2>
-    
-    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-      Visit our headquarters in Kazanchis — the heart of Addis Ababa's business district
-    </p>
-  </div>
+      {/* Location & Map Section */}
+      <section
+        id="location"
+        className="py-20 px-4 scroll-mt-20 max-w-7xl mx-auto"
+      >
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2a5da5]/10 rounded-full mb-4">
+            <MapPin size={16} className="text-[#ff7b16]" />
+            <span className="text-sm font-semibold text-[#2a5da5]">
+              Addis Ababa, Ethiopia
+            </span>
+          </div>
 
-  {/* Map Container */}
-  <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-    {/* Location Badge */}
-    
-    {/* Map */}
-    <div className="relative w-full h-[500px] md:h-[600px]">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.898440598319!2d38.7635!3d9.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f1c3c1c1c1%3A0x14182215173678829852!2sKazanchis%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Proactive Trading Location - Kazanchis, Addis Ababa"
-        className="w-full h-full object-cover"
-      />
-      
-      {/* Map Overlay Gradient */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/5 via-transparent to-transparent"></div>
-    </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Find Us{" "}
+            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
+              Here
+            </span>
+          </h2>
 
-    {/* Bottom Action Bar */}
-    <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-wrap items-center justify-between gap-4 rounded-2xl  p-4">
-      <div className="flex items-center gap-3">
-        <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full">
-          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-          <span className="text-xs font-medium text-green-700">Open Now</span>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Visit our headquarters in Kazanchis — the heart of Addis Ababa's
+            business district
+          </p>
         </div>
-        <span className="text-sm text-gray-600">📍 Kazanchis, Garad Building, 11th Floor</span>
-      </div>
-      
-      <div className="flex gap-2">
-        <a
-          href="https://maps.app.goo.gl/BYSKFBf8eSgNUqqf7"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#2a5da5] text-white rounded-xl hover:bg-[#143a75] transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl"
-        >
-          <Navigation size={18} />
-          <span>Directions</span>
-        </a>
-        
-        <a
-          href="tel:+251911517628"
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#ff7b16] text-white rounded-xl hover:bg-[#e66d12] transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl"
-        >
-          <Phone size={18} />
-          <span>Call</span>
-        </a>
-      </div>
-    </div>
-  </div>
 
-  {/* Quick Info Strip */}
-  <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-gray-600">
-    <div className="flex items-center gap-2">
-      <div className="w-1.5 h-1.5 rounded-full bg-[#2a5da5]"></div>
-      <span>Kazanchis Area</span>
-    </div>
-    <div className="flex items-center gap-2">
-      <div className="w-1.5 h-1.5 rounded-full bg-[#ff7b16]"></div>
-      <span>Garad Building</span>
-    </div>
-    <div className="flex items-center gap-2">
-      <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-      <span>Open Daily: 8AM - 6PM</span>
-    </div>
-    <div className="flex items-center gap-2">
-      <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-      <span>Free Parking</span>
-    </div>
-  </div>
+        {/* Map Container */}
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
+          {/* Location Badge */}
 
-  {/* Trust Badges */}
-  <div className="mt-12 flex flex-wrap items-center justify-center gap-6 opacity-70">
-    <span className="text-xs text-gray-400">📍 Premium Location</span>
-    <span className="text-xs text-gray-400">•</span>
-    <span className="text-xs text-gray-400">🚗 Easy Access</span>
-    <span className="text-xs text-gray-400">•</span>
-    <span className="text-xs text-gray-400">🏢 Business District</span>
-    <span className="text-xs text-gray-400">•</span>
-    <span className="text-xs text-gray-400">⭐ Landmark Building</span>
-  </div>
-</section>
+          {/* Map */}
+          <div className="relative w-full h-[500px] md:h-[600px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.898440598319!2d38.7635!3d9.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f1c3c1c1c1%3A0x14182215173678829852!2sKazanchis%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Proactive Trading Location - Kazanchis, Addis Ababa"
+              className="w-full h-full object-cover"
+            />
+
+            {/* Map Overlay Gradient */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/5 via-transparent to-transparent"></div>
+          </div>
+
+          {/* Bottom Action Bar */}
+          <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-wrap items-center justify-between gap-4 rounded-2xl  p-4">
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span className="text-xs font-medium text-green-700">
+                  Open Now
+                </span>
+              </div>
+              <span className="text-sm text-gray-600">
+                📍 Kazanchis, Garad Building, 11th Floor
+              </span>
+            </div>
+
+            <div className="flex gap-2">
+              <a
+                href="https://maps.app.goo.gl/BYSKFBf8eSgNUqqf7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2.5 bg-[#2a5da5] text-white rounded-xl hover:bg-[#143a75] transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl"
+              >
+                <Navigation size={18} />
+                <span>Directions</span>
+              </a>
+
+              <a
+                href="tel:+251911517628"
+                className="flex items-center gap-2 px-5 py-2.5 bg-[#ff7b16] text-white rounded-xl hover:bg-[#e66d12] transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl"
+              >
+                <Phone size={18} />
+                <span>Call</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Info Strip */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-gray-600">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#2a5da5]"></div>
+            <span>Kazanchis Area</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#ff7b16]"></div>
+            <span>Garad Building</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+            <span>Open Daily: 8AM - 6PM</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+            <span>Free Parking</span>
+          </div>
+        </div>
+
+        {/* Trust Badges */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 opacity-70">
+          <span className="text-xs text-gray-400">📍 Premium Location</span>
+          <span className="text-xs text-gray-400">•</span>
+          <span className="text-xs text-gray-400">🚗 Easy Access</span>
+          <span className="text-xs text-gray-400">•</span>
+          <span className="text-xs text-gray-400">🏢 Business District</span>
+          <span className="text-xs text-gray-400">•</span>
+          <span className="text-xs text-gray-400">⭐ Landmark Building</span>
+        </div>
+      </section>
 
       {/* Team Section - Modern Glass Cards with Floating Effect */}
       <section

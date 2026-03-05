@@ -647,7 +647,7 @@ const About = () => {
         <section
           ref={valuesRef}
           className="values-section mb-16 animate-[fadeIn_0.6s_ease-out]"
-        >
+         >
           <h2 className="values-title text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#2a5da5] to-[#1d1f30] bg-clip-text text-transparent">
             Core Values
           </h2>
@@ -664,7 +664,7 @@ const About = () => {
                 key={index}
                 className="value-card bg-white p-8 rounded-xl shadow-md transition-all duration-500 hover:-translate-y-2.5 hover:scale-105 hover:shadow-[0_20px_60px_rgba(28,76,151,0.2)] group cursor-pointer"
               >
-                <div className="value-icon-wrapper w-[70px] h-[70px] bg-gradient-to-br from-[#2a5da5] to-[#143057] rounded-xl flex items-center justify-center mb-5 transition-all duration-500 group-hover:from-[#ff7b16] group-hover:to-[#2a5da5] group-hover:rotate-180">
+                <div className="value-icon-wrapper w-[70px] h-[70px] bg-gradient-to-br from-[#2a5da5] to-[#143057] rounded-xl flex items-center justify-center mb-5 transition-all duration-500 group-hover:from-[#ff7b16] group-hover:to-[#2a5da5] group-hover:[transform:rotate(360deg)]">
                   <div className="value-icon text-white">{value.icon}</div>
                 </div>
                 <h3 className="value-card-title text-2xl font-bold text-[#143057] mb-4">

@@ -1,5 +1,5 @@
-import { useState, useMemo, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom"; // Added useNavigate
 import {
   catalogData,
   getCategoryProducts,
@@ -9,25 +9,62 @@ import {
 import CategoryTabs from "../Components/CategoryTabs";
 import SearchBar from "../Components/SearchBar";
 import ItemCard from "../Components/ItemCard";
-import { Package, SearchX, Filter } from "lucide-react";
+import {
+  Package,
+  SearchX,
+  Filter,
+  ChevronDown,
+  ChevronRight,
+} from "lucide-react";
 import CategoryFilters from "../Components/CategoryFilters";
 
 const Catalog = () => {
-  // Fix: Remove TypeScript generic if not using TypeScript strictly
   const { category } = useParams();
+  const navigate = useNavigate(); // Added navigate
+
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Set initial category from URL or default to first subcategory of Desktop
   const [activeCategory, setActiveCategory] = useState(
-    category || "BusinessDesktop"
+    category || "BusinessDesktop",
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+
+  // Define mainCategories HERE (moved outside useEffect)
+  const mainCategories = [
+    { name: "Desktop", path: "/Catalog/BusinessDesktop" },
+    { name: "Laptop", path: "/Catalog/BusinessLaptops" },
+    { name: "Monitor", path: "/Catalog/Monitor" },
+    { name: "Networking", path: "/Catalog/CommercialNetworking" },
+    { name: "Accessories", path: "/Catalog/Accessories" },
+    { name: "Printer", path: "/Catalog/Printer" },
+    { name: "Projector", path: "/Catalog/Projector" },
+    { name: "Digital Display", path: "/Catalog/AdvertisingDisplays" },
+    { name: "Server", path: "/Catalog/ApplicationServers" },
+  ];
+
   // Get main category from active subcategory
   const mainCategory = getMainCategory(activeCategory);
 
   // Get subcategories for the current main category
   const subcategories = getSubcategories(mainCategory) || [];
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsCategoryDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   // Get category-specific filter options
   const getCategoryFilterOptions = (): Record<string, string[]> => {
     switch (mainCategory) {
@@ -995,7 +1032,7 @@ const Catalog = () => {
     return Math.max(
       ...Object.values(catalogData)
         .flatMap((cat) => cat.products)
-        .map((prod) => prod.price || 0)
+        .map((prod) => prod.price || 0),
     );
   }, []);
 
@@ -1015,7 +1052,7 @@ const Catalog = () => {
         product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (product.specs &&
           product.specs.some((spec) =>
-            spec.toLowerCase().includes(searchQuery.toLowerCase())
+            spec.toLowerCase().includes(searchQuery.toLowerCase()),
           ));
 
       if (!matchesSearch) return false;
@@ -1039,21 +1076,21 @@ const Catalog = () => {
 
           case "brands":
             const brandMatch = selectedValues.some((brand) =>
-              product.name.toLowerCase().includes(brand.toLowerCase())
+              product.name.toLowerCase().includes(brand.toLowerCase()),
             );
             if (brandMatch) productMatches = true;
             break;
 
           case "ram":
             const ramMatch = selectedValues.some((ram) =>
-              product.specs?.some((spec) => spec.includes(ram))
+              product.specs?.some((spec) => spec.includes(ram)),
             );
             if (ramMatch) productMatches = true;
             break;
 
           case "ssd":
             const ssdMatch = selectedValues.some((ssd) =>
-              product.specs?.some((spec) => spec.includes(ssd))
+              product.specs?.some((spec) => spec.includes(ssd)),
             );
             if (ssdMatch) productMatches = true;
             break;
@@ -1117,7 +1154,7 @@ const Catalog = () => {
     // Find the subcategory key from the display name
     const subcategoryKey =
       Object.keys(catalogData).find(
-        (key) => catalogData[key]?.name === categoryName
+        (key) => catalogData[key]?.name === categoryName,
       ) || categoryName;
     setActiveCategory(subcategoryKey);
   };
@@ -1125,12 +1162,79 @@ const Catalog = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Header with Gradient */}
-      <header className="relative overflow-hidden mt-14 sm:mt-10 md:mt-20 lg:mt-16 xl:mt-20 ">
+      <header className="relative overflow-hidden mt-8 sm:mt-10 md:mt-10 lg:mt-16 xl:mt-20 ">
         <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#143057] z-0" />
 
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-20 mb-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4  tracking-tight ">
+          {/* Mobile/Tablet Category Dropdown - Only visible on screens below lg */}
+          <div
+            className="lg:hidden flex justify-center mb-6 relative z-30"
+            ref={dropdownRef}
+          >
+            <div className="w-fit max-w-xs mx-auto">
+              <button
+                onClick={() =>
+                  setIsCategoryDropdownOpen(!isCategoryDropdownOpen)
+                }
+                className="w-full flex items-center justify-between gap-2  border-[#2a5da5] text-[#ffffff] font-bold px-5 py-3.5 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <span className="flex items-center gap-2">
+                  <Package size={16} />
+                  <span>Browse Categories</span>
+                </span>
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    isCategoryDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Dropdown Menu */}
+              {isCategoryDropdownOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[90vw] max-w-lg sm:max-w-xl md:max-w-2xl  mt-1 z-[9999] animate-in fade-in slide-in-from-top-5 duration-200">
+                  {/* The Blur Container */}
+                  <div className=" backdrop-blur-xl border border-white/20 rounded-3xl p-4">
+                    {/* FLEX CONTAINER: Center-aligned, wraps when out of space */}
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {mainCategories.map((category, index) => {
+                        const categorySlug = category.path.split("/").pop();
+                        const isActive = activeCategory === categorySlug;
+
+                        return (
+                          <button
+                            key={index}
+                            onClick={() => {
+                              navigate(category.path);
+                              setIsCategoryDropdownOpen(false);
+                              window.scrollTo({ top: 0, behavior: "smooth" });
+                            }}
+                            /* basis-[30%] ensures 3 items per row on small phones.
+                flex-grow allows them to fill the space as the phone gets wider.
+              */
+                            className={`flex-grow basis-[30%] sm:flex-initial px-2 py-3 transition-all duration-200 flex items-center justify-center rounded-2xl border ${
+                              isActive
+                                ? "border-[#ffffff] bg-[#fff6ee]/10"
+                                : "border-white/20 bg-transparent"
+                            } hover:border-white/60`}
+                          >
+                            <span
+                              className={`text-[10px] uppercase tracking-wider font-bold text-[#ffffff] text-center leading-tight ${
+                                isActive ? "text-[#ff7b16]" : ""
+                              }`}
+                            >
+                              {category.name}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
             {getCategoryDisplayName(activeCategory)}
           </h1>
           <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto font-light">
@@ -1141,8 +1245,8 @@ const Catalog = () => {
       </header>
 
       {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-4 pb-24 -mt-12 relative z-20">
-        <div className="bg-white/50 backdrop-blur-xl border border-white/50 rounded-3xl p-6 md:p-8 shadow-xl shadow-indigo-900/5 mb-12">
+      <main className="max-w-7xl mx-auto px-4 pb-24 -mt-12 relative z-0">
+        <div className="bg-white/50 backdrop-blur-xl border border-white/50 rounded-3xl p-6 md:p-8 shadow-xl shadow-indigo-900/5 mb-12  overflow-visible">
           {/* Subcategory Tabs */}
           {subcategories.length > 0 && (
             <CategoryTabs
@@ -1201,7 +1305,7 @@ const Catalog = () => {
                       </p>
                     </div>
                     {Object.keys(filters).some(
-                      (key) => filters[key].length > 0
+                      (key) => filters[key].length > 0,
                     ) && (
                       <button
                         onClick={clearAllFilters}

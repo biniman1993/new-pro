@@ -20,6 +20,7 @@ interface SlideContent {
   title: string;
   description: string;
   icon: React.ReactNode;
+  route: string;
 }
 
 const HeroSection = () => {
@@ -36,36 +37,42 @@ const HeroSection = () => {
       description:
         "Proactive Trading: Your trusted partner for premium electronics and enterprise technology solutions across Ethiopia. Proud official distributors of leading global technology brands.",
       icon: <Cpu className="w-8 h-8" />,
+      route: "/Catalog/BusinessDesktop",
     },
     {
       title: "Modern Laptops and Gamming",
       description:
         "Powerful and reliable laptops designed for work and personal use, with next-gen Intel and Ryzen processors, premium 4K screens, and enterprise-level security from top brands.",
       icon: <Monitor className="w-8 h-8" />,
+      route: "/Catalog/BusinessLaptops", // or "/laptops"
     },
     {
       title: "Cisco Routers and Switches",
       description:
         "Complete Cisco networking solutions including enterprise routers, managed switches, high-performance access points, advanced firewalls, and essential accessories for secure business connectivity.",
       icon: <Wifi className="w-8 h-8" />,
+      route: "/Catalog/CommercialNetworking", // or "/cisco"
     },
     {
       title: "Digital Display and Signage",
       description:
         "Premium interactive touch displays, dynamic digital signage, and professional presentation solutions for modern offices, retail spaces, educational institutions, and hospitality environments",
       icon: <Tv className="w-8 h-8" />,
+      route: "/Catalog/AdvertisingDisplays",
     },
     {
       title: "Modern TV & Boards",
       description:
         "Smart conference room solutions with interactive whiteboards, large format 4K displays, and wireless presentation systems for seamless collaboration in modern workspaces and boardrooms.",
       icon: <Server className="w-8 h-8" />,
+      route: "/Catalog/VideoWall",
     },
     {
       title: "Data Center Infrastructure",
       description:
         "Premium supplier of HPE ProLiant, Dell PowerEdge, and Cisco UCS servers - from rackmount and blade systems to storage arrays and virtualization solutions for modern data centers.",
       icon: <Settings className="w-8 h-8" />,
+      route: "/Catalog/ApplicationServers",
     },
   ];
 
@@ -284,12 +291,6 @@ const HeroSection = () => {
         }
       `}</style>
 
-    
-
- 
-
-
-
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16">
         {/* Desktop Layout */}
@@ -338,7 +339,10 @@ const HeroSection = () => {
             >
               {/* Primary Button - Explore Products (Updated Style) */}
               <button
-                onClick={() => navigate("/shop")}
+                onClick={() => {
+                  navigate(slides[currentSlide].route);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
                 className="group relative px-8 py-3 border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               >
                 {/* Background gradient that slides in on hover */}
@@ -354,7 +358,7 @@ const HeroSection = () => {
               {/* Secondary Button - Read More (Kept as is) */}
               <button
                 onClick={() => navigate("/datacenter")}
-                className="group flex items-center gap-3 px-5 py-3.5 font-semibold text-[#2a5da5] transition-all duration-300 hover:bg-white/90 hover:scale-[1.02] border-2 border-[#12428B] hover:border-[#F97316] hover:text-[#F97316] hover:bg-[rgba(249,115,22,0.05)] rounded-xl"
+                className="group flex items-center gap-3 px-5 py-3.5 font-semibold text-[#2a5da5] transition-all duration-300 hover:scale-[1.02] border-2 border-[#12428B] hover:border-[#F97316] hover:text-[#F97316] hover:bg-[rgba(249,115,22,0.05)] rounded-xl"
               >
                 Read More
               </button>
@@ -449,7 +453,10 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 px-4">
             {/* Primary Button - Explore Products (Updated Style) */}
             <button
-              onClick={() => navigate("/shop")}
+              onClick={() => {
+                navigate(slides[currentSlide].route);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               className="w-fit group relative px-6 py-3 border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
             >
               {/* Background gradient that slides in on hover */}

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const TopMenu = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -89,6 +90,14 @@ const TopMenu = () => {
     ],
   };
 
+  // Define pages where dropdown text should be white
+  const whiteTextPages = ['/about', '/shop', '/brand', '/contact'];
+  
+  // Check if current path starts with any of these pages
+  const isWhiteTextPage = whiteTextPages.some(page => 
+    location.pathname.startsWith(page)
+  );
+
   const menuItems = Object.keys(menuData);
 
   useEffect(() => {
@@ -155,7 +164,7 @@ const TopMenu = () => {
                         e.stopPropagation();
                         handleNavigation(item, sub);
                       }}
-                      className="group flex items-center gap-3 p-2.5 rounded-[10px] border border-[#ff98001a] bg-transparent transition-all duration-300 
+                      className="group flex items-center gap-3 p-2.5 rounded-[10px] border border-[#ffffff1a] bg-transparent transition-all duration-300 
                         hover:translate-x-1 hover:scale-[1.02] hover:border-[#ff980066] hover:shadow-[0_6px_20px_rgba(255,152,0,0.25)]
                         animate-cardSlideIn cursor-pointer"
                       style={{
@@ -177,7 +186,9 @@ const TopMenu = () => {
                         </svg>
                       </div>
 
-                      <span className="text-[14px] font-semibold text-gray-800 group-hover:text-[#F97316] transition-all duration-300">
+                      <span className={`text-[14px] font-semibold transition-all duration-300 group-hover:text-[#F97316] ${
+                        isWhiteTextPage ? 'text-white' : 'text-gray-800'
+                      }`}>
                         {sub}
                       </span>
                     </div>
