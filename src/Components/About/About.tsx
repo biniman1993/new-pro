@@ -37,8 +37,8 @@ const About = () => {
     let count = 0;
     const interval = setInterval(() => {
       count += 50;
-      if (count >= 2000) {
-        count = 2000;
+      if (count >= 1000) {
+        count = 1000;
         clearInterval(interval);
       }
       setStatCount(count);
@@ -399,24 +399,8 @@ const About = () => {
     },
     
    
-
-   
-    {
-      name: "Manufacturing Industry Development Institute",
-      logo: "/src/assets/awardlogo/cbe1.png",
-    },
-    {
-      name: "Educational Material Production Distribution Enterprise",
-      logo: "/src/assets/awardlogo/cbe1.png",
-    },
-    {
-      name: "Wonj Showa Sugar Factory",
-      logo: "/src/assets/awardlogo/cbe1.png",
-    },
-    {
-      name: "Yirgalem Construction",
-      logo: "/src/assets/awardlogo/cbe1.png",
-    },
+  
+    
     {
       name: "CGGC",
       logo: "/src/assets/awardlogo/CGGC.png",
@@ -439,7 +423,7 @@ const About = () => {
       icon: <TrendingUp size={24} />,
       title: "Proven Track Record",
       description:
-        "Successfully serving 2000+ government and private organizations nationwide.",
+        "Successfully serving 1000+ government and private organizations nationwide.",
     },
     {
       icon: <Award size={24} />,
@@ -492,19 +476,19 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#143057] z-0" />
 
         {/* Decorative Elements - Responsive sizing */}
-        <div className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 lg:w-64 h-32 sm:h-40 md:h-48 lg:h-64 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 lg:w-64 h-32 sm:h-40 md:h-48 lg:h-64 bg-[#e67817]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#2a5da5]/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 lg:py-20 text-center h-full flex flex-col justify-center">
           <div className="overflow-hidden">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-4 tracking-tight animate-[slideUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:100ms]">
-              <span className="text-[#e47325]">Proactive</span> Trading
+              <span className="text-[#ff8419]">Proactive</span> Trading
             </h1>
           </div>
 
           <div className="overflow-hidden">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-4 tracking-tight animate-[slideUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:300ms]">
-              Driving <span className="text-[#e47325]">Innovation</span>,
+              Driving <span className="text-[#ff8419]">Innovation</span>,
               Building Trust
             </h1>
           </div>
@@ -512,7 +496,7 @@ const About = () => {
           <div className="overflow-hidden">
             <p className="text-blue-100 text-base sm:text-lg md:text-xl max-w-xl sm:max-w-2xl mx-auto font-light mb-4 sm:mb-6 md:mb-8 animate-[slideUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:500ms]">
               Leading Ethiopia's Technology Revolution Since{" "}
-              <span className="text-[#e47325] font-semibold">2022</span>
+              <span className="text-[#ff8419] font-semibold">2022</span>
             </p>
           </div>
           <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-[bounce_2s_infinite] z-20">
@@ -535,7 +519,7 @@ const About = () => {
             key={tab.id}
             className={`px-7 py-3 font-semibold rounded-full transition-all duration-300 relative overflow-hidden hover:translate-y-[-2px] hover:shadow-lg ${
               activeTab === tab.id
-                ? "bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] text-white shadow-[0_6px_20px_rgba(28,76,151,0.3)]"
+                ? "bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white shadow-[0_6px_20px_rgba(28,76,151,0.3)]"
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:shadow-[0_4px_12px_rgba(28,76,151,0.15)]"
             }`}
             onClick={() => handleTabClick(tab.id)}
@@ -571,7 +555,7 @@ const About = () => {
             </p>
             <div className="bg-gradient-to-r from-[rgba(28,76,151,0.05)] to-[rgba(255,123,22,0.05)] border-l-4 border-[#ff7b16] p-6 rounded-lg my-6 text-gray-600">
               <strong className="font-bold">
-                Serving over 2,000 government and private organizations
+                Serving over 1,000 government and private organizations
               </strong>{" "}
               across multiple sectors including finance, healthcare, education,
               and infrastructure. Our comprehensive portfolio and dedicated
@@ -598,7 +582,7 @@ const About = () => {
                 key={index}
                 className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl text-center shadow-md transition-all duration-400 hover:translate-y-[-10px] hover:shadow-[0_12px_40px_rgba(28,76,151,0.2)] relative overflow-hidden group"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e47325] to-[#1a4892] transform scale-x-0 transition-transform duration-400 group-hover:scale-x-100" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e47325] to-[#2a5da5] transform scale-x-0 transition-transform duration-400 group-hover:scale-x-100" />
                 <div className="text-5xl font-extrabold bg-gradient-to-r from-[#e47325] to-[#ff7b16] bg-clip-text text-transparent mb-2">
                   {stat.number}
                 </div>
@@ -613,7 +597,7 @@ const About = () => {
           ref={missionRef}
           className="mb-16 animate-[fadeIn_0.6s_ease-out]"
         >
-          <div className="mission-card bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] p-8 md:p-12 rounded-2xl text-white shadow-[0_10px_40px_rgba(28,76,151,0.3)] relative overflow-hidden">
+          <div className="mission-card bg-gradient-to-br from-[#2a5da5] to-[#143057] p-8 md:p-12 rounded-2xl text-white shadow-[0_10px_40px_rgba(28,76,151,0.3)] relative overflow-hidden">
             <div className="absolute top-[-50%] right-[-50%] w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,123,22,0.1)_0%,transparent_70%)] animate-[spin_20s_linear_infinite]" />
             <Target size={60} className="mb-6 relative z-10" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">
@@ -638,7 +622,7 @@ const About = () => {
           ref={visionRef}
           className="mb-16 animate-[fadeIn_0.6s_ease-out]"
         >
-          <div className="vision-card bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] p-8 md:p-12 rounded-2xl text-white shadow-[0_10px_40px_rgba(28,76,151,0.3)] relative overflow-hidden">
+          <div className="vision-card bg-gradient-to-br from-[#2a5da5] to-[#143057] p-8 md:p-12 rounded-2xl text-white shadow-[0_10px_40px_rgba(28,76,151,0.3)] relative overflow-hidden">
             <div className="absolute top-[-50%] right-[-50%] w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,123,22,0.1)_0%,transparent_70%)] animate-[spin_20s_linear_infinite]" />
             <Eye size={60} className="mb-6 relative z-10" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">
@@ -680,10 +664,10 @@ const About = () => {
                 key={index}
                 className="value-card bg-white p-8 rounded-xl shadow-md transition-all duration-500 hover:-translate-y-2.5 hover:scale-105 hover:shadow-[0_20px_60px_rgba(28,76,151,0.2)] group cursor-pointer"
               >
-                <div className="value-icon-wrapper w-[70px] h-[70px] bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] rounded-xl flex items-center justify-center mb-5 transition-all duration-400 group-hover:from-[#ff7b16] group-hover:to-[#2a5da5] group-hover:rotate-180">
+                <div className="value-icon-wrapper w-[70px] h-[70px] bg-gradient-to-br from-[#2a5da5] to-[#143057] rounded-xl flex items-center justify-center mb-5 transition-all duration-500 group-hover:from-[#ff7b16] group-hover:to-[#2a5da5] group-hover:rotate-180">
                   <div className="value-icon text-white">{value.icon}</div>
                 </div>
-                <h3 className="value-card-title text-2xl font-bold text-[#0a0e27] mb-4">
+                <h3 className="value-card-title text-2xl font-bold text-[#143057] mb-4">
                   {value.title}
                 </h3>
                 <p className="value-card-description text-gray-500 leading-relaxed">

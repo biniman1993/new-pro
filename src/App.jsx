@@ -159,7 +159,7 @@ const App = () => {
             element={
               <div className="pt-24">
                 <Products
-                  title="Networking Equipment"
+                  title="Networking"
                   productsData={networkingData}
                   category="networking"
                 />

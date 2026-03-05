@@ -21,7 +21,10 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
+/* Add this to prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
 /* Smooth transitions */
 * {
   transition-property: color, background-color, border-color, transform, box-shadow;

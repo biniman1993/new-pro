@@ -49,7 +49,12 @@ const TermsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 mt-20">
+    <div className="min-h-screen bg-gray-50 mt-10        
+  sm:mt-12     
+  md:mt-16     
+  lg:mt-20     
+  xl:mt-24    
+  2xl:mt-28  ">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white py-16 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Terms & Conditions</h1>

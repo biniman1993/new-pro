@@ -135,7 +135,7 @@ const navigate = useNavigate();
               WHY CHOOSE US
             </span>
           </div>
-          <h2 className="text-3xl font-bold leading-tight text-[#2a5da5] md:text-4xl lg:text-5xl mb-3">
+          <h2 className="text-3xl font-extrabold leading-tight text-[#2a5da5] md:text-4xl lg:text-5xl mb-3">
             Why{" "}
             <span className="relative ">
               <span className="relative z-10 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
@@ -226,13 +226,13 @@ const navigate = useNavigate();
 
               <h3 className="mb-4 text-2xl font-bold leading-tight text-white lg:text-3xl">
                 Leading the{" "}
-                <span className="bg-gradient-to-r from-[#ff7b16] to-yellow-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#e67817] to-yellow-300 bg-clip-text text-transparent">
                   Future of IT
                 </span>{" "}
                 in Ethiopia
               </h3>
 
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7b16]/20 to-transparent px-4 py-2 w-fit">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#e67817]/10 to-transparent px-4 py-2 w-fit">
                 <span className="text-sm font-semibold text-white">
                   Pioneering Innovation Since Day One
                 </span>

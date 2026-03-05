@@ -191,10 +191,10 @@ const HeroSection = () => {
         
        .hero-text-gradient {
   background: linear-gradient(135deg, 
-    #2a5da5 0%,      /* hsl(221 83% 40%) */
-    #3B82F6 25%,     /* hsl(217 91% 60%) */
-    #F97316 50%,     /* hsl(24 95% 53%) */
-    #E96D1C 75%,     /* hsl(21 90% 48%) */
+    #2a5da5 10%,      /* hsl(221 83% 40%) */
+    #3b78ce 25%,     /* hsl(217 91% 60%) */
+    #e27222 50%,     /* hsl(24 95% 53%) */
+    #eb843f 75%,     /* hsl(21 90% 48%) */
     #12428B 100%     /* hsl(221 83% 40%) */
   );
   background-size: 200% 200%;
@@ -212,8 +212,8 @@ const HeroSection = () => {
         
  .hero-primary-btn {
   background: linear-gradient(135deg, 
-    #F97316 20%,     /* Dark blue */
-    #F97316 80%     /* Orange - appears at 80% for dramatic effect */
+    #ff9800 20%,     /* Dark blue */
+    #ff9800 80%     /* Orange - appears at 80% for dramatic effect */
   );
 }
         
@@ -284,63 +284,11 @@ const HeroSection = () => {
         }
       `}</style>
 
-      {/* Static Background Elements - No animation for performance */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large Blue Orb - Very subtle */}
-        <div
-          className="absolute w-[800px] h-[800px] rounded-full blur-3xl"
-          style={{
-            left: "-10%",
-            top: "-20%",
-            background: "#d3dce9",
-            opacity: 0.15,
-          }}
-        />
+    
 
-        {/* Medium Blue Orb - Secondary */}
-        <div
-          className="absolute w-[500px] h-[500px] rounded-full blur-3xl"
-          style={{
-            left: "20%",
-            bottom: "10%",
-            background: "#e0edff",
-            opacity: 0.1,
-          }}
-        />
+ 
 
-        {/* Large Orange Orb - Very subtle */}
-        <div
-          className="absolute w-[700px] h-[700px] rounded-full blur-3xl"
-          style={{
-            right: "-5%",
-            top: "10%",
-            background: "#ffffff",
-            opacity: 0.12,
-          }}
-        />
 
-        {/* Medium Orange Orb - Bottom right */}
-        <div
-          className="absolute w-[450px] h-[450px] rounded-full blur-3xl"
-          style={{
-            right: "15%",
-            bottom: "0%",
-            background: "#4275bd",
-            opacity: 0.08,
-          }}
-        />
-
-        {/* Small Center Orb - Very light blend */}
-        <div
-          className="absolute w-[300px] h-[300px] rounded-full blur-3xl"
-          style={{
-            left: "10%",
-            top: "10%",
-            background: "#285594",
-            opacity: 0.05,
-          }}
-        />
-      </div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16">
@@ -355,7 +303,7 @@ const HeroSection = () => {
             {/* Fixed Badge - No animation on slide change */}
             <div className="inline-flex items-center mt-4 gap-2 px-4 py-2 hero-glass-card rounded-full fade-in-up">
               <span className="w-3 h-3 rounded-full hero-badge-dot " />
-              <span className="text-sm text-foreground/80 font-semibold">
+              <span className="text-sm text-[#2a5da5] font-semibold">
                 Official Authorized Distributor
               </span>
             </div>
@@ -383,35 +331,34 @@ const HeroSection = () => {
               </div>
             </div>
 
-           {/* CTA Buttons - Fixed, no animation on slide change */}
-<div
-  className="flex flex-wrap gap-4 fade-in-up"
-  style={{ animationDelay: "0.3s" }}
->
-  {/* Primary Button - Explore Products (Updated Style) */}
-  <button
-    onClick={() => navigate("/shop")}
-    className="group relative px-8 py-3 border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-  >
-    {/* Background gradient that slides in on hover */}
-    <span className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+            {/* CTA Buttons - Fixed, no animation on slide change */}
+            <div
+              className="flex flex-wrap gap-4 fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              {/* Primary Button - Explore Products (Updated Style) */}
+              <button
+                onClick={() => navigate("/shop")}
+                className="group relative px-8 py-3 border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+              >
+                {/* Background gradient that slides in on hover */}
+                <span className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
 
-    {/* Button text with hover effect */}
-    <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
-      Explore Products
-      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-    </span>
-  </button>
+                {/* Button text with hover effect */}
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
+                  Explore Products
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </button>
 
-  {/* Secondary Button - Read More (Kept as is) */}
-  <button
-    onClick={() => navigate("/datacenter")}
-    className="group flex items-center gap-3 px-5 py-3.5 font-semibold text-[#1F2A3A] transition-all duration-300 hover:bg-white/90 hover:scale-[1.02] border-2 border-[#12428B] hover:border-[#F97316] hover:text-[#F97316] hover:bg-[rgba(249,115,22,0.05)] rounded-xl"
-  >
-    
-    Read More
-  </button>
-</div>
+              {/* Secondary Button - Read More (Kept as is) */}
+              <button
+                onClick={() => navigate("/datacenter")}
+                className="group flex items-center gap-3 px-5 py-3.5 font-semibold text-[#2a5da5] transition-all duration-300 hover:bg-white/90 hover:scale-[1.02] border-2 border-[#12428B] hover:border-[#F97316] hover:text-[#F97316] hover:bg-[rgba(249,115,22,0.05)] rounded-xl"
+              >
+                Read More
+              </button>
+            </div>
 
             {/* Modern Slide Indicators - Minimalist */}
             <div
@@ -424,8 +371,8 @@ const HeroSection = () => {
                   onClick={() => handleSlideClick(idx)}
                   className={`transition-all duration-300 rounded-full ${
                     idx === currentSlide
-                      ? "w-8 h-2 bg-gradient-to-r from-[#ff7b16] to-[#e47325] shadow-sm shadow-orange-500/50"
-                      : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                      ? "w-8 h-2 bg-gradient-to-r from-[#2a5da5] to-[#3879d3] shadow-sm shadow-orange-500/50"
+                      : "w-2 h-2 bg-[#7e9dc9] hover:bg-gray-500"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -500,22 +447,28 @@ const HeroSection = () => {
 
           {/* Buttons - Below image for mobile */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 px-4">
+            {/* Primary Button - Explore Products (Updated Style) */}
             <button
               onClick={() => navigate("/shop")}
-              className="w-full sm:w-auto group relative px-6 py-3 hero-primary-btn rounded-xl font-semibold text-[#ffffff] overflow-hidden transition-all duration-300 hover:shadow-xl"
+              className="w-fit group relative px-6 py-3 border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
             >
-              <span className="relative z-10 flex items-center justify-center gap-2">
+              {/* Background gradient that slides in on hover */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#143057] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+
+              {/* Button text with hover effect */}
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
                 Explore Products
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </button>
 
+            {/* Secondary Button - Read More (Updated Style) */}
             <button
-              onClick={() => navigate("/data-center-solutions")}
-              className="w-full text-black sm:w-auto group flex items-center justify-center gap-3 px-5 py-3 hero-glass-card rounded-xl font-semibold text-foreground transition-all duration-300 hover:bg-background/90"
+              onClick={() => navigate("/datacenter")}
+              className="w-fit group flex items-center justify-center gap-3 px-7 py-1.5 font-semibold text-[#2a5da5] transition-all duration-300 border-2 border-[#12428B] rounded-full hover:border-[#F97316] hover:text-[#F97316] hover:bg-[rgba(249,115,22,0.05)] hover:shadow-xl"
             >
-              <div className="w-9 h-9 rounded-full hero-play-btn-icon flex items-center justify-center text-primary-foreground">
-                <Play className=" text-black w-4 h-4 fill-current" />
+              <div className="w-9 h-9 rounded-full flex items-center justify-center bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] group-hover:from-[#F97316] group-hover:to-[#0a0e27] transition-all duration-300">
+                <Play className="w-4 h-4 fill-current text-white" />
               </div>
               Read More
             </button>
@@ -529,7 +482,7 @@ const HeroSection = () => {
                 onClick={() => handleSlideClick(idx)}
                 className={`transition-all duration-300 rounded-full ${
                   idx === currentSlide
-                    ? "w-8 h-2.5 bg-gradient-to-r from-[#ff7b16] to-[#e47325] shadow-md shadow-orange-500/40"
+                    ? "w-8 h-2.5 bg-gradient-to-r from-[#2a5da5] to-[#e47325] shadow-md shadow-orange-500/40"
                     : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}

@@ -7,62 +7,94 @@ import {
   Twitter,
   Youtube,
   Instagram,
-  MessageCircle, // for WhatsApp
-  Send, // for Telegram
-  Music2, // for TikTok
+  MessageCircle,
+  Send,
+  Music2,
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
 import footerBg from "../assets/footer-bg.jpg";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const currentYear = new Date().getFullYear();
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string,
+  ) => {
+    e.preventDefault();
+
+    // Split path into base path and hash
+    const [basePath, hash] = path.split("#");
+
+    // Check if we're already on the target page
+    if (
+      location.pathname === basePath ||
+      (basePath === "/" && location.pathname === "/")
+    ) {
+      if (hash) {
+        // Scroll to the element with the hash
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } else {
+      // Navigate to the new page
+      navigate(path);
+    }
+  };
 
   const shopCategories = [
     { name: "Home", path: "/" },
-    { name: "New Laptops", path: "/products/laptops" }, // Go to laptops page
-    { name: "New Desktops", path: "/products/desktops" }, // Go to desktops page
-    { name: "New Printers", path: "/products/printers" }, // Go to printers page
+    { name: "New Laptops", path: "/products/laptops" },
+    { name: "New Desktops", path: "/products/desktops" },
+    { name: "New Printers", path: "/products/printers" },
     { name: "Cisco Products", path: "/products/networking" },
   ];
+
   const company = [
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },
     { name: "Our Brand", path: "/brand" },
-{ name: "Our Clients", path: "/about#clients" },
+    { name: "Our Clients", path: "/about#clients" },
     { name: "Our Shop", path: "/contact#shop-gallery" },
   ];
 
   const support = [
     { name: "Head Office", path: "/contact#Office" },
     { name: "Shop Locations", path: "/contact#Contact" },
-   { name: "Terms & Conditions", path: "/terms#terms" },
-{ name: "Privacy Policy", path: "/terms#privacy" },
-{ name: "Shipping and Returns", path: "/terms#shipping" },
+    { name: "Terms & Conditions", path: "/terms#terms" },
+    { name: "Privacy Policy", path: "/terms#privacy" },
+    { name: "Shipping and Returns", path: "/terms#shipping" },
   ];
 
   const socialLinks = [
     {
       icon: Facebook,
       label: "Facebook",
-      href: "https://facebook.com/proactivetrading",
+      href: "https://facebook.com/proactivetradingeth",
     },
     {
       icon: MessageCircle,
       label: "WhatsApp",
-      href: "https://wa.me/251911123456",
+      href: "https://wa.me/251911517628",
     },
     {
-      icon: Instagram,
-      label: "Instagram",
-      href: "https://instagram.com/proactivetrading",
+      icon: Send,
+      label: "Telegram",
+      href: "https://t.me/proactivetrading1",
     },
-    { icon: Send, label: "Telegram", href: "https://t.me/proactivetrading" },
     {
       icon: Music2,
       label: "TikTok",
-      href: "https://tiktok.com/@proactivetrading",
+      href: "https://tiktok.com/@proactivetradingplc",
     },
   ];
 
@@ -80,37 +112,36 @@ const Footer = () => {
           height: 100%;
           object-fit: cover;
         }
-  .footer-overlay-1 {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, #2a5da5, #143057, #143057);
-  opacity: 0.7;
-}
-.footer-overlay-2 {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, #143057, transparent);
-  opacity: 0.4;
-}
+        .footer-overlay-1 {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, #2a5da5, #143057, #143057);
+          opacity: 0.7;
+        }
+        .footer-overlay-2 {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to right, #143057, transparent);
+          opacity: 0.4;
+        }
         .footer-accent-bar {
           position: relative;
           height: 4px;
           background: linear-gradient(to right, #e67817, rgba(230,120,23,0.6), transparent);
         }
-        .footer-content {
-          position: relative;
-          max-width: 80rem;
-          margin: 0 auto;
-          padding: 3.5rem 1.25rem;
-        }
-        @media (min-width: 640px) { .footer-content { padding: 4rem 2rem; } }
-        @media (min-width: 1024px) { .footer-content { padding: 5rem 2rem; } }
-
-        .footer-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2.5rem;
-        }
+       .footer-content {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem; /* Changed from 3.5rem 1.25rem */
+}
+@media (min-width: 640px) { .footer-content { padding: 2rem 2rem; } } /* Changed from 4rem 2rem */
+@media (min-width: 1024px) { .footer-content { padding: 2.5rem 2rem; } } /* Changed from 5rem 2rem */
+      .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem; /* Changed from 2.5rem */
+}
         @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .footer-grid { grid-template-columns: 4fr 2fr 2fr 4fr; gap: 2rem; } }
 
@@ -206,6 +237,7 @@ const Footer = () => {
           text-decoration: none;
           font-size: 0.875rem;
           transition: color 0.3s;
+          cursor: pointer;
         }
         .footer-link-item:hover { color: #e67817; }
         .footer-link-chevron {
@@ -220,7 +252,7 @@ const Footer = () => {
         }
 
         .footer-newsletter {
-          margin-top: 2rem;
+          margin-top: 3rem;
           padding: 1rem;
           border-radius: 0.75rem;
           background: rgba(255,255,255,0.1);
@@ -267,15 +299,15 @@ const Footer = () => {
         }
 
         .footer-bottom {
-          margin-top: 3.5rem;
-          padding-top: 1.5rem;
-          border-top: 1px solid rgba(255,255,255,0.12);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-between;
-          gap: 1rem;
-        }
+  margin-top: 1.5rem; /* Changed from 3.5rem */
+  padding-top: 1rem; /* Changed from 1.5rem */
+  border-top: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem; /* Changed from 1rem */
+}
         @media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
         .footer-bottom-text {
           color: rgba(176,190,197,0.6);
@@ -301,7 +333,7 @@ const Footer = () => {
           <div className="footer-grid">
             {/* Brand */}
             <div>
-              <h2 className="footer-brand-title">
+              <h2 className="footer-brand-title ">
                 Proactive <span>Trading</span>
               </h2>
               <p className="footer-desc">
@@ -313,24 +345,24 @@ const Footer = () => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "0.75rem",
-                  marginBottom: "2rem",
+                  gap: "0.5rem",
+                  marginBottom: "1.5rem",
                 }}
               >
-                <a href="tel:+251911123456" className="footer-contact-link">
+                <a href="tel:+251911517628" className="footer-contact-link">
                   <span className="footer-contact-icon">
                     <Phone size={16} />
                   </span>
-                  +251 911 123 456
+                  +251911517628
                 </a>
                 <a
-                  href="mailto:info@proactive.et"
+                  href="mailto:Pro2actives@gmail.com"
                   className="footer-contact-link"
                 >
                   <span className="footer-contact-icon">
                     <Mail size={16} />
                   </span>
-                  pro2activetra
+                  Pro2actives@gmail.com
                 </a>
                 <a href="#" className="footer-contact-link">
                   <span className="footer-contact-icon">
@@ -347,6 +379,8 @@ const Footer = () => {
                     <a
                       key={social.label}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={social.label}
                       className="footer-social-btn"
                     >
@@ -366,10 +400,14 @@ const Footer = () => {
               <ul className="footer-link-list">
                 {shopCategories.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.path} className="footer-link-item">
+                    <a
+                      href={item.path}
+                      onClick={(e) => handleLinkClick(e, item.path)}
+                      className="footer-link-item"
+                    >
                       <ChevronRight size={14} className="footer-link-chevron" />
                       {item.name}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -384,14 +422,18 @@ const Footer = () => {
               <ul className="footer-link-list">
                 {company.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.path} className="footer-link-item">
+                    <a
+                      href={item.path}
+                      onClick={(e) => handleLinkClick(e, item.path)}
+                      className="footer-link-item"
+                    >
                       <ChevronRight size={14} className="footer-link-chevron" />
                       {item.name}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
-            </div> 
+            </div>
 
             {/* Support & Newsletter */}
             <div>
@@ -402,10 +444,14 @@ const Footer = () => {
               <ul className="footer-link-list">
                 {support.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.path} className="footer-link-item">
+                    <a
+                      href={item.path}
+                      onClick={(e) => handleLinkClick(e, item.path)}
+                      className="footer-link-item"
+                    >
                       <ChevronRight size={14} className="footer-link-chevron" />
                       {item.name}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

@@ -96,7 +96,7 @@ const CompanyStats = () => {
   return (
     <section className={`acme-company-stats ${visible ? 'acme-section-visible' : ''}`} ref={sectionRef}>
       <div className="acme-stats-header">
-        <h2 className="acme-stats-title">Our Achievements</h2>
+        <h2 className="acme-stats-title">Our <span className="text-[#e67817]">Achievements</span></h2>
         <p className="acme-stats-subtitle">Trusted by organizations worldwide</p>
       </div>
 

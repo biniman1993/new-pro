@@ -19,9 +19,9 @@ const products: Product[] = [
   { name: "Laptop", count: "38 products", icon: <Laptop size={26} /> },
   { name: "Desktop", count: "42 products", icon: <Cpu size={26} /> },
   { name: "Monitor", count: "42 products", icon: <Monitor size={26} /> },
-  { name: "Networking", count: "21 products", icon: <Network size={26} /> },
   { name: "Printer", count: "68 products", icon: <Printer size={26} /> },
   { name: "Display", count: "68 products", icon: <Tv size={26} /> },
+   { name: "Networking", count: "21 products", icon: <Network size={26} /> },
 ];
 
 export default function TopProducts({ onViewMore }: TopProductsProps) {
@@ -65,11 +65,11 @@ export default function TopProducts({ onViewMore }: TopProductsProps) {
           <h2
             className={`transition-all duration-1000 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            } font-extrabold text-3xl md:text-4xl lg:text-5xl text-[#0a0e27]`}
+            } font-extrabold text-3xl md:text-4xl lg:text-5xl text-[#2a5da5]`}
           >
-            Most Popular <span className="text-[#ff7b16]">Products</span>
+            Most Popular <span className="text-[#e67817]">Products</span>
           </h2>
-          <div className={`mt-3 h-1 w-20 mx-auto bg-[#ff7b16] rounded-full transition-all duration-1000 delay-300 ${visible ? "scale-x-100" : "scale-x-0"}`} />
+          <div className={`mt-3 h-1 w-20 mx-auto bg-[#f58a39e5] rounded-full transition-all duration-1000 delay-300 ${visible ? "scale-x-100" : "scale-x-0"}`} />
         </div>
 
         {/* GRID LOGIC: 

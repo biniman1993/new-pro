@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, NavLink, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import {
   Search,
   Phone,
@@ -7,11 +7,24 @@ import {
   Menu,
   X,
   Home,
+  Building2,
+  Package,
   User,
   ShoppingBag,
   Info,
   LogIn,
   Contact,
+  ChevronDown,
+  ChevronUp,
+  Cpu,
+  Laptop,
+  Monitor,
+  Wifi,
+  Mouse,
+  Printer,
+  Video,
+  Tv,
+  Server,
 } from "lucide-react";
 
 const CustomNavLink = ({
@@ -34,21 +47,38 @@ const CustomNavLink = ({
       onClick={handleClick}
       className={({ isActive }) =>
         `relative px-4 py-2 font-semibold text-sm  tracking-wide transition-all duration-300 group ${
-          isActive ? "text-orange-400" : "text-white hover:text-orange-400"
+          isActive ? "text-[#ff9800] hover:text-[#ff9800]" : "text-white hover:text-[#ff9800]"
         }`
       }
       {...props}
     >
       {children}
-      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F97316] to-yellow-500 transition-all duration-300 group-hover:w-full"></span>
     </NavLink>
   );
 };
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation(); // ADD THIS
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isProductsOpen, setIsProductsOpen] = useState(false); // ADD THIS
+
+// Add this after your useState declarations
+useEffect(() => {
+  if (isMenuOpen) {
+    document.body.classList.add('menu-open');
+  } else {
+    document.body.classList.remove('menu-open');
+  }
+  
+  // Cleanup when component unmounts
+  return () => {
+    document.body.classList.remove('menu-open');
+  };
+}, [isMenuOpen]);
+
 
   const handleSignIn = () => {
     navigate("/login");
@@ -78,7 +108,7 @@ const Navbar = () => {
               <div className="flex items-center gap-2">
                 <div className="relative">
                   {/* Logo Container with gradient border */}
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-orange-500 to-blue-300 p-0.5">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#F97316] to-blue-300 p-0.5">
                     {/* Inner circle with solid color */}
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-[#143057] to-[#2a5da5] flex items-center justify-center">
                       {/* Logo Icon/Text */}
@@ -113,9 +143,9 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className="w-70 xl:w-66 pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:bg-white/15 transition-all duration-300"
+                  className="w-70 xl:w-66 pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-[ff9800] focus:bg-white/15 transition-all duration-300"
                 />
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70 group-hover:text-[#ff6b35] transition-colors duration-300" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70 group-hover:text-[#F97316] transition-colors duration-300" />
               </div>
             </div>
 
@@ -186,9 +216,9 @@ const Navbar = () => {
           }`}
         >
           {/* Sidebar Header */}
-          <div className="p-6 border-b border-white/10 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27]/30">
-            <div className="flex items-center gap-3 ">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-blue-300 p-1">
+          <div className="p-6 border-b border-white/10 bg-gradient-to-r from-[#2a5da5] to-[#1e293b]/30">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#F97316] to-blue-300 p-1">
                 <div className="w-full h-full rounded-full bg-gradient-to-br from-[#143057] to-[#2a5da5] flex items-center justify-center">
                   <span className="text-white font-bold text-xl">P</span>
                 </div>
@@ -205,64 +235,237 @@ const Navbar = () => {
           {/* Sidebar Content */}
           <div className="h-[calc(100%-140px)] overflow-y-auto">
             {/* Navigation Links */}
+            
+            
+            
             <div className="p-4 space-y-2">
-              {[
-                { to: "/", icon: Home, label: "Home" },
-                { to: "/about", icon: Info, label: "About" },
-                { to: "/shop", icon: ShoppingBag, label: "Shop" },
-                { to: "/brand", icon: User, label: "Brand" },
-                { to: "/contact", icon: Contact, label: "Contact" },
-                { to: "/contact", icon: Contact, label: "Product" },
-                { to: "/contact", icon: Contact, label: "My Cart" },
-              ].map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  onClick={handleNavClick}
-                  className={({ isActive }) =>
-                    `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
-                      isActive
-                        ? "bg-gradient-to-r "
-                        : " hover:border-l-4 hover:border-orange-400"
-                    }`
-                  }
+              {/* Home Button */}
+              <NavLink
+                to="/"
+                onClick={handleNavClick}
+                className={({ isActive }) =>
+                  `flex items-center gap-4 px-4 py-2 rounded-xl transition-all duration-300 group ${
+                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                  }`
+                }
+              >
+                <Home className={`w-5 h-5 ${location.pathname === '/' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Home</span>
+              </NavLink>
+
+             
+
+              {/* About Us Button */}
+              <NavLink
+                to="/about"
+                onClick={handleNavClick}
+                className={({ isActive }) =>
+                  `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
+                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                  }`
+                }
+              >
+                <Info className={`w-5 h-5 ${location.pathname === '/about' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">About Us</span>
+              </NavLink>
+
+             
+              {/* Contact Us Button */}
+              <NavLink
+                to="/contact"
+                onClick={handleNavClick}
+                className={({ isActive }) =>
+                  `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
+                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                  }`
+                }
+              >
+                <Contact className={`w-5 h-5 ${location.pathname === '/contact' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Contact Us</span>
+              </NavLink>
+
+             
+
+              {/* Our Brand Button */}
+              <NavLink
+                to="/brand"
+                onClick={handleNavClick}
+                className={({ isActive }) =>
+                  `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
+                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                  }`
+                }
+              >
+                <Building2 className={`w-5 h-5 ${location.pathname === '/brand' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Our Brand</span>
+              </NavLink>
+
+             
+
+              {/* Our Clients Button */}
+              <NavLink
+                to="/about#clients"
+                onClick={handleNavClick}
+                className={({ isActive }) =>
+                  `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
+                    location.pathname === '/about' && location.hash === '#clients' ? 'bg-white/10' : 'hover:bg-white/5'
+                  }`
+                }
+              >
+                <User className={`w-5 h-5 ${location.pathname === '/about' && location.hash === '#clients' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Our Clients</span>
+              </NavLink>
+
+           
+              {/* Shop Now Button */}
+              <NavLink
+                to="/shop"
+                onClick={handleNavClick}
+                className={({ isActive }) =>
+                  `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
+                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                  }`
+                }
+              >
+                <ShoppingBag className={`w-5 h-5 ${location.pathname === '/shop' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Shop Now</span>
+              </NavLink>
+
+            
+
+              {/* Products Button with Dropdown */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setIsProductsOpen(!isProductsOpen)}
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl transition-all duration-300 group hover:bg-white/5"
                 >
-                  <item.icon
-                    className={`w-5 h-5 ${
-                      location.pathname === item.to
-                        ? "text-white"
-                        : "text-white/70 group-hover:text-orange-400"
-                    }`}
-                  />
-                  <span className="text-white font-medium text-lg group-hover:text-orange-400">
-                    {item.label}
-                  </span>
-                </NavLink>
-              ))}
-            </div>
+                  <div className="flex items-center gap-4">
+                    <Package className="w-5 h-5 text-white/70 group-hover:text-[#ff9800]" />
+                    <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Products</span>
+                  </div>
+                  {isProductsOpen ? (
+                    <ChevronUp className="w-5 h-5 text-white/70" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-white/70" />
+                  )}
+                </button>
 
-            {/* Divider */}
-            <div className="px-6 py-2">
-              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            </div>
+                {/* Dropdown Menu */}
+                {isProductsOpen && (
+                  <div className="ml-8 pl-4 space-y-1 border-l border-white/10">
+                    <NavLink
+                      to="/Catalog/BusinessDesktop"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Cpu className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Desktop</span>
+                    </NavLink>
+                    
+                    <NavLink
+                      to="/Catalog/BusinessLaptop"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Laptop className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Laptop</span>
+                    </NavLink>
+                    
+                    <NavLink
+                      to="/Catalog/FullHDMonitor"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Monitor className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Monitor</span>
+                    </NavLink>
+                    
+                    <NavLink
+                      to="/Catalog/HomeNetworking"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Wifi className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Networking</span>
+                    </NavLink>
+                    
+                    <NavLink
+                      to="/Catalog/KeyboardMouse"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Mouse className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Accessories</span>
+                    </NavLink>
+                    
+                    <NavLink
+                      to="/Catalog/InkjetPrinter"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Printer className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Printer</span>
+                    </NavLink>
+                    
+                    <NavLink
+                      to="/Catalog/BusinessProjector"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Video className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Projector</span>
+                    </NavLink>
+                    
+                   
+                    
+                    <NavLink
+                      to="/Catalog/LEDDigitalDisplay"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Tv className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Digital Display</span>
+                    </NavLink>
+                    
+                    <NavLink
+                      to="/Catalog/ApplicationServers"
+                      onClick={handleNavClick}
+                      className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
+                    >
+                      <Server className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Server</span>
+                    </NavLink>
+                  </div>
+                )}
+              </div>
 
-            {/* Contact Info Section */}
-            <div className="p-4 space-y-4">
-              <div className="space-y-3"></div>
+              {/* Divider after Products */}
+              <div className="px-2 py-1">
+                <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              </div>
 
               {/* Login Button */}
-              <button
-                onClick={handleSignIn}
-                className="w-full px-2 py-3 rounded-xl  text-white font-bold text-lg hover:shadow-xl hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3"
+              <NavLink
+                to="/login"
+                onClick={handleNavClick}
+                className={({ isActive }) =>
+                  `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
+                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                  }`
+                }
               >
-                <LogIn className="w-5 h-5" />
-                Login
-              </button>
+                <LogIn className={`w-5 h-5 ${location.pathname === '/login' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Login</span>
+              </NavLink>
+
+              
             </div>
+
           </div>
         </div>
       </div>
     </nav>
+    
   );
 };
 

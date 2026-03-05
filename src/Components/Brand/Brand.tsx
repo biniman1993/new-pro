@@ -161,9 +161,9 @@ const Brands = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
+            className="text-4xl md:text-6xl font-bold text-[#ff8419] mb-4 tracking-tight"
           >
-            Our <span className="text-brand-orange">Brands</span>
+            Our <span className="text-[#ffffff]">Brands</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

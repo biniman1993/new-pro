@@ -405,7 +405,7 @@ const FridayPromo = () => {
                             size={16}
                             className={
                               i < Math.floor(selectedProduct.rating)
-                                ? "text-[#ff7b16] fill-current"
+                                ? "text-[#F97316] fill-current"
                                 : "text-gray-300"
                             }
                           />
@@ -416,8 +416,6 @@ const FridayPromo = () => {
                         reviews)
                       </span>
                     </div>
-
-                  
 
                     <p className="text-gray-600 leading-relaxed">
                       {selectedProduct.description}
@@ -460,11 +458,14 @@ const FridayPromo = () => {
                 {/* Buttons fixed at bottom */}
                 <div className="p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
                   <div className="flex gap-3">
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base">
+                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#F97316] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base">
                       <ShoppingCart size={20} />
                       Add to Cart
                     </button>
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:to-[#0a0e27] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm md:text-base">
+                    <button
+                      onClick={() => (window.location.href = "tel:+251911517628")}
+                      className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:to-[#0a0e27] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm md:text-base"
+                    >
                       Buy Now
                     </button>
                   </div>
@@ -525,8 +526,8 @@ const FridayPromo = () => {
         <div className="border-b border-gray-200 py-4 sm:py-6 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
-              <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#ff7b16] to-transparent rounded-full"></div>
-              <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900">
+              <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#2a5da5] to-transparent rounded-full"></div>
+              <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-extrabold text-[#2a5da5]">
                 Friday Special Deals
               </h2>
               <div className="w-1 h-4 sm:h-6 bg-gradient-to-b from-[#2a5da5] to-transparent rounded-full"></div>
@@ -562,7 +563,7 @@ const FridayPromo = () => {
                             className="w-full h-full object-contain p-3"
                           />
 
-                          <div className="absolute top-3 right-3 bg-gradient-to-r from-[#ff7b16] to-[#ff7b13] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
+                          <div className="absolute top-3 right-3 bg-gradient-to-r from-[#ff7b16] to-[#f88126] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
                             -{product.discount}%
                           </div>
 
@@ -611,9 +612,9 @@ const FridayPromo = () => {
                           <div className="border-t border-gray-200 pt-3 pb-3 mb-3">
                             <div className="flex items-center justify-between gap-2">
                               <div className="flex gap-2 min-w-0">
-                               <p className="text-sm font-bold text-gray-500"> 
-                                Call Us Now
-                               </p>
+                                <p className="text-sm font-bold text-gray-500">
+                                  Call Us Now
+                                </p>
                               </div>
 
                               <div

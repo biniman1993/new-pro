@@ -37,7 +37,7 @@ const Products = React.forwardRef(
         "Desktop Products": "BusinessDesktop",
         "Monitor Equipment": "FullHDMonitor",
         "Display Equipment": "LEDDigitalDisplay",
-        "Latest Products": "BusinessDesktop",
+        "Networking Equipment": "HomeNetworking",
       };
       return titleToSubcategoryMap[title] || "BusinessDesktop";
     };
@@ -140,7 +140,7 @@ const Products = React.forwardRef(
                 <span
                   style={{
                     background:
-                      "linear-gradient(135deg, #2a5da5 0%, #ff7b16 50%, #0a0e27 100%)",
+                      "linear-gradient(135deg, #2a5da5 30%, #e67817 60%, #f58a39e5 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -148,7 +148,7 @@ const Products = React.forwardRef(
                 >
                   {title}
                 </span>
-                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] transition-all duration-1000 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-[#2a5da5] to-[#f58a39e5] transition-all duration-1000 group-hover:w-full" />
               </span>
             </h1>
             <div
@@ -180,7 +180,7 @@ const Products = React.forwardRef(
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#96c4ee]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    <div className="absolute top-2 right-2 bg-gradient-to-r from-[#e47325] to-[#ff7b16] text-white px-2 py-1 rounded-md text-sm font-semibold shadow-lg">
+                    <div className="absolute top-2 right-2 bg-gradient-to-r from-[#f17719e5] to-[#f88228] text-white px-2 py-1 rounded-md text-sm font-semibold shadow-lg">
                       {discountPercentages[index % discountPercentages.length]}%
                     </div>
                   </div>

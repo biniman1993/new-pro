@@ -1125,7 +1125,7 @@ const Catalog = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Header with Gradient */}
-      <header className="relative overflow-hidden mt-10 sm:mt-10 md:mt-20 lg:mt-16 xl:mt-20 ">
+      <header className="relative overflow-hidden mt-14 sm:mt-10 md:mt-20 lg:mt-16 xl:mt-20 ">
         <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#143057] z-0" />
 
 

@@ -136,7 +136,7 @@ const TopMenu = () => {
 
             {/* Animated Underline */}
             <span
-              className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-[#ff9800] to-[#ff6b35] transition-all duration-300 ease-out
+              className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-[#ff9800] to-[#F97316] transition-all duration-300 ease-out
                 ${hoveredItem === item ? "w-4/5 scale-x-100" : "w-0 scale-x-0"}`}
             />
 
@@ -177,7 +177,7 @@ const TopMenu = () => {
                         </svg>
                       </div>
 
-                      <span className="text-[14px] font-semibold text-gray-800 group-hover:text-[#ff6b35] transition-all duration-300">
+                      <span className="text-[14px] font-semibold text-gray-800 group-hover:text-[#F97316] transition-all duration-300">
                         {sub}
                       </span>
                     </div>

@@ -410,7 +410,7 @@ export const monitorData = [
   {
     id: 17,
     name: 'HP Series 5 27" FHD Monitor',
-    description: "Ultra HD professional monitor perfect for home use, work, and entertainment!",
+    description: "Ultra HD professional monitor ",
     fullDescription:
       "Experience stunning detail and color accuracy with this 4K professional monitor. Perfect for designers, editors, and power users.",
     status: "In stock",
@@ -430,7 +430,7 @@ export const monitorData = [
   {
     id: 18,
     name: 'HP Series 3 Pro FHD Monitor',
-    description: "Curved gaming monitor with 144Hz refresh",
+    description: "Modern monitor with sleek design",
     fullDescription:
       "Immerse yourself in gaming with this curved monitor. The 144Hz refresh rate and QHD resolution deliver smooth, detailed visuals.",
     status: "In stock",
@@ -577,7 +577,7 @@ export const monitorData = [
 export const printerData = [
   {
     id: 25,
-    name: "Canon Copy Machine IR 2425i",
+    name: "Canon Machine IR 2425i",
     description: "A3 monochrome laser multifunction printer for small to medium offices",
     fullDescription: "The Canon imageRUNNER 2425i is a compact A3 monochrome laser MFP designed for small to medium offices with significant printing and scanning volumes. Features a 7-inch color touchscreen and automatic document feeder.",
     status: "In stock",
@@ -597,7 +597,7 @@ export const printerData = [
   },
 {
   id: 26,
-  name: "Canon imageRUNNER C3326i",
+  name: "Canon Machine C3326i",
   description: "A3 color laser multifunction printer with 26ppm speed and advanced security",
   fullDescription: "The Canon imageRUNNER C3326i is a high-performance A3 color laser MFP designed for small to medium offices. Features a 7-inch intuitive touchscreen, robust security features, and versatile finishing options for enhanced productivity.",
   status: "In stock",
@@ -622,7 +622,7 @@ export const printerData = [
 },
   {
     id: 27,
-    name: "Canon Copy Machine 2945i",
+    name: "Canon Machine 2945i",
     description: "High-speed A3 multifunction printer with 45ppm output",
     fullDescription: "The Canon imageRUNNER 2945i is a powerful A3 monochrome MFP designed for high-volume office environments. Delivers exceptional performance with 45ppm speeds and advanced document handling capabilities.",
     status: "In stock",
@@ -662,7 +662,7 @@ export const printerData = [
   },
   {
     id: 29,
-    name: "HP Colour LaserJet Pro MFP 4303dw",
+    name: "HP LaserJet Pro 4303dw",
     description: "Color laser all-in-one with advanced security and mobile printing",
     fullDescription: "This HP Color LaserJet Pro MFP delivers vibrant color prints with fast performance. Built-in security features protect sensitive data, while mobile printing options provide flexibility for modern workflows.",
     status: "In stock",
@@ -722,8 +722,8 @@ export const printerData = [
   },
   {
     id: 32,
-    name: "HP LaserJet Pro MFP M428fdw",
-    description: "Professional monochrome laser printer with advanced features",
+    name: "HP LaserJet Pro M428fdw",
+    description: "HP LaserJet Pro MFP M428fdwlaser printer with advanced features",
     fullDescription: "The HP LaserJet Pro MFP M428fdw delivers fast, high-quality monochrome printing for professional environments. Enhanced security features and intuitive touchscreen streamline workflows.",
     status: "In stock",
     image: printer8, // This should be your printer8.png file
@@ -768,7 +768,7 @@ export const networkingData = [
   },
   {
     id: 34,
-    name: "Cisco Catalyst WS-C2960X-24PS-L",
+    name: "Cisco WS-C2960X-24PS-L",
     description: "24-Port Gigabit PoE+ managed switch with 370W budget",
     fullDescription: "The Cisco Catalyst 2960X-24PS-L is a stackable Gigabit Ethernet switch with Power over Ethernet Plus (PoE+), delivering 370W of PoE budget for VoIP phones, cameras, and wireless access points. Features enterprise-class Layer 2 and Layer 3 capabilities with advanced security [citation:2][citation:5].",
     status: "In stock",
@@ -835,7 +835,7 @@ export const networkingData = [
     image: network5, // This should be your net5.png file
     specs: [
       "48 x 10/100 Fast Ethernet Ports",
-      "2 x Dual-Purpose Uplinks (10/100/1000 or SFP)",
+      "2 x Dual-Purpose Uplinks ",
       "6.8 Gbps Backplane, 10.1 Mpps Forwarding",
       "64 MB DRAM, 8K MAC Address Table",
       "VLAN Support (Up to 255 VLANs)",
@@ -848,7 +848,7 @@ export const networkingData = [
   },
   {
   id: 38,
-  name: "Cisco Firewall (Next-Gen)",
+  name: "Cisco Firewall (Next-Gen) protection ",
   description: "Enterprise next-generation firewall with advanced threat protection",
   fullDescription: "The Cisco Next-Generation Firewall provides enterprise-grade security with advanced threat protection, intrusion prevention, and application visibility. Ideal for businesses needing robust network security and VPN connectivity.",
   status: "In stock",
@@ -874,7 +874,8 @@ export const networkingData = [
   status: "In stock",
   image: network7, // This should be your network7.png file
   specs: [
-    "AC1750 Dual-Band Wi-Fi (450 Mbps 2.4GHz + 1300 Mbps 5GHz)",
+    "AC1750 Dual-Band Wi-Fi ",
+    "(450 Mbps 2.4GHz + 1300 Mbps 5GHz)",
     "3× External High-Gain Antennas for Long Range Coverage",
     "Qualcomm CPU (750 MHz) with 128 MB RAM & 16 MB Flash",
     "4× Gigabit LAN Ports + 1× Gigabit WAN Port",
@@ -892,7 +893,7 @@ export const networkingData = [
 },
 {
   id: 40,
-  name: "Ubiquiti UniFi 6 AP",
+  name: "Ubiquiti UniFi 6 AP (Access Point)",
   description: "Enterprise WiFi 6 access point with mesh technology",
   fullDescription: "The Ubiquiti UniFi 6 Access Point delivers high-performance WiFi 6 connectivity with mesh technology, 4x4 MIMO, and seamless roaming. Perfect for businesses needing reliable, scalable wireless coverage.",
   status: "In stock",
@@ -917,8 +918,8 @@ export const networkingData = [
 export const displayData = [
   {
     id: 41,
-    name: "AZTECH Digital Signage Display",
-    description: "📺 55\" Interactive Display Panel – Android 11 Powered!",
+    name: "AZTECH Digital Display",
+    description: "📺 AZTECH Digital Signage 55 Interactive Display Panel – Android 11 Powered!",
     fullDescription:
       "Professional 55-inch interactive display panel powered by Android 11. Perfect for digital signage, interactive presentations, and business applications requiring touch functionality.",
     status: "In stock",
@@ -980,7 +981,7 @@ export const displayData = [
   },
   {
     id: 44,
-    name: "Samsung LED Video Wall System",
+    name: "Samsung Video Wall System",
     description: "Modular LED Display for Impactful Visual Experiences",
     fullDescription:
       "Samsung professional LED video wall system designed for creating immersive visual experiences in retail, corporate lobbies, and public spaces with seamless modular design.",
@@ -1001,8 +1002,8 @@ export const displayData = [
   },
   {
     id: 45,
-    name: "Samsung Interactive Displays",
-    description: "Touch Screen Display for Collaboration and Engagement",
+    name: "Samsung  Displays",
+    description: "Samsung Interactive Displays Touch Screen Display for Collaboration and Engagement",
     fullDescription:
       "Samsung interactive display with multi-touch technology, perfect for classrooms, meeting rooms, and interactive spaces requiring engaging digital experiences.",
     status: "Available on backorder",
@@ -1043,8 +1044,8 @@ export const displayData = [
   },
   {
     id: 47,
-    name: "Samsung Conference Room Displays",
-    description: "Professional Displays for Meeting and Board Rooms",
+    name: "Conference Room Displays",
+    description: "Professional Samsung Conference Room Displays  for Meeting and Board Rooms",
     fullDescription:
       "Samsung professional displays optimized for conference rooms and boardrooms, offering seamless integration with collaboration tools and stunning visual clarity.",
     status: "In stock",

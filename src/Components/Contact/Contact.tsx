@@ -94,22 +94,22 @@ const Contact = () => {
 
   const teamMembers = [
     {
-      name: "Tibebu Siyum",
+      name: "Tibebu Seyoum",
       role: "CEO",
-      email: "tibebusiyum@gmail.com",
-      phone: "+251 123 456 789",
+      email: "TibebuSeyoum@gmail.com",
+      phone: "+251911517628",
     },
     {
-      name: "Meselu Gebreyohans",
+      name: "Meselu G/Yohannes",
       role: "Manager",
-      email: "mike@proactive.com",
-      phone: "+251 987 654 321",
+      email: "MeseluGebreyohans@gmail.com",
+      phone: "+251911145127",
     },
     {
-      name: "Degim Girma",
+      name: "Degim Tsegaye",
       role: "Customer Support",
-      email: "emma@proactive.com",
-      phone: "+251 456 789 123",
+      email: "DegimTsegaye@gmail.com",
+      phone: "+251903712398",
     },
   ];
 
@@ -226,10 +226,10 @@ const Contact = () => {
               {navigationButtons.map((button) => (
                 <button
                   key={button.id}
-                  className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
+                  className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
                     activeSection === button.id
-                      ? "text-white bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] "
-                      : "text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100"
+                      ? "text-white font-bold bg-gradient-to-r from-[#2a5da5] to-[#1d4680] "
+                      : "text-gray-600 font-bold hover:text-gray-900 bg-gray-50 hover:bg-gray-100"
                   }`}
                   onClick={() => scrollToSection(button.id)}
                 >
@@ -273,7 +273,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800">Call Us</h3>
-                  <p className="text-sm text-gray-500">24/7 Available</p>
+                  <p className="text-sm text-[gray]-500">24/7 Available</p>
                 </div>
               </div>
 
@@ -291,26 +291,26 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="tel:+251911123456"
+                  href="tel:+251943565408"
                   className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all duration-300 group/phone"
                 >
                   <span className="font-semibold text-gray-700">
                     📱 Secondary
                   </span>
                   <span className="text-[#2a5da5] font-bold group-hover/phone:scale-105 transition-transform">
-                    +251 911 123 456
+                    +251 943565408
                   </span>
                 </a>
 
                 <a
-                  href="tel:+251911789012"
+                  href="tel:+251115578994"
                   className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all duration-300 group/phone"
                 >
                   <span className="font-semibold text-gray-700">
                     🛟 Support
                   </span>
                   <span className="text-[#2a5da5] font-bold group-hover/phone:scale-105 transition-transform">
-                    +251911517628
+                    +251115578994
                   </span>
                 </a>
               </div>
@@ -351,12 +351,12 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="mailto:sales@proactive.et?subject=Sales%20Inquiry"
+                  href="mailto:proactivetradingplc@gmail.com?subject=Sales%20Inquiry"
                   className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all duration-300 group/email"
                 >
                   <span className="font-semibold text-gray-700">💰 Sales</span>
                   <span className="text-[#ff7b16] font-bold group-hover/email:scale-105 transition-transform truncate ml-2">
-                    sales@proactive.et
+                    proactivetradingplc@gmail.com
                   </span>
                 </a>
 
@@ -447,7 +447,7 @@ const Contact = () => {
 
           {/* Quick Contact Bar */}
           <div className="mt-12 flex flex-wrap items-center justify-center gap-4 p-4 bg-white rounded-2xl shadow-lg border border-gray-100">
-            <span className="text-gray-600 font-medium">Quick actions:</span>
+            <span className="text-gray-600 font-bold ">Quick actions:</span>
             <a
               href="tel:+251911517628"
               className="px-4 py-2 bg-blue-50 text-[#2a5da5] rounded-full hover:bg-blue-100 transition-colors text-sm font-semibold flex items-center gap-1"
@@ -716,7 +716,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                <div className="px-4 py-2 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] rounded-full shadow-lg transform hover:scale-105 transition-transform">
+                <div className="px-4 py-2 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] rounded-xl shadow-lg transform hover:scale-105 transition-transform">
                   <span className="text-sm font-bold text-white tracking-wide">
                     ★ HEADQUARTERS ★
                   </span>
@@ -814,6 +814,7 @@ const Contact = () => {
                           +251115578994
                         </p>
                       </div>
+                      
                       <span className="text-[#2a5da5] opacity-0 group-hover:opacity-100 transition-opacity">
                         📞
                       </span>

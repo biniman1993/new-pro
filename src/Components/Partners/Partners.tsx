@@ -128,10 +128,9 @@ const Partners = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-black text-[#0f172a] mb-4">
-            Clients We <span className="text-[#2a5da5]">Served</span>
+          <h2 className="text-3xl md:text-5xl font-black text-[#2a5da5] mb-4">
+            Clients We <span className="text-[#e67817]">Served</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-[#2a5da5] to-[#e67817] mx-auto rounded-full mb-6"></div>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-lg">
             Empowering Ethiopia's leading institutions with world-class
             technology solutions.
@@ -213,7 +212,7 @@ const Partners = () => {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ff7b16] to-[#07162e] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#e67817] to-[#07162e] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </div>
       </div>

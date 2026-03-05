@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -51,16 +51,43 @@ const services: ServiceCard[] = [
 function App() {
   const [currentIndex, setCurrentIndex] = useState(2);
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+
+    const scrollLeft = scrollRef.current.scrollLeft;
+    const cardWidth = 324;
+    const index = Math.round(scrollLeft / cardWidth);
+
+    setCurrentIndex(index);
+  };
+
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : services.length - 1));
+
+    scrollRef.current?.scrollTo({
+      left: (currentIndex - 1) * 324,
+      behavior: "smooth",
+    });
   };
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev < services.length - 1 ? prev + 1 : 0));
+
+    scrollRef.current?.scrollTo({
+      left: (currentIndex + 1) * 324,
+      behavior: "smooth",
+    });
   };
 
   const handleCardClick = (index: number) => {
     setCurrentIndex(index);
+
+    scrollRef.current?.scrollTo({
+      left: index * 324,
+      behavior: "smooth",
+    });
   };
 
   const getCardStyle = (index: number) => {
@@ -116,7 +143,8 @@ function App() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-16">
-        {/* Title Section - Using your provided code */}
+
+        {/* Title */}
         <div className="text-center mb-9 space-y-4">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
@@ -125,6 +153,7 @@ function App() {
           >
             Workflow Ecosystem
           </motion.span>
+
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,13 +161,61 @@ function App() {
             className="text-5xl md:text-6xl font-black text-[#0a0e27] tracking-tight"
           >
             End-to-End <span className="text-[#2a5da5]">AV</span><br/>
-            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">Integration</span>
+            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
+              Integration
+            </span>
           </motion.h1>
         </div>
 
-        {/* Cards Section */}
-        <div className="w-full max-w-7xl mx-auto mb-6" style={{ perspective: '2000px' }}>
+        {/* MOBILE + TABLET SCROLL */}
+        <div className="w-full lg:hidden overflow-x-auto pb-8">
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex gap-6 px-4 min-w-max snap-x snap-mandatory overflow-x-auto"
+          >
+
+            {services.map((service, index) => (
+              <div
+                key={service.id}
+                onClick={() => handleCardClick(index)}
+                className="w-[300px] flex-shrink-0 snap-center"
+              >
+                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-b-4 border-orange-500">
+
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+
+                    <div className="absolute bottom-4 left-6 text-[100px] font-bold text-white/20">
+                      {service.number}
+                    </div>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-[#2a5da5] mb-2">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-gray-600">
+                      {service.description}
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+        {/* DESKTOP 3D CAROUSEL */}
+        <div className="w-full max-w-7xl mx-auto mb-6 hidden lg:block" style={{ perspective: '2000px' }}>
           <div className="relative h-[550px] flex items-center justify-center">
+
             {services.map((service, index) => {
               const style = getCardStyle(index);
               const isCenterCard = index === currentIndex;
@@ -151,41 +228,46 @@ function App() {
                   onClick={() => handleCardClick(index)}
                 >
                   <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-b-4 border-orange-500 hover:shadow-orange-200/50 transition-shadow">
-                    <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+
+                    <div className="relative h-72 overflow-hidden">
                       <img
                         src={service.image}
                         alt={service.title}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute bottom-4 left-6 text-[120px] font-bold text-white/20 leading-none">
+
+                      <div className="absolute bottom-4 left-6 text-[120px] font-bold text-white/20">
                         {service.number}
                       </div>
                     </div>
 
                     <div className="p-8 pb-10">
-                      {/* Apply #2a5da5 color only to the center card's title */}
                       <h3 
-                        className={`text-2xl font-bold mb-3 ${isCenterCard ? '' : 'text-gray-900'}`}
+                        className="text-2xl font-bold mb-3"
                         style={{ color: isCenterCard ? '#2a5da5' : '#1a1a1a' }}
                       >
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 text-lg leading-relaxed">
+
+                      <p className="text-gray-600 text-lg">
                         {service.description}
                       </p>
                     </div>
+
                   </div>
                 </div>
               );
             })}
+
           </div>
         </div>
 
-        {/* Navigation Controls */}
+        {/* CONTROLS */}
         <div className="flex items-center gap-8">
+
           <button
             onClick={handlePrev}
-            className="w-14 h-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
+            className="w-14 h-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-110"
             style={{ color: '#2a5da5' }}
           >
             <ChevronLeft className="w-6 h-6" />
@@ -195,7 +277,13 @@ function App() {
             {services.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => {
+                  setCurrentIndex(index);
+                  scrollRef.current?.scrollTo({
+                    left: index * 324,
+                    behavior: "smooth",
+                  });
+                }}
                 className={`transition-all rounded-full ${
                   index === currentIndex
                     ? 'w-3 h-3 bg-orange-500'
@@ -207,11 +295,12 @@ function App() {
 
           <button
             onClick={handleNext}
-            className="w-14 h-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center group hover:scale-110"
+            className="w-14 h-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:scale-110"
             style={{ color: '#2a5da5' }}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
+
         </div>
       </div>
     </div>

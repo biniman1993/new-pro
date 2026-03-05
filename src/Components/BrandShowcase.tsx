@@ -71,10 +71,10 @@ const BrandShowcase = () => {
             <span className="text-[10px] md:text-xs font-bold text-[#2a5da5] tracking-widest uppercase">Global Partnerships</span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
-            Our Trusted <span className="text-[#ff7b16]">Tech Brands</span>
+          <h2 className="text-3xl md:text-5xl font-black text-[#2a5da5] mb-4 tracking-tight">
+            Our Trusted <span className="text-[#e67817]">Tech Brands</span>
           </h2>
-          <div className="h-1.5 w-20 bg-[#ff7b16] mx-auto rounded-full mb-6"></div>
+          <div className="h-1.5 w-20 bg-[#e67817] mx-auto rounded-full mb-6"></div>
         </div>
 
         {/* Logo Slider Container */}
