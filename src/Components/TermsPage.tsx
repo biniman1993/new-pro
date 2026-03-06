@@ -54,7 +54,7 @@ const TermsPage = () => {
   md:mt-16     
   lg:mt-20     
   xl:mt-24    
-  2xl:mt-28  ">
+  2xl:mt-24  ">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[#2a5da5] to-[#143057] text-white py-16 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Terms & Conditions</h1>

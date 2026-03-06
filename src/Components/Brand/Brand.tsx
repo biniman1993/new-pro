@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react"; // Add this import
+
 // --- Major Tech & Computers ---
 
 const brands = [
@@ -144,12 +146,37 @@ const brands = [
   { id: 86, name: "Vizio", logo: "/src/assets/brandslogo/Vizio.png" },
   { id: 87, name: "Philips", logo: "/src/assets/brandslogo/Philips.png" },
   { id: 88, name: "Xiaomi", logo: "/src/assets/brandslogo/Xiaomi.png" },
-   { id: 89, name: "Team Group", logo: "/src/assets/brandslogo/Team Group.png" },
+  { id: 89, name: "Team Group", logo: "/src/assets/brandslogo/Team Group.png" },
   { id: 90, name: "Seagate", logo: "/src/assets/brandslogo/Seagate.png" },
 ];
 
 const Brands = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [visibleBrands, setVisibleBrands] = useState(brands.slice(0, 20));
+  const [showAll, setShowAll] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setVisibleBrands(brands);
+        setShowAll(true);
+      } else {
+        setVisibleBrands(brands.slice(0, 20));
+        setShowAll(false);
+      }
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleViewAll = () => {
+    setVisibleBrands(brands);
+    setShowAll(true);
+  };
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden pt-[40px] md:pt-[60px] lg:pt-[90px] xl:pt-[90px] 2xl:pt-[90px]">
       {/* Header */}
@@ -176,6 +203,7 @@ const Brands = () => {
           </motion.p>
         </div>
       </header>
+
       {/* Intro */}
       <section className="bg-[#ffffff]">
         <div className="-mt-[6.375rem] bg-card backdrop-blur rounded-2xl p-6 md:p-8 max-w-[70rem] mx-auto shadow-lg">
@@ -194,11 +222,12 @@ const Brands = () => {
           </p>
         </div>
       </section>
+
       {/* Brands Grid */}
-      <section className="py-24 px-5  bg-[#ffffff]">
+      <section className="py-24 px-5 bg-[#ffffff]">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(140px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4 md:gap-7">
-            {brands.map((brand, index) => (
+            {visibleBrands.map((brand, index) => (
               <motion.div
                 key={brand.id}
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -211,7 +240,7 @@ const Brands = () => {
                 className="group relative bg-[#ffffff] p-5 sm:p-6 rounded-2xl shadow-md border-2 border-transparent hover:-translate-y-3 hover:scale-105 hover:shadow-2xl transition-all duration-400 flex flex-col items-center min-h-[160px] md:min-h-[200px] cursor-pointer overflow-hidden"
               >
                 {/* Top accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-1  scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+                <div className="absolute top-0 left-0 right-0 h-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
                 {/* Logo */}
                 <img
                   src={brand.logo}
@@ -220,11 +249,10 @@ const Brands = () => {
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = "none";
-                    // You might want to add a text fallback here instead
                     const parent = target.parentElement;
                     const fallback = document.createElement("div");
                     fallback.className =
-                      "w-[60px] h-[60px] sm:w-[75px] sm:h-[75px] md:w-[90px] md:h-[90px] mb-3 md:mb-4 flex items-center justify-center bg-primary text-primary-foreground font-extrabold text-lg";
+                      "w-[60px] h-[60px] sm:w-[75px] sm:h-[75px] md:w-[90px] md:h-[90px] mb-3 md:mb-4 flex items-center justify-center bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] text-white font-bold text-xl rounded-2xl shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 border-2 border-white/20";
                     fallback.textContent = brand.name
                       .substring(0, 2)
                       .toUpperCase();
@@ -240,8 +268,21 @@ const Brands = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* View All Button - Only show on mobile when not all brands are visible */}
+          {!showAll && brands.length > 20 && (
+            <div className="text-center mt-10">
+              <button
+                onClick={handleViewAll}
+                className="px-8 py-3 bg-[#2a5da5] text-white font-semibold rounded-lg hover:bg-[#1a3a70] transition-colors duration-300 shadow-lg hover:shadow-xl"
+              >
+                View All Brands
+              </button>
+            </div>
+          )}
         </div>
       </section>
+
       {/* CTA */}
       <section className="pb-28 bg-[#ffffff] px-4 relative overflow-hidden">
         {/* Background Tech Elements - Low Opacity */}
@@ -326,9 +367,10 @@ const Brands = () => {
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-foreground mb-8 md:mb-10 leading-tight tracking-tight">
             Let's Work Together & Boost Your Technology Success!
           </h2>
-          <button 
-           onClick={() => navigate("/contact")}
-          className="group inline-flex items-center gap-3 px-10 md:px-12 py-4 md:py-5 text-base md:text-lg font-bold text-[#ffffff] bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] rounded-full shadow-[0_15px_40px_rgba(28,76,151,0.4)] hover:shadow-[0_20px_50px_rgba(28,76,151,0.6)] hover:-translate-y-1 hover:from-brand-orange hover:to-brand-orange-dark transition-all duration-300 relative overflow-hidden">
+          <button
+            onClick={() => navigate("/contact")}
+            className="group inline-flex items-center gap-3 px-10 md:px-12 py-4 md:py-5 text-base md:text-lg font-bold text-[#ffffff] bg-gradient-to-br from-[#2a5da5] to-[#0a0e27] rounded-full shadow-[0_15px_40px_rgba(28,76,151,0.4)] hover:shadow-[0_20px_50px_rgba(28,76,151,0.6)] hover:-translate-y-1 hover:from-brand-orange hover:to-brand-orange-dark transition-all duration-300 relative overflow-hidden"
+          >
             <span className="tracking-wide">Get Started</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
@@ -337,4 +379,5 @@ const Brands = () => {
     </div>
   );
 };
+
 export default Brands;

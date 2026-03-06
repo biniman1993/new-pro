@@ -47,7 +47,9 @@ const CustomNavLink = ({
       onClick={handleClick}
       className={({ isActive }) =>
         `relative px-4 py-2 font-semibold text-sm  tracking-wide transition-all duration-300 group ${
-          isActive ? "text-[#ff9800] hover:text-[#ff9800]" : "text-white hover:text-[#ff9800]"
+          isActive
+            ? "text-[#ff9800] hover:text-[#ff9800]"
+            : "text-white hover:text-[#ff9800]"
         }`
       }
       {...props}
@@ -65,20 +67,19 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isProductsOpen, setIsProductsOpen] = useState(false); // ADD THIS
 
-// Add this after your useState declarations
-useEffect(() => {
-  if (isMenuOpen) {
-    document.body.classList.add('menu-open');
-  } else {
-    document.body.classList.remove('menu-open');
-  }
-  
-  // Cleanup when component unmounts
-  return () => {
-    document.body.classList.remove('menu-open');
-  };
-}, [isMenuOpen]);
+  // Add this after your useState declarations
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
 
+    // Cleanup when component unmounts
+    return () => {
+      document.body.classList.remove("menu-open");
+    };
+  }, [isMenuOpen]);
 
   const handleSignIn = () => {
     navigate("/login");
@@ -143,7 +144,7 @@ useEffect(() => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className="w-70 xl:w-66 pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-[ff9800] focus:bg-white/15 transition-all duration-300"
+                  className="w-40 md:w-40 lg:w-52 xl:w-56 2xl:w-72 pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-[ff9800] focus:bg-white/15 transition-all duration-300"
                 />
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70 group-hover:text-[#F97316] transition-colors duration-300" />
               </div>
@@ -158,7 +159,7 @@ useEffect(() => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
                 <Phone className="w-4 h-4 transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300 group-hover:text-blue-300" />
-                <span className="hidden xl:inline relative z-10 group-hover:text-blue-200 transition-colors duration-300">
+                <span className="hidden lg:inline relative z-10 group-hover:text-blue-200 transition-colors duration-300">
                   +251911517628
                 </span>
               </a>
@@ -235,9 +236,7 @@ useEffect(() => {
           {/* Sidebar Content */}
           <div className="h-[calc(100%-140px)] overflow-y-auto">
             {/* Navigation Links */}
-            
-            
-            
+
             <div className="p-4 space-y-2">
               {/* Home Button */}
               <NavLink
@@ -245,15 +244,17 @@ useEffect(() => {
                 onClick={handleNavClick}
                 className={({ isActive }) =>
                   `flex items-center gap-4 px-4 py-2 rounded-xl transition-all duration-300 group ${
-                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                    isActive ? "bg-white/10" : "hover:bg-white/5"
                   }`
                 }
               >
-                <Home className={`w-5 h-5 ${location.pathname === '/' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
-                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Home</span>
+                <Home
+                  className={`w-5 h-5 ${location.pathname === "/" ? "text-white" : "text-white/70 group-hover:text-[#ff9800]"}`}
+                />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">
+                  Home
+                </span>
               </NavLink>
-
-             
 
               {/* About Us Button */}
               <NavLink
@@ -261,30 +262,35 @@ useEffect(() => {
                 onClick={handleNavClick}
                 className={({ isActive }) =>
                   `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
-                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                    isActive ? "bg-white/10" : "hover:bg-white/5"
                   }`
                 }
               >
-                <Info className={`w-5 h-5 ${location.pathname === '/about' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
-                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">About Us</span>
+                <Info
+                  className={`w-5 h-5 ${location.pathname === "/about" ? "text-white" : "text-white/70 group-hover:text-[#ff9800]"}`}
+                />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">
+                  About Us
+                </span>
               </NavLink>
 
-             
               {/* Contact Us Button */}
               <NavLink
                 to="/contact"
                 onClick={handleNavClick}
                 className={({ isActive }) =>
                   `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
-                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                    isActive ? "bg-white/10" : "hover:bg-white/5"
                   }`
                 }
               >
-                <Contact className={`w-5 h-5 ${location.pathname === '/contact' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
-                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Contact Us</span>
+                <Contact
+                  className={`w-5 h-5 ${location.pathname === "/contact" ? "text-white" : "text-white/70 group-hover:text-[#ff9800]"}`}
+                />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">
+                  Contact Us
+                </span>
               </NavLink>
-
-             
 
               {/* Our Brand Button */}
               <NavLink
@@ -292,15 +298,17 @@ useEffect(() => {
                 onClick={handleNavClick}
                 className={({ isActive }) =>
                   `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
-                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                    isActive ? "bg-white/10" : "hover:bg-white/5"
                   }`
                 }
               >
-                <Building2 className={`w-5 h-5 ${location.pathname === '/brand' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
-                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Our Brand</span>
+                <Building2
+                  className={`w-5 h-5 ${location.pathname === "/brand" ? "text-white" : "text-white/70 group-hover:text-[#ff9800]"}`}
+                />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">
+                  Our Brand
+                </span>
               </NavLink>
-
-             
 
               {/* Our Clients Button */}
               <NavLink
@@ -308,30 +316,38 @@ useEffect(() => {
                 onClick={handleNavClick}
                 className={({ isActive }) =>
                   `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
-                    location.pathname === '/about' && location.hash === '#clients' ? 'bg-white/10' : 'hover:bg-white/5'
+                    location.pathname === "/about" &&
+                    location.hash === "#clients"
+                      ? "bg-white/10"
+                      : "hover:bg-white/5"
                   }`
                 }
               >
-                <User className={`w-5 h-5 ${location.pathname === '/about' && location.hash === '#clients' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
-                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Our Clients</span>
+                <User
+                  className={`w-5 h-5 ${location.pathname === "/about" && location.hash === "#clients" ? "text-white" : "text-white/70 group-hover:text-[#ff9800]"}`}
+                />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">
+                  Our Clients
+                </span>
               </NavLink>
 
-           
               {/* Shop Now Button */}
               <NavLink
                 to="/shop"
                 onClick={handleNavClick}
                 className={({ isActive }) =>
                   `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
-                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                    isActive ? "bg-white/10" : "hover:bg-white/5"
                   }`
                 }
               >
-                <ShoppingBag className={`w-5 h-5 ${location.pathname === '/shop' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
-                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Shop Now</span>
+                <ShoppingBag
+                  className={`w-5 h-5 ${location.pathname === "/shop" ? "text-white" : "text-white/70 group-hover:text-[#ff9800]"}`}
+                />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">
+                  Shop Now
+                </span>
               </NavLink>
-
-            
 
               {/* Products Button with Dropdown */}
               <div className="space-y-1">
@@ -341,7 +357,9 @@ useEffect(() => {
                 >
                   <div className="flex items-center gap-4">
                     <Package className="w-5 h-5 text-white/70 group-hover:text-[#ff9800]" />
-                    <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Products</span>
+                    <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">
+                      Products
+                    </span>
                   </div>
                   {isProductsOpen ? (
                     <ChevronUp className="w-5 h-5 text-white/70" />
@@ -359,81 +377,95 @@ useEffect(() => {
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
                       <Cpu className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Desktop</span>
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Desktop
+                      </span>
                     </NavLink>
-                    
+
                     <NavLink
                       to="/Catalog/BusinessLaptop"
                       onClick={handleNavClick}
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
                       <Laptop className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Laptop</span>
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Laptop
+                      </span>
                     </NavLink>
-                    
+
                     <NavLink
                       to="/Catalog/FullHDMonitor"
                       onClick={handleNavClick}
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
                       <Monitor className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Monitor</span>
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Monitor
+                      </span>
                     </NavLink>
-                    
+
                     <NavLink
-                      to="/Catalog/HomeNetworking"
+                      to="/Catalog/RoutersSwitches"
                       onClick={handleNavClick}
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
                       <Wifi className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Networking</span>
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Networking
+                      </span>
                     </NavLink>
-                    
                     <NavLink
-                      to="/Catalog/KeyboardMouse"
+                      to="/Catalog/HPEProliantMLserver"
                       onClick={handleNavClick}
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
-                      <Mouse className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Accessories</span>
+                      <Server className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Server
+                      </span>
                     </NavLink>
-                    
+
                     <NavLink
                       to="/Catalog/InkjetPrinter"
                       onClick={handleNavClick}
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
                       <Printer className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Printer</span>
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Printer
+                      </span>
                     </NavLink>
-                    
+
                     <NavLink
                       to="/Catalog/BusinessProjector"
                       onClick={handleNavClick}
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
                       <Video className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Projector</span>
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Projector
+                      </span>
                     </NavLink>
-                    
-                   
-                    
+
                     <NavLink
-                      to="/Catalog/LEDDigitalDisplay"
+                      to="/Catalog/DigitalSignage"
                       onClick={handleNavClick}
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
                       <Tv className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Digital Display</span>
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Digital Display
+                      </span>
                     </NavLink>
-                    
                     <NavLink
-                      to="/Catalog/ApplicationServers"
+                      to="/Catalog/KeyboardMouse"
                       onClick={handleNavClick}
                       className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-white/5"
                     >
-                      <Server className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
-                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">Server</span>
+                      <Mouse className="w-4 h-4 text-white/60 group-hover:text-[#ff9800]" />
+                      <span className="text-white/80 text-sm group-hover:text-[#ff9800]">
+                        Accessories
+                      </span>
                     </NavLink>
                   </div>
                 )}
@@ -450,22 +482,22 @@ useEffect(() => {
                 onClick={handleNavClick}
                 className={({ isActive }) =>
                   `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group ${
-                    isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                    isActive ? "bg-white/10" : "hover:bg-white/5"
                   }`
                 }
               >
-                <LogIn className={`w-5 h-5 ${location.pathname === '/login' ? 'text-white' : 'text-white/70 group-hover:text-[#ff9800]'}`} />
-                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">Login</span>
+                <LogIn
+                  className={`w-5 h-5 ${location.pathname === "/login" ? "text-white" : "text-white/70 group-hover:text-[#ff9800]"}`}
+                />
+                <span className="text-white font-medium text-lg group-hover:text-[#ff9800]">
+                  Login
+                </span>
               </NavLink>
-
-              
             </div>
-
           </div>
         </div>
       </div>
     </nav>
-    
   );
 };
 

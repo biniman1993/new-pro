@@ -190,7 +190,7 @@ const DataCenterPage = () => {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <button
-                  onClick={() => navigate("/Catalog/ApplicationServers")}
+                  onClick={() => navigate("/Catalog/HPEProliantMLserver")}
                   className="btn-primary px-8 py-4 rounded-xl text-white font-semibold flex items-center gap-2 group"
                 >
                   Explore All Servers
@@ -517,7 +517,7 @@ const DataCenterPage = () => {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <button
-                  onClick={() => navigate("/Catalog/LEDDigitalDisplay")}
+                  onClick={() => navigate("/Catalog/InteractiveDisplay")}
                   className="btn-primary px-8 py-4 rounded-xl text-white font-semibold flex items-center gap-2 group"
                 >
                   Explore Signage
@@ -634,7 +634,7 @@ const DataCenterPage = () => {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <button
-                  onClick={() => navigate("/Catalog/VideoWall")}
+                  onClick={() => navigate("/Catalog/DigitalSignage")}
                   className="btn-primary px-8 py-4 rounded-xl text-white font-semibold flex items-center gap-2 group"
                 >
                   Explore Solutions

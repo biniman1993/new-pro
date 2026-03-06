@@ -7,6 +7,8 @@ const TopMenu = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  // NEW LINE 1: Add selected category state
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   // Data mapping
   const menuData: Record<string, string[]> = {
@@ -29,7 +31,7 @@ const TopMenu = () => {
       "2K / 4K Monitor",
       "Gaming Monitor",
       "Curved Monitor",
-      "Professional Monitor",
+      "Modern 4K TVs",
     ],
     Networking: [
       "Home Networking",
@@ -38,56 +40,60 @@ const TopMenu = () => {
       "Routers & Switches",
       "Cables",
     ],
-    Accessories: [
+     Server: [
+      "HPE Proliant ML server",
+      "HPE Proliant DL server",
+      "HPE Proliant RL server",
+      "HPE Modular Servers",
+      "Dell EMC PowerEdge Tower server",
+      "Dell EMC PowerEdge Rack server",
+      "Server Accessories",
+      "Differnt Rack Units",
+    ],
+   "Printer": [
+  "InkjetPrinter",
+  "LaserPrinter", 
+  "AllinOnePrinter",
+  "Scanners",
+  "PrinterAccessories",
+  "DocumentPrinter",
+  "LargeFormatPrinter",
+  "IDCardPrinter",
+  "POSPrinter",
+  "LabelPrinter",
+  "Photocopier",
+  "Toner",
+  "InkTankPrinter",
+  "InkBottle",
+  "BarcodeScanner",
+  "Ribbon",
+  "Cartridge",
+  "PrinterDrum",
+  "PrinterPaper"
+],
+    Projector: [
+      "Business Projector",
+      "Home Cinema Projector",
+      "Portable Projector",
+      "Short Throw Projector",
+      "Projector Accessories",
+    ],
+   
+   "Digital Display": [
+    "Digital Signage",
+  "LED Video Wall",
+  "Interactive Display", 
+  "Kiosk",
+  "Advertising Display"
+],
+     Accessories: [
       "Keyboard & Mouse",
       "Webcams",
       "Headphones",
       "USB Hubs",
       "Laptop Stands",
     ],
-    Printer: [
-      "Inkjet Printer",
-      "Laser Printer",
-      "All-in-One Printer",
-      "Scanners",
-      "Toner",
-      "Ink Tank",
-      "Barcode Scanner",
-      "Photocopier",
-      "ID Card Printer",
-      "POS Printer",
-    ],
-    Projector: [
-      "Business Projector",
-      "Home Cinema Projector",
-      "Portable Projector",
-      "Short-Throw",
-      "Accessories",
-    ],
-    Components: [
-      "Processor",
-      "CPU Cooler",
-      "Motherboard",
-      "Graphics Card",
-      "Power Supply",
-      "Casing",
-      "RAM",
-    ],
-    "Digital Display": [
-      "LED Display",
-      "Video Wall",
-      "Advertising Displays",
-      "Interactive Panel",
-      "Kiosk",
-    ],
-    Server: [
-      "Application Servers",
-      "GPU Servers",
-      "Storage Servers",
-      "Blade Servers",
-      "NAS",
-      "Server Accessories",
-    ],
+   
   };
 
   // Define pages where dropdown text should be white
@@ -114,11 +120,21 @@ const TopMenu = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // NEW EFFECT: Clear selected category when leaving catalog pages
+  useEffect(() => {
+    // If current path doesn't include '/catalog' (case insensitive), clear selection
+    if (!location.pathname.toLowerCase().includes('/catalog')) {
+      setSelectedCategory(null);
+    }
+  }, [location.pathname]);
+
   const formatSubcategoryName = (name: string) => {
     return name.replace(/[&/\\#,+()$~%.'":*?<>{} ]/g, "");
   };
 
+  // NEW LINE 2: Update handleNavigation to set selected category
   const handleNavigation = (category: string, sub?: string) => {
+    setSelectedCategory(category); // ← THIS LINE ADDED
     const target = sub || menuData[category][0];
     navigate(`/Catalog/${formatSubcategoryName(target)}`);
   };
@@ -131,22 +147,23 @@ const TopMenu = () => {
         ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         hidden lg:flex overflow-visible`}
     >
-      <ul className="flex  md:gap-[25px] lg:gap-[20px] xl:gap-[25px] px-[25px] list-none m-0 relative h-full items-center overflow-visible">
+      <ul className="flex  md:gap-[25px] lg:gap-[25px] xl:gap-[30px] px-[25px] list-none m-0 relative h-full items-center overflow-visible">
         {menuItems.map((item) => (
           <li
             key={item}
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
             onClick={() => handleNavigation(item)}
+            // NEW LINE 3: Update className to include selected state
             className={`relative py-2 px-2.5 text-[14px] font-medium cursor-pointer transition-colors duration-300 normal-case overflow-visible
-              ${hoveredItem === item ? "text-[#ff9800]" : "text-white"}`}
+              ${hoveredItem === item || selectedCategory === item ? "text-[#ff9800]" : "text-white"}`}
           >
             {item}
 
             {/* Animated Underline */}
             <span
               className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-[#ff9800] to-[#F97316] transition-all duration-300 ease-out
-                ${hoveredItem === item ? "w-4/5 scale-x-100" : "w-0 scale-x-0"}`}
+                ${hoveredItem === item || selectedCategory === item ? "w-4/5 scale-x-100" : "w-0 scale-x-0"}`}
             />
 
             {/* Dropdown Container */}

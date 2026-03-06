@@ -9,12 +9,12 @@ import {
   ChevronRight,
   Play,
 } from "lucide-react";
-import hero1 from "../assets/hero/h1.png";
-import hero2 from "../assets/hero/lsptop (2).png";
-import hero3 from "../assets/hero/cisco.png";
-import hero4 from "../assets/hero/disp.png";
-import hero5 from "../assets/hero/tv.png";
-import hero6 from "../assets/hero/server1.png";
+import hero1 from "../assets/hero/h1.webp";
+import hero2 from "../assets/hero/lsptop (2).webp";
+import hero3 from "../assets/hero/cisco.webp";
+import hero4 from "../assets/hero/disp.webp";
+import hero5 from "../assets/hero/tv.webp";
+import hero6 from "../assets/hero/server1.webp";
 import { useNavigate } from "react-router-dom";
 interface SlideContent {
   title: string;

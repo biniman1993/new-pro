@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { placeholderImages } from "./placeholder";
-
 import {
   MessageCircle,
   Zap,
@@ -40,6 +39,7 @@ const FridayPromo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPulsing, setIsPulsing] = useState(false);
   const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const [isAdded, setIsAdded] = useState(false);
   const [mobileIndex, setMobileIndex] = useState(0); // Add state for mobile index
   const products: Product[] = [
     {
@@ -300,7 +300,11 @@ const FridayPromo = () => {
       });
     }
   };
-
+  const handleAddToCart = () => {
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
+    // Add your actual add to cart logic here
+  };
   // Get 3 products for desktop view
   const getDesktopProducts = () => {
     const startIndex = carouselIndex;
@@ -458,12 +462,27 @@ const FridayPromo = () => {
                 {/* Buttons fixed at bottom */}
                 <div className="p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
                   <div className="flex gap-3">
-                    <button className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#F97316] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base">
-                      <ShoppingCart size={20} />
-                      Add to Cart
+                    <button
+                      onClick={handleAddToCart}
+                      className={`flex-1 py-3 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base ${
+                        isAdded
+                          ? "bg-gradient-to-r from-green-500 to-green-600 text-white"
+                          : "bg-gradient-to-r from-[#2a5da5] to-[#143057] hover:from-[#F97316] hover:to-[#2a5da5] text-white"
+                      }`}
+                    >
+                      {isAdded ? (
+                        "Added to Cart ✓"
+                      ) : (
+                        <>
+                          <ShoppingCart size={20} />
+                          Add to Cart
+                        </>
+                      )}
                     </button>
                     <button
-                      onClick={() => (window.location.href = "tel:+251911517628")}
+                      onClick={() =>
+                        (window.location.href = "tel:+251911517628")
+                      }
                       className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:to-[#0a0e27] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg text-sm md:text-base"
                     >
                       Buy Now

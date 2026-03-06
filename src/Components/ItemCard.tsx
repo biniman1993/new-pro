@@ -16,13 +16,11 @@ const ItemCard = ({ product }: ItemCardProps) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        <div className="absolute top-3 right-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] text-white px-3 py-1 rounded-full text-sm font-semibold">
-          {product.count} in stock
-        </div>
+       
       </div>
 
       <div className="p-4">
-        <h3 className="font-bold text-gray-900 text-lg mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+        <h3 className="font-bold text-gray-900 text-lg mb-2 line-clamp-2 group-hover:text-[#2a5da5] transition-colors">
           {product.name}
         </h3>
 
@@ -37,7 +35,7 @@ const ItemCard = ({ product }: ItemCardProps) => {
                 key={idx}
                 className="flex items-center gap-2 text-xs text-gray-600"
               >
-                <Package size={14} className="text-blue-600" />
+                <Package size={14} className="text-[#2a5da5]" />
                 <span>{spec}</span>
               </div>
             ))}
@@ -62,7 +60,7 @@ const ItemCard = ({ product }: ItemCardProps) => {
           )}
           <button className="flex items-center gap-2 bg-gradient-to-r from-[#2a5da5] via-[#2a5da5] to-[#2a5da5] hover:from-[#ff7b16] hover:via-[#2a5da5] hover:to-[#0a0e27] text-white px-3 py-2 rounded-lg font-medium transition-all duration-200 group/btn">
             <ShoppingCart size={16} />
-            <span className="hidden sm:inline">Add</span>
+            <span className="hidden sm:inline">Buy Now</span>
             <ArrowRight
               size={14}
               className="opacity-0 group-hover/btn:opacity-100 transition-opacity"

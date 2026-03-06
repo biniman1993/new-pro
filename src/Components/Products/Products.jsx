@@ -279,7 +279,7 @@ const Products = React.forwardRef(
             <button
               className="group relative px-8 py-3 bg-white border-2 border-[#2a5da5] text-[#2a5da5] font-bold rounded-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               onClick={handleClick}
-             >
+            >
               {/* Background gradient that slides in on hover */}
               <span className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
 
@@ -306,31 +306,31 @@ const Products = React.forwardRef(
 
         {/* Product Modal */}
         {isModalOpen && selectedProduct && (
-          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4">
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
             <div
               className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
               onClick={closeProductModal}
             />
 
-            <div className="relative bg-white w-full ml-2 mr-2 max-w-4xl max-h-[90vh] sm:max-h-[90vh] animate-modal-enter shadow-2xl flex flex-col rounded-2xl sm:rounded-2xl overflow-hidden">
+            <div className="relative bg-white max-w-4xl w-full max-h-[90vh] animate-modal-enter shadow-2xl flex flex-col rounded-2xl overflow-hidden">
               <button
                 onClick={closeProductModal}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
                 aria-label="Close modal"
               >
-                <X size={18} className="sm:w-5 sm:h-5 text-gray-700" />
+                <X size={20} className="text-gray-700" />
               </button>
 
               <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
                 {/* Left side - Image */}
                 <div className="md:w-1/2 flex-shrink-0">
-                  <div className="relative w-full h-48 sm:h-56 md:h-full bg-gradient-to-br from-[#ffffff] to-[#f7faff] flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full h-64 md:h-full bg-gradient-to-br from-[#ffffff] to-[#f7faff] flex items-center justify-center overflow-hidden">
                     <img
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
-                      className="w-full h-full object-contain p-2 sm:p-4"
+                      className="w-full h-full object-contain p-4"
                     />
-                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-gradient-to-r from-[#e47325] to-[#ff7b16] text-white font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm shadow-lg">
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-[#e47325] to-[#ff7b16] text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg">
                       -
                       {
                         discountPercentages[
@@ -344,9 +344,9 @@ const Products = React.forwardRef(
 
                 {/* Right side - Content with vertical scrolling */}
                 <div className="md:w-1/2 flex flex-col overflow-hidden">
-                  <div className="p-3 sm:p-4 md:p-6 lg:p-8 overflow-y-auto flex-1">
-                    <div className="space-y-3 sm:space-y-4">
-                      <h2 className="text-3xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+                  <div className="p-4 md:p-6 lg:p-8 overflow-y-auto flex-1">
+                    <div className="space-y-4">
+                      <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
                         {selectedProduct.name}
                       </h2>
 
@@ -356,48 +356,48 @@ const Products = React.forwardRef(
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              size={14}
-                              className="sm:w-4 sm:h-4"
-                              style={{
-                                color: i < 4 ? "#ff7b16" : "#e5e7eb",
-                                fill: i < 4 ? "#ff7b16" : "none",
-                              }}
+                              size={16}
+                              className={
+                                i < 4
+                                  ? "text-[#ff7b16] fill-current"
+                                  : "text-gray-300"
+                              }
                             />
                           ))}
                         </div>
-                        <span className="text-xs sm:text-sm text-gray-600">
+                        <span className="text-sm text-gray-600">
                           4.8 (1.2k+ reviews)
                         </span>
                       </div>
 
                       {/* Description */}
-                      <p className="text-lg sm:text-base text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 leading-relaxed">
                         {selectedProduct.description ||
                           `High-performance ${selectedProduct.name} with premium features and excellent reliability.`}
                       </p>
 
                       {/* Full Description (if available) */}
                       {selectedProduct.fullDescription && (
-                        <p className="text-sm font-medium sm:text-base text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 leading-relaxed text-sm">
                           {selectedProduct.fullDescription}
                         </p>
                       )}
 
                       {/* Key Features Section */}
-                      <div className="space-y-2 sm:space-y-3">
-                        <h3 className="font-semibold text-gray-900 text-sm sm:text-base">
+                      <div className="space-y-3">
+                        <h3 className="font-semibold text-gray-900">
                           Key Features:
                         </h3>
-                        <div className="grid gap-1.5 sm:gap-2">
+                        <div className="grid gap-2">
                           {selectedProduct.specs
                             .slice(0, 6)
                             .map((feature, index) => (
                               <div
                                 key={index}
-                                className="flex items-start gap-2 sm:gap-3"
+                                className="flex items-start gap-3"
                               >
-                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#2a5da5] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                                <span className="text-gray-700 text-xs sm:text-sm">
+                                <div className="w-2 h-2 bg-[#2a5da5] rounded-full mt-1.5 flex-shrink-0"></div>
+                                <span className="text-gray-700 text-sm">
                                   {feature}
                                 </span>
                               </div>
@@ -406,15 +406,15 @@ const Products = React.forwardRef(
                       </div>
 
                       {/* All Specifications */}
-                      <div className="space-y-2 sm:space-y-3">
-                        <h3 className="font-semibold text-gray-900 text-sm sm:text-base">
+                      <div className="space-y-3">
+                        <h3 className="font-semibold text-gray-900">
                           Specifications:
                         </h3>
-                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                        <div className="flex flex-wrap gap-2">
                           {selectedProduct.specs.map((spec, index) => (
                             <span
                               key={index}
-                              className="bg-gray-100 text-gray-700 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm border border-gray-300"
+                              className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm border border-gray-300"
                             >
                               {spec}
                             </span>
@@ -425,51 +425,48 @@ const Products = React.forwardRef(
                   </div>
 
                   {/* Buttons fixed at bottom */}
-                  <div className="p-3 sm:p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
+                  <div className="p-4 md:p-6 lg:p-8 border-t border-gray-200 bg-white">
                     {!showContactOptions ? (
-                      <div className="flex gap-2 sm:gap-3">
+                      <div className="flex gap-3">
                         <button
-                        onClick={handleBuyNow}
-                        className="flex-1 py-2 sm:py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base">
-                          <ShoppingCart size={16} className="sm:w-5 sm:h-5" />
-                        Buy Now
+                          onClick={handleBuyNow}
+                          className="flex-1 py-3 bg-gradient-to-r from-[#2a5da5] to-[#0a0e27] hover:from-[#ff7b16] hover:to-[#2a5da5] text-white font-bold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base"
+                        >
+                          <ShoppingCart size={20} />
+                          Buy Now
                         </button>
-                        
                       </div>
                     ) : (
-                      <div className="space-y-2 sm:space-y-3">
-                        <p className="text-lg font-bold sm:text-sm text-gray-600 text-center">
+                      <div className="space-y-3">
+                        <p className="text-sm font-medium text-gray-600 text-center">
                           Contact us via:
                         </p>
-                        <div className="flex gap-2 sm:gap-3">
+                        <div className="flex gap-3">
                           <button
                             onClick={() => handleContactOption("phone")}
-                            className="flex-1 py-2 sm:py-3 bg-[#ff7b16] hover:bg-[#46403c] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
+                            className="flex-1 py-3 bg-[#ff7b16] hover:bg-[#46403c] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
                           >
-                            <Phone size={16} className="sm:w-5 sm:h-5" />
+                            <Phone size={18} />
                             <span className="hidden xs:inline">Phone</span>
                           </button>
                           <button
                             onClick={() => handleContactOption("whatsapp")}
-                            className="flex-1 py-2 sm:py-3 bg-[#20BA5C] hover:bg-[#685fe7] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
+                            className="flex-1 py-3 bg-[#20BA5C] hover:bg-[#685fe7] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
                           >
-                            <MessageCircle
-                              size={16}
-                              className="sm:w-5 sm:h-5"
-                            />
+                            <MessageCircle size={18} />
                             <span className="hidden xs:inline">WhatsApp</span>
                           </button>
                           <button
                             onClick={() => handleContactOption("telegram")}
-                            className="flex-1 py-2 sm:py-3 bg-[#2a5da5] hover:bg-[#882aa5] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
+                            className="flex-1 py-3 bg-[#2a5da5] hover:bg-[#882aa5] text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm"
                           >
-                            <Send size={16} className="sm:w-5 sm:h-5" />
+                            <Send size={18} />
                             <span className="hidden xs:inline">Telegram</span>
                           </button>
                         </div>
                         <button
                           onClick={() => setShowContactOptions(false)}
-                          className="text-xs sm:text-sm text-gray-500 hover:text-gray-700 underline mt-1 w-full"
+                          className="text-sm text-gray-500 hover:text-gray-700 underline mt-2 w-full"
                         >
                           Back
                         </button>

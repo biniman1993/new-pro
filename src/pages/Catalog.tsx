@@ -35,14 +35,17 @@ const Catalog = () => {
   // Define mainCategories HERE (moved outside useEffect)
   const mainCategories = [
     { name: "Desktop", path: "/Catalog/BusinessDesktop" },
-    { name: "Laptop", path: "/Catalog/BusinessLaptops" },
-    { name: "Monitor", path: "/Catalog/Monitor" },
-    { name: "Networking", path: "/Catalog/CommercialNetworking" },
-    { name: "Accessories", path: "/Catalog/Accessories" },
-    { name: "Printer", path: "/Catalog/Printer" },
-    { name: "Projector", path: "/Catalog/Projector" },
-    { name: "Digital Display", path: "/Catalog/AdvertisingDisplays" },
-    { name: "Server", path: "/Catalog/ApplicationServers" },
+    { name: "Laptop", path: "/Catalog/BusinessLaptop" },
+    { name: "Monitor", path: "/Catalog/FullHDMonitor" },
+    { name: "Networking", path: "/Catalog/HomeNetworking" },
+    { name: "Server", path: "/Catalog/HPEProliantMLserver" },
+    { name: "Printer", path: "/Catalog/InkjetPrinter" },
+    { name: "Projector", path: "/Catalog/BusinessProjector" },
+    { name: "Digital Display", path: "/Catalog/DigitalSignage" },
+     { name: "Accessories", path: "/Catalog/KeyboardMouse" },
+      
+    
+    
   ];
 
   // Get main category from active subcategory
