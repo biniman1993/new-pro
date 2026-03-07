@@ -139,10 +139,9 @@ const brands = [
   { id: 79, name: "Samsung", logo: "/src/assets/brandslogo/Samsung.png" },
   { id: 80, name: "LG", logo: "/src/assets/brandslogo/LG.png" },
   { id: 81, name: "Sony", logo: "/src/assets/brandslogo/Sony.png" },
-  { id: 82, name: "TCL", logo: "/src/assets/brandslogo/TCL.png" },
-  { id: 83, name: "Hisense", logo: "/src/assets/brandslogo/Hisense.png" },
-  { id: 84, name: "Panasonic", logo: "/src/assets/brandslogo/Panasonic.png" },
-  { id: 85, name: "Sharp", logo: "/src/assets/brandslogo/Sharp.png" },
+  { id: 82, name: "Hisense", logo: "/src/assets/brandslogo/Hisense.png" },
+  { id: 83, name: "Panasonic", logo: "/src/assets/brandslogo/Panasonic.png" },
+  { id: 84, name: "Sharp", logo: "/src/assets/brandslogo/Sharp.png" },
   
 ];
 

@@ -36,7 +36,7 @@ const slides: SlideContent[] = [
     title: "Modern Laptops and Gaming",
     description: "Powerful and reliable laptops designed for work and personal use, with next-gen Intel and Ryzen processors, premium 4K screens, and enterprise-level security from top brands.",
     icon: <Monitor className="w-8 h-8" />,
-    route: "/Catalog/BusinessLaptops",
+    route: "/Catalog/BusinessLaptop",
   },
   {
     title: "Cisco Routers and Switches",

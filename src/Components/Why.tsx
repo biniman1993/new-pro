@@ -2,16 +2,20 @@ import { useEffect, useRef } from "react";
 import {
   Award,
   Layers,
-  Server,
-  Headphones,
-  Clock,
   ArrowRight,
+  Server,
+  Clock,
+  Headphones,
+  Shield,
+  Zap,
+  Heart,
 } from "lucide-react";
+
 import { useNavigate } from "react-router-dom";
 
 const WhyChooseUs = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-const navigate = useNavigate();
+  const navigate = useNavigate();
   // Simplified particle animation
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -83,33 +87,48 @@ const navigate = useNavigate();
       cancelAnimationFrame(animationId);
     };
   }, []);
-
   const features = [
     {
       icon: Award,
-      title: "Certified Expertise",
+      title: "Trusted By Government & NGOs",
       description:
-        "Skilled professionals delivering reliable, high-performance solutions.",
+        "Authorized supplier for major government institutions and non-governmental organizations across Ethiopia.",
       delay: 100,
     },
     {
-      icon: Layers,
-      title: "End-to-End Service",
-      description: "From design to maintenance, everything handled seamlessly.",
+      icon: Headphones,
+      title: "Strong Support & Training",
+      description:
+        "Dedicated technical support team with comprehensive product training and after-sales service.",
       delay: 200,
     },
     {
-      icon: Server,
-      title: "Premium Partners",
-      description: "Access to top global brands and future-ready systems.",
+      icon: Shield,
+      title: "Comprehensive Warranty",
+      description:
+        "Full warranty coverage on all products with quick replacement and repair services.",
       delay: 300,
     },
     {
-      icon: Headphones,
-      title: "Dedicated Support",
+      icon: Zap,
+      title: "Latest Technology & Innovation",
       description:
-        "Quick response times and ongoing service for maximum uptime.",
+        "Access to cutting-edge technology and modern solutions from world-leading global brands.",
       delay: 400,
+    },
+    {
+      icon: Heart,
+      title: "Strong Client Relationships",
+      description:
+        "Long-term partnerships built on trust, reliability, and mutual growth with our valued clients.",
+      delay: 500,
+    },
+    {
+      icon: Award,
+      title: "Complete Electronics Supplier",
+      description:
+        "Trusted by government & NGOs • Strong technical support & training • Full warranty on all products • Latest technology from global brands • Long-term client partnerships",
+      delay: 100,
     },
   ];
 
@@ -194,7 +213,7 @@ const navigate = useNavigate();
           </div>
 
           {/* CTA Card */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0e27] via-[#2a5da5] to-[#143057] p-6 shadow-2xl lg:row-span-2 lg:p-8">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0e27] via-[#2a5da5] to-[#143057] p-6 shadow-2xl lg:row-span-2 lg:p-6">
             {/* Animated gradient background */}
             <div className="absolute inset-0 opacity-10">
               <div
@@ -238,10 +257,16 @@ const navigate = useNavigate();
                 </span>
               </div>
 
-              <p className="mb-6 text-sm leading-relaxed text-white/70 lg:text-base flex-grow">
-                As Ethiopia's IT innovators, we've helped shape the nation's
-                digital transformation with proven expertise and
-                industry-defining solutions.
+              <p className="mb-2 text-sm leading-relaxed text-white/90 lg:text-base flex-grow">
+                <span className="block text-[#ffffff] font-bold text-base lg:text-lg mb-2">
+                  Ethiopia’s Leading Electronics Supplier
+                </span>
+                We deliver high-quality electronics, IT solutions, and advanced
+                technology products that power businesses, government
+                institutions, and organizations across Ethiopia. From enterprise
+                infrastructure and networking equipment to the latest computing
+                devices and digital solutions, we help our partners stay
+                connected, productive, and ready for the future.
               </p>
 
               {/* Benefits list */}
@@ -276,9 +301,10 @@ const navigate = useNavigate();
               </ul>
 
               {/* CTA Button with hover effects */}
-              <button 
-               onClick={() => navigate("/about")}
-              className="group/btn relative overflow-hidden rounded-full bg-gradient-to-r from-[#ff7b16] to-[#af5617] px-6 py-4 text-base font-semibold text-white shadow-xl shadow-[#ff7b16]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff7b16]/40 hover:scale-[1.02] active:scale-[0.98]">
+              <button
+                onClick={() => navigate("/about")}
+                className="group/btn relative overflow-hidden rounded-full bg-gradient-to-r from-[#ff7b16] to-[#af5617] px-6 py-4 text-base font-semibold text-white shadow-xl shadow-[#ff7b16]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff7b16]/40 hover:scale-[1.02] active:scale-[0.98]"
+              >
                 {/* Shine effect */}
                 <div
                   className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"
@@ -289,7 +315,7 @@ const navigate = useNavigate();
                 />
 
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                More About Us
+                  More About Us
                   <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </span>
               </button>

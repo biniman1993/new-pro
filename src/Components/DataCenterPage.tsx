@@ -23,53 +23,31 @@ import {
   // Valid replacements
   Monitor, // instead of Desktop, Workstation, Display, Screen
   Tv, // instead of Display, Screen
-  Settings,
+
   Gamepad2,
   Router,
   Presentation,
   Smartphone,
   Tablet,
-  Headphones,
-  Keyboard,
-  Mouse,
-  Printer, // instead of Scanner, Fax
-  Camera,
+
   Speaker,
-  Mic,
-  Video,
-  Box,
+
   Network, // instead of Switch, Gateway
-  Lock,
-  Cloud,
-  Database, // instead of Storage
-  Activity,
-  Layers,
-  Boxes,
+  
   Megaphone,
   ScreenShare,
-  MonitorSmartphone,
+  
   PanelTop,
   LayoutDashboard,
   Airplay,
   Bluetooth,
-  Radio,
-  Satellite,
+  
   Cable,
   Usb,
   Laptop,
-  Tag, // instead of Label
-  Barcode,
-  QrCode,
-  CreditCard,
-  Wallet,
-  CircleDollarSign, // instead of Yen
-  Bitcoin,
+ 
   Play, // for MonitorPlay functionality
-  LineChart,
-  BarChart,
-  PieChart,
-  TrendingUp,
-  TrendingDown,
+
 } from "lucide-react";
 
 const DataCenterPage = () => {
