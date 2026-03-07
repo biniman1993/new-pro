@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import heroBg from "../assets/hero-bg.jpg";
-import { Phone } from "lucide-react";
-import { title } from "framer-motion/client";
 
 const LetUsMeet = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    comment: "",
+    message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -18,10 +23,35 @@ const LetUsMeet = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Message sent successfully! We\'ll contact you soon.'
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      }
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Updated color variables with more vibrant options
@@ -30,13 +60,13 @@ const LetUsMeet = () => {
     background: "hsl(0 0% 100%)",
     foreground: "hsl(215 25% 15%)",
     card: "hsl(0 0% 100%)",
-    primary: "hsl(213 100% 25%)", // Deep blue
-    primaryLight: "hsl(213 100% 35%)", // Lighter blue
-    accent: "hsl(213 100% 45%)", // Bright blue for accents
+    primary: "hsl(213 100% 25%)",
+    primaryLight: "hsl(213 100% 35%)",
+    accent: "hsl(213 100% 45%)",
     muted: "hsl(215 16% 47%)",
     border: "hsl(214 32% 91%)",
     primaryForeground: "hsl(0 0% 100%)",
-    overlay: "hsla(0, 0%, 100%, 0.85)", // White overlay for readability
+    overlay: "hsla(0, 0%, 100%, 0.85)",
   };
 
   return (
@@ -68,10 +98,9 @@ const LetUsMeet = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed", // Parallax effect
+          backgroundAttachment: "fixed",
           zIndex: 1,
         }}>
-          {/* Gradient Overlay */}
           <div style={{
             position: "absolute",
             top: 0,
@@ -86,7 +115,6 @@ const LetUsMeet = () => {
             )`,
           }}></div>
           
-          {/* Subtle Pattern Overlay */}
           <div style={{
             position: "absolute",
             top: 0,
@@ -99,7 +127,7 @@ const LetUsMeet = () => {
           }}></div>
         </div>
 
-        {/* Animated Circles for Visual Interest */}
+        {/* Animated Circles */}
         <div style={{
           position: "absolute",
           top: "10%",
@@ -148,7 +176,6 @@ const LetUsMeet = () => {
               justifyContent: "center",
               position: "relative",
             }}>
-              {/* Decorative Element */}
               <div style={{
                 position: "absolute",
                 top: "-20px",
@@ -160,7 +187,6 @@ const LetUsMeet = () => {
                 zIndex: -1,
               }}></div>
               
-              {/* Top tagline with icon */}
               <div style={{
                 color: colors.primary,
                 fontWeight: 600,
@@ -188,7 +214,6 @@ const LetUsMeet = () => {
                 }}></div>
               </div>
 
-              {/* Main heading with gradient */}
               <h1 style={{
                 fontSize: "3rem",
                 fontWeight: 800,
@@ -203,7 +228,6 @@ const LetUsMeet = () => {
                 Become a Partner
               </h1>
 
-              {/* First paragraph */}
               <div style={{
                 position: "relative",
                 paddingLeft: "1.5rem",
@@ -231,7 +255,6 @@ const LetUsMeet = () => {
                 </p>
               </div>
 
-              {/* Second paragraph */}
               <div style={{
                 position: "relative",
                 paddingLeft: "1.5rem",
@@ -258,7 +281,6 @@ const LetUsMeet = () => {
                 </p>
               </div>
 
-              {/* Stats or Features */}
               <div style={{
                 display: "flex",
                 gap: "2rem",
@@ -311,7 +333,6 @@ const LetUsMeet = () => {
               justifyContent: "center",
               position: "relative",
             }}>
-              {/* Form Card with Glow Effect */}
               <div style={{
                 backgroundColor: colors.card,
                 boxShadow: `
@@ -327,7 +348,6 @@ const LetUsMeet = () => {
                 overflow: "hidden",
                 border: `1px solid ${colors.border}`,
               }}>
-                {/* Form background pattern */}
                 <div style={{
                   position: "absolute",
                   top: 0,
@@ -372,7 +392,23 @@ const LetUsMeet = () => {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} style={{ 
+                {/* Status Message */}
+                {submitStatus.type && (
+                  <div style={{
+                    padding: "1rem",
+                    borderRadius: "0.5rem",
+                    backgroundColor: submitStatus.type === 'success' ? "#10b98120" : "#ef444420",
+                    border: `1px solid ${submitStatus.type === 'success' ? "#10b981" : "#ef4444"}`,
+                    color: submitStatus.type === 'success' ? "#065f46" : "#991b1b",
+                    marginBottom: "1rem",
+                    position: "relative",
+                    zIndex: 1,
+                  }}>
+                    {submitStatus.message}
+                  </div>
+                )}
+
+                <form ref={formRef} onSubmit={handleSubmit} style={{ 
                   display: "flex", 
                   flexDirection: "column", 
                   gap: "1.5rem",
@@ -452,7 +488,7 @@ const LetUsMeet = () => {
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="123-456-7890"
+                      placeholder="+251 91 151 7628"
                       value={formData.phone}
                       onChange={handleInputChange}
                       style={{
@@ -476,11 +512,11 @@ const LetUsMeet = () => {
                       fontWeight: 500,
                       color: colors.foreground,
                       marginBottom: "0.5rem",
-                    }}>Your Comment</label>
+                    }}>Your message</label>
                     <textarea
                       name="comment"
                       placeholder="Tell us about your partnership goals..."
-                      value={formData.comment}
+                      value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
                       style={{
@@ -503,13 +539,16 @@ const LetUsMeet = () => {
 
                   <button 
                     type="submit"
+                    disabled={isSubmitting}
                     style={{
-                      background: `linear-gradient(135deg, ${colors.primary}, ${colors.primaryLight})`,
+                      background: isSubmitting 
+                        ? '#ccc' 
+                        : `linear-gradient(135deg, ${colors.primary}, ${colors.primaryLight})`,
                       color: colors.primaryForeground,
                       fontWeight: 600,
                       padding: "1rem 2rem",
                       border: "none",
-                      cursor: "pointer",
+                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
                       borderRadius: "0.5rem",
                       fontSize: "0.9375rem",
                       letterSpacing: "0.025em",
@@ -517,32 +556,26 @@ const LetUsMeet = () => {
                       position: "relative",
                       overflow: "hidden",
                       transition: "all 0.3s",
+                      opacity: isSubmitting ? 0.7 : 1,
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = `linear-gradient(135deg, ${colors.title}, ${colors.accent})`;
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                      e.currentTarget.style.boxShadow = `0 10px 25px ${colors.title}30`;
+                      if (!isSubmitting) {
+                        e.currentTarget.style.background = `linear-gradient(135deg, ${colors.title}, ${colors.accent})`;
+                        e.currentTarget.style.transform = "translateY(-2px)";
+                        e.currentTarget.style.boxShadow = `0 10px 25px ${colors.title}30`;
+                      }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = `linear-gradient(135deg, ${colors.primary}, ${colors.title})`;
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow = "none";
+                      if (!isSubmitting) {
+                        e.currentTarget.style.background = `linear-gradient(135deg, ${colors.primary}, ${colors.title})`;
+                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow = "none";
+                      }
                     }}
                   >
                     <span style={{ position: "relative", zIndex: 1 }}>
-                      SEND MESSAGE
+                      {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
                     </span>
-                    <div style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      width: "0",
-                      height: "0",
-                      borderRadius: "50%",
-                      background: "title",
-                      transition: "all 0.5s",
-                    }}></div>
                   </button>
                 </form>
               </div>
@@ -610,14 +643,12 @@ const LetUsMeet = () => {
           animation: fadeIn 1s ease-out;
         }
         
-        /* Input focus styles */
         input:focus, textarea:focus {
           border-color: ${colors.primary} !important;
           box-shadow: 0 0 0 3px ${colors.primary}15 !important;
           transform: translateY(-1px);
         }
         
-        /* Responsive styles */
         @media (max-width: 1023px) {
           .lg-grid {
             grid-template-columns: 1fr;

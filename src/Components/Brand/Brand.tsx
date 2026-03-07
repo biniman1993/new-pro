@@ -143,11 +143,7 @@ const brands = [
   { id: 83, name: "Hisense", logo: "/src/assets/brandslogo/Hisense.png" },
   { id: 84, name: "Panasonic", logo: "/src/assets/brandslogo/Panasonic.png" },
   { id: 85, name: "Sharp", logo: "/src/assets/brandslogo/Sharp.png" },
-  { id: 86, name: "Vizio", logo: "/src/assets/brandslogo/Vizio.png" },
-  { id: 87, name: "Philips", logo: "/src/assets/brandslogo/Philips.png" },
-  { id: 88, name: "Xiaomi", logo: "/src/assets/brandslogo/Xiaomi.png" },
-  { id: 89, name: "Team Group", logo: "/src/assets/brandslogo/Team Group.png" },
-  { id: 90, name: "Seagate", logo: "/src/assets/brandslogo/Seagate.png" },
+  
 ];
 
 const Brands = () => {

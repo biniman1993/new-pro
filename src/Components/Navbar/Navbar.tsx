@@ -103,28 +103,37 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo and Brand Name */}
             <div
-              onClick={scrollToTop}
-              className="flex-shrink-0 cursor-pointer transform transition-transform duration-300 hover:scale-105 flex flex-col items-start"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                navigate("/");
+              }}
+              className="flex-shrink-0 cursor-pointer transform transition-transform duration-300 hover:scale-105 flex flex-col items-start select-none"
             >
               <div className="flex items-center gap-2">
                 <div className="relative">
                   {/* Logo Container with gradient border */}
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#F97316] to-blue-300 p-0.5">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F97316] to-[#2a5da5] p-0.5">
                     {/* Inner circle with solid color */}
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#143057] to-[#2a5da5] flex items-center justify-center">
-                      {/* Logo Icon/Text */}
-                      <span className="text-white font-bold text-lg">P</span>
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#ffffff] to-[#ffffff] flex items-center justify-center overflow-hidden">
+                      {/* Your Logo Image */}
+                      <img
+                        src="/src/assets/prologo.png"
+                        alt="Proactive Trading"
+                        className="w-7 h-7 object-contain"
+                      />
                     </div>
                   </div>
                 </div>
-                {/* Brand Name */}
-                <div className="flex flex-col">
-                  <span className="text-white font-semibold text-xl tracking-tight">
-                    Proactive
-                  </span>
-                  <span className="text-xs text-white/70 tracking-wider font-medium mt-[-4px]">
-                    TRADING
-                  </span>
+                {/* Brand Logo Section - Modern Typography */}
+                <div className="flex items-center gap-3 group mt-2 select-none">
+                  <div className="flex flex-col justify-center">
+                    <span className="text-white font-black text-[16px] leading-none tracking-[-0.02em]  transition-colors duration-300 font-['Inter',sans-serif] select-none">
+                      PROACTIVE
+                    </span>
+                    <span className="text-[9px] text-white/70 tracking-[0.3em] font-semibold uppercase mt-0.5 ml-[0px] font-['Poppins',sans-serif] group-hover:text-white/90 transition-colors duration-300 select-none">
+                      TRADING
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -144,7 +153,7 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className="w-40 md:w-40 lg:w-52 xl:w-56 2xl:w-72 pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-[ff9800] focus:bg-white/15 transition-all duration-300"
+                  className=" lg:w-52 xl:w-56 2xl:w-72 pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-[ff9800] focus:bg-white/15 transition-all duration-300"
                 />
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70 group-hover:text-[#F97316] transition-colors duration-300" />
               </div>

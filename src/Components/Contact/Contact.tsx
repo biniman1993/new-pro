@@ -1,14 +1,22 @@
-import React, { useState, FormEvent, ChangeEvent, useEffect } from "react";
+import React, {
+  useState,
+  FormEvent,
+  ChangeEvent,
+  useEffect,
+  useRef,
+} from "react";
+
+import emailjs from "@emailjs/browser";
 import shopImage from "../../assets/shop/shop0.webp";
 import shopImage2 from "../../assets/shop/shop1.webp";
 import shopImage3 from "../../assets/shop/shop2.webp";
 import shopImage4 from "../../assets/shop/shop8.webp";
 import shopImage5 from "../../assets/shop/shop4.webp";
 import shopImage6 from "../../assets/shop/shop9.webp";
-import shopImage9 from "../../assets/shop/lap.webp";
 import shopImage13 from "../../assets/shop/offic.webp";
 import shopImage10 from "../../assets/shop/canon.webp";
 import shopImage11 from "../../assets/shop/lap.webp";
+import shopImage9 from "../../assets/shop/lap.webp";
 import shopImage45 from "../../assets/shop/shop3.webp";
 import shopImage44 from "../../assets/shop/pri.webp";
 
@@ -27,11 +35,13 @@ import {
   ChevronDown,
   Hash,
   Building,
-  Navigation, // ✅ Fixed: Added missing import
+  Navigation,
+  ArrowRight, // ✅ Fixed: Added missing import
 } from "lucide-react";
 
 const Contact = () => {
   const [activeSection, setActiveSection] = useState("Contact");
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,16 +69,31 @@ const Contact = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log("Form submitted:", formData);
-    setIsSubmitting(false);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+
+    try {
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      if (result.status === 200) {
+        alert("Message sent successfully! Check your email for confirmation.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -136,7 +161,7 @@ const Contact = () => {
     { value: "24/7", label: "Support Available", icon: Clock },
     { value: "98%", label: "Client Satisfaction", icon: Award },
     { value: "2h", label: "Avg Response Time", icon: CheckCircle },
-    { value: "50+", label: "Countries Served", icon: Globe },
+    { value: "1000+", label: "Local Clinets  ", icon: Globe },
   ];
 
   // Brand colors (kept for reference)
@@ -164,12 +189,12 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden mt-6 pt-32 pb-20 bg-gradient-to-br from-[#143057] via-[#2a5da5] to-[#143057]">
+      <section className="relative overflow-hidden pt-32 pb-20 bg-gradient-to-br from-[#143057] via-[#2a5da5] to-[#143057]">
+        {" "}
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2a5da5]/20 rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3" />
         <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#ff7b16]/5 to-[#2a5da5]/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center -mt-8 sm:-mt-12 md:-mt-16 lg:mt-0">
           <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white font-semibold text-sm uppercase tracking-wider mb-6">
             Get in Touch
@@ -239,231 +264,161 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Contact Information */}
-        <section id="Contact" className="mb-20 scroll-mt-20">
+        <section id="Contact" className="mb-24 scroll-mt-20">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-orange-100 rounded-full text-sm font-semibold text-[#2a5da5] mb-4">
-              Get in Touch
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Let's{" "}
-              <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
-                Connect
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-100 rounded-full text-xs font-bold uppercase tracking-widest text-[#2a5da5] mb-6 shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff7b16] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff7b16]"></span>
               </span>
+              Contact Center
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
+              Let's <span className="text-[#2a5da5]">Connect</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              We're here to help 24/7. Choose your preferred way to reach us
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
+              Expert support is just a click away. Reach out through our
+              dedicated channels for immediate assistance.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Phone Card - Multiple Numbers */}
-            <div className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#2a5da5] to-blue-400 rounded-bl-full opacity-10"></div>
+            {/* Phone Card */}
+            <div className="group relative bg-white rounded-[2.5rem] p-8 shadow-xl shadow-slate-200/50 border border-slate-50 overflow-hidden transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#2a5da5]/5 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110" />
 
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-gradient-to-br from-[#2a5da5] to-blue-400 rounded-2xl text-white shadow-lg">
-                  <Phone size={28} />
+              <div className="relative z-10">
+                <div className="inline-flex p-4 bg-[#2a5da5] text-white rounded-2xl shadow-lg shadow-[#2a5da5]/30 mb-8">
+                  <Phone size={28} strokeWidth={2.5} />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">Call Us</h3>
-                  <p className="text-sm text-[gray]-500">24/7 Available</p>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <a
-                  href="tel:+251911517628"
-                  className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100/50 hover:from-blue-100 hover:to-blue-200 rounded-xl transition-all duration-300 group/phone"
-                >
-                  <span className="font-semibold text-gray-700">
-                    📞 Primary
-                  </span>
-                  <span className="text-[#2a5da5] font-bold group-hover/phone:scale-105 transition-transform">
-                    +251911517628
-                  </span>
-                </a>
-
-                <a
-                  href="tel:+251943565408"
-                  className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all duration-300 group/phone"
-                >
-                  <span className="font-semibold text-gray-700">
-                    📱 Secondary
-                  </span>
-                  <span className="text-[#2a5da5] font-bold group-hover/phone:scale-105 transition-transform">
-                    +251 943565408
-                  </span>
-                </a>
-
-                <a
-                  href="tel:+251115578994"
-                  className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all duration-300 group/phone"
-                >
-                  <span className="font-semibold text-gray-700">
-                    🛟 Support
-                  </span>
-                  <span className="text-[#2a5da5] font-bold group-hover/phone:scale-105 transition-transform">
-                    +251115578994
-                  </span>
-                </a>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-gray-100">
-                <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  Click any number to call instantly
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                  Voice Support
+                </h3>
+                <p className="text-slate-500 text-sm mb-6 font-medium">
+                  24/7 Priority Hotline
                 </p>
+
+                <div className="space-y-3">
+                  {[
+                    { label: "Primary", num: "+251 911 517 628", icon: "📞" },
+                    { label: "Secondary", num: "+251 943 565 408", icon: "📱" },
+                    { label: "Support", num: "+251 115 578 994", icon: "🛟" },
+                  ].map((item, i) => (
+                    <a
+                      key={i}
+                      href={`tel:${item.num.replace(/\s/g, "")}`}
+                      className="flex items-center justify-between p-4 bg-slate-50 hover:bg-[#2a5da5] hover:text-white rounded-2xl transition-all duration-300 group/item"
+                    >
+                      <span className="text-xs font-bold uppercase tracking-wider opacity-70">
+                        {item.icon} {item.label}
+                      </span>
+                      <span className="font-bold text-sm tracking-tight">
+                        {item.num}
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Email Card - Multiple Emails */}
-            <div className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#ff7b16] to-orange-400 rounded-bl-full opacity-10"></div>
+            {/* Email Card */}
+            <div className="group relative bg-white rounded-[2.5rem] p-8 shadow-xl shadow-slate-200/50 border border-slate-50 overflow-hidden transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#ff7b16]/5 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110" />
 
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-gradient-to-br from-[#ff7b16] to-orange-400 rounded-2xl text-white shadow-lg">
-                  <Mail size={28} />
+              <div className="relative z-10">
+                <div className="inline-flex p-4 bg-[#ff7b16] text-white rounded-2xl shadow-lg shadow-[#ff7b16]/30 mb-8">
+                  <Mail size={28} strokeWidth={2.5} />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">Email Us</h3>
-                  <p className="text-sm text-gray-500">Fast response</p>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <a
-                  href="mailto:Pro2actives@gmail.com?subject=Inquiry%20from%20Website"
-                  className="flex items-center justify-between p-4 bg-gradient-to-r from-orange-50 to-orange-100/50 hover:from-orange-100 hover:to-orange-200 rounded-xl transition-all duration-300 group/email"
-                >
-                  <span className="font-semibold text-gray-700">
-                    📧 General
-                  </span>
-                  <span className="text-[#ff7b16] font-bold group-hover/email:scale-105 transition-transform truncate ml-2">
-                    Pro2actives@gmail.com
-                  </span>
-                </a>
-
-                <a
-                  href="mailto:proactivetradingplc@gmail.com?subject=Sales%20Inquiry"
-                  className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all duration-300 group/email"
-                >
-                  <span className="font-semibold text-gray-700">💰 Sales</span>
-                  <span className="text-[#ff7b16] font-bold group-hover/email:scale-105 transition-transform truncate ml-2">
-                    proactivetradingplc@gmail.com
-                  </span>
-                </a>
-
-                <a
-                  href="mailto:support@proactive.et?subject=Support%20Request"
-                  className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all duration-300 group/email"
-                >
-                  <span className="font-semibold text-gray-700">
-                    🔧 Support
-                  </span>
-                  <span className="text-[#ff7b16] font-bold group-hover/email:scale-105 transition-transform truncate ml-2">
-                    support@proactive.et
-                  </span>
-                </a>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-gray-100">
-                <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  Click any email to open your mail app
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                  Digital Inquiry
+                </h3>
+                <p className="text-slate-500 text-sm mb-6 font-medium">
+                  Response within 2 hours
                 </p>
+
+                <div className="space-y-3">
+                  {[
+                    { label: "General", mail: "Pro2actives@gmail.com" },
+                    { label: "Sales", mail: "proactivetradingplc@gmail.com" },
+                    { label: "Support", mail: "support@proactive.et" },
+                  ].map((item, i) => (
+                    <a
+                      key={i}
+                      href={`mailto:${item.mail}`}
+                      className="flex flex-col p-4 bg-slate-50 hover:bg-[#ff7b16] hover:text-white rounded-2xl transition-all duration-300 group/item"
+                    >
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] mb-1 opacity-60">
+                        {item.label}
+                      </span>
+                      <span className="font-bold text-xs truncate">
+                        {item.mail}
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Address Card with Google Maps */}
-            <div className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] rounded-bl-full opacity-10"></div>
+            {/* Address Card */}
+            <div className="group relative bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl shadow-slate-900/20 overflow-hidden transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-20 -mt-20" />
 
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-4 bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] rounded-2xl text-white shadow-lg">
-                  <MapPin size={28} />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="inline-flex p-4 bg-white/10 text-white backdrop-blur-md rounded-2xl mb-8 self-start">
+                  <MapPin size={28} strokeWidth={2.5} />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">Visit Us</h3>
-                  <p className="text-sm text-gray-500">Our headquarters</p>
-                </div>
-              </div>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Visit Office
+                </h3>
+                <p className="text-slate-400 text-sm mb-6 font-medium">
+                  Headquarters
+                </p>
 
-              <div className="space-y-4">
-                <div className="p-5 bg-gradient-to-br from-blue-50 to-orange-50 rounded-xl border border-blue-100">
-                  <p className="font-bold text-gray-800 mb-2 text-lg">
-                    🏢 Headquarters
+                <div className="bg-white/5 rounded-2xl p-5 border border-white/10 mb-6">
+                  <p className="text-white font-bold mb-1">
+                    Garad Building, 1st Floor
                   </p>
-                  <p className="text-gray-600 flex items-start gap-2">
-                    <span className="text-blue-500 mt-1">📍</span>
-                    <span>
-                      Kazanchis, Garad Building
-                      <br />
-                      1th Floor, Shop Number #04
-                      <br />
-                      Addis Ababa, Ethiopia
-                    </span>
+                  <p className="text-slate-400 text-xs leading-relaxed">
+                    Shop #04, Kazanchis Area
+                    <br />
+                    Addis Ababa, Ethiopia
                   </p>
-                </div>
-
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
-                  <Clock size={20} className="text-[#2a5da5] flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-gray-800">Working Hours</p>
-                    <p className="text-sm text-gray-600">
-                      Monday - Sunday: 8:00 AM - 6:00 PM
-                    </p>
-                  </div>
                 </div>
 
                 <a
-                  href="https://maps.app.goo.gl/BYSKFBf8eSgNUqqf7"
+                  href="https://maps.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] text-white rounded-xl hover:shadow-lg transition-all duration-300 font-semibold group/direction"
+                  className="mt-auto flex items-center justify-center gap-2 w-full py-4 bg-white text-slate-900 rounded-2xl hover:bg-[#2a5da5] hover:text-white transition-all duration-300 font-bold text-sm"
                 >
-                  <MapPin
-                    size={20}
-                    className="group-hover/direction:animate-bounce"
-                  />
-                  Get Directions on Google Maps
-                  <span className="text-lg group-hover/direction:translate-x-1 transition-transform">
-                    →
-                  </span>
+                  Get Live Directions
+                  <ArrowRight size={18} />
                 </a>
-
-                <p className="text-xs text-center text-gray-400">
-                  Click for live navigation • Free parking available
-                </p>
               </div>
             </div>
           </div>
 
-          {/* Quick Contact Bar */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4 p-4 bg-white rounded-2xl shadow-lg border border-gray-100">
-            <span className="text-gray-600 font-bold ">Quick actions:</span>
+          {/* Quick Action Bar */}
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-6 p-6 bg-slate-50/50 backdrop-blur-sm rounded-[2rem] border border-slate-100">
+            <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em]">
+              Instant Connect:
+            </span>
+            <div className="h-px w-8 bg-slate-200 hidden sm:block" />
             <a
               href="tel:+251911517628"
-              className="px-4 py-2 bg-blue-50 text-[#2a5da5] rounded-full hover:bg-blue-100 transition-colors text-sm font-semibold flex items-center gap-1"
+              className="flex items-center gap-2 text-sm font-bold text-[#2a5da5] hover:opacity-70 transition-opacity"
             >
-              <Phone size={16} /> Call Primary
+              <Phone size={16} strokeWidth={3} /> Call Now
             </a>
             <a
               href="mailto:Pro2actives@gmail.com"
-              className="px-4 py-2 bg-orange-50 text-[#ff7b16] rounded-full hover:bg-orange-100 transition-colors text-sm font-semibold flex items-center gap-1"
+              className="flex items-center gap-2 text-sm font-bold text-[#ff7b16] hover:opacity-70 transition-opacity"
             >
-              <Mail size={16} /> Email General
-            </a>
-            <a
-              href="https://maps.app.goo.gl/BYSKFBf8eSgNUqqf7"
-              target="_blank"
-              className="px-4 py-2 bg-gradient-to-r from-blue-50 to-orange-50 text-gray-700 rounded-full hover:from-blue-100 hover:to-orange-100 transition-colors text-sm font-semibold flex items-center gap-1"
-            >
-              <MapPin size={16} /> Navigate
+              <Mail size={16} strokeWidth={3} /> Send Email
             </a>
           </div>
         </section>
@@ -471,16 +426,37 @@ const Contact = () => {
 
       {/* Visit Our Shop - Gallery Section */}
       <section id="shop-gallery" className="mb-20 scroll-mt-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-16 relative">
+          {/* Modern Status Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 rounded-full mb-6 border border-slate-200/50">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff7b16] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff7b16]"></span>
+            </span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600">
+              Explore Proactive
+            </span>
+          </div>
+
+          {/* Main Heading */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight">
             Visit Our{" "}
-            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2a5da5] to-[#2a5da5]">
               Shop
             </span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+
+          {/* Description with improved line-height */}
+          <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed px-4">
             Take a virtual tour of our store and see our products in person
           </p>
+
+          {/* Decorative underline element */}
+          <div className="mt-8 flex justify-center gap-1">
+            <div className="w-12 h-1 bg-[#2a5da5] rounded-full"></div>
+            <div className="w-4 h-1 bg-[#ff7b16] rounded-full"></div>
+            <div className="w-2 h-1 bg-[#ff7b16]/50 rounded-full"></div>
+          </div>
         </div>
 
         {/* Image Gallery Grid */}
@@ -668,207 +644,166 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* Our Office */}
-      <section id="Office" className="mb-20 scroll-mt-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Our{" "}
-            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
-              Office
-            </span>
+      {/* Our Office Section */}
+      <section id="Office" className="mb-24 scroll-mt-20">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight">
+            Our <span className="text-[#2a5da5]">Office</span>
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto font-light">
+          <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium">
             Visit us at our headquarters in the heart of Addis Ababa
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          {/* Addis Ababa Card - Single Office */}
-          <div className="group relative bg-white rounded-3xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden backdrop-blur-sm">
-            {/* Animated Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#2a5da5]/5 via-transparent to-[#ff7b16]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="group relative bg-white rounded-[3rem] shadow-2xl shadow-slate-200/60 border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-[#2a5da5]/10">
+            {/* Interactive Background Glows */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#2a5da5]/10 to-transparent rounded-full blur-3xl -mr-32 -mt-32 transition-opacity group-hover:opacity-100 opacity-50" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#ff7b16]/10 to-transparent rounded-full blur-3xl -ml-20 -mb-20 transition-opacity group-hover:opacity-100 opacity-50" />
 
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[#2a5da5]/5 to-[#ff7b16]/5 rounded-full blur-3xl -ml-16 -mb-16"></div>
-
-            {/* Content */}
-            <div className="relative z-10">
-              {/* Header with Flag and Badge */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                    <Building2 size={28} />
+            <div className="relative z-10 p-8 md:p-14">
+              {/* Top Header Row */}
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-slate-100 pb-10">
+                <div className="flex items-center gap-6">
+                  <div className="w-20 h-20 rounded-[2rem] bg-gradient-to-br from-[#2a5da5] to-[#1e467a] flex items-center justify-center text-white shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
+                    <Building2 size={36} strokeWidth={2} />
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl font-bold text-gray-900">
-                      Addis Ababa
-                    </span>
-                    <img
-                      src="/src/assets/ethiopia-flag.png"
-                      alt="Ethiopian Flag"
-                      className="w-10 h-7 rounded-md shadow-md object-cover border border-gray-200"
-                      onError={(
-                        e: React.SyntheticEvent<HTMLImageElement, Event>,
-                      ) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src = "https://flagcdn.com/w320/et.png";
-                      }}
-                    />
+                  <div>
+                    <div className="flex items-center gap-3 mb-1">
+                      <h3 className="text-3xl font-black text-slate-900">
+                        Addis Ababa
+                      </h3>
+                      <img
+                        src="https://flagcdn.com/w320/et.png"
+                        alt="Ethiopia"
+                        className="w-8 h-5 rounded shadow-sm object-cover"
+                      />
+                    </div>
+                    <p className="text-[#ff7b16] font-bold text-xs uppercase tracking-[0.3em]">
+                      Global Headquarters
+                    </p>
                   </div>
                 </div>
-                <div className="px-4 py-2 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] rounded-xl shadow-lg transform hover:scale-105 transition-transform">
-                  <span className="text-sm font-bold text-white tracking-wide">
-                    ★ HEADQUARTERS ★
+
+                <div className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-2xl shadow-xl shadow-slate-900/20 transform hover:-translate-y-1 transition-transform">
+                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  <span className="text-sm font-bold tracking-wide uppercase">
+                    Open Now
                   </span>
                 </div>
               </div>
 
-              {/* Main Content Grid - 2 columns on larger screens */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Left Column - Location Details */}
-                <div className="space-y-5">
-                  <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
-                    <span className="w-1 h-6 bg-gradient-to-b from-[#2a5da5] to-[#ff7b16] rounded-full"></span>
-                    Location Details
-                  </h3>
-
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                      <div className="w-10 h-10 rounded-lg bg-[#ff7b16]/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin size={18} className="text-[#ff7b16]" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-500">Area</p>
-                        <p className="font-bold text-gray-900">Kazanchise</p>
-                        <p className="text-gray-600 text-sm">
-                          Addis Ababa, Ethiopia
-                        </p>
-                      </div>
+              {/* Info Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Left Side: Address Info */}
+                <div className="space-y-8">
+                  <div className="flex items-start gap-6 group/item">
+                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2a5da5] group-hover/item:bg-[#2a5da5] group-hover/item:text-white transition-all duration-300">
+                      <MapPin size={24} strokeWidth={2.5} />
                     </div>
-
-                    <div className="flex items-start gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                      <div className="w-10 h-10 rounded-lg bg-[#2a5da5]/10 flex items-center justify-center flex-shrink-0">
-                        <Building size={18} className="text-[#2a5da5]" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-500">Building</p>
-                        <p className="font-bold text-gray-900">
-                          Garad Building
-                        </p>
-                        <p className="text-gray-600 text-sm">
-                          Next to ELEL Hotel, 11th Floor
-                        </p>
-                      </div>
+                    <div>
+                      <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">
+                        Location
+                      </p>
+                      <p className="text-lg font-bold text-slate-800 leading-snug">
+                        Kazanchis, Garad Building <br />
+                        <span className="text-[#2a5da5]">
+                          Next to ELEL Hotel
+                        </span>
+                      </p>
                     </div>
+                  </div>
 
-                    <div className="flex items-start gap-4 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                      <div className="w-10 h-10 rounded-lg bg-gray-200/50 flex items-center justify-center flex-shrink-0">
-                        <Hash size={18} className="text-gray-600" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-500">Office Number</p>
-                        <p className="font-bold text-gray-900">#04</p>
-                      </div>
+                  <div className="flex items-start gap-6 group/item">
+                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2a5da5] group-hover/item:bg-[#2a5da5] group-hover/item:text-white transition-all duration-300">
+                      <Hash size={24} strokeWidth={2.5} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">
+                        Floor & Unit
+                      </p>
+                      <p className="text-lg font-bold text-slate-800">
+                        11th Floor, Shop #04
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Right Column - Contact & Hours */}
-                <div className="space-y-5">
-                  <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
-                    <span className="w-1 h-6 bg-gradient-to-b from-[#ff7b16] to-[#2a5da5] rounded-full"></span>
-                    Contact & Hours
-                  </h3>
+                {/* Right Side: Contact & Time */}
+                <div className="bg-slate-50 rounded-[2.5rem] p-8 space-y-6">
+                  <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+                    <div className="flex items-center gap-3">
+                      <Clock
+                        className="text-[#ff7b16]"
+                        size={20}
+                        strokeWidth={2.5}
+                      />
+                      <span className="font-bold text-slate-800">
+                        Business Hours
+                      </span>
+                    </div>
+                    <span className="text-xs font-bold text-slate-500 uppercase">
+                      Mon — Sun
+                    </span>
+                  </div>
 
-                  <div className="space-y-4">
-                    {/* First Phone - Now Clickable */}
+                  <div className="flex justify-between items-end">
+                    <div>
+                      <p className="text-3xl font-black text-slate-900">
+                        08:00 AM
+                      </p>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        Opening
+                      </p>
+                    </div>
+                    <div className="h-px w-12 bg-slate-300 mb-4" />
+                    <div className="text-right">
+                      <p className="text-3xl font-black text-slate-900">
+                        06:00 PM
+                      </p>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        Closing
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 flex flex-col gap-3">
                     <a
                       href="tel:+251911517628"
-                      className="flex items-center gap-4 p-3 bg-[#f4faff] rounded-xl hover:bg-[#e8f0fe] transition-all duration-300 cursor-pointer"
+                      className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-[#2a5da5] hover:shadow-md transition-all group/phone"
                     >
-                      <div className="w-10 h-10 rounded-full bg-[#ff7b16] flex items-center justify-center">
-                        <Phone size={18} className="text-[#ffffff]" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-xs text-gray-500">Phone</p>
-                        <p className="text-[#2a5da5] font-bold text-lg group-hover:underline">
-                          +251911517628
-                        </p>
-                      </div>
-                      <span className="text-[#2a5da5] opacity-0 group-hover:opacity-100 transition-opacity">
-                        📞
+                      <span className="font-bold text-slate-700 text-sm">
+                        Primary Line
+                      </span>
+                      <span className="font-black text-[#2a5da5] text-sm">
+                        +251 911 517 628
                       </span>
                     </a>
-
-                    {/* Second Phone - Now Clickable */}
-                    <a
-                      href="tel:+251115578994"
-                      className="flex items-center gap-4 p-3 bg-[#f4faff] rounded-xl hover:bg-[#e8f0fe] transition-all duration-300 cursor-pointer"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-[#2a5da5] flex items-center justify-center">
-                        <Phone size={18} className="text-[#ffffff]" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-xs text-gray-500">Phone</p>
-                        <p className="text-[#2a5da5] font-bold text-lg group-hover:underline">
-                          +251115578994
-                        </p>
-                      </div>
-
-                      <span className="text-[#2a5da5] opacity-0 group-hover:opacity-100 transition-opacity">
-                        📞
-                      </span>
-                    </a>
-
-                    {/* Hours - Unchanged */}
-                    <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-4 border border-blue-100">
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shadow-sm">
-                          <Clock size={18} className="text-[#2a5da5]" />
-                        </div>
-                        <div>
-                          <p className="text-xs text-gray-500">
-                            Business Hours
-                          </p>
-                          <p className="font-bold text-gray-800">
-                            Monday - Sunday
-                          </p>
-                          <p className="text-gray-700">8:00 AM - 6:00 PM</p>
-                          <p className="text-xs text-gray-500 mt-1">
-                            GST (Gulf Standard Time)
-                          </p>
-                        </div>
-                      </div>
-                      {/* Decorative stripe */}
-                      <div className="absolute right-0 top-0 w-2 h-full bg-gradient-to-b from-[#2a5da5] to-[#ff7b16]"></div>
-                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Bottom Action Buttons - Now Working with Links */}
-              <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row gap-4 justify-center">
-                {/* Get Directions - Now with Google Maps Link */}
+              {/* Action Footer */}
+              <div className="mt-12 flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://maps.app.goo.gl/BYSKFBf8eSgNUqqf7"
+                  href="https://maps.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                  className="flex-1 px-8 py-5 bg-[#2a5da5] text-white font-black rounded-2xl hover:bg-[#1e467a] hover:shadow-2xl hover:shadow-[#2a5da5]/30 transition-all duration-300 flex items-center justify-center gap-3 group/btn"
                 >
-                  <MapPin size={18} />
-                  Get Directions
+                  <MapPin
+                    size={20}
+                    strokeWidth={3}
+                    className="group-hover/btn:animate-bounce"
+                  />
+                  GET DIRECTIONS ON MAPS
                 </a>
-
-                {/* Call Now - Now with Phone Link */}
                 <a
-                  href="tel:+251911517628"
-                  className="px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                  href="tel:+251115578994"
+                  className="flex-1 px-8 py-5 bg-white text-slate-900 border-2 border-slate-100 font-black rounded-2xl hover:bg-slate-50 hover:border-slate-200 transition-all duration-300 flex items-center justify-center gap-3"
                 >
-                  <Phone size={18} />
-                  Call Now
+                  <Phone size={20} strokeWidth={3} className="text-[#ff7b16]" />
+                  RECEPTION DESK
                 </a>
               </div>
             </div>
@@ -879,83 +814,111 @@ const Contact = () => {
       {/* Contact Form Section */}
       <section
         id="support"
-        className="py-20 px-6 lg:px-12 scroll-mt-20 max-w-7xl mx-auto"
+        className="py-24 px-6 lg:px-12 scroll-mt-20 max-w-7xl mx-auto"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side: Content & Feature Cards */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-6">
+          <div className="space-y-10">
+            <div className="relative">
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
                 Get in <span className="text-[#2a5da5]">Touch</span>
-                <span className="block h-1.5 w-20 bg-[#ff7b16] mt-4 rounded-full"></span>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed max-w-md">
+              {/* Brand Accent Bar */}
+              <div className="flex gap-1 mb-6">
+                <span className="h-1.5 w-12 bg-[#2a5da5] rounded-full"></span>
+                <span className="h-1.5 w-4 bg-[#ff7b16] rounded-full"></span>
+              </div>
+              <p className="text-slate-600 text-lg leading-relaxed max-w-md font-medium">
                 Have a project in mind? We'd love to hear from you. Send us a
                 message and our team will get back to you within 24 hours.
               </p>
             </div>
 
-            {/* Modern Feature Cards */}
+            {/* Modern Feature Cards - Matched to Form Style */}
             <div className="grid gap-4">
               {[
-                { title: "24/7 Technical Support", icon: <CheckCircle /> },
-                { title: "Dedicated Account Manager", icon: <CheckCircle /> },
-                { title: "Custom Solutions Available", icon: <CheckCircle /> },
+                {
+                  title: "24/7 Technical Support",
+                  desc: "Always here when you need us.",
+                },
+                {
+                  title: "Dedicated Account Manager",
+                  desc: "Personalized service for your goals.",
+                },
+                {
+                  title: "Custom Solutions Available",
+                  desc: "Tailored specifically for your needs.",
+                },
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="group flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-[#2a5da5]/30 hover:shadow-md transition-all duration-300"
+                  className="group flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#2a5da5]/20 transition-all duration-300"
                 >
-                  <div className="p-2 rounded-lg bg-[#2a5da5]/5 text-[#2a5da5] group-hover:bg-[#2a5da5] group-hover:text-white transition-colors">
-                    {item.icon}
+                  <div className="mt-1 p-2 rounded-xl bg-[#2a5da5]/5 text-[#2a5da5] group-hover:bg-[#2a5da5] group-hover:text-white transition-all duration-300">
+                    <CheckCircle size={20} strokeWidth={2.5} />{" "}
                   </div>
-                  <span className="font-semibold text-gray-800">
-                    {item.title}
-                  </span>
+                  <div>
+                    <h4 className="font-bold text-slate-800">{item.title}</h4>
+                    <p className="text-sm text-slate-500">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Side: Simple Modern Form */}
-          <div className="relative">
-            {/* Decorative background element */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-3xl blur-2xl -z-10" />
+          {/* Right Side: Form */}
+          <div className="relative group">
+            {/* Soft Brand Glow */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#2a5da5]/20 to-[#ff7b16]/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-80 transition duration-1000" />
 
             <form
+              ref={formRef}
               onSubmit={handleSubmit}
-              className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-sm border border-white/20"
+              className="relative bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white"
             >
-              <div className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {/* Subtle Decorative Line */}
+              <div className="absolute top-0 left-16 right-16 h-1 bg-gradient-to-r from-transparent via-[#2a5da5] to-transparent opacity-40" />
+
+              <div className="space-y-6">
+                <div className="mb-2">
+                  <h3 className="text-2xl font-bold text-slate-800 tracking-tight">
+                    Ready to{" "}
+                    <span className="text-[#2a5da5]">get started?</span>
+                  </h3>
+                  <p className="text-slate-500 text-sm mt-1 font-medium">
+                    Complete the form and we'll handle the rest.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
                     name="name"
-                    placeholder="Full name"
+                    placeholder="Full Name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-gray-400"
+                    className="w-full px-6 py-4 bg-slate-50/50 border border-transparent rounded-2xl focus:bg-white focus:border-[#2a5da5]/30 focus:ring-4 focus:ring-[#2a5da5]/5 transition-all outline-none text-slate-700 placeholder:text-slate-400 font-medium"
                   />
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email address"
+                    placeholder="Email Address"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-gray-400"
+                    className="w-full px-6 py-4 bg-slate-50/50 border border-transparent rounded-2xl focus:bg-white focus:border-[#2a5da5]/30 focus:ring-4 focus:ring-[#2a5da5]/5 transition-all outline-none text-slate-700 placeholder:text-slate-400 font-medium"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="Phone number"
+                    placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-[gray]-400"
+                    className="w-full px-6 py-4 bg-slate-50/50 border border-transparent rounded-2xl focus:bg-white focus:border-[#2a5da5]/30 focus:ring-4 focus:ring-[#2a5da5]/5 transition-all outline-none text-slate-700 placeholder:text-slate-400 font-medium"
                   />
                   <input
                     type="text"
@@ -963,7 +926,7 @@ const Contact = () => {
                     placeholder="Subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all placeholder:text-gray-400"
+                    className="w-full px-6 py-4 bg-slate-50/50 border border-transparent rounded-2xl focus:bg-white focus:border-[#2a5da5]/30 focus:ring-4 focus:ring-[#2a5da5]/5 transition-all outline-none text-slate-700 placeholder:text-slate-400 font-medium"
                   />
                 </div>
 
@@ -973,153 +936,178 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#2a5da5] transition-all resize-none placeholder:text-gray-400"
+                  rows={4}
+                  className="w-full px-6 py-4 bg-slate-50/50 border border-transparent rounded-2xl focus:bg-white focus:border-[#2a5da5]/30 focus:ring-4 focus:ring-[#2a5da5]/5 transition-all outline-none text-slate-700 placeholder:text-slate-400 font-medium resize-none"
                 />
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full group py-4 bg-[#2a5da5] hover:bg-[#143a75] text-white font-bold rounded-2xl shadow-lg shadow-[#2a5da5]/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3"
+                  className="w-full relative group/btn py-5 bg-[#2a5da5] hover:bg-[#1e467a] text-white font-bold rounded-2xl shadow-xl shadow-[#2a5da5]/20 transition-all duration-300 transform active:scale-[0.98] overflow-hidden flex items-center justify-center gap-3"
                 >
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
+
                   {isSubmitting ? (
                     <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
                     <>
-                      <span>Send Message</span>
+                      <span className="tracking-wide">Send Message</span>
                       <Send
                         size={18}
-                        className="group-hover:translate-x-1 transition-transform"
+                        className="transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1"
                       />
                     </>
                   )}
                 </button>
 
-                <p className="text-center text-xs text-gray-400 mt-4">
-                  By clicking send, you agree to our privacy policy.
-                </p>
+                <div className="pt-2 text-center">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
+                    Secure Data • Global Support
+                  </p>
+                </div>
               </div>
             </form>
           </div>
         </div>
       </section>
-      {/* Location & Map Section */}
+      {/* Location & Map Section - Ultra Modern Dashboard Style */}
       <section
         id="location"
-        className="py-20 px-4 scroll-mt-20 max-w-7xl mx-auto"
+        className="py-24 px-4 scroll-mt-20 max-w-7xl mx-auto"
       >
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2a5da5]/10 rounded-full mb-4">
-            <MapPin size={16} className="text-[#ff7b16]" />
-            <span className="text-sm font-semibold text-[#2a5da5]">
+        {/* Header: Matching the Shop Style */}
+        <div className="text-center mb-16 relative">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 rounded-full mb-6 border border-slate-200/50">
+            <MapPin size={14} className="text-[#ff7b16]" strokeWidth={3} />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600">
               Addis Ababa, Ethiopia
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
             Find Us{" "}
-            <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2a5da5] to-[#ff7b16]">
               Here
             </span>
           </h2>
 
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Visit our headquarters in Kazanchis — the heart of Addis Ababa's
-            business district
+          <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+            Visit our headquarters in{" "}
+            <span className="text-slate-900 font-bold">Kazanchis</span> — the
+            heart of Addis Ababa's business district.
           </p>
         </div>
 
-        {/* Map Container */}
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-          {/* Location Badge */}
+        {/* Map Container with Modern Frame */}
+        <div className="relative group">
+          {/* Decorative Glow behind the map */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
 
-          {/* Map */}
-          <div className="relative w-full h-[500px] md:h-[600px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.898440598319!2d38.7635!3d9.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f1c3c1c1c1%3A0x14182215173678829852!2sKazanchis%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Proactive Trading Location - Kazanchis, Addis Ababa"
-              className="w-full h-full object-cover"
-            />
+          <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-white p-2 bg-white/50 backdrop-blur-sm">
+            <div className="relative w-full h-[500px] md:h-[650px] rounded-[2rem] overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.553255461973!2d38.7619!3d9.0205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDEnMTMuOCJOIDM4wrA0NSc0Mi44IkU!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: "grayscale(0.2) contrast(1.1)" }}
+                allowFullScreen
+                loading="lazy"
+                title="Proactive Trading - Garad Building"
+                className="w-full h-full object-cover"
+              />
 
-            {/* Map Overlay Gradient */}
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/5 via-transparent to-transparent"></div>
-          </div>
-
-          {/* Bottom Action Bar */}
-          <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-wrap items-center justify-between gap-4 rounded-2xl  p-4">
-            <div className="flex items-center gap-3">
-              <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                <span className="text-xs font-medium text-green-700">
-                  Open Now
+              {/* Floating "Open Status" Badge - Top Left */}
+              <div className="absolute top-6 left-6 flex items-center gap-3 px-4 py-2 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/20">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                <span className="text-[11px] font-black uppercase tracking-wider text-slate-800">
+                  Operational Now
                 </span>
               </div>
-              <span className="text-sm text-gray-600">
-                📍 Kazanchis, Garad Building, 11th Floor
+
+              {/* Bottom Floating Action Bar - Glassmorphism */}
+              <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-slate-900/90 backdrop-blur-xl rounded-[2rem] border border-white/10 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] flex items-center justify-center shrink-0 shadow-lg">
+                    <Building2 className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg">
+                      Garad Building, 11th Floor
+                    </p>
+                    <p className="text-slate-400 text-sm font-medium">
+                      Kazanchis Area, Business District
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 w-full md:w-auto">
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 md:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-2xl hover:bg-[#2a5da5] hover:text-white transition-all duration-300 text-sm font-black uppercase tracking-widest shadow-xl"
+                  >
+                    <Navigation size={18} strokeWidth={2.5} />
+                    Directions
+                  </a>
+
+                  <a
+                    href="tel:+251911517628"
+                    className="w-14 h-14 flex items-center justify-center bg-[#ff7b16] text-white rounded-2xl hover:scale-110 active:scale-95 transition-all duration-300 shadow-xl shadow-[#ff7b16]/20"
+                  >
+                    <Phone size={22} strokeWidth={2.5} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Info Grid - Replaced the strip with a modern grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+          {[
+            { label: "District", val: "Kazanchis", color: "bg-[#2a5da5]" },
+            { label: "Building", val: "Garad 11th Fl", color: "bg-[#ff7b16]" },
+            { label: "Hours", val: "8AM - 6PM", color: "bg-green-500" },
+            { label: "Parking", val: "Complimentary", color: "bg-blue-400" },
+          ].map((info, i) => (
+            <div
+              key={i}
+              className="bg-slate-50 border border-slate-100 p-4 rounded-2xl flex items-center gap-3"
+            >
+              <div className={`w-2 h-2 rounded-full ${info.color}`} />
+              <div>
+                <p className="text-[10px] uppercase font-black text-slate-400 tracking-tighter leading-none mb-1">
+                  {info.label}
+                </p>
+                <p className="text-slate-900 font-bold text-sm leading-none">
+                  {info.val}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Trust Footer */}
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          {[
+            "Premium Location",
+            "Easy Access",
+            "Business District",
+            "Landmark Building",
+          ].map((tag, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <div className="w-1 h-1 rounded-full bg-slate-300" />
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                {tag}
               </span>
             </div>
-
-            <div className="flex gap-2">
-              <a
-                href="https://maps.app.goo.gl/BYSKFBf8eSgNUqqf7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 bg-[#2a5da5] text-white rounded-xl hover:bg-[#143a75] transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl"
-              >
-                <Navigation size={18} />
-                <span>Directions</span>
-              </a>
-
-              <a
-                href="tel:+251911517628"
-                className="flex items-center gap-2 px-5 py-2.5 bg-[#ff7b16] text-white rounded-xl hover:bg-[#e66d12] transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl"
-              >
-                <Phone size={18} />
-                <span>Call</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Quick Info Strip */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-gray-600">
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#2a5da5]"></div>
-            <span>Kazanchis Area</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#ff7b16]"></div>
-            <span>Garad Building</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-            <span>Open Daily: 8AM - 6PM</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-            <span>Free Parking</span>
-          </div>
-        </div>
-
-        {/* Trust Badges */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 opacity-70">
-          <span className="text-xs text-gray-400">📍 Premium Location</span>
-          <span className="text-xs text-gray-400">•</span>
-          <span className="text-xs text-gray-400">🚗 Easy Access</span>
-          <span className="text-xs text-gray-400">•</span>
-          <span className="text-xs text-gray-400">🏢 Business District</span>
-          <span className="text-xs text-gray-400">•</span>
-          <span className="text-xs text-gray-400">⭐ Landmark Building</span>
+          ))}
         </div>
       </section>
-
       {/* Team Section - Modern Glass Cards with Floating Effect */}
       <section
         id="team"
