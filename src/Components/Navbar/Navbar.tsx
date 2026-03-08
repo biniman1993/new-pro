@@ -139,7 +139,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Menu with Centered Search */}
-            <div className="hidden lg:flex items-center justify-center flex-1 gap-0.5 xl:gap-0.5">
+            <div className="hidden lg:flex items-center justify-center flex-1   lg:gap-0.5 xl:gap-0.5  2xl:gap-0.5 min-[2560px]:gap-1 min-[3840px]:gap-1  min-[5120px]:gap-1    ">
               <CustomNavLink to="/">Home</CustomNavLink>
               <CustomNavLink to="/about">About</CustomNavLink>
               <CustomNavLink to="/shop">Shop</CustomNavLink>
@@ -153,7 +153,7 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className=" lg:w-52 xl:w-56 2xl:w-72 pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-[ff9800] focus:bg-white/15 transition-all duration-300"
+                  className=" lg:w-[200px] xl:w-[200px]    pl-10 pr-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-[ff9800] focus:bg-white/15 transition-all duration-300"
                 />
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70 group-hover:text-[#F97316] transition-colors duration-300" />
               </div>

@@ -39,7 +39,6 @@ import Why from "./Components/Why.tsx";
 import LetUsMeet from "./Components/LetUsMeet";
 import BrandShowcase from "./Components/BrandShowcase.tsx";
 
-
 // ScrollToTop component
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -107,7 +106,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-<Route path="/terms" element={<TermsPage />} />
+          <Route path="/terms" element={<TermsPage />} />
 
           {/* ===== PRODUCT CATEGORY ROUTES ===== */}
           {/* These must come BEFORE the home route */}
@@ -178,19 +177,19 @@ const App = () => {
 
                   {/* Products sections with refs and category props */}
                   <Products
-                    title="Top-Rated Laptops"
+                    title="Latest Laptops"
                     productsData={laptopsData}
                     ref={laptopsRef}
                     category="laptops"
                   />
                   <Products
-                    title="Desktop Products"
+                    title="Latest Desktops"
                     productsData={desktopData}
                     ref={gamingRef}
                     category="desktop"
                   />
                   <Products
-                    title="Monitor Equipment"
+                    title="Pupular Monitor"
                     productsData={monitorData}
                     ref={officeRef}
                     category="monitor"

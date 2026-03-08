@@ -64,18 +64,19 @@ const ItemCard = ({ product }: ItemCardProps) => {
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer border border-gray-100 hover:border-blue-300">
+      <div className="bg-white rounded-lg shadow-sm hover:shadow-lg  transition-all duration-300 overflow-hidden group cursor-pointer border border-gray-100 hover:border-blue-300">
         {/* Original image size restored - h-48 */}
-        <div className="relative h-48  bg-gray-100 overflow-hidden"
+        <div
+          className="relative h-50  bg-white overflow-hidden"
           onClick={openProductModal}
         >
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            className="w-full h-full object-cover p-2 group-hover:scale-110 transition-transform duration-300"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#96c4ee]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
 
         {/* Original padding restored - p-4 */}
@@ -180,11 +181,11 @@ const ItemCard = ({ product }: ItemCardProps) => {
 
             <div className="flex flex-col md:flex-row h-full max-h-[90vh] overflow-hidden">
               {/* Left side - Image */}
-              <div className="md:w-1/2 bg-gradient-to-br from-[#ffffff] to-[#f7faff] p-6 flex items-center justify-center">
+              <div className="md:w-1/2 bg-gradient-to-br from-[#ffffff] to-[#f7faff]  flex items-center justify-center ">
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
-                  className="w-full max-h-[250px] md:max-h-[350px] object-contain"
+                  className="w-full max-h-[200px] md:max-h-[500px] object-contain  "
                   loading="lazy"
                 />
               </div>

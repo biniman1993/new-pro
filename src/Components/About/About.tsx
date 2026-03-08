@@ -221,7 +221,7 @@ const About = () => {
   },
   {
     name: "Ministry of Health",
-    logo: "/src/assets/awardlogo/Health.png",
+    logo: "/src/assets/awardlogo/helth.png",
   },
   {
     name: "Ministry of Labour and Skills",
@@ -495,8 +495,8 @@ const About = () => {
 
           <div className="overflow-hidden">
             <p className="text-blue-100 text-base sm:text-lg md:text-xl max-w-xl sm:max-w-2xl mx-auto font-light mb-4 sm:mb-6 md:mb-8 animate-[slideUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:500ms]">
-              Leading Ethiopia's Technology Revolution Since{" "}
-              <span className="text-[#ff8419] font-semibold">2022</span>
+             Leading supplier of advanced electronics, networking equipment, and IT solutions in Ethiopia
+              
             </p>
           </div>
           <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-[bounce_2s_infinite] z-20">

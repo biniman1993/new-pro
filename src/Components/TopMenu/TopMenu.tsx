@@ -141,7 +141,7 @@ const TopMenu = () => {
 
   return (
     <nav
-      className={`fixed  md:top-[65px] lg:top-[64.5px] xl:top-[65px] left-0 w-full z-[100] h-[45px] flex items-center justify-center
+      className={`fixed  md:top-[65px] lg:top-[64.5px] xl:top-[65px] 2xl:top-[64.5px] min-[2560px]:top-[64.5px]   left-0 w-full z-[100] h-[45px] flex items-center justify-center
         transition-all duration-300 ease-in-out font-['Inter'] font-semibold uppercase tracking-wider
         bg-gradient-to-r from-[#2a5da5] to-[#143057]
         ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}

@@ -1,3 +1,104 @@
+// ========== DESKTOP IMAGES ==========
+// Business Desktops
+import desktop1 from "../assets/desktop/desk1.webp";
+import desktop2 from "../assets/desktop/desk2.webp";
+import desktop3 from "../assets/desktop/desk3.webp";
+import desktop4 from "../assets/desktop/desk4.webp";
+import desktop5 from "../assets/desktop/desk5.webp";
+import desktop6 from "../assets/desktop/desk6.webp";
+import desktop7 from "../assets/desktop/desk7.webp";
+import desktop8 from "../assets/desktop/desk8.webp";
+import desktop9 from "../assets/desktop/desk9.webp";
+import desktop10 from "../assets/desktop/desk10.webp";
+import desktop11 from "../assets/desktop/desk11.webp";
+import desktop12 from "../assets/desktop/desk12.webp";
+
+// Gaming Desktops
+import gaming1 from "../assets/desktop/game1.webp";
+import gaming2 from "../assets/desktop/game2.webp";
+import gaming3 from "../assets/desktop/game3.webp";
+import gaming4 from "../assets/desktop/game4.webp";
+import gaming5 from "../assets/desktop/game5.webp";
+import gaming6 from "../assets/desktop/game6.webp";
+
+// All-in-One PCs
+import aio1 from "../assets/desktop/aio1.webp";
+import aio2 from "../assets/desktop/aio2.webp";
+import aio3 from "../assets/desktop/aio3.webp";
+import aio4 from "../assets/desktop/aio4.webp";
+import aio5 from "../assets/desktop/aio5.webp";
+import aio6 from "../assets/desktop/aio6.webp";
+
+// Mini Desktops
+import mini1 from "../assets/desktop/mini1.webp";
+import mini2 from "../assets/desktop/mini2.webp";
+import mini3 from "../assets/desktop/mini3.webp";
+import mini4 from "../assets/desktop/mini4.webp";
+import mini5 from "../assets/desktop/mini5.webp";
+import mini6 from "../assets/desktop/mini6.webp";
+
+// Workstations
+import work1 from "../assets/desktop/work1.webp";
+import work2 from "../assets/desktop/work2.webp";
+import work3 from "../assets/desktop/work3.webp";
+import work4 from "../assets/desktop/work4.webp";
+import work5 from "../assets/desktop/work5.webp";
+import work6 from "../assets/desktop/work6.webp";
+
+
+
+
+// ========== LAPTOP IMPORTS ==========
+// Business Laptops
+import busLap1 from "../assets/laptop/bus1.webp";
+import busLap2 from "../assets/laptop/bus2.webp";
+import busLap3 from "../assets/laptop/bus3.webp";
+import busLap4 from "../assets/laptop/bus4.webp";
+import busLap5 from "../assets/laptop/bus5.webp";
+import busLap6 from "../assets/laptop/bus6.webp";
+import busLap7 from "../assets/laptop/bus7.webp";
+import busLap8 from "../assets/laptop/bus8.webp";
+import busLap9 from "../assets/laptop/bus9.webp";
+import busLap10 from "../assets/laptop/bus10.webp";
+import busLap11 from "../assets/laptop/bus11.webp";
+import busLap12 from "../assets/laptop/bus12.webp";
+
+// Student Laptops
+import stuLap1 from "../assets/laptop/stu1.webp";
+import stuLap2 from "../assets/laptop/stu2.webp";
+import stuLap3 from "../assets/laptop/stu3.webp";
+import stuLap4 from "../assets/laptop/stu4.webp";
+import stuLap5 from "../assets/laptop/stu5.webp";
+import stuLap6 from "../assets/laptop/stu6.webp";
+
+// Ultrabook / Thin & Light
+import ultra1 from "../assets/laptop/ultra1.webp";
+import ultra2 from "../assets/laptop/ultra2.webp";
+import ultra3 from "../assets/laptop/ultra3.webp";
+import ultra4 from "../assets/laptop/ultra4.webp";
+import ultra5 from "../assets/laptop/ultra5.webp";
+import ultra6 from "../assets/laptop/ultra6.webp";
+
+// Gaming Laptops
+import gameLap1 from "../assets/laptop/game1.webp";
+import gameLap2 from "../assets/laptop/game2.webp";
+import gameLap3 from "../assets/laptop/game3.webp";
+import gameLap4 from "../assets/laptop/game4.webp";
+import gameLap5 from "../assets/laptop/game5.webp";
+import gameLap6 from "../assets/laptop/game6.webp";
+import gameLap7 from "../assets/laptop/game7.webp";
+import gameLap8 from "../assets/laptop/game8.webp";
+import gameLap9 from "../assets/laptop/game9.webp";
+import gameLap10 from "../assets/laptop/game10.webp";
+import gameLap11 from "../assets/laptop/game11.webp";
+import gameLap12 from "../assets/laptop/game12.webp";
+
+// 2-in-1 Convertible Laptops
+import conv1 from "../assets/laptop/conv1.webp";
+import conv2 from "../assets/laptop/conv2.webp";
+
+
+
 
 import monitor1 from "../assets/monitor/mon2.png";
 import monitor2 from "../assets/monitor/mon4.png";
@@ -17,6 +118,7 @@ import network5 from "../assets/network/network5.png";
 import network6 from "../assets/network/network6.png";
 import network7 from "../assets/network/network7.png";
 import network8 from "../assets/network/network8.png";
+
 export interface Product {
   id: string;
   name: string;
@@ -34,7 +136,7 @@ export interface Category {
 }
 
 export const catalogData: Record<string, Category> = {
-  // ========== DESKTOP SUBCATEGORIES ==========
+ // ========== DESKTOP SUBCATEGORIES ==========
 "BusinessDesktop": {
   name: 'Business Desktop',
   products: [
@@ -43,8 +145,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell OptiPlex 7020 Tower Desktop',
       description: 'Modern business tower desktop designed for office productivity and enterprise performance.',
       count: 20,
-      price: 1099,
-      image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80',
+      image: desktop1,
       specs: [
         'Intel Core i5-14500',
         '16GB DDR5 RAM',
@@ -59,8 +160,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell OptiPlex 7010 Tower Desktop',
       description: 'Reliable enterprise desktop tower ideal for everyday office work and multitasking.',
       count: 18,
-      price: 899,
-      image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=400&q=80',
+      image: desktop2,
       specs: [
         'Intel Core i7-12700',
         '16GB DDR4 RAM',
@@ -75,8 +175,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell OptiPlex 7000 Tower Desktop',
       description: 'Powerful business desktop built for modern office workloads and high productivity.',
       count: 16,
-      price: 1199,
-      image: 'https://images.unsplash.com/photo-1625842268584-8f3296236761?auto=format&fit=crop&w=400&q=80',
+      image: desktop3,
       specs: [
         'Intel Core i7-13700',
         '32GB DDR5 RAM',
@@ -91,8 +190,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell OptiPlex 5000 Tower Desktop',
       description: 'Efficient business tower PC designed for daily office productivity and reliability.',
       count: 25,
-      price: 999,
-      image: 'https://images.unsplash.com/photo-1601737487795-dab272f52420?auto=format&fit=crop&w=400&q=80',
+      image: desktop4,
       specs: [
         'Intel Core i5-12500',
         '16GB DDR4 RAM',
@@ -107,8 +205,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell Precision 3660 Tower Workstation',
       description: 'Professional workstation tower built for engineering, design, and heavy workloads.',
       count: 10,
-      price: 1899,
-      image: 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=400&q=80',
+      image: desktop5,
       specs: [
         'Intel Core i9-13900',
         '32GB DDR5 RAM',
@@ -123,8 +220,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell XPS 8950 Tower Desktop',
       description: 'High-performance premium desktop tower designed for creators and professionals.',
       count: 14,
-      price: 1599,
-      image: 'https://images.unsplash.com/photo-1624705002806-5d72df19c3f2?auto=format&fit=crop&w=400&q=80',
+      image: desktop6,
       specs: [
         'Intel Core i7-12700',
         '32GB DDR5 RAM',
@@ -139,8 +235,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP Elite Tower 800 G9 Desktop',
       description: 'Enterprise-class HP tower desktop designed for modern business productivity.',
       count: 15,
-      price: 1149,
-      image: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=400&q=80',
+      image: desktop7,
       specs: [
         'Intel Core i5-14500',
         '16GB DDR5 RAM',
@@ -155,8 +250,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP ProDesk 400 G9 Tower',
       description: 'Affordable business desktop tower for small companies and office productivity.',
       count: 22,
-      price: 879,
-      image: 'https://images.unsplash.com/photo-1603484477859-abe6a73f9366?auto=format&fit=crop&w=400&q=80',
+      image: desktop8,
       specs: [
         'Intel Core i5-13500',
         '16GB RAM',
@@ -171,8 +265,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP EliteDesk 800 G6 Tower',
       description: 'Reliable business tower desktop widely used in offices and organizations.',
       count: 17,
-      price: 799,
-      image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80',
+      image: desktop9,
       specs: [
         'Intel Core i7-10700',
         '16GB RAM',
@@ -187,8 +280,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo ThinkCentre M70t Gen 3 Tower',
       description: 'Reliable Lenovo tower desktop built for office productivity and business use.',
       count: 19,
-      price: 899,
-      image: 'https://images.unsplash.com/photo-1624705002806-5d72df19c3f2?auto=format&fit=crop&w=400&q=80',
+      image: desktop10,
       specs: [
         'Intel Core i5-12400',
         '16GB DDR4 RAM',
@@ -203,8 +295,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo ThinkCentre M90t Gen 3 Tower',
       description: 'High-performance business desktop designed for demanding office workloads.',
       count: 12,
-      price: 1199,
-      image: 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=400&q=80',
+      image: desktop11,
       specs: [
         'Intel Core i7-12700',
         '32GB RAM',
@@ -219,8 +310,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo ThinkCentre Neo 50t Tower',
       description: 'Affordable modern tower desktop suitable for small businesses and offices.',
       count: 21,
-      price: 829,
-      image: 'https://images.unsplash.com/photo-1601737487795-dab272f52420?auto=format&fit=crop&w=400&q=80',
+      image: desktop12,
       specs: [
         'Intel Core i5-13400',
         '16GB RAM',
@@ -232,6 +322,8 @@ export const catalogData: Record<string, Category> = {
     }
   ]
 },
+
+// ========== GAMING DESKTOP ==========
 "GamingDesktop": {
   name: 'Gaming Desktop',
   products: [
@@ -240,8 +332,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS ROG Strix G16 Gaming Desktop',
       description: 'Powerful gaming desktop built for high FPS performance and modern AAA games.',
       count: 10,
-      price: 2599,
-      image: 'https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gaming1,
       specs: [
         'Intel Core i7-13700F',
         '32GB DDR5 RAM',
@@ -256,8 +347,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP OMEN 40L Gaming Desktop',
       description: 'High-performance gaming system designed for competitive gaming and streaming.',
       count: 12,
-      price: 2799,
-      image: 'https://images.pexels.com/photos/7014329/pexels-photo-7014329.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gaming2,
       specs: [
         'Intel Core i7-13700K',
         '32GB DDR5 RAM',
@@ -272,8 +362,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo Legion T7 Gaming Desktop',
       description: 'Premium gaming tower built for ultra graphics performance and multitasking.',
       count: 8,
-      price: 3499,
-      image: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gaming3,
       specs: [
         'Intel Core i9-13900KF',
         '32GB DDR5 RAM',
@@ -288,8 +377,7 @@ export const catalogData: Record<string, Category> = {
       name: 'MSI Aegis RS Gaming Desktop',
       description: 'Extreme gaming PC built for high refresh rate gaming and content creation.',
       count: 7,
-      price: 3999,
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gaming4,
       specs: [
         'Intel Core i9-14900K',
         '64GB DDR5 RAM',
@@ -304,8 +392,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Mid-Range RTX 4060 Gaming PC',
       description: 'Balanced gaming desktop perfect for 1080p and 1440p modern gaming.',
       count: 18,
-      price: 1599,
-      image: 'https://images.pexels.com/photos/6804582/pexels-photo-6804582.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gaming5,
       specs: [
         'Intel Core i5-13400F',
         '16GB DDR4 RAM',
@@ -320,8 +407,7 @@ export const catalogData: Record<string, Category> = {
       name: 'AMD Ryzen 7 Gaming Desktop',
       description: 'Modern AMD gaming system designed for smooth gaming and streaming.',
       count: 14,
-      price: 1899,
-      image: 'https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gaming6,
       specs: [
         'AMD Ryzen 7 7800X3D',
         '32GB DDR5 RAM',
@@ -334,7 +420,8 @@ export const catalogData: Record<string, Category> = {
   ]
 },
 
- "AllinOnePC": {
+// ========== ALL-IN-ONE PC ==========
+"AllinOnePC": {
   name: 'All-in-One PC',
   products: [
     {
@@ -342,8 +429,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP 27" All-in-One (27-cr0028nh)',
       description: 'Modern 27-inch HP All-in-One desktop designed for productivity, entertainment, and office work.',
       count: 18,
-      price: 1499,
-      image: 'https://images.pexels.com/photos/3589903/pexels-photo-3589903.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: aio1,
       specs: [
         '13th Gen Intel Core i5',
         '16GB DDR4 RAM',
@@ -358,8 +444,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP Pavilion 24 All-in-One',
       description: 'Elegant and compact all-in-one desktop perfect for home offices and productivity.',
       count: 16,
-      price: 1199,
-      image: 'https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: aio2,
       specs: [
         'Intel Core i5-13400T',
         '16GB RAM',
@@ -374,8 +459,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP EliteOne 800 G9 All-in-One',
       description: 'Premium enterprise all-in-one desktop designed for business environments.',
       count: 10,
-      price: 1899,
-      image: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: aio3,
       specs: [
         'Intel Core i7-13700',
         '32GB DDR5 RAM',
@@ -390,8 +474,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP 24 All-in-One Desktop',
       description: 'Affordable all-in-one PC designed for everyday computing and office tasks.',
       count: 22,
-      price: 999,
-      image: 'https://images.pexels.com/photos/6804582/pexels-photo-6804582.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: aio4,
       specs: [
         'Intel Core i3-1315U',
         '8GB RAM',
@@ -406,8 +489,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo IdeaCentre AIO 3 27"',
       description: 'Modern Lenovo all-in-one PC with a large display ideal for work and multimedia.',
       count: 14,
-      price: 1099,
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: aio5,
       specs: [
         'AMD Ryzen 5 7530U',
         '16GB RAM',
@@ -422,8 +504,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell Inspiron 27 All-in-One',
       description: 'Large screen all-in-one PC designed for productivity and family entertainment.',
       count: 12,
-      price: 1299,
-      image: 'https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: aio6,
       specs: [
         'Intel Core i7-1355U',
         '16GB RAM',
@@ -436,65 +517,62 @@ export const catalogData: Record<string, Category> = {
   ]
 },
 
- "MiniDesktop": {
-    name: 'Mini Desktop',
-    products: [
-      {
-        id: 'mini-1',
-        name: 'Intel NUC 13 Pro',
-        description: 'Premium compact desktop with Intel i5, ideal for office and business use',
-        count: 18,
-        price: 399,
-        image: 'https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Intel i5-1340P', '16GB RAM', '512GB SSD', 'Wi-Fi 6E', 'Quiet Operation']
-      },
-      {
-        id: 'mini-2',
-        name: 'Beelink SER5 Pro',
-        description: 'AMD Ryzen 7 mini PC with excellent price-to-performance ratio',
-        count: 25,
-        price: 280,
-        image: 'https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['AMD Ryzen 7 5700X', '32GB RAM', '1TB SSD', '4K Support', 'VESA Mount']
-      },
-      {
-        id: 'mini-3',
-        name: 'ASUS ExpertCenter PN55',
-        description: 'Latest AMD Ryzen AI mini PC with 96GB RAM support and dual 2.5G Ethernet',
-        count: 12,
-        price: 660,
-        image: 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['AMD Ryzen AI 7', '32GB RAM', '512GB SSD', 'Wi-Fi 7', 'Dual 2.5G LAN']
-      },
-      {
-        id: 'mini-4',
-        name: 'Minisforum UM790 Pro',
-        description: 'High-performance AMD Ryzen 9 mini PC for power users',
-        count: 8,
-        price: 400,
-        image: 'https://images.pexels.com/photos/3829228/pexels-photo-3829228.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['AMD Ryzen 9 7940HS', '32GB RAM', '1TB SSD', 'Dual NVMe', 'USB4']
-      },
-      {
-        id: 'mini-5',
-        name: 'GEEKOM A7 Max',
-        description: 'Compact mini PC with AMD Ryzen 9 for content creation',
-        count: 15,
-        price: 450,
-        image: 'https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['AMD Ryzen 9', '32GB RAM', '1TB SSD', 'Wi-Fi 6E', '4K Triple Display']
-      },
-      {
-        id: 'mini-6',
-        name: 'HP EliteDesk 800 G1i',
-        description: 'Business-class mini desktop with Intel Core Ultra 7 and AI acceleration',
-        count: 22,
-        price: 499,
-        image: 'https://images.pexels.com/photos/2623538/pexels-photo-2623538.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Intel Core Ultra 7', '16GB RAM', '512GB SSD', 'TPM 2.0', 'HP Wolf Security']
-      }
-    ]
-  },
+// ========== MINI DESKTOP ==========
+"MiniDesktop": {
+  name: 'Mini Desktop',
+  products: [
+    {
+      id: 'mini-1',
+      name: 'Intel NUC 13 Pro',
+      description: 'Premium compact desktop with Intel i5, ideal for office and business use',
+      count: 18,
+      image: mini1,
+      specs: ['Intel i5-1340P', '16GB RAM', '512GB SSD', 'Wi-Fi 6E', 'Quiet Operation']
+    },
+    {
+      id: 'mini-2',
+      name: 'Beelink SER5 Pro',
+      description: 'AMD Ryzen 7 mini PC with excellent price-to-performance ratio',
+      count: 25,
+      image: mini2,
+      specs: ['AMD Ryzen 7 5700X', '32GB RAM', '1TB SSD', '4K Support', 'VESA Mount']
+    },
+    {
+      id: 'mini-3',
+      name: 'ASUS ExpertCenter PN55',
+      description: 'Latest AMD Ryzen AI mini PC with 96GB RAM support and dual 2.5G Ethernet',
+      count: 12,
+      image: mini3,
+      specs: ['AMD Ryzen AI 7', '32GB RAM', '512GB SSD', 'Wi-Fi 7', 'Dual 2.5G LAN']
+    },
+    {
+      id: 'mini-4',
+      name: 'Minisforum UM790 Pro',
+      description: 'High-performance AMD Ryzen 9 mini PC for power users',
+      count: 8,
+      image: mini4,
+      specs: ['AMD Ryzen 9 7940HS', '32GB RAM', '1TB SSD', 'Dual NVMe', 'USB4']
+    },
+    {
+      id: 'mini-5',
+      name: 'GEEKOM A7 Max',
+      description: 'Compact mini PC with AMD Ryzen 9 for content creation',
+      count: 15,
+      image: mini5,
+      specs: ['AMD Ryzen 9', '32GB RAM', '1TB SSD', 'Wi-Fi 6E', '4K Triple Display']
+    },
+    {
+      id: 'mini-6',
+      name: 'HP EliteDesk 800 G1i',
+      description: 'Business-class mini desktop with Intel Core Ultra 7 and AI acceleration',
+      count: 22,
+      image: mini6,
+      specs: ['Intel Core Ultra 7', '16GB RAM', '512GB SSD', 'TPM 2.0', 'HP Wolf Security']
+    }
+  ]
+},
+
+// ========== WORKSTATION ==========
 "Workstation": {
   name: 'Workstation',
   products: [
@@ -503,8 +581,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell Precision 3660 Tower Workstation',
       description: 'Professional workstation designed for engineering, architecture, and 3D design workloads.',
       count: 9,
-      price: 2899,
-      image: 'https://images.pexels.com/photos/3926883/pexels-photo-3926883.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: work1,
       specs: [
         'Intel Core i9-13900',
         '32GB DDR5 RAM',
@@ -519,8 +596,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell Precision 5820 Tower Workstation',
       description: 'Enterprise workstation built for heavy simulations, rendering, and engineering tasks.',
       count: 6,
-      price: 3999,
-      image: 'https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: work2,
       specs: [
         'Intel Xeon W-2245',
         '64GB ECC RAM',
@@ -535,8 +611,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP Z2 G9 Tower Workstation',
       description: 'Modern HP workstation ideal for CAD, BIM modeling, and professional design workflows.',
       count: 10,
-      price: 2599,
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: work3,
       specs: [
         'Intel Core i7-13700',
         '32GB DDR5 RAM',
@@ -551,8 +626,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP Z4 G4 Workstation',
       description: 'High-performance workstation used for video editing, engineering simulations, and rendering.',
       count: 7,
-      price: 4299,
-      image: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: work4,
       specs: [
         'Intel Xeon W-2295',
         '64GB ECC RAM',
@@ -567,8 +641,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo ThinkStation P360 Tower',
       description: 'Reliable workstation tower designed for professional 3D design and engineering tasks.',
       count: 11,
-      price: 2799,
-      image: 'https://images.pexels.com/photos/6804582/pexels-photo-6804582.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: work5,
       specs: [
         'Intel Core i7-13700',
         '32GB DDR5 RAM',
@@ -583,8 +656,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo ThinkStation P520 Workstation',
       description: 'Professional workstation built for heavy rendering, simulations, and engineering workflows.',
       count: 5,
-      price: 3599,
-      image: 'https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: work6,
       specs: [
         'Intel Xeon W-2135',
         '64GB ECC RAM',
@@ -597,7 +669,10 @@ export const catalogData: Record<string, Category> = {
   ]
 },
 
- "BusinessLaptop": {
+
+// ========== LAPTOP SUBCATEGORIES ==========
+
+"BusinessLaptop": {
   name: 'Business Laptop',
   products: [
     {
@@ -605,8 +680,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP EliteBook 840 G10',
       description: 'Premium business laptop with professional performance and security.',
       count: 14,
-      price: 2399,
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap1,
       specs: [
         'Intel Core i7‑1365U',
         '16GB RAM',
@@ -621,8 +695,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP ProBook 450 G10',
       description: 'Reliable business laptop with great performance for office workloads.',
       count: 18,
-      price: 1999,
-      image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap2,
       specs: [
         'Intel Core i5‑1340U',
         '16GB RAM',
@@ -637,8 +710,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP EliteBook 630 G10',
       description: 'Lightweight business laptop perfect for professionals on the go.',
       count: 12,
-      price: 2199,
-      image: 'https://images.pexels.com/photos/7102388/pexels-photo-7102388.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap3,
       specs: [
         'Intel Core i5‑1335U',
         '16GB RAM',
@@ -653,8 +725,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP ProBook x360 440 G1',
       description: 'Convertible 2‑in‑1 business laptop ideal for presentations and meetings.',
       count: 9,
-      price: 1899,
-      image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap4,
       specs: [
         'Intel Core i5‑1235U',
         '16GB RAM',
@@ -669,8 +740,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP ProBook 440 G9',
       description: 'Balanced laptop for productivity and daily business use.',
       count: 17,
-      price: 2099,
-      image: 'https://images.pexels.com/photos/907487/pexels-photo-907487.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap5,
       specs: [
         'Intel Core i7‑1255U',
         '16GB RAM',
@@ -685,8 +755,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP EliteBook X G1a AI',
       description: 'High‑end business laptop with AI capabilities for productivity workflows.',
       count: 8,
-      price: 2999,
-      image: 'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap6,
       specs: [
         'Intel Core i7‑1355U',
         '32GB RAM',
@@ -696,15 +765,12 @@ export const catalogData: Record<string, Category> = {
         'Windows 11 Pro'
       ]
     },
-
-    // ========== Other Brands ==========
     {
       id: 'bus-lap-7',
       name: 'Lenovo ThinkPad T16 Gen 1',
       description: 'Business classic with durable design and pro performance.',
       count: 11,
-      price: 2299,
-      image: 'https://images.pexels.com/photos/6449040/pexels-photo-6449040.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap7,
       specs: [
         'Intel Core i7‑1365U',
         '16GB RAM',
@@ -719,8 +785,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell Latitude 7440',
       description: 'Enterprise‑grade Dell laptop designed for business users.',
       count: 13,
-      price: 2499,
-      image: 'https://images.pexels.com/photos/3861970/pexels-photo-3861970.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap8,
       specs: [
         'Intel Core i7‑1360P',
         '16GB RAM',
@@ -735,8 +800,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Samsung Galaxy Book3 Pro 360',
       description: 'Premium convertible laptop with AMOLED display and stylus support.',
       count: 7,
-      price: 2699,
-      image: 'https://images.pexels.com/photos/1181310/pexels-photo-1181310.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap9,
       specs: [
         'Intel Core i7‑1360P',
         '16GB RAM',
@@ -746,15 +810,12 @@ export const catalogData: Record<string, Category> = {
         'Wi‑Fi 6E'
       ]
     },
-
-    // ========== Lenovo Additional ==========
     {
       id: 'bus-lap-10',
       name: 'Lenovo IdeaPad Slim 5 Pro',
       description: 'Affordable business laptop with strong performance.',
       count: 19,
-      price: 1899,
-      image: 'https://images.pexels.com/photos/708165/pexels-photo-708165.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap10,
       specs: [
         'AMD Ryzen 7 7730U',
         '16GB RAM',
@@ -769,8 +830,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo Yoga 7i',
       description: 'Flexible convertible business laptop for travel and work.',
       count: 15,
-      price: 2099,
-      image: 'https://images.pexels.com/photos/5082576/pexels-photo-5082576.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap11,
       specs: [
         'Intel Core i5‑1355U',
         '16GB RAM',
@@ -785,8 +845,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo ThinkBook 14s Gen 4',
       description: 'Business‑oriented laptop with sleek design and strong battery life.',
       count: 17,
-      price: 1999,
-      image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400',
+      image: busLap12,
       specs: [
         'Intel Core i7‑1360P',
         '16GB RAM',
@@ -799,7 +858,7 @@ export const catalogData: Record<string, Category> = {
   ]
 },
 
- "StudentLaptop": {
+"StudentLaptop": {
   name: 'Student Laptop',
   products: [
     {
@@ -807,8 +866,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP 15s Laptop',
       description: 'Affordable and reliable everyday laptop for school and university use.',
       count: 48,
-      price: 599,
-      image: 'https://images.pexels.com/photos/3844584/pexels-photo-3844584.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: stuLap1,
       specs: [
         'Intel Core i3',
         '8GB RAM',
@@ -823,8 +881,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Lenovo IdeaPad 3',
       description: 'Lightweight student laptop with solid performance for study tasks.',
       count: 35,
-      price: 649,
-      image: 'https://images.pexels.com/photos/5099225/pexels-photo-5099225.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: stuLap2,
       specs: [
         'AMD Ryzen 5',
         '8GB RAM',
@@ -839,8 +896,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell Inspiron 15',
       description: 'Durable everyday laptop perfect for homework, research, and study apps.',
       count: 30,
-      price: 699,
-      image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400',
+      image: stuLap3,
       specs: [
         'Intel Core i5',
         '8GB RAM',
@@ -855,8 +911,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS VivoBook 15',
       description: 'Good all‑round student laptop with stylish design and solid performance.',
       count: 26,
-      price: 679,
-      image: 'https://images.pexels.com/photos/5682656/pexels-photo-5682656.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: stuLap4,
       specs: [
         'Intel Core i5',
         '8GB RAM',
@@ -871,8 +926,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Acer Aspire 5',
       description: 'Affordable laptop with good battery life and performance for students.',
       count: 33,
-      price: 629,
-      image: 'https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: stuLap5,
       specs: [
         'AMD Ryzen 3',
         '8GB RAM',
@@ -887,8 +941,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP Chromebook 14',
       description: 'Simple, lightweight Chromebook perfect for online classes and browsing.',
       count: 22,
-      price: 449,
-      image: 'https://images.pexels.com/photos/7116336/pexels-photo-7116336.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: stuLap6,
       specs: [
         'Chrome OS',
         '4GB RAM',
@@ -901,67 +954,61 @@ export const catalogData: Record<string, Category> = {
   ]
 },
 
- "UltrabookThinLight": {
-    name: 'Ultrabook / Thin & Light',
-    products: [
-      {
-        id: 'ultra-1',
-        name: 'HP OmniBook Ultra 14',
-        description: 'World\'s slimmest consumer notebook with AI acceleration and 85 TOPS NPU',
-        count: 28,
-        price: 1399,
-        image: 'https://images.pexels.com/photos/3926883/pexels-photo-3926883.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Snapdragon X2 Elite', '32GB RAM', '1TB SSD', '3K OLED 120Hz', '5% Thinner Than MacBook Air']
-      },
-      {
-        id: 'ultra-2',
-        name: 'Apple MacBook Air M3',
-        description: 'Fanless ultrabook with 3nm chip and 18-hour battery life',
-        count: 45,
-        price: 1099,
-        image: 'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Apple M3 Chip', '16GB RAM', '512GB SSD', '13.6" Liquid Retina', '18hr Battery']
-      },
-      {
-        id: 'ultra-3',
-        name: 'Dell XPS 13 Plus (9340)',
-        description: 'Premium ultrabook with zero-bezel OLED and Intel Core Ultra 9',
-        count: 32,
-        price: 1499,
-        image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Intel Core Ultra 9', '32GB RAM', '1TB SSD', '13.4" OLED 1200 nits', 'Silent Fanless Design']
-      },
-      {
-        id: 'ultra-4',
-        name: 'Lenovo ThinkPad X1 Carbon Gen 12',
-        description: 'Ultra-light carbon-fiber business ultrabook with Intel Core Ultra 7',
-        count: 38,
-        price: 1599,
-        image: 'https://images.pexels.com/photos/2588757/pexels-photo-2588757.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Intel Core Ultra 7', '32GB RAM', '1TB SSD', '14" WUXGA IPS', '1.08kg Weight']
-      },
-      {
-        id: 'ultra-5',
-        name: 'ASUS Zenbook S 13 OLED',
-        description: 'Ultra-slim OLED laptop with military-grade durability',
-        count: 24,
-        price: 1299,
-        image: 'https://images.pexels.com/photos/4218960/pexels-photo-4218960.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Intel Core i9', '32GB RAM', '1TB SSD', '13.3" OLED 2.8K', '1.0kg Aluminum Body']
-      },
-      {
-        id: 'ultra-6',
-        name: 'Samsung Galaxy Book 4 Pro',
-        description: 'Dynamic AMOLED 2X ultrabook with Intel Core Ultra 7',
-        count: 19,
-        price: 1199,
-        image: 'https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Intel Core Ultra 7', '32GB RAM', '1TB SSD', '14" AMOLED 3K', '1.23kg Weight']
-      }
-    ]
-  },
+"UltrabookThinLight": {
+  name: 'Ultrabook / Thin & Light',
+  products: [
+    {
+      id: 'ultra-1',
+      name: 'HP OmniBook Ultra 14',
+      description: 'World\'s slimmest consumer notebook with AI acceleration and 85 TOPS NPU',
+      count: 28,
+      image: ultra1,
+      specs: ['Snapdragon X2 Elite', '32GB RAM', '1TB SSD', '3K OLED 120Hz', '5% Thinner Than MacBook Air']
+    },
+    {
+      id: 'ultra-2',
+      name: 'Apple MacBook Air M3',
+      description: 'Fanless ultrabook with 3nm chip and 18-hour battery life',
+      count: 45,
+      image: ultra2,
+      specs: ['Apple M3 Chip', '16GB RAM', '512GB SSD', '13.6" Liquid Retina', '18hr Battery']
+    },
+    {
+      id: 'ultra-3',
+      name: 'Dell XPS 13 Plus (9340)',
+      description: 'Premium ultrabook with zero-bezel OLED and Intel Core Ultra 9',
+      count: 32,
+      image: ultra3,
+      specs: ['Intel Core Ultra 9', '32GB RAM', '1TB SSD', '13.4" OLED 1200 nits', 'Silent Fanless Design']
+    },
+    {
+      id: 'ultra-4',
+      name: 'Lenovo ThinkPad X1 Carbon Gen 12',
+      description: 'Ultra-light carbon-fiber business ultrabook with Intel Core Ultra 7',
+      count: 38,
+      image: ultra4,
+      specs: ['Intel Core Ultra 7', '32GB RAM', '1TB SSD', '14" WUXGA IPS', '1.08kg Weight']
+    },
+    {
+      id: 'ultra-5',
+      name: 'ASUS Zenbook S 13 OLED',
+      description: 'Ultra-slim OLED laptop with military-grade durability',
+      count: 24,
+      image: ultra5,
+      specs: ['Intel Core i9', '32GB RAM', '1TB SSD', '13.3" OLED 2.8K', '1.0kg Aluminum Body']
+    },
+    {
+      id: 'ultra-6',
+      name: 'Samsung Galaxy Book 4 Pro',
+      description: 'Dynamic AMOLED 2X ultrabook with Intel Core Ultra 7',
+      count: 19,
+      image: ultra6,
+      specs: ['Intel Core Ultra 7', '32GB RAM', '1TB SSD', '14" AMOLED 3K', '1.23kg Weight']
+    }
+  ]
+},
 
- "GamingLaptop": {
+"GamingLaptop": {
   name: 'Gaming Laptop',
   products: [
     {
@@ -969,8 +1016,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS ROG Strix G18',
       description: 'Top‑tier ASUS gaming laptop with stunning performance and advanced cooling.',
       count: 10,
-      price: 3699,
-      image: 'https://images.pexels.com/photos/7014329/pexels-photo-7014329.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap1,
       specs: [
         'Intel Core i9‑14900HX',
         'NVIDIA RTX 4090',
@@ -985,8 +1031,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS ROG Zephyrus G16',
       description: 'Ultra‑slim ROG laptop with premium performance for gaming and content creation.',
       count: 12,
-      price: 3299,
-      image: 'https://images.pexels.com/photos/5082576/pexels-photo-5082576.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap2,
       specs: [
         'Intel Core i9‑13900H',
         'RTX 4080',
@@ -1001,8 +1046,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS ROG Strix G16',
       description: 'Balanced high‑performance ASUS gaming laptop with strong GPU power.',
       count: 15,
-      price: 2999,
-      image: 'https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap3,
       specs: [
         'Intel Core i7‑13800H',
         'RTX 4070',
@@ -1017,8 +1061,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS TUF Gaming A17',
       description: 'Durable ASUS gaming laptop with strong thermals and performance.',
       count: 20,
-      price: 1799,
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap4,
       specs: [
         'AMD Ryzen 9 7945HX',
         'RTX 4060',
@@ -1033,8 +1076,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS TUF Gaming F15',
       description: 'Mid‑range ASUS gaming laptop with solid FPS performance.',
       count: 25,
-      price: 1599,
-      image: 'https://images.pexels.com/photos/654317/pexels-photo-654317.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap5,
       specs: [
         'Intel Core i7‑13650HX',
         'RTX 4050',
@@ -1049,8 +1091,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS TUF Dash F15',
       description: 'Slim gaming laptop with long battery and competitive gaming power.',
       count: 22,
-      price: 1499,
-      image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap6,
       specs: [
         'Intel Core i7‑13620H',
         'RTX 4060',
@@ -1060,15 +1101,12 @@ export const catalogData: Record<string, Category> = {
         'Thin & Lightweight'
       ]
     },
-
-    // Additional 6 popular gaming laptops
     {
       id: 'game-lap-7',
       name: 'Alienware x16 R2',
       description: 'Premium gaming laptop with powerful GPU and signature design.',
       count: 8,
-      price: 3899,
-      image: 'https://images.pexels.com/photos/5089998/pexels-photo-5089998.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap7,
       specs: [
         'RTX 4090',
         '32GB RAM',
@@ -1082,8 +1120,7 @@ export const catalogData: Record<string, Category> = {
       name: 'MSI GE76 Raider',
       description: 'Gaming laptop with excellent thermals and desktop‑level power.',
       count: 9,
-      price: 3499,
-      image: 'https://images.pexels.com/photos/5682656/pexels-photo-5682656.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap8,
       specs: [
         'RTX 4080',
         '32GB RAM',
@@ -1097,8 +1134,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Razer Blade 16',
       description: 'Premium sleek gaming laptop with high refresh display.',
       count: 7,
-      price: 3799,
-      image: 'https://images.pexels.com/photos/5082576/pexels-photo-5082576.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap9,
       specs: [
         'RTX 4080',
         '32GB RAM',
@@ -1112,8 +1148,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Acer Predator Helios 18',
       description: 'Powerful gaming laptop with aggressive performance tuning.',
       count: 13,
-      price: 2999,
-      image: 'https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap10,
       specs: [
         'RTX 3070 Ti',
         '32GB RAM',
@@ -1127,8 +1162,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell G16',
       description: 'Great performance gaming laptop with good value balance.',
       count: 18,
-      price: 1899,
-      image: 'https://images.pexels.com/photos/684385/pexels-photo-684385.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap11,
       specs: [
         'RTX 4060',
         '16GB RAM',
@@ -1142,8 +1176,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HP OMEN 16',
       description: 'Reliable gaming laptop with solid FPS performance for popular titles.',
       count: 20,
-      price: 2399,
-      image: 'https://images.pexels.com/photos/1181310/pexels-photo-1181310.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: gameLap12,
       specs: [
         'RTX 3060',
         '16GB RAM',
@@ -1155,29 +1188,27 @@ export const catalogData: Record<string, Category> = {
   ]
 },
 
-  "2in1ConvertibleLaptop": {
-    name: '2-in-1 Convertible Laptop',
-    products: [
-      {
-        id: 'conv-1',
-        name: 'Convertible Pro',
-        description: 'Premium 2-in-1 for work and creativity',
-        count: 18,
-        price: 1699,
-        image: 'https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Intel i7', '16GB RAM', '512GB SSD', '13.5" Touch', 'Pen Included']
-      },
-      {
-        id: 'conv-2',
-        name: 'Budget Convertible',
-        description: 'Affordable 2-in-1 for students',
-        count: 35,
-        price: 899,
-        image: 'https://images.pexels.com/photos/204611/pexels-photo-204611.jpeg?auto=compress&cs=tinysrgb&w=400',
-        specs: ['Intel i5', '8GB RAM', '256GB SSD', '14" Touch', '360 Hinge']
-      }
-    ]
-  },
+"2in1ConvertibleLaptop": {
+  name: '2-in-1 Convertible Laptop',
+  products: [
+    {
+      id: 'conv-1',
+      name: 'Convertible Pro',
+      description: 'Premium 2-in-1 for work and creativity',
+      count: 18,
+      image: conv1,
+      specs: ['Intel i7', '16GB RAM', '512GB SSD', '13.5" Touch', 'Pen Included']
+    },
+    {
+      id: 'conv-2',
+      name: 'Budget Convertible',
+      description: 'Affordable 2-in-1 for students',
+      count: 35,
+      image: conv2,
+      specs: ['Intel i5', '8GB RAM', '256GB SSD', '14" Touch', '360 Hinge']
+    }
+  ]
+},
 
  // ========== MONITOR SUBCATEGORIES ==========
 "FullHDMonitor": {
