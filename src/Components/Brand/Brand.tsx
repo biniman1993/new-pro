@@ -1,148 +1,179 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react"; // Add this import
+import { useState, useEffect } from "react";
+// Import all brand logos
+import appleLogo from "../../assets/brandslogo/Apple.png"; 
+import microsoftLogo from "../../assets/brandslogo/Microsoft.png";
+import googleLogo from "../../assets/brandslogo/Google.png";
+import dellLogo from "../../assets/brandslogo/Dell.png";
+import hpLogo from "../../assets/brandslogo/HP.png";
+import lenovoLogo from "../../assets/brandslogo/Lenovo.png";
+import acerLogo from "../../assets/brandslogo/Acer.png";
+import asusLogo from "../../assets/brandslogo/ASUS.png";
+import msiLogo from "../../assets/brandslogo/MSI.png";
+import ibuypowerLogo from "../../assets/brandslogo/iBUYPOWER.png";
+import cyberpowerpcLogo from "../../assets/brandslogo/CyberPowerPC.png";
+import nzxtLogo from "../../assets/brandslogo/NZXT.png";
+import gigabyteLogo from "../../assets/brandslogo/Gigabyte.png";
+import predatorLogo from "../../assets/brandslogo/Predator.png";
+import aorusLogo from "../../assets/brandslogo/AORUS.png";
+import metaquestLogo from "../../assets/brandslogo/Meta Quest.png";
+import intelLogo from "../../assets/brandslogo/Intel.png";
+import amdLogo from "../../assets/brandslogo/AMD.png";
+import nvidiaLogo from "../../assets/brandslogo/NVIDIA.png";
+import asrockLogo from "../../assets/brandslogo/ASRock.png";
+import evgaLogo from "../../assets/brandslogo/EVGA.png";
+import sapphireLogo from "../../assets/brandslogo/Sapphire.png";
+import pnyLogo from "../../assets/brandslogo/PNY.png";
+import xfxLogo from "../../assets/brandslogo/XFX.png";
+import zotacLogo from "../../assets/brandslogo/Zotac.png";
+import corsairLogo from "../../assets/brandslogo/Corsair.png";
+import gskillLogo from "../../assets/brandslogo/G.SKILL.png";
+import crucialLogo from "../../assets/brandslogo/Crucial.png";
+import kingstonLogo from "../../assets/brandslogo/Kingston.png";
+import patriotLogo from "../../assets/brandslogo/Patriot Memory.png";
+import samsungLogo from "../../assets/brandslogo/Samsung.png";
+import skhynixLogo from "../../assets/brandslogo/SK hynix.png";
+import teamgroupLogo from "../../assets/brandslogo/Team Group.png";
+import seagateLogo from "../../assets/brandslogo/Seagate.png";
+import westerndigitalLogo from "../../assets/brandslogo/Western Digital.png";
+import seasonicLogo from "../../assets/brandslogo/SeaSonic.png";
+import thermaltakeLogo from "../../assets/brandslogo/Thermaltake.png";
+import fractaldesignLogo from "../../assets/brandslogo/Fractal Design.png";
+import lianliLogo from "../../assets/brandslogo/Lian Li.png";
+import inwinLogo from "../../assets/brandslogo/In Win.png";
+import coolermasterLogo from "../../assets/brandslogo/Cooler Master.png";
+import bequietLogo from "../../assets/brandslogo/be quiet!.png";
+import ciscoLogo from "../../assets/brandslogo/Cisco.png";
+import netgearLogo from "../../assets/brandslogo/Netgear.png";
+import tplinkLogo from "../../assets/brandslogo/TP-Link.png";
+import dlinkLogo from "../../assets/brandslogo/Dlink.png";
+import transcendLogo from "../../assets/brandslogo/Transcend.png";
+import grandstreamLogo from "../../assets/brandslogo/Grandstream.png";
+import apcLogo from "../../assets/brandslogo/APC.png";
+import canonLogo from "../../assets/brandslogo/Canon.png";
+import epsonLogo from "../../assets/brandslogo/Epson.png";
+import brotherLogo from "../../assets/brandslogo/Brother.png";
+import kodakLogo from "../../assets/brandslogo/Kodak.png";
+import fujitsuLogo from "../../assets/brandslogo/Fujitsu.png";
+import logitechLogo from "../../assets/brandslogo/Logitech.png";
+import razerLogo from "../../assets/brandslogo/Razer.png";
+import hyperxLogo from "../../assets/brandslogo/HyperX.png";
+import creativelabsLogo from "../../assets/brandslogo/Creative Labs.png";
+import jabraLogo from "../../assets/brandslogo/Jabra.png";
+import beyerdynamicLogo from "../../assets/brandslogo/Beyerdynamic.png";
+import elgatoLogo from "../../assets/brandslogo/Elgato.png";
+import roccatLogo from "../../assets/brandslogo/ROCCAT.png";
+import playstationLogo from "../../assets/brandslogo/PlayStation.png";
+import nintendoLogo from "../../assets/brandslogo/Nintendo.png";
+import xboxLogo from "../../assets/brandslogo/Xbox.png";
+import bandaigramcoLogo from "../../assets/brandslogo/Bandai Namco.png";
+import capcomLogo from "../../assets/brandslogo/Capcom.png";
+import ubisoftLogo from "../../assets/brandslogo/Ubisoft.png";
+import adobeLogo from "../../assets/brandslogo/Adobe.png";
+import bitdefenderLogo from "../../assets/brandslogo/BitDefender.png";
+import nortonLogo from "../../assets/brandslogo/Norton.png";
+import acronisLogo from "../../assets/brandslogo/Acronis.png";
+import esetLogo from "../../assets/brandslogo/ESET.png";
+import samsungdisplayLogo from "../../assets/brandslogo/Samsung Display.png";
+import lgdisplayLogo from "../../assets/brandslogo/LG Display.png";
+import aocLogo from "../../assets/brandslogo/AOC.png";
+import benqLogo from "../../assets/brandslogo/BenQ.png";
+import aztechLogo from "../../assets/brandslogo/Aztech.png";
+import samsung2Logo from "../../assets/brandslogo/Samsung.png";
+import lgLogo from "../../assets/brandslogo/LG.png";
+import sonyLogo from "../../assets/brandslogo/Sony.png";
+import hisenseLogo from "../../assets/brandslogo/Hisense.png";
+import panasonicLogo from "../../assets/brandslogo/Panasonic.png";
+import sharpLogo from "../../assets/brandslogo/Sharp.png";
 
 // --- Major Tech & Computers ---
-
 const brands = [
-  { id: 1, name: "Apple", logo: "/src/assets/brandslogo/Apple.png" },
-  { id: 2, name: "Microsoft", logo: "/src/assets/brandslogo/Microsoft.png" },
-  { id: 3, name: "Google", logo: "/src/assets/brandslogo/Google.png" },
-  { id: 4, name: "Dell", logo: "/src/assets/brandslogo/Dell.png" },
-  { id: 5, name: "HP", logo: "/src/assets/brandslogo/HP.png" },
-  { id: 6, name: "Lenovo", logo: "/src/assets/brandslogo/Lenovo.png" },
-  { id: 7, name: "Acer", logo: "/src/assets/brandslogo/Acer.png" },
-  { id: 8, name: "ASUS", logo: "/src/assets/brandslogo/ASUS.png" },
-  { id: 9, name: "MSI", logo: "/src/assets/brandslogo/MSI.png" },
-  { id: 10, name: "iBUYPOWER", logo: "/src/assets/brandslogo/iBUYPOWER.png" },
-  {
-    id: 11,
-    name: "CyberPowerPC",
-    logo: "/src/assets/brandslogo/CyberPowerPC.png",
-  },
-  { id: 12, name: "NZXT", logo: "/src/assets/brandslogo/NZXT.png" },
-  { id: 13, name: "Gigabyte", logo: "/src/assets/brandslogo/Gigabyte.png" },
-  { id: 14, name: "Predator", logo: "/src/assets/brandslogo/Predator.png" },
-  { id: 15, name: "AORUS", logo: "/src/assets/brandslogo/AORUS.png" },
-  { id: 16, name: "Meta Quest", logo: "/src/assets/brandslogo/Meta Quest.png" },
-  { id: 17, name: "Intel", logo: "/src/assets/brandslogo/Intel.png" },
-  { id: 18, name: "AMD", logo: "/src/assets/brandslogo/AMD.png" },
-  { id: 19, name: "NVIDIA", logo: "/src/assets/brandslogo/NVIDIA.png" },
-  { id: 20, name: "ASRock", logo: "/src/assets/brandslogo/ASRock.png" },
-  { id: 21, name: "EVGA", logo: "/src/assets/brandslogo/EVGA.png" },
-  { id: 22, name: "Sapphire", logo: "/src/assets/brandslogo/Sapphire.png" },
-  { id: 23, name: "PNY", logo: "/src/assets/brandslogo/PNY.png" },
-  { id: 24, name: "XFX", logo: "/src/assets/brandslogo/XFX.png" },
-  { id: 25, name: "Zotac", logo: "/src/assets/brandslogo/Zotac.png" },
-  { id: 26, name: "Corsair", logo: "/src/assets/brandslogo/Corsair.png" },
-  { id: 27, name: "G.SKILL", logo: "/src/assets/brandslogo/G.SKILL.png" },
-  { id: 28, name: "Crucial", logo: "/src/assets/brandslogo/Crucial.png" },
-  { id: 29, name: "Kingston", logo: "/src/assets/brandslogo/Kingston.png" },
-  {
-    id: 30,
-    name: "Patriot Memory",
-    logo: "/src/assets/brandslogo/Patriot Memory.png",
-  },
-  { id: 31, name: "Samsung", logo: "/src/assets/brandslogo/Samsung.png" },
-  { id: 32, name: "SK hynix", logo: "/src/assets/brandslogo/SK hynix.png" },
-  { id: 33, name: "Team Group", logo: "/src/assets/brandslogo/Team Group.png" },
-  { id: 34, name: "Seagate", logo: "/src/assets/brandslogo/Seagate.png" },
-  {
-    id: 35,
-    name: "Western Digital",
-    logo: "/src/assets/brandslogo/Western Digital.png",
-  },
-  { id: 36, name: "SeaSonic", logo: "/src/assets/brandslogo/SeaSonic.png" },
-  {
-    id: 37,
-    name: "Thermaltake",
-    logo: "/src/assets/brandslogo/Thermaltake.png",
-  },
-  {
-    id: 38,
-    name: "Fractal Design",
-    logo: "/src/assets/brandslogo/Fractal Design.png",
-  },
-  { id: 39, name: "Lian Li", logo: "/src/assets/brandslogo/Lian Li.png" },
-  { id: 40, name: "In Win", logo: "/src/assets/brandslogo/In Win.png" },
-  {
-    id: 41,
-    name: "Cooler Master",
-    logo: "/src/assets/brandslogo/Cooler Master.png",
-  },
-  { id: 42, name: "be quiet!", logo: "/src/assets/brandslogo/be quiet!.png" },
-  { id: 43, name: "Cisco", logo: "/src/assets/brandslogo/Cisco.png" },
-  { id: 44, name: "Netgear", logo: "/src/assets/brandslogo/Netgear.png" },
-  { id: 45, name: "TP-Link", logo: "/src/assets/brandslogo/TP-Link.png" },
-  { id: 46, name: "Dlink", logo: "/src/assets/brandslogo/Dlink.png" },
-  { id: 47, name: "Transcend", logo: "/src/assets/brandslogo/Transcend.png" },
-  {
-    id: 48,
-    name: "Grandstream",
-    logo: "/src/assets/brandslogo/Grandstream.png",
-  },
-  { id: 49, name: "APC", logo: "/src/assets/brandslogo/APC.png" },
-  { id: 50, name: "Canon", logo: "/src/assets/brandslogo/Canon.png" },
-  { id: 51, name: "Epson", logo: "/src/assets/brandslogo/Epson.png" },
-  { id: 52, name: "Brother", logo: "/src/assets/brandslogo/Brother.png" },
-  { id: 53, name: "Kodak", logo: "/src/assets/brandslogo/Kodak.png" },
-  { id: 54, name: "Fujitsu", logo: "/src/assets/brandslogo/Fujitsu.png" },
-  { id: 55, name: "Logitech", logo: "/src/assets/brandslogo/Logitech.png" },
-  { id: 56, name: "Razer", logo: "/src/assets/brandslogo/Razer.png" },
-  { id: 57, name: "HyperX", logo: "/src/assets/brandslogo/HyperX.png" },
-  {
-    id: 58,
-    name: "Creative Labs",
-    logo: "/src/assets/brandslogo/Creative Labs.png",
-  },
-  { id: 59, name: "Jabra", logo: "/src/assets/brandslogo/Jabra.png" },
-  {
-    id: 60,
-    name: "Beyerdynamic",
-    logo: "/src/assets/brandslogo/Beyerdynamic.png",
-  },
-  { id: 61, name: "Elgato", logo: "/src/assets/brandslogo/Elgato.png" },
-  { id: 62, name: "ROCCAT", logo: "/src/assets/brandslogo/ROCCAT.png" },
-  {
-    id: 63,
-    name: "PlayStation",
-    logo: "/src/assets/brandslogo/PlayStation.png",
-  },
-  { id: 64, name: "Nintendo", logo: "/src/assets/brandslogo/Nintendo.png" },
-  { id: 65, name: "Xbox", logo: "/src/assets/brandslogo/Xbox.png" },
-  {
-    id: 66,
-    name: "Bandai Namco",
-    logo: "/src/assets/brandslogo/Bandai Namco.png",
-  },
-  { id: 67, name: "Capcom", logo: "/src/assets/brandslogo/Capcom.png" },
-  { id: 68, name: "Ubisoft", logo: "/src/assets/brandslogo/Ubisoft.png" },
-  { id: 69, name: "Adobe", logo: "/src/assets/brandslogo/Adobe.png" },
-  {
-    id: 70,
-    name: "BitDefender",
-    logo: "/src/assets/brandslogo/BitDefender.png",
-  },
-  { id: 71, name: "Norton", logo: "/src/assets/brandslogo/Norton.png" },
-  { id: 72, name: "Acronis", logo: "/src/assets/brandslogo/Acronis.png" },
-  { id: 73, name: "ESET", logo: "/src/assets/brandslogo/ESET.png" },
-  {
-    id: 74,
-    name: "Samsung Display",
-    logo: "/src/assets/brandslogo/Samsung Display.png",
-  },
-  { id: 75, name: "LG Display", logo: "/src/assets/brandslogo/LG Display.png" },
-  { id: 76, name: "AOC", logo: "/src/assets/brandslogo/AOC.png" },
-  { id: 77, name: "BenQ", logo: "/src/assets/brandslogo/BenQ.png" },
-  { id: 78, name: "Aztech", logo: "/src/assets/brandslogo/Aztech.png" },
-  { id: 79, name: "Samsung", logo: "/src/assets/brandslogo/Samsung.png" },
-  { id: 80, name: "LG", logo: "/src/assets/brandslogo/LG.png" },
-  { id: 81, name: "Sony", logo: "/src/assets/brandslogo/Sony.png" },
-  { id: 82, name: "Hisense", logo: "/src/assets/brandslogo/Hisense.png" },
-  { id: 83, name: "Panasonic", logo: "/src/assets/brandslogo/Panasonic.png" },
-  { id: 84, name: "Sharp", logo: "/src/assets/brandslogo/Sharp.png" },
-  
+  { id: 1, name: "Apple", logo: appleLogo },
+  { id: 2, name: "Microsoft", logo: microsoftLogo },
+  { id: 3, name: "Google", logo: googleLogo },
+  { id: 4, name: "Dell", logo: dellLogo },
+  { id: 5, name: "HP", logo: hpLogo },
+  { id: 6, name: "Lenovo", logo: lenovoLogo },
+  { id: 7, name: "Acer", logo: acerLogo },
+  { id: 8, name: "ASUS", logo: asusLogo },
+  { id: 9, name: "MSI", logo: msiLogo },
+  { id: 10, name: "iBUYPOWER", logo: ibuypowerLogo },
+  { id: 11, name: "CyberPowerPC", logo: cyberpowerpcLogo },
+  { id: 12, name: "NZXT", logo: nzxtLogo },
+  { id: 13, name: "Gigabyte", logo: gigabyteLogo },
+  { id: 14, name: "Predator", logo: predatorLogo },
+  { id: 15, name: "AORUS", logo: aorusLogo },
+  { id: 16, name: "Meta Quest", logo: metaquestLogo },
+  { id: 17, name: "Intel", logo: intelLogo },
+  { id: 18, name: "AMD", logo: amdLogo },
+  { id: 19, name: "NVIDIA", logo: nvidiaLogo },
+  { id: 20, name: "ASRock", logo: asrockLogo },
+  { id: 21, name: "EVGA", logo: evgaLogo },
+  { id: 22, name: "Sapphire", logo: sapphireLogo },
+  { id: 23, name: "PNY", logo: pnyLogo },
+  { id: 24, name: "XFX", logo: xfxLogo },
+  { id: 25, name: "Zotac", logo: zotacLogo },
+  { id: 26, name: "Corsair", logo: corsairLogo },
+  { id: 27, name: "G.SKILL", logo: gskillLogo },
+  { id: 28, name: "Crucial", logo: crucialLogo },
+  { id: 29, name: "Kingston", logo: kingstonLogo },
+  { id: 30, name: "Patriot Memory", logo: patriotLogo },
+  { id: 31, name: "Samsung", logo: samsungLogo },
+  { id: 32, name: "SK hynix", logo: skhynixLogo },
+  { id: 33, name: "Team Group", logo: teamgroupLogo },
+  { id: 34, name: "Seagate", logo: seagateLogo },
+  { id: 35, name: "Western Digital", logo: westerndigitalLogo },
+  { id: 36, name: "SeaSonic", logo: seasonicLogo },
+  { id: 37, name: "Thermaltake", logo: thermaltakeLogo },
+  { id: 38, name: "Fractal Design", logo: fractaldesignLogo },
+  { id: 39, name: "Lian Li", logo: lianliLogo },
+  { id: 40, name: "In Win", logo: inwinLogo },
+  { id: 41, name: "Cooler Master", logo: coolermasterLogo },
+  { id: 42, name: "be quiet!", logo: bequietLogo },
+  { id: 43, name: "Cisco", logo: ciscoLogo },
+  { id: 44, name: "Netgear", logo: netgearLogo },
+  { id: 45, name: "TP-Link", logo: tplinkLogo },
+  { id: 46, name: "Dlink", logo: dlinkLogo },
+  { id: 47, name: "Transcend", logo: transcendLogo },
+  { id: 48, name: "Grandstream", logo: grandstreamLogo },
+  { id: 49, name: "APC", logo: apcLogo },
+  { id: 50, name: "Canon", logo: canonLogo },
+  { id: 51, name: "Epson", logo: epsonLogo },
+  { id: 52, name: "Brother", logo: brotherLogo },
+  { id: 53, name: "Kodak", logo: kodakLogo },
+  { id: 54, name: "Fujitsu", logo: fujitsuLogo },
+  { id: 55, name: "Logitech", logo: logitechLogo },
+  { id: 56, name: "Razer", logo: razerLogo },
+  { id: 57, name: "HyperX", logo: hyperxLogo },
+  { id: 58, name: "Creative Labs", logo: creativelabsLogo },
+  { id: 59, name: "Jabra", logo: jabraLogo },
+  { id: 60, name: "Beyerdynamic", logo: beyerdynamicLogo },
+  { id: 61, name: "Elgato", logo: elgatoLogo },
+  { id: 62, name: "ROCCAT", logo: roccatLogo },
+  { id: 63, name: "PlayStation", logo: playstationLogo },
+  { id: 64, name: "Nintendo", logo: nintendoLogo },
+  { id: 65, name: "Xbox", logo: xboxLogo },
+  { id: 66, name: "Bandai Namco", logo: bandaigramcoLogo },
+  { id: 67, name: "Capcom", logo: capcomLogo },
+  { id: 68, name: "Ubisoft", logo: ubisoftLogo },
+  { id: 69, name: "Adobe", logo: adobeLogo },
+  { id: 70, name: "BitDefender", logo: bitdefenderLogo },
+  { id: 71, name: "Norton", logo: nortonLogo },
+  { id: 72, name: "Acronis", logo: acronisLogo },
+  { id: 73, name: "ESET", logo: esetLogo },
+  { id: 74, name: "Samsung Display", logo: samsungdisplayLogo },
+  { id: 75, name: "LG Display", logo: lgdisplayLogo },
+  { id: 76, name: "AOC", logo: aocLogo },
+  { id: 77, name: "BenQ", logo: benqLogo },
+  { id: 78, name: "Aztech", logo: aztechLogo },
+  { id: 79, name: "Samsung", logo: samsung2Logo },
+  { id: 80, name: "LG", logo: lgLogo },
+  { id: 81, name: "Sony", logo: sonyLogo },
+  { id: 82, name: "Hisense", logo: hisenseLogo },
+  { id: 83, name: "Panasonic", logo: panasonicLogo },
+  { id: 84, name: "Sharp", logo: sharpLogo },
 ];
 
 const Brands = () => {
@@ -235,24 +266,12 @@ const Brands = () => {
                 className="group relative bg-[#ffffff] p-5 sm:p-6 rounded-2xl shadow-md border-2 border-transparent hover:-translate-y-3 hover:scale-105 hover:shadow-2xl transition-all duration-400 flex flex-col items-center min-h-[160px] md:min-h-[200px] cursor-pointer overflow-hidden"
               >
                 {/* Top accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
                 {/* Logo */}
                 <img
                   src={brand.logo}
                   alt={`${brand.name} logo`}
                   className="w-[75px] h-[75px] sm:w-[75px] sm:h-[75px] md:w-[90px] md:h-[90px] mb-3 md:mb-4 object-contain group-hover:scale-110 transition-transform duration-300"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = "none";
-                    const parent = target.parentElement;
-                    const fallback = document.createElement("div");
-                    fallback.className =
-                      "w-[60px] h-[60px] sm:w-[75px] sm:h-[75px] md:w-[90px] md:h-[90px] mb-3 md:mb-4 flex items-center justify-center bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] text-white font-bold text-xl rounded-2xl shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 border-2 border-white/20";
-                    fallback.textContent = brand.name
-                      .substring(0, 2)
-                      .toUpperCase();
-                    parent?.appendChild(fallback);
-                  }}
                 />
                 {/* Name */}
                 <p className="text-sm md:text-base font-semibold text-foreground text-center mt-auto px-1">

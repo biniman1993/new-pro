@@ -26,7 +26,7 @@ import {
   Tv,
   Server,
 } from "lucide-react";
-
+import proLogo from "../../assets/prologo.webp";
 const CustomNavLink = ({
   to,
   children,
@@ -117,7 +117,7 @@ const Navbar = () => {
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-[#ffffff] to-[#ffffff] flex items-center justify-center overflow-hidden">
                       {/* Your Logo Image */}
                       <img
-                        src="/src/assets/prologo.png"
+                        src={proLogo}
                         alt="Proactive Trading"
                         className="w-7 h-7 object-contain"
                       />

@@ -19,6 +19,67 @@ import {
   ChevronDown,
 } from "lucide-react";
 
+// Import all client logos
+import primeLogo from "../../assets/awardlogo/prim.png";
+import financeLogo from "../../assets/awardlogo/Finac-1.png";
+import defenceLogo from "../../assets/awardlogo/def.png";
+import peaceLogo from "../../assets/awardlogo/Ministry of Peace.png";
+import justiceLogo from "../../assets/awardlogo/Ministry of Justice.png";
+import revenuesLogo from "../../assets/awardlogo/Ministry of Revenues.png";
+import foreignAffairsLogo from "../../assets/awardlogo/Ministry of Foreign Affairs.png";
+import tradeLogo from "../../assets/awardlogo/trad.png";
+import transportLogo from "../../assets/awardlogo/Ministry of Transport and Logistics.png";
+import waterLogo from "../../assets/awardlogo/Ministry of Water and Energy.png";
+import worksLogo from "../../assets/awardlogo/Ministry of Works and Urban Development.png";
+import urbanLogo from "../../assets/awardlogo/Ministry of Urban and Infrastructure Development.png";
+import innovationLogo from "../../assets/awardlogo/Ministry of Innovation and Technology.png";
+import minesLogo from "../../assets/awardlogo/Ministry of Mines and Petroleum.png";
+import agricultureLogo from "../../assets/awardlogo/Ministry of Agriculture.png";
+import educationLogo from "../../assets/awardlogo/Ministry of Education.png";
+import healthLogo from "../../assets/awardlogo/helth.png";
+import labourLogo from "../../assets/awardlogo/Ministry of Labour and Skills.png";
+import womenLogo from "../../assets/awardlogo/Ministry of Women and Social Affairs.png";
+import cultureLogo from "../../assets/awardlogo/Ministry of Culture and Tourism.png";
+import ethiopianAirlinesLogo from "../../assets/awardlogo/ethoair.png";
+import ethioTelecomLogo from "../../assets/awardlogo/Ethio-telecom.png";
+import railwaysLogo from "../../assets/awardlogo/Ethiopian Railways Corporation.jpg";
+import roadsLogo from "../../assets/awardlogo/Ethiopian Roads Authority.png";
+import communicationAuthLogo from "../../assets/awardlogo/Ethiopian Communication Authority.png";
+import insaLogo from "../../assets/awardlogo/insa.png";
+import enterpriseDevLogo from "../../assets/awardlogo/Ethiopian Enterprise Development.png";
+import cbeLogo from "../../assets/awardlogo/cbe1.png";
+import devBankLogo from "../../assets/awardlogo/Development Bank of Ethiopia.png";
+import awashBankLogo from "../../assets/awardlogo/Awash Bank.png";
+import enatBankLogo from "../../assets/awardlogo/Enat Bank.png";
+import hibretBankLogo from "../../assets/awardlogo/Hibret Bank.png";
+import tsedeyBankLogo from "../../assets/awardlogo/Tsedey Bank.png";
+import coopBankLogo from "../../assets/awardlogo/COOP Bank of Oromia.png";
+import dashinBankLogo from "../../assets/awardlogo/Dashin Bank.png";
+import abyssiniaBankLogo from "../../assets/awardlogo/Abyssinia Bank.png";
+import zemenBankLogo from "../../assets/awardlogo/Zemen Bank.png";
+import nibBankLogo from "../../assets/awardlogo/Nib International Bank.png";
+import globalBankLogo from "../../assets/awardlogo/Global Bank.png";
+import addisUniversityLogo from "../../assets/awardlogo/addis.png";
+import haramayaUniversityLogo from "../../assets/awardlogo/Haramaya University.png";
+import stPaulsLogo from "../../assets/awardlogo/St. Paul's Hospital.png";
+import menelikLogo from "../../assets/awardlogo/menelik.png";
+import tikurAnbesaLogo from "../../assets/awardlogo/tikure-anbsa.png";
+import alertLogo from "../../assets/awardlogo/Alert.png";
+import epssLogo from "../../assets/awardlogo/epss-logo.png";
+import undpLogo from "../../assets/awardlogo/undp.png";
+import unicefLogo from "../../assets/awardlogo/unicef-logos.png";
+import whoLogo from "../../assets/awardlogo/who.png";
+import wfpLogo from "../../assets/awardlogo/wfp.png";
+import unhcrLogo from "../../assets/awardlogo/unhcr.png";
+import faoLogo from "../../assets/awardlogo/fao.png";
+import ifadLogo from "../../assets/awardlogo/ifad.png";
+import ercsLogo from "../../assets/awardlogo/ercs.png";
+import saveChildrenLogo from "../../assets/awardlogo/save-ch.png";
+import cggcLogo from "../../assets/awardlogo/CGGC.png";
+import chinawuyiLogo from "../../assets/awardlogo/China Wu Yi Co LTD.png";
+import wolaittaLogo from "../../assets/awardlogo/Wolaitta Development Association.png";
+import snvLogo from "../../assets/awardlogo/SNV Ethiopia.png";
+
 const About = () => {
   const [activeTab, setActiveTab] = useState("profile");
   const [statCount, setStatCount] = useState(1000);
@@ -152,272 +213,80 @@ const About = () => {
     },
   ];
 
-    // Top Government & Federal Institutions
-   const clients = [
-  // Top Federal Ministries
-  {
-    name: "Office of Prime Minister",
-    logo: "/src/assets/awardlogo/prim.png",
-  },
-  {
-    name: "Ministry of Finance",
-    logo: "/src/assets/awardlogo/Finac-1.png",
-  },
-  {
-    name: "Ministry of Defence",
-    logo: "/src/assets/awardlogo/def.png",
-  },
-  {
-    name: "Ministry of Peace",
-    logo: "/src/assets/awardlogo/Ministry of Peace.png",
-  },
-  {
-    name: "Ministry of Justice",
-    logo: "/src/assets/awardlogo/Ministry of Justice.png",
-  },
-  {
-    name: "Ministry of Revenues",
-    logo: "/src/assets/awardlogo/Ministry of Revenues.png",
-  },
-  {
-    name: "Ministry of Foreign Affairs",
-    logo: "/src/assets/awardlogo/Ministry of Foreign Affairs.png",
-  },
-  {
-    name: "Ministry of Trade and Regional Integration",
-    logo: "/src/assets/awardlogo/trad.png",
-  },
-  {
-    name: "Ministry of Transport and Logistics",
-    logo: "/src/assets/awardlogo/Ministry of Transport and Logistics.png",
-  },
-  {
-    name: "Ministry of Water and Energy",
-    logo: "/src/assets/awardlogo/Ministry of Water and Energy.png",
-  },
-  {
-    name: "Ministry of Works and Urban Development",
-    logo: "/src/assets/awardlogo/Ministry of Works and Urban Development.png",
-  },
-  {
-    name: "Ministry of Urban and Infrastructure Development",
-    logo: "/src/assets/awardlogo/Ministry of Urban and Infrastructure Development.png",
-  },
-  {
-    name: "Ministry of Innovation and Technology",
-    logo: "/src/assets/awardlogo/Ministry of Innovation and Technology.png",
-  },
-  {
-    name: "Ministry of Mines and Petroleum",
-    logo: "/src/assets/awardlogo/Ministry of Mines and Petroleum.png",
-  },
-  {
-    name: "Ministry of Agriculture",
-    logo: "/src/assets/awardlogo/Ministry of Agriculture.png",
-  },
-  {
-    name: "Ministry of Education",
-    logo: "/src/assets/awardlogo/Ministry of Education.png",
-  },
-  {
-    name: "Ministry of Health",
-    logo: "/src/assets/awardlogo/helth.png",
-  },
-  {
-    name: "Ministry of Labour and Skills",
-    logo: "/src/assets/awardlogo/Ministry of Labour and Skills.png",
-  },
-  {
-    name: "Ministry of Women and Social Affairs",
-    logo: "/src/assets/awardlogo/Ministry of Women and Social Affairs.png",
-  },
-  {
-    name: "Ministry of Culture and Tourism",
-    logo: "/src/assets/awardlogo/Ministry of Culture and Tourism.png",
-  },
- 
+  // Top Government & Federal Institutions - FIXED: Using imported variables
+  const clients = [
+    // Top Federal Ministries
+    { name: "Office of Prime Minister", logo: primeLogo },
+    { name: "Ministry of Finance", logo: financeLogo },
+    { name: "Ministry of Defence", logo: defenceLogo },
+    { name: "Ministry of Peace", logo: peaceLogo },
+    { name: "Ministry of Justice", logo: justiceLogo },
+    { name: "Ministry of Revenues", logo: revenuesLogo },
+    { name: "Ministry of Foreign Affairs", logo: foreignAffairsLogo },
+    { name: "Ministry of Trade and Regional Integration", logo: tradeLogo },
+    { name: "Ministry of Transport and Logistics", logo: transportLogo },
+    { name: "Ministry of Water and Energy", logo: waterLogo },
+    { name: "Ministry of Works and Urban Development", logo: worksLogo },
+    { name: "Ministry of Urban and Infrastructure Development", logo: urbanLogo },
+    { name: "Ministry of Innovation and Technology", logo: innovationLogo },
+    { name: "Ministry of Mines and Petroleum", logo: minesLogo },
+    { name: "Ministry of Agriculture", logo: agricultureLogo },
+    { name: "Ministry of Education", logo: educationLogo },
+    { name: "Ministry of Health", logo: healthLogo },
+    { name: "Ministry of Labour and Skills", logo: labourLogo },
+    { name: "Ministry of Women and Social Affairs", logo: womenLogo },
+    { name: "Ministry of Culture and Tourism", logo: cultureLogo },
+
     // Top Corporations & Airlines
-    {
-      name: "Ethiopian Airlines",
-      logo: "/src/assets/awardlogo/ethoair.png",
-    },
-     {
-      name: "Ethio-telecom",
-      logo: "/src/assets/awardlogo/Ethio-telecom.png",
-    },
-    {
-      name: "Ethiopian Railways Corporation",
-      logo: "/src/assets/awardlogo/Ethiopian Railways Corporation.jpg",
-    },
-    {
-      name: "Ethiopian Roads Authority",
-      logo: "/src/assets/awardlogo/Ethiopian Roads Authority.png",
-    },
-    {
-      name: "Ethiopian Communication Authority",
-      logo: "/src/assets/awardlogo/Ethiopian Communication Authority.png",
-    },
-    {
-      name: "Information Network Security Agency",
-      logo: "/src/assets/awardlogo/insa.png",
-    },
-    
-    {
-      name: "Ethiopian Enterprise Development",
-      logo: "/src/assets/awardlogo/Ethiopian Enterprise Development.png",
-    },
-   
+    { name: "Ethiopian Airlines", logo: ethiopianAirlinesLogo },
+    { name: "Ethio-telecom", logo: ethioTelecomLogo },
+    { name: "Ethiopian Railways Corporation", logo: railwaysLogo },
+    { name: "Ethiopian Roads Authority", logo: roadsLogo },
+    { name: "Ethiopian Communication Authority", logo: communicationAuthLogo },
+    { name: "Information Network Security Agency", logo: insaLogo },
+    { name: "Ethiopian Enterprise Development", logo: enterpriseDevLogo },
 
     // Top Banks
-    {
-      name: "Commercial Bank of Ethiopia",
-      logo: "/src/assets/awardlogo/cbe1.png",
-    },
-    {
-      name: "Development Bank of Ethiopia",
-      logo: "/src/assets/awardlogo/Development Bank of Ethiopia.png",
-    },
-    {
-      name: "Awash Bank",
-      logo: "/src/assets/awardlogo/Awash Bank.png",
-    },
-    {
-      name: "Enat Bank",
-      logo: "/src/assets/awardlogo/Enat Bank.png",
-    },
-    {
-      name: "Hibret Bank",
-      logo: "/src/assets/awardlogo/Hibret Bank.png",
-    },
-    {
-      name: "Tsedey Bank",
-      logo: "/src/assets/awardlogo/Tsedey Bank.png",
-    },
-    {
-      name: "COOP Bank of Oromia",
-      logo: "/src/assets/awardlogo/COOP Bank of Oromia.png",
-    },
-     {
-      name: "Dashin Bank",
-      logo: "/src/assets/awardlogo/Dashin Bank.png",
-    },
- {
-      name: "Abyssinia Bank",
-      logo: "/src/assets/awardlogo/Abyssinia Bank.png",
-    },
-     {
-      name: "Zemen Bank",
-      logo: "/src/assets/awardlogo/Zemen Bank.png",
-    },
-     {
-      name: "Nib International Bank",
-      logo: "/src/assets/awardlogo/Nib International Bank.png",
-    },
-     {
-      name: "Global Bank",
-      logo: "/src/assets/awardlogo/Global Bank.png",
-    },
+    { name: "Commercial Bank of Ethiopia", logo: cbeLogo },
+    { name: "Development Bank of Ethiopia", logo: devBankLogo },
+    { name: "Awash Bank", logo: awashBankLogo },
+    { name: "Enat Bank", logo: enatBankLogo },
+    { name: "Hibret Bank", logo: hibretBankLogo },
+    { name: "Tsedey Bank", logo: tsedeyBankLogo },
+    { name: "COOP Bank of Oromia", logo: coopBankLogo },
+    { name: "Dashin Bank", logo: dashinBankLogo },
+    { name: "Abyssinia Bank", logo: abyssiniaBankLogo },
+    { name: "Zemen Bank", logo: zemenBankLogo },
+    { name: "Nib International Bank", logo: nibBankLogo },
+    { name: "Global Bank", logo: globalBankLogo },
 
     // Top Universities
-    {
-      name: "Addis Ababa University",
-      logo: "/src/assets/awardlogo/addis.png",
-    },
-    
-    {
-      name: "Haramaya University",
-      logo: "/src/assets/awardlogo/Haramaya University.png",
-    },
+    { name: "Addis Ababa University", logo: addisUniversityLogo },
+    { name: "Haramaya University", logo: haramayaUniversityLogo },
 
     // Top Hospitals
-   
-    {
-      name: "St. Paul's Hospital",
-      logo: "/src/assets/awardlogo/St. Paul's Hospital.png",
-    },
-    {
-      name: "Minilik Hospital",
-      logo: "/src/assets/awardlogo/menelik.png",
-    },
-     {
-      name: "Tikur Anbesa Hospital",
-      logo: "/src/assets/awardlogo/tikure-anbsa.png",
-    },
-     {
-      name: "Alert Hospital",
-      logo: "/src/assets/awardlogo/Alert.png",
-    },
-    
-       {
-      name: "Ethiopian Pharmaceutical Supply Agency",
-      logo: "/src/assets/awardlogo/epss-logo.png",
-    },
+    { name: "St. Paul's Hospital", logo: stPaulsLogo },
+    { name: "Minilik Hospital", logo: menelikLogo },
+    { name: "Tikur Anbesa Hospital", logo: tikurAnbesaLogo },
+    { name: "Alert Hospital", logo: alertLogo },
+    { name: "Ethiopian Pharmaceutical Supply Agency", logo: epssLogo },
 
-
-    // Regional & Other Institutions
-    
-    {
-  name: "UNDP",
-  logo: "/src/assets/awardlogo/undp.png",
-},
-{
-  name: "UNICEF",
-  logo: "/src/assets/awardlogo/unicef-logos.png",
-},
-{
-  name: "WHO",
-  logo: "/src/assets/awardlogo/who.png",
-},
-{
-  name: "WFP",
-  logo: "/src/assets/awardlogo/wfp.png",
-},
-{
-  name: "UNHCR",
-  logo: "/src/assets/awardlogo/unhcr.png",
-},
-   {
-  name: "FAO",
-  logo: "/src/assets/awardlogo/fao.png",
-},
-{
-  name: "IFAD",
-  logo: "/src/assets/awardlogo/ifad.png",
-},
-{
-  name: "ERCS",
-  logo: "/src/assets/awardlogo/ercs.png",
-},
-{
-  name: "Save the Children",
-  logo: "/src/assets/awardlogo/save-ch.png",
-},
- 
-    {
-      name: "Oromia Milisha Office",
-      logo: "/src/assets/awardlogo/cbe1.png",
-    },
-    
-   
-  
-    
-    {
-      name: "CGGC",
-      logo: "/src/assets/awardlogo/CGGC.png",
-    },
-    {
-      name: "China Wu Yi Co LTD",
-      logo: "/src/assets/awardlogo/China Wu Yi Co LTD.png",
-    },
-    {
-      name: "Wolaitta Development Association",
-      logo: "/src/assets/awardlogo/Wolaitta Development Association.png",
-    },
-    {
-      name: "SNV Ethiopia",
-      logo: "/src/assets/awardlogo/SNV Ethiopia.png",
-    },
+    // UN & International Organizations
+    { name: "UNDP", logo: undpLogo },
+    { name: "UNICEF", logo: unicefLogo },
+    { name: "WHO", logo: whoLogo },
+    { name: "WFP", logo: wfpLogo },
+    { name: "UNHCR", logo: unhcrLogo },
+    { name: "FAO", logo: faoLogo },
+    { name: "IFAD", logo: ifadLogo },
+    { name: "ERCS", logo: ercsLogo },
+    { name: "Save the Children", logo: saveChildrenLogo },
+    { name: "CGGC", logo: cggcLogo },
+    { name: "China Wu Yi Co LTD", logo: chinawuyiLogo },
+    { name: "Wolaitta Development Association", logo: wolaittaLogo },
+    { name: "SNV Ethiopia", logo: snvLogo },
   ];
+
   const whyChooseUs = [
     {
       icon: <TrendingUp size={24} />,
@@ -495,8 +364,7 @@ const About = () => {
 
           <div className="overflow-hidden">
             <p className="text-blue-100 text-base sm:text-lg md:text-xl max-w-xl sm:max-w-2xl mx-auto font-light mb-4 sm:mb-6 md:mb-8 animate-[slideUp_0.8s_ease-out_forwards] opacity-0 [animation-delay:500ms]">
-             Leading supplier of advanced electronics, networking equipment, and IT solutions in Ethiopia
-              
+              Leading supplier of advanced electronics, networking equipment, and IT solutions in Ethiopia
             </p>
           </div>
           <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-[bounce_2s_infinite] z-20">
@@ -506,7 +374,7 @@ const About = () => {
       </section>
 
       {/* Tab Navigation */}
-      <nav className="flex justify-center flex-wrap gap-3 p-6  bg-white/95 backdrop-blur-md z-10 rounded-2xl max-w-7xl mx-auto -mt-23 ">
+      <nav className="flex justify-center flex-wrap gap-3 p-6 bg-white/95 backdrop-blur-md z-10 rounded-2xl max-w-7xl mx-auto -mt-23">
         {[
           { id: "profile", label: "Profile" },
           { id: "mission", label: "Mission" },
@@ -647,7 +515,7 @@ const About = () => {
         <section
           ref={valuesRef}
           className="values-section mb-16 animate-[fadeIn_0.6s_ease-out]"
-         >
+        >
           <h2 className="values-title text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#2a5da5] to-[#1d1f30] bg-clip-text text-transparent">
             Core Values
           </h2>
@@ -682,7 +550,7 @@ const About = () => {
         <section
           ref={clientsRef}
           className="mb-16 animate-[fadeIn_0.6s_ease-out]"
-         >
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#2a5da5] to-[#1d1f30] bg-clip-text text-transparent">
             Our Distinguished Clients
           </h2>
@@ -699,22 +567,25 @@ const About = () => {
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl shadow-md transition-all duration-400 hover:translate-y-[-8px] hover:scale-105 hover:shadow-[0_15px_40px_rgba(28,76,151,0.2)]  border-2 border-transparent flex flex-col items-center min-h-[180px] relative overflow-hidden group"
+                className="bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl shadow-md transition-all duration-400 hover:translate-y-[-8px] hover:scale-105 hover:shadow-[0_15px_40px_rgba(28,76,151,0.2)] border-2 border-transparent flex flex-col items-center min-h-[180px] relative overflow-hidden group"
               >
-                <div className="absolute top-0 left-0 right-0 h-1  transform scale-x-0 transition-transform duration-400 group-hover:scale-x-100" />
+                <div className="absolute top-0 left-0 right-0 h-1 transform scale-x-0 transition-transform duration-400 group-hover:scale-x-100" />
                 <div className="w-[100px] h-[100px] mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  {" "}
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}
-                    className="w-full h-full object-contain rounded-full"
+                    className="w-full h-full object-contain"
                     onError={(e) => {
+                      // Simple fallback - just hide broken images
                       e.currentTarget.style.display = "none";
-                      const fallback =
-                        e.currentTarget.parentElement?.querySelector(
-                          ".client-logo-fallback",
-                        ) as HTMLElement;
-                      if (fallback) fallback.style.display = "flex";
+                      // Add a simple text fallback
+                      const parent = e.currentTarget.parentElement;
+                      if (parent) {
+                        const fallback = document.createElement("div");
+                        fallback.className = "w-full h-full flex items-center justify-center bg-gray-100 text-gray-500 font-bold text-xl rounded-full";
+                        fallback.textContent = client.name.charAt(0);
+                        parent.appendChild(fallback);
+                      }
                     }}
                   />
                 </div>
