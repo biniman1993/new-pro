@@ -10,7 +10,7 @@ import dellLogo from "../../assets/brandslogo/Dell.png";
 import hpLogo from "../../assets/brandslogo/HP.png";
 import lenovoLogo from "../../assets/brandslogo/Lenovo.png";
 import acerLogo from "../../assets/brandslogo/Acer.png";
-import asusLogo from "../../assets/brandslogo/ASUS.png";
+import asusLogo from "../../assets/brandslogo/asus.png";
 import msiLogo from "../../assets/brandslogo/MSI.png";
 import ibuypowerLogo from "../../assets/brandslogo/iBUYPOWER.png";
 import cyberpowerpcLogo from "../../assets/brandslogo/CyberPowerPC.png";
