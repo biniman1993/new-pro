@@ -53,7 +53,7 @@ import transcendLogo from "../../assets/brandslogo/Transcend.png";
 import grandstreamLogo from "../../assets/brandslogo/Grandstream.png";
 import apcLogo from "../../assets/brandslogo/apc.png";
 import canonLogo from "../../assets/brandslogo/Canon.png";
-import epsonLogo from "../../assets/brandslogo/Epson.png";
+import epsonLogo from "../../assets/brandslogo/epson.png";
 import brotherLogo from "../../assets/brandslogo/Brother.png";
 import kodakLogo from "../../assets/brandslogo/Kodak.png";
 import fujitsuLogo from "../../assets/brandslogo/Fujitsu.png";
