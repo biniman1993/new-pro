@@ -51,7 +51,7 @@ import tplinkLogo from "../../assets/brandslogo/TP-Link.png";
 import dlinkLogo from "../../assets/brandslogo/Dlink.png";
 import transcendLogo from "../../assets/brandslogo/Transcend.png";
 import grandstreamLogo from "../../assets/brandslogo/Grandstream.png";
-import apcLogo from "../../assets/brandslogo/APC.png";
+import apcLogo from "../../assets/brandslogo/apc.png";
 import canonLogo from "../../assets/brandslogo/Canon.png";
 import epsonLogo from "../../assets/brandslogo/Epson.png";
 import brotherLogo from "../../assets/brandslogo/Brother.png";
