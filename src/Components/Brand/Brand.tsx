@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 // Import all brand logos
-import appleLogo from "../../assets/brandslogo/Apple.png"; 
+import appleLogo from "../../assets/brandslogo/apple.png"; 
 import microsoftLogo from "../../assets/brandslogo/Microsoft.png";
 import googleLogo from "../../assets/brandslogo/Google.png";
 import dellLogo from "../../assets/brandslogo/Dell.png";
