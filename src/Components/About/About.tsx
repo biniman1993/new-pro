@@ -697,6 +697,8 @@ const About = () => {
         }
 
         @media (max-width: 768px) {
+
+        
           .sticky {
             top: 100px !important;
             margin-top: -20px !important;
@@ -725,4 +727,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default About;   
