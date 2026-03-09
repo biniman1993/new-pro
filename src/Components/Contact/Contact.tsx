@@ -23,8 +23,10 @@ import shopImage44 from "../../assets/shop/pri.webp";
 import {
   Mail,
   Phone,
+  Compass,
   MapPin,
   Building2,
+  Sparkles,
   Send,
   Clock,
   Users,
@@ -36,7 +38,9 @@ import {
   Hash,
   Building,
   Navigation,
-  ArrowRight, // ✅ Fixed: Added missing import
+  ArrowRight,
+  Linkedin, // Make sure these exist
+  ExternalLink, // Make sure these exist
 } from "lucide-react";
 
 const Contact = () => {
@@ -50,6 +54,28 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(
+    new Set(),
+  );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    document.querySelectorAll("section[id]").forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -105,10 +131,9 @@ const Contact = () => {
     });
   };
 
-  // ✅ Fixed: Removed duplicate MapPin, added unique icons
   const navigationButtons = [
     { id: "Contact", label: "Contact", icon: Building2 },
-    { id: "Office", label: "Office", icon: Building }, // Changed from MapPin
+    { id: "Office", label: "Office", icon: Building },
     { id: "support", label: "Support", icon: Mail },
     { id: "location", label: "Location", icon: MapPin },
     { id: "team", label: "Our Team", icon: Users },
@@ -161,20 +186,10 @@ const Contact = () => {
     { value: "24/7", label: "Support Available", icon: Clock },
     { value: "98%", label: "Client Satisfaction", icon: Award },
     { value: "2h", label: "Avg Response Time", icon: CheckCircle },
-    { value: "1000+", label: "Local Clinets  ", icon: Globe },
+    { value: "1000+", label: "Local Clients", icon: Globe },
   ];
 
-  // Brand colors (kept for reference)
-  const brandColors = {
-    primaryBlue: "#2a5da5",
-    primaryBlueDark: "#0a0e27",
-    secondaryOrange: "#ff7b16",
-    secondaryOrangeDark: "#e47325",
-    white: "#ffffff",
-  };
-
   useEffect(() => {
-    // Check if URL has hash
     if (window.location.hash) {
       const id = window.location.hash.replace("#", "");
       const element = document.getElementById(id);
@@ -187,26 +202,25 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-32 pb-20 bg-gradient-to-br from-[#143057] via-[#2a5da5] to-[#143057]">
-        {" "}
-        {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2a5da5]/20 rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff7b16]/10 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3 animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2a5da5]/20 rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3 animate-pulse" />
         <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#ff7b16]/5 to-[#2a5da5]/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center -mt-8 sm:-mt-12 md:-mt-16 lg:mt-0">
-          <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white font-semibold text-sm uppercase tracking-wider mb-6">
+          <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white font-semibold text-sm uppercase tracking-wider mb-6 animate-fade-in">
             Get in Touch
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-slide-up">
             Let's Build Something{" "}
             <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent animate-pulse">
               Amazing
             </span>{" "}
             Together
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-12 animate-slide-up animation-delay-200">
             Your vision, our expertise. Let's create extraordinary solutions
             that drive your business forward.
           </p>
@@ -214,9 +228,10 @@ const Contact = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-white/15 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-center gap-4 hover:bg-white/25 transition-all duration-300 hover:-translate-y-1"
+                className="bg-white/15 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-center gap-4 hover:bg-white/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl animate-slide-up"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#2a5da5] shadow-lg">
+                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#2a5da5] shadow-lg transform hover:rotate-12 transition-transform duration-300">
                   <stat.icon size={24} />
                 </div>
                 <div>
@@ -235,23 +250,21 @@ const Contact = () => {
             />
           </div>
         </div>
+        
       </section>
-
-      {/* Tab Navigation - Inside content flow */}
-      <div className="relative mt-7 mb-10 px-4 sm:px-6">
+<div>
+   {/* Tab Navigation */}
+      <div className="sticky top-20 z-40 mt-4 mb-4 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="relative">
-            {/* Background container */}
-            <div className="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl " />
-
-            {/* Tab buttons */}
+            <div className="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl" />
             <div className="relative flex flex-wrap justify-center gap-4 p-3 sm:p-4">
               {navigationButtons.map((button) => (
                 <button
                   key={button.id}
-                  className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
+                  className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 whitespace-nowrap transform hover:scale-105 ${
                     activeSection === button.id
-                      ? "text-white font-bold bg-gradient-to-r from-[#2a5da5] to-[#1d4680] "
+                      ? "text-white font-bold bg-gradient-to-r from-[#2a5da5] to-[#1d4680] shadow-lg"
                       : "text-gray-600 font-bold hover:text-gray-900 bg-gray-50 hover:bg-gray-100"
                   }`}
                   onClick={() => scrollToSection(button.id)}
@@ -264,13 +277,23 @@ const Contact = () => {
           </div>
         </div>
       </div>
+</div>
+     
+
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Contact Information */}
-        <section id="Contact" className="mb-24 scroll-mt-20">
-          {/* Section Header */}
+        <section
+        
+          id="Contact"
+          className={`mb-24 scroll-mt-20 transition-all duration-1000 ${
+            visibleSections.has("Contact")
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-100 rounded-full text-xs font-bold uppercase tracking-widest text-[#2a5da5] mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-100 rounded-full text-xs font-bold uppercase tracking-widest text-[#2a5da5] mb-6 shadow-sm animate-fade-in">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff7b16] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff7b16]"></span>
@@ -278,7 +301,8 @@ const Contact = () => {
               Contact Center
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-              Let's <span className="text-[#2a5da5]">Connect</span>
+              Let's{" "}
+              <span className="text-[#2a5da5] animate-gradient">Connect</span>
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
               Expert support is just a click away. Reach out through our
@@ -288,11 +312,11 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Phone Card */}
-            <div className="group relative bg-white rounded-[2.5rem] p-8 shadow-xl shadow-slate-200/50 border border-slate-50 overflow-hidden transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#2a5da5]/5 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110" />
+            <div className="group relative bg-white rounded-[2.5rem] p-8 shadow-xl shadow-slate-200/50 border border-slate-50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2a5da5]/20">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#2a5da5]/5 rounded-bl-full -mr-10 -mt-10 transition-transform duration-500 group-hover:scale-150" />
 
               <div className="relative z-10">
-                <div className="inline-flex p-4 bg-[#2a5da5] text-white rounded-2xl shadow-lg shadow-[#2a5da5]/30 mb-8">
+                <div className="inline-flex p-4 bg-[#2a5da5] text-white rounded-2xl shadow-lg shadow-[#2a5da5]/30 mb-8 transform group-hover:rotate-6 transition-transform duration-500">
                   <Phone size={28} strokeWidth={2.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-2">
@@ -302,7 +326,7 @@ const Contact = () => {
                   24/7 Priority Hotline
                 </p>
 
-                <div className="space-y-3 ">
+                <div className="space-y-3">
                   {[
                     { label: "Primary", num: "+251 911 517 628", icon: "📞" },
                     { label: "Secondary", num: "+251 943 565 408", icon: "📱" },
@@ -311,7 +335,7 @@ const Contact = () => {
                     <a
                       key={i}
                       href={`tel:${item.num.replace(/\s/g, "")}`}
-                      className="flex items-center justify-between p-4 bg-slate-50 hover:bg-[#2a5da5] hover:text-white rounded-2xl transition-all duration-300 group/item"
+                      className="flex items-center justify-between p-4 bg-slate-50 hover:bg-[#2a5da5] hover:text-white rounded-2xl transition-all duration-300 group/item transform hover:scale-105"
                     >
                       <span className="text-xs font-bold uppercase tracking-wider opacity-70">
                         {item.icon} {item.label}
@@ -326,11 +350,11 @@ const Contact = () => {
             </div>
 
             {/* Email Card */}
-            <div className="group relative bg-white rounded-[2.5rem] p-8 shadow-xl shadow-slate-200/50 border border-slate-50 overflow-hidden transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#ff7b16]/5 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110" />
+            <div className="group relative bg-white rounded-[2.5rem] p-8 shadow-xl shadow-slate-200/50 border border-slate-50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#ff7b16]/20">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#ff7b16]/5 rounded-bl-full -mr-10 -mt-10 transition-transform duration-500 group-hover:scale-150" />
 
               <div className="relative z-10">
-                <div className="inline-flex p-4 bg-[#ff7b16] text-white rounded-2xl shadow-lg shadow-[#ff7b16]/30 mb-8">
+                <div className="inline-flex p-4 bg-[#ff7b16] text-white rounded-2xl shadow-lg shadow-[#ff7b16]/30 mb-8 transform group-hover:rotate-6 transition-transform duration-500">
                   <Mail size={28} strokeWidth={2.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-2">
@@ -349,7 +373,7 @@ const Contact = () => {
                     <a
                       key={i}
                       href={`mailto:${item.mail}`}
-                      className="flex flex-col p-4 bg-slate-50 hover:bg-[#ff7b16] hover:text-white rounded-2xl transition-all duration-300 group/item"
+                      className="flex flex-col p-4 bg-slate-50 hover:bg-[#ff7b16] hover:text-white rounded-2xl transition-all duration-300 group/item transform hover:scale-105"
                     >
                       <span className="text-[10px] font-black uppercase tracking-[0.2em] mb-1 opacity-60">
                         {item.label}
@@ -364,11 +388,11 @@ const Contact = () => {
             </div>
 
             {/* Address Card */}
-            <div className="group relative bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl shadow-slate-900/20 overflow-hidden transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-20 -mt-20" />
+            <div className="group relative bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl shadow-slate-900/20 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[#2a5da5]/30">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-20 -mt-20 transition-transform duration-500 group-hover:scale-150" />
 
               <div className="relative z-10 flex flex-col h-full">
-                <div className="inline-flex p-4 bg-white/10 text-white backdrop-blur-md rounded-2xl mb-8 self-start">
+                <div className="inline-flex p-4 bg-white/10 text-white backdrop-blur-md rounded-2xl mb-8 self-start transform group-hover:rotate-6 transition-transform duration-500">
                   <MapPin size={28} strokeWidth={2.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">
@@ -378,7 +402,7 @@ const Contact = () => {
                   Headquarters
                 </p>
 
-                <div className="bg-white/5 rounded-2xl p-5 border border-white/10 mb-6">
+                <div className="bg-white/5 rounded-2xl p-5 border border-white/10 mb-6 backdrop-blur-sm">
                   <p className="text-white font-bold mb-1">
                     Garad Building, 1st Floor
                   </p>
@@ -393,30 +417,33 @@ const Contact = () => {
                   href="https://maps.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto flex items-center justify-center gap-2 w-full py-4 bg-white text-slate-900 rounded-2xl hover:bg-[#2a5da5] hover:text-white transition-all duration-300 font-bold text-sm"
+                  className="mt-auto flex items-center justify-center gap-2 w-full py-4 bg-white text-slate-900 rounded-2xl hover:bg-[#2a5da5] hover:text-white transition-all duration-300 font-bold text-sm transform hover:scale-105"
                 >
                   Get Live Directions
-                  <ArrowRight size={18} />
+                  <ArrowRight
+                    size={18}
+                    className="transform group-hover:translate-x-1 transition-transform"
+                  />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Quick Action Bar */}
-          <div className="mt-16 flex flex-wrap items-center justify-center gap-6 p-6 bg-slate-50/50 backdrop-blur-sm rounded-[2rem] border border-slate-100">
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-6 p-6 bg-slate-50/50 backdrop-blur-sm rounded-[2rem] border border-slate-100 shadow-lg">
             <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em]">
               Instant Connect:
             </span>
             <div className="h-px w-8 bg-slate-200 hidden sm:block" />
             <a
               href="tel:+251911517628"
-              className="flex items-center gap-2 text-sm font-bold text-[#2a5da5] hover:opacity-70 transition-opacity"
+              className="flex items-center gap-2 text-sm font-bold text-[#2a5da5] hover:opacity-70 transition-all transform hover:scale-110"
             >
               <Phone size={16} strokeWidth={3} /> Call Now
             </a>
             <a
               href="mailto:Pro2actives@gmail.com"
-              className="flex items-center gap-2 text-sm font-bold text-[#ff7b16] hover:opacity-70 transition-opacity"
+              className="flex items-center gap-2 text-sm font-bold text-[#ff7b16] hover:opacity-70 transition-all transform hover:scale-110"
             >
               <Mail size={16} strokeWidth={3} /> Send Email
             </a>
@@ -425,10 +452,16 @@ const Contact = () => {
       </div>
 
       {/* Visit Our Shop - Gallery Section */}
-      <section id="shop-gallery" className="mb-20 scroll-mt-20">
+      <section
+        id="shop-gallery"
+        className={`mb-20 scroll-mt-20 px-4 transition-all duration-1000 ${
+          visibleSections.has("shop-gallery")
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center mb-16 relative">
-          {/* Modern Status Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 rounded-full mb-6 border border-slate-200/50">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 rounded-full mb-6 border border-slate-200/50 animate-fade-in">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff7b16] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff7b16]"></span>
@@ -438,20 +471,17 @@ const Contact = () => {
             </span>
           </div>
 
-          {/* Main Heading */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight">
             Visit Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2a5da5] to-[#2a5da5]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2a5da5] to-[#ff7b16]">
               Shop
             </span>
           </h2>
 
-          {/* Description with improved line-height */}
           <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed px-4">
             Take a virtual tour of our store and see our products in person
           </p>
 
-          {/* Decorative underline element */}
           <div className="mt-8 flex justify-center gap-1">
             <div className="w-12 h-1 bg-[#2a5da5] rounded-full"></div>
             <div className="w-4 h-1 bg-[#ff7b16] rounded-full"></div>
@@ -459,193 +489,106 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Image Gallery Grid */}
         <div className="max-w-7xl mx-auto">
-          {/* First Row - 1 Images */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-            {/* Image 1 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage13}
-                alt="Store Front - Proactive Trading"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-[#f0f0f0]">
-                  <p className="text-sm font-semibold">Our office</p>
-                  <p className="text-xs opacity-90">Addis Ababa</p>
+            {[
+              {
+                img: shopImage13,
+                title: "Our office",
+                subtitle: "Addis Ababa",
+              },
+              { img: shopImage, title: "Our Shop", subtitle: "At Kazannchise" },
+              { img: shopImage2, title: "Our Shop", subtitle: "Front view" },
+              { img: shopImage3, title: "Our Shop", subtitle: "Accessories" },
+              {
+                img: shopImage4,
+                title: "Store Front",
+                subtitle: "Main Entrance",
+              },
+              {
+                img: shopImage5,
+                title: "Printers",
+                subtitle: "Office & Production",
+              },
+              {
+                img: shopImage6,
+                title: "Desktops",
+                subtitle: "All in one PCs",
+              },
+              { img: shopImage11, title: "Our Shop", subtitle: "Side View" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 aspect-[4/3] transform hover:-translate-y-2"
+              >
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-sm font-semibold">{item.title}</p>
+                    <p className="text-xs opacity-90">{item.subtitle}</p>
+                  </div>
                 </div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#2a5da5] rounded-2xl transition-all duration-300" />
               </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage}
-                alt="Store Front - Proactive Trading"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Our Shop</p>
-                  <p className="text-xs opacity-90">At Kazannchise</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage2}
-                alt="Store Front - Proactive Trading"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Our Shop</p>
-                  <p className="text-xs opacity-90">Front view</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage3}
-                alt="Store Front - Proactive Trading"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Our Shop</p>
-                  <p className="text-xs opacity-90">Accessories</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage4}
-                alt="Store Front - Proactive Trading"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Store Front</p>
-                  <p className="text-xs opacity-90">Main Entrance</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 2 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage5}
-                alt="Laptop Display Section"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Printers</p>
-                  <p className="text-xs opacity-90">Office & Production</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 3 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage6}
-                alt="Desktop Computers"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Desktops</p>
-                  <p className="text-xs opacity-90">All in one PCs</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 4 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage11}
-                alt="Server Room Setup"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Our Shop</p>
-                  <p className="text-xs opacity-90">Side View </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Second Row - 4 Images */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Image 5 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage10}
-                alt="Printer and Office Equipment"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Printers</p>
-                  <p className="text-xs opacity-90">Canon Copy Machines </p>
+            {[
+              {
+                img: shopImage10,
+                title: "Printers",
+                subtitle: "Canon Copy Machines",
+              },
+              {
+                img: shopImage9,
+                title: "Networking",
+                subtitle: "Routers & Switches",
+              },
+              { img: shopImage45, title: "Monitors", subtitle: "4k monitors" },
+              {
+                img: shopImage44,
+                title: "Printers",
+                subtitle: "Store of Printers",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 aspect-[4/3] transform hover:-translate-y-2"
+              >
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
+                  <div className="absolute bottom-4 left-4 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-sm font-semibold">{item.title}</p>
+                    <p className="text-xs opacity-90">{item.subtitle}</p>
+                  </div>
                 </div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#ff7b16] rounded-2xl transition-all duration-300" />
               </div>
-            </div>
-
-            {/* Image 6 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage9}
-                alt="Networking Equipment"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Networking</p>
-                  <p className="text-xs opacity-90">Routers & Switches</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 7 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage45}
-                alt="Computer Accessories"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Monitors</p>
-                  <p className="text-xs opacity-90">4k monitors</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 8 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-[4/3]">
-              <img
-                src={shopImage44}
-                alt="Store Interior"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-semibold">Printersr</p>
-                  <p className="text-xs opacity-90">Store of Printers</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
+
       {/* Our Office Section */}
-      <section id="Office" className="mb-24 scroll-mt-20">
+      <section
+        id="Office"
+        className={`mb-24 scroll-mt-20 px-4 transition-all duration-1000 ${
+          visibleSections.has("Office")
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight">
             Our <span className="text-[#2a5da5]">Office</span>
@@ -655,14 +598,12 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="group relative bg-white rounded-[3rem] shadow-2xl shadow-slate-200/60 border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-[#2a5da5]/10">
-            {/* Interactive Background Glows */}
+        <div className="max-w-6xl mx-auto">
+          <div className="group relative bg-white rounded-[3rem] shadow-2xl shadow-slate-200/60 border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-[#2a5da5]/20">
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#2a5da5]/10 to-transparent rounded-full blur-3xl -mr-32 -mt-32 transition-opacity group-hover:opacity-100 opacity-50" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#ff7b16]/10 to-transparent rounded-full blur-3xl -ml-20 -mb-20 transition-opacity group-hover:opacity-100 opacity-50" />
 
             <div className="relative z-10 p-8 md:p-14">
-              {/* Top Header Row */}
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-slate-100 pb-10">
                 <div className="flex items-center gap-6">
                   <div className="w-20 h-20 rounded-[2rem] bg-gradient-to-br from-[#2a5da5] to-[#1e467a] flex items-center justify-center text-white shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
@@ -693,12 +634,24 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Info Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Left Side: Address Info */}
                 <div className="space-y-8">
                   <div className="flex items-start gap-6 group/item">
-                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2a5da5] group-hover/item:bg-[#2a5da5] group-hover/item:text-white transition-all duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2a5da5] group-hover/item:bg-[#2a5da5] group-hover/item:text-white transition-all duration-300 transform group-hover/item:rotate-6">
+                      <Compass size={24} strokeWidth={2.5} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">
+                        Location
+                      </p>
+                      <p className="text-lg font-bold text-slate-800 leading-snug">
+                        Ethiopia, Addis Ababa <br />
+                        <span className="text-[#2a5da5]">East Africa</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-6 group/item">
+                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2a5da5] group-hover/item:bg-[#2a5da5] group-hover/item:text-white transition-all duration-300 transform group-hover/item:rotate-6">
                       <MapPin size={24} strokeWidth={2.5} />
                     </div>
                     <div>
@@ -713,9 +666,8 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-6 group/item">
-                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2a5da5] group-hover/item:bg-[#2a5da5] group-hover/item:text-white transition-all duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2a5da5] group-hover/item:bg-[#2a5da5] group-hover/item:text-white transition-all duration-300 transform group-hover/item:rotate-6">
                       <Hash size={24} strokeWidth={2.5} />
                     </div>
                     <div>
@@ -723,13 +675,12 @@ const Contact = () => {
                         Floor & Unit
                       </p>
                       <p className="text-lg font-bold text-slate-800">
-                        11th Floor, Shop #04
+                        11th Floor, office #04
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Right Side: Contact & Time */}
                 <div className="bg-slate-50 rounded-[2.5rem] p-8 space-y-6">
                   <div className="flex items-center justify-between border-b border-slate-200 pb-4">
                     <div className="flex items-center gap-3">
@@ -770,7 +721,7 @@ const Contact = () => {
                   <div className="pt-4 flex flex-col gap-3">
                     <a
                       href="tel:+251911517628"
-                      className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-[#2a5da5] hover:shadow-md transition-all group/phone"
+                      className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-[#2a5da5] hover:shadow-md transition-all group/phone transform hover:scale-105"
                     >
                       <span className="font-bold text-slate-700 text-sm">
                         Primary Line
@@ -779,17 +730,27 @@ const Contact = () => {
                         +251 911 517 628
                       </span>
                     </a>
+                    <a
+                      href="tel:+251911517628"
+                      className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-[#2a5da5] hover:shadow-md transition-all group/phone transform hover:scale-105"
+                    >
+                      <span className="font-bold text-slate-700 text-sm">
+                        Secondary Line
+                      </span>
+                      <span className="font-black text-[#2a5da5] text-sm">
+                        +251 115 578 994
+                      </span>
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Action Footer */}
               <div className="mt-12 flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://maps.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-8 py-5 bg-[#2a5da5] text-white font-black rounded-2xl hover:bg-[#1e467a] hover:shadow-2xl hover:shadow-[#2a5da5]/30 transition-all duration-300 flex items-center justify-center gap-3 group/btn"
+                  className="flex-1 px-8 py-5 bg-[#2a5da5] text-white font-black rounded-2xl hover:bg-[#1e467a] hover:shadow-2xl hover:shadow-[#2a5da5]/30 transition-all duration-300 flex items-center justify-center gap-3 group/btn transform hover:scale-105"
                 >
                   <MapPin
                     size={20}
@@ -800,7 +761,7 @@ const Contact = () => {
                 </a>
                 <a
                   href="tel:+251115578994"
-                  className="flex-1 px-8 py-5 bg-white text-slate-900 border-2 border-slate-100 font-black rounded-2xl hover:bg-slate-50 hover:border-slate-200 transition-all duration-300 flex items-center justify-center gap-3"
+                  className="flex-1 px-8 py-5 bg-white text-slate-900 border-2 border-slate-100 font-black rounded-2xl hover:bg-slate-50 hover:border-[#ff7b16] transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105"
                 >
                   <Phone size={20} strokeWidth={3} className="text-[#ff7b16]" />
                   RECEPTION DESK
@@ -814,16 +775,21 @@ const Contact = () => {
       {/* Contact Form Section */}
       <section
         id="support"
-        className="py-24 px-6 lg:px-12 scroll-mt-20 max-w-7xl mx-auto"
+        className={`py-24 px-6 lg:px-12 scroll-mt-20 max-w-7xl mx-auto transition-all duration-1000 ${
+          visibleSections.has("support")
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Side: Content & Feature Cards */}
           <div className="space-y-10">
             <div className="relative">
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
-                Get in <span className="text-[#2a5da5]">Touch</span>
-              </h2>
-              {/* Brand Accent Bar */}
+              <div className="flex items-center gap-3 mb-4">
+                <Sparkles className="text-[#ff7b16]" size={24} />
+                <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+                  Get in <span className="text-[#2a5da5]">Touch</span>
+                </h2>
+              </div>
               <div className="flex gap-1 mb-6">
                 <span className="h-1.5 w-12 bg-[#2a5da5] rounded-full"></span>
                 <span className="h-1.5 w-4 bg-[#ff7b16] rounded-full"></span>
@@ -834,7 +800,6 @@ const Contact = () => {
               </p>
             </div>
 
-            {/* Modern Feature Cards - Matched to Form Style */}
             <div className="grid gap-4">
               {[
                 {
@@ -852,10 +817,10 @@ const Contact = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="group flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#2a5da5]/20 transition-all duration-300"
+                  className="group flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#2a5da5]/20 transition-all duration-300 transform hover:scale-105"
                 >
                   <div className="mt-1 p-2 rounded-xl bg-[#2a5da5]/5 text-[#2a5da5] group-hover:bg-[#2a5da5] group-hover:text-white transition-all duration-300">
-                    <CheckCircle size={20} strokeWidth={2.5} />{" "}
+                    <CheckCircle size={20} strokeWidth={2.5} />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-800">{item.title}</h4>
@@ -866,9 +831,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Side: Form */}
           <div className="relative group">
-            {/* Soft Brand Glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#2a5da5]/20 to-[#ff7b16]/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-80 transition duration-1000" />
 
             <form
@@ -876,7 +839,6 @@ const Contact = () => {
               onSubmit={handleSubmit}
               className="relative bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white"
             >
-              {/* Subtle Decorative Line */}
               <div className="absolute top-0 left-16 right-16 h-1 bg-gradient-to-r from-transparent via-[#2a5da5] to-transparent opacity-40" />
 
               <div className="space-y-6">
@@ -943,7 +905,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full relative group/btn py-5 bg-[#2a5da5] hover:bg-[#1e467a] text-white font-bold rounded-2xl shadow-xl shadow-[#2a5da5]/20 transition-all duration-300 transform active:scale-[0.98] overflow-hidden flex items-center justify-center gap-3"
+                  className="w-full relative group/btn py-5 bg-[#2a5da5] hover:bg-[#1e467a] text-white font-bold rounded-2xl shadow-xl shadow-[#2a5da5]/20 transition-all duration-300 transform active:scale-[0.98] hover:scale-105 overflow-hidden flex items-center justify-center gap-3"
                 >
                   <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
 
@@ -970,12 +932,16 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      {/* Location & Map Section - Updated with Exact Office Pin */}
+
+      {/* Location & Map Section */}
       <section
         id="location"
-        className="py-24 px-4 scroll-mt-20 max-w-7xl mx-auto"
+        className={`py-24 px-4 scroll-mt-20 max-w-7xl mx-auto transition-all duration-1000 ${
+          visibleSections.has("location")
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
       >
-        {/* Header */}
         <div className="text-center mb-16 relative">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 rounded-full mb-6 border border-slate-200/50">
             <MapPin size={14} className="text-[#ff7b16]" strokeWidth={3} />
@@ -998,13 +964,11 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Map Container */}
         <div className="relative group">
           <div className="absolute -inset-4 bg-gradient-to-r from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
 
           <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-white p-2 bg-white/50 backdrop-blur-sm">
             <div className="relative w-full h-[500px] md:h-[650px] rounded-[2rem] overflow-hidden">
-              {/* EXACT MAP LOCATION IFRAME */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3940.5284379468535!2d38.768133!3d9.015469!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85a8b49bb4f1%3A0xc4d1598f5348111c!2sPro%20Active%20Trading!5e0!3m2!1sen!2set!4v1710000000000!5m2!1sen!2set"
                 width="100%"
@@ -1016,7 +980,6 @@ const Contact = () => {
                 className="w-full h-full object-cover"
               />
 
-              {/* Centered Operational Badge */}
               <div className="absolute top-6 left-1/2 -translate-x-1/2 flex items-center gap-3 px-4 py-2 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 z-10 whitespace-nowrap">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -1027,7 +990,6 @@ const Contact = () => {
                 </span>
               </div>
 
-              {/* Bottom Floating Action Bar */}
               <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-slate-900/90 backdrop-blur-xl rounded-[2rem] border border-white/10 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] flex items-center justify-center shrink-0 shadow-lg">
@@ -1048,7 +1010,7 @@ const Contact = () => {
                     href="https://maps.app.goo.gl/uP4V2T87A4Z5tA9Z7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 md:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-2xl hover:bg-[#2a5da5] hover:text-white transition-all duration-300 text-sm font-black uppercase tracking-widest shadow-xl"
+                    className="flex-1 md:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-2xl hover:bg-[#2a5da5] hover:text-white transition-all duration-300 text-sm font-black uppercase tracking-widest shadow-xl transform hover:scale-105"
                   >
                     <Navigation size={18} strokeWidth={2.5} />
                     Directions
@@ -1065,15 +1027,17 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        {/* Info Grid & Trust Footer (Same as before) */}
       </section>
-      {/* Team Section - Modern Glass Cards with Floating Effect */}
+
+      {/* Team Section */}
       <section
         id="team"
-        className="mb-20 scroll-mt-20 relative overflow-hidden"
+        className={`mb-20 scroll-mt-20 px-4 relative overflow-hidden transition-all duration-1000 ${
+          visibleSections.has("team")
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
       >
-        {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-10 w-64 h-64 bg-[#2a5da5]/5 rounded-full blur-3xl animate-pulse" />
           <div
@@ -1103,9 +1067,8 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {teamMembers.map((member, index) => (
             <div key={index} className="group relative">
-              {/* Premium Card Design */}
               <div
-                className="relative bg-white rounded-3xl p-8 
+                className="relative bg-white rounded-3xl p-8
                       shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)]
                       hover:shadow-[0_30px_70px_-15px_rgba(28,76,151,0.3)]
                       transition-all duration-700 ease-out
@@ -1113,37 +1076,30 @@ const Contact = () => {
                       border border-gray-100/50
                       backdrop-blur-sm
                       overflow-hidden
-                      before:absolute before:inset-0 
+                      before:absolute before:inset-0
                       before:bg-gradient-to-br before:from-[#2a5da5]/5 before:to-[#ff7b16]/5
                       before:opacity-0 before:group-hover:opacity-100
                       before:transition-opacity before:duration-700"
               >
-                {/* Animated Gradient Border */}
                 <div
-                  className="absolute inset-0 p-[2px] rounded-3xl bg-gradient-to-r from-transparent via-transparent to-transparent 
-                        group-hover:from-[#2a5da5] group-hover:via-[#ff7b16] group-hover:to-[#2a5da5] opacity-0 group-hover:opacity-100 
+                  className="absolute inset-0 p-[2px] rounded-3xl bg-gradient-to-r from-transparent via-transparent to-transparent
+                        group-hover:from-[#2a5da5] group-hover:via-[#ff7b16] group-hover:to-[#2a5da5] opacity-0 group-hover:opacity-100
                         transition-opacity duration-700"
                 >
                   <div className="absolute inset-0 rounded-3xl bg-white" />
                 </div>
 
-                {/* Decorative Corner Elements */}
                 <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#2a5da5]/10 to-transparent rounded-tl-3xl" />
                 <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#ff7b16]/10 to-transparent rounded-br-3xl" />
 
-                {/* Profile Image with Modern Design */}
                 <div className="relative mb-8 flex justify-center">
-                  {/* Glow Effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 scale-75 group-hover:scale-110" />
 
-                  {/* Avatar Container */}
                   <div className="relative w-28 h-28">
-                    {/* Rotating Border */}
                     <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#2a5da5]/30 group-hover:border-[#ff7b16] group-hover:animate-[spin_8s_linear_infinite]" />
 
-                    {/* Avatar */}
                     <div
-                      className="absolute inset-2 rounded-full bg-gradient-to-br from-[#2a5da5] to-[#ff7b16] 
+                      className="absolute inset-2 rounded-full bg-gradient-to-br from-[#2a5da5] to-[#ff7b16]
                             flex items-center justify-center text-white text-3xl font-bold
                             shadow-xl group-hover:shadow-2xl
                             transform group-hover:scale-105
@@ -1156,24 +1112,21 @@ const Contact = () => {
                         .join("")}
                     </div>
 
-                    {/* Status Indicator */}
                     <div
-                      className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white 
+                      className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white
                             animate-pulse shadow-lg"
                     />
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="relative text-center">
                   <h3
-                    className="text-2xl font-bold text-gray-900 mb-2
+                    className="text-2xl font-bold text-slate-800 mb-2
                          bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text"
                   >
                     {member.name}
                   </h3>
 
-                  {/* Role with decorative line */}
                   <div className="flex items-center justify-center gap-2 mb-6">
                     <div className="w-8 h-px bg-gradient-to-r from-transparent to-[#2a5da5]/30" />
                     <p className="text-[#2a5da5] font-semibold text-sm uppercase tracking-wider">
@@ -1182,9 +1135,7 @@ const Contact = () => {
                     <div className="w-8 h-px bg-gradient-to-l from-transparent to-[#ff7b16]/30" />
                   </div>
 
-                  {/* Contact Info with Modern Design */}
                   <div className="space-y-3 pt-6 border-t border-gray-100 relative">
-                    {/* Contact Items */}
                     <div className="flex items-center justify-center gap-3 group/item">
                       <div className="p-2 bg-[#2a5da5]/5 rounded-lg group-hover/item:bg-[#2a5da5] transition-colors duration-300">
                         <Mail
@@ -1208,20 +1159,9 @@ const Contact = () => {
                         {member.phone}
                       </span>
                     </div>
-
-                    {/* Social Links Placeholder */}
-                    <div className="flex justify-center gap-2 pt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#2a5da5] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                        <span className="text-xs">in</span>
-                      </div>
-                      <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-[#ff7b16] flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                        <span className="text-xs">tw</span>
-                      </div>
-                    </div>
                   </div>
                 </div>
 
-                {/* Floating Particle Effects */}
                 <div className="absolute -top-2 -right-2 w-12 h-12 bg-[#2a5da5]/5 rounded-full blur-xl group-hover:bg-[#ff7b16]/10 transition-colors duration-700" />
                 <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-[#ff7b16]/5 rounded-full blur-xl group-hover:bg-[#2a5da5]/10 transition-colors duration-700" />
               </div>
@@ -1231,7 +1171,14 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="scroll-mt-20 mb-10">
+      <section
+        id="faq"
+        className={`scroll-mt-20 mb-10 px-4 transition-all duration-1000 ${
+          visibleSections.has("faq")
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Frequently Asked{" "}
@@ -1248,7 +1195,7 @@ const Contact = () => {
           {faqItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 hover:border-[#2a5da5]/30"
             >
               <div className="flex items-start gap-4 mb-4">
                 <MessageCircle
@@ -1264,6 +1211,58 @@ const Contact = () => {
           ))}
         </div>
       </section>
+
+      <style>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.6s ease-out;
+        }
+
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out;
+        }
+
+        .animation-delay-200 {
+          animation-delay: 200ms;
+        }
+
+        .animate-gradient {
+          background: linear-gradient(90deg, #2a5da5, #ff7b16, #2a5da5);
+          background-size: 200% 100%;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: gradient 3s ease infinite;
+        }
+
+        @keyframes gradient {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

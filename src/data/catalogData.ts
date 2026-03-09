@@ -93,10 +93,13 @@ import gameLap10 from "../assets/laptop/game10.webp";
 import gameLap11 from "../assets/laptop/game11.webp";
 import gameLap12 from "../assets/laptop/game12.webp";
 
-// 2-in-1 Convertible Laptops
-import conv1 from "../assets/laptop/conv1.webp";
-import conv2 from "../assets/laptop/conv2.webp";
 
+import hpe1 from "../assets/server/hpe1.webp";
+import hpe2 from "../assets/server/hpe2.webp";
+import hpe3 from "../assets/server/hpe3.webp";
+import hpe4 from "../assets/server/hpe4.webp";
+import hpe5 from "../assets/server/hpe5.webp";
+import hpe6 from "../assets/server/hpe6.webp";
 
 
 
@@ -119,6 +122,13 @@ import network6 from "../assets/network/network6.png";
 import network7 from "../assets/network/network7.png";
 import network8 from "../assets/network/network8.png";
 
+// ========== NETWORKING IMAGES hpome network ==========
+import net1 from "../assets/network/net1.webp";
+import net2 from "../assets/network/net2.webp";
+import net3 from "../assets/network/net3.webp";
+import net4 from "../assets/network/net4.webp";
+import net5 from "../assets/network/net5.webp";
+import net6 from "../assets/network/net6.webp";
 export interface Product {
   id: string;
   name: string;
@@ -857,7 +867,6 @@ export const catalogData: Record<string, Category> = {
     }
   ]
 },
-
 "StudentLaptop": {
   name: 'Student Laptop',
   products: [
@@ -954,6 +963,8 @@ export const catalogData: Record<string, Category> = {
   ]
 },
 
+
+
 "UltrabookThinLight": {
   name: 'Ultrabook / Thin & Light',
   products: [
@@ -1007,6 +1018,8 @@ export const catalogData: Record<string, Category> = {
     }
   ]
 },
+
+
 
 "GamingLaptop": {
   name: 'Gaming Laptop',
@@ -1187,29 +1200,6 @@ export const catalogData: Record<string, Category> = {
     }
   ]
 },
-
-"2in1ConvertibleLaptop": {
-  name: '2-in-1 Convertible Laptop',
-  products: [
-    {
-      id: 'conv-1',
-      name: 'Convertible Pro',
-      description: 'Premium 2-in-1 for work and creativity',
-      count: 18,
-      image: conv1,
-      specs: ['Intel i7', '16GB RAM', '512GB SSD', '13.5" Touch', 'Pen Included']
-    },
-    {
-      id: 'conv-2',
-      name: 'Budget Convertible',
-      description: 'Affordable 2-in-1 for students',
-      count: 35,
-      image: conv2,
-      specs: ['Intel i5', '8GB RAM', '256GB SSD', '14" Touch', '360 Hinge']
-    }
-  ]
-},
-
  // ========== MONITOR SUBCATEGORIES ==========
 "FullHDMonitor": {
   name: 'Full HD Monitor',
@@ -1603,7 +1593,6 @@ export const catalogData: Record<string, Category> = {
   "Modern4KTVs": {
     name: 'Modern 4K TVs',
     products: [
-      // --- THE ETHIOPIAN FAVORITE: INFINIX ---
      
       // --- SAMSUNG SERIES ---
       {
@@ -1723,7 +1712,7 @@ export const catalogData: Record<string, Category> = {
   }
 ,
 
- // ========== NETWORKING SUBCATEGORIES ==========
+// ========== NETWORKING SUBCATEGORIES ==========
 "HomeNetworking": {
   name: 'Home Networking',
   products: [
@@ -1732,8 +1721,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Huawei WiFi AX6 Pro',
       description: 'Ultra-fast WiFi 6+ router with 7200Mbps throughput and strong wall-penetration.',
       count: 15,
-      price: 159,
-      image: 'https://images.pexels.com/photos/4218544/pexels-photo-4218544.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: net1,
       specs: ['WiFi 6+', '7200 Mbps', '8 High-Gain Antennas', 'NFC One-Hop Connect', 'HarmonyOS Mesh+']
     },
     {
@@ -1741,8 +1729,7 @@ export const catalogData: Record<string, Category> = {
       name: 'TP-Link Archer AX72',
       description: 'Pro-grade Gigabit WiFi 6 router with 6-streams and extensive coverage for smart homes.',
       count: 20,
-      price: 189,
-      image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+      image: net2,
       specs: ['WiFi 6', '5400 Mbps', '4x4 MU-MIMO', 'USB 3.0 Port', 'HomeShield Security']
     },
     {
@@ -1750,8 +1737,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Huawei WiFi Mesh 7 (2-Pack)',
       description: 'Tri-band whole home coverage that handles 250+ devices with lightning speed.',
       count: 10,
-      price: 329,
-      image: 'https://images.pexels.com/photos/907487/pexels-photo-907487.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: net3,
       specs: ['Tri-Band WiFi 6', '6600 Mbps', 'Coverage 6000 sq ft', 'HarmonyOS Mesh+', 'Visualized WiFi Diagnosis']
     },
     {
@@ -1759,8 +1745,7 @@ export const catalogData: Record<string, Category> = {
       name: 'TP-Link Deco X50',
       description: 'AI-Driven Mesh system that learns your network environment to provide ideal WiFi.',
       count: 12,
-      price: 299,
-      image: 'https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: net4,
       specs: ['AX3000 WiFi 6', 'Ultra-Low Latency', 'Seamless Roaming', 'TP-Link HomeCare', 'Easy Setup']
     },
     {
@@ -1768,8 +1753,7 @@ export const catalogData: Record<string, Category> = {
       name: 'D-Link AQUILA PRO AI M30',
       description: 'Eco-friendly AI-powered router designed for smart home optimization and reliability.',
       count: 14,
-      price: 145,
-      image: 'https://images.pexels.com/photos/2881229/pexels-photo-2881229.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: net5,
       specs: ['WiFi 6', '3000 Mbps', '5 Internal Antennas', 'Voice Control (Alexa/Google)', 'WPA3 Encryption']
     },
     {
@@ -1777,8 +1761,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Huawei 4G Router 3 Pro',
       description: 'Perfect for areas without fiber. Just insert a SIM card for high-speed 4G broadband.',
       count: 25,
-      price: 125,
-      image: 'https://images.pexels.com/photos/4050312/pexels-photo-4050312.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: net6,
       specs: ['Cat 7 4G LTE', '300 Mbps Download', 'Dual-Band WiFi', '4 Gigabit Ports', 'Plug & Play']
     }
   ]
@@ -3877,12 +3860,11 @@ export const catalogData: Record<string, Category> = {
   name: 'HPE ProLiant ML Tower Servers',
   products: [
     {
-      id: 'hpe-ml30-g11',
+      id: 'hpe-ml30-g11-hp-tower',
       name: 'HPE ProLiant ML30 Gen11',
       description: 'The HPE ProLiant ML30 Gen11 server is a powerful yet affordable tower server designed for small offices and remote branch offices.',
       count: 10,
-      price: 1299,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hpe1,
       specs: ['Intel Xeon E-2400', '16GB DDR5 ECC', '4 LFF Drive Bays', '350W Fixed PSU']
     },
     {
@@ -3890,8 +3872,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant ML110 Gen11',
       description: 'The HPE ProLiant ML110 Gen11 server is an enhanced single processor tower with performance, expansion, and security at an affordable price.',
       count: 8,
-      price: 2150,
-      image: 'https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hpe2,
       specs: ['Intel Xeon Silver 4410Y', '32GB RDIMM', '8 SFF Drive Bays', '800W Flex Slot PSU']
     },
     {
@@ -3899,8 +3880,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant ML350 Gen11',
       description: 'The HPE ProLiant ML350 Gen11 is a powerful 2P tower server with optional rack-mountable chassis for enterprise-class performance.',
       count: 5,
-      price: 3899,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hpe3,
       specs: ['Dual Intel Xeon Gold', '64GB DDR5', 'Up to 24 SFF Bays', 'Redundant Power']
     },
     {
@@ -3908,8 +3888,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant ML30 Gen10 Plus',
       description: 'A reliable enterprise-class tower server for entry-level workloads and file storage.',
       count: 12,
-      price: 950,
-      image: 'https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hpe4,
       specs: ['Intel Xeon E-2314', '16GB RAM', '4 LFF Non-Hot Plug', 'iLO 5 Standard']
     },
     {
@@ -3917,8 +3896,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant MicroServer Gen10 Plus v2',
       description: 'A compact, powerful, and affordable server that can be placed horizontally or vertically.',
       count: 20,
-      price: 799,
-      image: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hpe5,
       specs: ['Intel Pentium or Xeon E', 'Compact Chassis', '4 Drive Bays', 'External Power Adaptor']
     },
     {
@@ -3926,8 +3904,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant ML110 Gen10 (Refurbished)',
       description: 'Performance tower server for small to mid-sized businesses looking for value.',
       count: 4,
-      price: 1499,
-      image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hpe6,
       specs: ['Intel Xeon Scalable', '32GB DDR4', '8 SFF Hot-Swap', 'Certified Renewed']
     }
   ]
@@ -4276,7 +4253,6 @@ export const getMainCategory = (subcategory: string): string => {
     "StudentLaptop": "Laptop",
     "UltrabookThinLight": "Laptop",
     "GamingLaptop": "Laptop",
-    "2in1ConvertibleLaptop": "Laptop",
     
     // Monitor subcategories
     "FullHDMonitor": "Monitor",
@@ -4351,7 +4327,7 @@ export const getMainCategory = (subcategory: string): string => {
 export const getSubcategories = (mainCategory: string): string[] => {
   const subcategoryGroups: Record<string, string[]> = {
     "Desktop": ["BusinessDesktop", "GamingDesktop", "AllinOnePC", "MiniDesktop", "Workstation"],
-    "Laptop": ["BusinessLaptop", "StudentLaptop", "UltrabookThinLight", "GamingLaptop", "2in1ConvertibleLaptop"],
+    "Laptop": ["BusinessLaptop", "StudentLaptop", "UltrabookThinLight", "GamingLaptop"],
     "Monitor": ["FullHDMonitor", "2K4KMonitor", "GamingMonitor", "CurvedMonitor", "Modern4KTVs"],
     "Networking": ["HomeNetworking", "CommercialNetworking", "NetworkAccessories", "RoutersSwitches", "CablesConnectors"],
     "Accessories": ["KeyboardMouse", "Webcams", "Headphones", "USBHubs", "LaptopStands"],

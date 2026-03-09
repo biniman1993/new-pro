@@ -24,7 +24,6 @@ const TopMenu = () => {
       "Student Laptop",
       "Ultrabook / Thin & Light",
       "Gaming Laptop",
-      "2-in-1 Convertible Laptop",
     ],
     Monitor: [
       "Full HD Monitor",
@@ -147,7 +146,7 @@ const TopMenu = () => {
         ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         hidden lg:flex overflow-visible`}
     >
-      <ul className="flex  md:gap-[25px] lg:gap-[25px] xl:gap-[30px] px-[25px] list-none m-0 relative h-full items-center overflow-visible">
+     <ul className="flex  md:gap-[25px] lg:gap-[25px] xl:gap-[30px] px-[25px] list-none m-0 relative h-full items-center overflow-visible">
         {menuItems.map((item) => (
           <li
             key={item}
@@ -157,13 +156,13 @@ const TopMenu = () => {
             // NEW LINE 3: Update className to include selected state
             className={`relative py-2 px-2.5 text-[14px] font-medium cursor-pointer transition-colors duration-300 normal-case overflow-visible
               ${hoveredItem === item || selectedCategory === item ? "text-[#ff9800]" : "text-white"}`}
-          >
+            >
             {item}
 
-            {/* Animated Underline */}
+            {/* Animated Underline - ONLY CHANGED THIS LINE */}
             <span
               className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-[#ff9800] to-[#F97316] transition-all duration-300 ease-out
-                ${hoveredItem === item || selectedCategory === item ? "w-4/5 scale-x-100" : "w-0 scale-x-0"}`}
+                ${hoveredItem === item ? "w-4/5 scale-x-100" : "w-0 scale-x-0"}`}
             />
 
             {/* Dropdown Container */}

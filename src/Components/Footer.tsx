@@ -51,13 +51,13 @@ const Footer = () => {
     }
   };
 
-  const shopCategories = [
-    { name: "Home", path: "/" },
-    { name: "New Laptops", path: "/products/laptops" },
-    { name: "New Desktops", path: "/products/desktops" },
-    { name: "New Printers", path: "/products/printers" },
-    { name: "Cisco Products", path: "/products/networking" },
-  ];
+ const shopCategories = [
+  { name: "Home", path: "/" },
+  { name: "New Laptops", path: "/products/laptops" },
+  { name: "New Desktops", path: "/products/desktops" },
+  { name: "New Printers", path: "/products/printers" },
+  { name: "Cisco Products", path: "/products/networking" },
+];
 
   const company = [
     { name: "About Us", path: "/about" },

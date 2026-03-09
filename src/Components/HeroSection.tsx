@@ -48,13 +48,13 @@ const slides: SlideContent[] = [
     title: "Digital Display and Signage",
     description: "Premium interactive touch displays, dynamic digital signage, and professional presentation solutions for modern offices, retail spaces, educational institutions, and hospitality environments",
     icon: <Tv className="w-8 h-8" />,
-    route: "/Catalog/AdvertisingDisplays",
+    route: "/Catalog/AdvertisingDisplay",
   },
   {
     title: "Modern TV & Boards",
     description: "Smart conference room solutions with interactive whiteboards, large format 4K displays, and wireless presentation systems for seamless collaboration in modern workspaces and boardrooms.",
     icon: <Server className="w-8 h-8" />,
-    route: "/Catalog/VideoWall",
+    route: "/Catalog/Modern4KTVs",
   },
   {
     title: "Data Center Infrastructure",

@@ -88,24 +88,19 @@ const Products = React.forwardRef(
 
     const discountPercentages = useMemo(() => ["20", "15", "10", "25", "5", "30", "12", "18"], []);
 
-    // Category-specific descriptions - modern, eye-catching, and short
-    const categoryDescriptions = {
-      "Desktop Products": "🚀 Powerful towers & workstations built for business, creativity, and everyday computing.",
-      "Top-Rated Laptops": "💻 Ultra-portable powerhouses for work, study, and entertainment—anywhere.",
-      "Printer Equipment": "🖨️ High-speed printing solutions for home, office, and enterprise needs.",
-      "Monitor Equipment": "🖥️ Crystal-clear displays with vibrant colors for work and play.",
-      "Display Equipment": "📺 Stunning LED & digital signage for captivating visual experiences.",
-      "Networking Equipment": "🌐 Reliable connectivity solutions—routers, switches, and access points.",
-      "Gaming Laptops": "🎮 Dominate the game with high-refresh screens and RTX graphics.",
-      "Business Laptops": "💼 Sleek, secure, and powerful—engineered for productivity on the go.",
-      "Student Laptops": "📚 Lightweight, durable, and budget-friendly for learning anywhere.",
-      "Ultrabook / Thin & Light": "✨ Featherlight design meets all-day battery and premium performance.",
-      "Gaming Desktop": "⚡ Blazing-fast rigs with liquid cooling and next-gen GPUs.",
-      "All-in-One PC": "🖥️ Space-saving designs with stunning displays—everything in one.",
-      "Mini Desktop": "📦 Tiny footprint, massive power—perfect for compact workspaces.",
-      "Workstation": "🔧 Certified power for CAD, video editing, and scientific computing.",
-      "2-in-1 Convertible Laptop": "🔄 Laptop by day, tablet by night—versatility at its best.",
-    };
+   const categoryDescriptions = {
+  "Latest Laptops": "Modern, slim, and powerful laptops built for work, study, and life on the move.",
+  
+  "Latest Desktops": "High-performance desktop systems designed for speed, productivity, and reliability.",
+  
+  "Pupular Monitor": "Sharp, vibrant displays that elevate productivity, creativity, and entertainment.",
+  
+  "Printer Equipment": "Fast, reliable printing solutions for offices, businesses, and everyday tasks.",
+  
+  "Display Equipment": "Brilliant LED and digital display solutions built to capture attention.",
+  
+  "Networking Equipment": "Smart networking hardware delivering fast, stable, and secure connectivity.",
+};
 
     // Get description based on title, or use a default
     const getCategoryDescription = () => {
@@ -126,19 +121,26 @@ const Products = React.forwardRef(
       setTimeout(() => setSelectedProduct(null), 300);
     }, []);
 
-    const handleClick = useCallback(() => {
-      onViewMore?.(category);
-      const titleToSubMap = {
-        "Printer Equipment": "InkjetPrinter",
-        "Top-Rated Laptops": "BusinessLaptop",
-        "Desktop Products": "BusinessDesktop",
-        "Monitor Equipment": "FullHDMonitor",
-        "Display Equipment": "LEDDigitalDisplay",
-        "Networking Equipment": "HomeNetworking",
-      };
-      const subcategory = titleToSubMap[title] || "BusinessDesktop";
-      navigate(`/Catalog/${subcategory}`);
-    }, [category, navigate, onViewMore, title]);
+const handleClick = useCallback(() => {
+  onViewMore?.(category);
+  
+  // Map product page titles to catalog subcategories
+  const titleToSubMap = {
+    "Laptops": "BusinessLaptop",           // For /products/laptops page
+    "Desktops": "BusinessDesktop",         // For /products/desktops page
+    "Printers": "InkjetPrinter",           // For /products/printers page
+    "Networking": "HomeNetworking",        // For /products/networking page
+    "Latest Laptops": "BusinessLaptop",    // For home page
+    "Latest Desktops": "BusinessDesktop",  // For home page
+    "Pupular Monitor": "FullHDMonitor",    // For home page
+    "Printer Equipment": "AllinOnePrinter", // For home page
+    "Display Equipment": "DigitalSignage",  // For home page
+    "Networking Equipment": "HomeNetworking", // For home page
+  };
+  
+  const subcategory = titleToSubMap[title] || "BusinessDesktop";
+  navigate(`/Catalog/${subcategory}`);
+}, [category, navigate, onViewMore, title]);
 
     useEffect(() => {
       const observer = new IntersectionObserver(
