@@ -79,7 +79,7 @@ import esetLogo from "../../assets/brandslogo/ESET.png";
 import samsungdisplayLogo from "../../assets/brandslogo/Samsung Display.png";
 import lgdisplayLogo from "../../assets/brandslogo/LG Display.png";
 import aocLogo from "../../assets/brandslogo/AOC.png";
-import benqLogo from "../../assets/brandslogo/BenQ.png";
+import benqLogo from "../../assets/brandslogo/benq.png";
 import aztechLogo from "../../assets/brandslogo/Aztech.png";
 import samsung2Logo from "../../assets/brandslogo/Samsung.png";
 import lgLogo from "../../assets/brandslogo/LG.png";
