@@ -12,42 +12,55 @@ const LetUsMeet = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
+    type: "success" | "error" | null;
     message: string;
-  }>({ type: null, message: '' });
+  }>({ type: null, message: "" });
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: '' });
+    setSubmitStatus({ type: null, message: "" });
 
     try {
-      const result = await emailjs.sendForm(
+      // 1. Send Notification TO YOU (Template: Contact Us)
+      const sendToMe = emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        "template_mrj1ad8", // Your Contact Us ID
         formRef.current!,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      if (result.status === 200) {
-        setSubmitStatus({
-          type: 'success',
-          message: 'Message sent successfully! We\'ll contact you soon.'
-        });
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      }
+      // 2. Send Auto-Reply TO CUSTOMER (Template: Auto-Reply)
+      const sendToCustomer = emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        "template_fiqudxe", // Your Auto-Reply ID
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      // We wait for both to finish
+      await Promise.all([sendToMe, sendToCustomer]);
+
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent! We've also sent a confirmation to your email.",
+      });
+      
+      // Clear the form
+      setFormData({ name: "", email: "", phone: "", message: "" });
+
     } catch (error) {
       console.error("EmailJS error:", error);
       setSubmitStatus({
-        type: 'error',
-        message: 'Failed to send message. Please try again later.'
+        type: "error",
+        message: "Something went wrong. Please try again or contact us directly.",
       });
     } finally {
       setIsSubmitting(false);
@@ -70,363 +83,463 @@ const LetUsMeet = () => {
   };
 
   return (
-    <div style={{
-      margin: 0,
-      padding: 0,
-      boxSizing: "border-box",
-      fontFamily: "'Poppins', sans-serif",
-      backgroundColor: colors.background,
-      color: colors.foreground,
-      minHeight: "100vh",
-      scrollBehavior: "smooth",
-    }}>
-      {/* Hero Section with Background Image */}
-      <section style={{
-        position: "relative",
+    <div
+      style={{
+        margin: 0,
+        padding: 0,
+        boxSizing: "border-box",
+        fontFamily: "'Poppins', sans-serif",
+        backgroundColor: colors.background,
+        color: colors.foreground,
         minHeight: "100vh",
-        paddingTop: "4rem",
-        overflow: "hidden",
-      }}>
+        scrollBehavior: "smooth",
+      }}
+    >
+      {/* Hero Section with Background Image */}
+      <section
+        style={{
+          position: "relative",
+          minHeight: "100vh",
+          paddingTop: "4rem",
+          overflow: "hidden",
+        }}
+      >
         {/* Background Image with Gradient Overlay */}
-        <div style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          zIndex: 1,
-        }}>
-          <div style={{
+        <div
+          style={{
             position: "absolute",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            background: `linear-gradient(
+            backgroundImage: `url(${heroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+            zIndex: 1,
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: `linear-gradient(
               135deg,
               hsla(0, 0%, 100%, 0.95) 0%,
               hsla(0, 0%, 100%, 0.92) 50%,
               hsla(0, 0%, 100%, 0.88) 100%
             )`,
-          }}></div>
-          
-          <div style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: `radial-gradient(${colors.primary}10 1px, transparent 1px)`,
-            backgroundSize: "20px 20px",
-            opacity: 0.3,
-          }}></div>
+            }}
+          ></div>
+
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: `radial-gradient(${colors.primary}10 1px, transparent 1px)`,
+              backgroundSize: "20px 20px",
+              opacity: 0.3,
+            }}
+          ></div>
         </div>
 
         {/* Animated Circles */}
-        <div style={{
-          position: "absolute",
-          top: "10%",
-          right: "10%",
-          width: "300px",
-          height: "300px",
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${colors.primary}05 0%, transparent 70%)`,
-          zIndex: 1,
-          animation: "float 20s ease-in-out infinite",
-        }}></div>
-        
-        <div style={{
-          position: "absolute",
-          bottom: "15%",
-          left: "5%",
-          width: "200px",
-          height: "200px",
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${colors.accent}05 0%, transparent 70%)`,
-          zIndex: 1,
-          animation: "float 15s ease-in-out infinite reverse",
-        }}></div>
+        <div
+          style={{
+            position: "absolute",
+            top: "10%",
+            right: "10%",
+            width: "300px",
+            height: "300px",
+            borderRadius: "50%",
+            background: `radial-gradient(circle, ${colors.primary}05 0%, transparent 70%)`,
+            zIndex: 1,
+            animation: "float 20s ease-in-out infinite",
+          }}
+        ></div>
+
+        <div
+          style={{
+            position: "absolute",
+            bottom: "15%",
+            left: "5%",
+            width: "200px",
+            height: "200px",
+            borderRadius: "50%",
+            background: `radial-gradient(circle, ${colors.accent}05 0%, transparent 70%)`,
+            zIndex: 1,
+            animation: "float 15s ease-in-out infinite reverse",
+          }}
+        ></div>
 
         {/* Content */}
-        <div style={{
-          position: "relative",
-          zIndex: 2,
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "3rem 1rem",
-          minHeight: "calc(100vh - 4rem)",
-          display: "flex",
-          alignItems: "center",
-        }}>
-          <div style={{
-            display: "grid",
-            gap: "4rem",
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
+            maxWidth: "1280px",
+            margin: "0 auto",
+            padding: "3rem 1rem",
+            minHeight: "calc(100vh - 4rem)",
+            display: "flex",
             alignItems: "center",
-            width: "100%",
-          }} className="lg-grid">
+          }}
+        >
+          <div
+            style={{
+              display: "grid",
+              gap: "4rem",
+              alignItems: "center",
+              width: "100%",
+            }}
+            className="lg-grid"
+          >
             {/* Left Content - Brand Introduction */}
-            <div style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              position: "relative",
-            }}>
-              <div style={{
-                position: "absolute",
-                top: "-20px",
-                left: "-20px",
-                width: "60px",
-                height: "60px",
-                border: `2px solid ${colors.primary}20`,
-                borderRadius: "50%",
-                zIndex: -1,
-              }}></div>
-              
-              <div style={{
-                color: colors.primary,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "0.15em",
-                fontSize: "0.875rem",
+            <div
+              style={{
                 display: "flex",
-                alignItems: "center",
-                gap: "0.75rem",
-                marginBottom: "1rem",
+                flexDirection: "column",
+                justifyContent: "center",
                 position: "relative",
-              }}>
-                <span style={{
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-20px",
+                  left: "-20px",
+                  width: "60px",
+                  height: "60px",
+                  border: `2px solid ${colors.primary}20`,
+                  borderRadius: "50%",
+                  zIndex: -1,
+                }}
+              ></div>
+
+              <div
+                style={{
+                  color: colors.primary,
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.15em",
+                  fontSize: "0.875rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  marginBottom: "1rem",
+                  position: "relative",
+                }}
+              >
+                <span
+                  style={{
+                    background: `linear-gradient(135deg, ${colors.title}, ${colors.title})`,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  Forge Alliances
+                </span>
+                <div
+                  style={{
+                    width: "3rem",
+                    height: "2px",
+                    background: `linear-gradient(90deg, ${colors.primary}, ${colors.accent})`,
+                  }}
+                ></div>
+              </div>
+
+              <h1
+                style={{
+                  fontSize: "3rem",
+                  fontWeight: 800,
+                  lineHeight: 1.1,
+                  marginBottom: "1.5rem",
+                  letterSpacing: "-0.025em",
                   background: `linear-gradient(135deg, ${colors.title}, ${colors.title})`,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                }}>
-                  Forge Alliances
-                </span>
-                <div style={{
-                  width: "3rem",
-                  height: "2px",
-                  background: `linear-gradient(90deg, ${colors.primary}, ${colors.accent})`,
-                }}></div>
-              </div>
-
-              <h1 style={{
-                fontSize: "3rem",
-                fontWeight: 800,
-                lineHeight: 1.1,
-                marginBottom: "1.5rem",
-                letterSpacing: "-0.025em",
-                background: `linear-gradient(135deg, ${colors.title}, ${colors.title})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}>
+                }}
+              >
                 Become a Partner
               </h1>
 
-              <div style={{
-                position: "relative",
-                paddingLeft: "1.5rem",
-                marginBottom: "2rem",
-              }}>
-                <div style={{
-                  position: "absolute",
-                  left: 0,
-                  top: 0,
-                  bottom: 0,
-                  width: "3px",
-                  background: `linear-gradient(to bottom, ${colors.primary}, ${colors.accent})`,
-                  borderRadius: "2px",
-                }}></div>
-                <p style={{
-                  fontSize: "1.125rem",
-                  color: colors.muted,
-                  lineHeight: 1.7,
-                }}>
-                  If you're looking to dive into the world of partnership and seek
-                  a dynamic ally, look no further than Proactive Trading. Our
-                  dedication to advanced solutions, inventive technology, and
-                  unmatched support makes us the perfect choice for those aiming
-                  to succeed in the partner domain.
+              <div
+                style={{
+                  position: "relative",
+                  paddingLeft: "1.5rem",
+                  marginBottom: "2rem",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: "3px",
+                    background: `linear-gradient(to bottom, ${colors.primary}, ${colors.accent})`,
+                    borderRadius: "2px",
+                  }}
+                ></div>
+                <p
+                  style={{
+                    fontSize: "1.125rem",
+                    color: colors.muted,
+                    lineHeight: 1.7,
+                  }}
+                >
+                  If you're looking to dive into the world of partnership and
+                  seek a dynamic ally, look no further than Proactive Trading.
+                  Our dedication to advanced solutions, inventive technology,
+                  and unmatched support makes us the perfect choice for those
+                  aiming to succeed in the partner domain.
                 </p>
               </div>
 
-              <div style={{
-                position: "relative",
-                paddingLeft: "1.5rem",
-              }}>
-                <div style={{
-                  position: "absolute",
-                  left: 0,
-                  top: 0,
-                  bottom: 0,
-                  width: "3px",
-                  background: `linear-gradient(to bottom, ${colors.accent}, ${colors.primary})`,
-                  borderRadius: "2px",
-                }}></div>
-                <p style={{
-                  fontSize: "1.125rem",
-                  color: colors.muted,
-                  lineHeight: 1.7,
-                }}>
-                  At Proactive Trading, we prioritize nurturing mutually advantageous
-                  relationships, guaranteeing that our partners not only have
-                  access to a wide array of premium products but also receive the
-                  essential resources and guidance to thrive in the competitive
-                  market.
+              <div
+                style={{
+                  position: "relative",
+                  paddingLeft: "1.5rem",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: "3px",
+                    background: `linear-gradient(to bottom, ${colors.accent}, ${colors.primary})`,
+                    borderRadius: "2px",
+                  }}
+                ></div>
+                <p
+                  style={{
+                    fontSize: "1.125rem",
+                    color: colors.muted,
+                    lineHeight: 1.7,
+                  }}
+                >
+                  At Proactive Trading, we prioritize nurturing mutually
+                  advantageous relationships, guaranteeing that our partners not
+                  only have access to a wide array of premium products but also
+                  receive the essential resources and guidance to thrive in the
+                  competitive market.
                 </p>
               </div>
 
-              <div style={{
-                display: "flex",
-                gap: "2rem",
-                marginTop: "2rem",
-                paddingTop: "2rem",
-                borderTop: `1px solid ${colors.border}`,
-              }}>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "2rem",
+                  marginTop: "2rem",
+                  paddingTop: "2rem",
+                  borderTop: `1px solid ${colors.border}`,
+                }}
+              >
                 <div>
-                  <div style={{
-                    fontSize: "1.5rem",
-                    fontWeight: 700,
-                    color: colors.title,
-                    marginBottom: "0.25rem",
-                  }}>100+</div>
-                  <div style={{
-                    fontSize: "0.875rem",
-                    color: colors.title,
-                  }}>Partners</div>
+                  <div
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: 700,
+                      color: colors.title,
+                      marginBottom: "0.25rem",
+                    }}
+                  >
+                    100+
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "0.875rem",
+                      color: colors.title,
+                    }}
+                  >
+                    Partners
+                  </div>
                 </div>
                 <div>
-                  <div style={{
-                    fontSize: "1.5rem",
-                    fontWeight: 700,
-                    color: colors.title,
-                    marginBottom: "0.25rem",
-                  }}>24/7</div>
-                  <div style={{
-                    fontSize: "0.875rem",
-                    color: colors.title,
-                  }}>Support</div>
+                  <div
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: 700,
+                      color: colors.title,
+                      marginBottom: "0.25rem",
+                    }}
+                  >
+                    24/7
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "0.875rem",
+                      color: colors.title,
+                    }}
+                  >
+                    Support
+                  </div>
                 </div>
                 <div>
-                  <div style={{
-                    fontSize: "1.5rem",
-                    fontWeight: 700,
-                    color: colors.title,
-                    marginBottom: "0.25rem",
-                  }}>99%</div>
-                  <div style={{
-                    fontSize: "0.875rem",
-                    color: colors.title,
-                  }}>Satisfaction</div>
+                  <div
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: 700,
+                      color: colors.title,
+                      marginBottom: "0.25rem",
+                    }}
+                  >
+                    99%
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "0.875rem",
+                      color: colors.title,
+                    }}
+                  >
+                    Satisfaction
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right Content - Contact Form */}
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              position: "relative",
-            }}>
-              <div style={{
-                backgroundColor: colors.card,
-                boxShadow: `
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                position: "relative",
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: colors.card,
+                  boxShadow: `
                   0 20px 40px rgba(0, 0, 0, 0.08),
                   0 0 0 1px ${colors.border},
                   0 0 60px ${colors.primary}10
                 `,
-                borderRadius: "1rem",
-                padding: "2.5rem",
-                width: "100%",
-                maxWidth: "32rem",
-                position: "relative",
-                overflow: "hidden",
-                border: `1px solid ${colors.border}`,
-              }}>
-                <div style={{
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                  width: "100px",
-                  height: "100px",
-                  background: `linear-gradient(135deg, ${colors.primary}05, transparent)`,
-                  borderBottomLeftRadius: "100%",
-                  zIndex: 0,
-                }}></div>
-
-                <div style={{ 
-                  marginBottom: "2.5rem",
+                  borderRadius: "1rem",
+                  padding: "2.5rem",
+                  width: "100%",
+                  maxWidth: "32rem",
                   position: "relative",
-                  zIndex: 1,
-                }}>
-                  <span style={{ 
-                    color: colors.title, 
-                    fontWeight: 700, 
-                    fontSize: "0.875rem",
-                    letterSpacing: "0.1em",
-                    display: "block",
-                    marginBottom: "0.75rem",
-                  }}>
+                  overflow: "hidden",
+                  border: `1px solid ${colors.border}`,
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: "100px",
+                    height: "100px",
+                    background: `linear-gradient(135deg, ${colors.primary}05, transparent)`,
+                    borderBottomLeftRadius: "100%",
+                    zIndex: 0,
+                  }}
+                ></div>
+
+                <div
+                  style={{
+                    marginBottom: "2.5rem",
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  <span
+                    style={{
+                      color: colors.title,
+                      fontWeight: 700,
+                      fontSize: "0.875rem",
+                      letterSpacing: "0.1em",
+                      display: "block",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
                     CONTACT US
                   </span>
-                  <h2 style={{ 
-                    fontSize: "2rem", 
-                    fontWeight: 700, 
-                    color: colors.foreground, 
-                    letterSpacing: "-0.025em",
-                    lineHeight: 1.2,
-                  }}>
+                  <h2
+                    style={{
+                      fontSize: "2rem",
+                      fontWeight: 700,
+                      color: colors.foreground,
+                      letterSpacing: "-0.025em",
+                      lineHeight: 1.2,
+                    }}
+                  >
                     Drop us a message
                   </h2>
-                  <p style={{
-                    color: colors.muted,
-                    fontSize: "0.9375rem",
-                    marginTop: "0.5rem",
-                  }}>
+                  <p
+                    style={{
+                      color: colors.muted,
+                      fontSize: "0.9375rem",
+                      marginTop: "0.5rem",
+                    }}
+                  >
                     Get in touch to start our partnership journey
                   </p>
                 </div>
 
                 {/* Status Message */}
                 {submitStatus.type && (
-                  <div style={{
-                    padding: "1rem",
-                    borderRadius: "0.5rem",
-                    backgroundColor: submitStatus.type === 'success' ? "#10b98120" : "#ef444420",
-                    border: `1px solid ${submitStatus.type === 'success' ? "#10b981" : "#ef4444"}`,
-                    color: submitStatus.type === 'success' ? "#065f46" : "#991b1b",
-                    marginBottom: "1rem",
-                    position: "relative",
-                    zIndex: 1,
-                  }}>
+                  <div
+                    style={{
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      backgroundColor:
+                        submitStatus.type === "success"
+                          ? "#10b98120"
+                          : "#ef444420",
+                      border: `1px solid ${submitStatus.type === "success" ? "#10b981" : "#ef4444"}`,
+                      color:
+                        submitStatus.type === "success" ? "#065f46" : "#991b1b",
+                      marginBottom: "1rem",
+                      position: "relative",
+                      zIndex: 1,
+                    }}
+                  >
                     {submitStatus.message}
                   </div>
                 )}
 
-                <form ref={formRef} onSubmit={handleSubmit} style={{ 
-                  display: "flex", 
-                  flexDirection: "column", 
-                  gap: "1.5rem",
-                  position: "relative",
-                  zIndex: 1,
-                }}>
-                  <div style={{ 
-                    display: "grid", 
-                    gap: "1rem",
-                  }} className="sm-grid">
+                <form
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1.5rem",
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "grid",
+                      gap: "1rem",
+                    }}
+                    className="sm-grid"
+                  >
                     <div>
-                      <label style={{
-                        display: "block",
-                        fontSize: "0.875rem",
-                        fontWeight: 500,
-                        color: colors.foreground,
-                        marginBottom: "0.5rem",
-                      }}>Your Name</label>
+                      <label
+                        style={{
+                          display: "block",
+                          fontSize: "0.875rem",
+                          fontWeight: 500,
+                          color: colors.foreground,
+                          marginBottom: "0.5rem",
+                        }}
+                      >
+                        Your Name
+                      </label>
                       <input
                         type="text"
                         name="name"
@@ -448,13 +561,17 @@ const LetUsMeet = () => {
                       />
                     </div>
                     <div>
-                      <label style={{
-                        display: "block",
-                        fontSize: "0.875rem",
-                        fontWeight: 500,
-                        color: colors.foreground,
-                        marginBottom: "0.5rem",
-                      }}>Email Address</label>
+                      <label
+                        style={{
+                          display: "block",
+                          fontSize: "0.875rem",
+                          fontWeight: 500,
+                          color: colors.foreground,
+                          marginBottom: "0.5rem",
+                        }}
+                      >
+                        Email Address
+                      </label>
                       <input
                         type="email"
                         name="email"
@@ -478,17 +595,21 @@ const LetUsMeet = () => {
                   </div>
 
                   <div>
-                    <label style={{
-                      display: "block",
-                      fontSize: "0.875rem",
-                      fontWeight: 500,
-                      color: colors.foreground,
-                      marginBottom: "0.5rem",
-                    }}>Phone Number</label>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "0.875rem",
+                        fontWeight: 500,
+                        color: colors.foreground,
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      Phone Number
+                    </label>
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="+251 91 151 7628"
+                      placeholder="+(0) (000) 000 000"
                       value={formData.phone}
                       onChange={handleInputChange}
                       style={{
@@ -506,15 +627,19 @@ const LetUsMeet = () => {
                   </div>
 
                   <div>
-                    <label style={{
-                      display: "block",
-                      fontSize: "0.875rem",
-                      fontWeight: 500,
-                      color: colors.foreground,
-                      marginBottom: "0.5rem",
-                    }}>Your message</label>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "0.875rem",
+                        fontWeight: 500,
+                        color: colors.foreground,
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      Your message
+                    </label>
                     <textarea
-                      name="comment"
+                      name="message"
                       placeholder="Tell us about your partnership goals..."
                       value={formData.message}
                       onChange={handleInputChange}
@@ -537,18 +662,18 @@ const LetUsMeet = () => {
                     />
                   </div>
 
-                  <button 
+                  <button
                     type="submit"
                     disabled={isSubmitting}
                     style={{
-                      background: isSubmitting 
-                        ? '#ccc' 
+                      background: isSubmitting
+                        ? "#ccc"
                         : `linear-gradient(135deg, ${colors.primary}, ${colors.primaryLight})`,
                       color: colors.primaryForeground,
                       fontWeight: 600,
                       padding: "1rem 2rem",
                       border: "none",
-                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                      cursor: isSubmitting ? "not-allowed" : "pointer",
                       borderRadius: "0.5rem",
                       fontSize: "0.9375rem",
                       letterSpacing: "0.025em",
@@ -574,7 +699,7 @@ const LetUsMeet = () => {
                     }}
                   >
                     <span style={{ position: "relative", zIndex: 1 }}>
-                      {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+                      {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                     </span>
                   </button>
                 </form>
@@ -617,8 +742,18 @@ const LetUsMeet = () => {
           }}
           aria-label="Scroll to top"
         >
-          <svg style={{ width: "1.25rem", height: "1.25rem" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+          <svg
+            style={{ width: "1.25rem", height: "1.25rem" }}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 15l7-7 7 7"
+            />
           </svg>
         </button>
       </section>

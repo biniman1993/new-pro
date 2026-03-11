@@ -92,28 +92,41 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const result = await emailjs.sendForm(
+      // 1. Send Notification to YOUR TEAM (Contact Us)
+      const sendToMe = emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        "template_mrj1ad8", // Your Contact Us ID
         formRef.current!,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      if (result.status === 200) {
-        alert("Message sent successfully! Check your email for confirmation.");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-        });
-      }
+      // 2. Send Auto-Reply to the CUSTOMER (Thank You)
+      const sendToCustomer = emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        "template_fiqudxe", // Your Auto-Reply ID
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      // We wait for both requests to complete
+      await Promise.all([sendToMe, sendToCustomer]);
+
+      // If successful:
+      alert("Message sent successfully! Check your email for a confirmation.");
+      
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+
     } catch (error) {
       console.error("EmailJS Error:", error);
       alert("Failed to send message. Please try again.");
@@ -121,7 +134,6 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -250,41 +262,41 @@ const Contact = () => {
             />
           </div>
         </div>
-        
       </section>
-<div>
-   {/* Tab Navigation */}
-      <div className="sticky top-20 z-40 mt-4 mb-4 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl" />
-            <div className="relative flex flex-wrap justify-center gap-4 p-3 sm:p-4">
-              {navigationButtons.map((button) => (
-                <button
-                  key={button.id}
-                  className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 whitespace-nowrap transform hover:scale-105 ${
-                    activeSection === button.id
-                      ? "text-white font-bold bg-gradient-to-r from-[#2a5da5] to-[#1d4680] shadow-lg"
-                      : "text-gray-600 font-bold hover:text-gray-900 bg-gray-50 hover:bg-gray-100"
-                  }`}
-                  onClick={() => scrollToSection(button.id)}
-                >
-                  <button.icon size={16} className="sm:w-[20px] sm:h-[20px]" />
-                  <span>{button.label}</span>
-                </button>
-              ))}
+      <div>
+        {/* Tab Navigation */}
+        <div className="sticky top-20 z-40 mt-4 mb-4 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl" />
+              <div className="relative flex flex-wrap justify-center gap-4 p-3 sm:p-4">
+                {navigationButtons.map((button) => (
+                  <button
+                    key={button.id}
+                    className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 whitespace-nowrap transform hover:scale-105 ${
+                      activeSection === button.id
+                        ? "text-white font-bold bg-gradient-to-r from-[#2a5da5] to-[#1d4680] shadow-lg"
+                        : "text-gray-600 font-bold hover:text-gray-900 bg-gray-50 hover:bg-gray-100"
+                    }`}
+                    onClick={() => scrollToSection(button.id)}
+                  >
+                    <button.icon
+                      size={16}
+                      className="sm:w-[20px] sm:h-[20px]"
+                    />
+                    <span>{button.label}</span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-</div>
-     
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Contact Information */}
         <section
-        
           id="Contact"
           className={`mb-24 scroll-mt-20 transition-all duration-1000 ${
             visibleSections.has("Contact")
@@ -414,7 +426,7 @@ const Contact = () => {
                 </div>
 
                 <a
-                  href="https://maps.google.com"
+                  href="https://maps.app.goo.gl/ziocb8Wh4AhG7LkT7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto flex items-center justify-center gap-2 w-full py-4 bg-white text-slate-900 rounded-2xl hover:bg-[#2a5da5] hover:text-white transition-all duration-300 font-bold text-sm transform hover:scale-105"
@@ -747,7 +759,7 @@ const Contact = () => {
 
               <div className="mt-12 flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://maps.google.com"
+                  href="https://maps.app.goo.gl/ziocb8Wh4AhG7LkT7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 px-8 py-5 bg-[#2a5da5] text-white font-black rounded-2xl hover:bg-[#1e467a] hover:shadow-2xl hover:shadow-[#2a5da5]/30 transition-all duration-300 flex items-center justify-center gap-3 group/btn transform hover:scale-105"
@@ -1007,7 +1019,7 @@ const Contact = () => {
 
                 <div className="flex items-center gap-3 w-full md:w-auto">
                   <a
-                    href="https://maps.app.goo.gl/uP4V2T87A4Z5tA9Z7"
+                    href="https://maps.app.goo.gl/ziocb8Wh4AhG7LkT7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 md:flex-none flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-2xl hover:bg-[#2a5da5] hover:text-white transition-all duration-300 text-sm font-black uppercase tracking-widest shadow-xl transform hover:scale-105"
