@@ -6,7 +6,7 @@ const Index = () => {
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="text-center px-4 max-w-4xl mx-auto">
           <h1 className="mb-4 text-4xl md:text-5xl font-bold text-foreground">
-            Proactive Trading ET
+            Proactive Trading
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             <strong>Premium Electronics, Computers & Networking Equipment</strong> in Addis Ababa, Ethiopia
@@ -14,7 +14,7 @@ const Index = () => {
           
           {/* Add more content for SEO */}
           <div className="mt-8 text-left bg-white p-6 rounded-lg shadow-sm">
-            <h2 className="text-2xl font-semibold mb-4">Welcome to Proactive Trading ET</h2>
+            <h2 className="text-2xl font-semibold mb-4">Welcome to Proactive Trading </h2>
             <p className="mb-3">
               Based in Addis Ababa, Proactive Trading ET is your premier destination for high-quality electronics and computer solutions across Ethiopia.
             </p>
