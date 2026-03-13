@@ -129,6 +129,59 @@ import net3 from "../assets/network/net3.webp";
 import net4 from "../assets/network/net4.webp";
 import net5 from "../assets/network/net5.webp";
 import net6 from "../assets/network/net6.webp";
+
+
+import Projector1 from "../assets/Projector/proj1.webp";
+import Projector2 from "../assets/Projector/proj2.webp";
+import Projector3 from "../assets/Projector/proj3.webp";
+import Projector4 from "../assets/Projector/proj4.webp";
+import Projector5 from "../assets/Projector/proj5.webp";
+import Projector6 from "../assets/Projector/proj6.webp";
+import Projector7 from "../assets/Projector/proj7.webp";
+import Projector8 from "../assets/Projector/proj8.webp";
+import Projector9 from "../assets/Projector/proj9.webp";
+import Projector10 from "../assets/Projector/proj10.webp";
+import Projector11 from "../assets/Projector/prroj11.webp";
+import Projector12 from "../assets/Projector/proj12.webp";
+import Projector13 from "../assets/Projector/proj13.webp";
+import Projector14 from "../assets/Projector/proj14.webp";
+import Projector15 from "../assets/Projector/proj15.webp";
+
+import disp1 from "../assets/Display/disp1.webp";
+import disp2 from "../assets/Display/disp2.webp";
+import disp3 from "../assets/Display/disp3.webp";
+import disp4 from "../assets/Display/disp4.webp";
+import disp5 from "../assets/Display/disp5.webp";
+import disp6 from "../assets/Display/disp6.webp";
+import disp7 from "../assets/Display/disp7.webp";
+import disp8 from "../assets/Display/disp8.webp";
+import disp9 from "../assets/Display/disp9.webp";
+import disp10 from "../assets/Display/disp10.webp";
+import disp11 from "../assets/Display/disp11.webp";
+import disp12 from "../assets/Display/disp12.webp";
+import disp13 from "../assets/Display/disp13.webp";
+import disp14 from "../assets/Display/disp14.webp";
+import disp15 from "../assets/Display/disp15.webp";
+import disp16 from "../assets/Display/disp16.webp";
+import disp17 from "../assets/Display/disp17.webp";
+import disp18 from "../assets/Display/disp18.webp";
+import disp19 from "../assets/Display/disp19.webp";
+import disp20 from "../assets/Display/disp20.webp";
+import disp21 from "../assets/Display/disp21.webp";
+import disp22 from "../assets/Display/disp22.webp";
+import disp23 from "../assets/Display/disp23.webp";
+import disp24 from "../assets/Display/disp24.webp";
+import disp25 from "../assets/Display/disp25.webp";
+import disp26 from "../assets/Display/disp26.webp";
+import disp27 from "../assets/Display/disp27.webp";
+import disp28 from "../assets/Display/disp28.webp";
+import disp29 from "../assets/Display/disp29.webp";
+import disp30 from "../assets/Display/disp30.webp";
+import disp31 from "../assets/Display/disp31.webp";
+
+import disp32 from "../assets/Display/disp32.webp";
+import disp33 from "../assets/Display/disp33.webp";
+import disp34 from "../assets/Display/disp34.webp";
 export interface Product {
   id: string;
   name: string;
@@ -2032,8 +2085,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Mechanical Gaming Keyboard',
       description: 'RGB mechanical keyboard with customizable keys',
       count: 25,
-      price: 129,
-      image: 'https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/841228/pexels-photo-841228.jpeg',
       specs: ['Mechanical Switches', 'RGB Backlit', 'USB-C', 'Macro Keys']
     },
     {
@@ -2041,9 +2093,24 @@ export const catalogData: Record<string, Category> = {
       name: 'Wireless Keyboard & Mouse Combo',
       description: 'Silent wireless keyboard and mouse set for office',
       count: 40,
-      price: 79,
-      image: 'https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/6416/apple-desk-office-technology.jpg',
       specs: ['Wireless 2.4GHz', 'Long Battery Life', 'Silent Keys', 'Plug & Play']
+    },
+    {
+      id: 'mouse-1',
+      name: 'Ergonomic Vertical Mouse',
+      description: 'Vertical mouse designed to reduce wrist strain',
+      count: 30,
+      image: 'https://images.pexels.com/photos/7151692/pexels-photo-7151692.jpeg',
+      specs: ['Ergonomic Design', '6 Buttons', 'Adjustable DPI', 'Wireless']
+    },
+    {
+      id: 'keyboard-3',
+      name: 'Compact 60% Mechanical Keyboard',
+      description: 'Space-saving mechanical keyboard for minimalists',
+      count: 22,
+      image: 'https://images.pexels.com/photos/18382824/pexels-photo-18382824.jpeg',
+      specs: ['60% Layout', 'Hot-swappable', 'RGB Lighting', 'USB-C']
     }
   ]
 },
@@ -2056,8 +2123,7 @@ export const catalogData: Record<string, Category> = {
       name: '4K Webcam Pro',
       description: 'Ultra HD webcam for professional video calls',
       count: 18,
-      price: 149,
-      image: 'https://images.pexels.com/photos/5797997/pexels-photo-5797997.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/13695989/pexels-photo-13695989.jpeg',
       specs: ['4K Resolution', 'Auto Focus', 'Built-in Mic', 'Privacy Cover']
     },
     {
@@ -2065,9 +2131,16 @@ export const catalogData: Record<string, Category> = {
       name: 'Streaming Webcam',
       description: 'High-quality webcam for streaming and content creation',
       count: 22,
-      price: 199,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/7261085/pexels-photo-7261085.jpeg',
       specs: ['1080p 60fps', 'Wide Angle', 'Low Light Correction', 'Tripod Mount']
+    },
+    {
+      id: 'webcam-3',
+      name: 'Conference Room Webcam',
+      description: '360-degree conference camera for meetings',
+      count: 12,
+      image: 'https://images.pexels.com/photos/236730/pexels-photo-236730.jpeg',
+      specs: ['360° View', 'Auto Framing', 'Speaker Tracking', 'Built-in Mic Array']
     }
   ]
 },
@@ -2080,8 +2153,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Wireless Noise Cancelling Headphones',
       description: 'Premium over-ear headphones with active noise cancellation',
       count: 15,
-      price: 299,
-      image: 'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/815494/pexels-photo-815494.jpeg',
       specs: ['Active Noise Cancelling', '30hr Battery', 'Bluetooth 5.0', 'Foldable']
     },
     {
@@ -2089,9 +2161,24 @@ export const catalogData: Record<string, Category> = {
       name: 'Gaming Headset Pro',
       description: 'Surround sound gaming headset with microphone',
       count: 30,
-      price: 129,
-      image: 'https://images.pexels.com/photos/3945665/pexels-photo-3945665.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/32755766/pexels-photo-32755766.jpeg',
       specs: ['7.1 Surround', 'Noise-cancelling Mic', 'RGB Lights', 'Memory Foam']
+    },
+    {
+      id: 'earbuds-1',
+      name: 'True Wireless Earbuds',
+      description: 'Compact wireless earbuds with charging case',
+      count: 45,
+      image: 'https://images.pexels.com/photos/8858287/pexels-photo-8858287.jpeg',
+      specs: ['Bluetooth 5.2', 'Charging Case', 'Touch Control', 'IPX5 Water Resistant']
+    },
+    {
+      id: 'headphone-3',
+      name: 'Studio Monitor Headphones',
+      description: 'Professional studio headphones for audio editing',
+      count: 18,
+      image: 'https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=400',
+      specs: ['Studio Quality Sound', 'Detachable Cable', 'Closed-back', 'Comfort Fit']
     }
   ]
 },
@@ -2104,8 +2191,7 @@ export const catalogData: Record<string, Category> = {
       name: 'USB-C Hub 7-in-1',
       description: 'Multi-port USB-C hub for laptops and tablets',
       count: 35,
-      price: 49,
-      image: 'https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/3921695/pexels-photo-3921695.jpeg',
       specs: ['HDMI 4K', 'USB 3.0', 'SD/TF Card', 'Ethernet Port']
     },
     {
@@ -2113,9 +2199,16 @@ export const catalogData: Record<string, Category> = {
       name: 'Powered USB 3.0 Hub',
       description: '10-port powered USB hub for multiple devices',
       count: 20,
-      price: 69,
-      image: 'https://images.pexels.com/photos/583842/pexels-photo-583842.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/10359906/pexels-photo-10359906.jpeg',
       specs: ['10 Ports', 'Individual Switches', '12V Power Adapter', 'Data Transfer']
+    },
+    {
+      id: 'hub-3',
+      name: 'Thunderbolt 4 Dock',
+      description: 'High-speed docking station for MacBooks and PCs',
+      count: 12,
+      image: 'https://m.media-amazon.com/images/I/51Q5Ozs9N2L._SX342_SY445_QL70_FMwebp_.jpg',
+      specs: ['Thunderbolt 4', '85W Charging', 'Dual 4K Display', '3x USB-A']
     }
   ]
 },
@@ -2128,8 +2221,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Adjustable Laptop Stand',
       description: 'Ergonomic aluminum laptop stand with adjustable height',
       count: 28,
-      price: 59,
-      image: 'https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: disp32,
       specs: ['Aluminum Alloy', '8 Height Adjustments', 'Portable', 'Heat Dissipation']
     },
     {
@@ -2137,9 +2229,16 @@ export const catalogData: Record<string, Category> = {
       name: 'Cooling Laptop Stand',
       description: 'Laptop stand with built-in cooling fans',
       count: 18,
-      price: 39,
-      image: 'https://images.pexels.com/photos/2399840/pexels-photo-2399840.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: disp33,
       specs: ['Dual Cooling Fans', '3 Speed Settings', 'Ergonomic Angle', 'USB Powered']
+    },
+    {
+      id: 'stand-3',
+      name: 'Portable Laptop Riser',
+      description: 'Foldable laptop stand for travel and mobile work',
+      count: 32,
+      image: disp34,
+      specs: ['Foldable Design', 'Lightweight', 'Anti-slip Grip', 'Fits All Laptops']
     }
   ]
 },
@@ -2152,8 +2251,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Epson EB-X49 (2026 Edition)',
         description: 'The industry standard for Ethiopian offices; known for durability and high bulb life.',
         count: 15,
-        price: 85000,
-        image: 'https://images.pexels.com/photos/7677248/pexels-photo-7677248.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector1,
         specs: ['3600 Lumens', 'XGA Resolution', '12,000h Lamp Life', 'Horizontal Keystone']
       },
       {
@@ -2161,8 +2259,7 @@ export const catalogData: Record<string, Category> = {
         name: 'ViewSonic PA503S High Brightness',
         description: 'Best-selling value projector for schools and NGOs in Addis Ababa.',
         count: 22,
-        price: 48500,
-        image: 'https://images.pexels.com/photos/7677249/pexels-photo-7677249.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector2,
         specs: ['4000 Lumens', 'SuperColor Tech', '15,000h Eco Mode', 'VGA/HDMI']
       },
       {
@@ -2170,8 +2267,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Nebula Cosmos 4K SE',
         description: 'Premium laser projector for high-end executive boardrooms.',
         count: 5,
-        price: 155000,
-        image: 'https://images.pexels.com/photos/159211/headset-earphones-electronics-communications-159211.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector3,
         specs: ['1800 ANSI Lumens', '4K UHD', 'Dolby Digital Plus', 'Android TV 11']
       }
     ]
@@ -2185,8 +2281,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung The Freestyle 2nd Gen',
         description: 'The most famous lifestyle projector; 180-degree rotation for ceiling movies.',
         count: 12,
-        price: 68000,
-        image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector4,
         specs: ['Full HD 1080p', 'Smart Calibration', '360 Sound', 'Gaming Hub']
       },
       {
@@ -2194,8 +2289,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Hisense C2 Ultra Triple Laser',
         description: 'Premium "Laser TV" experience with incredible color for home theaters.',
         count: 4,
-        price: 245000,
-        image: 'https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector5,
         specs: ['3000 ANSI Lumens', '4K UHD', '110% BT.2020 Color', 'JBL Audio']
       },
       {
@@ -2203,8 +2297,7 @@ export const catalogData: Record<string, Category> = {
         name: 'HY300 PRO Smart Projector',
         description: 'The most popular budget smart projector in the Ethiopian market.',
         count: 50,
-        price: 14500,
-        image: 'https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector6,
         specs: ['720p Native (4K Support)', 'Android 13', '180° Rotatable', 'WiFi 6']
       }
     ]
@@ -2218,8 +2311,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Borrego Smart 6 Mini',
         description: 'Top-trending portable Android projector in Addis Ababa electronics shops.',
         count: 35,
-        price: 18500,
-        image: 'https://images.pexels.com/photos/5077055/pexels-photo-5077055.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector7,
         specs: ['Android OS', 'Battery & Plug', 'Screen Mirroring', 'Compact Design']
       },
       {
@@ -2227,8 +2319,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Nebula Capsule 3 Laser',
         description: 'Soda-can sized high-tech laser projector for camping and travel.',
         count: 10,
-        price: 92000,
-        image: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector8,
         specs: ['Laser Engine', '1080p', 'Built-in 2.5h Battery', '8W Speaker']
       },
       {
@@ -2236,8 +2327,7 @@ export const catalogData: Record<string, Category> = {
         name: 'XGIMI MoGo 3 Pro',
         description: 'Elegant portable with integrated gimbal stand and Harman Kardon sound.',
         count: 8,
-        price: 74000,
-        image: 'https://images.pexels.com/photos/632125/pexels-photo-632125.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector9,
         specs: ['450 ISO Lumens', 'ISA 2.0 Tech', 'Google TV', 'Metal Build']
       }
     ]
@@ -2252,7 +2342,7 @@ export const catalogData: Record<string, Category> = {
         description: 'Ultra Short Throw that can sit just 10cm from the wall for a 100-inch screen.',
         count: 6,
         price: 410000,
-        image: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector10,
         specs: ['4000 Lumens', '4K PRO-UHD', 'Yamaha 2.1 Sound', '0.16 Throw Ratio']
       },
       {
@@ -2261,7 +2351,7 @@ export const catalogData: Record<string, Category> = {
         description: 'Designed for Xbox/PS5 gamers; massive screen in tiny Addis bedrooms.',
         count: 3,
         price: 185000,
-        image: 'https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector11,
         specs: ['2200 ANSI Lumens', '4K HDR', '4ms Low Latency', 'Short Throw']
       },
       {
@@ -2270,7 +2360,7 @@ export const catalogData: Record<string, Category> = {
         description: 'The ultimate TV replacement with Triple Laser technology.',
         count: 2,
         price: 395000,
-        image: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector12,
         specs: ['3000 Lumens', 'Dolby Vision', 'Google TV', 'Xbox Certified']
       }
     ]
@@ -2285,7 +2375,7 @@ export const catalogData: Record<string, Category> = {
         description: 'Remote-controlled electric screen for professional setups.',
         count: 20,
         price: 42000,
-        image: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector13,
         specs: ['120" Diagonal', 'RF Remote', 'Matte White 1.1 Gain', 'Quiet Motor']
       },
       {
@@ -2294,7 +2384,7 @@ export const catalogData: Record<string, Category> = {
         description: 'Heavy-duty steel mount for all major projector brands.',
         count: 100,
         price: 5500,
-        image: 'https://images.pexels.com/photos/3653849/pexels-photo-3653849.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector14,
         specs: ['Extendable 50-100cm', 'White Powder Coat', '30° Tilt', '360° Swivel']
       },
       {
@@ -2303,7 +2393,7 @@ export const catalogData: Record<string, Category> = {
         description: 'Special screen for using laser projectors in bright rooms.',
         count: 5,
         price: 58000,
-        image: 'https://images.pexels.com/photos/3568520/pexels-photo-3568520.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: Projector15,
         specs: ['100-inch Fixed', 'Thin Bezel', '90% Light Rejection', 'Enhances Contrast']
       }
     ]
@@ -3563,8 +3653,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Digital Signage Display 55"',
         description: 'Ultra-slim professional signage with Android 11 for 24/7 retail use.',
         count: 10,
-        price: 145000,
-        image: 'https://images.pexels.com/photos/5325617/pexels-photo-5325617.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp1,
         specs: ['55-inch UHD', 'Android 11 Powered', '450 nits Brightness', 'WiFi/LAN CMS']
       },
       {
@@ -3572,8 +3661,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG SM5J Series 65"',
         description: 'High-performance LG webOS signage for welcome screens and ads.',
         count: 8,
-        price: 210000,
-        image: 'https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp2,
         specs: ['65-inch IPS', 'webOS 6.0', 'Bezel-less Design', 'Built-in Speakers']
       },
       {
@@ -3581,8 +3669,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung QHB Series 50"',
         description: 'Premium Samsung display with non-glare technology for malls.',
         count: 12,
-        price: 165000,
-        image: 'https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp3,
         specs: ['4K UHD', 'Tizen 6.5', '24/7 Operation', 'Slim Depth']
       },
       {
@@ -3590,8 +3677,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Wall-Mount Poster 43"',
         description: 'Digital poster style for restaurant menus and boutique ads.',
         count: 15,
-        price: 95000,
-        image: 'https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp4,
         specs: ['43-inch Portrait', 'Auto-Loop USB', 'Tempered Glass', '1080p']
       },
       {
@@ -3600,7 +3686,7 @@ export const catalogData: Record<string, Category> = {
         description: 'Unique wide aspect ratio for narrow spaces and shelf advertising.',
         count: 5,
         price: 180000,
-        image: 'https://images.pexels.com/photos/257881/pexels-photo-257881.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp5,
         specs: ['32:9 Aspect Ratio', 'Picture-by-Picture', 'LAN Daisy Chain', '700 nits']
       },
       {
@@ -3608,8 +3694,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung Extreme Narrow Bezel',
         description: 'Flagship signage for high-end welcome lobbies.',
         count: 6,
-        price: 285000,
-        image: 'https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp6,
         specs: ['0.44mm Even Bezel', 'Calibration Pro', 'UHD Upscaling', 'Anti-Glare']
       }
     ]
@@ -3623,8 +3708,7 @@ export const catalogData: Record<string, Category> = {
         name: 'P2.5 Fine Pitch LED Wall',
         description: 'Seamless indoor LED wall for command centers and luxury stages.',
         count: 4,
-        price: 1250000,
-        image: 'https://images.pexels.com/photos/257881/pexels-photo-257881.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp7,
         specs: ['P2.5 Pixel Pitch', 'Gold Wire LED', '3840Hz Refresh', 'Front Service']
       },
       {
@@ -3632,8 +3716,7 @@ export const catalogData: Record<string, Category> = {
         name: 'P4 Outdoor Advertising Wall',
         description: 'Bright, weatherproof billboard for exterior building ads.',
         count: 3,
-        price: 2400000,
-        image: 'https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image:disp8,
         specs: ['P4 Pitch', 'IP65 Weatherproof', '6500 nits', 'Remote Control']
       },
       {
@@ -3641,8 +3724,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG 55" Video Wall Panel',
         description: '0.88mm ultra-narrow bezel for seamless 4x4 matrix.',
         count: 16,
-        price: 320000,
-        image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp9,
         specs: ['500 nits', 'FHD per panel', '24/7 Pro Grade', 'IPS Wide View']
       },
       {
@@ -3650,8 +3732,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung "The Wall" IWA',
         description: 'MicroLED technology for the ultimate executive lobby experience.',
         count: 2,
-        price: 5800000,
-        image: 'https://images.pexels.com/photos/5325617/pexels-photo-5325617.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp10,
         specs: ['MicroLED Pitch', 'Black Seal Tech', 'AI Processing', 'HDR10+']
       },
       {
@@ -3659,8 +3740,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Curved LED Module',
         description: 'Flexible LED modules for creative curved pillars and designs.',
         count: 40,
-        price: 45000,
-        image: 'https://images.pexels.com/photos/159211/headset-earphones-electronics-communications-159211.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp12,
         specs: ['Flexible PCB', 'Magnetic Mount', 'P3 Resolution', 'Custom Shapes']
       },
       {
@@ -3668,14 +3748,13 @@ export const catalogData: Record<string, Category> = {
         name: 'Novastar Video Processor',
         description: 'Central controller for managing large-scale LED screen inputs.',
         count: 10,
-        price: 115000,
-        image: 'https://images.pexels.com/photos/3568520/pexels-photo-3568520.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp13,
         specs: ['4K Input/Output', 'Multi-Window', 'Low Latency', 'Fiber Optic']
       }
     ]
   },
 
-  "InteractiveDisplay": {
+    "InteractiveDisplay": {
     name: 'Interactive Display',
     products: [
       {
@@ -3683,8 +3762,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech 65" Interactive Panel',
         description: 'All-in-one smart board for Ethiopian schools and conference rooms.',
         count: 15,
-        price: 185000,
-        image: 'https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp14,
         specs: ['4K UHD Touch', 'Android 11/13', '20 Point Touch', 'Built-in Whiteboard']
       },
       {
@@ -3692,8 +3770,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG CreateBoard 75"',
         description: 'Premium interactive display with advanced screen sharing and cloud sync.',
         count: 6,
-        price: 380000,
-        image: 'https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp15,
         specs: ['75-inch UHD', 'LG ConnectedCare', 'USB-C DP Alt', 'Optional Slot-PC']
       },
       {
@@ -3701,8 +3778,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung Flip Pro 85"',
         description: 'The world-famous digital flipchart for high-end corporate brainstorming.',
         count: 4,
-        price: 520000,
-        image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp16,
         specs: ['85-inch 4K', 'Writing latency 26ms', 'SmartView+', 'AirPlay 2']
       },
       {
@@ -3710,8 +3786,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech 86" Giant Interactive Display',
         description: 'Massive touch display for large auditoriums and lecture halls.',
         count: 5,
-        price: 345000,
-        image: 'https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp17,
         specs: ['86-inch UHD', 'Dual OS (Win/Android)', 'Anti-glare Glass', '13MP Camera']
       },
       {
@@ -3719,8 +3794,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG One:Quick Works 55"',
         description: 'Professional video conferencing display with built-in 4K camera and mic.',
         count: 7,
-        price: 310000,
-        image: 'https://images.pexels.com/photos/7677248/pexels-photo-7677248.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp18,
         specs: ['All-in-one Video Conf', 'Directional Mic', 'In-cell Touch', 'Award-winning Design']
       },
       {
@@ -3728,8 +3802,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung Interactive Board (WAC)',
         description: 'Reliable Android-based whiteboard for educational training centers.',
         count: 10,
-        price: 240000,
-        image: 'https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp19,
         specs: ['65-inch 4K', 'Multi-device Cast', 'App Store Access', 'Tough Gorilla Glass']
       }
     ]
@@ -3743,8 +3816,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Standing Kiosk 55"',
         description: 'Modern floor-standing digital totem for mall wayfinding.',
         count: 12,
-        price: 165000,
-        image: 'https://images.pexels.com/photos/3945665/pexels-photo-3945665.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp20,
         specs: ['55-inch Touch', 'Android 11', 'Industrial Grade', 'Internal Cooling']
       },
       {
@@ -3752,8 +3824,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG Self-Service Kiosk',
         description: 'Compact kiosk for hotel check-ins or bank queue management.',
         count: 20,
-        price: 215000,
-        image: 'https://images.pexels.com/photos/4397899/pexels-photo-4397899.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp21,
         specs: ['27-inch Touch', 'Receipt Printer', 'Payment Bracket', 'Epson Scanner']
       },
       {
@@ -3761,8 +3832,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Double-Sided Kiosk',
         description: 'Show content on both sides; perfect for airport terminals.',
         count: 4,
-        price: 295000,
-        image: 'https://images.pexels.com/photos/3945665/pexels-photo-3945665.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp22,
         specs: ['Dual 55" Screens', 'Super Slim Design', 'Ultra-high Brightness', 'Scheduled Play']
       },
       {
@@ -3770,8 +3840,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung Kiosk (KM24A)',
         description: 'Global standard for fast-food ordering and retail ticketing.',
         count: 15,
-        price: 145000,
-        image: 'https://images.pexels.com/photos/4397899/pexels-photo-4397899.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp23,
         specs: ['24-inch Touch', 'Tizen OS', 'Knox Security', 'Counter/Stand Mount']
       },
       {
@@ -3779,8 +3848,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Outdoor Rugged Kiosk',
         description: 'Fully waterproof and sunlight-readable kiosk for street ads.',
         count: 3,
-        price: 480000,
-        image: 'https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp24,
         specs: ['IP65 Rated', '2500 nits', 'Air Conditioned', 'IK10 Vandal Proof']
       },
       {
@@ -3788,8 +3856,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Table Kiosk 43"',
         description: 'Horizontal touch table for interactive museum exhibits.',
         count: 6,
-        price: 135000,
-        image: 'https://images.pexels.com/photos/257881/pexels-photo-257881.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp25,
         specs: ['Table Height', '10 Point IR Touch', 'Sleek Curved Edges', 'PC Included']
       }
     ]
@@ -3803,8 +3870,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Ultra-Slim Wall 60"',
         description: 'New 60-inch narrow bezel display for luxury showrooms.',
         count: 9,
-        price: 158000,
-        image: 'https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp26,
         specs: ['60-inch UHD', 'Metal Housing', 'Portrait/Landscape', 'Cloud CMS']
       },
       {
@@ -3812,8 +3878,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG Transparent OLED',
         description: 'Futuristic transparent display for premium product showcases.',
         count: 2,
-        price: 1200000,
-        image: 'https://images.pexels.com/photos/5325617/pexels-photo-5325617.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp27,
         specs: ['38% Transparency', 'OLED Technology', 'FHD', 'Touch Optional']
       },
       {
@@ -3821,8 +3886,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung Dual-Sided Window Display',
         description: 'High brightness for windows facing the sun + interior screen.',
         count: 5,
-        price: 420000,
-        image: 'https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp28,
         specs: ['3000 nits Outdoor side', '1000 nits Indoor side', 'Fan-less', 'Wi-Fi']
       },
       {
@@ -3830,8 +3894,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Aztech Bar Signage 37"',
         description: 'Unique shelf-edge display for grocery and electronics pricing.',
         count: 25,
-        price: 48000,
-        image: 'https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp29,
         specs: ['Stretched LCD', 'High Contrast', 'Serial Control', 'Ultra Wide']
       },
       {
@@ -3839,8 +3902,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG Ultra-Large Welcome Screen',
         description: 'Giant 86-inch screen to replace traditional lobby posters.',
         count: 4,
-        price: 590000,
-        image: 'https://images.pexels.com/photos/257881/pexels-photo-257881.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp30,
         specs: ['86-inch UHD', 'IPS Panel', 'Crestron Connected', 'Split Screen']
       },
       {
@@ -3848,13 +3910,11 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung In-Window Display',
         description: 'Extra high brightness for shop windows in sunny areas.',
         count: 10,
-        price: 215000,
-        image: 'https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: disp31,
         specs: ['4000 nits Brightness', 'Polarized Sun-view', 'Tizen 4.0', 'IP5X Dust Proof']
       }
     ]
-  }
-,
+  },
 // ========== HPE PROLIANT ML TOWER SERVERS ==========
 "HPEProliantMLserver": {
   name: 'HPE ProLiant ML Tower Servers',
