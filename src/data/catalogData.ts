@@ -103,14 +103,14 @@ import hpe6 from "../assets/server/hpe6.webp";
 
 
 
-import monitor1 from "../assets/monitor/mon2.png";
-import monitor2 from "../assets/monitor/mon4.png";
-import monitor3 from "../assets/monitor/mon5.jpg";
-import monitor4 from "../assets/monitor/mon5.png";
-import monitor5 from "../assets/monitor/mon6.png";
-import monitor6 from "../assets/monitor/mon7.png";
-import monitor7 from "../assets/monitor/mon8.png";
-import monitor8 from "../assets/monitor/mon9.png";
+import monitor1 from "../assets/monitor/mon2.webp";
+import monitor2 from "../assets/monitor/mon4.webp";
+import monitor3 from "../assets/monitor/mon5.webp";
+import monitor4 from "../assets/monitor/mon5.webp";
+import monitor5 from "../assets/monitor/mon6.webp";
+import monitor6 from "../assets/monitor/mon7.webp";
+import monitor7 from "../assets/monitor/mon8.webp";
+import monitor8 from "../assets/monitor/mon9.webp";
 
 
 import network1 from "../assets/network/network1.webp";

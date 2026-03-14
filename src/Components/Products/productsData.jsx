@@ -13,7 +13,7 @@ import printer1 from "../../assets/printer/printer1.webp";
 import printer2 from "../../assets/printer/Printer2.webp";
 import printer3 from "../../assets/printer/printer3.webp";
 import printer4 from "../../assets/printer/printer4.webp";
-import printer5 from "../../assets/printer/p4.jpg";
+import printer5 from "../../assets/printer/p4.webp";
 import printer6 from "../../assets/printer/printer5.webp"; // You'll need to add this image
 import printer7 from "../../assets/printer/epson.webp"; // You'll need to add this image
 import printer8 from "../../assets/printer/printer6.webp"; // You'll need to add this image
@@ -21,7 +21,7 @@ import printer8 from "../../assets/printer/printer6.webp"; // You'll need to add
 // Monitors - 8 different images
 import monitor1 from "../../assets/monitor/mon2.webp";
 import monitor2 from "../../assets/monitor/mon4.webp";
-import monitor3 from "../../assets/monitor/mon5.jpg";
+import monitor3 from "../../assets/monitor/mon5.webp";
 import monitor4 from "../../assets/monitor/mon5.webp";
 import monitor5 from "../../assets/monitor/mon6.webp";
 import monitor6 from "../../assets/monitor/mon7.webp"; // You'll need to add this image

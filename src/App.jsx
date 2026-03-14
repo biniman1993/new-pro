@@ -7,20 +7,16 @@ import Navbar from "./Components/Navbar/Navbar";
 import TopMenu from "./Components/TopMenu/TopMenu";
 import TermsPage from "./Components/TermsPage";
 
-import Carousel from "./Components/Carousel/Carousel";
 import CompanyStats from "./Components/CompanyStats/CompanyStats";
 import Partners from "./Components/Partners/Partners";
 import Footer from "./Components/Footer.tsx";
 import TopProducts from "./Components/TopProducts.tsx";
 import Products from "./Components/Products/Products";
-import Logobrand from "./Components/Logo/Logobrand.jsx";
 
 import Login from "./Components/Login/Login.jsx";
 import Brand from "./Components/Brand/Brand.tsx";
-import ContactPage from "./Components/style/ContactPage.jsx";
 import About from "./Components/About/About.tsx";
 import FridayPromo from "./Components/FridayPromo.js";
-import Aboutwhy from "./Components/About/Why/Aboutwhy.jsx";
 import HeroSection from "./Components/HeroSection.tsx";
 import Contact from "./Components/Contact/Contact.jsx";
 import AboutCards from "./Components/AboutCard";
