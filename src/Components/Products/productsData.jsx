@@ -29,14 +29,14 @@ import monitor7 from "../../assets/monitor/mon8.webp"; // You'll need to add thi
 import monitor8 from "../../assets/monitor/mon9.webp"; // You'll need to add this image
 
 // Desktops - 8 different images
-import desktop1 from "../../assets/desktop/Desk2.webp";
-import desktop2 from "../../assets/desktop/Desk.webp";
-import desktop3 from "../../assets/desktop/Del.webp";
-import desktop4 from "../../assets/desktop/de1.webp";
-import desktop5 from "../../assets/desktop/len.webp";
-import desktop6 from "../../assets/desktop/del4.webp"; // You'll need to add this image
-import desktop7 from "../../assets/desktop/gem.webp"; // You'll need to add this image
-import desktop8 from "../../assets/desktop/de7.webp"; // You'll need to add this image
+import desktop1 from "../../assets/desktop/deskpart/Desk2.webp";
+import desktop2 from "../../assets/desktop/deskpart/Desk.webp";
+import desktop3 from "../../assets/desktop/deskpart/Del.webp";
+import desktop4 from "../../assets/desktop/deskpart/de1.webp";
+import desktop5 from "../../assets/desktop/deskpart/len.webp";
+import desktop6 from "../../assets/desktop/deskpart/del4.webp"; // You'll need to add this image
+import desktop7 from "../../assets/desktop/deskpart/gem.webp"; // You'll need to add this image
+import desktop8 from "../../assets/desktop/deskpart/de7.webp"; // You'll need to add this image
 
 // Networking Equipment - 8 different images
 import network1 from "../../assets/network/network1.webp"; // You'll need to add these images
