@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Mail, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom"; // Add this import
-import p1 from "../../assets/awardlogo/ethoair.png";
-import p2 from "../../assets/awardlogo/image.png";
-import p3 from "../../assets/awardlogo/helth.png";
-import p4 from "../../assets/awardlogo/addis.png";
-import p5 from "../../assets/awardlogo/prim.png";
-import p6 from "../../assets/awardlogo/trad.png";
-import p7 from "../../assets/awardlogo/def.png";
-import p8 from "../../assets/awardlogo/insa.png";
+import p1 from "../../assets/awardlogo/ethoair.webp";
+import p2 from "../../assets/awardlogo/image.webp";
+import p3 from "../../assets/awardlogo/helth.webp";
+import p4 from "../../assets/awardlogo/addis.webp";
+import p5 from "../../assets/awardlogo/prim.webp";
+import p6 from "../../assets/awardlogo/trad.webp";
+import p7 from "../../assets/awardlogo/def.webp";
+import p8 from "../../assets/awardlogo/insa.webp";
 
 interface Partner {
   id: number;

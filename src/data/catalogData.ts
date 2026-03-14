@@ -113,14 +113,14 @@ import monitor7 from "../assets/monitor/mon8.png";
 import monitor8 from "../assets/monitor/mon9.png";
 
 
-import network1 from "../assets/network/network1.png";
-import network2 from "../assets/network/network2.png";
-import network3 from "../assets/network/network3.png";
-import network4 from "../assets/network/network4.png";
-import network5 from "../assets/network/network5.png";
-import network6 from "../assets/network/network6.png";
-import network7 from "../assets/network/network7.png";
-import network8 from "../assets/network/network8.png";
+import network1 from "../assets/network/network1.webp";
+import network2 from "../assets/network/network2.webp";
+import network3 from "../assets/network/network3.webp";
+import network4 from "../assets/network/network4.webp";
+import network5 from "../assets/network/network5.webp";
+import network6 from "../assets/network/network6.webp";
+import network7 from "../assets/network/network7.webp";
+import network8 from "../assets/network/network8.webp";
 
 // ========== NETWORKING IMAGES hpome network ==========
 import net1 from "../assets/network/net1.webp";

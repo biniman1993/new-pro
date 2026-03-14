@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import addis from '../assets/awardlogo/addis.png';
-import cbe1 from '../assets/awardlogo/cbe1.png';
-import def from '../assets/awardlogo/def.png';
-import ethoair from '../assets/awardlogo/ethoair.png';
-import helth from '../assets/awardlogo/helth.png';
-import image from '../assets/awardlogo/image.png';
-import insa from '../assets/awardlogo/insa.png';
-import prim from '../assets/awardlogo/prim.png';
-import trad from '../assets/awardlogo/trad.png';
+import addis from '../assets/awardlogo/addis.webp';
+import cbe1 from '../assets/awardlogo/cbe1.webp';
+import def from '../assets/awardlogo/def.webp';
+import ethoair from '../assets/awardlogo/ethoair.webp';
+import helth from '../assets/awardlogo/helth.webp';
+import image from '../assets/awardlogo/image.webp';
+import insa from '../assets/awardlogo/insa.webp';
+import prim from '../assets/awardlogo/prim.webp';
+import trad from '../assets/awardlogo/trad.webp';
 
 const Partnerslogo = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);

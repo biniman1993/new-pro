@@ -13,7 +13,7 @@ import {
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
-import footerBg from "../assets/footer-bg.jpg";
+import footerBg from "../assets/footer-bg.webp";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {

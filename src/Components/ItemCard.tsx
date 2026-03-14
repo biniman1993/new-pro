@@ -162,131 +162,132 @@ const ItemCard = ({ product }: ItemCardProps) => {
         </div>
       </div>
 
-      {/* Modal - preserved from updated version */}
-      {isModalOpen && selectedProduct && (
-        <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={closeProductModal}
+     {isModalOpen && selectedProduct && (
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    {/* Backdrop - separate div with onClick */}
+    <div 
+      className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+      onClick={closeProductModal}
+    />
+    
+    {/* Modal content - relative positioning */}
+    <div className="relative bg-white w-full max-w-4xl max-h-[90vh] shadow-2xl rounded-2xl overflow-hidden">
+      <button
+        onClick={closeProductModal}
+        className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-[#ff7b16] rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
+        aria-label="Close modal"
+      >
+        <X size={20} className="text-gray-700" />
+      </button>
+
+      <div className="flex flex-col md:flex-row h-full max-h-[90vh] overflow-hidden">
+        {/* Left side - Image */}
+        <div className="md:w-1/2 bg-gradient-to-br from-[#ffffff] to-[#f7faff] flex items-center justify-center p-4">
+          <img
+            src={selectedProduct.image}
+            alt={selectedProduct.name}
+            className="w-full max-h-[200px] md:max-h-[500px] object-contain"
+            loading="lazy"
           />
+        </div>
 
-          <div className="relative bg-white w-full max-w-4xl max-h-[90vh] animate-modal-enter shadow-2xl rounded-2xl overflow-hidden">
-            <button
-              onClick={closeProductModal}
-              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
-              aria-label="Close modal"
-            >
-              <X size={20} className="text-gray-700" />
-            </button>
+        {/* Right side - Content */}
+        <div className="md:w-1/2 p-6 lg:p-8 overflow-y-auto">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 pr-8">
+              {selectedProduct.name}
+            </h2>
 
-            <div className="flex flex-col md:flex-row h-full max-h-[90vh] overflow-hidden">
-              {/* Left side - Image */}
-              <div className="md:w-1/2 bg-gradient-to-br from-[#ffffff] to-[#f7faff]  flex items-center justify-center ">
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  className="w-full max-h-[200px] md:max-h-[500px] object-contain  "
-                  loading="lazy"
+            {/* Rating Stars */}
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  size={16}
+                  className={
+                    i < 4
+                      ? "text-[#ff7b16] fill-current"
+                      : "text-gray-300"
+                  }
                 />
-              </div>
+              ))}
+              <span className="text-sm text-gray-600 ml-2">
+                4.8 (1.2k+ reviews)
+              </span>
+            </div>
 
-              {/* Right side - Content */}
-              <div className="md:w-1/2 p-6 lg:p-8 overflow-y-auto">
-                <div className="space-y-4">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 pr-8">
-                    {selectedProduct.name}
-                  </h2>
+            <p className="text-gray-600 leading-relaxed">
+              {selectedProduct.description ||
+                "High-performance product designed for professionals."}
+            </p>
 
-                  {/* Rating Stars */}
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
+            {/* Specifications */}
+            {selectedProduct.specs &&
+              selectedProduct.specs.length > 0 && (
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-gray-900">
+                    Specifications:
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProduct.specs.map((spec, i) => (
+                      <span
                         key={i}
-                        size={16}
-                        className={
-                          i < 4
-                            ? "text-[#ff7b16] fill-current"
-                            : "text-gray-300"
-                        }
-                      />
+                        className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs border border-gray-200"
+                      >
+                        {spec}
+                      </span>
                     ))}
-                    <span className="text-sm text-gray-600 ml-2">
-                      4.8 (1.2k+ reviews)
-                    </span>
-                  </div>
-
-                  <p className="text-gray-600 leading-relaxed">
-                    {selectedProduct.description ||
-                      "High-performance product designed for professionals."}
-                  </p>
-
-                  {/* Specifications */}
-                  {selectedProduct.specs &&
-                    selectedProduct.specs.length > 0 && (
-                      <div className="space-y-2">
-                        <h3 className="font-semibold text-gray-900">
-                          Specifications:
-                        </h3>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedProduct.specs.map((spec, i) => (
-                            <span
-                              key={i}
-                              className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs border border-gray-200"
-                            >
-                              {spec}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                </div>
-
-                {/* Bottom Section - Call for pricing */}
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <p className="text-base font-semibold text-[#2a5da5] mb-3">
-                    Call for Pricing & Availability
-                  </p>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    <button
-                      onClick={() => handleContactOption("phone")}
-                      className="flex flex-col items-center gap-1 p-2 bg-[#ff7b16] text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm"
-                      title="Call Us"
-                    >
-                      <Phone size={16} />
-                      <span className="text-[10px]">Call</span>
-                    </button>
-                    <button
-                      onClick={() => handleContactOption("whatsapp")}
-                      className="flex flex-col items-center gap-1 p-2 bg-[#20BA5C] text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm"
-                      title="WhatsApp"
-                    >
-                      <MessageCircle size={16} />
-                      <span className="text-[10px]">WhatsApp</span>
-                    </button>
-                    <button
-                      onClick={() => handleContactOption("telegram")}
-                      className="flex flex-col items-center gap-1 p-2 bg-[#2a5da5] text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm"
-                      title="Telegram"
-                    >
-                      <Send size={16} />
-                      <span className="text-[10px]">Telegram</span>
-                    </button>
-                    <button
-                      onClick={() => handleContactOption("email")}
-                      className="flex flex-col items-center gap-1 p-2 bg-gray-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm"
-                      title="Email"
-                    >
-                      <Mail size={16} />
-                      <span className="text-[10px]">Email</span>
-                    </button>
                   </div>
                 </div>
-              </div>
+              )}
+          </div>
+
+          {/* Bottom Section - Call for pricing */}
+          <div className="mt-6 pt-6 border-t border-gray-200">
+            <p className="text-base font-semibold text-[#2a5da5] mb-3">
+              Call for Pricing & Availability
+            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <button
+                onClick={() => handleContactOption("phone")}
+                className="flex flex-col items-center gap-1 p-2 bg-[#ff7b16] text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm"
+                title="Call Us"
+              >
+                <Phone size={16} />
+                <span className="text-[10px]">Call</span>
+              </button>
+              <button
+                onClick={() => handleContactOption("whatsapp")}
+                className="flex flex-col items-center gap-1 p-2 bg-[#20BA5C] text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm"
+                title="WhatsApp"
+              >
+                <MessageCircle size={16} />
+                <span className="text-[10px]">WhatsApp</span>
+              </button>
+              <button
+                onClick={() => handleContactOption("telegram")}
+                className="flex flex-col items-center gap-1 p-2 bg-[#2a5da5] text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm"
+                title="Telegram"
+              >
+                <Send size={16} />
+                <span className="text-[10px]">Telegram</span>
+              </button>
+              <button
+                onClick={() => handleContactOption("email")}
+                className="flex flex-col items-center gap-1 p-2 bg-gray-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 text-sm"
+                title="Email"
+              >
+                <Mail size={16} />
+                <span className="text-[10px]">Email</span>
+              </button>
             </div>
           </div>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
 
       {/* Added to cart toast notification */}
       {isAdded && (

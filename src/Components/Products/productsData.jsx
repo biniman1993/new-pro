@@ -1,62 +1,62 @@
 // Laptops - 8 different images
-import laptop1 from "../../assets/laptop/Asu11.png";
-import laptop2 from "../../assets/laptop/asus3.png";
-import laptop3 from "../../assets/laptop/Asus4.png";
-import laptop4 from "../../assets/laptop/Asu6.png";
-import laptop5 from "../../assets/laptop/Hp3.png";
-import laptop6 from "../../assets/laptop/Spec.png"; // You'll need to add this image
-import laptop7 from "../../assets/laptop/Hp4.png"; // You'll need to add this image
-import laptop8 from "../../assets/laptop/asus6.png"; // You'll need to add this image
+import laptop1 from "../../assets/laptop/Asu11.webp";
+import laptop2 from "../../assets/laptop/asus3.webp";
+import laptop3 from "../../assets/laptop/Asus4.webp";
+import laptop4 from "../../assets/laptop/Asu6.webp";
+import laptop5 from "../../assets/laptop/Hp3.webp";
+import laptop6 from "../../assets/laptop/Spec.webp"; // You'll need to add this image
+import laptop7 from "../../assets/laptop/Hp4.webp"; // You'll need to add this image
+import laptop8 from "../../assets/laptop/asus6.webp"; // You'll need to add this image
 
 // Printers - 8 different images
-import printer1 from "../../assets/printer/printer1.png";
-import printer2 from "../../assets/printer/Printer2.png";
-import printer3 from "../../assets/printer/printer3.png";
-import printer4 from "../../assets/printer/printer4.png";
+import printer1 from "../../assets/printer/printer1.webp";
+import printer2 from "../../assets/printer/Printer2.webp";
+import printer3 from "../../assets/printer/printer3.webp";
+import printer4 from "../../assets/printer/printer4.webp";
 import printer5 from "../../assets/printer/p4.jpg";
-import printer6 from "../../assets/printer/printer5.png"; // You'll need to add this image
-import printer7 from "../../assets/printer/epson.png"; // You'll need to add this image
-import printer8 from "../../assets/printer/printer6.png"; // You'll need to add this image
+import printer6 from "../../assets/printer/printer5.webp"; // You'll need to add this image
+import printer7 from "../../assets/printer/epson.webp"; // You'll need to add this image
+import printer8 from "../../assets/printer/printer6.webp"; // You'll need to add this image
 
 // Monitors - 8 different images
-import monitor1 from "../../assets/monitor/mon2.png";
-import monitor2 from "../../assets/monitor/mon4.png";
+import monitor1 from "../../assets/monitor/mon2.webp";
+import monitor2 from "../../assets/monitor/mon4.webp";
 import monitor3 from "../../assets/monitor/mon5.jpg";
-import monitor4 from "../../assets/monitor/mon5.png";
-import monitor5 from "../../assets/monitor/mon6.png";
-import monitor6 from "../../assets/monitor/mon7.png"; // You'll need to add this image
-import monitor7 from "../../assets/monitor/mon8.png"; // You'll need to add this image
-import monitor8 from "../../assets/monitor/mon9.png"; // You'll need to add this image
+import monitor4 from "../../assets/monitor/mon5.webp";
+import monitor5 from "../../assets/monitor/mon6.webp";
+import monitor6 from "../../assets/monitor/mon7.webp"; // You'll need to add this image
+import monitor7 from "../../assets/monitor/mon8.webp"; // You'll need to add this image
+import monitor8 from "../../assets/monitor/mon9.webp"; // You'll need to add this image
 
 // Desktops - 8 different images
-import desktop1 from "../../assets/desktop/Desk2.png";
-import desktop2 from "../../assets/desktop/Desk.png";
-import desktop3 from "../../assets/desktop/Del.png";
-import desktop4 from "../../assets/desktop/de1.png";
-import desktop5 from "../../assets/desktop/len.png";
-import desktop6 from "../../assets/desktop/del4.png"; // You'll need to add this image
-import desktop7 from "../../assets/desktop/gem.png"; // You'll need to add this image
-import desktop8 from "../../assets/desktop/de7.png"; // You'll need to add this image
+import desktop1 from "../../assets/desktop/Desk2.webp";
+import desktop2 from "../../assets/desktop/Desk.webp";
+import desktop3 from "../../assets/desktop/Del.webp";
+import desktop4 from "../../assets/desktop/de1.webp";
+import desktop5 from "../../assets/desktop/len.webp";
+import desktop6 from "../../assets/desktop/del4.webp"; // You'll need to add this image
+import desktop7 from "../../assets/desktop/gem.webp"; // You'll need to add this image
+import desktop8 from "../../assets/desktop/de7.webp"; // You'll need to add this image
 
 // Networking Equipment - 8 different images
-import network1 from "../../assets/network/network1.png"; // You'll need to add these images
-import network2 from "../../assets/network/network2.png";
-import network3 from "../../assets/network/network3.png";
-import network4 from "../../assets/network/network4.png";
-import network5 from "../../assets/network/network5.png";
-import network6 from "../../assets/network/network6.png";
-import network7 from "../../assets/network/network7.png";
-import network8 from "../../assets/network/network8.png";
+import network1 from "../../assets/network/network1.webp"; // You'll need to add these images
+import network2 from "../../assets/network/network2.webp";
+import network3 from "../../assets/network/network3.webp";
+import network4 from "../../assets/network/network4.webp";
+import network5 from "../../assets/network/network5.webp";
+import network6 from "../../assets/network/network6.webp";
+import network7 from "../../assets/network/network7.webp";
+import network8 from "../../assets/network/network8.webp";
 
 // Display Equipment - 8 different images
-import display1 from "../../assets/monitor/disp1.png"; // You'll need to add these images
-import display2 from "../../assets/monitor/disp2.png";
-import display3 from "../../assets/monitor/disp3.png";
-import display4 from "../../assets/monitor/disp4.png";
-import display5 from "../../assets/monitor/disp5.png";
-import display6 from "../../assets/monitor/disp6.png";
-import display7 from "../../assets/monitor/disp7.png";
-import display8 from "../../assets/monitor/disp8.png";
+import display1 from "../../assets/monitor/disp1.webp"; // You'll need to add these images
+import display2 from "../../assets/monitor/disp2.webp";
+import display3 from "../../assets/monitor/disp3.webp";
+import display4 from "../../assets/monitor/disp4.webp";
+import display5 from "../../assets/monitor/disp5.webp";
+import display6 from "../../assets/monitor/disp6.webp";
+import display7 from "../../assets/monitor/disp7.webp";
+import display8 from "../../assets/monitor/disp8.webp";
 
 //=============================================
 // LAPTOPS - 8 Products with 8 different images
@@ -581,7 +581,7 @@ export const printerData = [
     description: "A3 monochrome laser multifunction printer for small to medium offices",
     fullDescription: "The Canon imageRUNNER 2425i is a compact A3 monochrome laser MFP designed for small to medium offices with significant printing and scanning volumes. Features a 7-inch color touchscreen and automatic document feeder.",
     status: "In stock",
-    image: printer1, // This should be your printer1.png file
+    image: printer1, // This should be your printer1.webp file
     specs: [
       "A3 Monochrome Laser MFP",
       "Print/Copy/Scan (Color Scan)",
@@ -601,7 +601,7 @@ export const printerData = [
   description: "A3 color laser multifunction printer with 26ppm speed and advanced security",
   fullDescription: "The Canon imageRUNNER C3326i is a high-performance A3 color laser MFP designed for small to medium offices. Features a 7-inch intuitive touchscreen, robust security features, and versatile finishing options for enhanced productivity.",
   status: "In stock",
-  image: printer2, // This should be your printer2.png file
+  image: printer2, // This should be your printer2.webp file
   specs: [
     "A3 Color Laser Multifunctional",
     "Print/Copy/Scan/Send (Optional Fax)",
@@ -626,7 +626,7 @@ export const printerData = [
     description: "High-speed A3 multifunction printer with 45ppm output",
     fullDescription: "The Canon imageRUNNER 2945i is a powerful A3 monochrome MFP designed for high-volume office environments. Delivers exceptional performance with 45ppm speeds and advanced document handling capabilities.",
     status: "In stock",
-    image: printer3, // This should be your printer3.png file
+    image: printer3, // This should be your printer3.webp file
     specs: [
       "A3 Monochrome Laser MFP",
       "45 ppm Print Speed",
@@ -646,7 +646,7 @@ export const printerData = [
     description: "Compact laser multifunction printer with fax and wireless",
     fullDescription: "The HP Laser MFP 137fnw is a space-saving 4-in-1 printer perfect for small offices. Combines print, copy, scan, and fax capabilities with reliable wireless connectivity.",
     status: "In stock",
-    image: printer4, // This should be your printer4.png file
+    image: printer4, // This should be your printer4.webp file
     specs: [
       "Monochrome Laser MFP",
       "Print/Copy/Scan/Fax",
@@ -666,7 +666,7 @@ export const printerData = [
     description: "Color laser all-in-one with advanced security and mobile printing",
     fullDescription: "This HP Color LaserJet Pro MFP delivers vibrant color prints with fast performance. Built-in security features protect sensitive data, while mobile printing options provide flexibility for modern workflows.",
     status: "In stock",
-    image: printer5, // This should be your printer5.png file
+    image: printer5, // This should be your printer5.webp file
     specs: [
       "Color Laser Multifunction",
       "Print/Copy/Scan",
@@ -686,7 +686,7 @@ export const printerData = [
     description: "Affordable all-in-one inkjet printer for home use",
     fullDescription: "The HP DeskJet 2855e is a reliable and affordable inkjet printer perfect for everyday home printing, copying, and scanning. Compact design with easy mobile setup.",
     status: "In stock",
-    image: printer6, // This should be your printer6.png file
+    image: printer6, // This should be your printer6.webp file
     specs: [
       "Inkjet Multifunction",
       "Print/Copy/Scan",
@@ -706,7 +706,7 @@ export const printerData = [
     description: "Cartridge-free all-in-one with massive page yield",
     fullDescription: "The Epson EcoTank ET-3252 eliminates cartridges with high-capacity ink tanks. Includes up to 2 years of ink in the box, delivering incredible savings for high-volume home or office printing.",
     status: "In stock",
-    image: printer7, // This should be your printer7.png file
+    image: printer7, // This should be your printer7.webp file
     specs: [
       "EcoTank Inkjet System",
       "Print/Copy/Scan",
@@ -726,7 +726,7 @@ export const printerData = [
     description: "HP LaserJet Pro MFP M428fdwlaser printer with advanced features",
     fullDescription: "The HP LaserJet Pro MFP M428fdw delivers fast, high-quality monochrome printing for professional environments. Enhanced security features and intuitive touchscreen streamline workflows.",
     status: "In stock",
-    image: printer8, // This should be your printer8.png file
+    image: printer8, // This should be your printer8.webp file
     specs: [
       "Monochrome Laser MFP",
       "Print/Copy/Scan",
@@ -752,7 +752,7 @@ export const networkingData = [
     description: "Modular router with hardware-based encryption and firewall",
     fullDescription: "The Cisco 1941-SEC/K9 is a modular, multi-service router designed for enterprise and branch office deployments. Features hardware-based encryption acceleration, integrated firewall, and supports a wide range of wired and wireless connectivity options including Serial, T1/E1, xDSL, and Gigabit Ethernet [citation:1][citation:8].",
     status: "In stock",
-    image: network1, // This should be your net1.png file
+    image: network1, // This should be your net1.webp file
     specs: [
       "Modular Router with 2 EHWIC + 1 ISM Slots",
       "2 x 10/100/1000BASE-T Gigabit Ethernet Ports",
@@ -772,7 +772,7 @@ export const networkingData = [
     description: "24-Port Gigabit PoE+ managed switch with 370W budget",
     fullDescription: "The Cisco Catalyst 2960X-24PS-L is a stackable Gigabit Ethernet switch with Power over Ethernet Plus (PoE+), delivering 370W of PoE budget for VoIP phones, cameras, and wireless access points. Features enterprise-class Layer 2 and Layer 3 capabilities with advanced security [citation:2][citation:5].",
     status: "In stock",
-    image: network2, // This should be your net2.png file
+    image: network2, // This should be your net2.webp file
     specs: [
       "24 x 10/100/1000 PoE+ Ports + 4 x SFP Uplinks",
       "370W PoE Budget (supports IEEE 802.3at/af)",
@@ -792,7 +792,7 @@ export const networkingData = [
     description: "48-Port Gigabit switch with 2 combo uplinks",
     fullDescription: "The Cisco Catalyst 2960 Plus 48TC-L is a reliable 48-port Gigabit Ethernet switch for enterprise access deployments. Features 2 dual-purpose uplink ports (10/100/1000BASE-T or SFP) and delivers essential intelligent services for secure business operations [citation:4][citation:7].",
     status: "In stock",
-    image: network3, // This should be your net3.png file
+    image: network3, // This should be your net3.webp file
     specs: [
       "48 x 10/100/1000 Ethernet Ports",
       "2 x Combo Uplink Ports (RJ-45/SFP)",
@@ -812,7 +812,7 @@ export const networkingData = [
     description: "Dual-band 802.11n wireless access point with integrated antennas",
     fullDescription: "The Cisco Aironet 1602i is an enterprise-class, entry-level 802.11n access point with integrated antennas, designed for small and medium business networks. Features 3x3 MIMO technology with two spatial streams and ClientLink 2.0 for improved coverage and performance [citation:3][citation:10].",
     status: "In stock",
-    image: network4, // This should be your net4.png file
+    image: network4, // This should be your net4.webp file
     specs: [
       "Dual-Band 2.4 GHz & 5 GHz Concurrent Radios",
       "3x3 MIMO with 2 Spatial Streams (300 Mbps PHY Rate)",
@@ -832,7 +832,7 @@ export const networkingData = [
     description: "48-Port 10/100 switch with dual gigabit uplinks",
     fullDescription: "The Cisco Catalyst 2960-48TC-L is a proven, reliable access switch featuring 48 Fast Ethernet ports and 2 dual-purpose gigabit uplinks. Provides entry-level intelligent services with integrated security, QoS, and network management capabilities [citation:4][citation:7].",
     status: "In stock",
-    image: network5, // This should be your net5.png file
+    image: network5, // This should be your net5.webp file
     specs: [
       "48 x 10/100 Fast Ethernet Ports",
       "2 x Dual-Purpose Uplinks ",
@@ -852,7 +852,7 @@ export const networkingData = [
   description: "Enterprise next-generation firewall with advanced threat protection",
   fullDescription: "The Cisco Next-Generation Firewall provides enterprise-grade security with advanced threat protection, intrusion prevention, and application visibility. Ideal for businesses needing robust network security and VPN connectivity.",
   status: "In stock",
-  image: network6, // This should be your network6.png file
+  image: network6, // This should be your network6.webp file
   specs: [
     "Next-Generation Firewall (NGFW)",
     "Intrusion Prevention System (IPS)",
@@ -872,7 +872,7 @@ export const networkingData = [
   description: "Dual-band gigabit wireless router with Alexa support and 1.75Gbps speed",
   fullDescription: "The TP-Link Archer A7 is a budget-friendly AC1750 dual-band router featuring 450 Mbps on 2.4GHz and 1300 Mbps on 5GHz bands. With three external antennas, QoS, and parental controls, it delivers reliable whole-home coverage up to 2,500 sq ft. Ideal for 4K streaming and everyday use.",
   status: "In stock",
-  image: network7, // This should be your network7.png file
+  image: network7, // This should be your network7.webp file
   specs: [
     "AC1750 Dual-Band Wi-Fi ",
     "(450 Mbps 2.4GHz + 1300 Mbps 5GHz)",
@@ -897,7 +897,7 @@ export const networkingData = [
   description: "Enterprise WiFi 6 access point with mesh technology",
   fullDescription: "The Ubiquiti UniFi 6 Access Point delivers high-performance WiFi 6 connectivity with mesh technology, 4x4 MIMO, and seamless roaming. Perfect for businesses needing reliable, scalable wireless coverage.",
   status: "In stock",
-  image: network8, // This should be your network8.png file
+  image: network8, // This should be your network8.webp file
   specs: [
     "WiFi 6 (802.11ax) Technology",
     "Up to 2.4 Gbps Aggregate Throughput",

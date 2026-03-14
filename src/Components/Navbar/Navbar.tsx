@@ -97,7 +97,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#2a5da5] to-[#143057] ">
+    <nav className="fixed top-0 left-0 w-full z-40 bg-gradient-to-r from-[#2a5da5] to-[#143057] ">
       <div className="border-b border-white/10">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -203,7 +203,7 @@ const Navbar = () => {
 
       {/* Modern Sidebar for Mobile/Tablet */}
       <div
-        className={`lg:hidden fixed inset-0 z-50 transition-all duration-500 ease-in-out ${
+        className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ease-in-out ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
