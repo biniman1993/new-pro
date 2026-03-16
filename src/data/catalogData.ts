@@ -46,7 +46,12 @@ import work5 from "../assets/desktop/work5.webp";
 import work6 from "../assets/desktop/work6.webp";
 
 
-
+import m4k1 from '../assets/monitor/m4k1.webp';
+import m4k2 from '../assets/monitor/m4k2.webp';
+import m4k3 from '../assets/monitor/m4k3.webp';
+import m4k4 from '../assets/monitor/m4k4.webp';
+import m4k5 from '../assets/monitor/m4k5.webp';
+import m4k6 from '../assets/monitor/m4k6.webp';
 
 // ========== LAPTOP IMPORTS ==========
 // Business Laptops
@@ -94,6 +99,11 @@ import gameLap11 from "../assets/laptop/game11.webp";
 import gameLap12 from "../assets/laptop/game12.webp";
 
 
+import curv1 from '../assets/monitor/curv1.webp';
+import curv2 from '../assets/monitor/curv2.webp';
+import curv3 from '../assets/monitor/curv3.webp';
+import curv4 from '../assets/monitor/curv4.webp';
+
 import hpe1 from "../assets/server/hpe1.webp";
 import hpe2 from "../assets/server/hpe2.webp";
 import hpe3 from "../assets/server/hpe3.webp";
@@ -129,6 +139,44 @@ import net4 from "../assets/network/net4.webp";
 import net5 from "../assets/network/net5.webp";
 import net6 from "../assets/network/net6.webp";
 
+import nete13 from "../assets/network/nete13.webp";
+import nete14 from "../assets/network/nete14.webp";
+import nete15 from "../assets/network/nete15.webp";
+import nete16 from "../assets/network/nete16.webp";
+import nete17 from "../assets/network/nete17.webp";
+import nete18 from "../assets/network/nete18.webp";
+
+
+import nete1 from "../assets/network/nete1.webp";
+import nete2 from "../assets/network/nete2.webp";
+import nete3 from "../assets/network/nete3.webp";
+import nete4 from "../assets/network/nete4.webp";
+import nete5 from "../assets/network/nete5.webp";
+import nete6 from "../assets/network/nete6.webp";
+import nete7 from "../assets/network/nete7.webp";
+import nete8 from "../assets/network/nete8.webp";
+import nete9 from "../assets/network/nete9.webp";
+import nete10 from "../assets/network/nete10.webp";
+import nete11 from "../assets/network/nete11.webp";
+import nete12 from "../assets/network/nete12.webp";
+
+import tv1 from '../assets/monitor/tv/tv1.webp';
+import tv2 from '../assets/monitor/tv/tv2.webp';
+import tv3 from '../assets/monitor/tv/tv3.webp';
+import tv4 from '../assets/monitor/tv/tv4.webp';
+import tv5 from '../assets/monitor/tv/tv5.webp';
+import tv6 from '../assets/monitor/tv/tv6.webp';
+import tv7 from '../assets/monitor/tv/tv7.webp';
+import tv8 from '../assets/monitor/tv/tv8.webp';
+import tv9 from '../assets/monitor/tv/tv9.webp';
+import tv10 from '../assets/monitor/tv/tv10.webp';
+import tv11 from '../assets/monitor/tv/tv11.webp';
+import tv12 from '../assets/monitor/tv/tv12.webp';
+
+
+import gam1 from '../assets/monitor/gam1.webp';
+import gam2 from '../assets/monitor/gam2.webp';
+import gam3 from '../assets/monitor/gam3.webp';
 
 import Projector1 from "../assets/Projector/proj1.webp";
 import Projector2 from "../assets/Projector/proj2.webp";
@@ -235,6 +283,31 @@ import disp28 from "../assets/Display/disp28.webp";
 import disp29 from "../assets/Display/disp29.webp";
 import disp30 from "../assets/Display/disp30.webp";
 import disp31 from "../assets/Display/disp31.webp";
+
+import serv1 from '../assets/server/serv1.webp';
+import serv2 from '../assets/server/serv2.webp';
+import serv3 from '../assets/server/serv3.webp';
+import serv4 from '../assets/server/serv4.webp';
+import serv5 from '../assets/server/serv5.webp';
+import serv6 from '../assets/server/serv6.webp';
+
+import del1 from '../assets/server/del1.webp';
+import del2 from '../assets/server/del2.webp';
+import del3 from '../assets/server/del3.webp';
+import dell1 from '../assets/server/dell1.webp';
+import dell2 from '../assets/server/dell2.webp';
+
+import ru1 from '../assets/server/ru1.webp';
+import ru2 from '../assets/server/ru2.webp';
+import ru3 from '../assets/server/ru3.webp';
+import ru4 from '../assets/server/ru4.webp';
+import ru5 from '../assets/server/ru5.webp';
+import ru6 from '../assets/server/ru6.webp';
+import ru7 from '../assets/server/ru7.webp';
+
+import hp1 from '../assets/server/hp1.webp';
+import hp2 from '../assets/server/hp2.webp';
+import hp3 from '../assets/server/hp3.webp';
 
 import disp32 from "../assets/Display/disp32.webp";
 import disp33 from "../assets/Display/disp33.webp";
@@ -1530,8 +1603,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell UltraSharp U3225QE',
       description: 'The world\'s first 32" 4K IPS Black monitor with Thunderbolt 4 hub.',
       count: 12,
-      price: 749,
-      image: 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: m4k1,
       specs: ['31.5"', '4K UHD (3840x2160)', '120Hz', 'IPS Black (2000:1 Contrast)', '98% DCI-P3']
     },
     {
@@ -1539,8 +1611,7 @@ export const catalogData: Record<string, Category> = {
       name: 'LG UltraGear 27GP850-B',
       description: 'Nano IPS gaming powerhouse with overclocked 180Hz refresh rate.',
       count: 25,
-      price: 349,
-      image: 'https://images.pexels.com/photos/7033923/pexels-photo-7033923.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: m4k2,
       specs: ['27"', '2K QHD (2560x1440)', '180Hz (OC)', 'Nano IPS', '1ms GtG']
     },
     {
@@ -1548,8 +1619,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS ProArt PA279CV',
       description: 'Factory-calibrated 4K display designed for professional creative work.',
       count: 8,
-      price: 499,
-      image: 'https://images.pexels.com/photos/38568/apple-imac-ipad-workplace-38568.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: m4k3,
       specs: ['27"', '4K UHD (3840x2160)', '60Hz', 'Delta E < 2 Accuracy', '100% sRGB']
     },
     {
@@ -1557,8 +1627,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Samsung Odyssey G7 (1000R)',
       description: 'Supreme 1000R curved screen for total immersive gaming.',
       count: 15,
-      price: 599,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: m4k4,
       specs: ['32"', '2K QHD (2560x1440)', '240Hz', 'QLED Panel', 'HDR600']
     },
     {
@@ -1566,8 +1635,7 @@ export const catalogData: Record<string, Category> = {
       name: 'MSI MPG 272URX QD-OLED',
       description: 'Stunning 4K QD-OLED panel with infinite contrast and 0.03ms response.',
       count: 6,
-      price: 899,
-      image: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: m4k5,
       specs: ['27"', '4K UHD (3840x2160)', '240Hz', 'QD-OLED', '99% DCI-P3']
     },
     {
@@ -1575,8 +1643,7 @@ export const catalogData: Record<string, Category> = {
       name: 'BenQ RD280U (Coding Series)',
       description: 'Specialized 4K monitor with a 3:2 aspect ratio perfect for developers.',
       count: 10,
-      price: 599,
-      image: 'https://images.pexels.com/photos/52608/pexels-photo-52608.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: m4k6,
       specs: ['28"', '4K+ (3840x2560)', '60Hz', 'Anti-Glare Fine-Coated', 'Coding Mode']
     }
   ]
@@ -1589,8 +1656,7 @@ export const catalogData: Record<string, Category> = {
       name: 'ASUS ROG Swift OLED PG27AQDP',
       description: 'The world\'s first 1440p 480Hz OLED monitor for elite competitive gaming.',
       count: 10,
-      price: 999,
-      image: 'https://images.pexels.com/photos/7014329/pexels-photo-7014329.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: gam1,
       specs: ['27"', '2560x1440', '480Hz', 'OLED Panel', '0.03ms Response']
     },
     {
@@ -1598,46 +1664,17 @@ export const catalogData: Record<string, Category> = {
       name: 'LG UltraGear 32GS95UE',
       description: 'Revolutionary Dual-Mode: Switch between 4K/240Hz and 1080p/480Hz instantly.',
       count: 8,
-      price: 1199,
-      image: 'https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: gam2,
       specs: ['31.5"', '4K UHD / 1080p', '240Hz / 480Hz', 'WOLED', 'Pixel Sound']
-    },
-    {
-      id: 'alienware-qd-oled',
-      name: 'Alienware AW3423DWF',
-      description: 'Voted best curved gaming monitor with stunning Quantum Dot OLED technology.',
-      count: 12,
-      price: 899,
-      image: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=600',
-      specs: ['34" Curved', '3440x1440', '165Hz', 'QD-OLED', 'Infinite Contrast']
     },
     {
       id: 'samsung-odyssey-g9',
       name: 'Samsung Odyssey OLED G9',
       description: 'Massive 49-inch super ultrawide for the ultimate racing and sim immersion.',
       count: 5,
-      price: 1599,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: gam3,
       specs: ['49" Curved', '5120x1440', '240Hz', 'QD-OLED', '0.03ms GtG']
     },
-    {
-      id: 'msi-mag-mini-led',
-      name: 'MSI MAG 274UPDF Mini-LED',
-      description: 'Punchy HDR-first choice with 4K detail and high-speed motion.',
-      count: 15,
-      price: 549,
-      image: 'https://images.pexels.com/photos/52608/pexels-photo-52608.jpeg?auto=compress&cs=tinysrgb&w=600',
-      specs: ['27"', '4K UHD', '160Hz', 'Mini-LED', 'DisplayHDR 1000']
-    },
-    {
-      id: 'zowie-xl-esports',
-      name: 'BenQ ZOWIE XL2566K',
-      description: 'The definitive choice for CS2 and Valorant pros with DyAc⁺ technology.',
-      count: 20,
-      price: 599,
-      image: 'https://images.pexels.com/photos/684385/pexels-photo-684385.jpeg?auto=compress&cs=tinysrgb&w=600',
-      specs: ['24.5"', '1920x1080', '360Hz', 'Fast TN Panel', 'DyAc⁺ Tech']
-    }
   ]
 },
 
@@ -1649,8 +1686,7 @@ export const catalogData: Record<string, Category> = {
       name: 'LG OLED Flex (LX3)',
       description: 'The ultimate tool for editors: A screen that transforms from flat to a 900R curve at the touch of a button.',
       count: 5,
-      price: 2499,
-      image: 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: curv1,
       specs: ['42" Flexible OLED', '4K UHD', 'Flat to 900R Curve', '0.1ms Response', 'SAR Anti-Reflection']
     },
     {
@@ -1658,8 +1694,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Dell UltraSharp 40 Curved (U4025QW)',
       description: 'The world\'s first 5K2K 120Hz monitor. Massive horizontal space for 4K video timelines.',
       count: 12,
-      price: 1999,
-      image: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: curv2,
       specs: ['39.5" Curved', '5K2K (5120x2160)', '120Hz', 'IPS Black Tech', '99% DCI-P3']
     },
     {
@@ -1667,40 +1702,20 @@ export const catalogData: Record<string, Category> = {
       name: 'Samsung ViewFinity S95VC',
       description: 'Designed for designers. A 1000R curve that matches the human field of view to reduce eye strain.',
       count: 18,
-      price: 899,
-      image: 'https://images.pexels.com/photos/3589903/pexels-photo-3589903.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: curv3,
       specs: ['34" Ultra-Wide', '3440x1440', '100Hz', 'Integrated KVM Switch', 'USB-C 90W Charging']
-    },
-    {
-      id: 'benq-pd3420q',
-      name: 'BenQ DesignVue PD3420Q',
-      description: 'Mac-ready curved display with "M-Book" mode for perfect color syncing with MacBook Pros.',
-      count: 10,
-      price: 799,
-      image: 'https://images.pexels.com/photos/38568/apple-imac-ipad-workplace-38568.jpeg?auto=compress&cs=tinysrgb&w=600',
-      specs: ['34" WQHD', 'VESA HDR400', 'Calman Verified', 'Pantone Validated', 'Uniformity Tech']
     },
     {
       id: 'asus-proart-curved',
       name: 'ASUS ProArt PA34VCNV',
       description: 'Calibrated for professional video editing with a subtle 3800R curve for distortion-free viewing.',
       count: 7,
-      price: 749,
-      image: 'https://images.pexels.com/photos/434844/pexels-photo-434844.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: curv4,
       specs: ['34.1" Curved', '21:9 Aspect Ratio', 'Delta E < 2', 'Daisy Chain Support', 'Calman Ready']
     },
-    {
-      id: 'viewsonic-colorpro',
-      name: 'ViewSonic ColorPro VP3881a',
-      description: 'Extra-large 38" canvas for colorists who need immersive depth and 10-bit color.',
-      count: 9,
-      price: 1099,
-      image: 'https://images.pexels.com/photos/251225/pexels-photo-251225.jpeg?auto=compress&cs=tinysrgb&w=600',
-      specs: ['38" WQHD+', '2300R Curve', 'HDR10 Support', '95% DCI-P3', 'Hardware Calibration']
-    }
   ]
 },
-  "Modern4KTVs": {
+"Modern4KTVs": {
     name: 'Modern 4K TVs',
     products: [
      
@@ -1710,8 +1725,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung Crystal UHD 4K 65"',
         description: 'Ultra-slim AirSlim design that fits perfectly against the wall.',
         count: 12,
-        price: 135000,
-        image: 'https://images.pexels.com/photos/5202925/pexels-photo-5202925.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv1,
         specs: ['65-inch 4K', 'AirSlim Profile', 'Object Tracking Sound Lite', 'Tizen OS']
       },
       {
@@ -1719,8 +1733,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung QLED Q70C 75"',
         description: 'A massive 75-inch screen for the ultimate "Beto-tin Cinema" experience.',
         count: 5,
-        price: 245000,
-        image: 'https://images.pexels.com/photos/6976094/pexels-photo-6976094.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv2,
         specs: ['75-inch Quantum Dot', '120Hz Refresh Rate', 'Dual LED Backlight', 'Quantum HDR']
       },
       // --- LG SERIES ---
@@ -1729,8 +1742,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG UQ8000 Series 55"',
         description: 'Famous for the "Magic Remote" and the best smart interface (webOS).',
         count: 20,
-        price: 88500,
-        image: 'https://images.pexels.com/photos/2251206/pexels-photo-2251206.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv3,
         specs: ['55-inch 4K', 'α5 Gen5 AI Processor', 'webOS Smart', 'Magic Remote Included']
       },
       {
@@ -1738,8 +1750,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG OLED C3 65"',
         description: 'The king of modern slim TVs. Thinner than a smartphone with perfect blacks.',
         count: 4,
-        price: 295000,
-        image: 'https://images.pexels.com/photos/1040160/pexels-photo-1040160.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv4,
         specs: ['65-inch Self-Lit OLED', 'Ultra-Thin Gallery Design', 'Dolby Vision IQ', 'HDMI 2.1']
       },
       // --- SONY SERIES ---
@@ -1748,8 +1759,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Sony Bravia X80K 65"',
         description: 'Known in Ethiopia for the best picture natural colors and durability.',
         count: 8,
-        price: 185000,
-        image: 'https://images.pexels.com/photos/4009402/pexels-photo-4009402.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv5,
         specs: ['65-inch 4K HDR', 'TRILUMINOS Pro Display', 'Google TV', 'Dolby Atmos']
       },
       // --- HISENSE & TCL (High Popularity in Addis) ---
@@ -1758,8 +1768,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Hisense A6 Series 45"',
         description: 'The best "Middle Size" TV for apartments in Addis. Great 4K quality.',
         count: 30,
-        price: 42000,
-        image: 'https://images.pexels.com/photos/704555/pexels-photo-704555.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv6,
         specs: ['45-inch 4K UHD', 'Dolby Vision HDR', 'Game Mode Plus', 'VIDAA Smart OS']
       },
       {
@@ -1767,18 +1776,15 @@ export const catalogData: Record<string, Category> = {
         name: 'TCL C645 QLED 55"',
         description: 'High-end QLED colors at a very competitive price.',
         count: 18,
-        price: 64000,
-        image: 'https://images.pexels.com/photos/5849559/pexels-photo-5849559.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv7,
         specs: ['55-inch QLED', 'Google TV', 'Dolby Vision/Atmos', 'Hands-free Voice Control']
       },
-
-       {
+      {
         id: 'tv-inf-01',
         name: 'Infinix X5 Smart 4K TV 55"',
         description: 'The most popular choice in Ethiopia for price and performance. Features a frameless design and Android 11.',
         count: 45,
-        price: 48500,
-        image: 'https://images.pexels.com/photos/5721865/pexels-photo-5721865.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv8,
         specs: ['55-inch 4K UHD', 'Frameless Design', 'Android TV', 'Anti-Blue Light Tech']
       },
       {
@@ -1786,8 +1792,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Hisense U7H Quantum 65"',
         description: 'Top-tier brightness, excellent for bright living rooms.',
         count: 10,
-        price: 110000,
-        image: 'https://images.pexels.com/photos/6186812/pexels-photo-6186812.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv9,
         specs: ['65-inch Mini-LED', '120Hz Native', '600+ nits Brightness', 'Local Dimming']
       },
       // --- SPECIALTY SLIM & PREMIUM ---
@@ -1796,8 +1801,7 @@ export const catalogData: Record<string, Category> = {
         name: 'Samsung The Frame 55"',
         description: 'Looks like a piece of art when off. Perfect for luxury home decor.',
         count: 6,
-        price: 155000,
-        image: 'https://images.pexels.com/photos/6312362/pexels-photo-6312362.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv10,
         specs: ['55-inch Matte Display', 'Art Mode', 'Customizable Bezel', 'One Connect Box']
       },
       {
@@ -1805,8 +1809,7 @@ export const catalogData: Record<string, Category> = {
         name: 'LG NanoCell 75 Series 65"',
         description: 'Uses pure colors to deliver a crisp 4K image for football and sports.',
         count: 9,
-        price: 105000,
-        image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv11,
         specs: ['65-inch NanoCell Tech', 'Local Dimming', 'AI Sound Pro', 'ThinQ AI']
       },
       {
@@ -1814,13 +1817,11 @@ export const catalogData: Record<string, Category> = {
         name: 'Xiaomi TV S Mini LED 65"',
         description: 'The newcomer that everyone is talking about. High specs for a lower price.',
         count: 15,
-        price: 92000,
-        image: 'https://images.pexels.com/photos/5849559/pexels-photo-5849559.jpeg?auto=compress&cs=tinysrgb&w=400',
+        image: tv12,
         specs: ['65-inch Mini LED', '144Hz Refresh', 'HyperOS', 'Aluminium Frame']
       }
     ]
-  }
-,
+  },
 
 // ========== NETWORKING SUBCATEGORIES ==========
 "HomeNetworking": {
@@ -1886,7 +1887,7 @@ export const catalogData: Record<string, Category> = {
       description: 'High-performance 48-port gigabit switch with 10G uplinks for enterprise core networks.',
       count: 5,
       price: 1450,
-      image: 'https://images.pexels.com/photos/7014329/pexels-photo-7014329.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete1,
       specs: ['48 x GE Ports', '4 x 10GE SFP+ Uplinks', 'Stacking Support', 'Layer 3 Features', 'Silent Design']
     },
     {
@@ -1894,8 +1895,7 @@ export const catalogData: Record<string, Category> = {
       name: 'MikroTik Cloud Core Router CCR2116',
       description: 'Massive routing power with a 16-core CPU, perfect for ISPs and large-scale office traffic.',
       count: 3,
-      price: 995,
-      image: 'https://images.pexels.com/photos/684385/pexels-photo-684385.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete2,
       specs: ['16-Core 2GHz CPU', '13 x Gigabit Ports', '4 x 10G SFP+ Ports', '16GB RAM', 'Dual Redundant PSU']
     },
     {
@@ -1903,8 +1903,7 @@ export const catalogData: Record<string, Category> = {
       name: 'TP-Link Omada ER8411 VPN Router',
       description: 'Enterprise-grade 10G multi-WAN VPN router integrated with Omada SDN for central management.',
       count: 8,
-      price: 549,
-      image: 'https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete3,
       specs: ['Dual 10G SFP+ Ports', '8 x GE RJ45 Ports', 'SSL/IPSec VPN', 'Centralized Cloud Management', 'Dual PSU']
     },
     {
@@ -1912,8 +1911,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Huawei AirEngine 5761-11 Access Point',
       description: 'Indoor WiFi 6 access point with smart antennas for high-density office environments.',
       count: 15,
-      price: 380,
-      image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+      image: nete4,
       specs: ['WiFi 6 (802.11ax)', '1.775 Gbps', 'Smart Antennas', 'PoE Support', 'Cloud Management']
     },
     {
@@ -1921,8 +1919,7 @@ export const catalogData: Record<string, Category> = {
       name: 'TP-Link JetStream 24-Port PoE+ Switch',
       description: 'Full 24-port PoE+ managed switch with 10G uplinks, ideal for powering IP cameras and APs.',
       count: 10,
-      price: 620,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete5,
       specs: ['24 x PoE+ Ports', '384W Power Budget', '4 x 10G SFP+ Slots', 'L2+ Managed', 'Omada SDN Integrated']
     },
     {
@@ -1931,7 +1928,7 @@ export const catalogData: Record<string, Category> = {
       description: 'A beast of a switch providing 48G ports and dual 40G QSFP+ ports for high-speed server racks.',
       count: 4,
       price: 799,
-      image: 'https://images.pexels.com/photos/159201/server-data-center-rack-cabinet-159201.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete6,
       specs: ['48 x GE Ports', '4 x 10G SFP+', '2 x 40G QSFP+', 'Dual PSU', 'L3 Hardware Offloading']
     }
   ]
@@ -1945,8 +1942,7 @@ export const catalogData: Record<string, Category> = {
       name: 'TP-Link USB 3.0 to Gigabit Ethernet',
       description: 'High-speed foldable network adapter for ultrabooks and laptops without LAN ports.',
       count: 45,
-      price: 29,
-      image: 'https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete7,
       specs: ['USB 3.0', '10/100/1000 Mbps', 'Plug & Play', 'Nintendo Switch Support', 'Compact Design']
     },
     {
@@ -1954,8 +1950,7 @@ export const catalogData: Record<string, Category> = {
       name: 'UGREEN Cat7 Shielded 10Gbps Cable',
       description: 'Professional-grade high-speed SFTP Ethernet cable for 10Gbps networking.',
       count: 100,
-      price: 15,
-      image: 'https://images.pexels.com/photos/204611/pexels-photo-204611.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete8,
       specs: ['Cat7 (S/FTP)', '10Gbps Speed', '600MHz Frequency', 'Gold-Plated RJ45', 'Braided Jacket']
     },
     {
@@ -1963,8 +1958,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Huawei 5G External Antenna',
       description: 'Signal boosting antenna for Huawei 4G/5G routers to stabilize connection in weak areas.',
       count: 20,
-      price: 85,
-      image: 'https://images.pexels.com/photos/4218544/pexels-photo-4218544.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete9,
       specs: ['High Gain 11dBi', '700-5000MHz Support', 'Dual SMA Connector', 'Weatherproof', 'Wall Mount Kit']
     },
     {
@@ -1973,7 +1967,7 @@ export const catalogData: Record<string, Category> = {
       description: 'Power your Access Points or IP Cameras via a single Ethernet cable without a PoE switch.',
       count: 30,
       price: 35,
-      image: 'https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete10,
       specs: ['IEEE 802.3af', 'Gigabit Speed', 'Auto-Determination', 'Up to 100m Range', 'Plug-and-Play']
     },
     {
@@ -1981,8 +1975,7 @@ export const catalogData: Record<string, Category> = {
       name: 'TP-Link 10G SFP+ Fiber Module',
       description: 'Connect your business switches over long distances with professional fiber optic modules.',
       count: 15,
-      price: 120,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete11,
       specs: ['10GBase-SR', 'Multi-Mode Fiber', 'LC/UPC Connector', 'Hot-Pluggable', 'Durable Metal Enclosure']
     },
     {
@@ -1991,7 +1984,7 @@ export const catalogData: Record<string, Category> = {
       description: 'The ultimate workstation dock with 4K HDMI and Gigabit Ethernet for Proactive professionals.',
       count: 25,
       price: 65,
-      image: 'https://images.pexels.com/photos/4050312/pexels-photo-4050312.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete12,
       specs: ['Gigabit RJ45', '4K 60Hz HDMI', '100W Power Delivery', 'SD/TF Card Slots', '3x USB 3.0']
     }
   ]
@@ -2074,7 +2067,7 @@ export const catalogData: Record<string, Category> = {
     }
   ]
 },
-  "CablesConnectors": {
+ "CablesConnectors": {
   name: 'Cables & Connectors',
   products: [
     {
@@ -2082,8 +2075,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Ultra High Speed HDMI 2.1',
       description: 'Certified 8K HDMI cable for high-end graphics and gaming consoles.',
       count: 45,
-      price: 35,
-      image: 'https://images.pexels.com/photos/4050312/pexels-photo-4050312.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete13,
       specs: ['8K@60Hz / 4K@120Hz', '48Gbps Bandwidth', 'Dynamic HDR', 'eARC Support', '2m Braided']
     },
     {
@@ -2091,8 +2083,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Cat8 Ethernet Cable (2000MHz)',
       description: 'The fastest copper networking cable for data centers and high-speed office backbones.',
       count: 60,
-      price: 25,
-      image: 'https://images.pexels.com/photos/204611/pexels-photo-204611.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete14,
       specs: ['40Gbps Speed', '2000MHz Frequency', 'S/FTP Shielded', 'Gold Plated RJ45', 'Weatherproof']
     },
     {
@@ -2100,8 +2091,7 @@ export const catalogData: Record<string, Category> = {
       name: 'DisplayPort 1.4 to HDMI 2.1',
       description: 'Active adapter cable for connecting high-end Workstations to 4K monitors.',
       count: 30,
-      price: 45,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete15,
       specs: ['4K@144Hz Support', 'Uni-directional', 'Zinc Alloy Shell', 'Multi-layer Shielding', 'Plug & Play']
     },
     {
@@ -2109,8 +2099,7 @@ export const catalogData: Record<string, Category> = {
       name: 'OM4 Multimode Fiber Patch',
       description: 'Aqua-jacketed high-speed fiber for local network switch linking.',
       count: 25,
-      price: 55,
-      image: 'https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete16,
       specs: ['10G/40G/100G Ready', 'LC-LC Duplex', '50/125 Micron', 'Low Insertion Loss', '3m Length']
     },
     {
@@ -2118,8 +2107,7 @@ export const catalogData: Record<string, Category> = {
       name: 'USB-C Thunderbolt 4 Cable',
       description: 'The "everything cable" for power, data, and 8K video output.',
       count: 20,
-      price: 75,
-      image: 'https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete17,
       specs: ['40Gbps Data Transfer', '100W Power Delivery', 'Dual 4K Monitor Support', 'Intel Certified', '1m Length']
     },
     {
@@ -2127,8 +2115,7 @@ export const catalogData: Record<string, Category> = {
       name: 'Industrial DB9 Serial to USB',
       description: 'Essential connector for configuring Cisco routers and industrial machinery.',
       count: 15,
-      price: 30,
-      image: 'https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: nete18,
       specs: ['FTDI Chipset', 'RS232 Standard', 'Windows/Mac/Linux', 'Baud rate up to 1Mbps', '1.8m Length']
     }
   ]
@@ -3368,8 +3355,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant DL360 Gen10 Plus',
       description: 'A compact, high-performance 1U server designed for a wide range of workloads and diverse environments.',
       count: 7,
-      price: 3499,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: serv1,
       specs: ['Intel Xeon Scalable 3rd Gen', '1U Rackmount', '8 SFF Drive Bays', 'High-Density Computing']
     },
     {
@@ -3377,8 +3363,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant DL360 Gen11',
       description: 'A rack-optimized 1U dense solution that delivers exceptional compute performance and security for infrastructure.',
       count: 5,
-      price: 4599,
-      image: 'https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: serv2,
       specs: ['Intel Xeon Scalable 4th/5th Gen', 'DDR5 Smart Memory', 'PCIe 5.0 Support', '1U Performance']
     },
     {
@@ -3386,8 +3371,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant DL380 Gen10 Plus',
       description: 'Adaptable for diverse workloads and environments, providing the perfect balance of expandability and scalability.',
       count: 9,
-      price: 4299,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: serv3,
       specs: ['Intel Xeon Scalable 3rd Gen', '2U Rackmount', 'Up to 30 LFF Bays', 'Modular Chassis']
     },
     {
@@ -3395,8 +3379,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant DL380 Gen11',
       description: 'A scalable 2U 2P solution that delivers exceptional compute performance and memory density for data-hungry workloads.',
       count: 4,
-      price: 5899,
-      image: 'https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: serv4,
       specs: ['Dual Intel Xeon Scalable 4th Gen', '2U Rackmount', 'Advanced Security', 'GPU Optimized']
     },
     {
@@ -3404,8 +3387,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant DL325 Gen11',
       description: 'A low-cost, 1U 1P solution delivering high-value performance for virtualization and software-defined storage.',
       count: 12,
-      price: 2999,
-      image: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: serv5,
       specs: ['AMD EPYC 9004 Series', '1U Rackmount', 'Single Socket', 'High-Speed NVMe']
     },
     {
@@ -3413,8 +3395,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant DL560 Gen11',
       description: 'High-density, 4-processor (4P) server for mission-critical workloads and large-scale virtualization.',
       count: 2,
-      price: 12500,
-      image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: serv6,
       specs: ['Quad Intel Xeon Scalable', '2U Rackmount', 'Enterprise ERP/CRM', 'Massive Memory Capacity']
     }
   ]
@@ -3428,8 +3409,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant RL300 Gen11',
       description: 'The HPE ProLiant RL300 Gen11 server delivers next-generation compute performance and power efficiency for cloud-native workloads.',
       count: 12,
-      price: 3899,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hp1,
       specs: ['Ampere Altra Max', 'Up to 128 Cores', '1U Rackmount', 'Cloud-Native Efficiency']
     },
     {
@@ -3437,8 +3417,7 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant RL300 Gen11 Performance',
       description: 'An upgraded RL300 configuration optimized for high-density scale-out computing and digital services.',
       count: 8,
-      price: 5299,
-      image: 'https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hp2,
       specs: ['Ampere Altra Max M128-30', '256GB RAM', 'NVMe Storage', 'Dual 100GbE NIC']
     },
     {
@@ -3446,45 +3425,12 @@ export const catalogData: Record<string, Category> = {
       name: 'HPE ProLiant DL325 Gen11 (Cloud-Optimized)',
       description: 'A versatile 1U rack alternative for customers transitioning to high-efficiency cloud-native architectures.',
       count: 10,
-      price: 3199,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: hp3,
       specs: ['AMD EPYC 9004 Series', '1U Rackmount', 'Single Socket', 'Low Power Profile']
     }
   ]
 },
-// ========== HPE MODULAR / SYNERGY SERVERS ==========
-"HPEModularServers": {
-  name: 'HPE Modular Servers',
-  products: [
-    {
-      id: 'hpe-sy-480-g11',
-      name: 'HPE Synergy 480 Gen11 Compute Module',
-      description: 'The HPE Synergy 480 Gen11 Compute module with 4th Generation Intel® Xeon® Scalable processors is a powerful, flexible resource for any workload.',
-      count: 6,
-      price: 6899,
-      image: 'https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['Dual Intel Xeon Scalable 4th Gen', 'DDR5 Memory', 'Mezzanine Card Slots', 'HPE OneView Managed']
-    },
-    {
-      id: 'hpe-sy-660-g10',
-      name: 'HPE Synergy 660 Gen10 Compute Module',
-      description: 'The HPE Synergy 660 Gen10 Compute Module delivers higher performance and scalability for demanding enterprise-class applications.',
-      count: 4,
-      price: 12500,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['4-Socket (4P) Support', 'Intel Xeon Scalable 2nd Gen', 'High Memory Density', 'Mission-Critical Ready']
-    },
-    {
-      id: 'hpe-sy-d3940',
-      name: 'HPE Synergy D3940 Storage Module',
-      description: 'The HPE Synergy D3940 Storage Module provides a fluid pool of storage resources for the composable infrastructure.',
-      count: 3,
-      price: 5499,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['Up to 40 SFF Drive Bays', '12Gb/s SAS Connection', 'Hot-swappable Drives', 'Flexible Zoning']
-    }
-  ]
-},
+
 // ========== DELL EMC POWEREDGE TOWER SERVERS ==========
 "DellEMCPowerEdgeTowerserver": {
   name: 'Dell EMC PowerEdge Tower server',
@@ -3495,7 +3441,7 @@ export const catalogData: Record<string, Category> = {
       description: 'The 4.5U, single-socket PowerEdge T360 is a specially designed form factor for customers looking for enterprise-class features in a compact tower.',
       count: 12,
       price: 1899,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: del1,
       specs: ['Intel Xeon E-2400', '4.5U Chassis', 'Single Socket (1P)', 'iDRAC9 Management']
     },
     {
@@ -3504,7 +3450,7 @@ export const catalogData: Record<string, Category> = {
       description: 'The Dell PowerEdge T560 is a purpose-built, office-friendly server that delivers high-performance compute and massive storage expandability.',
       count: 7,
       price: 3599,
-      image: 'https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: del2,
       specs: ['Dual Intel Xeon Scalable 4th Gen', 'Quiet Office Acoustics', 'Up to 12 LFF Bays', 'Optional GPU Support']
     }
   ]
@@ -3514,95 +3460,52 @@ export const catalogData: Record<string, Category> = {
   name: 'Dell EMC PowerEdge Rack server',
   products: [
     {
+      id: 'dell-r340',
+      name: 'Dell PowerEdge R340 Rack Server',
+      description: 'Ready for Heavy Workloads! Ideal for small businesses, IT infrastructure, and data-intensive tasks.',
+      count: 8,
+      image: dell1,
+      specs: [
+        'Intel Xeon E-2224 (3.4GHz, 4 Cores)',
+        '32GB DDR4 ECC UDIMM @ 2666MT/s',
+        '2TB x 2 – 7.2K RPM NLSAS 12Gbps (Hot-Plug)',
+        'Up to 4x 3.5" Hot-Plug HDD Bays',
+        'PERC H330 RAID Controller',
+        'iDRAC9 Express Remote Management',
+        'DVD+/-RW, SATA Optical Drive',
+        'Single Hot-Plug 350W PSU',
+        'TPM 2.0 Module Included'
+      ]
+    },
+    {
+      id: 'dell-r440',
+      name: 'Dell PowerEdge R440 Server',
+      description: 'Enterprise Performance! Built for Data Centers, Virtualization, and High-Demand Workloads.',
+      count: 5,
+      image: dell2,
+      specs: [
+        'Dual Intel Xeon Silver 4210R (2.4GHz, 10 Cores Each)',
+        '20 Cores Total / 40 Threads',
+        '32GB RDIMM, 2666MT/s',
+        '2TB x 2 (7.2K RPM, NLSAS, 12Gbps)',
+        '3.5" Chassis (Up to 4 Drives)',
+        'PERC H330 RAID Controller',
+        'Dual (1+1) 550W Hot-Plug PSU',
+        'iDRAC9 Express Remote Management',
+        'Rails & Cable Management Arm Included'
+      ]
+    },
+    {
       id: 'ipsan-1',
       name: 'IP SAN Storage System',
       description: 'iSCSI SAN storage for virtualization',
       count: 6,
-      price: 12999,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: del3,
       specs: ['24 Bays', 'iSCSI Target', 'Dual Controllers', 'Snapshot Support']
     }
   ]
 },
 
-// ========== SERVER ACCESSORIES & COMPONENTS ==========
-"ServerAccessories": {
-  name: 'Server Accessories & Upgrades',
-  products: [
-    {
-      id: 'hpe-ram-32gb',
-      name: 'HPE 32GB DDR5 Smart Memory',
-      description: 'High-speed server RAM optimized for HPE Gen11 ProLiant servers.',
-      count: 50,
-      price: 299,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['DDR5-4800', 'Registered ECC', 'Dual Rank', 'HPE Smart Auth']
-    },
-    {
-      id: 'dell-ram-64gb',
-      name: 'Dell 64GB DDR4 RDIMM',
-      description: 'Enterprise-grade memory upgrade for PowerEdge 14th and 15th Gen servers.',
-      count: 25,
-      price: 450,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['DDR4-3200', '2Rx4 RDIMM', 'ECC Error Correction', 'Certified Dell Part']
-    },
-    {
-      id: 'intel-xeon-gold',
-      name: 'Intel Xeon Gold 6430 Processor',
-      description: '32-Core high-performance CPU upgrade for modern data center workloads.',
-      count: 10,
-      price: 2199,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['32 Cores / 64 Threads', '2.1 GHz Base', 'Sapphire Rapids', 'LGA 4677']
-    },
-    {
-      id: 'amd-epyc-9354',
-      name: 'AMD EPYC 9354 CPU',
-      description: 'High-density 32-core processor for cloud-native and virtualization servers.',
-      count: 5,
-      price: 2850,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['32 Cores', '3.25 GHz', 'Zen 4 Architecture', 'Socket SP5']
-    },
-    {
-      id: 'hpe-1.2tb-sas',
-      name: 'HPE 1.2TB SAS 12G HDD',
-      description: 'Mission-critical 10K RPM hard drive for high-speed data access.',
-      count: 100,
-      price: 189,
-      image: 'https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['10,000 RPM', '12Gb/s Interface', 'SFF 2.5-inch', 'Hot-Plug Tray']
-    },
-    {
-      id: 'dell-2tb-ssd',
-      name: 'Dell 1.92TB Enterprise SSD',
-      description: 'Read-intensive SATA solid state drive for fast application loading.',
-      count: 40,
-      price: 549,
-      image: 'https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['SATA 6Gbps', '1.92TB Capacity', 'Enterprise TLC', 'Power Loss Protection']
-    },
-    {
-      id: 'hpe-rail-kit',
-      name: 'HPE Easy Install Rail Kit',
-      description: 'Universal rack-mount rails for DL360 and DL380 ProLiant servers.',
-      count: 60,
-      price: 125,
-      image: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['2U/1U Compatible', 'Tool-less Install', 'Cable Management Arm', 'Steel Construction']
-    },
-    {
-      id: 'dell-idrac-enterprise',
-      name: 'Dell iDRAC9 Enterprise License',
-      description: 'Software license key for full remote server management and power control.',
-      count: 99,
-      price: 399,
-      image: 'https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['Virtual Console', 'Remote Media', 'Power Capping', 'Email Alerting']
-    }
-  ]
-},
 
 // ========== SERVER RACK CABINETS (RACK UNITS) ==========
 "DifferntRackUnits": {
@@ -3613,8 +3516,7 @@ export const catalogData: Record<string, Category> = {
       name: '9U Wall-Mount Server Cabinet',
       description: 'Compact 9U rack for networking gear and small servers in tight spaces.',
       count: 15,
-      price: 349,
-      image: 'https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: ru1,
       specs: ['9U Height', 'Glass Front Door', 'Wall-Mountable', '19-inch Standard']
     },
     {
@@ -3622,8 +3524,7 @@ export const catalogData: Record<string, Category> = {
       name: '12U Open Frame Rack',
       description: 'Desktop or floor-standing open rack for easy access to server cabling.',
       count: 10,
-      price: 199,
-      image: 'https://images.pexels.com/photos/5081916/pexels-photo-5081916.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: ru2,
       specs: ['12U Height', 'Open Air Flow', 'Heavy-Duty Steel', 'Mobile Casters']
     },
     {
@@ -3631,8 +3532,7 @@ export const catalogData: Record<string, Category> = {
       name: '18U Mid-Size Office Rack',
       description: 'A professional sound-dampened cabinet for office environments.',
       count: 8,
-      price: 599,
-      image: 'https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: ru3,
       specs: ['18U Height', 'Locked Security', 'Built-in Fans', 'Cable Management']
     },
     {
@@ -3640,8 +3540,7 @@ export const catalogData: Record<string, Category> = {
       name: '22U Half-Height Server Rack',
       description: 'Ideal for medium-sized businesses needing space for 10+ rack servers.',
       count: 5,
-      price: 799,
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: ru5,
       specs: ['22U Height', 'Floor Standing', 'Mesh Doors', 'Deep Profile (1000mm)']
     },
     {
@@ -3649,8 +3548,7 @@ export const catalogData: Record<string, Category> = {
       name: '27U Professional Server Cabinet',
       description: 'A "Big" 27U rack designed for high-density storage and GPU servers.',
       count: 4,
-      price: 950,
-      image: 'https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: ru5,
       specs: ['27U Height', 'Reinforced Frame', 'Side Access Panels', 'Grounding Wire']
     },
     {
@@ -3658,8 +3556,7 @@ export const catalogData: Record<string, Category> = {
       name: '42U Full-Size Enterprise Rack',
       description: 'The industry standard 42U data center cabinet for maximum scalability.',
       count: 12,
-      price: 1499,
-      image: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: ru6,
       specs: ['42U Height', 'Full Perforation', 'Split Rear Doors', 'EIA-Standard']
     },
     {
@@ -3667,19 +3564,9 @@ export const catalogData: Record<string, Category> = {
       name: '48U High-Capacity Data Center Rack',
       description: 'Extra-tall 48U cabinet for maximum server density in professional facilities.',
       count: 3,
-      price: 1899,
-      image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: ru7,
       specs: ['48U Height', 'Over-Height Design', 'Integrated Vertical PDU Mounts', '2000lb Capacity']
     },
-    {
-      id: 'rack-portable-4u',
-      name: '4U Portable Flight Case Rack',
-      description: 'Rugged, shock-proof rack for mobile servers and broadcasting on the go.',
-      count: 20,
-      price: 299,
-      image: 'https://images.pexels.com/photos/3653849/pexels-photo-3653849.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specs: ['4U Height', 'Rugged Outer Case', 'Shock Protection', 'Front/Rear Lids']
-    }
   ]
 },
 };
@@ -3758,10 +3645,8 @@ export const getMainCategory = (subcategory: string): string => {
     "HPEProliantMLserver": "Server",
     "HPEProliantDLserver": "Server",
     "HPEProliantRLserver": "Server",
-    "HPEModularServers": "Server",
     "DellEMCPowerEdgeTowerserver": "Server",
     "DellEMCPowerEdgeRackserver": "Server",
-    "ServerAccessories": "Server",
     "DifferntRackUnits": "Server", };
   
   return subcategoryMap[subcategory] || subcategory;
@@ -3772,7 +3657,7 @@ export const getSubcategories = (mainCategory: string): string[] => {
   const subcategoryGroups: Record<string, string[]> = {
     "Desktop": ["BusinessDesktop", "GamingDesktop", "AllinOnePC", "MiniDesktop", "Workstation"],
     "Laptop": ["BusinessLaptop", "StudentLaptop", "UltrabookThinLight", "GamingLaptop"],
-    "Monitor": ["FullHDMonitor", "2K4KMonitor", "GamingMonitor", "CurvedMonitor", "Modern4KTVs"],
+    "Monitor": ["FullHDMonitor", "2K4KMonitor", "GamingMonitor","Modern4KTVs", "CurvedMonitor", ],
     "Networking": ["HomeNetworking", "CommercialNetworking", "NetworkAccessories", "RoutersSwitches", "CablesConnectors"],
     "Accessories": ["KeyboardMouse", "Webcams", "Headphones", "USBHubs", "LaptopStands"],
       "Projector": ["BusinessProjector", "HomeCinemaProjector", "PortableProjector", "ShortThrowProjector", "ProjectorAccessories"], 
@@ -3788,10 +3673,8 @@ export const getSubcategories = (mainCategory: string): string[] => {
     "HPEProliantMLserver",
     "HPEProliantDLserver",
     "HPEProliantRLserver",
-    "HPEModularServers",
     "DellEMCPowerEdgeTowerserver",
     "DellEMCPowerEdgeRackserver",
-    "ServerAccessories",
     "DifferntRackUnits",
   ],// ADD THI
   };
