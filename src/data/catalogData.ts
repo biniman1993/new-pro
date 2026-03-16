@@ -102,7 +102,6 @@ import hpe5 from "../assets/server/hpe5.webp";
 import hpe6 from "../assets/server/hpe6.webp";
 
 
-
 import monitor1 from "../assets/monitor/mon2.webp";
 import monitor2 from "../assets/monitor/mon4.webp";
 import monitor3 from "../assets/monitor/mon5.webp";
@@ -146,6 +145,64 @@ import Projector12 from "../assets/Projector/proj12.webp";
 import Projector13 from "../assets/Projector/proj13.webp";
 import Projector14 from "../assets/Projector/proj14.webp";
 import Projector15 from "../assets/Projector/proj15.webp";
+
+import pri1 from '../assets/printer/pri1.webp';
+import pri2 from '../assets/printer/pri2.webp';
+import pri3 from '../assets/printer/pri3.webp';
+import pri4 from '../assets/printer/pri4.webp';
+import pri5 from '../assets/printer/pri5.webp';
+import pri6 from '../assets/printer/pri6.webp';
+import pri7 from '../assets/printer/pri7.webp';
+import pri8 from '../assets/printer/pri8.webp';
+import pri9 from '../assets/printer/pri9.webp';
+import pri10 from '../assets/printer/pri10.webp';
+import pri11 from '../assets/printer/pri11.webp';
+import pri12 from '../assets/printer/pri12.webp';
+import pri13 from '../assets/printer/pri13.webp';
+import pri14 from '../assets/printer/pri14.webp';
+import pri15 from '../assets/printer/pri15.webp';
+import pri16 from '../assets/printer/pri16.webp';
+import pri17 from '../assets/printer/pri17.webp';
+import pri18 from '../assets/printer/pri18.webp';
+import pri19 from '../assets/printer/pri19.webp';
+import pri20 from '../assets/printer/pri20.webp';
+import pri21 from '../assets/printer/pri21.webp';
+import pri22 from '../assets/printer/pri22.webp';
+import pri23 from '../assets/printer/pri23.webp';
+import pri24 from '../assets/printer/pri24.webp';
+import pri25 from '../assets/printer/pri25.webp';
+import pri26 from '../assets/printer/pri26.webp';
+import pri27 from '../assets/printer/pri27.webp';
+import pri28 from '../assets/printer/pri28.webp';
+import pri29 from '../assets/printer/pri29.webp';
+import pri30 from '../assets/printer/pri30.webp';
+import pri31 from '../assets/printer/pri31.webp';
+import pri32 from '../assets/printer/pri32.webp';
+import pri33 from '../assets/printer/pri33.webp';
+import pri34 from '../assets/printer/pri34.webp';
+import pri35 from '../assets/printer/pri35.webp';
+import pri36 from '../assets/printer/pri36.webp';
+import pri37 from '../assets/printer/pri37.webp';
+import pri38 from '../assets/printer/pri38.webp';
+import pri39 from '../assets/printer/pri39.webp';
+import pri40 from '../assets/printer/pri40.webp';
+import pri41 from '../assets/printer/pri41.webp';
+import pri42 from '../assets/printer/pri42.webp';
+import pri43 from '../assets/printer/pri43.webp';
+import pri44 from '../assets/printer/pri44.webp';
+import pri45 from '../assets/printer/pri45.webp';
+import pri46 from '../assets/printer/pri46.webp';
+import pri47 from '../assets/printer/pri47.webp';
+import pri48 from '../assets/printer/pri48.webp';
+import pri49 from '../assets/printer/pri49.webp';
+import pri50 from '../assets/printer/pri50.webp';
+import pri51 from '../assets/printer/pri51.webp';
+import pri52 from '../assets/printer/pri52.webp';
+import pri53 from '../assets/printer/pri53.webp';
+import pri54 from '../assets/printer/pri54.webp';
+import pri55 from '../assets/printer/pri55.webp';
+import pri56 from '../assets/printer/pri56.webp';
+import pri57 from '../assets/printer/pri57.webp';
 
 import disp1 from "../assets/Display/disp1.webp";
 import disp2 from "../assets/Display/disp2.webp";
@@ -2398,7 +2455,6 @@ export const catalogData: Record<string, Category> = {
       }
     ]
   },
-
 // ========== PRINTER SUBCATEGORIES ==========
   InkjetPrinter: {
     name: "Inkjet Printer",
@@ -2408,8 +2464,7 @@ export const catalogData: Record<string, Category> = {
         name: "HP DeskJet 2855e",
         description: "Affordable all-in-one inkjet printer for home use with wireless connectivity",
         count: 30,
-        price: 89,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri1,
         specs: ["Inkjet Multifunction", "Print/Copy/Scan", "WiFi & Bluetooth", "HP Smart App", "Auto 2-Sided Printing", "60-Sheet Input Tray"],
       
       },
@@ -2418,8 +2473,7 @@ export const catalogData: Record<string, Category> = {
         name: "Epson EcoTank ET-3252",
         description: "Cartridge-free all-in-one with massive page yield and ultra-low cost per page",
         count: 22,
-        price: 299,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri2,
         specs: ["EcoTank Inkjet System", "Print/Copy/Scan", "7,500 Pages Black Yield", "WiFi Direct", "1.44\" Color LCD", "Auto 2-Sided Printing"],
   
       },
@@ -2428,8 +2482,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon PIXMA G3270",
         description: "MegaTank all-in-one printer with high-volume ink tanks for low-cost printing",
         count: 18,
-        price: 229,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri3,
         specs: ["MegaTank Ink System", "Print/Copy/Scan", "6,000 Pages Black", "WiFi & USB", "Borderless Photo Printing", "Rear Paper Feed"],
       
       },
@@ -2438,8 +2491,7 @@ export const catalogData: Record<string, Category> = {
         name: "HP Envy Inspire 7955e",
         description: "Premium home inkjet with photo-quality output and smart features",
         count: 15,
-        price: 199,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri4,
         specs: ["Print/Copy/Scan", "Auto 2-Sided Printing", "Photo Tray Included", "2.7\" Touchscreen", "HP+ Smart Printing", "Self-Healing WiFi"],
      
       },
@@ -2448,8 +2500,7 @@ export const catalogData: Record<string, Category> = {
         name: "Epson Expression Home XP-4200",
         description: "Compact wireless all-in-one with voice-activated printing",
         count: 25,
-        price: 99,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri5,
         specs: ["Print/Copy/Scan", "WiFi & WiFi Direct", "2.4\" LCD Screen", "Auto 2-Sided Printing", "Voice Activated", "100-Sheet Rear Tray"],
   
       },
@@ -2458,8 +2509,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon PIXMA TR8620a",
         description: "All-in-one inkjet with fax, ADF and versatile connectivity for home office",
         count: 12,
-        price: 249,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri6,
         specs: ["Print/Copy/Scan/Fax", "20-Sheet ADF", "4.3\" Touchscreen", "Dual Paper Trays", "Ethernet/WiFi/USB", "Auto 2-Sided Printing"],
  
       },
@@ -2468,8 +2518,7 @@ export const catalogData: Record<string, Category> = {
         name: "Brother INKvestment MFC-J1205W",
         description: "Budget-friendly cartridge-based inkjet with high-yield inks",
         count: 20,
-        price: 149,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri7,
         specs: ["Print/Copy/Scan", "High-Yield Cartridges", "WiFi & Mobile Print", "150-Sheet Tray", "1-Year Ink Included", "Compact Design"],
   
       },
@@ -2483,8 +2532,7 @@ export const catalogData: Record<string, Category> = {
         name: "HP LaserJet Pro 4303dw",
         description: "Color laser all-in-one with advanced security and mobile printing",
         count: 18,
-        price: 699,
-        image: "https://images.pexels.com/photos/4210472/pexels-photo-4210472.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri8,
         specs: ["Color Laser Multifunction", "Print/Copy/Scan", "35 PPM", "Auto Duplex", "WiFi/Ethernet/USB", "4.3\" Touchscreen"],
        
       },
@@ -2493,8 +2541,7 @@ export const catalogData: Record<string, Category> = {
         name: "HP 137fnw Printer",
         description: "Compact laser multifunction printer with fax and wireless connectivity",
         count: 25,
-        price: 349,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri9,
         specs: ["Monochrome Laser MFP", "Print/Copy/Scan/Fax", "20 PPM", "WiFi & Ethernet", "150-Sheet Input", "Manual Duplex"],
    
       },
@@ -2503,8 +2550,7 @@ export const catalogData: Record<string, Category> = {
         name: "Brother HL-L2460DW",
         description: "Reliable monochrome laser printer with fast duplex printing",
         count: 30,
-        price: 199,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri10,
         specs: ["Monochrome Laser", "36 PPM", "Auto Duplex", "WiFi/USB", "250-Sheet Tray", "High-Yield Toner Ready"],
       
       },
@@ -2513,8 +2559,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon imageCLASS LBP236dw",
         description: "Compact mono laser with mobile-ready wireless and fast output",
         count: 20,
-        price: 249,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri11,
         specs: ["Monochrome Laser", "40 PPM", "Auto Duplex", "WiFi Direct", "250-Sheet Cassette", "5-Line LCD"],
 
       },
@@ -2523,8 +2568,7 @@ export const catalogData: Record<string, Category> = {
         name: "HP Color LaserJet Pro M255dw",
         description: "Fast color laser with best-in-class security for small teams",
         count: 15,
-        price: 399,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri12,
         specs: ["Color Laser", "22 PPM", "Auto Duplex", "WiFi/Ethernet", "250-Sheet Tray", "2.7\" Touchscreen"],
  
       },
@@ -2533,8 +2577,7 @@ export const catalogData: Record<string, Category> = {
         name: "Lexmark MS631dw",
         description: "Enterprise mono laser with heavy-duty cycle and cloud connectivity",
         count: 10,
-        price: 549,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri13,
         specs: ["Monochrome Laser", "50 PPM", "Auto Duplex", "WiFi/Ethernet/USB", "550-Sheet Tray", "Cloud Fax Ready"],
  
       },
@@ -2543,8 +2586,7 @@ export const catalogData: Record<string, Category> = {
         name: "Samsung Xpress M2835DW",
         description: "Affordable mono laser with NFC tap-to-print technology",
         count: 22,
-        price: 179,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri14,
         specs: ["Monochrome Laser", "29 PPM", "Auto Duplex", "NFC Printing", "WiFi Direct", "250-Sheet Tray"],
       },
     ],
@@ -2557,8 +2599,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon Machine IR 2425i",
         description: "A3 monochrome laser multifunction printer for small to medium offices",
         count: 12,
-        price: 1899,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri15,
         specs: ["A3 Monochrome Laser MFP", "Print/Copy/Scan (Color Scan)", "25 PPM", "Duplex Printing", "Network Ready", "600x600 dpi", "USB/Ethernet", "550-Sheet Cassette"],
   
       },
@@ -2567,8 +2608,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon Machine C3326i",
         description: "A3 color laser multifunction printer with 26ppm speed and advanced security",
         count: 8,
-        price: 3499,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri16,
         specs: ["A3 Color Laser Multifunctional", "Print/Copy/Scan/Send (Optional Fax)", "26 PPM Color & B/W", "Duplex & DADF", "7\" Touchscreen", "Secure Print", "WiFi/Ethernet/USB", "1200x1200 dpi", "550-Sheet Cassette x2", "Advanced Security Suite", "Cloud Connect Ready", "Mobile Print Support", "PDF/XPS Direct Print", "Dept. ID Management", "Universal Print Ready"],
   
       },
@@ -2577,8 +2617,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon Machine 2945i",
         description: "High-speed A3 multifunction printer with 45ppm output for busy offices",
         count: 6,
-        price: 2999,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri17,
         specs: ["A3 Monochrome Laser MFP", "45 PPM Print Speed", "Duplex & RADF", "7\" Touchscreen", "Network Ready", "1200x1200 dpi", "550-Sheet Cassette x2", "Secure Print", "Cloud Ready"],
   
       },
@@ -2587,8 +2626,7 @@ export const catalogData: Record<string, Category> = {
         name: "HP LaserJet Pro MFP M428fdw",
         description: "Advanced monochrome laser all-in-one with fax and enhanced security",
         count: 20,
-        price: 549,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri18,
         specs: ["Monochrome Laser MFP", "Print/Copy/Scan/Fax", "40 PPM", "Auto Duplex", "50-Sheet ADF", "2.7\" Touchscreen", "WiFi/Ethernet/USB", "250-Sheet Tray"],
   
       },
@@ -2597,8 +2635,7 @@ export const catalogData: Record<string, Category> = {
         name: "Brother MFC-L8900CDW",
         description: "Business color laser all-in-one with advanced paper handling",
         count: 10,
-        price: 799,
-        image: "https://images.pexels.com/photos/4210472/pexels-photo-4210472.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri19,
         specs: ["Color Laser MFP", "Print/Copy/Scan/Fax", "33 PPM", "Auto Duplex", "70-Sheet ADF", "WiFi/NFC/USB", "5\" Touchscreen", "250-Sheet Tray"],
 
       },
@@ -2607,8 +2644,7 @@ export const catalogData: Record<string, Category> = {
         name: "Epson WorkForce Pro WF-4830",
         description: "Precision Core inkjet all-in-one for productive small workgroups",
         count: 15,
-        price: 299,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri20,
         specs: ["PrecisionCore Inkjet MFP", "Print/Copy/Scan/Fax", "25 PPM", "Auto Duplex", "50-Sheet ADF", "4.3\" Touchscreen", "WiFi/Ethernet/USB", "500-Sheet Capacity"],
       
       },
@@ -2622,8 +2658,7 @@ export const catalogData: Record<string, Category> = {
         name: "Fujitsu ScanSnap iX1600",
         description: "High-speed wireless document scanner with touchscreen",
         count: 15,
-        price: 449,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri21,
         specs: ["40 PPM / 80 IPM", "Duplex Scanning", "50-Sheet ADF", "4.3\" Touchscreen", "WiFi/USB", "Cloud Direct Connect"],
     
       },
@@ -2632,8 +2667,7 @@ export const catalogData: Record<string, Category> = {
         name: "Epson DS-530 II",
         description: "Color duplex document scanner with superior paper handling",
         count: 20,
-        price: 379,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri22,
         specs: ["35 PPM / 70 IPM", "Duplex Color", "50-Sheet ADF", "USB 3.0", "Twain/ISIS Support", "600 dpi Optical"],
    
       },
@@ -2642,8 +2676,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon imageFORMULA DR-C225 II",
         description: "Compact desktop scanner with reliable feeding for mixed documents",
         count: 18,
-        price: 329,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri23,
         specs: ["25 PPM / 50 IPM", "Duplex Scanning", "30-Sheet Feeder", "USB 2.0", "CaptureOnTouch Software", "Compact Design"],
     
       },
@@ -2652,8 +2685,7 @@ export const catalogData: Record<string, Category> = {
         name: "Brother ADS-4700W",
         description: "Professional wireless desktop scanner with high-speed duplex",
         count: 10,
-        price: 499,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri24,
         specs: ["40 PPM / 80 IPM", "Duplex Scanning", "80-Sheet ADF", "WiFi/Ethernet/USB", "4.3\" Touchscreen", "Scan to Cloud"],
       
       },
@@ -2662,8 +2694,7 @@ export const catalogData: Record<string, Category> = {
         name: "Epson Perfection V600 Photo",
         description: "Flatbed photo scanner with film scanning capability",
         count: 25,
-        price: 279,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri25,
         specs: ["6400 dpi Optical", "Flatbed A4", "Film & Slide Holder", "USB 2.0", "Digital ICE Technology", "ReadyScan LED"],
      
       },
@@ -2672,8 +2703,7 @@ export const catalogData: Record<string, Category> = {
         name: "Fujitsu ScanSnap iX100",
         description: "Ultra-portable battery-powered scanner for mobile professionals",
         count: 35,
-        price: 229,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri26,
         specs: ["5.2 sec/page", "Battery Powered", "WiFi & USB", "260g Ultra-Light", "GI Microprocessor", "Cloud Sync Ready"],
   
       },
@@ -2687,48 +2717,27 @@ export const catalogData: Record<string, Category> = {
         name: "HP 206A Toner Cartridge Set",
         description: "Original HP CMYK toner set for Color LaserJet Pro series",
         count: 50,
-        price: 299,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri27,
         specs: ["CMYK 4-Pack", "1,350 Pages Each", "Original HP", "LaserJet Compatible", "Smart Print Technology", "Easy Install"],
   
       },
-      {
-        id: "acc-2",
-        name: "A4 Copy Paper Premium 5-Ream",
-        description: "High-quality 80 GSM A4 paper, 2500 sheets for everyday printing",
-        count: 200,
-        price: 39,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["2500 Sheets (5 Reams)", "A4 Size", "80 GSM", "Bright White 104", "Acid Free", "Laser & Inkjet Compatible"],
-    
-      },
+     
       {
         id: "acc-3",
         name: "USB Printer Cable 3m",
         description: "High-speed USB 2.0 A to B printer cable for reliable connection",
         count: 100,
-        price: 12,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri28,
         specs: ["USB 2.0 A-to-B", "3 Meter Length", "Gold Plated", "480 Mbps", "Universal Fit", "Shielded Cable"],
 
       },
-      {
-        id: "acc-4",
-        name: "Printer Stand with Storage",
-        description: "Rolling printer cart with paper storage shelf and cable management",
-        count: 30,
-        price: 89,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["2-Tier Design", "Rolling Casters", "Paper Storage Shelf", "Cable Management", "80 kg Capacity", "Steel Frame"],
-  
-      },
+     
       {
         id: "acc-5",
         name: "Canon PG-245XL/CL-246XL Combo",
         description: "High-yield black and color ink cartridge combo pack for PIXMA printers",
         count: 45,
-        price: 59,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri29,
         specs: ["Black + Color Combo", "High Yield XL", "Original Canon", "PIXMA Compatible", "FINE Technology", "Easy Install"],
   
       },
@@ -2737,8 +2746,7 @@ export const catalogData: Record<string, Category> = {
         name: "Wireless Print Server",
         description: "Share any USB printer over WiFi network with multiple devices",
         count: 20,
-        price: 79,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri30,
         specs: ["WiFi 802.11n", "USB 2.0 Port", "Multi-User Support", "Easy Web Setup", "Windows/Mac/Linux", "Compact Design"],
       },
     ],
@@ -2751,8 +2759,7 @@ export const catalogData: Record<string, Category> = {
         name: "HP LaserJet Enterprise M611dn",
         description: "High-speed enterprise mono laser with robust security features",
         count: 10,
-        price: 899,
-        image: "https://images.pexels.com/photos/4210472/pexels-photo-4210472.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri31,
         specs: ["Monochrome Laser", "65 PPM", "Auto Duplex", "Ethernet/USB", "550-Sheet Tray", "HP Sure Start Security"],
 
       },
@@ -2761,8 +2768,7 @@ export const catalogData: Record<string, Category> = {
         name: "Xerox VersaLink B410DN",
         description: "Business mono laser with cloud connectivity and app-based workflow",
         count: 12,
-        price: 549,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri32,
         specs: ["Monochrome Laser", "50 PPM", "Auto Duplex", "WiFi/Ethernet", "550-Sheet Tray", "Xerox ConnectKey"],
     
       },
@@ -2771,8 +2777,7 @@ export const catalogData: Record<string, Category> = {
         name: "Brother HL-L6400DW",
         description: "Workgroup mono laser with massive paper capacity and fast output",
         count: 8,
-        price: 699,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri33,
         specs: ["Monochrome Laser", "52 PPM", "Auto Duplex", "WiFi/Ethernet/USB", "570-Sheet Standard", "Up to 1610 Sheets"],
       },
       {
@@ -2780,8 +2785,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon imageCLASS LBP674Cdw",
         description: "Fast color laser with vibrant output for document-heavy offices",
         count: 14,
-        price: 499,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri34,
         specs: ["Color Laser", "35 PPM", "Auto Duplex", "WiFi/Ethernet", "250-Sheet Cassette", "5\" Touchscreen"],
     
       },
@@ -2790,8 +2794,7 @@ export const catalogData: Record<string, Category> = {
         name: "Lexmark B3442dw",
         description: "Compact mono laser ideal for small workgroups needing reliable output",
         count: 20,
-        price: 249,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri35,
         specs: ["Monochrome Laser", "42 PPM", "Auto Duplex", "WiFi/USB", "250-Sheet Tray", "Eco-Mode"],
       },
       {
@@ -2799,8 +2802,7 @@ export const catalogData: Record<string, Category> = {
         name: "Kyocera ECOSYS P3145dn",
         description: "Long-life mono laser with ultra-low running costs",
         count: 10,
-        price: 599,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri36,
         specs: ["Monochrome Laser", "45 PPM", "Auto Duplex", "Ethernet/USB", "500-Sheet Tray", "100,000 Monthly Duty"],
       },
     ],
@@ -2813,8 +2815,7 @@ export const catalogData: Record<string, Category> = {
         name: "HP DesignJet T250 24\"",
         description: "Compact large-format printer for CAD and GIS applications",
         count: 8,
-        price: 1099,
-        image: "https://images.pexels.com/photos/4210472/pexels-photo-4210472.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri37,
         specs: ["24\" Wide Format", "Inkjet Technology", "WiFi/Ethernet/USB", "76 A1 Prints/Hour", "Auto Sheet Feeder", "HP Smart App"],
       
       },
@@ -2823,8 +2824,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon imagePROGRAF TM-300",
         description: "36-inch large format printer for posters, CAD, and technical drawings",
         count: 5,
-        price: 2299,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri38,
         specs: ["36\" Wide Format", "5-Color Pigment Ink", "WiFi/Ethernet/USB", "3\" Touchscreen", "Hot-Swap Ink Tanks", "PosterArtist Lite"],
       
       },
@@ -2833,41 +2833,11 @@ export const catalogData: Record<string, Category> = {
         name: "Epson SureColor T3475",
         description: "24-inch wireless wide-format printer for construction & architecture",
         count: 6,
-        price: 1599,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri39,
         specs: ["24\" Wide Format", "4-Color UltraChrome XD2", "WiFi/Ethernet", "4.3\" Touchscreen", "Auto Cutter", "Roll & Cut Sheet"],
        
       },
-      {
-        id: "lf-4",
-        name: "HP DesignJet T650 36\"",
-        description: "Space-saving 36-inch printer with 25-second D/A1 output",
-        count: 4,
-        price: 2499,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["36\" Wide Format", "25 sec/A1 Page", "WiFi/Ethernet/USB", "HP Click Software", "Auto Sheet Feeder", "Compact Stand"],
       
-      },
-      {
-        id: "lf-5",
-        name: "Canon imagePROGRAF PRO-1000",
-        description: "17-inch professional photo printer with 12-color LUCIA PRO ink",
-        count: 7,
-        price: 1299,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["17\" Format", "12-Color LUCIA PRO", "WiFi/Ethernet/USB", "3\" LCD", "Vacuum Feeding System", "ICC Profile Support"],
-     
-      },
-      {
-        id: "lf-6",
-        name: "Epson SureColor P900",
-        description: "17-inch pro photo printer with UltraChrome PRO10 10-color ink",
-        count: 5,
-        price: 1199,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["17\" Format", "10-Color UltraChrome PRO10", "WiFi/Ethernet/USB", "4.3\" Touchscreen", "Carbon Black Ink", "Roll Paper Support"],
-      
-      },
     ],
   },
   IDCardPrinter: {
@@ -2878,8 +2848,7 @@ export const catalogData: Record<string, Category> = {
         name: "Fargo DTC1250e",
         description: "Single-sided direct-to-card printer for basic ID card needs",
         count: 15,
-        price: 1199,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri40,
         specs: ["Single-Sided", "300 dpi", "USB Connection", "100 Card Hopper", "16 sec/card Color", "Edge-to-Edge Printing"],
       
       },
@@ -2888,8 +2857,7 @@ export const catalogData: Record<string, Category> = {
         name: "Zebra ZC300",
         description: "Dual-sided ID card printer with fast print speed and USB/Ethernet",
         count: 10,
-        price: 1899,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri41,
         specs: ["Dual-Sided", "300 dpi", "USB/Ethernet", "200 Card Hopper", "10 sec/card Mono", "Smart Card Encoding"],
     
       },
@@ -2898,41 +2866,11 @@ export const catalogData: Record<string, Category> = {
         name: "Magicard 600",
         description: "Retransfer ID card printer with Holokote anti-counterfeit feature",
         count: 8,
-        price: 2499,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri42,
         specs: ["Retransfer Technology", "600 dpi", "USB/Ethernet", "Holokote Watermark", "100 Card Hopper", "Dual-Sided Option"],
      
       },
-      {
-        id: "id-4",
-        name: "Evolis Primacy 2",
-        description: "High-performance dual-sided card printer for medium volume",
-        count: 12,
-        price: 2199,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Dual-Sided", "300 dpi", "USB/Ethernet/WiFi", "100 Card Feeder", "225 cards/hour", "Encoding Options"],
-     
-      },
-      {
-        id: "id-5",
-        name: "Fargo HDP5000",
-        description: "Retransfer printer for over-the-edge high-definition printing",
-        count: 6,
-        price: 3299,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["HDP Retransfer", "300 dpi", "USB/Ethernet", "200 Card Hopper", "Dual-Sided Standard", "Magnetic/Smart Encoding"],
       
-      },
-      {
-        id: "id-6",
-        name: "Zebra ZC100",
-        description: "Entry-level single-sided card printer for basic ID and access cards",
-        count: 20,
-        price: 799,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Single-Sided", "300 dpi", "USB Connection", "100 Card Input", "Direct-to-Card", "Compact Design"],
-     
-      },
     ],
   },
   POSPrinter: {
@@ -2943,8 +2881,7 @@ export const catalogData: Record<string, Category> = {
         name: "Epson TM-T88VI",
         description: "Industry-leading thermal receipt printer for retail and hospitality",
         count: 30,
-        price: 449,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri43,
         specs: ["Thermal Receipt", "350 mm/sec", "USB/Ethernet/Serial", "Auto Cutter", "NFC Pairing", "Paper Saving Mode"],
      
       },
@@ -2953,8 +2890,7 @@ export const catalogData: Record<string, Category> = {
         name: "Star TSP143IV",
         description: "Cloud-ready thermal receipt printer with multiple interfaces",
         count: 25,
-        price: 399,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri44,
         specs: ["Thermal Receipt", "250 mm/sec", "WiFi/USB/Ethernet", "Auto Cutter", "CloudPRNT", "Splash-Proof"],
        
       },
@@ -2963,41 +2899,11 @@ export const catalogData: Record<string, Category> = {
         name: "Bixolon SRP-350plusV",
         description: "High-speed POS receipt printer with advanced connectivity",
         count: 20,
-        price: 349,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri45,
         specs: ["Thermal Receipt", "300 mm/sec", "USB/Ethernet", "Auto Cutter", "80mm Width", "Drop-In Paper Load"],
       
       },
-      {
-        id: "pos-4",
-        name: "Citizen CT-S310II",
-        description: "Reliable dual-interface thermal receipt printer for POS systems",
-        count: 22,
-        price: 279,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Thermal Receipt", "160 mm/sec", "USB/Serial", "Auto Cutter", "Compact Body", "Easy Maintenance"],
-       
-      },
-      {
-        id: "pos-5",
-        name: "Epson TM-M30II",
-        description: "Compact tablet-compatible receipt printer for modern POS setups",
-        count: 18,
-        price: 399,
-        image: "https://images.pexels.com/photos/4210472/pexels-photo-4210472.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Thermal Receipt", "250 mm/sec", "WiFi/Bluetooth/USB", "Auto Cutter", "Tablet Linking", "Top or Front Exit"],
       
-      },
-      {
-        id: "pos-6",
-        name: "Star mC-Print3",
-        description: "Future-proof POS printer with all-in-one connectivity hub",
-        count: 14,
-        price: 499,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Thermal Receipt", "250 mm/sec", "USB-C/LAN/BT/WiFi", "Auto Cutter", "Peripheral Hub", "SteadyLAN Ethernet"],
-      
-      },
     ],
   },
   LabelPrinter: {
@@ -3008,8 +2914,7 @@ export const catalogData: Record<string, Category> = {
         name: "Zebra ZD421",
         description: "Desktop thermal transfer label printer for retail and healthcare",
         count: 20,
-        price: 499,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri46,
         specs: ["Thermal Transfer/Direct", "4\" Print Width", "203 dpi", "USB/Ethernet/BT", "152 mm/sec", "Peeler Option"],
       
       },
@@ -3018,8 +2923,7 @@ export const catalogData: Record<string, Category> = {
         name: "Brother QL-820NWB",
         description: "Professional wireless label printer with color display",
         count: 25,
-        price: 299,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri47,
         specs: ["Direct Thermal", "2.4\" Width", "300 dpi", "WiFi/BT/USB", "Color LCD", "Auto Cutter"],
       
       },
@@ -3028,41 +2932,11 @@ export const catalogData: Record<string, Category> = {
         name: "DYMO LabelWriter 550 Turbo",
         description: "High-speed USB/LAN label printer for shipping and organization",
         count: 30,
-        price: 199,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri48,
         specs: ["Direct Thermal", "2.2\" Width", "300 dpi", "USB/Ethernet", "71 Labels/Minute", "No Ink Required"],
      
       },
-      {
-        id: "label-4",
-        name: "TSC TE210",
-        description: "Versatile desktop barcode label printer for warehouse and logistics",
-        count: 18,
-        price: 349,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Thermal Transfer/Direct", "4.25\" Width", "203 dpi", "USB/Ethernet/Serial", "152 mm/sec", "5\" Roll Capacity"],
       
-      },
-      {
-        id: "label-5",
-        name: "Zebra ZT411",
-        description: "Industrial mid-range label printer for manufacturing and logistics",
-        count: 8,
-        price: 1299,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Industrial Thermal", "4\" Width", "300 dpi", "USB/ETH/BT/WiFi", "356 mm/sec", "Color Touchscreen"],
-      
-      },
-      {
-        id: "label-6",
-        name: "Honeywell PC42t",
-        description: "Affordable compact label printer for light-duty applications",
-        count: 22,
-        price: 249,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Thermal Transfer/Direct", "4\" Width", "203 dpi", "USB/Ethernet", "100 mm/sec", "Easy Load Design"],
-      
-      },
     ],
   },
   Photocopier: {
@@ -3073,8 +2947,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon imageRUNNER 2630i",
         description: "A3 monochrome multifunction copier for medium workgroups",
         count: 8,
-        price: 2499,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri49,
         specs: ["A3 Mono Copier", "30 PPM", "Print/Copy/Scan", "Duplex & DADF", "7\" Touchscreen", "Secure Print"],
       
       },
@@ -3083,8 +2956,7 @@ export const catalogData: Record<string, Category> = {
         name: "Ricoh IM C3010",
         description: "A3 color multifunction copier with smart operation panel",
         count: 5,
-        price: 4299,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri50,
         specs: ["A3 Color Copier", "30 PPM", "Print/Copy/Scan/Fax", "Auto Duplex", "10.1\" Smart Panel", "Cloud & Mobile Ready"],
      
       },
@@ -3093,8 +2965,7 @@ export const catalogData: Record<string, Category> = {
         name: "Konica Minolta bizhub C250i",
         description: "A3 color MFP with AI-powered workflow and robust security",
         count: 6,
-        price: 3999,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri51,
         specs: ["A3 Color MFP", "25 PPM", "Print/Copy/Scan/Fax", "Auto Duplex", "10.1\" Panel", "MarketPlace Apps"],
       
       },
@@ -3103,8 +2974,7 @@ export const catalogData: Record<string, Category> = {
         name: "Xerox AltaLink C8155",
         description: "A3 color multifunction printer with ConnectKey technology",
         count: 4,
-        price: 5999,
-        image: "https://images.pexels.com/photos/4210472/pexels-photo-4210472.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri52,
         specs: ["A3 Color MFP", "55 PPM", "Print/Copy/Scan/Fax", "Auto Duplex", "10\" Touchscreen", "ConnectKey Apps"],
       
       },
@@ -3113,8 +2983,7 @@ export const catalogData: Record<string, Category> = {
         name: "Sharp MX-3071",
         description: "A3 color MFP with advanced document management",
         count: 7,
-        price: 3499,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri53,
         specs: ["A3 Color MFP", "30 PPM", "Print/Copy/Scan/Fax", "Auto Duplex", "10.1\" Touchscreen", "Cloud Portal Office"],
       
       },
@@ -3123,78 +2992,13 @@ export const catalogData: Record<string, Category> = {
         name: "Canon imageRUNNER ADVANCE DX 6780i",
         description: "High-volume A3 mono copier for large enterprise departments",
         count: 3,
-        price: 8999,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri54,
         specs: ["A3 Mono MFP", "80 PPM", "Print/Copy/Scan/Fax", "Auto Duplex", "10.1\" Touchscreen", "Advanced Security"],
     
       },
     ],
   },
-  Toner: {
-    name: "Toner",
-    products: [
-      {
-        id: "toner-1",
-        name: "HP 58A Black LaserJet Toner",
-        description: "Original HP black toner for LaserJet Pro M404/MFP M428 series",
-        count: 60,
-        price: 89,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black Toner", "3,000 Pages", "Original HP", "LaserJet Compatible", "JetIntelligence", "Anti-Fraud Tech"],
-      
-      },
-      {
-        id: "toner-2",
-        name: "Canon 055H High-Yield CMYK Set",
-        description: "High-capacity 4-color toner set for imageCLASS MF740/LBP660 series",
-        count: 25,
-        price: 399,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["CMYK 4-Pack", "High Yield", "Original Canon", "5,900 Pages Black", "imageCLASS Compatible", "Genuine Cartridge"],
-      
-      },
-      {
-        id: "toner-3",
-        name: "Brother TN-760 High Yield",
-        description: "High-yield black toner for Brother HL-L2390DW/MFC-L2710DW",
-        count: 40,
-        price: 69,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black Toner", "3,000 Pages", "Original Brother", "High Yield", "Easy Install", "Recycling Program"],
-       
-      },
-      {
-        id: "toner-4",
-        name: "Samsung MLT-D116L",
-        description: "High-yield toner for Xpress M2625/M2675/M2875 series",
-        count: 35,
-        price: 79,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black Toner", "3,000 Pages", "Original Samsung", "High Yield", "Xpress Compatible", "Easy Install"],
-       
-      },
-      {
-        id: "toner-5",
-        name: "Lexmark 56F1H00 High Yield",
-        description: "High-yield return program toner for MS/MX 321/421/521 series",
-        count: 20,
-        price: 149,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black Toner", "15,000 Pages", "Original Lexmark", "High Yield", "Return Program", "Unison Technology"],
-      
-      },
-      {
-        id: "toner-6",
-        name: "Kyocera TK-1172",
-        description: "Black toner kit for ECOSYS M2640idw/M2540dw printers",
-        count: 30,
-        price: 59,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black Toner", "7,200 Pages", "Original Kyocera", "ECOSYS Compatible", "Long Life", "Eco-Friendly"],
-       
-      },
-    ],
-  },
+ 
   InkTankPrinter: {
     name: "Ink Tank Printer",
     products: [
@@ -3203,8 +3007,7 @@ export const catalogData: Record<string, Category> = {
         name: "Epson EcoTank L3250",
         description: "Wireless ink tank all-in-one with ultra-high page yield",
         count: 25,
-        price: 249,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri55,
         specs: ["EcoTank Ink System", "Print/Copy/Scan", "WiFi & WiFi Direct", "4,500 Pages Black", "7,500 Pages Color", "33 PPM Draft"],
       
       },
@@ -3213,8 +3016,7 @@ export const catalogData: Record<string, Category> = {
         name: "Canon PIXMA G3270",
         description: "MegaTank inkjet for high-volume home and small office printing",
         count: 20,
-        price: 229,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri56,
         specs: ["MegaTank System", "Print/Copy/Scan", "WiFi/USB", "6,000 Pages Black", "7,700 Pages Color", "Borderless Photo"],
        
       },
@@ -3223,426 +3025,14 @@ export const catalogData: Record<string, Category> = {
         name: "HP Smart Tank 615",
         description: "All-in-one ink tank with fax and ADF for productive offices",
         count: 15,
-        price: 349,
-        image: "https://images.pexels.com/photos/4210472/pexels-photo-4210472.jpeg?auto=compress&cs=tinysrgb&w=400",
+        image: pri57,
         specs: ["Smart Tank System", "Print/Copy/Scan/Fax", "WiFi/BT", "35-Sheet ADF", "8,000 Pages Black", "2\" Mono LCD"],
       
       },
-      {
-        id: "tank-4",
-        name: "Brother DCP-T820DW",
-        description: "Refill tank all-in-one with auto duplex and WiFi for small offices",
-        count: 18,
-        price: 299,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Ink Tank System", "Print/Copy/Scan", "Auto Duplex", "WiFi/USB", "6,500 Pages Black", "20-Sheet ADF"],
       
-      },
-      {
-        id: "tank-5",
-        name: "Epson EcoTank L5290",
-        description: "4-in-1 ink tank with ADF, fax, and Ethernet for busy offices",
-        count: 12,
-        price: 399,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["EcoTank 4-in-1", "Print/Copy/Scan/Fax", "30-Sheet ADF", "WiFi/Ethernet", "7,500 Pages Black", "1.44\" LCD"],
-      
-      },
-      {
-        id: "tank-6",
-        name: "Canon PIXMA G7020",
-        description: "MegaTank all-in-one with fax, ADF, Ethernet for small workgroups",
-        count: 10,
-        price: 379,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["MegaTank 4-in-1", "Print/Copy/Scan/Fax", "35-Sheet ADF", "WiFi/Ethernet/USB", "6,000 Pages Black", "Auto Duplex"],
-      
-      },
     ],
   },
-  InkBottle: {
-    name: "Ink Bottle",
-    products: [
-      {
-        id: "ink-1",
-        name: "Epson 003 Ink Bottle Set (CMYK)",
-        description: "Original Epson 4-color ink bottle set for EcoTank printers",
-        count: 80,
-        price: 39,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["CMYK 4-Pack", "65ml Each Bottle", "Original Epson", "EcoTank Compatible", "Spill-Free Refill", "High Yield"],
-       
-      },
-      {
-        id: "ink-2",
-        name: "Canon GI-21 Ink Bottle Set",
-        description: "Original Canon 4-color ink bottles for MegaTank PIXMA printers",
-        count: 60,
-        price: 45,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["CMYK 4-Pack", "70ml Each", "Original Canon", "MegaTank Compatible", "Drip-Free Nozzle", "6,000+ Pages Black"],
-      
-      },
-      {
-        id: "ink-3",
-        name: "HP GT52/GT53XL Ink Set",
-        description: "Original HP ink bottles for Smart Tank series printers",
-        count: 50,
-        price: 49,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black + 3 Color", "GT53XL 135ml Black", "GT52 70ml Color", "Smart Tank Compatible", "Spill-Free Design", "Original HP"],
-     
-      },
-      {
-        id: "ink-4",
-        name: "Brother BTD60BK/BT5000 Set",
-        description: "Original Brother ink bottle set for DCP/MFC ink tank printers",
-        count: 55,
-        price: 35,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black + 3 Color", "108ml Black", "48.8ml Each Color", "Original Brother", "DCP/MFC Compatible", "Ultra High Yield"],
-     
-      },
-      {
-        id: "ink-5",
-        name: "Epson 544 Black Ink Bottle",
-        description: "High-capacity single black ink bottle for EcoTank L-series",
-        count: 100,
-        price: 12,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black Only", "65ml Bottle", "Original Epson", "4,500 Pages Yield", "EcoTank L-Series", "Spill-Free"],
-     
-      },
-      {
-        id: "ink-6",
-        name: "Canon GI-71 Magenta Ink Bottle",
-        description: "Individual magenta ink bottle for Canon MegaTank G-series",
-        count: 70,
-        price: 10,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Magenta Only", "70ml Bottle", "Original Canon", "7,700 Pages Yield", "G-Series Compatible", "Drip-Free Nozzle"],
-      
-      },
-    ],
-  },
-  BarcodeScanner: {
-    name: "Barcode Scanner",
-    products: [
-      {
-        id: "barcode-1",
-        name: "Zebra DS2208",
-        description: "Versatile 1D/2D handheld barcode scanner for retail and office",
-        count: 30,
-        price: 149,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["1D/2D Scanning", "USB Corded", "Omnidirectional", "LED Aiming", "IP42 Rated", "Reads Mobile Screens"],
-   
-      },
-      {
-        id: "barcode-2",
-        name: "Honeywell Voyager 1472g",
-        description: "2D wireless barcode scanner with long-range Bluetooth",
-        count: 25,
-        price: 229,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["1D/2D Wireless", "Bluetooth 5.0", "10m Range", "USB Cradle", "16hr Battery", "Drop Tested 1.5m"],
-     
-      },
-      {
-        id: "barcode-3",
-        name: "Datalogic QuickScan QD2590",
-        description: "General-purpose 2D imager for retail POS applications",
-        count: 20,
-        price: 179,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["1D/2D Imager", "USB Corded", "Green Spot Technology", "IP42 Rated", "Multi-Interface", "EASEOFCARE Ready"],
-      
-      },
-      {
-        id: "barcode-4",
-        name: "Zebra LI4278 Wireless",
-        description: "Cordless 1D barcode scanner with Bluetooth for warehouses",
-        count: 18,
-        price: 299,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["1D Linear Imager", "Bluetooth Wireless", "100m Range", "72hr Battery", "Drop Proof 1.8m", "USB Cradle Included"],
-      
-      },
-      {
-        id: "barcode-5",
-        name: "Honeywell Granit 1920i",
-        description: "Ultra-rugged industrial 2D scanner for harsh environments",
-        count: 10,
-        price: 499,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["1D/2D Industrial", "USB Corded", "IP65 Rated", "3m Drop Spec", "-30 to 50°C", "DPM Capable"],
-        
-      },
-      {
-        id: "barcode-6",
-        name: "Socket Mobile S740",
-        description: "Pocket-sized 2D Bluetooth scanner for mobile POS and delivery",
-        count: 22,
-        price: 399,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["1D/2D Pocket Size", "Bluetooth LE", "16hr Battery", "iOS/Android/Win", "53g Ultra-Light", "Antimicrobial"],
-     
-      },
-    ],
-  },
-  Ribbon: {
-    name: "Ribbon",
-    products: [
-      {
-        id: "ribbon-1",
-        name: "Zebra 2300 Wax Ribbon",
-        description: "Standard wax thermal transfer ribbon for paper labels",
-        count: 100,
-        price: 19,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Wax Formula", "110mm x 450m", "1\" Core", "CSO Winding", "Paper Labels", "Zebra Printers"],
-    
-      },
-      {
-        id: "ribbon-2",
-        name: "Zebra 5095 Resin Ribbon",
-        description: "Premium resin ribbon for synthetic and polyester labels",
-        count: 50,
-        price: 39,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Resin Formula", "110mm x 300m", "1\" Core", "Scratch Resistant", "Chemical Resistant", "Synthetic Labels"],
-        
-      },
-      {
-        id: "ribbon-3",
-        name: "Fargo 045000 YMCKO Ribbon",
-        description: "Full-color ribbon for Fargo DTC1250e/4250e ID card printers",
-        count: 30,
-        price: 79,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["YMCKO Full Color", "250 Prints/Roll", "DTC Series", "ID Card Printing", "Original Fargo", "Easy Load"],
-       
-      },
-      {
-        id: "ribbon-4",
-        name: "Evolis R2011 YMCKO Ribbon",
-        description: "Color ribbon for Evolis Primacy/Zenius card printers",
-        count: 25,
-        price: 69,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["YMCKO Full Color", "200 Prints/Roll", "Primacy/Zenius", "ID Card Printing", "Original Evolis", "High Quality"],
-       
-      },
-      {
-        id: "ribbon-5",
-        name: "Zebra i-Series YMCKO Ribbon",
-        description: "Color ribbon for Zebra ZC100/ZC300 card printers",
-        count: 20,
-        price: 89,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["YMCKO Full Color", "200 Prints/Roll", "ZC Series", "True Colours ix", "Original Zebra", "Dual-Sided Ready"],
-      
-      },
-      {
-        id: "ribbon-6",
-        name: "Armor AWR1 Wax Ribbon",
-        description: "Economy wax ribbon compatible with most desktop label printers",
-        count: 80,
-        price: 15,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Wax Formula", "110mm x 300m", "1\" Core", "Multi-Printer", "Paper Labels", "Economy Grade"],
-        
-      },
-    ],
-  },
-  Cartridge: {
-    name: "Cartridge",
-    products: [
-      {
-        id: "cart-1",
-        name: "HP 67XL Black/Color Combo",
-        description: "High-yield original ink cartridge combo for DeskJet/Envy series",
-        count: 40,
-        price: 59,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black + Tri-Color", "High Yield XL", "Original HP", "DeskJet/Envy", "240 Pages Black", "200 Pages Color"],
-     
-      },
-      {
-        id: "cart-2",
-        name: "Canon PG-275XL/CL-276XL",
-        description: "High-yield black and color ink combo for PIXMA TS series",
-        count: 35,
-        price: 55,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Black + Tri-Color", "High Yield XL", "Original Canon", "PIXMA TS Series", "FINE Technology", "Easy Install"],
-       
-      },
-      {
-        id: "cart-3",
-        name: "Epson 212XL CMYK Set",
-        description: "High-capacity 4-pack ink cartridges for WorkForce/Expression",
-        count: 30,
-        price: 69,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["CMYK 4-Pack", "High Capacity XL", "Original Epson", "DURABrite Ultra", "WorkForce/XP", "Smudge Resistant"],
-     
-      },
-      {
-        id: "cart-4",
-        name: "Brother LC3033 Super High Yield Set",
-        description: "Super high-yield 4-color ink cartridge set for MFC-J series",
-        count: 25,
-        price: 89,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["CMYK 4-Pack", "Super High Yield", "Original Brother", "MFC-J Compatible", "1,500 Pages Black", "Innobella Ink"],
-       
-      },
-      {
-        id: "cart-5",
-        name: "HP 962XL High Yield Set",
-        description: "High-yield 4-pack for OfficeJet Pro 9010/9020 series",
-        count: 20,
-        price: 119,
-        image: "https://images.pexels.com/photos/4210472/pexels-photo-4210472.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["CMYK 4-Pack", "High Yield XL", "Original HP", "OfficeJet Pro", "2,000 Pages Black", "PageWide Technology"],
-      
-      },
-      {
-        id: "cart-6",
-        name: "Canon CLI-281XXL Set",
-        description: "Extra high-yield 5-color ink set for PIXMA TS series",
-        count: 18,
-        price: 99,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["5-Color Pack", "Extra High Yield XXL", "Original Canon", "PIXMA TS/TR", "ChromaLife100+", "Photo Quality"],
-     
-      },
-    ],
-  },
-  PrinterDrum: {
-    name: "Printer Drum",
-    products: [
-      {
-        id: "drum-1",
-        name: "Brother DR-730 Drum Unit",
-        description: "Original drum unit for Brother HL-L2350DW/MFC-L2710DW series",
-        count: 20,
-        price: 89,
-        image: "https://images.pexels.com/photos/4210471/pexels-photo-4210471.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Drum Unit", "12,000 Pages", "Original Brother", "HL-L/MFC-L Series", "Easy Install", "Separate from Toner"],
-    
-      },
-      {
-        id: "drum-2",
-        name: "HP 32A Imaging Drum",
-        description: "Original imaging drum for LaserJet Pro M203/MFP M227 series",
-        count: 15,
-        price: 99,
-        image: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Imaging Drum", "23,000 Pages", "Original HP", "LaserJet Pro", "CF232A", "Consistent Quality"],
-     
-      },
-      {
-        id: "drum-3",
-        name: "Lexmark 56F0Z00 Drum",
-        description: "Return program imaging unit for MS/MX 321/421/521 series",
-        count: 12,
-        price: 149,
-        image: "https://images.pexels.com/photos/4210473/pexels-photo-4210473.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Imaging Unit", "60,000 Pages", "Original Lexmark", "MS/MX Series", "Return Program", "Unison Technology"],
-        
-      },
-      {
-        id: "drum-4",
-        name: "Kyocera DK-1150 Drum Unit",
-        description: "Drum kit for ECOSYS P2235/M2135/M2635/M2735 printers",
-        count: 18,
-        price: 79,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Drum Kit", "100,000 Pages", "Original Kyocera", "ECOSYS Series", "Long Life", "Easy Replace"],
-      },
-      {
-        id: "drum-5",
-        name: "Canon 049 Drum Unit",
-        description: "Original drum unit for imageCLASS LBP113w/MF113w series",
-        count: 22,
-        price: 69,
-        image: "https://images.pexels.com/photos/4210470/pexels-photo-4210470.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Drum Unit", "12,000 Pages", "Original Canon", "imageCLASS", "Consistent Output", "Easy Install"],
-       
-      },
-      {
-        id: "drum-6",
-        name: "Samsung MLT-R116 Imaging Unit",
-        description: "Original imaging unit for Xpress M2625/M2675/M2875 series",
-        count: 16,
-        price: 59,
-        image: "https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["Imaging Unit", "9,000 Pages", "Original Samsung", "Xpress Series", "OPC Drum", "Reliable Performance"],
-      },
-    ],
-  },
-  PrinterPaper: {
-    name: "Printer Paper",
-    products: [
-      {
-        id: "paper-1",
-        name: "HP Premium A4 Paper (5 Ream)",
-        description: "Premium 80 GSM A4 paper for everyday laser and inkjet printing",
-        count: 150,
-        price: 35,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["2500 Sheets (5 Reams)", "A4 210x297mm", "80 GSM", "Brightness 166 CIE", "FSC Certified", "Laser & Inkjet"],
-      },
-      {
-        id: "paper-2",
-        name: "Canon Glossy Photo Paper GP-701",
-        description: "Everyday glossy photo paper for vibrant photo prints",
-        count: 80,
-        price: 19,
-        image: "https://images.pexels.com/photos/159291/pexels-photo-159291.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["100 Sheets", "4x6 / A4 Size", "200 GSM Glossy", "Vivid Colors", "Instant Dry", "Inkjet Compatible"],
-      },
-      {
-        id: "paper-3",
-        name: "Hammermill Color Copy 28lb",
-        description: "Premium heavy-weight paper for color laser presentations",
-        count: 60,
-        price: 29,
-        image: "https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["500 Sheets", "A4 / Letter Size", "105 GSM (28lb)", "100 Brightness", "Acid Free", "Color Laser Optimized"],
-      },
-      {
-        id: "paper-4",
-        name: "Epson Premium Matte Presentation",
-        description: "Heavy-weight matte paper for professional presentations",
-        count: 45,
-        price: 25,
-        image: "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["50 Sheets", "A4 / Letter Size", "167 GSM Matte", "Double-Sided", "Presentation Grade", "Inkjet Compatible"],
-      },
-      {
-        id: "paper-5",
-        name: "A3 Copy Paper 80 GSM (500 Sheets)",
-        description: "Standard A3 multipurpose paper for large format copying",
-        count: 40,
-        price: 15,
-        image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["500 Sheets", "A3 297x420mm", "80 GSM", "White", "Copier/Laser/Inkjet", "Ream Wrapped"],
-      },
-      {
-        id: "paper-6",
-        name: "HP Advanced Glossy Photo Paper",
-        description: "Lab-quality glossy photo paper with instant-dry technology",
-        count: 55,
-        price: 22,
-        image: "https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?auto=compress&cs=tinysrgb&w=400",
-        specs: ["50 Sheets", "4x6 / A4 Available", "250 GSM Glossy", "Instant Dry", "Smudge Resistant", "Fade Resistant"],
-        
-      },
-    ],
-  },
+  
 // ========== DIGITAL DISPLAY SUBCATEGORIES ==========
 
   "DigitalSignage": {
@@ -4344,6 +3734,7 @@ export const getMainCategory = (subcategory: string): string => {
     "ProjectorAccessories": "Projector",
 
   // Printer subcategories
+  "Photocopier": "Printer",
 "InkjetPrinter": "Printer",
 "LaserPrinter": "Printer", 
 "AllinOnePrinter": "Printer",
@@ -4354,15 +3745,8 @@ export const getMainCategory = (subcategory: string): string => {
 "IDCardPrinter": "Printer",
 "POSPrinter": "Printer",
 "LabelPrinter": "Printer",
-"Photocopier": "Printer",
-"Toner": "Printer",
 "InkTankPrinter": "Printer",
-"InkBottle": "Printer",
-"BarcodeScanner": "Printer",
-"Ribbon": "Printer",
-"Cartridge": "Printer",
-"PrinterDrum": "Printer",
-"PrinterPaper": "Printer",
+
       // Digital Display subcategories
     "DigitalSignage": "DigitalDisplay",
     "LEDVideoWall": "DigitalDisplay",
@@ -4392,18 +3776,12 @@ export const getSubcategories = (mainCategory: string): string[] => {
     "Networking": ["HomeNetworking", "CommercialNetworking", "NetworkAccessories", "RoutersSwitches", "CablesConnectors"],
     "Accessories": ["KeyboardMouse", "Webcams", "Headphones", "USBHubs", "LaptopStands"],
       "Projector": ["BusinessProjector", "HomeCinemaProjector", "PortableProjector", "ShortThrowProjector", "ProjectorAccessories"], 
-        "Printer": ["InkjetPrinter", "LaserPrinter", "AllinOnePrinter","Scanners",
+        "Printer": ["AllinOnePrinter","Photocopier", "InkjetPrinter", "LaserPrinter", "Scanners",
           "PrinterAccessories","DocumentPrinter",
           "LargeFormatPrinter","IDCardPrinter", "POSPrinter","LabelPrinter",
-    "Photocopier",
-    "Toner",
+    
     "InkTankPrinter",
-    "InkBottle",
-    "BarcodeScanner",
-    "Ribbon",
-    "Cartridge",
-    "PrinterDrum",
-    "PrinterPaper"],
+   ],
       "DigitalDisplay": ["DigitalSignage", "LEDVideoWall", "InteractiveDisplay", "Kiosk",
          "AdvertisingDisplay", ], 
           "Server": [

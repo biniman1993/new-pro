@@ -50,9 +50,11 @@ const TopMenu = () => {
       "Differnt Rack Units",
     ],
    "Printer": [
+     "AllinOnePrinter",
+       "Photocopier",
   "InkjetPrinter",
   "LaserPrinter", 
-  "AllinOnePrinter",
+ 
   "Scanners",
   "PrinterAccessories",
   "DocumentPrinter",
@@ -60,15 +62,9 @@ const TopMenu = () => {
   "IDCardPrinter",
   "POSPrinter",
   "LabelPrinter",
-  "Photocopier",
   "Toner",
   "InkTankPrinter",
-  "InkBottle",
-  "BarcodeScanner",
-  "Ribbon",
-  "Cartridge",
-  "PrinterDrum",
-  "PrinterPaper"
+  
 ],
     Projector: [
       "Business Projector",
