@@ -28,37 +28,43 @@ interface SlideContent {
 const slides: SlideContent[] = [
   {
     title: "Proactive for Modern World",
-    description: "Proactive Trading: Your trusted partner for premium electronics and enterprise technology solutions across Ethiopia. Proud official distributors of leading global technology brands.",
+    description:
+      "Proactive Trading: Your trusted partner for premium electronics and enterprise technology solutions across Ethiopia. Proud official distributors of leading global technology brands.",
     icon: <Cpu className="w-8 h-8" />,
     route: "/Catalog/BusinessDesktop",
   },
   {
     title: "Modern Laptops and Gaming",
-    description: "Powerful and reliable laptops designed for work and personal use, with next-gen Intel and Ryzen processors, premium 4K screens, and enterprise-level security from top brands.",
+    description:
+      "Powerful and reliable laptops designed for work and personal use, with next-gen Intel and Ryzen processors, premium 4K screens, and enterprise-level security from top brands.",
     icon: <Monitor className="w-8 h-8" />,
     route: "/Catalog/BusinessLaptop",
   },
   {
     title: "Cisco Routers and Switches",
-    description: "Complete Cisco networking solutions including enterprise routers, managed switches, high-performance access points, advanced firewalls, and essential accessories for secure business connectivity.",
+    description:
+      "Complete Cisco networking solutions including enterprise routers, managed switches, high-performance access points, advanced firewalls, and essential accessories for secure business connectivity.",
     icon: <Wifi className="w-8 h-8" />,
     route: "/Catalog/CommercialNetworking",
   },
   {
     title: "Digital Display and Signage",
-    description: "Premium interactive touch displays, dynamic digital signage, and professional presentation solutions for modern offices, retail spaces, educational institutions, and hospitality environments",
+    description:
+      "Premium interactive touch displays, dynamic digital signage, and professional presentation solutions for modern offices, retail spaces, educational institutions, and hospitality environments",
     icon: <Tv className="w-8 h-8" />,
     route: "/Catalog/AdvertisingDisplay",
   },
   {
     title: "Modern TV & Boards",
-    description: "Smart conference room solutions with interactive whiteboards, large format 4K displays, and wireless presentation systems for seamless collaboration in modern workspaces and boardrooms.",
+    description:
+      "Smart conference room solutions with interactive whiteboards, large format 4K displays, and wireless presentation systems for seamless collaboration in modern workspaces and boardrooms.",
     icon: <Server className="w-8 h-8" />,
     route: "/Catalog/Modern4KTVs",
   },
   {
     title: "Data Center Infrastructure",
-    description: "Premium supplier of HPE ProLiant, Dell PowerEdge, and Cisco UCS servers - from rackmount and blade systems to storage arrays and virtualization solutions for modern data centers.",
+    description:
+      "Premium supplier of HPE ProLiant, Dell PowerEdge, and Cisco UCS servers - from rackmount and blade systems to storage arrays and virtualization solutions for modern data centers.",
     icon: <Settings className="w-8 h-8" />,
     route: "/Catalog/ApplicationServers",
   },
@@ -71,7 +77,7 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
-  
+
   // PERFORMANCE: Track animation state to trigger CSS classes without unmounting components
   const [isAnimating, setIsAnimating] = useState(false);
   const navigate = useNavigate();
@@ -124,18 +130,51 @@ const HeroSection = () => {
     setTimeout(() => setIsAnimating(false), 50);
   }, []);
 
-  const handleSlideClick = useCallback((idx: number) => {
-    if (idx === currentSlide) return;
-    setIsAnimating(true);
-    setCurrentSlide(idx);
-    setTimeout(() => setIsAnimating(false), 50);
-  }, [currentSlide]);
+  const handleSlideClick = useCallback(
+    (idx: number) => {
+      if (idx === currentSlide) return;
+      setIsAnimating(true);
+      setCurrentSlide(idx);
+      setTimeout(() => setIsAnimating(false), 50);
+    },
+    [currentSlide],
+  );
 
   return (
     <section
       ref={heroRef}
       className="relative min-h-screen overflow-hidden hero-gradient-bg"
     >
+      {/* Background Layers - Combined */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Base gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2a5da5]/5 via-transparent to-[#ff7b16]/5" />
+
+        {/* Orbs */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-[#2a5da5]/10 to-[#ff7b16]/10 rounded-full blur-3xl animate-pulse" />
+        <div
+          className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-l from-[#2a5da5]/5 to-[#ff7b16]/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
+
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `linear-gradient(to right, #2a5da5 1px, transparent 1px), linear-gradient(to bottom, #2a5da5 1px, transparent 1px)`,
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        {/* Noise texture */}
+        <div
+          className="absolute inset-0 opacity-[0.01] mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: "repeat",
+          }}
+        />
+      </div>
       <style>{`
         .hero-gradient-bg {
           background: linear-gradient(135deg, 
@@ -218,29 +257,40 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16">
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          <div className={`space-y-6 transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+          <div
+            className={`space-y-6 transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}
+          >
             <div className="inline-flex items-center mt-4 gap-2 px-4 py-2 hero-glass-card rounded-full fade-in-up">
               <span className="w-3 h-3 rounded-full hero-badge-dot " />
-              <span className="text-sm text-[#2a5da5] font-semibold">Official Authorized Distributor</span>
+              <span className="text-sm text-[#2a5da5] font-semibold">
+                Official Authorized Distributor
+              </span>
             </div>
 
             <div className="space-y-4">
               <div className="title-container flex items-start">
                 <h1 className="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-bold leading-tight ">
-                  <span className={`hero-text-gradient block ${!isAnimating ? 'hero-title-animate' : 'opacity-0'}`}>
+                  <span
+                    className={`hero-text-gradient block ${!isAnimating ? "hero-title-animate" : "opacity-0"}`}
+                  >
                     {slides[currentSlide].title}
                   </span>
                 </h1>
               </div>
 
               <div className="desc-container">
-                <p className={`text-lg text-muted-foreground max-w-xl leading-relaxed ${!isAnimating ? 'hero-desc-animate' : 'opacity-0'}`}>
+                <p
+                  className={`text-lg text-muted-foreground max-w-xl leading-relaxed ${!isAnimating ? "hero-desc-animate" : "opacity-0"}`}
+                >
                   {slides[currentSlide].description}
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <div
+              className="flex flex-wrap gap-4 fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
               <button
                 onClick={() => {
                   navigate(slides[currentSlide].route);
@@ -279,12 +329,14 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className={`relative image-container flex items-center justify-center transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+          <div
+            className={`relative image-container flex items-center justify-center transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}
+          >
             <div className="relative w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl mb-2 md:mt-2 lg:mt-10 xl:mt-10">
               <img
                 src={productImages[currentSlide]}
                 alt={slides[currentSlide].title}
-                className={`w-full h-auto max-h-[450px] md:max-h-[500px] lg:max-h-[400px] xl:max-h-[500px] object-contain ${!isAnimating ? 'hero-image-animate' : 'opacity-0'}`}
+                className={`w-full h-auto max-h-[450px] md:max-h-[500px] lg:max-h-[400px] xl:max-h-[500px] object-contain ${!isAnimating ? "hero-image-animate" : "opacity-0"}`}
               />
             </div>
           </div>
@@ -292,10 +344,14 @@ const HeroSection = () => {
 
         {/* Mobile/Tablet Layout */}
         <div className="lg:hidden flex flex-col min-h-[90vh]">
-          <div className={`flex justify-center mb-6 transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+          <div
+            className={`flex justify-center mb-6 transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}
+          >
             <div className="inline-flex items-center gap-2 px-4 py-2 hero-glass-card rounded-full">
               <span className="w-3 h-3 rounded-full hero-badge-dot" />
-              <span className="text-sm text-foreground/80 font-bold">Official Authorized Distributor</span>
+              <span className="text-sm text-foreground/80 font-bold">
+                Official Authorized Distributor
+              </span>
             </div>
           </div>
 
@@ -303,20 +359,24 @@ const HeroSection = () => {
             <img
               src={productImages[currentSlide]}
               alt={slides[currentSlide].title}
-              className={`w-full max-w-md h-auto max-h-[260px] xs:max-h-[250px] sm:max-h-[300px] md:max-h-[350px] object-contain ${!isAnimating ? 'hero-image-animate' : 'opacity-0'}`}
+              className={`w-full max-w-md h-auto max-h-[260px] xs:max-h-[250px] sm:max-h-[300px] md:max-h-[350px] object-contain ${!isAnimating ? "hero-image-animate" : "opacity-0"}`}
             />
           </div>
 
           <div className="text-center mb-2 sm:mb-0 md:mb-1 title-container flex items-start justify-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              <span className={`hero-text-gradient block ${!isAnimating ? 'hero-title-animate' : 'opacity-0'}`}>
+              <span
+                className={`hero-text-gradient block ${!isAnimating ? "hero-title-animate" : "opacity-0"}`}
+              >
                 {slides[currentSlide].title}
               </span>
             </h1>
           </div>
 
           <div className="text-center mb-2 sm:mb-1 md:mb-1 desc-container px-4">
-            <p className={`text-base sm:text-lg text-muted-foreground leading-relaxed ${!isAnimating ? 'hero-desc-animate' : 'opacity-0'}`}>
+            <p
+              className={`text-base sm:text-lg text-muted-foreground leading-relaxed ${!isAnimating ? "hero-desc-animate" : "opacity-0"}`}
+            >
               {slides[currentSlide].description}
             </p>
           </div>

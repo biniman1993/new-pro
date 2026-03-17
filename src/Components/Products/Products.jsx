@@ -168,7 +168,7 @@ const handleClick = useCallback(() => {
             {/* Main Title */}
             <h1 className={`text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 transition-all duration-1000 ${hasAnimated ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
               <span className="relative">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2a5da5] via-[#e67817] to-[#f58a39e5]">
+                <span className="bg-clip-text text-transparent  bg-gradient-to-r from-[#2a5da5] via-[#e67817] to-[#f58a39e5]">
                   {title}
                 </span>
               </span>

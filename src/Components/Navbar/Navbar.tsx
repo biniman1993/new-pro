@@ -97,7 +97,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-40 bg-gradient-to-r from-[#2a5da5] to-[#143057] ">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#2a5da5] to-[#143057] ">
       <div className="border-b border-white/10">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -225,22 +225,33 @@ const Navbar = () => {
               : "-translate-x-full"
           }`}
         >
-          {/* Sidebar Header */}
-          <div className="p-6 border-b border-white/10 bg-gradient-to-r from-[#2a5da5] to-[#1e293b]/30">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#F97316] to-blue-300 p-1">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-[#143057] to-[#2a5da5] flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">P</span>
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-2xl">Proactive</span>
-                <span className="text-white text-sm font-semibold tracking-wider">
-                  TRADING
-                </span>
-              </div>
-            </div>
-          </div>
+         {/* Sidebar Header - WITH ACTUAL LOGO */}
+<div className="p-6 border-b border-white/10 bg-gradient-to-r from-[#2a5da5] to-[#1e293b]/30">
+  <div className="flex items-center gap-3">
+    {/* Logo Container - EXACTLY LIKE DESKTOP */}
+    <div className="relative">
+      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#F97316] to-[#2a5da5] p-0.5">
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-[#ffffff] to-[#ffffff] flex items-center justify-center overflow-hidden">
+          <img
+            src={proLogo}
+            alt="Proactive Trading"
+            className="w-8 h-8 object-contain"
+          />
+        </div>
+      </div>
+    </div>
+    
+    {/* Brand Text - MATCHES DESKTOP STYLE */}
+    <div className="flex flex-col justify-center">
+      <span className="text-white font-black text-[18px] leading-none tracking-[-0.02em] font-['Inter',sans-serif]">
+        PROACTIVE
+      </span>
+      <span className="text-[9px] text-white/70 tracking-[0.3em] font-semibold uppercase mt-0.5 font-['Poppins',sans-serif]">
+        TRADING
+      </span>
+    </div>
+  </div>
+</div>
 
           {/* Sidebar Content */}
           <div className="h-[calc(100%-140px)] overflow-y-auto">
