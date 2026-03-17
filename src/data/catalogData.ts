@@ -3509,7 +3509,7 @@ export const catalogData: Record<string, Category> = {
 
 // ========== SERVER RACK CABINETS (RACK UNITS) ==========
 "DifferntRackUnits": {
-  name: 'Server Rack Cabinets',
+  name: 'Differnt Rack Units',
   products: [
     {
       id: 'rack-9u-wall',
@@ -3626,13 +3626,14 @@ export const getMainCategory = (subcategory: string): string => {
 "LaserPrinter": "Printer", 
 "AllinOnePrinter": "Printer",
 "Scanners": "Printer",
-"PrinterAccessories": "Printer",
 "DocumentPrinter": "Printer",
 "LargeFormatPrinter": "Printer",
 "IDCardPrinter": "Printer",
 "POSPrinter": "Printer",
 "LabelPrinter": "Printer",
 "InkTankPrinter": "Printer",
+"PrinterAccessories": "Printer",
+
 
       // Digital Display subcategories
     "DigitalSignage": "DigitalDisplay",
@@ -3662,10 +3663,10 @@ export const getSubcategories = (mainCategory: string): string[] => {
     "Accessories": ["KeyboardMouse", "Webcams", "Headphones", "USBHubs", "LaptopStands"],
       "Projector": ["BusinessProjector", "HomeCinemaProjector", "PortableProjector", "ShortThrowProjector", "ProjectorAccessories"], 
         "Printer": ["AllinOnePrinter","Photocopier", "InkjetPrinter", "LaserPrinter", "Scanners",
-          "PrinterAccessories","DocumentPrinter",
+          "DocumentPrinter",
           "LargeFormatPrinter","IDCardPrinter", "POSPrinter","LabelPrinter",
     
-    "InkTankPrinter",
+    "InkTankPrinter", "PrinterAccessories",
    ],
       "DigitalDisplay": ["DigitalSignage", "LEDVideoWall", "InteractiveDisplay", "Kiosk",
          "AdvertisingDisplay", ], 

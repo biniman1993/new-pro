@@ -15,7 +15,7 @@ const TopMenu = () => {
     Desktop: [
       "Business Desktop",
       "Gaming Desktop",
-      "All-in-One PC",
+      "All in One PC",
       "Mini Desktop",
       "Workstation",
     ],
@@ -29,41 +29,40 @@ const TopMenu = () => {
       "Full HD Monitor",
       "2K / 4K Monitor",
       "Gaming Monitor",
+     "Modern 4K TVs",
       "Curved Monitor",
-      "Modern 4K TVs",
     ],
     Networking: [
       "Home Networking",
       "Commercial Networking",
       "Network Accessories",
       "Routers & Switches",
-      "Cables",
+      "Cables Connectors",
     ],
      Server: [
       "HPE Proliant ML server",
       "HPE Proliant DL server",
       "HPE Proliant RL server",
-      "HPE Modular Servers",
       "Dell EMC PowerEdge Tower server",
       "Dell EMC PowerEdge Rack server",
-      "Server Accessories",
       "Differnt Rack Units",
     ],
-   "Printer": [
-     "AllinOnePrinter",
-       "Photocopier",
-  "InkjetPrinter",
-  "LaserPrinter", 
+
+   Printer: [
+  "All in One Printer",
+  "Photocopier",
+  "Inkjet Printer",
+  "Laser Printer", 
  
   "Scanners",
-  "PrinterAccessories",
-  "DocumentPrinter",
+  "Document Printer",
   "LargeFormatPrinter",
   "IDCardPrinter",
   "POSPrinter",
   "LabelPrinter",
-  "Toner",
   "InkTankPrinter",
+    "Printer Accessories",
+
   
 ],
     Projector: [
