@@ -127,9 +127,6 @@ const Catalog = () => {
           brands: [
             "GigaByte",
             "SMART",
-            "Chuwi",
-            "Avita",
-            "Microsoft",
             "Infinix",
             "Lenovo",
             "MSI",
@@ -187,17 +184,12 @@ const Catalog = () => {
           brands: [
             "LG",
             "Viewsonic",
-            "GigaByte",
-            "Dahua",
             "BenQ",
             "Samsung",
             "Xiaomi",
             "PHILIPS",
             "AOC",
             "PC Power",
-            "Value-TOP",
-            "Trend Sonic",
-            "Gigasonic",
             "NPC",
             "Huawei",
             "Lenovo",
@@ -271,12 +263,10 @@ const Catalog = () => {
             "Tenda",
             "R&M",
             "Cisco",
-            "Cudy",
             "D-Link",
             "TRENDnet",
             "Mikrotik",
             "BDCOM",
-            "CommScope",
             "Zyxel",
             "Ficer",
             "C-Data",
@@ -294,13 +284,11 @@ const Catalog = () => {
             "Ubiquiti",
             "Levelone",
             "UGreen",
-            "Dahua",
             "Edgecore",
             "Linksys",
             "Informate",
             "Yuanxin",
             "Belkin",
-            "Orico",
             "Solitine",
             "VSOL",
             "TRENDnet",
@@ -468,9 +456,6 @@ const Catalog = () => {
             "NEC",
             "Panasonic",
             "Acer",
-            "Xiaomi",
-            "Vankyo",
-            "Apeman",
             "Anker",
             "GooDee",
           ],
@@ -578,22 +563,14 @@ const Catalog = () => {
             "Canon",
             "Pantum",
             "Sunmi",
-            "Xprinter",
             "Zebra",
             "RICOH",
             "Rongta",
             "SEWOO",
             "G-Printer",
-            "EVOLIS",
             "Sharp",
             "Fujifilm",
-            "GoDEX",
-            "SPRT",
             "DeskJet",
-            "Toshiba",
-            "Deli",
-            "HID",
-            "HP",
           ],
           type: [
             "Inkjet",
@@ -704,8 +681,6 @@ const Catalog = () => {
             "LG",
             "NEC",
             "Sharp",
-            "Planar",
-            "Barco",
             "Christie",
             "Daktronics",
             "Leyard",
@@ -716,7 +691,7 @@ const Catalog = () => {
             "Panasonic",
             "ViewSonic",
             "BenQ",
-            "Elo",
+            "AZTECH ",
             "Advantech",
             "AOPEN",
             "Intel",
@@ -787,18 +762,7 @@ const Catalog = () => {
             "Gesture Control",
             "Voice Control",
           ],
-          connectivity: [
-            "HDMI",
-            "DisplayPort",
-            "VGA",
-            "DVI",
-            "USB-C",
-            "Ethernet",
-            "WiFi",
-            "Bluetooth",
-            "RS-232",
-            "SDI",
-          ],
+         
           features: [
             "Built-in Media Player",
             "Android OS",
@@ -874,7 +838,6 @@ const Catalog = () => {
             "NetApp",
             "Synology",
             "QNAP",
-            "Western Digital",
             "Seagate",
             "Toshiba",
             "Kingston",
@@ -1368,13 +1331,13 @@ const Catalog = () => {
               <p className="text-gray-500 font-medium">Expert Support</p>
             </div>
             <div className="text-center px-4 pt-8 md:pt-0">
-              <div className="text-4xl font-bold text-[#2a5da5] mb-2">2k+</div>
+              <div className="text-4xl font-bold text-[#2a5da5] mb-2">1k+</div>
               <p className="text-gray-500 font-medium">Trusted Customers</p>
             </div>
           </div>
 
           <div className="mt-16 text-center text-gray-400 text-sm">
-            &copy; 2025 TechCatalog. All rights reserved.
+            &copy; 2026 Proactive Trading TechCatalog. All rights reserved.
           </div>
         </div>
       </footer>
