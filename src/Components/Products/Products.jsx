@@ -161,7 +161,7 @@ const handleClick = useCallback(() => {
     }, [hasAnimated]);
 
     return (
-      <div className="w-full py-10 px-4 sm:px-6 lg:px-8 bg-[#f9fbfd]" ref={ref}>
+      <div className="w-full py-10 px-4 sm:px-6 lg:px-8 bg-[#ffffff]" ref={ref}>
         <div className={`max-w-7xl mx-auto ${className}`} ref={containerRef}>
           {/* Title Section - UPDATED: Removed underline, added modern description */}
           <div className="text-center mb-12">

@@ -374,7 +374,7 @@ const About = () => {
       </section>
 
       {/* Tab Navigation */}
-      <nav className="flex justify-center flex-wrap gap-3 p-6 bg-white/95 backdrop-blur-md z-10 rounded-2xl max-w-7xl mx-auto -mt-23">
+      <nav className="flex justify-center flex-wrap gap-3 p-6 bg-white backdrop-blur-md z-10 rounded-2xl max-w-7xl mx-auto -mt-23">
         {[
           { id: "profile", label: "Profile" },
           { id: "mission", label: "Mission" },
@@ -567,7 +567,7 @@ const About = () => {
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl shadow-md transition-all duration-400 hover:translate-y-[-8px] hover:scale-105 hover:shadow-[0_15px_40px_rgba(28,76,151,0.2)] border-2 border-transparent flex flex-col items-center min-h-[180px] relative overflow-hidden group"
+                className="bg-gradient-to-br from-white  p-5 rounded-xl shadow-md transition-all duration-400 hover:translate-y-[-8px] hover:scale-105 hover:shadow-[0_15px_40px_rgba(28,76,151,0.2)] border-2 border-transparent flex flex-col items-center min-h-[180px] relative overflow-hidden group"
               >
                 <div className="absolute top-0 left-0 right-0 h-1 transform scale-x-0 transition-transform duration-400 group-hover:scale-x-100" />
                 <div className="w-[100px] h-[100px] mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">

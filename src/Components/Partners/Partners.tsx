@@ -123,7 +123,7 @@ const Partners = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-12 md:py-20 bg-[#f3f6f8] w-full overflow-hidden font-sans"
+      className="py-12 md:py-20 bg-[#f4f7fa] w-full overflow-hidden font-sans"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import { placeholderImages } from "./placeholder";
 import {
   MessageCircle,
@@ -11,7 +11,6 @@ import {
   Star,
   Phone,
   Send,
-  Mail,
 } from "lucide-react";
 
 interface Product {
@@ -573,7 +572,7 @@ const FridayPromo = () => {
                     <div key={product.id} className="animate-fade-in">
                       <div
                         onClick={() => openProductModal(product)}
-                        className="bg-[#fafafa] border border-gray-200 rounded-2xl overflow-hidden card-hover group/card cursor-pointer h-full flex flex-col"
+                        className="bg-[#fcfeff] border border-gray-200 rounded-2xl overflow-hidden card-hover group/card cursor-pointer h-full flex flex-col"
                       >
                         <div className="relative w-full h-56 bg-[#ffffff] flex items-center justify-center overflow-hidden">
                           <img
