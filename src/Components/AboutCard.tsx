@@ -160,7 +160,7 @@ function App() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-6xl font-black text-[#0a0e27] tracking-tight"
           >
-            End-to-End 
+            End-to-End <span className="text-[#2a5da5]"></span><br/>
             <span className="bg-gradient-to-r from-[#2a5da5] to-[#ff7b16] bg-clip-text text-transparent">
               Integration
             </span>
