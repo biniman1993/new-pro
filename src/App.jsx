@@ -1,5 +1,6 @@
-import React, { useRef, useEffect,  Suspense } from "react";
+import React, { useRef, useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react'; // Add this import
 
 // ========== COMPONENTS (All your original imports preserved) ==========
 import Navbar from "./Components/Navbar/Navbar";
@@ -219,6 +220,7 @@ const App = () => {
         </Routes>
 
         <Footer />
+        <Analytics /> {/* Add Analytics component here */}
       </div>
     </Router>
   );
