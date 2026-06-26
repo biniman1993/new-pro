@@ -23,7 +23,8 @@ import Why from "./Components/Why.tsx";
 import LetUsMeet from "./Components/LetUsMeet";
 import BrandShowcase from "./Components/BrandShowcase.tsx";
 import Catalog from "./pages/Catalog.js";
-
+import NewArrivals from "./Components/NewArrivals.tsx"; 
+ // NEW: Import NewArrivals component
 // ========== DATA (Preserved exactly) ==========
 import {
   laptopsData,
@@ -214,6 +215,7 @@ const App = () => {
                 <BrandShowcase />
                 <AboutCards />
                 <LetUsMeet />
+                <NewArrivals />
               </div>
             }
           />
