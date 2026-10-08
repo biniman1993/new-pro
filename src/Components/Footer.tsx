@@ -27,6 +27,12 @@ const Footer = () => {
   ) => {
     e.preventDefault();
 
+    // ✅ PDF check
+    if (path.endsWith(".pdf")) {
+      window.open(path, "_blank");
+      return;
+    }
+
     // Split path into base path and hash
     const [basePath, hash] = path.split("#");
 
@@ -36,28 +42,25 @@ const Footer = () => {
       (basePath === "/" && location.pathname === "/")
     ) {
       if (hash) {
-        // Scroll to the element with the hash
         const element = document.getElementById(hash);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
       } else {
-        // Scroll to top
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     } else {
-      // Navigate to the new page
       navigate(path);
     }
   };
 
- const shopCategories = [
-  { name: "Home", path: "/" },
-  { name: "New Laptops", path: "/products/laptops" },
-  { name: "New Desktops", path: "/products/desktops" },
-  { name: "New Printers", path: "/products/printers" },
-  { name: "Cisco Products", path: "/products/networking" },
-];
+  const shopCategories = [
+    { name: "Home", path: "/" },
+    { name: "New Laptops", path: "/products/laptops" },
+    { name: "New Desktops", path: "/products/desktops" },
+    { name: "New Printers", path: "/products/printers" },
+    { name: "Cisco Products", path: "/products/networking" },
+  ];
 
   const company = [
     { name: "About Us", path: "/about" },
@@ -67,12 +70,13 @@ const Footer = () => {
     { name: "Our Shop", path: "/contact#shop-gallery" },
   ];
 
+  // ✅ UPDATED: "Shipping and Returns" replaced with "Company Profile"
   const support = [
     { name: "Head Office", path: "/contact#Office" },
     { name: "Shop Locations", path: "/contact#Contact" },
     { name: "Terms & Conditions", path: "/terms#terms" },
     { name: "Privacy Policy", path: "/terms#privacy" },
-    { name: "Shipping and Returns", path: "/terms#shipping" },
+    { name: "Company Profile", path: "/company-profile.pdf" },
   ];
 
   const socialLinks = [
@@ -129,19 +133,19 @@ const Footer = () => {
           height: 4px;
           background: linear-gradient(to right, #e67817, rgba(230,120,23,0.6), transparent);
         }
-       .footer-content {
-  position: relative;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem; /* Changed from 3.5rem 1.25rem */
-}
-@media (min-width: 640px) { .footer-content { padding: 2rem 2rem; } } /* Changed from 4rem 2rem */
-@media (min-width: 1024px) { .footer-content { padding: 2.5rem 2rem; } } /* Changed from 5rem 2rem */
-      .footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem; /* Changed from 2.5rem */
-}
+        .footer-content {
+          position: relative;
+          max-width: 80rem;
+          margin: 0 auto;
+          padding: 1.5rem 1.25rem;
+        }
+        @media (min-width: 640px) { .footer-content { padding: 2rem 2rem; } }
+        @media (min-width: 1024px) { .footer-content { padding: 2.5rem 2rem; } }
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
         @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .footer-grid { grid-template-columns: 4fr 2fr 2fr 4fr; gap: 2rem; } }
 
@@ -299,15 +303,15 @@ const Footer = () => {
         }
 
         .footer-bottom {
-  margin-top: 1.5rem; /* Changed from 3.5rem */
-  padding-top: 1rem; /* Changed from 1.5rem */
-  border-top: 1px solid rgba(255,255,255,0.12);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem; /* Changed from 1rem */
-}
+          margin-top: 1.5rem;
+          padding-top: 1rem;
+          border-top: 1px solid rgba(255,255,255,0.12);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.5rem;
+        }
         @media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
         .footer-bottom-text {
           color: rgba(176,190,197,0.6);
